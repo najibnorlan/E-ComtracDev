@@ -1,0 +1,60 @@
+<wicket:extend>
+	<form wicket:id="form" class="ui form">
+		<wicket:enclosure child="noticeHighVolume">
+				<span wicket:id="noticeHighVolume"/>
+		</wicket:enclosure>
+		<wicket:enclosure child="noNotice">
+		<div class="field">
+			 <input wicket:id="addNew" type="button" class="ui primary button"  />
+		</div>
+			<div wicket:id="wmcSearchResult">
+				<table class="ui striped table">
+				  <thead>
+				    	<tr>
+				    	<th width="15%"><wicket:message key="page.lbl.ezbiz.robUserActivationTray.refNo" /></th>
+						<th width="20%"><wicket:message key="page.lbl.ezbiz.robUserActivationTray.name" /></th>
+						<th width="10%"><wicket:message key="page.lbl.ezbiz.robUserActivationTray.status" /></th>
+						<th width="15%"><wicket:message key="page.lbl.ezbiz.robUserActivationTray.date" /></th>
+						<th width="10%"><wicket:message key="page.lbl.ezbiz.robUserActivationTray.action" /></th>
+				  	</tr>
+				  </thead>
+				  <tbody>
+				  
+				    <tr wicket:id="sorting">
+						<td>
+							<div class="field">
+								 <span wicket:id="appRefNo"/>
+							</div>
+							<div class="field inline">
+								 <span wicket:id="loginId"/>
+							</div>
+						</td>
+						<td>
+							<div class="field inline">
+								 <span wicket:id="name"/>
+							</div>
+							<div class="field inline">
+								 <span wicket:id="idNo"/>
+							</div>
+						</td>
+						<td><span wicket:id="status">[status]</span></td>
+						<td>
+							<span wicket:id="updateDt"/>
+						</td>
+						<td class="manage-link">
+							 <a wicket:id="detail" href="#" wicket:message="title:page.lbl.ezbiz.robUserActivationTray.detail"><i class="Edit icon" /></a>
+						</td>
+					</tr>
+				  </tbody>
+				  <tfoot>
+				    <tr>
+				    	<th colspan="100">
+				    		<span wicket:id="navigatorLabel">[dataView navigatorLabel]</span>
+					        <span wicket:id="navigator">[dataView navigator]</span>
+				    	</th>
+				  </tr></tfoot>
+				</table>
+			</div>
+		</wicket:enclosure>
+	</form>
+</wicket:extend>

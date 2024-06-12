@@ -1,0 +1,96 @@
+<wicket:extend>
+
+	<div class="ui styled fluid accordion">
+		<div class="active title" id="#app">
+			<i class="dropdown icon"></i> Web Services, Database, Email
+		</div>
+		<div class="active content">
+			<p>
+			<div wicket:id="appContainer">
+				<div class="ui three cards">
+					<div class="card" wicket:id="healthCheckList">
+						<div class="content">
+							<div class="header">
+								<label wicket:id="code"></label> <label
+									class="ui horizontal right floated label" wicket:id="status"></label>
+							</div>
+						</div>
+						<div class="content">
+							<table class="ui striped table">
+								<tr>
+									<td><b>Interval</b></td>
+									<td><label wicket:id="time"></label></td>
+									<td>
+										<button class="ui icon button mini right floated black"
+											wicket:id="recheck" title="recheck now!">
+											<i class="refresh icon"></i>
+										</button>
+									</td>
+								</tr>
+							</table>
+						</div>
+						<div class="extra content">
+							<span class="right floated"><label wicket:id="updateDt"></label></span>
+							<br>
+						</div>
+					</div>
+				</div>
+			</div>
+			<br>
+			<button class="ui right labeled icon positive button"
+				wicket:id="btnCheck">
+				<i class="history icon"></i>
+				<wicket:message key="HealthCheckPage.btnCheck.label" />
+			</button>
+			</p>
+
+		</div>
+		<div class="title" id="#scheduler">
+			<i class="dropdown icon"></i> Scheduler
+		</div>
+		<div class="content">
+			<p>
+			<div wicket:id="schedulerContainer">
+				<table class="ui celled table">
+					<thead>
+						<tr>
+							<th>Bil</th>
+							<th>Scheduler</th>
+							<th>Last Check</th>
+							<th>Status</th>
+							<th>Action</th>
+						</tr>
+					</thead>
+					<tbody>
+						<tr wicket:id="healthCheckSceList">
+							<td><label wicket:id="index"></label></td>
+							<td><label wicket:id="codeSce"></label></td>
+							<td><label wicket:id="updateDtSce"></label></td>
+							<td class="column center aligned"><label
+								class="ui horizontal label" wicket:id="statusSce"></label></td>
+							<td class="column center aligned">
+								<button class="ui labeled icon black button mini"
+									wicket:id="recheckSce">
+									<i class="refresh icon"></i> Run now!
+								</button>
+							</td>
+						</tr>
+					</tbody>
+				</table>
+			</div>
+			<br>
+			<button class="ui right labeled icon positive button"
+				wicket:id="runScheduler">
+				<i class="history icon"></i>
+				<wicket:message key="HealthCheckPage.runScheduler.label" />
+			</button>
+			</p>
+
+		</div>
+	</div>
+	<script>
+	$('.ui.accordion')
+	  .accordion()
+	;
+	</script>
+</wicket:extend>

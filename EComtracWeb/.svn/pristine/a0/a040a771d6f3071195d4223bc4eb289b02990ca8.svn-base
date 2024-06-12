@@ -1,0 +1,216 @@
+<wicket:extend>
+	<script type="text/javascript">
+      var wsocket;      
+	  var cmdTxt;
+	  var creditCardProcessingPanelId;
+      var counter = 0;
+	  function connect(cmdTxtToSend, panelId) {     
+    	  
+    	 /*
+    	 var str = '0230323130303136343436303331585858585858373533333030303031323230303444454D4F30312020303030303030303030313233303030303030303030303030303030303032303030303132383837374FE7E284879F998403<END>';
+         $('#hiddenInput1').val(str);
+         $('#hiddenInput1').change();
+    	 */
+    	 
+		creditCardProcessingPanelId = panelId; 
+		
+		
+		wsocket = new WebSocket("ws://localhost:8000");          
+		cmdTxt = cmdTxtToSend;
+		wsocket.onerror = onerror; 
+		wsocket.onopen = onopen;
+		wsocket.onmessage = onmessage;
+		wsocket.onclose = onclose; 
+		
+        
+      }
+      
+      function onerror() {
+         alert('Cannot connect to Terminal Program. Please ensure terminal program is running');
+         $('#'+creditCardProcessingPanelId).modal('hide');
+         counter++;
+         if(counter>=2){
+         	 document.getElementById('manualCardId').style.visibility = "visible"; 
+         }	 
+         
+      }
+      
+
+      function onopen() {
+          wsocket.send(cmdTxt);
+      }
+
+      function onmessage(event) { 
+    	 var dataRecv =  event.data;
+         $('#hiddenInput1').val(dataRecv);
+         $('#hiddenInput1').change();
+      }
+
+      function onclose(e) {
+         console.log("Connection closed.");              
+      }
+      
+  </script>
+	<table class="ui striped table">
+		<thead>
+			<tr>
+				<th><wicket:message key="page.lbl.ezbiz.otcPaymentPage.bil" /></th>
+				<th><wicket:message
+						key="page.lbl.ezbiz.otcPaymentPage.itemDesc" /></th>
+				<th><wicket:message key="page.lbl.ezbiz.otcPaymentPage.itemDet" /></th>
+				<th><wicket:message
+						key="page.lbl.ezbiz.otcPaymentPage.itemAmountWoutGst" /></th>
+				<th><wicket:message
+						key="page.lbl.ezbiz.otcPaymentPage.itemGstAmt" /></th>
+				<th><wicket:message
+						key="page.lbl.ezbiz.otcPaymentPage.itemAmount" /></th>
+			</tr>
+		</thead>
+		<tbody>
+			<tr wicket:id="paymentItems">
+				<td><span wicket:id="bil">[bil]</span></td>
+				<td><span wicket:id="itemDesc">[itemDesc]</span></td>
+				<td><span wicket:id="itemDet">[itemDet]</span></td>
+				<td><span wicket:id="itemAmountWoutGst">[itemAmountWoutGst]</span></td>
+				<td><span wicket:id="itemGstAmt">[itemGstAmt]</span></td>
+				<td><span wicket:id="itemAmount">[itemAmount]</span></td>
+			</tr>
+			<tr>
+				<td colspan="5" style="text-align: right; font-size: 14px"><b><wicket:message
+							key="page.lbl.ezbiz.otcPaymentPage.totalToBePaid" /></b></td>
+				<td style="font-size: 14px"><b><span
+						wicket:id="totalToBePaid">[totalToBePaid]</span></b></td>
+			</tr>
+		</tbody>
+	</table>
+	<h4 class="ui horizontal divider header">Transaction</h4>
+	<div class="ui right aligned grid form">
+		<div class="left floated left aligned six wide column">
+			<div class="ui icon message">
+				<i class="info circle icon"></i>
+				<div class="content">
+					<div class="header">
+						<wicket:message key="page.lbl.ezbiz.otcPaymentPage.transactionId" />
+					</div>
+					<p>
+						<span wicket:id="transId">[transId]</span>
+					</p>
+					<div class="header">
+						<wicket:message key="page.lbl.ezbiz.otcPaymentPage.appRefNo" />
+					</div>
+					<p>
+						<span wicket:id="appRefNo">[appRefNo]</span>
+					</p>
+					<div class="header">
+						<wicket:message key="page.lbl.ezbiz.otcPaymentPage.billTo" />
+					</div>
+					<p>
+						<span wicket:id="payerName">[payerName]</span>
+					</p>
+					<p>
+						<span wicket:id="payerAddr">[payerAddr]</span>
+					</p>
+				</div>
+			</div>
+		</div>
+		
+		
+		<div class="right floated left aligned six wide column">
+			<form wicket:id="form">
+			<script type="text/javascript" wicket:id="manualPayCardValidationJS"></script>
+			<div class="ui top right attached tabular menu">
+			  <a class="item active" data-tab="first"><wicket:message key="page.lbl.ezbiz.otcPaymentPage.cash" /></a>
+			  <a class="item" data-tab="second" id="creditCardTab"><wicket:message key="page.lbl.ezbiz.otcPaymentPage.creditCard" /></a>
+			  <a class="item" data-tab="third" id="manualCardId"><wicket:message key="page.lbl.ezbiz.otcPaymentPage.creditCardManual" /></a>
+			</div>
+			<div class="ui bottom attached tab segment active" data-tab="first">
+			  <div class="ui icon message">
+					<i class="dollar circle icon"></i>
+						<div class="content">
+							<div class="header">
+								<wicket:message key="page.lbl.ezbiz.otcPaymentPage.enterAmount" />
+							</div>
+							<p>
+							<div class="ui left labeled input small">
+								<div class="ui basic label ">RM</div>
+								<input wicket:id="cashReceived" id="amountReceived" type="text"
+									placeholder="Amount" class="is-decimal">
+							</div>
+							</p>
+							<div class="ui horizontal divider">-</div>
+							<div class="header">
+								<wicket:message key="page.lbl.ezbiz.otcPaymentPage.totalToBePaid" />
+							</div>
+							<p>
+								RM <span id="totalAmount" wicket:id="totalToPaid">[totalToPaid]</span>
+							</p>
+							<div class="header">
+								<wicket:message key="page.lbl.ezbiz.otcPaymentPage.balance" />
+							</div>
+							<p>
+								RM <span id="balance" wicket:id="balance"></span>
+							</p>
+							<div class="ui horizontal divider">-</div>
+							<div class="left floated right aligned column">
+								<button wicket:id="cancel" class="ui red button">Cancel</button>
+								<button wicket:id="pay" class="ui positive button">Pay</button>
+							</div>
+						</div>
+						<input type="hidden" wicket:id="hiddenInput" id="hiddenInput1" />
+						<div wicket:id="creditCardProcessingPanel" > </div>
+				</div>
+			</div>
+				<div class="ui bottom attached tab segment" data-tab="second">
+					<div class="left floated left aligned six wide column">
+						<div class="ui icon message">
+							<i class="credit card outline icon"></i>
+							<div class="content">
+								<p>
+									<button wicket:id="payCreditCard" class="ui positive button"><wicket:message key="page.lbl.ezbiz.otcPaymentPage.payCreditCard" /></button>
+								</p>
+							</div>
+						</div>
+					</div>
+				</div>
+				
+				<div class="ui bottom attached tab segment" data-tab="third">
+					<div class="left floated left aligned six wide column">
+						<div class="ui icon message">
+							<i class="credit card outline icon"></i>
+							<div class="content" align="left">
+								<div class="field">
+									<label><span wicket:id="paymentCardTypeLabel" /></label>
+									<select wicket:id="paymentCardType" />
+								</div>
+								<div class="field">
+									<label><span wicket:id="paymentCardBankLabel" /></label>
+									<select wicket:id="paymentCardBank" />
+								</div>
+								<div class="field">
+									<label><span wicket:id="paymentCardApprovalCodeLabel" /></label>
+									<input wicket:id="paymentCardApprovalCode" id="paymentCardApprovalCode" type="text" class="is-decimal">
+								</div>
+								
+								<div class="ui horizontal divider">-</div>
+								<div class="left floated right aligned column">
+									<button wicket:id="manualPayCard" class="ui positive button"><wicket:message key="page.lbl.ezbiz.otcPaymentPage.manualPayCard" /></button>
+								</div>
+							</div>
+							
+						</div>
+					</div>
+					
+				</div>
+			
+			<script type="text/javascript">
+				$('.menu .item').tab();
+				document.getElementById('manualCardId').style.visibility = "hidden"; 
+			</script>
+			<script type="text/javascript" wicket:id="otcJsScript"></script>		
+		 </form>
+			
+				
+		</div>
+		
+	</div>
+</wicket:extend>

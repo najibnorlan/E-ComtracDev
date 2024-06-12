@@ -1,0 +1,919 @@
+/*
+ * Licensed to the Apache Software Foundation (ASF) under one or more
+ * contributor license agreements.  See the NOTICE file distributed with
+ * this work for additional information regarding copyright ownership.
+ * The ASF licenses this file to You under the Apache License, Version 2.0
+ * (the "License"); you may not use this file except in compliance with
+ * the License.  You may obtain a copy of the License at
+ *
+ *      http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ */
+
+@font-face {
+    font-family: "BarcodeC39";
+    src:url('BarcodeC39.otf') format("TrueType");
+}
+
+body {
+	text-align: center;
+	background-color: white;
+	background-repeat: repeat-x;
+	color: black;
+	font-family: 'Tahoma', 'Lucida Sans', 'Arial', 'Helvetica', 'Sans-serif', 'sans';
+	font-size: 9pt;
+	line-height: 1.8em;
+	padding: 0px 100px 0px 100px;
+	margin: 10px 10px 10px 10px;
+}
+
+.loginbody {
+	/*background-color: #007fd5;*/
+}
+.bgimg {
+	display: inline;
+	position:absolute;
+    top:0;
+    left:0;
+    width:100%;
+    height:100%;
+    z-index: -1;
+}
+
+.cloudsimg{
+	z-index: -1;
+}
+
+INPUT {
+	border:1px solid gray;
+}
+
+h1,h2,h3,h4,h5,h6,h7,h8 {
+	color: #E9601A;
+	font-weight: normal;
+}
+
+h1,h2 {
+	font-size : 9pt;
+	font-family: 'Trebuchet MS';
+	line-height: 0.1px;
+	font-weight: bolder;
+}
+
+HR {
+	border: 0.5px dotted grey;
+}
+
+
+fieldset {
+	-webkit-border-radius: 8px;
+	-moz-border-radius: 8px;
+	border-radius: 8px;
+	padding: 10px;
+}
+
+legend {
+	background: #C2D6FF;
+	border: solid 1px black;
+	-webkit-border-radius: 20px;
+	-moz-border-radius: 20px;
+	border-radius: 2px;
+	padding: 2px;
+}
+
+/* Image in Text Box */
+.textsearch {
+	background:#FFFFFF url(../images/search.png) no-repeat 4px 4px;
+	padding:4px 4px 4px 22px;
+	border:1px solid #CCCCCC;
+	width:230px;
+	height:25px;
+}
+
+#extitle {
+	font-size: 12pt;
+	font-weight: bold;
+	color: #E9601A;
+	padding: 10px 10px 10px 10px;
+}
+
+.panel {
+  border: 2px dotted #fc0;
+  padding: 5px;
+}
+
+.mark {
+	background-color: yellow;
+	margin: 5px;	
+}
+
+.feedbackPanelERROR {
+	color: red;
+	list-style-image:url('../images/error_icon.png');
+	font-weight: bold;
+	font-size: 10pt;
+}
+
+.feedbackPanelINFO {
+	color: #2E64FE;
+	list-style-image:url('../images/info_icon.png');
+	font-weight: bold;
+	font-size: 10pt;
+}
+
+.feedbackPanelSUCCESS {
+	color: green;
+	list-style-image:url('../images/success_icon.png');
+	font-weight: bold;
+	font-size: 10pt;
+}
+.nospam {
+	display : none;
+}
+
+.block {
+	padding: 10px;
+}
+
+.blockWithBorder {
+	border: 1px dotted grey;
+	padding: 5px;
+	width: 100%;
+	background-color: #F5F5F5;
+}
+
+.blockWithBg {
+	border: 1px solid #0079d6;
+	border-color: grey;
+	background-color: silver;
+	padding: 5px;
+	width: 100%;
+}
+
+.blockWelcomeTitle {
+	padding: 5px;
+	border-bottom: 1px solid gray;
+	font-family: 'Tahoma', 'Lucida Sans', 'Arial', 'Helvetica', 'Sans-serif', 'sans';
+	font-size: 12pt;
+	font-weight: bold;
+}
+
+.blockWelcomeSubTitle{
+	margin-left: 40px;
+	padding: 50px;
+	font-family: 'Tahoma', 'Lucida Sans', 'Arial', 'Helvetica', 'Sans-serif', 'sans';
+	font-size: 8pt;
+	nowrap:true;
+}
+
+.blockWelcomeChild {
+	border-bottom: 1px solid silver;
+}
+
+.blockWelcomeModule{
+	margin-left: 10px;
+	padding: 50px;
+	font-family: 'Tahoma', 'Lucida Sans', 'Arial', 'Helvetica', 'Sans-serif', 'sans';
+	font-size: 10pt;
+	nowrap:true;
+}
+
+#mainDiv
+{
+	margin-left: auto;
+	margin-right: auto;
+	width: 80em;
+	text-align: left;
+}
+
+#hellomessage {
+	font-size: 30pt;
+}
+
+#titleblock {
+	color: white;
+	font-weight: bold;
+	border-width: thin;
+	padding: 17px 2px 2px 6px;
+}
+
+#titleblock a {
+	color: #000;
+}
+
+h2 {
+	font-size: 1.25em;
+}
+
+h3 {
+	font-size: 1em;
+}
+
+a {
+	color: #E9601A;
+	font-weight: bold;
+	text-decoration: none;
+}
+
+a:hover {
+	text-decoration: underline;
+}
+
+img {
+	border: none;
+}
+
+pre {
+	font-family: 'Lucida Sans', 'Helvetica', 'Sans serif', 'sans';
+}
+
+th {
+	background: #C3C3C3;
+	color: white;
+	font-weight: bold;
+}
+
+tr.b {
+	background: #F5F5F5;
+}
+
+tr.a {
+	background: #E6E6E5;
+}
+
+tr.none {
+	background: transparent;
+}
+
+a.none {
+	background: transparent;
+	padding-right: 0px;
+}
+
+.inputForm label {
+	display: block;
+	margin-top: 5px;
+}
+
+#numberRadioChoice label { display: inline !important; }
+
+.inputForm label.non {
+	display: inline !important;
+}
+
+.inputFormTable td {
+	vertical-align: top;
+	padding: 10px;
+}
+
+#nestedExampleTree {
+	width: 300px;
+}
+
+#feedbackPanel {
+	width: 600px;
+}
+
+#siteSelection {
+	width: 200px;
+}
+
+div.tabRowContent {
+	border-color: #DDDDDD;
+	border-style: solid;
+	border-width: 1px;
+	margin: 4px;
+	padding: 4px;
+}
+
+
+tr.navigation .navigatorLabel {float:left; }
+tr.navigation .navigator { text-align: right; }
+
+table{
+	font-family: 'Tahoma', 'Lucida Sans', 'Arial', 'Helvetica', 'Sans-serif', 'sans';
+	font-size: 11pt;
+}
+
+table.blockdataview {
+	margin-bottom: 10px;
+	font-family: 'Tahoma', 'Lucida Sans', 'Arial', 'Helvetica', 'Sans-serif', 'sans';
+	font-size: 11pt;
+	width: 100%;
+	}
+
+table.dataview {
+	margin-bottom: 10px;
+	border-bottom: 1px solid grey;
+	font-family: 'Tahoma', 'Lucida Sans', 'Arial', 'Helvetica', 'Sans-serif', 'sans';
+	font-size: 11pt;
+	width: 100%;
+	}
+	
+table.dataview caption { text-align: left; }
+table.dataview tr { padding-top: 2px; padding-bottom: 2px; }
+table.dataview tr.even { background-color: #ffebcd; }
+table.dataview tr.odd { background-color: #fff; }
+table.dataview tr td { padding-left: 8px; padding-right: 30px; }
+table.dataview tr th { color: black; padding-top: 3px; padding-bottom: 3px; padding-left: 8px; padding-right: 30px; background-color: #c1e4ff; border-bottom: 1px solid grey; border-top: 1px solid grey; text-align: left; white-space: nowrap; vertical-align: middle;}
+
+table.dataview tr th { background-position: right; background-repeat:no-repeat; }
+table.dataview tr th.wicket_orderDown {
+	background-color: #87cbff; background-image: url(../images/arrow_down.png); }
+table.dataview tr th.wicket_orderUp {
+	background-color: #87cbff; background-image: url(../images/arrow_up.png); }
+table.dataview tr th.wicket_orderNone {
+	background-image: url(../images/arrow_off.png);
+}
+table.dataview tr th a { font-weight: normal; }
+table.dataview #message { padding-left: 3px; }
+table.dataview caption { padding-bottom: 2px; }
+
+/* TAB PANEL STYLES */
+
+div.tabpanel div.tab-row{
+  float:left;
+  width:100%;
+  background:#DAE0D2 url("../tabs/bg.gif") repeat-x bottom;
+  line-height:normal;
+  }
+
+div.tabpanel div.tab-row ul {
+  margin:0;
+  padding:10px 10px 0;
+  list-style:none;
+  }
+  
+div.tabpanel div.tab-row li {
+  float:left;
+  background:url("../tabs/left.gif") no-repeat left top;
+  margin:0;
+  padding:0 0 0 9px;
+  }
+  
+div.tabpanel div.tab-row a {
+  display:block;
+  background:url("../tabs/right.gif") no-repeat right top;
+  padding:5px 15px 4px 6px;
+  text-decoration:none;
+  font-weight:bold;
+  white-space:nowrap;
+  color:#eee;
+  }
+  
+div.tab-panel {
+	clear: left;
+}
+  
+div.tabpanel div.tab-row a:hover {
+  color:#fff;
+  }
+  
+div.tabpanel div.tab-row li.selected {
+  background-image:url("../tabs/left_on.gif");
+  }
+  
+div.tabpanel div.tab-row li.selected a {
+  background-image:url("../tabs/right_on.gif");
+  color:#333;
+  padding-bottom:5px;
+  }
+ 
+/* VARIATION 1 TAB PANEL STYLES */
+div.tabpanel1 div.tab-row{
+  float:left;
+  width:100%;
+  background:url("../tabs1/bg2.gif") repeat-x bottom;
+  line-height:normal;
+  font-family: 'Tahoma', 'Lucida Sans', 'Arial', 'Helvetica', 'Sans-serif', 'sans';
+  font-size: 10pt;  
+  }
+
+div.tabpanel1 div.tab-row ul {
+  margin:0;
+  padding:10px 10px 0;
+  list-style:none;
+  }
+  
+div.tabpanel1 div.tab-row li {
+  float:left;
+  background:url("../tabs1/left.gif") no-repeat left top;
+  margin:0;
+  padding:0 0 0 9px;
+  }
+  
+div.tabpanel1 div.tab-row a {
+  display:block;
+  background:url("../tabs1/right.gif") no-repeat right top;
+  padding:5px 15px 4px 6px;
+  text-decoration:none;
+  font-weight:bold;
+  color:#765;
+  white-space:nowrap;
+  }
+  
+div.tabpanel1 div.tab-row a:hover {
+  color:#333;
+  }
+  
+div.tabpanel1 div.tab-row li.selected {
+  background-image:url("../tabs1/left_on.gif");
+  }
+  
+div.tabpanel1 div.tab-row li.selected a {
+  background-image:url("../tabs1/right_on.gif");
+  color:#333;
+  padding-bottom:5px;
+  }
+  
+/* TABBED PANEL VARIATION 2 */
+div.tabpanel2 div.tab-row {
+  float:left;
+  width:100%;
+  background:#369 url("../tabs2/bg.gif") repeat-x bottom;
+  font-size:85%;
+  line-height:normal;
+  }
+div.tabpanel2 div.tab-row ul {
+  margin:0;
+  padding:10px 10px 0;
+  list-style:none;
+  }
+div.tabpanel2 div.tab-row li {
+  float:left;
+  background:url("../tabs2/right.gif") no-repeat right top;
+  margin:0;
+  padding:0 5px 0 0;
+  }
+div.tabpanel2 div.tab-row a {
+  float:left;
+  display:block;
+  background:url("../tabs2/left.gif") no-repeat left top;
+  padding:5px 7px 4px 20px;
+  text-decoration:none;
+  font-weight:bold;
+  color:#9cf;
+  white-space:nowrap;
+  }
+/* Commented Backslash Hack
+   hides rule from IE5-Mac \*/
+div.tabpanel2 div.tab-row a {float:none;}
+/* End IE5-Mac hack */
+div.tabpanel2 div.tab-row a:hover {
+  color:#fff;
+  }
+div.tabpanel2 div.tab-row li.selected {
+  background-image:url("../tabs2/right_on.gif");
+  }
+div.tabpanel2 div.tab-row li.selected a {
+  background-image:url("../tabs2/left_on.gif");
+  color:#333;
+  padding-bottom:5px;
+  }
+
+/* TABBED PANEL VARIATION 3 */
+div.tabpanel3 div.tab-row {
+  float:left;
+  width:100%;
+  background:#eee url("../tabs3/bg.jpg") repeat-x top;
+  line-height:normal;
+  }
+div.tabpanel3 div.tab-row ul {
+  margin:0;
+  padding:10px 10px 0;
+  list-style:none;
+  }
+div.tabpanel3 div.tab-row li {
+  float:left;
+  background:url("../tabs3/left.gif") no-repeat left top;
+  margin:0;
+  padding:0 0 0 28px;
+  }
+div.tabpanel3 div.tab-row a {
+  float:left;
+  display:block;
+  background:url("../tabs3/right.gif") no-repeat right top;
+  padding:9px 28px 4px 0px;
+  text-decoration:none;
+  font-weight:bold;
+  color:#92A2AC;
+  }
+/* Commented Backslash Hack
+   hides rule from IE5-Mac \*/
+div.tabpanel3 div.tab-row a {float:none;}
+/* End IE5-Mac hack */
+div.tabpanel3 div.tab-row a:hover {
+  color:#A56060;
+  }
+div.tabpanel3 div.tab-row li.selected {
+  background-image:url("../tabs3/left_on.gif");
+  }
+div.tabpanel3 div.tab-row li.selected a {
+  background-image:url("../tabs3/right_on.gif");
+  color:#A56060;
+  }
+
+
+
+div.tabpanel4 div.tab-row ul {
+    height: 20px;
+    margin: 0;
+    padding-left: 10px;
+    background: url( ../tabs4/tab_bottom.gif ) repeat-x bottom;
+}
+
+div.tabpanel4 div.tab-row li {
+    margin: 0;
+    padding: 0;
+    display: inline;
+    list-style-type: none;
+}
+
+div.tabpanel4 div.tab-row a:link, div.tabpanel4 div.tab-row a:visited {
+    float: left;
+    background: #f3f3f3;
+    font-size: 12px;
+    line-height: 14px;
+    font-weight: bold;
+    padding: 2px 10px 2px 10px;
+    margin-right: 4px;
+    border: 1px solid #ccc;
+    text-decoration: none;
+    color: #666;
+}
+
+div.tabpanel4 div.tab-row li.selected a:link, div.tabpanel4 div.tab-row a:visited.active {
+    border-bottom: 1px solid #fff;
+    background: #fff;
+    color: #000;
+}
+
+div.tabpanel4 div.tab-row a:hover {
+    background: #fff;
+}
+
+/* PROGRESS BAR */
+
+    div.wupb-uploadStatus {
+        margin: 5px;
+        color: #aaa;
+    }
+
+    div.wupb-progressBar {
+        margin: 5px;
+    }
+
+    div.wupb-progressBar .wupb-border {
+	    background: url( progress-remainder.gif ) repeat-x;
+		background-color: #eee;
+        border-left: 1px solid grey;
+        border-right: 1px solid grey;
+        width: 100%;
+    }
+
+    div.wupb-progressBar .wupb-background {
+	    background: url( progress-bar.gif ) repeat-x; 
+		background-color: #507090;
+        height: 18px;
+        width: 0%;
+    }
+/* END PROGRESS BAR */
+
+table.grid {
+	margin-bottom: 10px;
+	border-bottom: 1px solid #0079d6;
+	font-size: 1em;
+	font-family: arial;
+	width: 100%;
+	}
+	
+ 
+table.grid tr { padding-top: 2px; padding-bottom: 2px; }
+table.grid tr.odd { background-color: #ffebcd; }
+table.grid tr.even { background-color: #fff; }
+table.grid tr td { padding-left: 8px; padding-right: 30px; }
+
+
+/* NAVIGATION */
+table.grid tr.navigation { text-align: left; font-size: 0.8em;}
+table.grid tr.navigation td { padding-right: 0px;}
+
+
+/* HEADERS */
+table.grid tr th { font-weight: normal; padding-top: 3px; padding-bottom: 3px; padding-left: 8px; padding-right: 24px; background-color: #c1e4ff; border-bottom: 1px solid #0079d6; border-top: 1px solid #0079d6; text-align: left; white-space: nowrap; vertical-align: middle;}
+table.grid tr th a { padding-right: 15px; background-position: right; background-repeat:no-repeat; }
+table.grid tr th.wicket_orderDown a { color:black; background-image: url(../images/arrow_down.png); }
+table.grid tr th.wicket_orderUp a { color: black; background-image: url(../images/arrow_up.png); }
+table.grid tr th.wicket_orderNone a {
+	background-image: url(../images/arrow_off.png);
+}
+table.grid tr th a { font-weight: normal; }
+
+
+/* FILTERS */
+table.grid td.filter-td { font-size: 1em; background-color: #c1e4ff; border-bottom: 1px solid #0079d6; }
+table.grid td.filter-td input.go { width: 45%; }
+table.grid td.filter-td input.clear { width: 45%; }
+table.grid td.filter-td input { width: 100%; font-size: 0.6em; }
+table.grid td.filter-td select { width: 100%; font-size: 0.6em; }
+
+tr.section td {
+	padding-top: 0.75em;
+}
+
+
+
+/* START */
+.body {
+	background-color: #c1c1ff;
+}
+
+.footerarea {
+	background: url(../images/bgslicefooter.jpg);
+	background-repeat:y;
+	bottom:0px;
+	padding: 0px;
+	height:70px;
+	color: #666666;
+	text-align: center;
+	vertical-align: text-bottom;
+	font-size: 12px;
+}
+
+.topBanner {
+	bottom:0px;
+	padding: 0px;
+	word-spacing: 0;
+	text-align: center;
+	height: 2px;
+}
+
+.topBannerTitle {
+	border-bottom: 1px solid silver;
+	border-top: 1px solid silver;
+	vertical-align: middle;
+	text-align: right;
+	background-color: #494949;
+	height: 30px;
+	font:normal 12px Verdana;
+	color: white;
+	padding:	0px 30px 0px 20px;
+	word-spacing: 0;
+}
+
+.menuarea {
+	border-top: 1px solid grey;
+	background: url(../images/bgslicetitle.jpg);
+	background-repeat:y;
+	padding: 0px 0px 0px 0px;
+	height: 70px;
+	font-family:	verdana, arial, sans-serif;
+	font-size:	12px;
+	font-weight:bold;
+	color:		black;
+	background-color:;
+	padding:	0;
+}
+
+.titleRow {
+	width: 100%;
+	padding-left:0px;
+	padding-bottom:5px;
+	vertical-align: text-top;
+}
+
+.bodyWrapper {
+	border: solid silver 1px;
+}
+
+.accessaid, h1 {
+		position: absolute;
+		height: 0;
+		overflow: hidden;
+	}
+	
+	#header {
+		position: relative;
+		padding: 0px;
+		height: 50px;
+		color: white;
+	}
+	
+	#subheader {
+		position: relative;
+	}
+	
+	#toplogo {
+		position: absolute;
+		left:20;
+	}
+	
+	#toptitle {
+		position: absolute;
+		text-align: right;
+		right: 285px;
+		color: #006699;
+	}
+	
+	#bottom {
+		position: relative;
+		height: 10px;
+		color: #8F8F8F;
+		text-align: center;
+	}
+	
+	#menu {
+		padding: 0px;
+		height: 25px;
+		border-left: 0px;
+		border-right: 0px;
+		border-top: 1px solid #6080c0;
+		border-bottom: 1px solid #6080c0;
+		background:#80a0c0;
+	}
+	
+	#navigationinternal {
+		position: relative;
+		background: url(../images/key.png) no-repeat;
+		top: 0px;
+		left: 130px;
+		width: 300px;
+		height:400px;
+		color: white;
+	}
+	
+	#navigation {
+		position: relative;
+		background: url(../images/filessmall.jpg);
+		top: 0px;
+		left: 130px;
+		width: 300px;
+		height:400px;
+		color: white;
+		border: 1px solid silver;
+	}
+	
+	#navigation ul {
+		margin: 0 0 1em 0;
+		padding: 0;
+		list-style: none;
+	}
+	
+	#navigation ul a {
+		color: white;
+		text-decoration: none;
+		display: block;
+		background: #17a;
+		padding: 0 0.5em;
+		margin: 0 1em 1px 1em;
+	}
+	
+	#navigation a:visited {
+		color: #ccc;
+	}
+	
+	#navigation a:hover {
+		background: #28b;
+	}
+	
+	#content {
+		position: relative;
+		height:auto;
+		width:auto;
+	}
+	
+	h2 {
+		font-size: 1.5em;
+		color: white;
+	}
+	
+	h3 {
+		font-size: 1.25em;
+		color: white;
+	}
+	
+	#logo {
+		position: absolute;
+		width: 100px;
+		height: 150px;
+		float: right;
+		top:0;
+		right:0;
+		margin: 0 0 1em 1em;
+		border: solid black 1px;
+		background: url(../images/buildingtransparent.jpg);
+	}
+	
+	#container {
+		/*background: url(../images/blueslicetop.png);*/
+		position: relative;
+		width: 100%; /* width + border for IE 5.x */
+		width: 100%; /* real width */
+		height: 90%;
+		border: solid black 0px;
+		margin: auto; 
+		bottom:0px;
+		vertical-align: text-top;
+	}
+	
+	#login {
+		position: absolute;
+		top: 0px;
+		left:450px;
+		width: 350px; /* width + border for IE 5.x */
+		wi\dth: 200px; /* real width */
+		height: 400px;
+		border: 1px solid silver;
+		margin: auto;
+	}
+
+.formcomponentReq {
+	border: 2px solid red;
+    border-color: red;
+}
+
+.formcomponentReqHigh {
+    background-color: #F4FA58;
+}
+
+a.detail-link {    
+	background-image:url(../images/viewdetail.png);
+	background-repeat:no-repeat;
+	background-position:inherit;   
+	height:20px;    
+	width:20px;
+}
+
+a.receipt-link {    
+	background-image:url(../images/viewreceipt.png);
+	background-repeat:no-repeat;
+	background-position:inherit;   
+	height:20px;    
+	width:20px;
+}
+
+.activity-item i {
+  float: left;
+  margin-top: 3px;
+  font-size: 16px;
+}
+
+div.activity {
+  margin-left: 28px;
+  line-height: 20px;
+}
+
+div.activity-item {
+  padding: 7px 12px;
+}
+
+#notification-list div.activity-item {
+  border-top: 1px solid #f5f5f5;
+}
+
+#notification-list div.activity-item a {
+  font-weight: 600;
+}
+
+div.activity span {
+  display: block;
+  color: #999;
+  font-size: 11px;
+  line-height: 16px;
+}
+
+#notifications i.fa {
+  font-size: 17px;
+}
+
+.noty_type_error * {
+  font-weight: normal !important;
+}
+
+.noty_type_error a {
+  font-weight: bold !important;
+}
+
+.noty_bar.noty_type_error a, .noty_bar.noty_type_error i {
+  color: #fff
+}
+
+.noty_bar.noty_type_information a {
+  color: #fff;
+  font-weight: bold;
+}
+
+.noty_type_error div.activity span {
+  color: #fff
+}
+
+.noty_type_information div.activity span {
+  color: #fefefe
+}
+	
+	

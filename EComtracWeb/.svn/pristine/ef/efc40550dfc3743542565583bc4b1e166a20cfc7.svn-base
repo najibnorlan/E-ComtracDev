@@ -1,0 +1,19 @@
+<html>
+<head>
+<title>Payment</title>
+</head>
+
+<body>
+
+<h1>
+Payment
+</h1>
+SDSDSDS
+<wicket:extend>
+<div align="center">
+<span wicket:id="viewCreditNote"></span>
+</div>
+<wicket:child/>
+</wicket:extend>
+</body>
+</html>

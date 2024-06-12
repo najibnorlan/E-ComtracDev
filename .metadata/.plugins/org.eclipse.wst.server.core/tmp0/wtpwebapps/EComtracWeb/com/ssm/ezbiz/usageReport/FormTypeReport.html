@@ -1,0 +1,88 @@
+<wicket:extend>
+	<style>
+		.uv-chart-div{
+			height: 79% !important;
+		}
+	</style>
+	<form wicket:id="form">
+		<div class="ui form">
+			<table>
+				<tr>
+					<td>
+						<div class="ui top attached segment">
+							<div class="ui top attached label">
+								<h4 class="ui header">
+									<wicket:message
+										key="page.lbl.ezbiz.monthlyReport.title" />
+								</h4>
+							</div>
+							<table>
+								<tr>
+									<td>
+										<div class="field">
+											<label><span wicket:id="statusLabel" /></label> <select wicket:id="status"></select>
+										</div>
+									</td>
+									<td>&nbsp;</td>
+									<td>
+										<div class="field">
+											<label><span wicket:id="yearLabel" /></label> <select wicket:id="year"></select>
+										</div>
+									</td>
+								</tr>
+								<tr>
+									<td>&nbsp;</td>
+								</tr>
+								<tr>
+									<td>
+									<input wicket:id="search" type="button"
+										class="ui primary button" value="Search" />
+										
+										</td>
+								</tr>
+								<tr>
+									<td>&nbsp;</td>
+								</tr>
+								<tr>
+									<td style="font-size: 12px;">Last Update : <span wicket:id="lastUpdate"></span> &nbsp; <button class="ui icon button teal mini" wicket:id="updateData"><i class="refresh icon "></i></button></td>
+								</tr>
+							</table>
+						</div>
+					</td>
+				</tr>
+			</table>
+		</div>
+	</form>
+	<div class="ui segment center aligned">
+		<div wicket:id="divStacked">
+			<br>
+			<div id="uv-div"></div>
+		</div>
+		<div wicket:id="tableDiv">
+			<table class="ui striped celled blue definition table">
+				<thead>
+					<tr>
+						<th>&nbsp;</th>
+						<th wicket:id="monthList"><span wicket:id="month"></span></th>
+						<th>TOTAL</th>
+					</tr>
+				</thead>
+				<tbody>
+					<tr wicket:id="statItems">
+						<td><span wicket:id="statType"></span></td>
+						<td wicket:id="monthData" class="right aligned"><span wicket:id="value"></span></td>
+						<td class="right aligned"><b><span wicket:id="categoryTotal"></span></b></td>
+					</tr>
+					<tr>
+						<td>TOTAL</td>
+						<td wicket:id="monthListTotal" class="right aligned">
+							<b><span wicket:id="monthTotal"></span></b>
+						</td>
+						<td class="right aligned"><b><span wicket:id="grandTotal"></span></b></td>
+					</tr>
+				</tbody>
+			</table>
+		</div>
+	</div>
+	<script wicket:id="jsScript"></script>
+</wicket:extend>

@@ -1,0 +1,76 @@
+<wicket:extend>
+	<form wicket:id="form" class="ui form">			
+			<div class="ui top attached segment">
+				<div class="ui top attached label">
+							<h4 class="ui header">
+							<wicket:message key="page.lbl.ezbiz.listCheckInCounter.headlbl" />
+							</h4>
+				</div>
+				
+				<table>
+				
+					<tr>
+						<td>
+							<div class="field">
+							<label><span wicket:id="branchLabel" /></label> 
+										<select wicket:id="branch"></select>					
+							</div>
+						</td>
+					</tr>
+				
+					<tr>
+						<td>
+							<div class="field">
+							<label><span wicket:id="floorLevelLabel" /></label> 
+										<select wicket:id="floorLevel"></select>
+							</div>
+						</td>
+					</tr>
+					<tr><td>&nbsp;</td></tr>
+							<tr>
+								<td><input wicket:id="search" type="button" class="ui primary button" value="Search" /></td>
+							</tr>
+				</table>
+		</div>
+	</form>
+	<div wicket:id="wmcSearchResult">
+				<table class="ui striped table">
+			  		<thead>
+			    		<tr>
+			    			<th width="10%"><wicket:message key="page.lbl.ezbiz.listCheckInCounter.checkInDatetbl" /></th>
+			    			<th width="15%"><wicket:message key="page.lbl.ezbiz.listCheckInCounter.checkInUserIdTbl" /></th>
+							<th width="15%"><wicket:message key="page.lbl.ezbiz.listCheckInCounter.checkInCounterNameTbl" /></th>
+							<th width="15%"><wicket:message key="page.lbl.ezbiz.listCheckInCounter.checkInCounterTypeTbl" /></th>
+							<th width="15%"><wicket:message key="page.lbl.ezbiz.listCheckInCounter.checkInBranch" /></th>
+							<th width="15%"><wicket:message key="page.lbl.ezbiz.listCheckInCounter.checkInFloorTbl" /></th>
+							<th width="10%"><wicket:message key="page.lbl.ezbiz.listCheckInCounter.checkInBalanceStatusTbl" /></th>
+							<th width="10%"><wicket:message key="page.lbl.ezbiz.listCheckInCounter.checkInActionTbl" /></th>
+			  			</tr>
+			 		 </thead>
+			  	<tbody>
+			    	<tr wicket:id="sorting">
+						<td><span wicket:id="checkinDate">[checkinDate]</span></td>
+						<td><span wicket:id="userId">[userId]</span></td>
+						<td><span wicket:id="counterName">[counterType]</span></td>
+						<td><span wicket:id="counterType">[counterType]</span></td>
+						<td><span wicket:id="branch">[branch]</span></td>
+						<td><span wicket:id="floorLevel">[floorLevel]</span></td>
+						<td><span wicket:id="balancingStatus">[balancingStatus]</span></td>
+					<td class="manage-link">
+						 <a wicket:id="checkOut" href="#" wicket:message="title:page.lbl.ezbiz.listCheckInCounter.checkOut"><i class="remove user icon"></i></a>
+						 <a wicket:id="counterBalance" href="#" wicket:message="title:page.lbl.ezbiz.listCheckInCounter.counterbalance"><i class="money icon"></i></a>
+					</td>
+
+					</tr>
+				  </tbody>
+				  <tfoot>
+				    	<tr>
+				    		<th colspan="100">
+				    			<span wicket:id="navigatorLabel">[dataView navigatorLabel]</span>
+					        	<span wicket:id="navigator">[dataView navigator]</span>
+				    		</th>
+				  		</tr>
+				  </tfoot>
+				</table>
+			</div>
+</wicket:extend>

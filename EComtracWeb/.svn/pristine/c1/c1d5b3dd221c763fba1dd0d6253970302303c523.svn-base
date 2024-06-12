@@ -1,0 +1,48 @@
+<html>
+<head>
+<link rel="stylesheet" type="text/css" href="semantic/semantic.min.css">
+<link rel="stylesheet" type="text/css" href="css/styles.css" />
+<script type="text/javascript" src="js/ssmScript.js"></script>
+
+
+<link rel="stylesheet" href="jquery/jquery-ui.css">  
+<link href="jquery-ticker/css/main.css" rel="stylesheet">
+<link href="jquery-ticker/css/font-awesome.min.css" rel="stylesheet">
+<link rel="shortcut icon" href="images/ezbizMobile.gif"> 
+
+<script src="jquery/jquery-1.9.1.js"></script>  
+<script src="js/jquery.browser.min.js"></script>  
+<script src="jquery/jquery-ui.js"></script>  
+<script src="semantic/semantic.min.js"></script>
+<script src="semantic/components/form.js"></script>
+
+<script src="jquery-ticker/js/jquery.newsTicker.js"></script>
+<script src="js/jquery.jfeed.pack.js"></script>
+
+<script type="text/javascript" src="js/d3.v3.min.js"></script>
+<script src="js/uvcharts.min.js"></script> 
+</head>
+<body>
+<div id="loadingIndicator_id" style="display:none;">
+ <div class="ui active inverted dimmer">
+    <div class="ui large text loader">Loading</div>
+  </div>
+</div>
+		<div id="content" class="two column row stackable doubling equal width grid container">		
+			<div class="ui raised segment column" >	
+				<div class="blue ui top attached label">EZBIZ ONLINE INTERFACE</div>							
+				<div align="center">
+				<table>
+					<tr align="center">
+						<td>
+							&nbsp;<div id="body" >
+							<span wicket:id="feedback" />				
+						</div> 
+						</td>
+					</tr>
+				  </table>
+				  </div>
+			</div>
+		</div>
+</body>
+</html>

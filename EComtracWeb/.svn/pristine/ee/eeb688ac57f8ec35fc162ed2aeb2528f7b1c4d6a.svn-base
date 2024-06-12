@@ -1,0 +1,84 @@
+<wicket:extend>
+	<form wicket:id="form" class="ui form">
+		<div class="ui top attached segment" style="width: 100%">
+			<table>
+				<tr>
+					<td>
+						<div class="field" style="width: 300">
+							<span wicket:id="fileCodeLabel" /> 
+							<input wicket:id="fileCode" type="text" size="50" />
+						</div>
+					</td>
+				</tr>
+				<tr>
+					<td>
+						&nbsp;
+					</td>
+				</tr>
+				<tr>
+					<td>
+						<div class="field" style="width: 400">
+							<span wicket:id="fileDescLabel" />
+							<textarea wicket:id="fileDesc" cols="100" rows="5" />
+						</div>
+					</td>
+				</tr>
+				<tr>
+					<td>
+						&nbsp;
+					</td>
+				</tr>
+				<tr>
+					<td>
+						<div class="field">
+							<span wicket:id="fileStatusLabel" /> <div
+								wicket:id="fileStatus"></div>
+						</div>
+					</td>
+				</tr>
+				<tr>
+					<td>
+						&nbsp;
+					</td>
+				</tr>
+				<wicket:enclosure child="fileName">
+					<tr>
+						<td>
+							<div class="field" style="width: 600">
+								<span wicket:id="fileNameLabel" /> <input wicket:id="fileName"
+									type="text" size="100" />
+							</div>
+						</td>
+					</tr>
+				<tr>
+					<td>
+						&nbsp;
+					</td>
+				</tr>					
+				</wicket:enclosure>
+				<tr>
+					<td>
+						&nbsp;
+					</td>
+				</tr>
+				<tr>
+					<td>
+						<div class="field">
+							<wicket:message key="llpFileAttach.page.selectFile" />
+							<input wicket:id="fileUploadTmp" size="50" type="file" />
+						</div>
+					</td>
+				</tr>
+			</table>
+			<br>
+				<div align="left">
+					<button class="ui primary button" wicket:id="save">
+						<wicket:message key="page.lbl.ezbiz.button.save" />
+					</button> 
+					<button class="ui primary button" wicket:id="cancel">
+						<wicket:message key="page.lbl.ezbiz.button.cancel" />						
+					</button>
+				</div>
+		</div>
+	</form>
+</wicket:extend>

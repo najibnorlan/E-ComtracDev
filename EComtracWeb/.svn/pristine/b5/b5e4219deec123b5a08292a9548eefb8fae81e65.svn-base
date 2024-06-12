@@ -1,0 +1,300 @@
+<wicket:extend>
+	<form wicket:id="form" class="ui form">
+	  <script type="text/javascript" wicket:id="userOku"></script> 
+		<div class="ui top attached segment">
+			<div class="ui top attached label">
+				<h4 class="ui header">
+					<wicket:message key="page.lbl.user.profile.oku.headerUserProfileEdit" />
+				</h4>
+			</div>
+
+			<table>
+				<tr>
+					<td>
+						<div class="field">
+							<label><wicket:message key="page.lbl.user.profile.oku.userRefNo" /></label>
+							<span wicket:id="userRefNo" type="text" />
+						</div>
+					</td>
+				</tr>
+				<tr>
+					<td>&nbsp;</td>
+				</tr>
+
+				<tr>
+					<td>
+						<div class="group fields">
+							<div class="field">
+								<label><wicket:message key="page.lbl.user.profile.oku.idType" /></label><span
+									type="text" wicket:id="idType" />
+							</div>
+							<div class="field">
+								<label><wicket:message key="page.lbl.user.profile.oku.idNo" /></label>
+								<span type="text" wicket:id="idNo" />
+							</div>
+							<div class="field">
+								<label><wicket:message key="page.lbl.user.profile.oku.name" /></label>
+								<span type="text" wicket:id="name" />
+							</div>
+						</div>
+					</td>
+				</tr>
+				<tr>
+					<td>&nbsp;</td>
+				</tr>
+
+				<tr>
+					<td>
+						<div class="group fields">
+							<div class="field">
+								<label><wicket:message
+										key="page.lbl.user.profile.oku.nationality" /></label> <span type="text"
+									wicket:id="nationality" />
+							</div>
+							<div class="field">
+								<label><wicket:message key="page.lbl.user.profile.oku.gender" /></label><span
+									type="text" wicket:id="gender" />
+							</div>
+							<div class="field">
+								<label><wicket:message key="page.lbl.user.profile.oku.race" /></label>
+								<span type="text" wicket:id="race" />
+							</div>
+						</div>
+					</td>
+				</tr>
+			</table>
+		</div>
+		<br>
+
+		<div class="ui top attached segment">
+			<div class="ui top attached label">
+				<h4 class="ui header">
+					<wicket:message key="page.lbl.user.profile.oku.headerUserProfileOkuEdit" />
+				</h4>
+			</div>
+			<table>
+			<br>
+				<tr>
+					<td>
+						<div class="field">
+							<label><wicket:message key="page.lbl.user.profile.oku.okuRefNo" /></label> <span wicket:id="okuRefNo" />
+						</div>
+					</td>
+				</tr>
+				<tr>
+					<td>&nbsp;</td>
+				</tr>
+
+<!--  			<tr>
+					<td>
+						<div class="field">
+							<label><wicket:message
+									key="page.lbl.user.profile.oku.applicationDt" /></label> <span
+								wicket:id="applicationDt" />
+						</div>
+					</td>
+				</tr>
+				<tr>
+					<td>&nbsp;</td>
+				</tr>
+
+				<tr>
+					<td>
+						<div class="field">
+							<label><wicket:message
+									key="page.lbl.user.profile.oku.approvalDt" /></label> <span
+								wicket:id="approvalDt" />
+						</div>
+					</td>
+				</tr>
+				<tr>
+					<td>&nbsp;</td>
+				</tr>
+
+				<tr>
+					<td>
+						<div class="field">
+							<label><wicket:message
+									key="page.lbl.user.profile.oku.approveBy" /></label> <span type="text"
+								wicket:id="approveBy" />
+						</div>
+					</td>
+				</tr>
+				<tr>
+					<td>&nbsp;</td>
+				</tr>
+	-->	
+
+				<tr>
+					<td>
+						<div class="field">
+							<label><wicket:message
+									key="page.lbl.user.profile.oku.okuRegStatus" /></label> <span
+								type="text" wicket:id="okuRegStatus" />
+						</div>
+					</td>
+				</tr>
+				<tr>
+					<td>&nbsp;</td>
+				</tr>
+
+
+				<div wicket:id="wmcUserProfileOku">
+					<tr>
+						<td>
+							<div class="field">
+								<label><span wicket:id="okuCardNoLabel" /></label> <input
+									type="text" wicket:id="okuCardNo" size="50" />
+							</div>
+						</td>
+					</tr>
+					<tr>
+						<td>&nbsp;</td>
+					</tr>
+
+					<tr>
+						<td>
+							<div class="field">
+								<label><span wicket:id="okuCategoryLabel" /></label><select
+									wicket:id="okuCategory"></select>
+							</div>
+						</td>
+					</tr>
+
+					<tr>
+						<td>&nbsp;</td>
+					</tr>
+
+					<tr>
+						<td>
+							<div class="ui top attached segment">
+								<div class="ui top attached label">
+									<h4 class="ui header">
+										<wicket:message key="page.lbl.user.profile.oku.headerAttachment" />
+									</h4>
+								</div>
+								<table width="100%" class="ui large table">
+									<tr>
+										<td>
+											<div class="field">
+												<label><wicket:message
+														key="page.lbl.user.profile.oku.selectFile" /></label> 
+											<label><span wicket:id="userOkuFileUploadLabel" /></label><input wicket:id="userOkuFileUpload" size="40" type="file" /> 
+														<input wicket:id="uploadOkuSuppDocBtn" type="button"
+													class="ui primary button"
+													wicket:message="value:page.lbl.user.profile.oku.uploadOkuSuppDocBtn" />
+												&nbsp;&nbsp;<br> 
+												<input wicket:id="downloadSuppDocOku" type="button" class="ui primary button" wicket:message="value:page.lbl.user.profile.oku.downloadSuppDocOku"/>
+												<input wicket:id="removeSuppDocOkuBtn" type="button"
+													class="ui primary button"
+													wicket:message="value:page.lbl.user.profile.oku.removeSuppDocOkuBtn" /> <br>
+												<span style="color: red" wicket:id="uploadErrorLabel"></span>
+											</div>
+										</td>
+									</tr>
+								</table>
+							</div>
+						</td>
+					</tr>
+
+					<tr>
+						<td>&nbsp;</td>
+					</tr>
+					
+			<wicket:enclosure child="notes">		
+						<tr>
+							<td>
+								<div class="field">
+									<label><span wicket:id="notesLabel" /></label>
+									<textarea wicket:id="notes" rows="7" cols="80"
+										style="background-color: silver;" />
+								</div>
+							</td>
+						</tr>
+			</wicket:enclosure>
+			<wicket:enclosure child="queryAnswer">
+				<tr>
+					<td>&nbsp;</td>
+				</tr>
+					<tr>
+						<td>
+								<div class="field">
+									<label><span wicket:id="queryAnswerLabel" /></label>
+									<textarea wicket:id="queryAnswer" rows="7" cols="80" />
+								</div>
+						</td>	
+					</tr>
+					<tr>
+					<td>&nbsp;</td>
+				</tr>
+				</wicket:enclosure>
+				
+				</div>
+				<!-- wmcUserProfileOku end -->
+				
+				
+				<wicket:enclosure child="discardAppChkBox"> 
+				<br>
+				<tr>
+					<td>&nbsp;</td>
+				</tr>
+		<tr>
+			<td>
+				<div class="ui checkbox field">
+					<input wicket:id="discardAppChkBox" type="checkbox" /> <label><span
+						wicket:id="discardAppChkBoxLabel" /></label>
+				</div>
+			</td>
+		</tr>
+					<tr>
+						<td>
+							<div style="text-align: left">
+							<br>
+								<label><b><span wicket:id="remarkDiscardAppLbl"></span></b></label>
+								<textarea wicket:id="remarkDiscardApp" ></textarea>
+							</div>
+							<br>
+							<div align="right">
+							<button wicket:id="discardAppBtn" class="ui button negative">WITHDRAW APPLICATION</button>
+							</div>
+							
+						</td>
+					</tr>
+			</wicket:enclosure> 
+			
+			</table>
+		</div>
+
+		<tr>
+			<td>&nbsp;</td>
+		</tr>
+
+		<tr>
+			<wicket:enclosure child="declarationChkBox">
+				<div class="ui checkbox field">
+					<input wicket:id="declarationChkBox" type="checkbox" /> <label><span
+						wicket:id="declarationChkBoxLabel" /></label>
+				</div>
+			</wicket:enclosure>
+		</tr>
+
+		<tr>
+			<td>&nbsp;</td>
+		</tr>
+
+		<tr>
+			<div class="field">
+				<input wicket:id="saveBtn" class="ui primary button" type="submit"
+					wicket:message="value:page.lbl.user.profile.oku.btnSave" />  
+			
+				<input wicket:id="reSubmitAppBtn" class="ui primary button"
+					type="submit" wicket:message="value:page.lbl.user.profile.oku.btnReSubmit" />
+			
+				<input wicket:id="cancelBtn" class="ui primary button"
+					type="submit" wicket:message="value:page.lbl.user.profile.oku.btnCancel" />
+			</div>
+		</tr>
+
+		<br>
+	</form>
+</wicket:extend>

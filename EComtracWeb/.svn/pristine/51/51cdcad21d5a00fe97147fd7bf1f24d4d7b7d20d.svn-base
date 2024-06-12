@@ -1,0 +1,24 @@
+<wicket:extend>	
+		<wicket:message key="page.ssmanywhere.intro"/>
+		<br><br>
+		<table style="-webkit-box-shadow:0 0 20px blue; background-color: #ece6e3;" border="1" width="100%">
+			<tr height="80px" valign="middle">
+				<td align="center">
+					<a href="#" wicket:id="ezBizLink" style="border: thin;">
+						<img src="images/ezbizMobile.png" height="70px" align="middle"/>
+					</a>
+				</td>
+			</tr>
+		</table>
+		<br/>
+		<table style="-webkit-box-shadow:0 0 20px blue; background-color: #ece6e3;" border="1"  width="100%" >
+			<tr height="80px" valign="middle">
+				<td align="center">
+					<a href="#" wicket:id="eSearchLink" >
+						<img src="images/esearch.png" height="60px" align="middle" />
+					</a>
+				</td>
+			</tr>
+		</table>
+</wicket:extend>
+

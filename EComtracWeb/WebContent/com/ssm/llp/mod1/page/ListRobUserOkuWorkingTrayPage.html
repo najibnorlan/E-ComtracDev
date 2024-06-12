@@ -1,0 +1,124 @@
+<wicket:extend>
+	<form wicket:id="form" class="ui form">
+		<div class="ui segments">
+			<table>
+				<tr>
+					<td>
+						<!--  <div class="ui horizontal segments"> -->
+						<div class="ui top attached segment">
+							<div class="ui top attached label">
+								<h4 class="ui header">
+									<wicket:message
+										key="page.lbl.user.profile.oku.headerWorkingTray" />
+								</h4>
+							</div>
+							<table>
+							<tr>
+							<td>
+							 <div class="field">
+							 <label><span wicket:id="okuRegStatusLabel" /></label> <select
+													wicket:id="okuRegStatus" ></select>
+							 </div>
+							</td>
+							</tr>
+							<tr>
+								 <td>&nbsp; </td> 
+									
+								</tr>
+								<tr>
+									<td>
+										<!--  <div class="ui segment"> -->
+										<div class="two fields">
+											<div class="field">
+												<label><span wicket:id="idTypeLabel" /></label> <select
+													wicket:id="idType" ></select>
+											</div>
+											
+											<div class="field">
+												<label><span wicket:id="idNoLabel" /></label> <input type="text"
+													wicket:id="idNo" />
+											</div>
+										</div> <!--  </div> -->
+									</td>
+								</tr>
+
+
+								<tr>
+								 <td>&nbsp; </td> 
+									
+								</tr>
+
+
+								<tr>
+									<td>
+										<div>
+										<input wicket:id="searchBtn" type="button"
+										class="ui primary button" value="SearchBtn" style="width: 150"/>
+										
+										&nbsp;&nbsp;&nbsp;&nbsp;
+										
+										<input wicket:id="regNewOkuBtn" type="button"
+										class="ui primary button" value="regNewOkuBtn" style="width: 200"/>
+										</div>	
+									</td>  	
+								</tr>
+								
+							</table>
+						</div>
+					</td>
+				</tr>
+			</table>
+		</div>
+		<br>
+		
+		<div wicket:id="wmcSearchResult">
+			<table class="ui striped table">
+				<thead>
+					<tr>
+						<th width="15%"><wicket:message
+								key="page.lbl.user.profile.oku.okuRefNo" /></th>
+						<th width="30%"><wicket:message
+								key="page.lbl.user.profile.oku.name" /></th>
+						<th width="15%"><wicket:message
+								key="page.lbl.user.profile.oku.idNo" /></th>
+						<th width="15%"><wicket:message
+								key="page.lbl.user.profile.oku.applicationDt" /></th>
+						<th width="15%"><wicket:message
+								key="page.lbl.user.profile.oku.okuRegStatus" /></th>
+						<th width="15%"><wicket:message
+								key="page.lbl.user.profile.oku.okuCardNo" /></th>
+						<th width="15%"><wicket:message
+								key="page.lbl.user.profile.oku.updateDt" /></th>
+						<th width="10%"><wicket:message
+								key="page.lbl.user.profile.oku.actionWorkingTray" /></th>
+					</tr>
+				</thead>
+
+				<tbody>
+					<tr wicket:id="sorting">
+						<td><span wicket:id="okuRefNo">[okuRefNo]</span></td>
+						<td><span wicket:id="name">[name]</span></td>
+						<td><span wicket:id="idNo">[idNo]</span></td>
+						<td><span wicket:id="applicationDt">[applicationDt]</span></td>
+						<td><span wicket:id="okuRegStatus">[okuRegStatus]</span></td>
+						<td><span wicket:id="okuCardNo">[okuCardNo]</span></td>
+						<!--	<td><span wicket:id="createDt">[createDt]</span></td>  -->
+						<td><span wicket:id="updateDt">[updateDt]</span></td>
+						<td class="manage-link"><a wicket:id="detail" href="#"
+							wicket:message="title:page.lbl.user.profile.oku.detailWorkingTray"><i
+								class="Edit icon" /></a></td>
+					</tr>
+				</tbody>
+
+				<tfoot>
+					<tr>
+						<th colspan="100"><span wicket:id="navigatorLabel">[dataView
+								navigatorLabel]</span> <span wicket:id="navigator">[dataView
+								navigator]</span></th>
+					</tr>
+				</tfoot>
+			</table>
+		</div>
+	</form>
+</wicket:extend>
+

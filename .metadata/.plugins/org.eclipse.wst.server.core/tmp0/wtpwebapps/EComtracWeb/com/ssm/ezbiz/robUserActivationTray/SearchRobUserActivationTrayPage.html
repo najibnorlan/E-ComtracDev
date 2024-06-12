@@ -1,0 +1,84 @@
+<wicket:extend>
+	<form wicket:id="form" class="ui form">
+		<div class="ui segments">
+			  <div class="ui segment">
+					<div class="three fields">
+						<div class="field">
+							<label><span wicket:id="appRefNoLabel"/></label>
+							 <input type="text" wicket:id="appRefNo"/>
+						</div>
+						<div class="field">
+							<label><span wicket:id="loginIdLabel"/></label>
+							 <input type="text" wicket:id="loginId"/>
+						</div>
+						<div class="field">
+							<label><span wicket:id="idNoLabel"/></label>
+							 <input type="text" wicket:id="idNo"/>
+						</div>
+					</div>
+				</div>
+				<div class="ui segment">
+						<input wicket:id="search" type="button" class="ui primary button"  />
+				</div>
+			</div>
+		
+		<div wicket:id="wmcSearchResult">
+			<table class="ui striped table">
+			  <thead>
+			    	<tr>
+			    	<th width="15%"><wicket:message key="page.lbl.ezbiz.robUserActivationTray.refNo" /></th>
+					<th width="20%"><wicket:message key="page.lbl.ezbiz.robUserActivationTray.name" /></th>
+					<th width="10%"><wicket:message key="page.lbl.ezbiz.robUserActivationTray.status" /></th>
+					<th width="15%"><wicket:message key="page.lbl.ezbiz.robUserActivationTray.date" /></th>
+					<th width="15%"><wicket:message key="page.lbl.ezbiz.robUserActivationTray.lock" /></th>
+					<th width="10%"><wicket:message key="page.lbl.ezbiz.robUserActivationTray.processInfo" /></th>
+					<th width="10%"><wicket:message key="page.lbl.ezbiz.robUserActivationTray.action" /></th>
+			  	</tr>
+			  </thead>
+			  <tbody>
+			  
+			    <tr wicket:id="sorting">
+					<td>
+						<div class="field">
+							 <span wicket:id="appRefNo"/>
+						</div>
+						<div class="field inline">
+							 <span wicket:id="loginId"/>
+						</div>
+					</td>
+					<td>
+						<div class="field inline">
+							 <span wicket:id="name"/>
+						</div>
+						<div class="field inline">
+							 <span wicket:id="idNo"/>
+						</div>
+					</td>
+					<td><span wicket:id="status">[status]</span></td>
+					<td>
+						<div class="field inline">
+							 <span wicket:id="createDt"/>
+						</div>
+						<div class="field inline">
+							 <span wicket:id="updateDt"/>
+						</div>
+					</td>
+					<td><span wicket:id="lockBy">[lockBy]</span></td>
+					<td><span wicket:id="processInfo">[processInfo]</span></td>
+					<td class="manage-link">
+						 <a wicket:id="detail" href="#" wicket:message="title:page.lbl.ezbiz.robUserActivationTray.detail"><i class="Edit icon" /></a>
+					</td>
+				</tr>
+			  </tbody>
+			  <tfoot>
+			    <tr>
+			    	<th colspan="100">
+			    		<span wicket:id="navigatorLabel">[dataView navigatorLabel]</span>
+				        <span wicket:id="navigator">[dataView navigator]</span>
+			    	</th>
+			  </tr></tfoot>
+			</table>
+		</div>
+		<div wicket:id="processLockAlert" > </div>
+	</form>
+</wicket:extend>

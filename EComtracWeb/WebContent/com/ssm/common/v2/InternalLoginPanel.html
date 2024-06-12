@@ -1,0 +1,45 @@
+<wicket:extend>
+<div id="internalLoginModal" class="ui modal" style="z-index: 999">
+	<div class="header" style="background-color: LightSteelBlue;">Titile</div>
+	<div class="content">
+		<div class="ui middle aligned center aligned grid">
+			<div class="column">
+				<h2 class="ui teal image header">
+					<div class="content">Internal Login Page</div>
+				</h2>
+				<form class="ui large form" wicket:id="signInForm" > 
+					<div class="ui stacked segment">
+						<div class="field">
+							<div class="ui left icon input">
+								<i class="user icon"></i> <input  wicket:id="username" type="text" name="username" placeholder="Username">
+							</div>
+						</div>
+						<div class="field">
+							<div class="ui left icon input">
+								<i class="lock icon"></i> <input wicket:id="password" type="password" name="password" placeholder="Password">
+							</div>
+						</div>
+						
+						<div class="field">
+								<img wicket:id="captchaImage" style="width: 300px" align="center"/>&nbsp;
+					<span wicket:id="refreshCaptcha">
+						<i class="large refresh icon "></i>
+					</span>
+								<label><span wicket:id="captchaWordLabel" hidden="true"/></label>
+								<input wicket:id="captchaWord" type="text" size="20" placeholder="VERIFICATION CODE"/>
+						</div>
+						<div class="ui fluid large teal submit button"  wicket:id="loginButton" >Login</div>
+					</div>
+
+					<div class="ui error message"></div>
+
+				</form>
+
+				<div class="ui message">
+					New to us? <a href="#">Sign Up</a>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+</wicket:extend>

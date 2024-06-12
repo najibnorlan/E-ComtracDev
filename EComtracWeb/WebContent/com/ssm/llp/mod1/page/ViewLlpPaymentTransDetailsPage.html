@@ -1,0 +1,32 @@
+<wicket:extend>
+	<div id="llpPaymentTransaction">
+		<div>
+		<table class="ui striped table">
+			<thead>
+				<tr colspan="4">
+					<th wicket:id="orderByItem"><span><wicket:message key="otcpayment.page.creditnoteslip.paymentItems"/></span></th>
+					<th><span><wicket:message key="page.lbl.ezbiz.cmp.detail"/></span></th>
+					<th><span><wicket:message key="paymentdetails.page.quantity"/></span></th>
+					<th><span><wicket:message key="listParticipant.amount"/></span></th>
+				</tr>
+			</thead>
+			<tbody>
+				<tr wicket:id="sorting" colspan="4">
+					<td><span wicket:id="paymentItem">[paymentItem]</span></td>
+					<td><span wicket:id="detail">[detail]</span></td>
+					<td><span wicket:id="quantity">[quantity]</span></td>
+					<td><span wicket:id="amount">[amount]</span></td>
+				</tr>
+			</tbody>
+			<tfoot>
+				<tr>
+	    			<th colspan="4">
+	    			<span wicket:id="navigatorLabel">[dataView navigatorLabel]</span>
+		        	<span wicket:id="navigator">[dataView navigator]</span>
+	    			</th>
+	  			</tr>
+			</tfoot>
+		</table>
+	</div>
+	</div>
+</wicket:extend>

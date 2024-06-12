@@ -1,0 +1,39 @@
+<wicket:extend>
+	<form wicket:id="inputForm" id="inputForm">
+		<table>
+			<tr>
+				<td><wicket:message key="llpReg.page.bizcode.keyword"/></td>
+				<td><input wicket:id="searchString" type="text" name="search"/></td>
+				<td><input wicket:id="ajaxSubmitSearch" type="button" value="Search"/></td>
+			</tr>
+		</table>
+		<br>
+		<div wicket:id="listDataView">
+		    <table class="blockdataview" cellspacing="0" width="100%" border="0">
+				<tr>
+					<td align="left"><span wicket:id="navigatorLabel">[dataview navigatorLabel]</span></td>
+					<td align="right"><span wicket:id="navigator">[dataview navigator]</span></td>
+				</tr>
+				<tr>
+				
+					<td colspan="2">
+						<table cellspacing="0" class="dataview" width="100%">
+						    <tr>
+						        <th><wicket:message key="llpReg.page.bizcode.code"/></th>
+						        <th><wicket:message key="llpReg.page.bizcode.desc"/></th>
+						        <th><wicket:message key="llpReg.page.bizcode.select"/></th>
+						    </tr>
+						    <tr wicket:id="sorting">
+						        <td><span wicket:id="businessCode">[businessCode]</span> </td>
+						        <td><span wicket:id="businessDesc">[businessDesc]</span> </td>
+						        <td> <input wicket:id="check" type="checkbox" /> </td>
+						    </tr>
+						</table>
+					</td>
+				</tr>
+			</table>
+		</div>
+		<br>
+		<input wicket:id="ajaxSubmit" type="button" value="Submit"/>
+	</form>	  
+</wicket:extend>

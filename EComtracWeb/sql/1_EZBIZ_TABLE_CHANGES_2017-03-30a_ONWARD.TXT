@@ -1,0 +1,314 @@
+
+//3 April 2017
+
+ALTER TABLE rob_user_profile
+    ADD id_color VARCHAR(50)
+GO
+
+ALTER TABLE rob_user_profile_aud
+    ADD id_color VARCHAR(50)
+GO
+
+//5 april 2017
+ALTER TABLE rob_form_a
+    ADD approve_reject_dt DATETIME YEAR to SECOND,
+    ADD approve_reject_notes VARCHAR(250)
+GO
+ALTER TABLE rob_form_a_aud
+    ADD approve_reject_dt DATETIME YEAR to SECOND,
+    ADD approve_reject_notes VARCHAR(250)
+GO
+ALTER TABLE rob_counter_session
+    ADD branch VARCHAR(10)
+GO
+ALTER TABLE rob_counter_session_aud
+    ADD branch VARCHAR(10)
+GO    
+
+--11/4/2017
+
+CREATE TABLE rob_name_type_stat_report ( 
+    stat_id         SERIAL8 NOT NULL,
+    stat_month      VARCHAR(50) NOT NULL,
+    stat_year       VARCHAR(50) NOT NULL,
+    trade_name      INTEGER DEFAULT 0 NOT NULL,
+    personal_name   INTEGER DEFAULT 0 NOT NULL,
+    status          VARCHAR(50) NOT NULL,
+    create_dt       DATETIME YEAR to SECOND NOT NULL,
+    create_by       VARCHAR(50) NOT NULL,
+    update_dt       DATETIME YEAR to SECOND NOT NULL,
+    update_by       VARCHAR(50) NOT NULL,
+    PRIMARY KEY(stat_id)
+)
+GO
+
+CREATE TABLE rob_form_type_stat_report ( 
+    stat_id         SERIAL8 NOT NULL,
+    stat_month      VARCHAR(50) NOT NULL,
+    stat_year       VARCHAR(50) NOT NULL,
+    form_a          INTEGER DEFAULT 0 NOT NULL,
+    form_a1         INTEGER DEFAULT 0 NOT NULL,
+    form_b          INTEGER DEFAULT 0 NOT NULL,
+    form_c          INTEGER DEFAULT 0 NOT NULL,
+    compound        INTEGER DEFAULT 0 NOT NULL,
+    status          VARCHAR(50) NOT NULL,
+    create_dt       DATETIME YEAR to SECOND NOT NULL,
+    create_by       VARCHAR(50) NOT NULL,
+    update_dt       DATETIME YEAR to SECOND NOT NULL,
+    update_by       VARCHAR(50) NOT NULL,
+    PRIMARY KEY(stat_id)
+)
+GO
+
+-- 13/04/2017
+ALTER TABLE rob_form_b
+    ADD approve_reject_dt DATETIME YEAR to SECOND,
+    ADD approve_reject_notes VARCHAR(250);
+GO
+ALTER TABLE rob_form_b_aud
+    ADD approve_reject_dt DATETIME YEAR to SECOND,
+    ADD approve_reject_notes VARCHAR(250);
+GO
+ALTER TABLE rob_form_c
+    ADD approve_reject_dt DATETIME YEAR to SECOND,
+    ADD approve_reject_notes VARCHAR(250);
+GO
+ALTER TABLE rob_form_c_aud
+    ADD approve_reject_dt DATETIME YEAR to SECOND,
+    ADD approve_reject_notes VARCHAR(250);
+GO
+ALTER TABLE rob_renewal
+    ADD approve_reject_dt DATETIME YEAR to SECOND,
+    ADD approve_reject_notes VARCHAR(250);
+GO
+ALTER TABLE rob_renewal_aud
+    ADD approve_reject_dt DATETIME YEAR to SECOND,
+    ADD approve_reject_notes VARCHAR(250);
+GO
+
+RENAME COLUMN ssm_my_kad.email TO ezbiz_email
+GO
+RENAME COLUMN ssm_my_kad.phone_no TO ezbiz_phone_no
+GO
+RENAME COLUMN ssm_my_kad.login_id TO ezbiz_login_id
+GO
+
+ALTER TABLE ssm_my_kad
+	ADD ezbiz_address1 VARCHAR(150),
+    ADD ezbiz_address2 VARCHAR(150),
+    ADD ezbiz_address3 VARCHAR(150),
+    ADD ezbiz_postcode VARCHAR(10),
+    ADD ezbiz_city VARCHAR(150),
+    ADD ezbiz_state VARCHAR(4),
+    ADD ezbiz_country VARCHAR(4)
+GO
+
+-- 19/04/2017
+
+CREATE TABLE rob_training_config ( 
+    training_id     SERIAL8 NOT NULL,
+    training_code   VARCHAR(100) NOT NULL,
+    training_name   VARCHAR(255) NOT NULL,
+    training_desc   LVARCHAR,
+    training_start_dt    DATETIME YEAR to SECOND NOT NULL,
+    training_end_dt    DATETIME YEAR to SECOND NOT NULL,
+    reg_closing_dt  DATETIME YEAR to SECOND NOT NULL,
+    standard_fee    MONEY DEFAULT 0.00 NOT NULL,
+    special_fee    MONEY DEFAULT 0.00 NOT NULL,
+    max_pax         INTEGER DEFAULT 0 NOT NULL,
+    is_active          BOOLEAN NOT NULL,
+    create_dt       DATETIME YEAR to SECOND NOT NULL,
+    create_by       VARCHAR(50) NOT NULL,
+    update_dt       DATETIME YEAR to SECOND NOT NULL,
+    update_by       VARCHAR(50) NOT NULL,
+    PRIMARY KEY(training_id)
+);
+GO
+
+CREATE TABLE rob_training_config_aud ( 
+    training_id     SERIAL8 NOT NULL,
+    rev             INTEGER NOT NULL,
+    revtype         SMALLINT,
+    training_code   VARCHAR(100) NOT NULL,
+    training_name   VARCHAR(255) NOT NULL,
+    training_desc   LVARCHAR,
+    training_start_dt    DATETIME YEAR to SECOND NOT NULL,
+    training_end_dt    DATETIME YEAR to SECOND NOT NULL,
+    reg_closing_dt  DATETIME YEAR to SECOND NOT NULL,
+    standard_fee    MONEY DEFAULT 0.00 NOT NULL,
+    special_fee    MONEY DEFAULT 0.00 NOT NULL,
+    max_pax         INTEGER DEFAULT 0 NOT NULL,
+    is_active          BOOLEAN default true NOT NULL,
+    create_dt       DATETIME YEAR to SECOND NOT NULL,
+    create_by       VARCHAR(50) NOT NULL,
+    update_dt       DATETIME YEAR to SECOND NOT NULL,
+    update_by       VARCHAR(50) NOT NULL,
+    PRIMARY KEY(training_id, rev)
+)
+GO
+
+CREATE TABLE rob_training_transaction ( 
+    transaction_code   VARCHAR(50) NOT NULL,
+    training_id   INTEGER NOT NULL,
+    status   VARCHAR(50) NOT NULL,
+    amount    MONEY DEFAULT 0.00 NOT NULL,
+    gst_amount    MONEY DEFAULT 0.00 NOT NULL,
+    total_pax         INTEGER DEFAULT 0 NOT NULL,
+    lodger_id   VARCHAR(50) NOT NULL,
+    lodger_name   VARCHAR(50) NOT NULL,
+    payment_channel VARCHAR(50) NOT NULL,
+    registration_channel VARCHAR(50) NOT NULL,
+    receipt_no VARCHAR(50),
+    invoice_no VARCHAR(50),
+    lou_loa_ref_no VARCHAR(100),
+    remarks VARCHAR(255),
+    create_dt       DATETIME YEAR to SECOND NOT NULL,
+    create_by       VARCHAR(50) NOT NULL,
+    update_dt       DATETIME YEAR to SECOND NOT NULL,
+    update_by       VARCHAR(50) NOT NULL,
+    PRIMARY KEY(transaction_code)
+);
+GO
+
+CREATE TABLE rob_training_transaction_aud ( 
+    transaction_code   VARCHAR(50) NOT NULL,
+    rev             INTEGER NOT NULL,
+    revtype         SMALLINT,
+    training_id   INTEGER NOT NULL,
+    status   VARCHAR(50) NOT NULL,
+    amount    MONEY DEFAULT 0.00 NOT NULL,
+    gst_amount    MONEY DEFAULT 0.00 NOT NULL,
+    total_pax         INTEGER DEFAULT 0 NOT NULL,
+    lodger_id   VARCHAR(50) NOT NULL,
+    lodger_name   VARCHAR(50) NOT NULL,
+    payment_channel VARCHAR(50) NOT NULL,
+    registration_channel VARCHAR(50) NOT NULL,
+    receipt_no VARCHAR(50),
+    invoice_no VARCHAR(50),
+    lou_loa_ref_no VARCHAR(100),
+    remarks VARCHAR(255),
+    create_dt       DATETIME YEAR to SECOND NOT NULL,
+    create_by       VARCHAR(50) NOT NULL,
+    update_dt       DATETIME YEAR to SECOND NOT NULL,
+    update_by       VARCHAR(50) NOT NULL,
+    PRIMARY KEY(transaction_code, rev)
+);
+GO
+
+CREATE TABLE rob_training_participant ( 
+    participant_id SERIAL8 NOT NULL,
+    transaction_code   VARCHAR(50) NOT NULL,
+    name VARCHAR(100) NOT NULL,
+    ic_no VARCHAR(50) NOT NULL,
+    ls_no VARCHAR(50),
+    membership_no VARCHAR(50),
+    designation VARCHAR(50),
+    company VARCHAR(50),
+    address_1 VARCHAR(50) NOT NULL,
+    address_2 VARCHAR(50),
+    address_3 VARCHAR(50),
+    tel_no VARCHAR(50) NOT NULL,
+    fax_no VARCHAR(50),
+    email VARCHAR(50) NOT NULL,
+    amount MONEY DEFAULT 0.00 NOT NULL,
+    create_dt DATETIME YEAR to SECOND NOT NULL,
+    create_by VARCHAR(50) NOT NULL,
+    update_dt DATETIME YEAR to SECOND NOT NULL,
+    update_by VARCHAR(50) NOT NULL,
+    PRIMARY KEY(participant_id)
+);
+GO
+
+CREATE TABLE rob_training_participant_aud ( 
+    participant_id SERIAL8 NOT NULL,
+    rev             INTEGER NOT NULL,
+    revtype         SMALLINT,
+    transaction_code   VARCHAR(50) NOT NULL,
+    name VARCHAR(100) NOT NULL,
+    ic_no VARCHAR(50) NOT NULL,
+    ls_no VARCHAR(50),
+    membership_no VARCHAR(50),
+    designation VARCHAR(50),
+    company VARCHAR(50),
+    address_1 VARCHAR(50) NOT NULL,
+    address_2 VARCHAR(50),
+    address_3 VARCHAR(50),
+    tel_no VARCHAR(50) NOT NULL,
+    fax_no VARCHAR(50),
+    email VARCHAR(50) NOT NULL,
+    amount MONEY DEFAULT 0.00 NOT NULL,
+    create_dt DATETIME YEAR to SECOND NOT NULL,
+    create_by VARCHAR(50) NOT NULL,
+    update_dt DATETIME YEAR to SECOND NOT NULL,
+    update_by VARCHAR(50) NOT NULL,
+    PRIMARY KEY(participant_id, rev)
+);
+GO
+
+-- 2/5/2017
+
+ALTER TABLE rob_payment_receipt
+    ADD remarks VARCHAR(255)
+GO 
+
+ALTER TABLE rob_payment_receipt_aud
+    ADD remarks VARCHAR(255)
+GO
+-- 3/5/2017
+
+ALTER TABLE rob_email_log
+    ADD bcc_list LVARCHAR(2000)
+GO
+
+-- 4/5/2017
+ALTER TABLE rob_user_profile
+    ADD is_temp_password CHAR(1) DEFAULT 'N' NOT NULL
+GO
+
+ALTER TABLE rob_user_profile_aud
+    ADD is_temp_password CHAR(1) DEFAULT 'N' NOT NULL
+GO
+
+ALTER TABLE rob_training_participant
+    ADD fee_type VARCHAR(50) NOT NULL
+
+-- 5/5/2017
+ALTER TABLE rob_health_check
+    ADD method_name VARCHAR(100),
+    ADD item_type VARCHAR(50)
+
+-- 12/5/2017
+ALTER TABLE rob_training_config
+    ADD current_pax INTEGER NOT NULL;
+
+--31/5/2017
+ALTER TABLE rob_training_config
+    ADD standard_fee_gst MONEY DEFAULT 0.00 NOT NULL,
+    ADD special_fee_gst MONEY DEFAULT 0.00 NOT NULL
+    
+
+ALTER TABLE rob_training_config_aud
+    ADD standard_fee_gst MONEY DEFAULT 0.00 NOT NULL,
+    ADD special_fee_gst MONEY DEFAULT 0.00 NOT NULL
+
+
+-- 13/7/2017
+ALTER TABLE rob_training_participant
+    ADD postcode VARCHAR(10),
+    ADD city VARCHAR(30),
+    ADD state VARCHAR(30),
+    ADD diet VARCHAR(30)
+
+ALTER TABLE rob_training_participant_aud
+    ADD postcode VARCHAR(10),
+    ADD city VARCHAR(30),
+    ADD state VARCHAR(30),
+    ADD diet VARCHAR(30)
+
+-- 04/09/2017
+Go
+RENAME COLUMN rob_sync_profile_audit.update_by TO approve_by
+
+Go
+alter table rob_sync_profile_audit
+drop update_dt;

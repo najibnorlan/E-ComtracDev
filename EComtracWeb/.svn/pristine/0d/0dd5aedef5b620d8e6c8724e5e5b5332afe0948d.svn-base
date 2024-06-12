@@ -1,0 +1,11 @@
+DriverManager.getConnection("jdbc:informix-sqli://10.7.34.89:2002/llp:INFORMIXSERVER=roc1")
+    trying driver[className=sun.jdbc.odbc.JdbcOdbcDriver,sun.jdbc.odbc.JdbcOdbcDriver@69b332]
+*Driver.connect (jdbc:informix-sqli://10.7.34.89:2002/llp:INFORMIXSERVER=roc1)
+    trying driver[className=org.hsqldb.jdbc.JDBCDriver,org.hsqldb.jdbc.JDBCDriver@66848c]
+    trying driver[className=com.informix.jdbc.IfxDriver,com.informix.jdbc.IfxDriver@8813f2]
+SQLWarning: reason(Database selected) SQLState(01I04)
+SQLWarning: reason(Database has transactions) SQLState(01I01)
+SQLWarning: reason(Database selected) SQLState(01I04)
+SQLWarning: reason(Database has transactions) SQLState(01I01)
+SQLWarning: reason(Database selected) SQLState(01I04)
+getConnection returning driver[className=com.informix.jdbc.IfxDriver,com.informix.jdbc.IfxDriver@8813f2]

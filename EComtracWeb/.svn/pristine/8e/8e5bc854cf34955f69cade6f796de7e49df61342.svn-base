@@ -1,0 +1,54 @@
+<wicket:extend>
+	<wicket:message key="page.lbl.ezbiz.bizTrust.guideline" />
+
+
+
+	<div class="ui top attached segment">
+		<div class="ui top attached label">
+			<h4 class="ui header">
+				<wicket:message key="page.lbl.ezbiz.bizTrust.tableTitle" />
+			</h4>
+		</div>
+
+		<table class="ui striped table">
+			<thead>
+				<tr>
+					<th width="5%"><wicket:message key="page.lbl.ezbiz.bizTrust.idx" /></th>
+					<th width="20%"><wicket:message key="page.lbl.ezbiz.bizTrust.name" /></th>
+					<th width="10%"><wicket:message key="page.lbl.ezbiz.bizTrust.brNo" /></th>
+					<th width="10%"><wicket:message key="page.lbl.ezbiz.bizTrust.brNoNewFormat" /></th>
+					<th width="10%"><wicket:message key="page.lbl.ezbiz.bizTrust.action" /></th>
+				</tr>
+			</thead>
+			<tbody>
+				<tr wicket:id="biztrustList">
+					<td><span wicket:id="idx" /></td>
+					<td><span wicket:id="brName" /></td>
+					<td><span wicket:id="brNo" /></td>
+					<td><span wicket:id="brNoNewFormat" /></td>
+					<td class="manage-link"><a wicket:id="viewQR" href="#" wicket:message="title:page.lbl.ezbiz.bizTrust.viewBarcode"><i class="Edit icon" /></a>
+					</td>
+				</tr>
+			</tbody>
+			<tfoot>
+				<tr>
+					<th colspan="100"><span wicket:id="navigatorLabel">[dataView navigatorLabel]</span> <span wicket:id="navigator">[dataView navigator]</span>
+					</th>
+				</tr>
+			</tfoot>
+		</table>
+	</div>
+	<div class="ui mini modal" wicket:id="wmcQRCode" style="z-index: 999; text-align: center;">
+		<div class="header" style="background-color: LightSteelBlue;">
+			<wicket:message key="page.lbl.ezbiz.bizTrust.qrTitle" />
+		</div>
+		<div class="content">
+			<p>
+				<img wicket:id="qrCodeimg" style="width: 250px" align="center" />
+			</p>
+		</div>
+		<div class="actions" style="text-align: center;">
+			<input wicket:id="downloadQR" class="ui primary button" type="button" wicket:message="value:page.lbl.ezbiz.bizTrust.downloadBarcode" />
+		</div>
+	</div>
+</wicket:extend>

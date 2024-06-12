@@ -1,0 +1,114 @@
+<wicket:extend>
+<form wicket:id="form" >
+		<div id="SearchCert" class="ui form ">
+			<table>
+				<tr>
+					<td>
+						<div class="ui top attached segment">
+							<div class="ui top attached label">
+								<h4 class="ui header">
+									<wicket:message key=page.lbl.ecomtrac.searchCert />
+								</h4>
+							</div>
+							<table>
+								<tr>
+									<td>
+										<div class="field">
+											<label><span wicket:id="certRefNoLabel" /></label> <input type="text" wicket:id="certRefNo">
+										</div>
+									</td>
+								</tr>
+								<tr>
+									<td>
+										<div class="field">
+											<label><span wicket:id="transactionCodeLabel" /></label> <input type="text" wicket:id="transactionCode">
+										</div>
+									</td>
+								</tr>
+								<tr>
+									<td>
+										<div class="field">
+											<label><span wicket:id="statusLabel" /></label> <select wicket:id="status" /> 
+										</div>
+									</td>
+								</tr>
+								<tr><td>&nbsp;</td></tr>
+								<tr>
+									<td>
+										<input wicket:id="search" type="button" class="ui primary button" value="Search" />
+									</td>
+								</tr>
+							</table>
+						</div>
+					</td>
+				</tr>
+			</table>
+		</div>
+	</form>
+	<div wicket:id="certDiv">
+		<table class="ui striped table" width="100%">
+			<thead>
+				<tr>
+					<th><wicket:message
+							key="page.lbl.ecomtrac.orderRefNo" /></th>
+					<th><wicket:message
+							key="page.lbl.ecomtrac.transactionCode" /></th>
+					<th><wicket:message
+							key="page.lbl.ecomtrac.trainingCode" /></th>
+					<th><wicket:message
+							key="page.lbl.ecomtrac.trainingName" /></th>	
+					<th><wicket:message
+							key="page.lbl.ecomtrac.icNo" /></th>
+					<th><wicket:message
+							key="page.lbl.ecomtrac.paymentStatus" /></th>
+					<th><wicket:message
+							key="page.lbl.ecomtrac.createDate" /></th>
+					<th><wicket:message
+							key="page.lbl.ecomtrac.Lodger" /></th>
+					<th><wicket:message
+							key="page.lbl.ecomtrac.action" /></th>
+					<th><wicket:message
+							key="page.lbl.ecomtrac.cert" /></th>
+				</tr>
+			</thead>
+			<tbody>
+				<tr wicket:id="sorting">
+					<td><span wicket:id=certRefNo>[certRefNo]</span></td>
+					<td><span wicket:id="transactionCode">[transactionCode]</span></td>
+					<td><span wicket:id="trainingCode">[trainingCode]</span></td>
+					<td><span wicket:id="trainingName">[trainingName]</span></td>
+					<td><span wicket:id="icNo">[icNo]</span></td>
+					<td><span wicket:id="statusPayment">[statusPayment]</span></td>
+					<td><span wicket:id="createDt">[createDt]</span></td>
+					<td><span wicket:id="lodgerId">[lodgerId]</span></td>
+					<td>
+					<a class="ui icon" wicket:id="goToTransaction"
+							style="cursor: pointer;" title="Go to transaction">
+								<center>
+									<i class="mail forward icon large"></i>
+								</center>
+					</a>
+					</td>
+					<td>
+					<a class="ui icon" wicket:id="downloadCert">
+					
+						<center>
+							<i class="download icon"></i>
+						</center>
+						</a>
+				   </td>
+				</tr>
+			</tbody>
+			<tfoot>
+			    <tr>
+			    	<th colspan="100">
+			    		<span wicket:id="navigatorLabel">[dataView navigatorLabel]</span>
+				        <span wicket:id="navigator">[dataView navigator]</span>
+			    	</th>
+			  </tr>
+			</tfoot>
+		</table>
+	</div>
+	<br>
+	<span style="font-size: 11px"><wicket:message key="page.lbl.ezbiz.listTraining.describeSpecialFee" /></span>
+</wicket:extend>

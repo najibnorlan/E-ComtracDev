@@ -1,0 +1,4 @@
+<wicket:extend>
+	<span wicket:id="eSearchMobilePanel"></span>
+	<wicket:child/>
+</wicket:extend>

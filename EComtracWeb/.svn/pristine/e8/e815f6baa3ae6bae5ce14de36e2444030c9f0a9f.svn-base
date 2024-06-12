@@ -1,0 +1,83 @@
+
+
+
+ <style type="text/css">
+     th.last-name *, td.last-name {
+         font-weight: bold;
+         color: #AA0000;
+     }
+     th.numeric, td.numeric {
+         text-align: right !important;
+     }
+ </style>
+<wicket:extend>
+	<br>
+	<wicket:enclosure child="searchPartnerBtn">
+	<br>
+	<input wicket:id="searchPartnerBtn" type="button" value="Add Partners"/>
+	<br>
+	<br>
+	</wicket:enclosure>
+	<table>
+	<table class="blockdataview" cellspacing="0" >
+		<tr>
+			<td align="left"><span wicket:id="navigatorLabel">[dataview navigatorLabel]</span></td>
+			<td align="right"><span wicket:id="navigator">[dataview navigator]</span></td>
+		</tr>
+		<tr>
+		
+			<td colspan="2">
+				<table cellspacing="0" class="dataview" width="100%">
+				    <tr>
+				        <th><wicket:message key="llpReg.page.partner.idNo"/></th>
+				        <th><wicket:message key="llpReg.page.partner.name"/></th>
+				        
+				     <!--    <th>Gender</th>
+				        <th>Type</th> --> 
+				        
+				        <th><wicket:message key="llpReg.page.partner.status"/></th>
+				        <th><wicket:message key="llpReg.page.partner.appointDate"/></th>
+				        <th><wicket:message key="llpReg.page.partner.createDate"/></th>
+				        <th><wicket:message key="llpReg.page.partner.action"/></th>
+				    </tr>
+				    <tr wicket:id="sorting">
+				        <td><span wicket:id="idNo">[idNo]</span> </td>
+				        <td><span wicket:id="name">[name]</span> </td>
+				        
+				      <!--    <td><span wicket:id="gender">[gender]</span> </td>
+				        <td><span wicket:id="type">[type]</span></td> -->
+				        
+				        <td><span wicket:id="userStatus">[userStatus]</span></td>
+				        <td><span wicket:id="appointmentDate">[appointmentDate]</span></td>
+				        <td><span wicket:id="createDate">[createDate]</span></td>
+				        
+				        <td class="manage-contact-links">
+				    		 <!--   <a wicket:id="ajaxEdit" href="#">[edit]</a>
+			                   <a wicket:id="delete" href="#">[delete]</a> --> 
+			                   
+			                   <a wicket:id="ajaxEdit" href="#"><span wicket:id="editLabel"></span></a>
+			                   <a wicket:id="delete" href="#"><span wicket:id="deleteLabel"></span></a>
+			            </td>
+				    </tr>
+				</table>
+			</td>
+		</tr>
+	</table>	
+	
+	<hr  color="grey">
+
+
+			<table>
+				<tr>
+					<td colspan="3" align="center">
+					<input wicket:id="save" type="button" wicket:message="value:llpReg.page.saveButton"/> 
+					<input wicket:id="cancel" type="button" wicket:message="value:llpReg.page.cancelButton"/>
+					</td>
+				</tr>
+			</table>
+	</table>
+	<br>    
+    <div wicket:id="searchPartnerPopUp"></div>
+	
+</wicket:extend>
+

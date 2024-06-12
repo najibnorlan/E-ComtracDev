@@ -1,0 +1,329 @@
+<wicket:extend>
+	<form wicket:id="form">
+		<div id="nameListAttendeesForm" class="ui form">
+			<table style="width:100%">
+				<tr>
+					<td style="width:50%">
+						<div class="ui top attached segment">
+							<div class="ui top attached label">
+								<h4 class="ui header">
+									<wicket:message
+										key="page.lbl.ezbiz.nameListAttendees.headerLbl" />
+								</h4>
+							</div>
+
+							<div class="content">
+								<div class="ui grid">
+									<div class="seven wide column">
+										<div class="header" style="font-weight: bold;">
+											<wicket:message
+												key="page.lbl.ezbiz.nameListAttendees.trainingCode" />
+										</div>
+										<p>
+											<span wicket:id="trainingCode">[transId]</span>
+										</p>
+										<div class="header" style="font-weight: bold;">
+											<wicket:message
+												key="page.lbl.ezbiz.nameListAttendees.trainingName" />
+										</div>
+										<p>
+											<span wicket:id="trainingName">[transId]</span>
+										</p>
+
+										<div class="header" style="font-weight: bold;">
+											<wicket:message
+												key="page.lbl.ezbiz.nameListAttendees.trainingStrtDate" />
+										</div>
+										<p>
+											<span wicket:id="trainingDate">[transId]</span>
+										</p>
+									</div>
+									<div class="seven wide column">
+										<div class="header" style="font-weight: bold;">
+											<wicket:message
+												key="page.lbl.ezbiz.nameListAttendees.participantPay" />
+										</div>
+										<p>
+											<span wicket:id="participantPayed">[participantPayed]</span>
+											pax
+										</p>
+										<div class="header" style="font-weight: bold;">
+											<wicket:message
+												key="page.lbl.ezbiz.nameListAttendees.participantNotPay" />
+										</div>
+										<p>
+											<span wicket:id="participantNotPay">[participantNotPay]</span>
+											pax
+										</p>
+										<div class="header" style="font-weight: bold;">
+											<wicket:message
+												key="page.lbl.ezbiz.nameListAttendees.maxParticipant" />
+										</div>
+										<p>
+											<span wicket:id="maxParticipant">[maxParticipant]</span> pax
+										</p>
+										<div class="header" style="font-weight: bold;">
+											<wicket:message
+												key="page.lbl.ecomtrac.nameListAttendees.trainingType" />
+										</div>
+										<p>
+											<span wicket:id="trainingType">[trainingType]</span>
+										</p>
+										
+										
+									</div>
+								</div>
+							</div>
+						</div>
+					</td>
+				<td style="width:50%">
+				<div class="ui top attached segment">
+							<div class="ui top attached label">
+								<h4 class="ui header">
+									<wicket:message
+										key="page.lbl.ecomtrac.nameListAttendees.PIC" />
+								</h4>
+							</div>
+							<div class="content">
+								<div class="ui grid">
+									<div class="seven wide column">
+										<div class="header" style="font-weight: bold;">
+											<wicket:message
+												key="page.lbl.ecomtrac.nameListAttendees.namePIC" />
+										</div>
+										<p>
+											<span wicket:id="internalUser">[internalUser]</span>
+										</p>
+										<div class="header" style="font-weight: bold;">
+											<wicket:message
+												key="page.lbl.ecomtrac.nameListAttendees.emailPIC" />
+										</div>
+										<p>
+											<span wicket:id="internalUserEmail">[internalUserEmail]</span>
+										</p>
+									</div>
+								</div>
+							</div>
+				</div>
+				</td>
+				</tr>
+			</table>
+		</div>
+		<br>
+		
+		
+		<div wicket:id="listAttendees">
+			<table width="100%" class="ui striped table">
+				<thead>
+					<tr>
+						<th colspan="12">
+							<div class="ui grid">
+								<div class="six wide column">
+									<div class="ui form icon">
+										<div class="inline field fluid">
+											<label>IC Number</label> <input wicket:id="ic" type="text"
+												size="20" /> <i wicket:id="search"
+												class="inverted circular search link icon"></i>
+										</div>
+									</div>
+								</div>
+								<div class="ten wide column">
+
+									<button class="ui labeled icon button red small right floated"
+										wicket:id="downloadPdf">
+										<i class="file pdf outline icon"></i>
+										<wicket:message
+											key="page.lbl.ezbiz.nameListAttandees.downloadPdf" />
+									</button>
+
+									<button class="ui labeled icon button teal small right floated"
+										wicket:id="downloadExcel">
+										<i class="file excel outline icon"></i>
+										<wicket:message
+											key="page.lbl.ezbiz.nameListAttandees.downloadExcel" />
+									</button>
+
+									<button class="ui primary button primary small right floated"
+										wicket:id="resendEmail">
+										<wicket:message key="page.lbl.ezbiz.comtracPage.resendEmail" />
+									</button>
+
+									<button class="ui primary button primary small right floated"
+										wicket:id="emailBlast">
+										<wicket:message key="page.lbl.ezbiz.comtracPage.emailBlast" />
+									</button>
+								</div>
+							</div>
+
+						</th>
+					</tr>
+					<tr>
+						<th><center>
+								<wicket:message key="page.lbl.ezbiz.nameListAttandees.bilNoLbl" />
+							</center></th>
+						<th><center>
+								<wicket:message
+									key="page.lbl.ezbiz.nameListAttandees.transactionCode" />
+							</center></th>
+						<th><center>
+								<wicket:message
+									key="page.lbl.ezbiz.nameListAttandees.trainerNameLbl" />
+							</center></th>
+						<th><center>
+								<wicket:message
+									key="page.lbl.ezbiz.nameListAttandees.trainerIcLbl" />
+							</center></th>
+						<th><center>
+								<wicket:message
+									key="page.lbl.ezbiz.nameListAttandees.trainerCmpnyLbl" />
+							</center></th>
+						<th><center>
+								<wicket:message
+									key="page.lbl.ezbiz.nameListAttandees.trainerNoTelLbl " />
+							</center></th>
+						<th><center>
+								<wicket:message
+									key="page.lbl.ezbiz.nameListAttandees.trainerEmailLbl" />
+							</center></th>
+						<th><center>
+								<wicket:message
+									key="page.lbl.ezbiz.nameListAttandees.lodgerName" />
+							</center></th>
+						<th><center>
+								<wicket:message key="page.lbl.ezbiz.nameListAttandees.action" />
+							</center></th>
+						<th><input class="ui checkbox" type="checkbox"
+							name="select-all-attend" id="select-all-attend" /> <wicket:message
+								key="page.lbl.ezbiz.nameListAttandees.attend" /></th>
+						<th><input class="ui checkbox" type="checkbox"
+							name="select-all-eligible" id="select-all-eligible" /> <wicket:message
+								key="page.lbl.ezbiz.nameListAttandees.eligibleForCert" /></th>
+						<th><wicket:message
+								key="page.lbl.ecomtrac.nameListAttandees.eligibleForRefund" /></th>
+						<th><center>
+								<wicket:message key="page.lbl.ecomtrac.nameListAttandees.remark" />
+							</center></th>
+					</tr>
+				</thead>
+
+				<tbody>
+					<tr wicket:id="sortingAttendees">
+						<td><span wicket:id="bil">[bil]</span></td>
+						<td><span wicket:id="transactionCode">[transactionCode]</span></td>
+						<td><span wicket:id="trainerName">[trainerName]</span></td>
+						<td><span wicket:id="trainerIc">[trainerIc]</span></td>
+						<td><span wicket:id="companyName">[companyName]</span></td>
+						<td><span wicket:id="trainerNoTel">[trainerNoTel]</span></td>
+						<td><span wicket:id="trainerEmail">[trainerEmail]</span></td>
+						<td><span wicket:id="createBy">[createBy]</span></td>
+						<td class="manage-link"><a class="ui icon"
+							wicket:id="viewAttendeesInfo">
+								<center>
+									<i class="unhide icon large"></i>
+								</center>
+						</a> <a class="ui icon" wicket:id="goToTransaction"
+							style="cursor: pointer;" title="Go to transaction">
+								<center>
+									<i class="mail forward icon large"></i>
+								</center>
+						</a></td>
+						<td>
+							<center>
+								<input class="column-attend ui checkbox" type="checkbox"
+									wicket:id="checkIsAttend" />
+								<!-- <div wicket:id="wmcNotAttend">
+									<button wicket:id="notAttend" class="ui button negative mini">No</button>
+								</div>
+							</center>
+							<center>
+								<div wicket:id="wmcAttend">
+									<button wicket:id="attend" class="ui button positive mini">Yes</button>
+								</div> -->
+							</center>
+							<center>
+								<span wicket:id="unpaidLbl" />
+							</center>
+						</td>
+						<td class="manage-link"><center>
+								<input class="column-eligible ui checkbox" type="checkbox"
+									wicket:id="checkIsEligible" />
+							</center> <!-- <div wicket:id="wmcEligible">
+								<center>
+									<button wicket:id="isEligible">
+										<span wicket:id="isEligibleDesc"></span>
+									</button>
+								</center>
+							</div> --> <a class="ui icon" wicket:id="downloadCert">
+								<center>
+									<i class="download icon"></i>
+								</center>
+						</a></td>
+						<td>
+							<center>
+								<input class="column-refund ui checkbox" type="checkbox"
+									wicket:id="checkIsRefund" onClick="window.location.reload()" />
+							</center>
+						</td>
+						<td>
+							<div>
+								<select wicket:id="remarkAbsent"></select>
+							</div>
+						</td>
+					</tr>
+				</tbody>
+				<tfoot>
+
+					<tr>
+
+						<th colspan="100"><span wicket:id="navigatorLabel">[dataView
+								navigatorLabel]</span> <span wicket:id="navigator">[dataView
+								navigator]</span><input type="button"
+							class="ui primary button primary right floated"
+							wicket:id="updateChanges" value="Update Changes" /></th>
+					</tr>
+				</tfoot>
+			</table>
+		</div>
+		<div wicket:id="editAttendeesInfoPopUp"></div>
+		<br>
+		<div>
+			<input wicket:id="previous" type="button" class="ui primary button"
+				value="Previous" />
+		</div>
+	</form>
+
+	<script>
+		$('.dropdown').dropdown({
+			action : 'hide'
+		});
+
+		// Listen for click on toggle checkbox Attend
+		$('#select-all-attend').click(function(event) {
+			if (this.checked) {
+				// Iterate each checkbox
+				$('.column-attend').each(function() {
+					this.checked = true;
+				});
+			} else {
+				$('.column-attend').each(function() {
+					this.checked = false;
+				});
+			}
+		});
+
+		// Listen for click on toggle checkbox Eligible
+		$('#select-all-eligible').click(function(event) {
+			if (this.checked) {
+				// Iterate each checkbox
+				$('.column-eligible').each(function() {
+					this.checked = true;
+				});
+			} else {
+				$('.column-eligible').each(function() {
+					this.checked = false;
+				});
+			}
+		});
+	</script>
+
+</wicket:extend>

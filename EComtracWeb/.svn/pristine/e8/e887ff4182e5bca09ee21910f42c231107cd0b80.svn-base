@@ -1,0 +1,21 @@
+<wicket:panel>
+	<div class="ui modal" wicket:id="wmcAlert" style="z-index:999">
+		  <div class="header" style="background-color: LightSteelBlue ;"><span wicket:id="title"/></div>
+		  <div class="content">
+		  	<div class="ui placeholder segment">
+			  <div class="ui two column stackable center aligned grid">
+			    <div class="ui vertical divider"></div>
+			    <div class="middle aligned row">
+			      <div class="column">
+			        <img src="images/pos.gif" align="middle"/>
+			      </div>
+			      <div class="column">
+			        sasasas
+			      </div>
+			    </div>
+			  </div>
+			</div>
+			
+		  </div>
+	</div>
+</wicket:panel>

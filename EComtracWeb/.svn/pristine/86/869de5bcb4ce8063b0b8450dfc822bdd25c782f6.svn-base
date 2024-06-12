@@ -1,0 +1,24 @@
+<wicket:extend>
+<form wicket:id="searchForm">
+
+<table class="blockWithBorder">
+	<tr>
+		<td>
+
+			<table>
+				<tr>
+					<td>Ref No</td>
+					<td colspan="2"><input wicket:id="refNo" type="text" /></td>
+				</tr>
+				<tr>
+					<td>Apply Name</td>
+					<td><input wicket:id="applyLlpName" type="text" size="100"/></td>
+					<td><input type="submit" value="Search" class="button"></td>
+				</tr>
+			</table>
+		</td>
+	</tr>
+</table>
+
+</form>
+</wicket:extend>

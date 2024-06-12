@@ -1,0 +1,69 @@
+<wicket:extend>
+    
+
+    <form wicket:id="form">
+        <div id="contacts">
+            <div class="contact">
+                <table>
+                	<tr>
+	                    <td>
+	                        RefNo
+	                    </td>
+	                    <td>
+	                    	<input wicket:id="refNo" type="text"/>
+	                    </td>
+	                </tr>
+                    <tr>
+                        <td>
+                            First Name
+                        </td>
+                        <td>
+                            <input wicket:id="firstName" type="text"/>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <span wicket:id="lastNameLabel"/>
+                        </td>
+                        <td>
+                            <input wicket:id="lastName" type="text"/>
+                        </td>
+                    </tr>
+                    <wicket:enclosure child="email">
+                    <tr>
+                        <td>
+                            Email
+                        </td>
+                        <td>
+                            <input wicket:id="email" type="text" size="40"/>
+                        </td>
+                    </tr>
+                    </wicket:enclosure>
+                    <tr>
+                        <td>
+                            Notes
+                        </td>
+                        <td>
+                            <textarea wicket:id="notes" rows="4" cols="40"></textarea>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            Group
+                        </td>
+                        <td>
+                            <select wicket:id="group"> </select>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td colspan="3" align="center">
+                            <input wicket:id="save" type="submit" value="Save"/>
+                            <input wicket:id="cancel" type="submit" value="Cancel"/>
+                            <input wicket:id="pay" type="submit" value="Make Payment"/>
+                        </td>
+                    </tr>
+                </table>
+            </div>
+        </div>
+    </form>
+</wicket:extend>

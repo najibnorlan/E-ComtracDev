@@ -1,0 +1,55 @@
+<wicket:extend>
+	<form wicket:id="robFormBOwnerVerificationPanelForm">
+		<div class="ui top attached segment">
+			<div class="ui top attached label">
+				<h4 class="ui header"><wicket:message key="page.lbl.ezbiz.robFormBOwnerVeri" /></h4>
+			</div>
+			<table width="100%">
+				<tr>
+					<td>
+						<div wicket:id="wmcPartnerVerification">
+							<table class="ui striped table">
+								<thead>
+									<tr>
+										<th width="3%"><wicket:message key="page.lbl.ezbiz.robFormBOwnerVeri.ownerNo" /></th>
+										<th width="30%"><wicket:message key="page.lbl.ezbiz.robFormBOwnerVeri.name" /></th>
+										<th width="15%"><wicket:message key="page.lbl.ezbiz.robFormBOwnerVeri.idNo" /></th>
+										<th width="15%"><wicket:message key="page.lbl.ezbiz.robFormBOwnerVeri.status" /></th>
+										<!--th width="15%"><wicket:message key="page.lbl.ezbiz.robFormBOwnerVeri.emailStatus" /></th-->
+									</tr>
+								</thead>
+								<tbody>
+									<tr wicket:id="sortingRobFormBOwnerVeri">
+										<td><span wicket:id="ownerNo">[ownerNo]</span></td>
+										<td><span wicket:id="name">[name]</span></td>
+										<td><span wicket:id="idNo">[idNo]</span></td>
+										<td><span wicket:id="status">[status]</span></td>
+										<!--td><span wicket:id="emailStatus">[emailStatus]</span></td-->
+									</tr>
+								</tbody>
+								<tfoot>
+									<tr>
+										<th colspan="100"><span wicket:id="navigatorLabelRobFormBOwnerVeri">[dataView navigatorLabelRobFormBOwnerVeri]</span> <span
+											wicket:id="navigatorRobFormBOwnerVeri">[dataView navigatorRobFormBOwnerVeri]</span></th>
+									</tr>
+								</tfoot>
+							</table>
+						</div>
+					</td>
+				</tr>
+				<tr><td> &nbsp;</td></tr>
+				<tr>
+				<td align="right">
+						<button class="ui button negative" wicket:id="discard" ><wicket:message key="page.lbl.ezbiz.robFormB.discard" /></button>
+						<input wicket:id="bOwnerVerPrev" type="button" class="ui primary button" value="Previous" /> 
+						<input wicket:id="bOwnerVerNext" type="button" class="ui primary button" value="Next" /></td>
+				</tr>
+			</table>
+		</div>
+		<!--table>
+			<tr>
+				<td><input wicket:id="sendNotification" type="button" class="ui primary button" value="Send Notification" /></td>
+			</tr>
+		</table-->
+	</form>
+</wicket:extend>

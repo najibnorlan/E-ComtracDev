@@ -1,0 +1,82 @@
+<wicket:extend>
+<form wicket:id="form">
+		<div class="ui right aligned grid form">
+			<div class="left floated left aligned six wide column">
+				<div class="ui ">
+					<div class="ui top attached segment">
+						<div class="ui top attached label">
+							<h4 class="ui header">
+								<wicket:message key="page.lbl.ezbiz.otcPayment.receiptSearch" />
+							</h4>
+						</div>
+						<table style="width: 100%">
+							<tr>
+								<td>
+									<div class="field">
+										<label><span wicket:id="receiptNoLabel" /></label> <input wicket:id="receiptNo">
+									</div>
+								</td>
+							</tr>
+							<tr>
+								<td>&nbsp;</td>
+							</tr>
+							<tr>
+								<td><input wicket:id="search" type="button"
+									class="ui primary button" value="Search" />
+									<input wicket:id="back" type="button"
+									class="ui negative button" value="Cancel" /></td>
+							</tr>
+						</table>
+					</div>
+				</div>
+			</div>
+		</div>
+	</form>
+	<div wicket:id="wmcSearchResult">
+		<table class="ui striped table">
+			<thead>
+				<tr>
+				<th><wicket:message
+							key="page.lbl.ezbiz.otcPaymentPage.receiptNo" /></th>
+					<th><wicket:message
+							key="page.lbl.ezbiz.otcPaymentPage.transactionId" /></th>
+					<th><wicket:message
+							key="page.lbl.ezbiz.otcPaymentPage.appRefNo" /></th>
+					<th><wicket:message
+							key="page.lbl.ezbiz.otcPaymentPage.payerName" /></th>
+					<th><wicket:message
+							key="page.lbl.ezbiz.otcPaymentPage.payerId" /></th>
+					<th><wicket:message
+							key="page.lbl.ezbiz.otcPaymentPage.payDate" /></th>
+					<th><wicket:message key="page.lbl.ezbiz.otcPaymentPage.amount" /></th>
+					<th><wicket:message key="page.lbl.ezbiz.otcPayment.action" /></th>
+				</tr>
+			</thead>
+			<tbody>
+				<tr wicket:id="sorting">
+				<td><span wicket:id="paymentReceiptNo">[paymentReceiptNo]</span></td>
+					<td><span wicket:id="transactionId">[transactionId]</span></td>
+					<td><span wicket:id="appRefNo">[appRefNo]</span></td>
+					<td><span wicket:id="payerName">[payerName]</span></td>
+					<td><span wicket:id="payerId">[payerId]</span></td>
+					<td><span wicket:id="paymentDate">[paymentDate]</span></td>
+					<td><span wicket:id="amount">[amount]</span></td>
+					<td class="manage-link">
+						<div wicket:id="wmcIssue">
+							<div class="mini ui buttons">
+						 	   <button class="ui button primary" wicket:id="issueCreditNote">Issue</button>
+							</div>
+						</div>
+					</td>
+				</tr>
+			</tbody>
+			<tfoot>
+				<tr>
+					<th colspan="100"><span wicket:id="navigatorLabel">[dataView
+							navigatorLabel]</span> <span wicket:id="navigator">[dataView
+							navigator]</span></th>
+				</tr>
+			</tfoot>
+		</table>
+	</div>
+</wicket:extend>

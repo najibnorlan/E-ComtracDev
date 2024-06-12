@@ -1,0 +1,53 @@
+<wicket:extend>
+	<form wicket:id="form" class="ui form"  > 
+		<script type="text/javascript" wicket:id="jsValidation"></script>
+		<script type="text/javascript" wicket:id="jsValidationApprove"></script>
+		<script>
+			$(document).ready(function() {
+				
+			    $('input[name ="myKadNo"]').bind("cut copy paste", function(e) {
+			        e.preventDefault();
+			         alert("You cannot paste into this text field :). Please type from mykad image");
+			        $('input[name ="myKadNo"]').bind("contextmenu", function(e) {
+			            e.preventDefault();
+			        });
+			    });
+			});
+		
+		</script>
+		<div class="ui basic horizontal fitted segments" >
+				<div class="ui segment" style="width: 40%">
+					<div wicket:id="viewPanel"> </div>	
+				</div>
+				<div class="ui segment" style="width: 60%">
+					<div class="ui top attached segment">
+						<div class="ui top attached label">
+							<h4 class="ui header"><wicket:message key="page.lbl.ezbiz.robUserActivationTray.process" /></h4>
+						</div>
+						<div class="field" >
+								<iframe wicket:id="frameComponent" allowfullscreen webkitallowfullscreen width="100%" height="50%"></iframe>
+						</div>
+						<div class="field" >
+								<label><span wicket:id="myKadNoLabel"></span> </label>
+								<input wicket:id="myKadNo" type="text" autocomplete="off"></input>
+						</div>
+						<div class="field" >
+								<label><span wicket:id="processNoteLabel"></span> </label>
+								<textarea wicket:id="processNote"></textarea>
+						</div>
+						<div class="field" >
+							
+							<button class="ui button" wicket:id="fromPageButton"><wicket:message key="page.lbl.ezbiz.robUserActivationTray.fromPageButton"/> </button>&nbsp;&nbsp;
+							<div class="ui buttons">
+								<button class="ui button negative" wicket:id="rejectButton"><wicket:message key="page.lbl.ezbiz.robUserActivationTray.rejectButton"/></button>
+								<button class="ui primary button" wicket:id="queryButton"><wicket:message key="page.lbl.ezbiz.robUserActivationTray.queryButton"/></button>
+								<button class="ui positive button" wicket:id="approvedButton"><wicket:message key="page.lbl.ezbiz.robUserActivationTray.approvedButton"/></button>
+							</div>
+						</div>
+					</div>
+				</div>
+		</div>
+			
+		
+	</form>
+</wicket:extend>

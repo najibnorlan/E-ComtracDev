@@ -1,0 +1,35 @@
+<wicket:panel>
+	<!--  <span wicket:id="feedback"></span> already at BaseFrame(SearchPartnerPage) -->
+	<form wicket:id="searchFormPartner">
+	
+	<label style="font: bold">Partner</label>
+	
+	<fieldset>
+				<!--  <legend>Biz Address</legend>	-->
+		<table>
+			
+			<tr>
+				<td><span wicket:id="idTypeLabel"/></td>
+				<td><select wicket:id="idType" /></td>
+			</tr>
+			
+			<tr>	
+				<td><span wicket:id="idNoLabel"/></td>
+				<td><input wicket:id="idNo" type="text" name="idNo" />
+				</td>
+			</tr>
+			
+			<tr>
+				<td><span wicket:id="namePortionLabel"/></td>
+				<td colspan="3"><input wicket:id="namePortion" type="text" name="namePortion" /></td>
+			</tr>
+			
+			<tr>
+			<td><input type="submit" value="SUBMIT" class="button"> </td>
+			</tr>
+			
+		</table>
+	</fieldset>	
+	
+	</form>
+</wicket:panel>

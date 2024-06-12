@@ -1,0 +1,39 @@
+<wicket:extend>
+<!--div id="content" class="ui middle aligned center aligned grid"-->   
+    <table width="100%">
+	<tr>
+		<td >		 
+			<div class="ui top attached tabular menu">
+			  <a wicket:id="draftLink" class="item active" data-tab="draftPanel"><wicket:message key="page.lbl.ezbiz.robFormA.draftPanel" /></a>
+			  <a wicket:id="inProcessLink" class="item" data-tab="inProcessPanel"><wicket:message key="page.lbl.ezbiz.robFormA.inProcessPanel" /></a>
+			  <a wicket:id="queryLink" class="item" data-tab="queryPanel"><wicket:message key="page.lbl.ezbiz.robFormA.queryPanel" /></a>
+			  <a wicket:id="approvedRejectLink" class="item" data-tab="approvedRejectPanel"><wicket:message key="page.lbl.ezbiz.robFormA.approvedRejectPanel" /></a>
+			  <a wicket:id=cancelLink class="item" data-tab="cancelPanel"><wicket:message key="page.lbl.ezbiz.robFormA.cancelPanel" /></a>
+			  <a wicket:id=incentiveLink class="item" data-tab="incentivePanel"><wicket:message key="page.lbl.ezbiz.robFormA.incentivePanel" /></a>
+			</div>
+			<div id="listFormADraftDiv" class="ui bottom attached tab segment active" data-tab="draftPanel">
+			  	<span wicket:id="draftPanel"></span>
+			</div>
+			<div id="listFormAInProcessDiv" class="ui bottom attached tab segment" data-tab="inProcessPanel">
+				<span wicket:id="inProcessPanel"></span>
+			</div>
+			<div id="listFormAQueryDiv" class="ui bottom attached tab segment" data-tab="queryPanel">
+				<span wicket:id="queryPanel"></span>
+			</div>
+			<div id="listFormAAppRejDiv" class="ui bottom attached tab segment" data-tab="approvedRejectPanel">
+				<span wicket:id="approvedRejectPanel"></span>
+			</div>
+			<div id="listFormACancelDiv" class="ui bottom attached tab segment" data-tab="cancelPanel">
+				<span wicket:id="cancelPanel"></span>
+			</div>
+			<div id="listFormAIncentiveDiv" class="ui bottom attached tab segment" data-tab="incentivePanel">
+				<span wicket:id="incentivePanel"></span>
+			</div>
+		</td>
+	</tr>    
+    </table>
+    <!--/div--> 
+<script>
+$('.menu .item').tab();
+</script>
+</wicket:extend>

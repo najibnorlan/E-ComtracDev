@@ -1,0 +1,61 @@
+<wicket:extend>
+	<script type="text/javascript">
+		function CallPrint(strid) {
+			var prtContent = document.getElementById(strid);
+			var WinPrint = window
+					.open('', '',
+							'left=0,top=0,width=800,height=600,toolbar=0,scrollbars=0,status=0');
+			WinPrint.document.write(prtContent.innerHTML);
+			WinPrint.document.close();
+			WinPrint.focus();
+			WinPrint.print();
+			WinPrint.close();
+		}
+	</script>
+
+	<div id="userdiv">
+		<table>
+			<tr>
+				<td colspan="3" align="center"></td>
+			</tr>
+			<tr>
+				<td colspan="3" align="center"><img src="images/logo_ssm.gif" />
+				</td>
+			</tr>
+			<tr>
+			</tr>
+			<tr>
+				<td><wicket:message key="user.page.userRefNo" /></td>
+				<td>:</td>
+				<td wicket:id="userRefNo"></td>
+			</tr>
+			<tr>
+				<td><wicket:message key="user.page.userName" /></td>
+				<td>:</td>
+				<td wicket:id="name"></td>
+			</tr>
+			<tr>
+				<td></td>
+				<td></td>
+			</tr>
+			<tr>
+				<td></td>
+				<td></td>
+			</tr>
+			<tr>
+				<td></td>
+				<td></td>
+			</tr>
+			<tr>
+				<td colspan="3"><wicket:message
+						key="email.notification.user.body" /></td>
+			</tr>
+
+
+		</table>
+	</div>
+	<input id="Button1" type="button" name="btnPrint"
+		wicket:message="value:user.page.printButton"
+		onclick="javascript:CallPrint('userdiv');" />
+
+</wicket:extend>

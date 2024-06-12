@@ -1,0 +1,89 @@
+<wicket:extend>
+	<form wicket:id="robFormB3Form">
+		<script type="text/javascript" wicket:id="b3Validation"></script>
+		<table width="100%">
+			<tr>
+				<td>
+					<div class="ui top attached segment">
+						<div class="ui top attached label">
+							<h4 class="ui header"><wicket:message key="page.lbl.ezbiz.robFormB3.branchInfo" /></h4>
+						</div>
+						<table>
+							<tr>
+								<td><wicket:message key="page.lbl.ezbiz.robFormB3.branchInfoNotes" /></td>
+							</tr>
+							<tr>
+								<td>&nbsp;</td>
+							</tr>
+							<tr>
+								<td>
+									<div class="ui checkbox field">
+										<input wicket:id="isB3" type="checkbox" />
+										<label><span wicket:id="isB3Label" /></label>
+									</div>
+								</td>
+							</tr>
+							<tr>
+								<td>
+									<div wicket:id="b3AmmendmendDtPanel">
+										<div class="field inline">
+											<label><span wicket:id="b3AmmendmendDtLabel" /></label>
+											<input wicket:id="b3AmmendmendDt" style="width: 150;"/>
+										</div>
+									</div>
+								</td>
+							</tr>
+							<tr>
+								<td>&nbsp;</td>
+							</tr>
+							<tr>
+								<td><span wicket:id="editRobFormB3DetPanel"></span></td>
+							</tr>
+						</table>
+						
+						<div wicket:id="wmcBranches">
+							<table class="ui striped table">
+							  <thead>
+							    	<tr>
+							    	<th width="10%"><wicket:message key="page.lbl.ezbiz.robFormB3.branchNo" /></th>
+									<th width="50%"><wicket:message key="page.lbl.ezbiz.robFormB3.address" /></th>
+									<th width="20%"><wicket:message key="page.lbl.ezbiz.robFormB3.ammendmendType" /></th>
+									<th width="10%"><wicket:message key="page.lbl.ezbiz.robFormB3.address.action" /></th>
+							  	</tr>
+							  </thead>
+							  <tbody>
+							    <tr wicket:id="sortingRobFormB3Branch">
+									<td><span wicket:id="branchNo">[branchNo]</span></td>
+									<td><span wicket:id="branchAddress">[branchAddress]</span></td>
+									<td><span wicket:id="ammendmentType">[ammendmentType]</span></td>
+									<td class="manage-link">
+										 <a wicket:id="editBranch" href="#" wicket:message="title:page.lbl.ezbiz.robFormB3.editBranch"><i class="Edit icon" /></a> 
+										 <a wicket:id="deleteBranch" href="#" wicket:message="title:page.lbl.ezbiz.robFormB3.deleteBranch"><i class="Erase icon" /></a>
+										 <a wicket:id="undoBranch" href="#" wicket:message="title:page.lbl.ezbiz.robFormB3.undoBranch"><i class="Undo icon" /></a>
+									</td>
+								</tr>
+							  </tbody>
+							  <tfoot>
+							    <tr>
+							    	<th colspan="4">
+							    		<span wicket:id="navigatorLabelRobFormB3">[dataView navigatorLabelRobFormB3]</span>
+								        <span wicket:id="navigatorRobFormB3">[dataView navigatorRobFormB3]</span>
+							    	</th>
+							  </tr></tfoot>
+							</table>
+						</div>
+					</div>
+				</td>
+			</tr>
+			<tr>
+				<td align="right">&nbsp;</td>
+			</tr>
+			<tr>
+				<td align="right">
+					<button class="ui button negative" wicket:id="discard" ><wicket:message key="page.lbl.ezbiz.robFormB.discard" /></button>
+					<input wicket:id="b3Prev" type="button" class="ui primary button" value="Previous" /> 
+					<input wicket:id="b3Next" type="button" class="ui primary button" value="Next" /> </td>
+			</tr>
+		</table>
+	</form>
+</wicket:extend>

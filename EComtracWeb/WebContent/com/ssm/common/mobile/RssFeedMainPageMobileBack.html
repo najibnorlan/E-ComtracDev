@@ -1,0 +1,63 @@
+ <style type="text/css">
+     th.last-name *, td.last-name {
+         font-weight: bold;
+         color: #AA0000;
+     }
+     th.numeric, td.numeric {
+         text-align: right !important;
+     }
+ </style>
+<wicket:extend>
+	<script type="text/javascript">
+jQuery(function() {
+    jQuery.getFeed({
+        url: 'http://crossorigin.me/http://www.ssm.com.my/en/rss.xml',
+        success: function(feed) {
+            
+            var html = '';
+			//alert(feed.items.length);
+
+			for(var i = 0; i < feed.items.length ; i++) {
+            
+                var item = feed.items[i];
+                
+
+                html += '<div class="panel-heading">';
+                html += '<h3 class="panel-title">'+item.title+'</h3>';
+                html += '</div>';
+                html += '<div class="panel-body">';
+                html += item.description;
+                html += '</div>';
+                
+                /*html += '<a href="'
+                + item.link
+                + '">'
+                + item.title
+                + '</a>';
+                
+                html += '<div class="updated">'
+                + item.updated
+                + '</div>';
+                */
+            }
+            html += '</div>';
+            
+            jQuery('#result').append(html);
+        }    
+    });
+});
+</script>
+	
+	
+<div class="scrollable">
+  <div class="scrollable-content">
+    
+    
+    <div id="result" class="panel panel-default" >
+        
+      </div>
+    
+      
+  </div>
+</div>
+</wicket:extend>

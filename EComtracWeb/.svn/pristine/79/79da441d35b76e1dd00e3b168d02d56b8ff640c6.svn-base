@@ -1,0 +1,131 @@
+<wicket:extend>
+	
+	<!--table width="100%" cellpadding="5px" border="0">
+	<tr>
+		<td>
+			<table width="100%" class="blockWelcomeTitle">
+			<tr>
+				<td><img src="images/software.png" align="middle" />&nbsp;MY LLP MODULES</td>
+			</tr>
+			</table>
+		</td>
+	</tr>
+	<tr>
+		<td>
+			<table class="blockWelcomeSubTitle" border="0" cellspacing="10px" cellpadding="10px">
+			<tr>
+				<td valign="top" nowrap="nowrap" class="blockWelcomeChild"><img src="images/template.png" align="middle" />&nbsp;<b>My LLP</b></td>
+				<td valign="top" align="left" nowrap="nowrap" class="blockWelcomeChild">
+					<table class="blockWelcomeModule">
+					<tr>
+						<td><img src="images/viewdetail.png" align="middle" />
+						<a href="#" wicket:id="myRegistrationList">My LLP Registration</a></td>
+					</tr>
+					<tr>
+						<td><img src="images/viewdetail.png" align="middle" />
+						<a href="#" wicket:id="myReserveList">My Reserved Names</a>
+						</td>
+					</tr>
+					<tr>
+						<td><img src="images/viewdetail.png" align="middle" />
+						<a href="#" wicket:id="myPaymentList">My Payment History</a></td>
+					</tr>
+					</table>
+				</td>
+				<td valign="top" width="60%" class="blockWelcomeChild">
+					<b>View your registration</b><br>
+					<p>To view your registration, this is where you view your registration and reserve LLP Names.
+					You can also view your payment history.</p>
+				</td>
+			</tr>
+			<tr>
+				<td valign="top" nowrap="nowrap" class="blockWelcomeChild"><img src="images/menu.png" align="middle" />&nbsp;<b>LLP Registration</b></td>
+				<td valign="top" align="left" nowrap="nowrap" class="blockWelcomeChild">
+					<table class="blockWelcomeModule">
+					<tr>
+						<td><img src="images/viewdetail.png" align="middle" />
+						<a href="#" wicket:id="generalReg">General Registration</a></td>
+					</tr>
+					<tr>
+						<td><img src="images/viewdetail.png" align="middle" />
+						<a href="#" wicket:id="CSReg">Professional Practice - Company Secretary</a></td>
+					</tr>
+					<tr>
+						<td><img src="images/viewdetail.png" align="middle" />
+						<a href="#" wicket:id="CAReg">Professional Practice - Chartered Accountant</a></td>	
+					</tr>
+					<tr>
+						<td><img src="images/viewdetail.png" align="middle" />
+						<a href="#" wicket:id="LawReg">Professional Practice - Advocates & Solicitor</a></td>	
+					</tr>
+					</table>
+				</td>
+				<td valign="top" width="60%" class="blockWelcomeChild">
+					<b>Want to make your LLP Registration?</b><br>
+					<p>To make your registration, this is where you make your LLP registration.
+					Registration divided into GENERAL and PROFESSIONAL PRACTICE.</p>
+				</td>
+			</tr>
+			<tr>
+				<td valign="top" nowrap="nowrap" class="blockWelcomeChild"><img src="images/reserve.png" align="middle" />&nbsp;<b>Reserve Names Registration</b></td>
+				<td valign="top" align="left" nowrap="nowrap" class="blockWelcomeChild">
+					<table class="blockWelcomeModule">
+					<tr>
+						<td><img src="images/viewdetail.png" align="middle" />
+						<a href="#" wicket:id="generalReserve">General Registration</a></td>	
+					</tr>
+					<tr>
+						<td><img src="images/viewdetail.png" align="middle" />
+						<a href="#" wicket:id="CSReserve">Company Secretary Registration</a></td>
+					</tr>
+					</table>
+				</td>
+				<td valign="top" width="60%" class="blockWelcomeChild">
+					<b>I want to make LLP Reservation Names.</b><br>
+					<p>This module allows you to make Names Reservation.
+				</td>
+			</tr>
+			<tr>
+				<td valign="top" nowrap="nowrap" class="blockWelcomeChild"><img src="images/properties.png" align="middle" />&nbsp;<b>User Profile</b></td>
+				<td valign="top" align="left" nowrap="nowrap" class="blockWelcomeChild">
+					<table class="blockWelcomeModule">
+					<tr>
+						<td><img src="images/viewdetail.png" align="middle" />
+						<a href="#" wicket:id="viewUserProfile">View User Profile</a></td>
+					</tr>
+					<tr>
+						<td><img src="images/viewdetail.png" align="middle" />
+						<a href="#" wicket:id="changePwd">Change My Password</a></td>
+					</tr>
+					</table>
+				</td>
+				<td valign="top" width="60%" class="blockWelcomeChild">
+					<b>My Profile.</b><br>
+					<p>View your details and make changes on your password!
+				</td>
+			</tr>
+			</table>
+			
+		</td>
+	</tr>
+	</table>
+	
+	<br></br-->
+	
+	<table>
+	<tr>
+		<td>
+			<p style="text-align: justify;" class="blockWithBorder"><strong><wicket:message key="page.afterLogin.header1"/></strong></p>
+			<p style="text-align: justify;" class="blockWithBg"><wicket:message key="page.afterLogin.desc1"/></p>
+			<p style="text-align: justify;" class="blockWithBorder"><strong><wicket:message key="page.afterLogin.header2"/></strong></p>
+			<p style="text-align: justify;" class="blockWithBg"><wicket:message key="page.afterLogin.desc2"/></p>
+			<p style="text-align: justify;" class="blockWithBorder"><strong><wicket:message key="page.afterLogin.header3"/></strong></p>
+			<p style="text-align: justify;" class="blockWithBg"><wicket:message key="page.afterLogin.desc3"/></p>
+			<p style="text-align: justify;"><wicket:message key="page.afterLogin.desc4"/></p>
+			<p style="text-align: justify;"><wicket:message key="page.afterLogin.desc5"/></p>
+			<p style="text-align: justify;"> </p>
+		</td>
+	</tr>
+	</table>
+
+</wicket:extend>

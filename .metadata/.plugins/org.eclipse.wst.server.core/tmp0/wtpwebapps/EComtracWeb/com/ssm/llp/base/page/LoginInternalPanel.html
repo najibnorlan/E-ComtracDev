@@ -1,0 +1,64 @@
+<wicket:extend>
+	<form wicket:id="signInInternalForm" class="ui form">
+		<script type="text/javascript" wicket:id="myKadLoginValidation"></script>
+		<table>
+			<tr>
+				<td>
+					<div class="field">
+						<label><span wicket:id="usernameLabel" hidden="true" /></label>
+						<div class="ui left icon input">
+							<i class="user icon"></i> <input wicket:id="username" type="text"
+								size="20" placeholder="USERNAME" />
+						</div>
+					</div>
+				</td>
+			</tr>
+			<tr>
+				<td>
+					<div class="field">
+						<label><span wicket:id="passwordLabel" hidden="true" /></label>
+						<div class="ui left icon input">
+							<i class="lock icon"></i> <input wicket:id="password"
+								type="password" value="password" size="22"
+								placeholder="PASSWORD" /> <span><i class="fa fa-eye"
+								onclick="showHidePass(this,'password')" title="Show Password" /></span>
+						</div>
+					</div>
+				</td>
+			</tr>
+			<tr>
+				<td colspan="2"><br> <img wicket:id="captchaImage"
+					style="width: 300px" align="center" />&nbsp; <span
+					wicket:id="refreshCaptcha"> <i class="fa fa-refresh fa-spin"></i>
+				</span></td>
+			</tr>
+			<tr>
+				<td>
+					<div class="field">
+						<label><span wicket:id="captchaWordLabel" hidden="true" /></label>
+						<input wicket:id="captchaWord" type="text" size="20"
+							placeholder="VERIFICATION CODE" />
+					</div>
+				</td>
+			</tr>
+			<tr>
+				<td>&nbsp;</td>
+			</tr>
+			<tr>
+				<td>
+					<div class="field">
+						<button class="ui fluid large blue submit button"
+							wicket:id="ezbizBoLogin">
+							<wicket:message key="page.lbl.ezbiz.loginInternal.ezbizBoLogin" />
+ 						</button>
+<!-- 						<button style="visibility: hidden;" wicket:id="myKadLogin"
+							class="ui right floated green button">
+							<wicket:message key="page.lbl.ezbiz.loginInternal.myKadLogin" />
+						</button> -->
+					</div>
+				</td>
+			</tr>
+		</table>
+
+	</form>
+</wicket:extend>

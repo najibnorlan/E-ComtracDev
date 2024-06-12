@@ -1,0 +1,29 @@
+<wicket:extend>
+	<span wicket:id="feedback"></span>
+	<form wicket:id="emailLogForm">
+	<table>
+		<tr align="left" valign="top">
+			<td align="left" valign="top"><span wicket:id="emailFromLabel" /></td>
+			<td width="5%">&nbsp;:&nbsp;</td>
+			<td><input wicket:id="emailFrom" type="text" size="50" /></td>
+		</tr>
+		<tr>
+			<td><span wicket:id="emailToLabel" /></td>
+			<td width="5%">&nbsp;:&nbsp;</td>
+			<td><input wicket:id="emailTo" type="text" size="50" /></td>
+		</tr>
+		<tr>
+			<td><span wicket:id="emailSubjectLabel" /></td>
+			<td width="5%">&nbsp;:&nbsp;</td>
+			<td><input wicket:id="emailSubject" type="text" size="80" /></td>
+		</tr>
+		<tr>
+			<td><span wicket:id="emailBodyLabel" /></td>
+			<td width="5%">&nbsp;:&nbsp;</td>
+			<td><textarea wicket:id="emailBody" cols="80" rows="25" /></td>
+		</tr>
+	</table>
+	<input wicket:id="resendBtn" type="button" wicket:message="value:listLlpEmailLog.page.resendButton" />
+	</form>
+
+</wicket:extend>

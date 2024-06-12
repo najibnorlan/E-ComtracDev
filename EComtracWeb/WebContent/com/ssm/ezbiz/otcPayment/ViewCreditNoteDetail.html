@@ -1,0 +1,110 @@
+<wicket:extend>
+
+
+	<table class="ui striped table">
+		<thead>
+			<tr>
+				<th><wicket:message key="page.lbl.ezbiz.creditNoteDetail.bil" /></th>
+				<th><wicket:message
+						key="page.lbl.ezbiz.creditNoteDetail.itemDesc" /></th>
+				<th><wicket:message key="page.lbl.ezbiz.creditNoteDetail.itemDet" /></th>
+				<th><wicket:message
+						key="page.lbl.ezbiz.creditNoteDetail.itemAmountWoutGst" /></th>
+				<th><wicket:message
+						key="page.lbl.ezbiz.creditNoteDetail.itemGstAmt" /></th>
+				<th><wicket:message
+						key="page.lbl.ezbiz.creditNoteDetail.itemAmount" /></th>
+			</tr>
+		</thead>
+		<tbody>
+			<tr wicket:id="paymentItems">
+				<td><span wicket:id="bil">[bil]</span></td>
+				<td><span wicket:id="itemDesc">[itemDesc]</span></td>
+				<td><span wicket:id="itemDet">[itemDet]</span></td>
+				<td><span wicket:id="itemAmountWoutGst">[itemAmountWoutGst]</span></td>
+				<td><span wicket:id="itemGstAmt">[itemGstAmt]</span></td>
+				<td><span wicket:id="itemAmount">[itemAmount]</span></td>
+			</tr>
+			<tr>
+				<td colspan="5" style="text-align: right; font-size: 14px"><b><wicket:message
+							key="page.lbl.ezbiz.creditNoteDetail.totalToBePaid" /></b></td>
+				<td style="font-size: 14px"><b><span
+						wicket:id="totalToBePaid">[totalToBePaid]</span></b></td>
+			</tr>
+		</tbody>
+	</table>
+	<h4 class="ui horizontal divider header">Officer Approval</h4>
+	<div class="ui right aligned grid form">
+		<div class="left floated left aligned six wide column">
+			<div class="ui icon message">
+				<i class="info circle icon"></i>
+				<div class="content">
+					<div class="header">
+						<wicket:message key="page.lbl.ezbiz.creditNoteDetail.receiptNo" />
+					</div>
+					<p>
+						<span wicket:id="receiptNo">[receiptNo]</span>
+					</p>
+					<div class="header">
+						<wicket:message key="page.lbl.ezbiz.creditNoteDetail.transactionId" />
+					</div>
+					<p>
+						<span wicket:id="transId">[transId]</span>
+					</p>
+					<div class="header">
+						<wicket:message key="page.lbl.ezbiz.creditNoteDetail.appRefNo" />
+					</div>
+					<p>
+						<span wicket:id="appRefNo">[appRefNo]</span>
+					</p>
+					<div class="header">
+						<wicket:message key="page.lbl.ezbiz.creditNoteDetail.creditTo" />
+					</div>
+					<p>
+						<span wicket:id="payerName">[payerName]</span>
+					</p>
+					<p>
+						<span wicket:id="payerAddr">[payerAddr]</span>
+					</p>
+				</div>
+			</div>
+		</div>
+
+		<div class="right floated left aligned seven wide column">
+			<div class="ui icon message">
+				<i class="sign in icon"></i>
+				<form wicket:id="form">
+					<div class="content">
+						<div class="header">
+							<wicket:message key="page.lbl.ezbiz.creditNoteDetail.reason" />
+						</div>
+						<p>
+							<label wicket:id="reasonLabel" hidden="true"></label><textarea rows="3" wicket:id="reason"></textarea>
+						</p>
+						<div class="header">
+							<wicket:message key="page.lbl.ezbiz.creditNoteDetail.username" />
+						</div>
+						<p>
+							<label wicket:id="usernameLabel" hidden="true"></label><input wicket:id="username"/>
+						</p>
+						<div class="header">
+							<wicket:message key="page.lbl.ezbiz.creditNoteDetail.password" />
+						</div>
+						<p>
+							<label wicket:id="passwordLabel" hidden="true"></label><input wicket:id="password" type="password"/>
+						</p>
+						<div class="ui horizontal divider">-</div>
+						<div class="left floated right aligned column">
+							<div class="ui red right labeled icon button" wicket:id="cancel">
+								Cancel <i class="remove icon"></i>
+							</div>
+							<div class="ui positive right labeled icon button" wicket:id="submit">
+								Submit <i class="checkmark icon"></i>
+							</div>
+						</div>
+					</div>
+				</form>
+			</div>
+		</div>
+	</div>
+</wicket:extend>

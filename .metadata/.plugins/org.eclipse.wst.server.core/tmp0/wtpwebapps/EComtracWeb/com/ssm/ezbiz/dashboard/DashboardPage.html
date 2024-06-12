@@ -1,0 +1,83 @@
+<wicket:extend>
+	<div wicket:id="alert" > </div>
+	<wicket:enclosure child="latestTransactionPanel">
+	<div class="ui top attached segment">
+		<div class="ui top attached label">
+			<h4 class="ui header"><wicket:message key="page.title.dashboard.latestTransaction" /></h4>
+		</div>
+		<div wicket:id="latestTransactionPanel"></div>
+	</div>
+	</wicket:enclosure>
+	<div class="ui segment">
+		<input type="button" wicket:id="newRegistration" wicket:message="value:page.title.mybiz.newRegistration,class:page.title.mybiz.newRegistration.class"   />
+		<wicket:message key="page.title.dashboard.newRegNote" />
+	</div>
+	<table>
+		<tr	style="background-color: red">
+		</tr>
+	</table>
+	<div class="ui top attached segment" >
+		<div class="ui top attached label">
+			<h4 class="ui header"><wicket:message key="page.title.dashboard.bizList" /></h4>
+		</div>
+		<div>
+			<wicket:enclosure child="wmcListBizness">
+				<wicket:message key="page.lbl.dashboard.bizListLegend" />
+			</wicket:enclosure>
+		</div>
+		<wicket:enclosure child="wmcListBizness">
+		<div class="ui five cards" wicket:id="wmcListBizness">
+			<div class="ui card" wicket:id="sorting">
+				<div class="content">
+					<div class="header"><span wicket:id="brNo"/></div>
+					<div class="header"><span wicket:id="brName" /></div>
+					<div class="meta"><wicket:message key="page.title.dashboard.businessInfo.expDate" /> &nbsp;:&nbsp;<span wicket:id="expDate" /></div>
+					<div class="description"><span wicket:id="mainAddr" /></div>
+				</div>
+				<div class="extra content">
+					<div class="ui one buttons">
+						<input type="button" wicket:id="showDetails" wicket:message="value:page.title.mybiz.showDetails" class="ui primary button" />
+					</div>
+				</div>
+				<div class="ui modal" wicket:id="wmcDetails" style="z-index:999">
+				  <div class="header" style="background-color: LightSteelBlue ;"><wicket:message key="page.title.dashboard.businessInfo.businessDetails" /></div>
+				  <div class="content">
+				    <b><span wicket:id="brNo"/></b>
+					<div class="header"><b><span wicket:id="brName" /></b> </div>
+					<div class="meta"><wicket:message key="page.title.dashboard.businessInfo.expDate" /> &nbsp;:&nbsp;<span wicket:id="expDate" /></div>
+					<div class="ui segments">
+						<div class="ui compact horizontal segments">
+							<div class="ui segment">
+								<u><wicket:message key="page.title.dashboard.mainAddr" /></u>
+								<span wicket:id="mainAddr" />
+							</div>
+							<div class="ui segment">
+								<u><wicket:message key="page.title.dashboard.bizDesc" /></u>
+								<span wicket:id="bizDesc" />
+							</div>
+						</div>
+					</div>
+					<wicket:enclosure child="pendingTransactionPanel">
+						<div class="ui top attached segment">
+							<div class="ui top attached label">
+								<h4 class="ui header"><wicket:message key="page.title.dashboard.pendingTransactionPanel" /></h4>
+							</div>
+							<div wicket:id="pendingTransactionPanel"></div>
+						</div>
+						<wicket:message key="page.title.dashboard.hasPendingTransaction" />
+					</wicket:enclosure>
+				  </div>
+				  <div class="actions">
+				    <input type="button" wicket:id="editRenew" wicket:message="value:page.title.mybiz.renewLink" class="ui primary button" />
+					<input type="button" wicket:id="makeChanges" wicket:message="value:page.title.mybiz.makeChanges" class="ui primary button" />
+					<input type="button" wicket:id="terminate" wicket:message="value:page.title.mybiz.terminate" class="ui primary button" />
+				    <div class="ui cancel button">Close</div>
+				  </div>
+				</div>
+			</div>
+		</div>
+		</wicket:enclosure>
+		<span wicket:id="webisError"/>
+	</div>
+	
+</wicket:extend>

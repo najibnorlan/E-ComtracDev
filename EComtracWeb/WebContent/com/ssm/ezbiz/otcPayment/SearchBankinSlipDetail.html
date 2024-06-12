@@ -1,0 +1,84 @@
+<wicket:extend>
+	<div class="ui right aligned grid form">
+		<div class="left floated left aligned six wide column">
+			<div class="ui attached message">
+			  <div class="header">
+			    <wicket:message key="page.lbl.ezbiz.bankinSlip.slipNo" />
+			  </div>
+			  <p><span id="slipNo" wicket:id="slipNo"></span></p>
+			</div>
+			<div class="ui form attached fluid segment">
+			  <div class="two fields">
+			    <div class="field">
+			      <label><wicket:message key="page.lbl.ezbiz.bankinSlip.branch" /></label>
+			      <span wicket:id="branch"> </span>
+			    </div>
+			    <div class="field">
+			      <label><wicket:message key="page.lbl.ezbiz.bankinSlip.floor" /></label>
+			   	  <span wicket:id="floor"> </span>
+			    </div>
+			  </div>
+			  <div class="two fields">
+			  <div class="field">
+			    <label><wicket:message key="page.lbl.ezbiz.bankinSlip.createBy" /></label>
+			    <span wicket:id="createBy"> </span><br>
+			     <span wicket:id="createDt"> </span>
+			  </div>
+			  <div class="field">
+			    <label><wicket:message key="page.lbl.ezbiz.bankinSlip.totalAmount" /></label>
+			    RM <span wicket:id="totalAmount"> </span>
+			  </div>
+			  </div>
+			  <div class="ui horizontal divider">-</div>
+				<div class="left floated left aligned column">
+						<div class="ui primary medium icon button"
+							wicket:id="back">
+							Back 
+						</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	<table class="ui striped table" width="100%">
+			<thead>
+				<tr>
+					<th><wicket:message
+							key="page.lbl.ezbiz.collectionVerification.counterName" /></th>
+					<th><wicket:message
+							key="page.lbl.ezbiz.collectionVerification.branch" /></th>
+					<th><wicket:message
+							key="page.lbl.ezbiz.collectionVerification.floorLevel" /></th>
+					<th><wicket:message
+							key="page.lbl.ezbiz.collectionVerification.userId" /></th>
+							<th><wicket:message
+							key="page.lbl.ezbiz.collectionVerification.amount" /></th>
+					<th><wicket:message
+							key="page.lbl.ezbiz.collectionVerification.checkinDt" /></th>
+					<th><wicket:message
+							key="page.lbl.ezbiz.collectionVerification.checkoutDt" /></th>
+					<th><wicket:message
+							key="page.lbl.ezbiz.collectionVerification.balancingStatus" /></th>
+					<th><wicket:message
+							key="page.lbl.ezbiz.collectionVerification.verifyBy" /></th>
+					<th><wicket:message
+							key="page.lbl.ezbiz.collectionVerification.approveBy" /></th>
+				</tr>
+			</thead>
+			<tbody>
+				<tr wicket:id="counterList">
+					<td><span wicket:id="counterName">[counterName]</span></td>
+					<td><span wicket:id="branch">[branch]</span></td>
+					<td><span wicket:id="floor">[floor]</span></td>
+					<td><span wicket:id="userId">[userId]</span></td>
+					<td>RM<span wicket:id="sumTransactions">[sumTransactions]</span></td>
+					<td><span wicket:id="checkoutDt">[checkoutDt]</span></td>
+					<td><span wicket:id="checkinDt">[checkinDt]</span></td>
+					<td><span wicket:id="balancingStatus">[balancingStatus]</span></td>
+					<td><label wicket:id="verifyBy"></label><br>
+					<label wicket:id="verifyDt"></label></td>
+					<td><label wicket:id="approveBy"></label><br>
+					<label wicket:id="approveDt"></label></td>
+				</tr>
+			</tbody>
+		</table>
+</wicket:extend>

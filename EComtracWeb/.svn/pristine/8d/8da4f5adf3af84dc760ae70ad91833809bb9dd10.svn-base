@@ -1,0 +1,156 @@
+<wicket:extend>
+	
+	
+	<div id="signInModal" class="ui modal" style="z-index: 999">
+		<div class="header" style="background-color: LightSteelBlue;">
+			Title
+		</div>
+		<div class="content">
+			<div class="ui middle aligned center aligned grid">
+				<div class="column">
+					<h2 class="ui teal image header">
+						<div class="content">Sign up for an account</div>
+					</h2>
+					<form class="ui large form">
+						<div class="ui stacked segment left aligned">
+							<div class="field">
+								<div class="ui left icon input">
+									<i class="user icon"></i> <input type="text" name="fullName" placeholder="Full Name">
+								</div>
+							</div>
+							<div class="two fields">
+								<div class="field" style="width: 30%">
+									<div class="ui left icon input">
+										<i class="id card icon"></i> <input type="text" name="idType" placeholder="ID Type">
+									</div>
+								</div>
+								<div class="field">
+
+									<input type="text" name="idNo" placeholder="Id No">
+								</div>
+							</div>
+
+							<div class="two fields">
+								<div class="field">
+									<div class="ui left icon input">
+										<i class="flag icon"></i> <input type="text" name="nationality" placeholder="Nationality ">
+									</div>
+								</div>
+								<div class="field">
+									<div class="ui left icon input">
+										<i class="venus mars icon"></i> <input type="text" name="gender" placeholder="Gender">
+									</div>
+								</div>
+							</div>
+							<div class="two fields">
+								<div class="field">
+									<div class="ui left icon input">
+										<i class="birthday cake icon"></i> <input type="text" name="dob" placeholder="Date Of Birth">
+									</div>
+								</div>
+								<div class="field">
+									<div class="ui left icon input">
+										<i class="users icon"></i> <input type="text" name="race" placeholder="Race">
+									</div>
+								</div>
+							</div>
+							<div class="two fields">
+								<div class="field">
+									<div class="ui left icon input">
+										<i class="address book outline icon"></i> <input type="text" name="address1" placeholder="Address 1">
+									</div>
+								</div>
+								<div class="field">
+									<div class="ui left icon input">
+										<i class="address book outline icon"></i> <input type="text" name="address2" placeholder="Address 2">
+									</div>
+								</div>
+							</div>
+							<div class="two fields">
+								<div class="field">
+									<div class="ui left icon input">
+										<i class="address book outline icon"></i> <input type="text" name="address3" placeholder="Address 3">
+									</div>
+								</div>
+								<div class="field">
+									<div class="ui left icon input">
+										<i class="map marker alternate icon"></i> <input type="text" name="postcode" placeholder="Postcode">
+									</div>
+								</div>
+							</div>
+							<div class="two fields">
+								<div class="field">
+									<div class="ui left icon input">
+										<i class="building outline icon"></i> <input type="text" name="city" placeholder="City">
+									</div>
+								</div>
+								<div class="field">
+									<div class="ui left icon input">
+										<i class="globe icon"></i> <input type="text" name="state" placeholder="State">
+									</div>
+								</div>
+							</div>
+							<div class="two fields">
+								<div class="field">
+									<div class="ui left icon input">
+										<i class="map signs icon"></i> <input type="text" name="country" placeholder="Country">
+									</div>
+								</div>
+								<div class="field">
+									<div class="ui left icon input">
+										<i class="mobile alternate icon"></i> <input type="text" name="phoneNo" placeholder="Phone No">
+									</div>
+								</div>
+							</div>
+
+							<div class="field">
+								<div class="ui left icon input">
+									<i class="user circle outline icon"></i> <input type="text" name="username" placeholder="Username">
+								</div>
+							</div>
+
+							<div class="two fields">
+								<div class="field">
+									<div class="ui left icon input">
+										<i class="key icon"></i> <input type="text" name="password" placeholder="Password">
+									</div>
+								</div>
+								<div class="field">
+									<div class="ui left icon input">
+										<i class="key icon"></i> <input type="text" name="reconfirmPassword" placeholder="Re-Confirm Password">
+									</div>
+								</div>
+							</div>
+
+							<div class="two fields">
+								<div class="field">
+									<div class="ui left icon input">
+										<i class="envelope outline icon"></i> <input type="text" name="email" placeholder="Email">
+									</div>
+								</div>
+								<div class="field">
+									<div class="ui left icon input">
+										<i class="envelope outline icon"></i> <input type="text" name="reconfirmEmail" placeholder="Re-Confirm Email">
+									</div>
+								</div>
+							</div>
+							<div class="ui fluid large teal submit button">Register</div>
+						</div>
+
+						<div class="ui error message"></div>
+
+					</form>
+
+					<div class="ui message">
+						New to us? <a href="#">Sign Up</a>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="actions">
+			<div class="ui approve button">Ok</div>
+		</div>
+	</div>
+
+	
+</wicket:extend>

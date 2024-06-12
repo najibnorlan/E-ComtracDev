@@ -1,0 +1,197 @@
+<wicket:extend>
+	<style>
+		td{
+			font-family: 'Tahoma', 'Lucida Sans', 'Arial', 'Helvetica', 'Sans-serif', 'sans'; 
+			font-size: 9pt; 
+			padding: 2px;
+		}
+			
+		table#itemsTable{
+			border: 0.5px solid black;
+		}
+		
+		table#itemsTable td{
+			padding: 4px;
+		}
+		
+		table#gstSummary td{
+			padding-right: 50px;
+		}
+	</style>
+	
+	<script type="text/javascript" wicket:id="jsScript"></script>
+	
+	<div id="receiptdiv" style="width: 80%">
+		<div class="ui grid">
+			<div class="three wide row">
+				<div class="column center aligned"><b><i><span wicket:id="labelReceipt"></span></i></b></div>
+			</div>
+		</div>
+		<div class="ui divider"></div>
+		<div class="ui grid">
+			<div class="three wide row">
+				<div class="column center aligned"><img width="20%" src="./images/ssm.png" /></div>
+			</div>
+		</div>
+		<div class="ui divider"></div>
+		<div class="ui grid">
+			<div class="two column row">
+				<div class="left floated left aligned column">
+					<wicket:message key="paymentReceipt.panel.ssmAddress" /><br>
+					<wicket:message key="page.base.label.ssmTelNo"/><br>
+					<wicket:message key="paymentReceipt.panel.ssmGstNoNew" />
+				</div>
+				<div class="right floated left aligned column">
+					<div style="margin-left: 60px">
+						<table>
+							<wicket:enclosure child="taxInvoiceNo">
+								<tr>
+									<td><wicket:message key="paymentReceipt.panel.taxInvoice" /></td>
+									<td width="5%">&nbsp;:&nbsp;</td>
+									<td><span wicket:id="taxInvoiceNo">[taxInvoiceNo]</span></td>
+								</tr>
+							</wicket:enclosure>
+							<tr>
+								<td><wicket:message key="paymentReceipt.panel.receiptNo" /></td>
+								<td width="5%">&nbsp;:&nbsp;</td>
+								<td><span wicket:id="receiptNo">[receiptNo]</span></td>
+							</tr>
+							<tr>
+								<td><wicket:message key="paymentReceipt.panel.appRefNo" /></td>
+								<td width="5%">&nbsp;:&nbsp;</td>
+								<td><span wicket:id="appRefNo">[appRefNo]</span></td>
+							</tr>
+							<wicket:enclosure child="creditCardNo">
+								<tr>
+									<td><wicket:message key="paymentReceipt.panel.creditCardNo" /></td>
+									<td width="5%">&nbsp;:&nbsp;</td>
+									<td><span wicket:id="creditCardNo">[creditCardNo]</span></td>
+								</tr>
+							</wicket:enclosure>
+							<wicket:enclosure child="approvalCode">
+								<tr>
+									<td><wicket:message key="paymentReceipt.panel.approvalCode" /></td>
+									<td width="5%">&nbsp;:&nbsp;</td>
+									<td><span wicket:id="approvalCode">[approvalCode]</span></td>
+								</tr>
+							</wicket:enclosure>
+							<tr>
+								<td><wicket:message key="paymentReceipt.panel.paymentMode" /></td>
+								<td width="5%">&nbsp;:&nbsp;</td>
+								<td><span wicket:id="paymentMode">[paymentMode]</span></td>
+							</tr>
+							<tr>
+								<td><wicket:message key="paymentReceipt.panel.transactioId" /></td>
+								<td width="5%">&nbsp;:&nbsp;</td>
+								<td><span wicket:id="transId">[transId]</span></td>
+							</tr>
+							<tr>
+								<td><wicket:message key="paymentReceipt.panel.paymentDateTime" /></td>
+								<td width="5%">&nbsp;:&nbsp;</td>
+								<td><span wicket:id="requestDate">[requesDate]</span></td>
+							</tr>
+						</table>
+					</div>
+				</div>
+			</div>
+			<div class="two column row">
+				<div class="left floated left aligned column">
+					<b><span wicket:id="payerName">[payerName]</span></b><br>
+					<span wicket:id="payerId">[payerId]</span><br>
+					<span wicket:id="payerAddr">[payerAddr]</span>
+				</div>
+				<div class="right floated left aligned column">
+					<div style="margin-left: 60px">
+						<span style="font-family: BarcodeC39;font-size: 16px" wicket:id="receiptBarcode">[receiptBarcode]</span>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="ui grid">
+			<div class="three wide row">
+				<table id="itemsTable" style="width: 100%">
+					<thead>
+						<wicket:enclosure child="comtracTrainingName">
+							<tr>
+								<td colspan="5" style="text-align: center;"><b>Training Name :	<span wicket:id="comtracTrainingName">[comtracTrainingName]</span> </b></td>
+							</tr>
+						</wicket:enclosure>
+						<tr>
+							<td></td>
+							<td><b>NO.</b></td>
+							<td colspan="2"><b>DESCRIPTION</b></td>
+							<td style="text-align: right; width: 15%"><b>AMOUNT (RM)</b></td>
+						</tr>
+					</thead>
+					<tbody>
+						<tr wicket:id="paymentItems">
+							<td></td>
+							<td><span wicket:id="index"></span></td>
+							<td><span wicket:id="productType"></span></td>
+							<td><span wicket:id="itemDesc">itemDesc</span><br><wicket:enclosure child="itemDet"><span wicket:id="itemDet">itemDet</span></wicket:enclosure></td>
+							<td style="text-align: right;"><span wicket:id="itemAmountWoutGst"></span></td>
+						</tr>
+						<tr><td colspan="5">&nbsp;</td></tr>
+						<tr>
+							<td colspan="4" style="text-align: right"><b><wicket:message key="paymentReceipt.page.totalWithoutGST"/></b></td>
+							<td style="text-align: right"><span wicket:id="totalWithoutGst"></span></td>
+						</tr>
+						<tr>
+							<td colspan="4" style="text-align: right"><b><wicket:message key="paymentReceipt.page.GSTPayable"/></b></td>
+							<td style="text-align: right"><span wicket:id="totalGst"></span></td>
+						</tr>
+						<tr>
+							<td colspan="4" style="text-align: right"><b><wicket:message key="paymentReceipt.page.totalAmountPayable"/></b></td>
+							<td style="text-align: right"><span wicket:id="totalAmount"></span></td>
+						</tr>
+						<tr><td colspan="5">&nbsp;</td></tr>
+						<tr>
+							<td colspan="4" align="right" ><b><wicket:message key="paymentReceipt.panel.cashReceived" /></b></td>
+							<td align="right"><span wicket:id="cashReceived">[cashReceived]</span></td>
+						</tr>
+						<tr>
+						<td colspan="4" align="right" ><b><wicket:message key="paymentReceipt.panel.change" /></b></td>
+						<td align="right"><span wicket:id="change">[change]</span></td>
+					</tr>
+					</tbody>
+				</table>
+			</div>
+		</div>
+		<div class="ui right aligned grid">
+			<div class="left floated">
+				<table id="gstSummary" style="">
+					<thead>
+						<tr>
+							<td>GST Summary</td>
+							<td>Amount (RM)</td>
+							<td style="text-align: right">Tax (RM)</td>
+						</tr>
+					</thead>
+					<tbody>
+						<tr>
+							<td>SR</td>
+							<td style="text-align: right"><b><span wicket:id="totalAmountSr">[totalAmountSr]</span></b></td>
+							<td style="text-align: right"><b><span wicket:id="totalTaxSr">[totalTaxSr]</span></b></td>
+						</tr>
+						<tr>
+							<td>OS</td>
+							<td style="text-align: right"><b><span wicket:id="totalAmountOS">[totalAmountOS]</span></b></td>
+							<td style="text-align: right"><b><span wicket:id="totalTaxOS">[totalTaxOS]</span></b></td>
+						</tr>
+					</tbody>
+				</table>
+			</div>
+		</div>
+		<br><label style="font-size: 9px" wicket:id="initialNote"></label>
+	</div>
+	<table>
+		<tr align="center">
+			<td><input
+				wicket:id="backToListPaymentOTC" type="button"
+				value="BACK" /><input id="Button1" type="button" name="btnPrint"
+				wicket:message="value:paymentReceipt.panel.printButton"
+				onclick="javascript:CallPrint('receiptdiv');" />
+				</td>
+		</tr>
+	</table>
+</wicket:extend>

@@ -1,0 +1,45 @@
+<wicket:extend>
+	<wicket:enclosure child="paymentItems">
+	<table width="100%" class="ui large table">
+		<thead>
+			<tr>
+				<th><wicket:message key="page.lbl.ezbiz.robFormA.feeSummary.itemNo" /></th>
+				<th><wicket:message key="page.lbl.ezbiz.robFormA.feeSummary.gstCode" /></th>
+				<th><wicket:message key="page.lbl.ezbiz.robFormA.feeSummary.item" /></th>
+				<th style="text-align: right;"><wicket:message key="page.lbl.ezbiz.robFormA.feeSummary.total" /></th>
+			</tr>
+		</thead>
+		<tbody>
+			<tr wicket:id="paymentItems">
+				<td><span wicket:id="index"></span></td>
+				<td><span wicket:id="gstCode"></span></td>
+				<td><span wicket:id="itemDesc">itemDesc</span><br>
+				<wicket:enclosure child="itemDet">
+						<span wicket:id="itemDet">itemDet</span>
+					</wicket:enclosure></td>
+				<td style="text-align: right;"><span wicket:id="itemAmountWoutGst"></span></td>
+			</tr>
+		</tbody>
+		<tfoot>
+			<tr>
+				<th>&nbsp;</th>
+				<th>&nbsp;</th>
+				<th style="text-align: right;"><b><wicket:message key="paymentReceipt.page.totalWithoutGST" /></b></th>
+				<th style="text-align: right;"><span wicket:id="totalWithoutGst"></span></th>
+			</tr>
+			<tr>
+				<th>&nbsp;</th>
+				<th>&nbsp;</th>
+				<th style="text-align: right;"><b><wicket:message key="paymentReceipt.page.GSTPayable" /></b></th>
+				<th style="text-align: right;"><span wicket:id="totalGst"></span></th>
+			</tr>
+			<tr>
+				<th>&nbsp;</th>
+				<th>&nbsp;</th>
+				<th style="text-align: right;"><b><wicket:message key="paymentReceipt.page.totalAmountPayable" /></b></th>
+				<th style="text-align: right;"><span wicket:id="totalAmount"></span></th>
+			</tr>
+		</tfoot>
+	</table>
+	</wicket:enclosure>
+</wicket:extend>

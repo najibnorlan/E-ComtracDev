@@ -1,0 +1,269 @@
+<wicket:extend>
+
+	<script type="text/javascript" wicket:id="jsScript"></script>
+
+	<div id="printdiv" style="width: 100%">
+		<div>
+			<img class="ui centered rounded small image" wicket:id="wicketId">
+		</div>
+
+		<tr>
+			<td>&nbsp;</td>
+		</tr>
+		<div class="ui grid equal width">
+			<div class="two column row">
+				<div class="column">
+					<table width="100%">
+						<tr>
+							<td valign="top">
+								<div class="ui top attached segment">
+									<div class="ui top attached label">
+										<h4 class="ui header">
+											<wicket:message
+												key="page.ssm.ezbiz.myCardDetailPage.basicInfo" />
+										</h4>
+									</div>
+									<table width="100%">
+										<tr>
+											<td>
+												<div class="field">
+													<label style="font-weight: bold;"><wicket:message
+															key="page.lbl.ezbiz.myCardDetailPage.name" /></label><br> <span
+														wicket:id="name" />
+												</div>
+											</td>
+										</tr>
+										<tr>
+											<td>&nbsp;</td>
+										</tr>
+										<tr>
+											<td>
+												<div class="field">
+													<label style="font-weight: bold;"><wicket:message
+															key="page.lbl.ezbiz.myCardDetailPage.originalName" /></label><br>
+													<span wicket:id="originalName" />
+												</div>
+											</td>
+										</tr>
+										<tr>
+											<td>&nbsp;</td>
+										</tr>
+										<tr>
+											<td>
+												<div class="field">
+													<label style="font-weight: bold;"><wicket:message
+															key="page.lbl.ezbiz.myCardDetailPage.gmpcName" /></label><br>
+													<span wicket:id="gmpcName" />
+												</div>
+											</td>
+										</tr>
+										<tr>
+											<td>&nbsp;</td>
+										</tr>
+										<tr>
+											<td>
+												<div class="field">
+													<label style="font-weight: bold;"><wicket:message
+															key="page.lbl.ezbiz.myCardDetailPage.mykadNo" /></label> <br>
+													<span wicket:id="mykadNo" />
+												</div>
+											</td>
+										</tr>
+										<tr>
+											<td>&nbsp;</td>
+										</tr>
+										<tr>
+											<td>
+												<div class="field">
+													<label style="font-weight: bold;"><wicket:message
+															key="page.lbl.ezbiz.myCardDetailPage.dob" /></label><br> <span
+														wicket:id="dob" />
+												</div>
+											</td>
+											<td>
+												<div class="field">
+													<label style="font-weight: bold;"><wicket:message
+															key="page.lbl.ezbiz.myCardDetailPage.birthPlace" /></label> <br>
+													<span wicket:id="birthPlace" />
+												</div>
+											</td>
+										</tr>
+										<tr>
+											<td>&nbsp;</td>
+										</tr>
+										<tr>
+											<td>
+												<div class="field">
+													<label style="font-weight: bold;"><wicket:message
+															key="page.lbl.ezbiz.myCardDetailPage.citizenship" /></label> <br>
+													<span wicket:id="citizenship" />
+												</div>
+											</td>
+											<td>
+												<div class="field">
+													<label style="font-weight: bold;"><wicket:message
+															key="page.lbl.ezbiz.myCardDetailPage.race" /></label><br> <span
+														wicket:id="race" />
+												</div>
+											</td>
+										</tr>
+										<tr>
+											<td>&nbsp;</td>
+										</tr>
+										<tr>
+											<td>
+												<div class="field">
+													<label style="font-weight: bold;"><wicket:message
+															key="page.lbl.ezbiz.myCardDetailPage.religion" /></label> <br>
+													<span wicket:id="religion" />
+												</div>
+											</td>
+											<td>
+												<div class="field">
+													<label style="font-weight: bold;"><wicket:message
+															key="page.lbl.ezbiz.myCardDetailPage.gender" /></label> <br>
+													<span wicket:id="gender" />
+												</div>
+											</td>
+										</tr>
+									</table>
+								</div>
+							</td>
+						</tr>
+					</table>
+				</div>
+				<div class="column">
+					<div class="ui top attached segment">
+						<div class="ui top attached label">
+							<h4 class="ui header">
+								<wicket:message
+									key="page.ssm.ezbiz.myCardDetailPage.contactInfo" />
+							</h4>
+						</div>
+						<table width="100%">
+
+							<tr>
+								<td colspan="2">
+									<div class="field">
+										<label style="font-weight: bold;"><wicket:message
+												key="page.lbl.ezbiz.myCardDetailPage.address" /></label> <br>
+										<span wicket:id="address" />
+									</div>
+								</td>
+							</tr>
+							<tr>
+								<td>&nbsp;</td>
+							</tr>
+							<tr>
+								<td>
+									<div class="field">
+										<label style="font-weight: bold;"><wicket:message
+												key="page.lbl.ezbiz.myCardDetailPage.postcode" /></label><br>
+										<span wicket:id="postcode" />
+									</div>
+								</td>
+							</tr>
+							<tr>
+								<td>&nbsp;</td>
+							</tr>
+							<tr>
+								<td>
+									<div class="field">
+										<label style="font-weight: bold;"><wicket:message
+												key="page.lbl.ezbiz.myCardDetailPage.city" /></label> <br> <span
+											wicket:id="city" />
+									</div>
+								</td>
+								<td>
+									<div class="field">
+										<label style="font-weight: bold;"><wicket:message
+												key="page.lbl.ezbiz.myCardDetailPage.state" /></label> <br> <span
+											wicket:id="state" />
+									</div>
+								</td>
+							</tr>
+							<tr>
+								<td>&nbsp;</td>
+							</tr>
+							<tr>
+								<td>
+									<div class="field">
+										<label style="font-weight: bold;"><wicket:message
+												key="page.lbl.ezbiz.myCardDetailPage.thumbPrintSuccess" /></label><br>
+										<span wicket:id="thumbPrintSuccess" />
+									</div>
+								</td>
+							</tr>
+							<tr>
+								<td>&nbsp;</td>
+							</tr>
+						</table>
+
+					</div>
+					<tr>
+						<td>&nbsp;</td>
+					</tr>
+					<div class="right floated left aligned eight wide column">
+						<div class="column">
+							<div class="ui top attached segment">
+								<div class="ui top attached label">
+									<h4 class="ui header">
+										<wicket:message
+											key="page.ssm.ezbiz.myCardDetailPage.internalInfo" />
+									</h4>
+								</div>
+								<table width="100%">
+									<tr>
+										<td>
+											<div class="group field">
+												<label style="font-weight: bold;"><wicket:message
+														key="page.lbl.ezbiz.myCardDetailPage.createDt" /></label> <br>
+												<span wicket:id="createDt" />
+											</div>
+										</td>
+										<td>
+											<div class="field">
+												<label style="font-weight: bold;"><wicket:message
+														key="page.lbl.ezbiz.myCardDetailPage.createBy" /></label> <br>
+												<span wicket:id="createBy" />
+											</div>
+										</td>
+									</tr>
+									<tr>
+										<td>&nbsp;</td>
+									</tr>
+									<tr>
+										<td>
+											<div class="field">
+												<label style="font-weight: bold;"><wicket:message
+														key="page.lbl.ezbiz.myCardDetailPage.adUserRequester" /></label>
+												<br> <span wicket:id="adUserRequester" />
+											</div>
+										</td>
+										<td>
+											<div class="field">
+												<label style="font-weight: bold;"><wicket:message
+														key="page.lbl.ezbiz.myCardDetailPage.ipAddress" /></label> <br>
+												<span wicket:id="ipAddress" />
+											</div>
+										</td>
+									</tr>
+								</table>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	<tr>
+		<td>&nbsp;</td>
+	</tr>
+	<div>
+		<input wicket:id="previous" type="button" class="ui primary button"
+			value="Previous" /> <input id="Button" type="button"
+			class="ui primary button"
+			wicket:message="value:myCardDetailPage.panel.printButton"
+			onclick="javascript:CallPrint('printdiv');" />
+	</div>
+</wicket:extend>

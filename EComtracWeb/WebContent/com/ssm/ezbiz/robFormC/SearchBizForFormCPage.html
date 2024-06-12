@@ -1,0 +1,34 @@
+<wicket:extend>
+<div>
+	<table class="ui striped table">
+	  <thead>
+	    	<tr>
+	    	<th width="15%"><wicket:message key="page.lbl.ezbiz.robFormC.robFormCCode" /></th>
+			<th width="30%"><wicket:message key="page.lbl.ezbiz.robFormC.bizName" /></th>
+			<th width="15%"><wicket:message key="page.lbl.ezbiz.robFormC.status" /></th>
+			<th width="15%"><wicket:message key="page.lbl.ezbiz.robFormC.updateDt" /></th>
+			<th width="10%"><wicket:message key="page.lbl.ezbiz.robFormC.action" /></th>
+	  	</tr>
+	  </thead>
+	  <tbody>
+	    <tr wicket:id="sorting">
+			<td><span wicket:id="robFormCCode">[robFormCCode]</span></td>
+			<td><span wicket:id="bizName">[bizName]</span></td>
+			<td><span wicket:id="status">[status]</span></td>
+			<td><span wicket:id="updateDt">[updateDt]</span></td>
+			<td class="manage-link">
+				 <a wicket:id="detail" href="#" wicket:message="title:page.lbl.ezbiz.robFormC.detail"><i class="Edit icon" /></a>
+			</td>
+		</tr>
+	  </tbody>
+	  <tfoot>
+	    <tr>
+	    	<th colspan="100">
+	    		<span wicket:id="navigatorLabel">[dataView navigatorLabel]</span>
+		        <span wicket:id="navigator">[dataView navigator]</span>
+	    	</th>
+	  </tr></tfoot>
+	</table>
+
+</div>
+</wicket:extend>

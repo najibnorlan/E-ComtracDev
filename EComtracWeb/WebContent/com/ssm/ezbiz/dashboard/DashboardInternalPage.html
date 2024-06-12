@@ -1,0 +1,830 @@
+<wicket:extend>
+
+	<script
+		src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/3.5.0/chart.min.js"
+		integrity="sha512-asxKqQghC1oBShyhiBwA+YgotaSYKxGP1rcSYTDrB0U6DxwlJjU59B67U8+5/++uFjcuVM8Hh5cokLjZlhm3Vg=="
+		crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+	<script
+		src="https://cdn.jsdelivr.net/npm/chartjs-plugin-datalabels@2.0.0"></script>
+
+
+	<title>Document</title>
+	<span style="display:none" id ="param1" wicket:id="param1"></span>
+	<span style="display:none" id ="param2" wicket:id="param2"></span>
+	<span style="display:none" id ="param3" wicket:id="param3"></span>
+	<span style="display:none" id ="param4" wicket:id="param4"></span>
+	<span style="display:none" id ="param5" wicket:id="param5"></span>
+	<span style="display:none" id ="param6" wicket:id="param6"></span>
+	<span style="display:none" id ="param7" wicket:id="param7"></span>
+	<span style="display:none" id ="param8" wicket:id="param8"></span>
+	<span style="display:none" id ="param9" wicket:id="param9"></span>
+	<span style="display:none" id ="param10" wicket:id="param10"></span>
+	<span style="display:none" id ="param11" wicket:id="param11"></span>
+	<span style="display:none" id ="param12" wicket:id="param12"></span>
+	
+	<span style="display:none" id ="paramActive1" wicket:id="paramActive1"></span>
+	<span style="display:none" id ="paramActive2" wicket:id="paramActive2"></span>
+	<span style="display:none" id ="paramActive3" wicket:id="paramActive3"></span>
+	<span style="display:none" id ="paramActive4" wicket:id="paramActive4"></span>
+	<span style="display:none" id ="paramActive5" wicket:id="paramActive5"></span>
+	<span style="display:none" id ="paramActive6" wicket:id="paramActive6"></span>
+	<span style="display:none" id ="paramActive7" wicket:id="paramActive7"></span>
+	<span style="display:none" id ="paramActive8" wicket:id="paramActive8"></span>
+	<span style="display:none" id ="paramActive9" wicket:id="paramActive9"></span>
+	<span style="display:none" id ="paramActive10" wicket:id="paramActive10"></span>
+	<span style="display:none" id ="paramActive11" wicket:id="paramActive11"></span>
+	<span style="display:none" id ="paramActive12" wicket:id="paramActive12"></span>
+	
+	<span style="display:none" id ="paxparam1" wicket:id="paxparam1"></span>
+	<span style="display:none" id ="paxparam2" wicket:id="paxparam2"></span>
+	<span style="display:none" id ="paxparam3" wicket:id="paxparam3"></span>
+	<span style="display:none" id ="paxparam4" wicket:id="paxparam4"></span>
+	<span style="display:none" id ="paxparam5" wicket:id="paxparam5"></span>
+	<span style="display:none" id ="paxparam6" wicket:id="paxparam6"></span>
+	<span style="display:none" id ="paxparam7" wicket:id="paxparam7"></span>
+	<span style="display:none" id ="paxparam8" wicket:id="paxparam8"></span>
+	<span style="display:none" id ="paxparam9" wicket:id="paxparam9"></span>
+	<span style="display:none" id ="paxparam10" wicket:id="paxparam10"></span>
+	<span style="display:none" id ="paxparam11" wicket:id="paxparam11"></span>
+	<span style="display:none" id ="paxparam12" wicket:id="paxparam12"></span>
+	
+	<span style="display:none" id ="rparam1" wicket:id="rparam1"></span>
+	<span style="display:none" id ="rparam2" wicket:id="rparam2"></span>
+	<span style="display:none" id ="rparam3" wicket:id="rparam3"></span>
+	<span style="display:none" id ="rparam4" wicket:id="rparam4"></span>
+	<span style="display:none" id ="rparam5" wicket:id="rparam5"></span>
+	<span style="display:none" id ="rparam6" wicket:id="rparam6"></span>
+	<span style="display:none" id ="rparam7" wicket:id="rparam7"></span>
+	<span style="display:none" id ="rparam8" wicket:id="rparam8"></span>
+	<span style="display:none" id ="rparam9" wicket:id="rparam9"></span>
+	<span style="display:none" id ="rparam10" wicket:id="rparam10"></span>
+	<span style="display:none" id ="rparam11" wicket:id="rparam11"></span>
+	<span style="display:none" id ="rparam12" wicket:id="rparam12"></span>
+	<span style="display:none" id ="currYear" wicket:id="currYear"></span>
+	
+	<span style="display:none" id ="rpyparam1" wicket:id="rpyparam1"></span>
+	<span style="display:none" id ="rpyparam2" wicket:id="rpyparam2"></span>
+	<span style="display:none" id ="rpyparam3" wicket:id="rpyparam3"></span>
+	<span style="display:none" id ="rpyparam4" wicket:id="rpyparam4"></span>
+	<span style="display:none" id ="rpyparam5" wicket:id="rpyparam5"></span>
+	<span style="display:none" id ="rpyparam6" wicket:id="rpyparam6"></span>
+	<span style="display:none" id ="rpyparam7" wicket:id="rpyparam7"></span>
+	<span style="display:none" id ="rpyparam8" wicket:id="rpyparam8"></span>
+	<span style="display:none" id ="rpyparam9" wicket:id="rpyparam9"></span>
+	<span style="display:none" id ="rpyparam10" wicket:id="rpyparam10"></span>
+	<span style="display:none" id ="rpyparam11" wicket:id="rpyparam11"></span>
+	<span style="display:none" id ="rpyparam12" wicket:id="rpyparam12"></span>
+	<span style="display:none" id ="prevYear" wicket:id="prevYear"></span>
+	
+	<span style="display:none" id ="countTotalQ1" wicket:id="countTotalQ1"></span>
+	<span style="display:none" id ="countTotalQ2" wicket:id="countTotalQ2"></span>
+	<span style="display:none" id ="countTotalQ3" wicket:id="countTotalQ3"></span>
+	<span style="display:none" id ="countTotalQ4" wicket:id="countTotalQ4"></span>
+	
+	<span style="display:none" id ="countTotalQ1PY" wicket:id="countTotalQ1PY"></span>
+	<span style="display:none" id ="countTotalQ2PY" wicket:id="countTotalQ2PY"></span>
+	<span style="display:none" id ="countTotalQ3PY" wicket:id="countTotalQ3PY"></span>
+	<span style="display:none" id ="countTotalQ4PY" wicket:id="countTotalQ4PY"></span>
+
+	<style>
+.two-tables {
+    display: flex;
+    justify-content: space-between; /* To space out the two tables */
+}
+
+.table-container {
+    flex: 1;
+    margin: 10px; /* Add margin for spacing */
+}
+
+.field {
+    width: 100%;
+}
+
+.center-text {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+}
+
+    .grey-box {
+        background-color: FADC44; /* Grey background color */
+        border: 1px solid #ccc; /* Grey border */
+        padding: 20px; /* Padding around content */
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Optional: Add shadow for depth */
+        border-radius: 8px; /* Optional: Add rounded corners */
+    }
+   .white-box {
+        background-color: white; /* white background color */
+        border: 1px solid #ccc; /* Grey border */
+        padding: 20px; /* Padding around content */
+        box-shadow: 0 8px 16px rgba(0, 0, 0, 1); /* Optional: Add shadow for depth */
+        border-radius: 8px; /* Optional: Add rounded corners */
+    }
+     
+    </style>
+  <div class="grey-box">   
+    <table style="width:100%">
+ 		<tr>
+                <td>
+                                <div class="center-text">
+                               <b><label><wicket:message key="page.lbl.ecomtrac.dashboardUpdate" /> <span wicket:id="lastUpdateDate"></span></label></b>
+                                </div>
+                </td>
+            </tr>
+</table>
+<div class="two-tables">
+    <div class="table-container">
+        <table class="field">
+            <tr>
+                <td>
+                        <div class="white-box">
+                            <div class="inner">
+                                <div class="center-text">
+                                    <b><label><wicket:message
+								key="page.lbl.ecomtrac.Tprogramme" /></label></b>
+								<span wicket:id=countTotalProgramme> </span>
+								
+								
+                                </div>
+                            </div>
+                            <div class="icon">
+                                <i class="ion ion-bag"></i>
+                            </div>
+                    </div>
+                </td>
+            </tr>
+            <td style="width: 50%">
+				<div class="white-box">
+					<canvas id="Program" width="240px" height="240px"></canvas>
+				</div>
+			</td>
+        </table>
+    </div>
+    <div class="table-container">
+        <table class="field">
+            <tr>
+                <td>
+                        <div class="white-box">
+                            <div class="inner">
+                                <div class="center-text">
+                                      <b><label><wicket:message
+								key="page.lbl.ecomtrac.Tpax" /></label></b>
+								<span wicket:id=CountTotalPax> </span>
+                                </div>
+                            </div>
+                            <div class="icon">
+                                <i class="ion ion-bag"></i>
+                            </div>
+                        </div>
+                </td>
+            </tr>
+            <td style="width: 50%">
+				<div class="white-box">
+					<canvas id="Pax" width="240px" height="240px"></canvas>
+				</div>
+			</td>
+        </table>
+    </div>
+</div>	
+
+<table style="width:100%">
+ 		<tr>
+                <td>
+                  
+                        <div class="white-box">
+                            <div class="inner">
+                                <div class="center-text">
+                                
+                                <b><label><wicket:message
+								key="page.lbl.ecomtrac.Trevenue" /></label></b>
+								<span wicket:id=countTotalRevenue> </span>
+                                </div>
+                            </div>
+                            <div class="icon">
+                                <i class="ion ion-bag"></i>
+                            </div>
+                        </div>
+                </td>
+            </tr>
+</table>
+<div class="white-box">
+	<table style="width: 100%">
+		<tr>
+			<td style="width: 100%">
+				<div>
+					<canvas id="QuarterRevenue" width="240px" height="100px"></canvas>
+				</div>
+			</td>
+		</tr>
+		</table>
+		</div>
+ <br>
+ <div class="white-box">
+	<table style="width: 100%">
+		<tr>
+			<td style="width: 100%">
+				<div>
+					<canvas id="Qrevenue" width="240px" height="100px"></canvas>
+				</div>
+			</td>
+		</tr>
+		</table>
+		</div>
+		<br>
+	<div class="white-box">
+	<table style="width: 100%">
+		<tr>
+			<td style="width: 100%">
+				<div>
+					<canvas id="revenue" width="240px" height="100px"></canvas>
+				</div>
+			</td>
+		</tr>
+		</table>
+		</div>
+
+</div>
+
+<script>
+	
+	$(document).ready(function() {
+		Chart.register(ChartDataLabels);
+	});
+	
+	</script>
+	
+
+	<script type="text/javascript">
+		
+	function fn2(){ 			
+		var ctx = document.getElementById('Program'); 	
+		var param1 = parseInt(document.getElementById('param1').innerHTML, 10);
+		var param2 = parseInt(document.getElementById('param2').innerHTML, 10);
+		var param3 = parseInt(document.getElementById('param3').innerHTML, 10);
+		var param4 = parseInt(document.getElementById('param4').innerHTML, 10);
+		var param5 = parseInt(document.getElementById('param5').innerHTML, 10);
+		var param6 = parseInt(document.getElementById('param6').innerHTML, 10);
+		var param7 = parseInt(document.getElementById('param7').innerHTML, 10);
+		var param8 = parseInt(document.getElementById('param8').innerHTML, 10);
+		var param9 = parseInt(document.getElementById('param9').innerHTML, 10);
+		var param10 = parseInt(document.getElementById('param10').innerHTML, 10);
+		var param11 = parseInt(document.getElementById('param11').innerHTML, 10);
+		var param12 = parseInt(document.getElementById('param12').innerHTML, 10);
+		var paramActive1 = parseInt(document.getElementById('paramActive1').innerHTML, 10);
+		var paramActive2 = parseInt(document.getElementById('paramActive2').innerHTML, 10);
+		var paramActive3 = parseInt(document.getElementById('paramActive3').innerHTML, 10);
+		var paramActive4 = parseInt(document.getElementById('paramActive4').innerHTML, 10);
+		var paramActive5 = parseInt(document.getElementById('paramActive5').innerHTML, 10);
+		var paramActive6 = parseInt(document.getElementById('paramActive6').innerHTML, 10);
+		var paramActive7 = parseInt(document.getElementById('paramActive7').innerHTML, 10);
+		var paramActive8 = parseInt(document.getElementById('paramActive8').innerHTML, 10);
+		var paramActive9 = parseInt(document.getElementById('paramActive9').innerHTML, 10);
+		var paramActive10 = parseInt(document.getElementById('paramActive10').innerHTML, 10);
+		var paramActive11 = parseInt(document.getElementById('paramActive11').innerHTML, 10);
+		var paramActive12 = parseInt(document.getElementById('paramActive12').innerHTML, 10);
+
+		var myChart = new Chart(ctx, { 														
+			type: 'bar', 																		
+			    data: { 																		
+			        labels: [
+		                'January',
+		                'February',
+		                'March',
+						'April',
+		                'May',
+		                'June',
+		                'July',
+		                'August',
+		                'September',
+		                'October',
+		                'November',
+		                'December'
+		            ], 			
+			        datasets: [ 
+			        		        		   { 	
+			            label: 'Closed Programmes', 	
+			            data: [param1, param2, param3, param4, param5, param6, param7, param8, param9, param10, param11, param12], 											
+			            backgroundColor: ['#3c8dbc',
+			            	'#3c8dbc',
+			            	'#3c8dbc',
+			            	'#3c8dbc',
+			            	'#3c8dbc',
+			            	'#3c8dbc',
+			            	'#3c8dbc',
+			            	'#3c8dbc',
+			            	'#3c8dbc',
+			            	'#3c8dbc',
+			            	'#3c8dbc',
+			            	'#3c8dbc',
+			            	'#3c8dbc',]	,
+			        	stack: 'Stack 0',
+
+			        },	
+			        { 	
+			            label: 'Active Programmes',	
+			            data: [paramActive1, paramActive2, paramActive3, paramActive4, paramActive5, paramActive6, paramActive7, paramActive8, paramActive9, paramActive10, paramActive11, paramActive12], 											
+			            backgroundColor: ['#319B4C',
+			            	'#319B4C',
+			            	'#319B4C',
+			            	'#319B4C',
+			            	'#319B4C',
+			            	'#319B4C',
+			            	'#319B4C',
+			            	'#319B4C',
+			            	'#319B4C',
+			            	'#319B4C',
+			            	'#319B4C',
+			            	'#319B4C',
+			            	'#319B4C',],
+			            	stack: 'Stack 0',
+			            	datalabels: {
+			                    display: true,
+			                    anchor: 'end',
+			                    align: 'center',
+			                    offset: 5,
+			                    formatter: (value, ctx) => {
+			                      const stackedValues = ctx.chart.data.datasets.map((ds) => ds.data[ctx.dataIndex]);
+			                      const dsIdxLastVisibleNonZeroValue = stackedValues.reduce(
+			                        (prev, curr, i) =>
+			                          !!curr && !ctx.chart.getDatasetMeta(i).hidden ? Math.max(prev, i) : prev,
+			                        0
+			                      );
+			                      const sum = stackedValues
+			                        .filter((ds, i) => !ctx.chart.getDatasetMeta(i).hidden)
+			                        .reduce((s, v) => s + v, 0);
+
+			                      // Calculate the y-axis scale value for positioning
+			                      const scale = ctx.chart.scales['y'];
+
+			                      // Check if the sum is greater than the highest y-axis value
+			                      if (sum > scale.max) {
+			                        return scale.max; // Display at the maximum y-axis value
+			                      } else {
+			                        return sum;
+			                      }
+			                    },
+			                    font: {
+			                      weight: 'bold',
+			                      size: 10
+			                    },
+			                  },
+			            	 
+			        },
+			       
+			         ] 																				
+			    }, 																					
+				    options: { 																		
+				    	plugins: {  																
+				    		title: { 																
+				    			display: true, 														
+				    			text: 'Number of Programmes' 										
+				    		}, 																		
+				    		datalabels: { 															
+				    			display: false, 														
+				    			color: 'black',
+				    			font: { 															
+				    				weight: 'bold', 												
+				    			} 																	
+				    			,formatter: function(value, context) {								
+				    				return value.toLocaleString(); 						
+				    			} 
+				    			
+				    		}, 																		
+				        	tooltip: { 																	
+				        	callbacks: { 																
+				        			footer: function(items) { 											
+				        					
+				        			} 																	
+				        		}  																		
+				        	}  																			
+				   		 }, 																		
+				        scales: { 
+				        	x: {
+				                stacked: true,
+				              },
+				              y: {
+				                stacked: true
+				              }
+				        }, 																			
+				    }, 	
+			    layout: {
+			        padding: {
+			          left: 10, // Adjust top padding to make room for labels
+			        },
+			      },
+				}); 
+
+		function addData(data) {
+			chart.options.data[0].dataPoints = data;
+			chart.render();
+			
+		}
+			};	
+$(document).ready(function() {															
+			fn2();															
+});																						
+</script>
+
+<script type="text/javascript">
+function fn4(){ 			
+var ctx = document.getElementById('Pax'); 	
+var paxparam1 = document.getElementById('paxparam1').innerHTML;
+var paxparam2 = document.getElementById('paxparam2').innerHTML;
+var paxparam3 = document.getElementById('paxparam3').innerHTML;
+var paxparam4 = document.getElementById('paxparam4').innerHTML;
+var paxparam5 = document.getElementById('paxparam5').innerHTML;
+var paxparam6 = document.getElementById('paxparam6').innerHTML;
+var paxparam7 = document.getElementById('paxparam7').innerHTML;
+var paxparam8 = document.getElementById('paxparam8').innerHTML;
+var paxparam9 = document.getElementById('paxparam9').innerHTML;
+var paxparam10 = document.getElementById('paxparam10').innerHTML;
+var paxparam11 = document.getElementById('paxparam11').innerHTML;
+var paxparam12 = document.getElementById('paxparam12').innerHTML; 
+
+var myChart = new Chart(ctx, { 														
+	type: 'bar', 																		
+	    data: { 																		
+	        labels: [
+                'January',
+                'February',
+                'March',
+				'April',
+                'May',
+                'June',
+                'July',
+                'August',
+                'September',
+                'October',
+                'November',
+                'December'
+            ], 			
+	        datasets: [ 																
+ 	        { 																
+ 	            label: 'Participants', 											
+ 	            data: [paxparam1, paxparam2, paxparam3, paxparam4, paxparam5, paxparam6, paxparam7, paxparam8, paxparam9, paxparam10, paxparam11, paxparam12],											
+ 	            backgroundColor: ['#B137A8',
+	    	          '#B137A8',
+	                  '#B137A8',
+	                  '#B137A8',
+	                  '#B137A8',
+	                  '#B137A8',
+	                  '#B137A8',
+	                  '#B137A8',
+	                  '#B137A8',
+	                  '#B137A8',
+	                  '#B137A8',
+	                  '#B137A8']	 		
+ 	        }, 		
+	         ] 																				
+	    }, 																					
+		    options: { 																		
+		    	plugins: {  																
+		    		title: { 																
+		    			display: true, 														
+		    			text: 'Total of Participants by Month' 										
+		    		}, 																		
+		    		datalabels: { 															
+		    			display: 1, 														
+		    			color: 'black', 													
+		    			font: { 															
+		    				weight: 'bold', 												
+		    			} 																	
+		    			,formatter: function(value, context) {								
+		    				return value.toLocaleString(); 						
+		    			} 																	
+		    		}, 																		
+		        	tooltip: { 																	
+		        	callbacks: { 																
+		        			footer: function(items) { 											
+		        					
+		        			} 																	
+		        		}  																		
+		        	}  																			
+		   		 }, 																		
+		        scales: { 
+		        	x: {
+		                stacked: true,
+		              },
+		              y: {
+		                stacked: true
+		              }
+		        }, 																			
+		    } 																				
+		}); 
+
+function addData(data) {
+	chart.options.data[0].dataPoints = data;
+	chart.render();
+	
+}
+	}; 																						
+$(document).ready(function() {															
+			fn4();															
+});																						
+</script>
+
+	<script type="text/javascript">
+function fn3(){ 			
+var ctx = document.getElementById('QuarterRevenue'); 	
+var rparam1 = document.getElementById('rparam1').innerHTML;
+var rparam2 = document.getElementById('rparam2').innerHTML;
+var rparam3 = document.getElementById('rparam3').innerHTML;
+var rparam4 = document.getElementById('rparam4').innerHTML;
+var rparam5 = document.getElementById('rparam5').innerHTML;
+var rparam6 = document.getElementById('rparam6').innerHTML;
+var rparam7 = document.getElementById('rparam7').innerHTML;
+var rparam8 = document.getElementById('rparam8').innerHTML;
+var rparam9 = document.getElementById('rparam9').innerHTML;
+var rparam10 = document.getElementById('rparam10').innerHTML;
+var rparam11 = document.getElementById('rparam11').innerHTML;
+var rparam12 = document.getElementById('rparam12').innerHTML; 
+
+var myChart = new Chart(ctx, { 														
+	type: 'bar', 																		
+	    data: { 																		
+	        labels: [
+                'January',
+                'February',
+                'March',
+				'April',
+                'May',
+                'June',
+                'July',
+                'August',
+                'September',
+                'October',
+                'November',
+                'December'
+            ], 			
+	        datasets: [ 																
+	        		   { 																
+	            label: 'Quarter Revenue (RM) by Month', 											
+	            data: [rparam1, rparam2, rparam3, rparam4, rparam5, rparam6, rparam7, rparam8, rparam9, rparam10, rparam11, rparam12], 											
+	            backgroundColor: ['#3c8dbc',
+	            	'#3c8dbc',
+	            	'#3c8dbc',
+	            	'#f39c12',
+	                '#f39c12',
+	                '#f39c12',
+	            	'#319B4C',
+	            	'#319B4C',
+	            	'#319B4C',
+	            	'#B137A8',
+	            	'#B137A8',
+	            	'#B137A8',]	 	
+	        },
+	         ] 																				
+	    }, 																					
+		    options: { 																		
+		    	plugins: {  																
+		    		title: { 																
+		    			display: true, 														
+		    			text: 'Revenue (RM)' 										
+		    		}, 																		
+		    		datalabels: { 															
+		    			display: 1, 														
+		    			color: 'black', 													
+		    			font: { 															
+		    				weight: 'bold', 												
+		    			} 																	
+		    			,formatter: function(value, context) {								
+		    				return value.toLocaleString(); 						
+		    			} 																	
+		    		}, 																		
+		        	tooltip: { 																	
+		        	callbacks: { 																
+		        			footer: function(items) { 											
+		        					
+		        			} 																	
+		        		}  																		
+		        	}  																			
+		   		 }, 																		
+		        scales: { 
+		        	x: {
+		                stacked: true,
+		              },
+		              y: {
+		                stacked: true
+		              }
+		        },
+		        layout: {
+		            padding: {
+		                left: 50,
+		                right: 50
+		            }
+		        }
+		        
+		    } 																				
+		}); 
+
+function addData(data) {
+	chart.options.data[0].dataPoints = data;
+	chart.render();
+	
+}
+	}; 																						
+$(document).ready(function() {															
+			fn3();															
+});																						
+</script>
+
+
+<script type="text/javascript">
+function fn1(){ 
+	var rparam1 = document.getElementById('rparam1').innerHTML;
+	var rparam2 = document.getElementById('rparam2').innerHTML;
+	var rparam3 = document.getElementById('rparam3').innerHTML;
+	var rparam4 = document.getElementById('rparam4').innerHTML;
+	var rparam5 = document.getElementById('rparam5').innerHTML;
+	var rparam6 = document.getElementById('rparam6').innerHTML;
+	var rparam7 = document.getElementById('rparam7').innerHTML;
+	var rparam8 = document.getElementById('rparam8').innerHTML;
+	var rparam9 = document.getElementById('rparam9').innerHTML;
+	var rparam10 = document.getElementById('rparam10').innerHTML;
+	var rparam11 = document.getElementById('rparam11').innerHTML;
+	var rparam12 = document.getElementById('rparam12').innerHTML;
+	var currYear = document.getElementById('currYear').innerHTML; 
+	
+	var rpyparam1 = document.getElementById('rpyparam1').innerHTML;
+	var rpyparam2 = document.getElementById('rpyparam2').innerHTML;
+	var rpyparam3 = document.getElementById('rpyparam3').innerHTML;
+	var rpyparam4 = document.getElementById('rpyparam4').innerHTML;
+	var rpyparam5 = document.getElementById('rpyparam5').innerHTML;
+	var rpyparam6 = document.getElementById('rpyparam6').innerHTML;
+	var rpyparam7 = document.getElementById('rpyparam7').innerHTML;
+	var rpyparam8 = document.getElementById('rpyparam8').innerHTML;
+	var rpyparam9 = document.getElementById('rpyparam9').innerHTML;
+	var rpyparam10 = document.getElementById('rpyparam10').innerHTML;
+	var rpyparam11 = document.getElementById('rpyparam11').innerHTML;
+	var rpyparam12 = document.getElementById('rpyparam12').innerHTML; 
+	var prevYear = document.getElementById('prevYear').innerHTML; 
+	
+var ctx = document.getElementById('revenue'); 								
+var myChart = new Chart(ctx, { 														
+	type: 'line', 																		
+	    data: { 																		
+	        labels: [
+                'January',
+                'February',
+                'March',
+				'April',
+                'May',
+                'June',
+                'July',
+                'August',
+                'September',
+                'October',
+                'November',
+                'December'
+            ], 			
+	        datasets: [ 																
+	        		   { 																
+	            label: currYear, 											
+	            data: [rparam1, rparam2, rparam3, rparam4, rparam5, rparam6, rparam7, rparam8, rparam9, rparam10, rparam11, rparam12], 											
+	            backgroundColor: '#3c8dbc',
+                borderColor: '#3c8dbc',  // Set line color to red
+                borderWidth: 4		
+	        },
+	        	        { 																
+	    	      label: prevYear, 											
+	    	      data: [rpyparam1, rpyparam2, rpyparam3, rpyparam4, rpyparam5, rpyparam6, rpyparam7, rpyparam8, rpyparam9, rpyparam10, rpyparam11, rpyparam12], 											
+	    	      backgroundColor: '#f39c12',
+	                borderColor: '#f39c12',  // Set line color to red
+	                borderWidth: 4 		
+    	        }, 	
+	         ] 																		
+	    }, 																					
+	    options: {
+	        plugins: {
+	            title: {
+	                display: true,
+	                text: 'Total Revenue Per Month By Year'
+	            },
+	            datalabels: {
+	                display: 'auto',
+	                color: 'black',
+	                font: {
+	                    weight: 'bold',
+	                },
+	                align: 'right',  // Set the alignment to 'top' to display labels above the points
+	                formatter: function (value, context) {
+	                    return 'RM ' + value.toLocaleString();
+	                }
+	            },
+	            tooltip: {
+	                callbacks: {
+	                    footer: function (items) {
+	                        return 'Total: RM ' + items.reduce((a, b) => a + b.parsed.y, 0).toLocaleString();
+	                    }
+	                }
+	            }
+	        }, 																		
+		        scales: { 																	
+		        },
+		        layout: {
+		            padding: {
+		                left: 50,
+		                right: 50
+		            }
+		        },
+		    } 																				
+		}); 																				
+	}; 																						
+$(document).ready(function() {															
+			fn1();															
+});																						
+</script>
+
+<script type="text/javascript">
+function fn6(){
+	
+	var countTotalQ1 = document.getElementById('countTotalQ1').innerHTML;
+	var countTotalQ2 = document.getElementById('countTotalQ2').innerHTML;
+	var countTotalQ3 = document.getElementById('countTotalQ3').innerHTML;
+	var countTotalQ4 = document.getElementById('countTotalQ4').innerHTML;
+	var currYear = document.getElementById('currYear').innerHTML;
+	
+	var countTotalQ1PY = document.getElementById('countTotalQ1PY').innerHTML;
+	var countTotalQ2PY = document.getElementById('countTotalQ2PY').innerHTML;
+	var countTotalQ3PY = document.getElementById('countTotalQ3PY').innerHTML;
+	var countTotalQ4PY = document.getElementById('countTotalQ4PY').innerHTML;
+	var prevYear = document.getElementById('prevYear').innerHTML; 
+	
+var ctx = document.getElementById('Qrevenue'); 								
+var myChart = new Chart(ctx, { 														
+	type: 'line', 																		
+	    data: { 																		
+	        labels: [
+                'Q1',
+                'Q2',
+                'Q3',
+                'Q4'
+                
+            ], 			
+	        datasets: [ 																
+	        		   { 																
+	            label: currYear, 											
+	            data: [countTotalQ1, countTotalQ2, countTotalQ3, countTotalQ4], 	
+	            backgroundColor: '#3c8dbc',
+                borderColor: '#3c8dbc',  // Set line color to red
+                borderWidth: 4
+	        },
+	        
+	        { 																
+	    	      label: prevYear,
+	    	      data: [countTotalQ1PY, countTotalQ2PY, countTotalQ3PY, countTotalQ4PY], 											
+	    	      backgroundColor: '#f39c12',
+	                borderColor: '#f39c12',  // Set line color to red
+	                borderWidth: 4
+  	        }, 	
+	        	        
+	         ] 																				
+	    },																					
+		    options: { 																		
+		    	plugins: {  																
+		    		title: { 																
+		    			display: true, 														
+		    			text: 'Quarter Revenue (RM)' 										
+		    		}, 																		
+		    		datalabels: { 															
+		    			 display: 'auto',														
+		    			color: 'black', 													
+		    			font: { 															
+		    				weight: 'bold', 												
+		    			},
+		    		
+		    		align: 'right',  //Set the alignment to 'top' to display labels above the points
+	                formatter: function (value, context) {
+	                    return 'RM ' + value.toLocaleString();						
+		    			} 
+		    			
+		    			
+		    		}, 
+		    		
+		        	tooltip: { 																	
+		        	callbacks: { 																
+		        			footer: function(items) { 											
+		        				return 'Total: RM ' + (items.reduce((a, b) => a + b.parsed.y, 0)).toLocaleString(); 	 	
+		        			} 																	
+		        		}  																		
+		        	}  																			
+		   		 }, 																		
+		   		scales: { 																	
+		        }, 	
+		        layout: {
+		            padding: {
+		                left: 50,
+		                right: 50
+		            }
+		        },
+		    } 																				
+		}); 																				
+	}; 																						
+$(document).ready(function() {															
+			fn6();															
+});																						
+</script>
+</wicket:extend>

@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<section name="Workbench">
+	<section name="NewLocationWizard">
+		<list key="ConfigurationWizardMainPage.STORE_URL_ID">
+			<item value="http://svnserver.ssm.com.my/svn/java/LLP"/>
+			<item value="http://svnserver.ssm.com.my/svn/JAVA/LLP"/>
+			<item value="http://svnserver.ssm.com.my/svn/Java/LLP"/>
+		</list>
+	</section>
+</section>

@@ -1,0 +1,62 @@
+<wicket:extend>
+	
+	<form wicket:id="form">
+		<div id="BranchSummaryReport" class="ui form">
+			<table>
+				<tr>
+					<td>
+						<div class="ui top attached segment">
+							<div class="ui top attached label">
+								<h4 class="ui header">
+									<wicket:message
+										key="page.ssm.ezbiz.report.search" />
+								</h4>
+							</div>
+							<table>
+								<tr>
+									<td>
+										<div class="field">
+											<label><wicket:message key="page.lbl.BranchSummaryReport.branch"/></label> 
+											<select class="ui dropdown" wicket:id="branch"></select>
+										</div>
+									</td>
+								</tr>
+								<tr>
+									<td>
+										<div class="two fields">
+											<div class="field">
+												<label><wicket:message key="page.lbl.BranchSummaryReport.dateFrom"/></label> 
+												<input type="text" wicket:id="dateFrom" style="width: 150;">
+											</div>
+											<div class="field">
+												<label><wicket:message key="page.lbl.BranchSummaryReport.dateTo"/></label> 
+												<input type="text" wicket:id="dateTo" style="width: 150;">
+											</div>
+										</div>
+									</td>
+								</tr>
+<!-- 								<tr>
+									<td>
+										<div class="field">
+											<label><wicket:message key="page.lbl.BranchSummaryReport.paymentMode"/></label> 
+											<select class="ui dropdown" wicket:id="paymentMode"></select>
+										</div>
+									</td>
+								</tr> -->
+								<tr>
+									<td>&nbsp;</td>
+								</tr>
+								<tr>
+									<td>
+										<button class="ui primary button" type="submit" wicket:id="btnSearch"><i class="send icon"></i> 
+										<wicket:message key="page.lbl.BranchSummaryReport.search"/></button>
+									</td>
+								</tr>
+							</table>
+						</div>
+					</td>
+				</tr>
+			</table>
+		</div>
+	</form>
+</wicket:extend>

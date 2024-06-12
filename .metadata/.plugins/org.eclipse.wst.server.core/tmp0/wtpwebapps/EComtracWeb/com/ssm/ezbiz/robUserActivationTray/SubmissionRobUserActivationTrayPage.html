@@ -1,0 +1,105 @@
+<wicket:extend>
+	<form wicket:id="form" class="ui form"> 
+		<script type="text/javascript" wicket:id="formVerificationJS"></script>
+			<div class="ui horizontal segments">
+				<div class="ui segment">
+					<div class="two fields">
+						<div class="field">
+							<label><wicket:message key="page.lbl.ezbiz.robUserActivationTray.userRefNo" /></label>
+							<span wicket:id="userRefNo"/>
+						</div>
+						<div class="field">
+							<label><wicket:message key="page.lbl.ezbiz.robUserActivationTray.loginId" /></label>
+							<span wicket:id="loginId"/>
+						</div>
+					</div>
+					<div class="three fields">
+						<div class="field">
+							<label><wicket:message key="page.lbl.ezbiz.robUserActivationTray.idNo" /></label>
+							<span wicket:id="idNo"/>
+						</div>
+						<div class="field">
+							<label><wicket:message key="page.lbl.ezbiz.robUserActivationTray.idType" /></label>
+							<span wicket:id="idType"/>
+						</div>
+						<div class="field">
+							<label><wicket:message key="page.lbl.ezbiz.robUserActivationTray.icColour" /></label>
+							<span wicket:id="icColour"/>
+						</div>
+					</div>
+					<div class="field">
+						<label><wicket:message key="page.lbl.ezbiz.robUserActivationTray.name"/></label>
+						<span wicket:id="name"/>
+					</div>
+					<div class="field">
+						<label><wicket:message key="page.lbl.ezbiz.robUserActivationTray.address"/></label>
+						<span wicket:id="ownersAddress"/>
+					</div>
+					<div class="field">
+							<label><wicket:message key="page.lbl.ezbiz.robUserActivationTray.nationality" /></label>
+							<span wicket:id="nationality"/>
+					</div>
+				</div>
+				<div class="ui segment">
+					
+					<!--span wicket:id="mykadDocFileUploadPanel"/-->
+					<div class="field">
+						<label><span wicket:id="mykadDocFileUploadLabel"/></label>
+						<input wicket:id="mykadDocFileUpload" size="40" type="file" onchange="ValidateSize(this)"/>
+						
+						<button class="ui button negative" wicket:id="mykadDocRemoveLink"><wicket:message key="page.lbl.ezbiz.robUserActivationTray.mykadDocRemoveLink"/></button>
+						<span wicket:id="mykadDocLabelAfterUpload"/>
+					</div>
+					<div class="field">
+						<label><span wicket:id="selfieDocFileUploadLabel"/></label>
+						<input wicket:id="selfieDocFileUpload" size="40" type="file" onchange="ValidateSize(this)"/>
+						
+						<button class="ui button negative" wicket:id="selfieDocRemoveLink"><wicket:message key="page.lbl.ezbiz.robUserActivationTray.selfieDocRemoveLink"/></button>
+						<span wicket:id="selfieDocLabelAfterUpload"/>
+					</div>
+					<div class="field">
+						<label><span wicket:id="supportingDocFileUploadLabel"/></label>
+						<input wicket:id="supportingDocFileUpload" size="40" type="file" onchange="ValidateSize(this)"/>
+						
+						<button class="ui button negative" wicket:id="supportingDocRemoveLink"><wicket:message key="page.lbl.ezbiz.robUserActivationTray.supportingDocRemoveLink"/></button>
+						<span wicket:id="supportingDocLabelAfterUpload"/>
+					</div>
+					
+					<div class="ui top attached segment" wicket:id="wmcQuery">
+						<div class="ui top attached label " style="background-color: orangered">
+							<h4 class="ui header" style="color: white;"><wicket:message key="page.lbl.ezbiz.robUserActivationTray.querySummary" /></h4>
+						</div>
+						<br>
+						<div class="fields">
+							<div class="field">
+								<label><wicket:message key="page.lbl.ezbiz.robUserActivationTray.queryText" /></label> 
+								<span wicket:id="queryText"/>
+							</div>
+						</div>
+						<div class="field" >
+							<label><wicket:message key="page.lbl.ezbiz.robUserActivationTray.queryAnswer"/> </label>
+							<textarea wicket:id="queryAnswer"></textarea>
+						</div>
+					</div>	
+					
+					
+					<div class="inline field">
+						<input wicket:id="submitButton" class="ui primary button" type="button"  />
+					</div>
+					<div class="inline field">
+						<div wicket:id="preWmc">
+					 	<wicket:enclosure child="listError">
+							<div class="ui message" style="background-color: #fffaf3" >
+								<ul class="list">
+								<wicket:message key="page.lbl.ezbiz.robFormB4Summary.errorFix" />
+								<li wicket:id="listError"></li>
+								</ul>
+							</div> 
+						</wicket:enclosure>
+						</div>
+					</div>
+				</div>
+			</div>
+			
+	</form>
+</wicket:extend>

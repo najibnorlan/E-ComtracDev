@@ -1,0 +1,138 @@
+
+
+
+
+
+<wicket:extend>
+    <h1>LLP Registration</h1>
+    
+     <form wicket:id="form">
+        <div id="llpReservedNames">
+            <div class="llpReservedName">
+            
+            
+              <fieldset>
+				 <!--  <legend style="font-size: x-small;">Name Search Info</legend>	-->
+                <table>
+                
+                	<wicket:enclosure child="llpNo">
+                	<tr>
+                		<td><wicket:message key="llpReg.page.llpNo"/></td>
+                		<td>:</td>
+                		<td><span wicket:id="llpNo" style="font: bold;"></span></td> 
+                	</tr>
+                	</wicket:enclosure>
+                
+                	<tr>
+                        <td><wicket:message key="reservedName.page.applyLlpName"/></td>
+                      	<td>:</td>
+                      	<!--   <td><input wicket:id="llpReservedName.applyLlpName" type="text" readonly="readonly" size="100" /></td>  --> 
+                        <td><span wicket:id="llpReservedName.applyLlpName" style="font: bold;"></span></td> 
+                    </tr>
+                    
+                    <tr>
+                        <td><wicket:message key="reservedName.page.refNo"/></td>
+                        <td>:</td>
+                       <!--    <td><input wicket:id="llpReservedName.refNo" type="text" readonly="readonly" size="23" /></td> -->
+                         <td><span wicket:id="refNo"></span></td> 
+                         
+                    </tr>
+                    
+                  <tr>
+                       <td><wicket:message key="reservedName.page.regType"/></td>
+                       <td>:</td>
+                    <!--     <td><select wicket:id="llpReservedName.regType" > </select></td> --> 
+                        <td><span wicket:id="regType"></span></td> 
+                    </tr>
+                    
+                    <tr>
+                        <td><wicket:message key="reservedName.page.resultDate"/></td>
+                        <td>:</td>
+                     <!--    <td><input wicket:id="llpReservedName.resultDate" type="text" readonly="readonly"  size="23" /></td> --> 
+                        <td><span wicket:id="resultDate"></span></td> 
+                    </tr>
+                    
+                    <tr>
+                        <td><wicket:message key="reservedName.page.expNameDate"/></td>
+                        <td>:</td>
+                     <!--   <td><input wicket:id="llpReservedName.expNameDate" type="text" readonly="readonly" size="23"/></td> -->  
+                        <td><span wicket:id="expNameDate"></span></td> 
+                    </tr>
+
+                </table>
+                </fieldset>
+                
+            
+            
+            <wicket:enclosure child="nsProfBodyType">
+               <fieldset>
+                  <legend style="font-size: x-small;">Professional Practice</legend>	
+                 <table>
+                    <tr>
+                        <td><wicket:message key="llpReg.page.profBodyType"/></td>
+                        <!--  <td><input wicket:id="nsProfBody" type="text" readonly="readonly" size="31" style="background-color: yellow;"/></td> -->
+                        <td>:</td>
+                         <td><span wicket:id="nsProfBodyType"></span></td> 
+                        
+                    </tr>
+                    
+                    <tr>
+                        <td><wicket:message key="reservedName.page.profAuthOrg"/></td>
+                     <!--    <td><input wicket:id="llpReservedName.profAuthOrg" type="text" readonly="readonly" size="100" /></td> --> 
+                     	<td>:</td>
+                        <td><span wicket:id="profAuthOrg"></span></td> 
+                    </tr>
+                    
+                    
+                    <tr>
+                        <td><wicket:message key="reservedName.page.profAuthLetterRefNo"/></td>
+                        <td>:</td>
+                     <!--   <td colspan="2"><input wicket:id="llpReservedName.profAuthLetterRefNo" type="text" readonly="readonly" size="30" /></td> -->  
+                        <td><span wicket:id="profAuthLetterRefNo"></span></td> 
+                    </tr>
+                    
+                      <tr>
+                        <td><wicket:message key="reservedName.page.profAuthLetterDate"/></td>
+                        <td>:</td>
+                    <!--    <td><input wicket:id="llpReservedName.profAuthLetterDate" type="text" readonly="readonly" size="30" /></td> --> 
+                       <td><span wicket:id="profAuthLetterDate"></span></td> 
+                    </tr>
+                    
+                    
+                    <tr>
+                        <td><wicket:message key="reservedName.page.profLetterPurpose"/></td>
+                        <td>:</td>
+                        <!--  <td><input wicket:id="llpReservedName.profLetterPurpose" type="text" readonly="readonly" size="100" /></td> -->
+                        <td><span wicket:id="profLetterPurpose"></span></td> 
+                    </tr>
+                    
+                    
+                    <tr>
+                        <td><wicket:message key="reservedName.page.profLetterSign"/></td>
+                        <td>:</td>
+                      <!--   <td><input wicket:id="llpReservedName.profLetterSign" type="text" readonly="readonly" size="100" /></td> --> 
+                        <td><span wicket:id="profLetterSign"></span></td> 
+                    </tr>
+                    
+                    <tr>
+                        <td><wicket:message key="reservedName.page.profRemark"/></td>
+                        <td>:</td>
+                      <!--   <td><input wicket:id="llpReservedName.profRemark" type="text" readonly="readonly" size="100" /></td> --> 
+                        <td><span wicket:id="profRemark"></span></td> 
+                    </tr>
+					</table>
+                </fieldset> 
+                  </wicket:enclosure>
+            
+            </div>
+        </div>
+        
+        
+    </form>
+    <span wicket:id="warningSessionLabel"></span>
+    <span wicket:id="LlpRegistrationTabPanel"></span>
+    
+	
+			
+    
+</wicket:extend>

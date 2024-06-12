@@ -1,0 +1,109 @@
+<wicket:extend>
+
+	<script type="text/javascript">
+	function CallPrint(strid) {
+		var prtContent = document.getElementById(strid);
+		var WinPrint = window
+				.open('', '',
+						'left=0,top=0,width=800,height=600,toolbar=0,scrollbars=0,status=0');
+		WinPrint.document.write(prtContent.innerHTML);
+		WinPrint.document.close();
+		WinPrint.focus();
+		WinPrint.print();
+		WinPrint.close();
+	}
+	</script>
+
+	<div id="receiptdiv">
+		<div align="center">
+			<table style="width: 50%">
+				<tr>
+					<td>&nbsp;</td>
+				</tr>
+				<tr>
+					<td colspan="3" align="center"><img style="width: 50%; height: 40%"
+						src="./images/ssm.png" /></td>
+				</tr>
+				<tr>
+					<td colspan="3" align="center">&nbsp;</td>
+				</tr>
+				<tr>
+					<td colspan="3" align="center">COUNTER COLLECTION BALANCING</td>
+				</tr>
+			</table>
+			<br>
+			<table style="width: 50%">
+				<tr>
+					<td colspan="2" style="text-align: center; "><b>SESSION</b></td>
+				</tr>
+				<tr>
+					<td colspan="2" style="text-align: center; ">&nbsp;</td>
+				</tr>
+				<tr>
+					<td>Counter Number :</td>
+					<td><label wicket:id="counterName"></label></td>
+				</tr>
+				<tr>
+					<td>User Id :</td>
+					<td><label wicket:id="userId"></label></td>
+				</tr>
+				<tr>
+					<td>Branch :</td>
+					<td><label wicket:id="branch"></label></td>
+				</tr>
+				<tr>
+					<td>Floor :</td>
+					<td><label wicket:id="floorLevel"></label></td>
+				</tr>
+				<tr>
+					<td>Check In Date and Time :</td>
+					<td><label wicket:id="checkinDate"></label></td>
+				</tr>
+				<tr>
+					<td>Check Out Date and Time :</td>
+					<td><label wicket:id="checkoutDate"></label></td>
+				</tr>
+				<tr>
+					<td>Status :</td>
+					<td><label wicket:id="balancingStatus"></label></td>
+				</tr>
+			</table>
+			<br>
+			<table style="width: 50%" border="1" frame="hsides" rules="rows">
+			<tr>
+			<td colspan="3" style="text-align: center; "><b>CASH</b></td>
+			</tr>
+				<tr>
+					<td width="10%" align="right"><b><wicket:message
+								key="otcpayment.page.balancingSlip.bankNotes" /></b></td>
+					<td width="50%" align="right"><b><wicket:message
+								key="paymentReceipt.page.balancingSlip.quantity" /></b></td>
+					<td width="30%" align="right"><b><wicket:message
+								key="paymentReceipt.page.balancingSlip.amount" /></b></td>
+				</tr>
+				<tr wicket:id="listBalancing" style="border-bottom: thick;">
+					<td align="right"><span wicket:id="item">item</span></td>
+					<td align="right"><span wicket:id="quantity">quantity</span></td>
+					<td align="right"><span wicket:id="amount">amount</span></td>
+				</tr>
+				<tr>
+					<td colspan="2" align="right"><b>Total (RM):</b></td>
+					<td  align="right"><b><span wicket:id="totalAmount">totalAmount</span></b></td>
+				</tr>
+			</table>
+			<br><label style="font-size: 9px" wicket:id="balancingBy"></label>
+		</div>
+	</div>
+	<div align="center">
+		<table>
+			<tr align="center">
+				<td> <input type="button" name="btnPrint" wicket:id="done"
+					value="Done" />
+					<input
+					id="Button1" type="button" name="btnPrint"
+					wicket:message="value:otcpayment.page.otcslip.printButton"
+					onclick="javascript:CallPrint('receiptdiv');" /></td>
+			</tr>
+		</table>
+	</div>
+</wicket:extend>

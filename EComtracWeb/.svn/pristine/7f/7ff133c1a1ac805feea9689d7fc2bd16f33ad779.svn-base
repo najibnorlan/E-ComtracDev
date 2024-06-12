@@ -1,0 +1,40 @@
+<wicket:extend>
+
+<!--html>
+<head>
+</head>
+<body>
+	
+	<div style="margin: auto; width: 40%;">
+		
+			<div class="container-fluid text-center">
+				<div class="row content">
+					<div class="col-sm-2 sidenav">
+						<p>
+							<a href="#">Link 1 here</a>
+						</p>
+						<p>
+							<a href="#">Link 2 here</a>
+						</p>
+					</div>
+					<div class="col-sm-8 text-left">
+						<h1>Welcome</h1>
+						<p>
+						</p>
+					</div>
+					<div class="col-sm-2 sidenav">
+						<div class="well">
+							<p>Help Tip1</p>
+						</div>
+						<div class="well">
+							<p>Help Tip2</p>
+						</div>
+					</div>
+				</div>
+			</div>
+		
+	</div>
+
+</body>
+</html-->
+</wicket:extend>

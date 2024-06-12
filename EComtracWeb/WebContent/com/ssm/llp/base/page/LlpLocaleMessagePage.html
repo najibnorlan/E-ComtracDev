@@ -1,0 +1,96 @@
+<wicket:extend>
+	
+	<form wicket:id="localeForm" id="localeForm">
+		<div wicket:id="htmlEditorPanel"> </div>
+		
+		<div class="ui top attached segment form">
+			<div class="ui top attached label">
+				<h4 class="ui header">
+					<wicket:message key="page.lbl.ezbiz.localeMessagePage.search" />
+				</h4>
+			</div>
+			<div class="ui form">
+					<label><span wicket:id="keySearchLabel"></span></label> <input wicket:id="keySearch"
+						type="text" size="50" />
+
+					<label><span wicket:id="msgSearchLabel"></span></label> <input wicket:id="msgSearch"
+						type="text" size="50" />
+			</div>
+			<br>
+			<div>
+				<button class="ui primary button" wicket:id="ajaxSubmitSearch">
+					<wicket:message key="page.lbl.ezbiz.localeMessagePage.search" />
+				</button>
+				<button class="ui primary button" wicket:id="importLocale">
+					<wicket:message key="page.lbl.ezbiz.localeMessagePage.import" />
+				</button>
+				<button class="ui primary button"
+					wicket:id="ajaxRefreshAllNodeLocale">
+					<wicket:message key="page.lbl.ezbiz.localeMessagePage.refresh" />
+				</button>
+			</div>
+		</div>
+		<br>
+		<div wicket:id="listDataView">
+			<table class="ui striped table" width="100%">
+				<thead>
+					<tr>
+						<th><wicket:message key="llpLocale.page.key" /></th>
+						<th><wicket:message key="llpLocale.page.msg" /></th>
+						
+					</tr>
+				</thead>
+				<tbody>
+					<tr wicket:id="sorting">
+						<td>
+							<div class="ui form">
+								<div class="form">
+									<input wicket:id="key" type="text" size="10" />
+								</div>
+							</div>
+						</td>
+						<td>
+							<div class="ui form">
+								<div class="form">
+									<textarea wicket:id="msg"></textarea>
+									<button class="ui primary button" wicket:id="showHtmlEditor">
+										showHtmlEditor
+									</button>
+								</div>
+							</div>
+						</td>
+						<div class="ui form">
+							<div class="form">
+								<input wicket:id="localeId" type="hidden"></input>
+							</div>
+						</div>
+					</tr>
+				</tbody>
+				<tfoot>
+					<tr>
+						<th colspan="5"><span wicket:id="navigatorLabel">[dataview
+								navigatorLabel]</span> <span wicket:id="navigator">[dataview
+								navigator]</span></th>
+					</tr>
+				</tfoot>
+			</table>
+		</div>
+		<br>
+		<div>
+			<button class="ui primary button" wicket:id="ajaxSubmit">
+				<wicket:message key="page.lbl.ezbiz.localeMessagePage.submit" />
+			</button>
+			<!--button class="ui primary button" wicket:id="showHtmlEditor">
+				showHtmlEditor
+			</button-->
+		</div>
+		
+		<div wicket:id="modalWindowImportLocale" />
+		
+		<script>
+			//alert('hola');
+			//$('#htmlEditorPanel').modal('hide');
+			//alert('yezza');
+		</script>
+	</form>
+</wicket:extend>

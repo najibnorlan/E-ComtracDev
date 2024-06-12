@@ -1,0 +1,35 @@
+<wicket:extend>
+	<div>
+		<table class="ui striped table">
+			 <thead>
+	    		<tr>
+	    			<th width="15%"><wicket:message key="page.title.mybiz.brNo" /></th>
+					<th width="15%"><wicket:message key="page.title.mybiz.bizName" /></th>
+					<th width="15%"><wicket:message key="page.title.mybiz.expDate" /></th>
+					<th width="10%"><wicket:message key="page.title.mybiz.action" /></th>
+	  			</tr>
+	  		</thead>
+	  		<tbody>
+	   			<tr wicket:id="sorting">
+					<td><span wicket:id="brNo">[brNo]</span></td>
+					<td><span wicket:id="brName">[brName]</span></td>
+					<td><span wicket:id="expDate">[expDate]</span></td>
+					<td class="manage-link">
+						<wicket:enclosure child="editClose">
+				 			<a wicket:id="editClose" href="#" wicket:message="title:page.title.mybiz.closeBizLink"><i class="Edit icon" /></a>
+				 		</wicket:enclosure>
+				 		<span wicket:id="pendingTxtApp">[pendingTxtApp]</span>
+					</td>
+				</tr>
+	  		</tbody>
+	  		<tfoot>
+	  			<tr>
+	    			<th colspan="100">
+	    			<span wicket:id="navigatorLabel">[dataView navigatorLabel]</span>
+		        	<span wicket:id="navigator">[dataView navigator]</span>
+	    			</th>
+	  			</tr>
+	  		</tfoot>
+		</table>
+	</div>
+</wicket:extend>

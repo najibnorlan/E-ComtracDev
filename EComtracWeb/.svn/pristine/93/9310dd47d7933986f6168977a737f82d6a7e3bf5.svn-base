@@ -1,0 +1,3 @@
+BasePage2
+<span wicket:id="panel"></span>
+<wicket:child />

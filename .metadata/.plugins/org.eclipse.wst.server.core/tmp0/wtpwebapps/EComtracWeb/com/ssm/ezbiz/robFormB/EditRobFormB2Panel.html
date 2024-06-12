@@ -1,0 +1,150 @@
+<wicket:extend>
+	<script type="text/javascript">
+	maxL=1500;
+	var bName = navigator.appName;
+	function taLimit(taObj) {
+		if (taObj.value.length==maxL) return false;
+		return true;
+	}
+
+	function taCount(taObj,Cnt) { 
+		objCnt=createObject(Cnt);
+		objVal=taObj.value;
+		if (objVal.length>maxL) objVal=objVal.substring(0,maxL);
+		if (objCnt) {
+			if(bName == "Chrome"){	
+				objCnt.textContent=maxL-objVal.length;}
+			else{objCnt.innerText=maxL-objVal.length;}
+		}
+		return true;
+	}
+	function createObject(objId) {
+		if (document.getElementById) return document.getElementById(objId);
+		else if (document.layers) return eval("document." + objId);
+		else if (document.all) return eval("document.all." + objId);
+		else return eval("document." + objId);
+	}
+	</script>
+	<form wicket:id="robFormB2Form">
+		<script type="text/javascript" wicket:id="b2Validation"></script>
+		<table width="100%">
+			<tr>
+				<td>
+					<div class="ui top attached segment">
+						<div class="ui top attached label">
+							<h4 class="ui header"><wicket:message key="page.lbl.ezbiz.robFormB2.currentbusinessInfo" /></h4>
+						</div>
+						<table>
+							<tr>
+								<td><span wicket:id="currentbusinessInfo" /></td>
+							</tr>
+						</table>
+					</div>
+				</td>
+			</tr>
+			<tr>
+				<td>
+					<div class="ui top attached segment">
+						<div class="ui top attached label">
+							<h4 class="ui header"><wicket:message key="page.lbl.ezbiz.robFormB2.businessInfo" /></h4>
+						</div>
+						<div class="ui checkbox field">
+							<input wicket:id="isB2" type="checkbox" />
+							<label><span wicket:id="isB2Label" /></label>
+						</div>
+						<div wicket:id="wmcB2">
+						<table>
+							<tr>
+								<td>
+									<div class="field inline">
+										<label><span wicket:id="b2AmmendmendDtLabel" /></label>
+										<input wicket:id="b2AmmendmendDt" style="width: 150;"/>
+									</div>
+								</td>
+							</tr>
+							<tr>
+								<td>&nbsp;</td>
+							</tr>
+							<tr>
+								<td>
+									<div class="field">
+										<label><span wicket:id="bizDescLabel" /></label>
+ 												<textarea onKeyPress="return taLimit(this)" onKeyUp="return taCount(this,'myCounter')" wicket:id="bizDesc" rows="5" cols="100" maxlength="1500"/>
+									</div>
+								</td>
+							</tr>
+							<tr>
+								<td>
+									<div>
+										<wicket:message key="page.lbl.ezbiz.robFormA.character.counter"/>
+									</div>
+								</td>
+							</tr>
+							<tr>
+								<td>&nbsp;</td>
+							</tr>
+							<tr>
+								<td>
+									<div class="field">
+ 												<input wicket:id="showBizCodePanel" type="button" class="ui primary button" value="Search and Add Biz Code" />
+									</div>
+								</td>
+							</tr>
+							<tr>
+								<td>
+									<wicket:message key="page.lbl.ezbiz.robFormB2.businessInfo.notes" />
+								</td>
+							</tr>
+						</table>
+						</div>
+						<div wicket:id="wmcBizCodeAll">
+							<div id="listRobFormB2BizCode">
+								<table class="ui striped table">
+								  <thead>
+								    	<tr>
+								    	<th width="3%"><wicket:message key="page.lbl.ezbiz.robFormB2.bizCodeNo" /></th>
+										<th width="10%"><wicket:message key="page.lbl.ezbiz.robFormB2.bizCode" /></th>
+										<th width="40%"><wicket:message key="page.lbl.ezbiz.robFormB2.bizCodeDesc" /></th>
+										<th width="20%"><wicket:message key="page.lbl.ezbiz.robFormB2.ammendmentType" /></th>
+										<th width="5%"><wicket:message key="page.lbl.ezbiz.robFormB2.action" /></th>
+								  	</tr>
+								  </thead>
+								  <tbody>
+								    <tr wicket:id="sortingRobFormB2BizCode">
+										<td><span wicket:id="bizCodeNo">[bizCodeNo]</span></td>
+										<td><span wicket:id="bizCode">[bizCode]</span></td>
+										<td><span wicket:id="bizCodeDesc">[bizCodeDesc]</span></td>
+										<td><span wicket:id="ammendmentType">[ammendmentType]</span></td>
+										<td class="manage-link">
+											 <a wicket:id="deleteBizCode" href="#" wicket:message="title:page.lbl.ezbiz.robFormB2.deleteBizCode"><i class="Erase icon" /></a>
+											 <a wicket:id="undoBranch" href="#" wicket:message="title:page.lbl.ezbiz.robFormB2.undoBranch"><i class="Undo icon" /></a>
+										</td>
+									</tr>
+								  </tbody>
+								  <tfoot>
+								    <tr>
+								    	<th colspan="5">
+								    		<span wicket:id="navigatorLabelRobFormB2BizCode">[dataView navigatorLabelRobFormB2BizCode]</span>
+									        <span wicket:id="navigatorRobFormB2BizCode">[dataView navigatorRobFormB2BizCode]</span>
+								    	</th>
+								  </tr></tfoot>
+								</table>
+							</div>
+						</div>
+					</div>
+				</td>
+			</tr>
+			<tr>
+				<td align="right">&nbsp;</td>
+			</tr>
+			<tr>
+				<td align="right">
+					<button class="ui button negative" wicket:id="discard" ><wicket:message key="page.lbl.ezbiz.robFormB.discard" /></button>
+					<input wicket:id="b2Prev" type="button" class="ui primary button" value="Previous" /> 
+					<input wicket:id="b2Next" type="button" class="ui primary button" value="Next" /> 
+				</td>
+			</tr>
+		</table>
+		<div wicket:id="editBizCodePopUp"></div>
+	</form>
+</wicket:extend>

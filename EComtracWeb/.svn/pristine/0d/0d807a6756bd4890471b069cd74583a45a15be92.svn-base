@@ -1,0 +1,161 @@
+<wicket:extend>
+	<form wicket:id="form" class="ui form"  > 
+	
+	
+<script>        
+//       function printPdf(){
+//			var urlPath = window.location.href;
+//			var pdfFile = urlPath.split("#")[1];
+//			//console.log(pdfFile);
+//			var ctx = window.location.pathname.substring(0, window.location.pathname.indexOf("/",2)); 
+//		    var pdfFilePath = pdfFile.replace("..", ctx); 
+//			printJS(pdfFilePath);
+//		}
+        
+//        function setDocTitle(){
+//        	var urlPath = window.location.href;
+        	
+//        	if(urlPath.indexOf("entityName")!=-1){
+//	        	var entityName = urlPath.split("entityName=")[1];
+//	        	entityName = entityName.split("&")[0];
+//	        	document.getElementById("documentName").innerHTML=decodeURI(entityName);
+	        	
+//	        	var canPrint = urlPath.split("canPrint=")[1];
+//	        	canPrint = canPrint.split("&")[0];
+	        	
+//	        	if('Y'==canPrint){
+//	        		document.getElementById("print").style.visibility = 'visible';
+//	        	}
+//        	}
+//        }
+</script>
+
+<script>
+//var urlPath = window.location.href;
+//alert(urlPath);
+
+//var ctx = window.location.pathname;
+//alert(ctx);
+
+//var nilai = document.getElementById("frameComponent").innerHTML;
+//alert('iniValue=='+nilai);
+
+//var currentUrl = document.baseURI;
+//alert('iniFinal=='+currentUrl);
+	
+//var pdfFilePath = pdfFile.replace("..", ctx); 
+//alert(pdfFilePath);
+//printJS(pdfFilePath);
+
+//var frme = $(this).attr("frameComponent").src;
+//alert (JSON.stringify(frme)); 
+//alert(JSON.parse(frme));
+</script>
+
+<script>
+ //   window.onload = function() {
+ //  	 var ezBizWebPath = window.location.pathname.substring(0, window.location.pathname.indexOf("/",2)); // path= /EzBizWeb
+ //			var fullUrl = document.getElementById("frameComponent").contentWindow.location.href;
+ //				if(fullUrl.indexOf(".pdf")!=-1){
+ //					var pdfPath = fullUrl.split("wicket")[1];
+ //					var iframeSrc = ezBizWebPath + pdfPath;
+ //					alert('New Pdf Source Path='+iframeSrc)
+ //						if(pdfPath!=null){ //control dua obj..
+ //						$('#frameComponent').attr('src', iframeSrc); 
+ //						//document.getElementById("frameComponent").src = iframeSrc;
+ 						//var iframeSrcValue = document.getElementById("frameComponent").src;document.getElementById('frameComponent').setAttribute("src", combined); //Change the src's value!
+ //						}
+ //				}
+ //    }
+</script>
+
+
+
+<script type="text/javascript" wicket:id="jsValidationApprove"></script> 
+		
+		<script>
+			$(document).ready(function() {
+				
+			    $('input[name ="myKadNo"]').bind("cut copy paste", function(e) {
+			        e.preventDefault();
+			         alert("Do not copy and paste. Please key-in your myKad number.");
+			        $('input[name ="myKadNo"]').bind("contextmenu", function(e) {
+			            e.preventDefault();
+			        });
+			    });
+			    
+			});
+		</script>
+
+	<script>
+	function setIFramePdf(){
+	var ezBizWebPath = window.location.pathname.substring(0, window.location.pathname.indexOf("/",2)); // path= /EzBizWeb (local pc)
+	//var ezBizWebPath = "/ROOT";  //server linux path??
+	var fullUrl = document.getElementById("iFramePdf").contentWindow.location.href;
+		if(fullUrl.indexOf(".pdf")!=-1){
+			var pdfPath = fullUrl.split("wicket")[1];
+			var iframeSrc = ezBizWebPath + pdfPath;
+			//alert('New Pdf Source Path='+iframeSrc)
+				if(pdfPath!=null){ //ada dua obj..
+				$('#iFramePdf').attr('src', iframeSrc+"#view=fitH"); //#view=fitH utk responsive pdf (ie. mobile view).
+				//document.getElementById("iFramePdf").src = iframeSrc; //sama utk set src.
+				}
+		  }
+	}
+	</script>
+
+		
+		<div class="ui basic horizontal fitted segments" >
+			<!--  <div class="ui segment" style="width: 40%">
+					<div wicket:id="viewPanel"> </div>	
+				</div> -->	
+				<div class="ui segment" style="width: 30%">
+						<div>
+							<span wicket:id="downloadTnc"/>
+						</div>
+						<div>
+							<span wicket:id="userTnc"/>
+						</div>
+						
+						<br>
+						<wicket:enclosure child="myKadNo">
+						<div class="field" >
+							 <label><span wicket:id="myKadNoLabel"></span> </label> 
+							<!-- <label><wicket:message key="page.lbl.userTnc.myKadNo" /></label>-->	
+								<input wicket:id="myKadNo" type="text" autocomplete="off" style="border: solid;"></input>
+						</div>
+						</wicket:enclosure>
+						
+						
+						<br>
+						<div wicket:id="remarksLblWmc" class="ui segment" style="border:inset;">
+							<label><span wicket:id="remarks" ></span> </label>
+						</div>
+						
+						
+						<br>
+						<wicket:enclosure child="declarationChkBox">
+							<div class="ui checkbox field">
+								<input wicket:id="declarationChkBox" type="checkbox" /> <label><span
+								wicket:id="declarationChkBoxLabel" /></label>
+							</div>
+						</wicket:enclosure>
+						
+						<br><br>
+						<div class="inline field">
+						<input wicket:id="saveBtn" class="ui primary button" type="submit" wicket:message="value:page.lbl.userComtrac.agreeTnc" /> 
+						<input wicket:id="exitBtn" class="ui primary button" type="submit" wicket:message="value:page.lbl.userComtrac.exitTnc" /> 
+						</div>
+				</div> 
+				
+				<div class="ui segment" style="width: 70%">
+					<div class="field" >
+						   <iframe wicket:id="frameComponent" allowfullscreen webkitallowfullscreen width="100%" height="100%"></iframe> 
+						<!--	<iframe wicket:id="frameComponent"  id="iFramePdf"  width="100%" height="100%" onload="setIFramePdf()"></iframe> 	
+						<iframe wicket:id="frameComponent"  width="100%" height="100%"></iframe> 	-->
+					</div>
+				</div>
+		</div>
+		
+	</form>
+</wicket:extend>

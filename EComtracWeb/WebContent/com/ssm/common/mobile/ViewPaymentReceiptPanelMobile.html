@@ -1,0 +1,105 @@
+<wicket:extend>
+	<script type="text/javascript">
+		function CallPrint(strid) {
+			var prtContent = document.getElementById(strid);
+			var WinPrint = window
+					.open('', '',
+							'left=0,top=0,width=800,height=600,toolbar=0,scrollbars=0,status=0');
+			WinPrint.document.write(prtContent.innerHTML);
+			WinPrint.document.close();
+			WinPrint.focus();
+			WinPrint.print();
+			WinPrint.close();
+		}
+	</script>
+
+	<div id="receiptdiv">
+		<table style="width: 50%">
+			<tr>
+				<td colspan="3" align="center"><wicket:message key="paymentReceipt.panel.title" /></td>
+			</tr>
+			<tr>
+				<td colspan="3" align="center"><img src="./images/logo_ssm.gif" /></td>
+			</tr>
+			<tr align="center" height="100%">
+				<td colspan="3">
+					<table>
+						<tr>
+							<td><wicket:message key="paymentReceipt.panel.receiptNo" /></td>
+							<td width="5%">&nbsp;:&nbsp;</td>
+							<td><span wicket:id="receiptNo">[receiptNo]</span></td>
+						</tr>
+						<tr>
+							<td><wicket:message key="paymentReceipt.panel.transactioId" /></td>
+							<td width="5%">&nbsp;:&nbsp;</td>
+							<td><span wicket:id="transId">[transId]</span></td>
+						</tr>
+						<tr>
+							<td><wicket:message key="paymentReceipt.panel.approvalCode" /></td>
+							<td width="5%">&nbsp;:&nbsp;</td>
+							<td><span wicket:id="approvalCode">[approvalCode]</span></td>
+						</tr>
+						<tr>
+							<td><wicket:message key="paymentReceipt.panel.payerName" /></td>
+							<td width="5%">&nbsp;:&nbsp;</td>
+							<td><span wicket:id="payerName">[payerName]</span></td>
+						</tr>
+						<tr>
+							<td><wicket:message key="paymentReceipt.panel.paymentMode" /></td>
+							<td width="5%">&nbsp;:&nbsp;</td>
+							<td><span wicket:id="paymentMode">[paymentMode]</span></td>
+						</tr>
+						<wicket:enclosure child="creditCardNo">
+							<tr>
+								<td><wicket:message key="paymentReceipt.panel.creditCardNo" /></td>
+								<td width="5%">&nbsp;:&nbsp;</td>
+								<td><span wicket:id="creditCardNo">[creditCardNo]</span></td>
+							</tr>
+						</wicket:enclosure>
+						<tr>
+							<td><wicket:message key="paymentReceipt.panel.paymentDateTime" /></td>
+							<td width="5%">&nbsp;:&nbsp;</td>
+							<td><span wicket:id="requestDate">[requesDate]</span></td>
+						</tr>
+					</table>
+				</td>
+			</tr>
+			<tr align="center">
+			<td colspan="3">
+			<table  border="1"  frame="hsides" rules="rows"  >
+				<tr>
+					<!--td width="20%" align="right"><b><wicket:message key="paymentReceipt.panel.paymentNo" /></b></td-->
+					<td width="80%"><b><wicket:message key="paymentReceipt.panel.paymentItems" /></b></td>
+					<td width="20%" align="right"><b><wicket:message key="paymentReceipt.panel.paymentAmount" /></b></td>
+				</tr>
+				<tr wicket:id="paymentItems" style="border-bottom: thick;">
+					<!--td></td-->
+					<td><span wicket:id="itemDesc">itemDesc</span>&nbsp;(<span wicket:id="itemDet">itemDet</span>)</td>
+					<td align="right"><span wicket:id="itemAmount">itemAmount</span></td>
+				</tr>
+				<tr>
+					<td colspan="3">&nbsp;</td>
+				</tr>
+				<tr>
+					<td colspan="1" align="right"><b><wicket:message key="paymentReceipt.panel.paymentTotal" /></b></td>
+					<td
+						style="border-bottom: 10px double #000; border-top: 5px double #000;" align="right"><b><span
+							wicket:id="totalAmount">[totalAmount]</span></b></td>
+				</tr>
+			</table>
+			</td>
+			</tr>			
+		</table>
+	</div>
+	<table>
+		<tr align="center">
+			<td><input id="Button1" type="button" name="btnPrint"
+				wicket:message="value:paymentReceipt.panel.printButton"
+				onclick="javascript:CallPrint('receiptdiv');" /> <input
+				wicket:id="goToTransactionPage" type="button"
+				value="Proceed to Transaction Detail" /></td>
+		</tr>
+	</table>
+	
+
+</wicket:extend>

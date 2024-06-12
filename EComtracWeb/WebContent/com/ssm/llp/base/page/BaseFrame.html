@@ -1,0 +1,128 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<html>
+	<head>
+		<title>This is modal window</title>
+		
+		<link rel="stylesheet" type="text/css" href="semantic/semantic.min.css">
+		<link rel="stylesheet" type="text/css" href="semantic/components/form.min.css">
+		<link rel="stylesheet" type="text/css" href="css/styles.css" />
+		<script type="text/javascript" src="js/ssmScript.js"></script>
+		<link rel="stylesheet" href="jquery/jquery-ui.css">  
+		
+		
+		<script src="jquery/jquery-1.9.1.js"></script>  
+		<script src="jquery/jquery-ui.js"></script>  
+		<script src="semantic/semantic.min.js"></script>
+		<script src="semantic/components/form.js"></script>
+		
+		<style type="text/css">
+			.Edit.icon{ 
+			    font-size: 2em;
+			}
+			.Erase.icon{ 
+			    font-size: 2em;
+			}
+		</style>
+	
+	</head>	
+	<body style="text-align:left; padding: 0px 0px 0px 0px;margin: 10px 10px 10px 10px;" onload="setupFunc()">
+		<div id="ajaxveil" style="display: block; position: absolute; left: 0; z-index: 99999; width: 100%; height: 100%;">
+				<div class="ui active inverted dimmer">
+					<div class="ui large text loader">Loading</div>
+				</div>
+
+			</div>
+		<span wicket:id="feedback" />
+		<wicket:child />
+	</body>
+	<script>
+	$('.is-numeric').keydown(function (e) {
+
+	    var key = e.which || e.keyCode;
+
+	    if (!e.shiftKey && !e.altKey && !e.ctrlKey &&
+	            // numbers   
+	            key >= 48 && key <= 57 ||
+	            // Numeric keypad
+	            key >= 96 && key <= 105 ||
+	            // Backspace and Tab and Enter
+	            key == 8 || key == 9 || key == 13 ||
+	            // Home and End
+	            key == 35 || key == 36 ||
+	            // left and right arrows
+	            key == 37 || key == 39 ||
+	            // Del and Ins
+	            key == 46 || key == 45)
+	        return true;
+
+	    return false;
+
+	});
+
+	$('.is-decimal').keydown(function (e) {
+
+	    var key = e.which || e.keyCode;
+
+	    if (!e.shiftKey && !e.altKey && !e.ctrlKey &&
+	            // numbers   
+	            key >= 48 && key <= 57 ||
+	            // Numeric keypad
+	            key >= 96 && key <= 105 ||
+	            // comma, period and minus, . on keypad
+	            key == 190 || key == 110 ||
+	            // Backspace and Tab and Enter
+	            key == 8 || key == 9 || key == 13 ||
+	            // Home and End
+	            key == 35 || key == 36 ||
+	            // left and right arrows
+	            key == 37 || key == 39 ||
+	            // Del and Ins
+	            key == 46 || key == 45)
+	        return true;
+
+	    return false;
+
+	});
+	</script>
+	<script type="text/javascript">
+ function setupFunc() {
+	   document.getElementsByTagName('body')[0].onclick = clickFunc;
+	   hideBusysign();
+	   Wicket.Event.subscribe('/ajax/call/beforeSend', function( attributes, jqXHR, settings ) {
+	       showBusysign()
+	        });
+	   Wicket.Event.subscribe('/ajax/call/complete', function( attributes, jqXHR, textStatus) {
+	       hideBusysign()
+	        });
+	 }
+	 
+	 function hideBusysign() {
+	   document.getElementById('ajaxveil').style.display ='none';
+	 }
+	 
+	 function showBusysign() {
+	   document.getElementById('ajaxveil').style.display ='inline';
+	 }
+	 
+	 function clickFunc(eventData) {
+	   var clickedElement = (window.event) ? event.srcElement : eventData.target;
+	   if ((clickedElement.tagName.toUpperCase() == 'BUTTON' || clickedElement.tagName.toUpperCase() == 'A' || clickedElement.parentNode.tagName.toUpperCase() == 'A'
+	     || (clickedElement.tagName.toUpperCase() == 'INPUT' && (clickedElement.type.toUpperCase() == 'BUTTON' || clickedElement.type.toUpperCase() == 'SUBMIT')))
+	     && clickedElement.parentNode.id.toUpperCase() != 'NOBUSY' ) {
+		   
+		   
+		 if(clickedElement.id){
+			if(clickedElement.id.toLowerCase().indexOf('download') !== -1){//mean download
+				return;
+			}
+	     }else{
+	     	if( (clickedElement.tagName.toUpperCase() !== 'WICKET:MESSAGE') && (clickedElement.tagName.toUpperCase() !== 'I') ){
+				return;
+			}
+	     }   
+		   
+	     showBusysign();
+	   }
+	 }
+</script>
+</html>

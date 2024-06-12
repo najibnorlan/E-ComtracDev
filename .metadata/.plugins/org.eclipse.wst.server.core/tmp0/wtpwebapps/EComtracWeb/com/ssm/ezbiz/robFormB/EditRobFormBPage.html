@@ -1,0 +1,105 @@
+<wicket:extend>
+
+	<script type="text/javascript">
+	</script>
+	<span wicket:id="robFormBNotSync" />
+	<wicket:enclosure child="form">
+	<form wicket:id="form">
+		<div id="EditFormBForm" class="ui form segment">
+			<table width="100%">
+				<tr>
+					<td>
+						<div class="ui top attached segment">
+							<div class="ui top attached label">
+								<h4 class="ui header">
+									<wicket:message key="page.lbl.ezbiz.robFormB.main" />
+								</h4>
+							</div>
+							<table>
+								<tr>
+									<td>
+										<div class="field">
+											<label><wicket:message key="page.lbl.ezbiz.robFormB.robFormBCode" /></label> 
+											<span wicket:id="robFormBCode"/>
+										</div>
+									</td>
+								</tr>
+								<tr><td>&nbsp;</td></tr>
+								<tr>
+									<td>
+										<div class="field">
+											<label><wicket:message key="page.lbl.ezbiz.robFormB.brNo" /></label> 
+											<span wicket:id="brNo" />
+										</div>
+									</td>
+								</tr>
+								<tr><td>&nbsp;</td></tr>
+								<tr>
+									<td>
+										<div class="field">
+											<label><wicket:message key="page.lbl.ezbiz.robFormB.bizName" /></label> 
+											<span wicket:id="bizName" />
+										</div>
+									</td>
+								</tr>
+								<tr><td>&nbsp;</td></tr>
+								<tr>
+									<td>
+										<div class="field">
+											<label><wicket:message key="page.lbl.ezbiz.robFormB.bizExpDt" /></label> 
+											<span wicket:id="bizExpDt" />
+										</div>
+									</td>
+								</tr>
+								<tr><td>&nbsp;</td></tr>
+								<tr>
+									<td><wicket:enclosure child="notes">
+											<div class="field">
+												<label><span wicket:id="notesLabel" /></label>
+												<textarea wicket:id="notes" rows="7" cols="80" />
+											</div>
+										</wicket:enclosure></td>
+								</tr>
+							</table>
+						</div>
+					</td>
+				</tr>
+				<tr>
+					<td>&nbsp;</td>
+				</tr>
+				<tr>
+					<td>
+						<div wicket:id="editRobFormB1Panel"></div>
+					</td>
+				</tr>
+				<tr>
+					<td>
+						<div wicket:id="editRobFormB2Panel"></div>
+					</td>
+				</tr>
+				<tr>
+					<td>
+						<div wicket:id="editRobFormB3Panel"></div>
+					</td>
+				</tr>
+				<tr>
+					<td>
+						<div wicket:id="editRobFormB4Panel"></div>
+					</td>
+				</tr>
+				<tr>
+					<td>
+						<div wicket:id="bOwnerVerificationPanel"></div>
+					</td>
+				</tr>
+				<tr>
+					<td>
+						<div wicket:id=editRobFormBSummaryPanel></div>
+					</td>
+				</tr>
+			</table>
+		</div>
+		<script type="text/javascript" wicket:id="hideAllLbl"></script>
+	</form>
+	</wicket:enclosure>
+</wicket:extend>

@@ -1,0 +1,52 @@
+<wicket:extend>
+	<form wicket:id="form" >
+		<div id="SearchCreditNote" class="ui form">
+			<table>
+				<tr>
+					<td>
+						<div class="ui top attached segment">
+							<div class="ui top attached label">
+								<h4 class="ui header">
+									<wicket:message key="page.ssm.ezbiz.report.search" />
+								</h4>
+							</div>
+							<table>
+								<tr>
+									<td>
+										<div class="field">
+											<label><span wicket:id="branchLabel" /></label> <select wicket:id="branch"></select>
+										</div>
+									</td>
+								</tr>
+								<tr>
+									<td>
+										<div class="two fields">
+											<div class="field">
+												<label><span wicket:id="dtFromLabel" /></label> <input wicket:id="dtFrom" style="width: 150;" />
+											</div>
+											<div class="field">
+												<label><span wicket:id="dtToLabel" /></label> <input wicket:id="dtTo" style="width: 150;" />
+											</div>
+										</div>
+									</td>
+								</tr>
+								<tr><td>&nbsp;</td></tr>
+								<tr>
+								<td>
+								<div class="inline field">
+								<input wicket:id="generate" type="submit" class="ui primary button" value="Generate" />
+								</div>
+								</td>
+								</tr>
+								<tr>
+					<td colspan="3">&nbsp;</td>
+				</tr>
+							</table>
+						</div>
+					</td>
+				</tr>
+			</table>
+			
+		</div>
+	</form>
+</wicket:extend>

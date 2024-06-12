@@ -1,0 +1,219 @@
+<wicket:extend>
+	<form wicket:id="form" class="ui form">
+		<div wicket:id="errorDataInfoWmc">
+			<div class="ui red icon message">
+				<i class="warning circle icon"></i>
+				<div class="content">
+					<div class="header">
+						<wicket:message key="page.error.somethingwrong" />
+					</div>
+					<p>
+						<span wicket:id="error"></span>
+					</p>
+				</div>
+			</div>
+			<wicket:enclosure child="listError">
+			<div class="ui message" style="background-color: #fffaf3" >
+			<ul class="list">
+			<wicket:message key="page.error.renewal.listError" />
+			<li wicket:id="listError"></li>
+			</ul>
+			</div> 
+			</wicket:enclosure>
+			<br>
+		</div>
+		<div class="ui top attached segment">
+			<div class="ui top attached label">
+				<h4 class="ui header">
+					<wicket:message key=page.title.mybiz.bizInfo />
+				</h4>
+			</div>
+			<table>
+				<tr>
+					<td>&nbsp;</td>
+				</tr>
+				<tr>
+					<td><wicket:message key="page.title.mybiz.transCode" />&nbsp;</td>
+					<td>:&nbsp;</td>
+					<td><span wicket:id="transCode" style="font: bold;" /></td>
+				</tr>
+				<tr>
+					<td>&nbsp;</td>
+				</tr>
+				<tr>
+					<td><wicket:message key="page.title.mybiz.brNo" />&nbsp;</td>
+					<td>:&nbsp;</td>
+					<td><span wicket:id="brNo" style="font: bold;" /></td>
+				</tr>
+				<tr>
+					<td>&nbsp;</td>
+				</tr>
+				<tr>
+					<td><wicket:message key="page.title.mybiz.bizName" />&nbsp;</td>
+					<td>:&nbsp;</td>
+					<td><span wicket:id="bizName" style="font: bold;" /></td>
+				</tr>
+				<tr>
+					<td>&nbsp;</td>
+				</tr>
+				<tr>
+					<td><wicket:message key="page.title.mybiz.bizType" />&nbsp;</td>
+					<td>:&nbsp;</td>
+					<td><span wicket:id="bizType" style="font: bold;" /></td>
+				</tr>
+				<tr>
+					<td>&nbsp;</td>
+				</tr>
+				<tr>
+					<td><wicket:message key="page.title.mybiz.branchCount" />&nbsp;</td>
+					<td>:&nbsp;</td>
+					<td><span wicket:id="branchCount" style="font: bold;" /></td>
+				</tr>
+				<tr>
+					<td>&nbsp;</td>
+				</tr>
+				<tr>
+					<td><wicket:message key="page.title.mybiz.status" />&nbsp;</td>
+					<td>:&nbsp;</td>
+					<td><span wicket:id="status" style="font: bold;" /></td>
+				</tr>
+				<tr>
+					<td>&nbsp;</td>
+				</tr>
+				<tr>
+					<td><wicket:message key="page.title.mybiz.newExpDate" />&nbsp;</td>
+					<td>:&nbsp;</td>
+					<td><span wicket:id="newExpDate" style="font: bold;" /></td>
+				</tr>
+				<tr>
+					<td>&nbsp;</td>
+				</tr>
+			</table>
+		</div>
+
+
+		<div class="ui top attached segment">
+			<div class="ui top attached label">
+				<h4 class="ui header">
+					<wicket:message key=page.title.mybiz.renewalForm />
+				</h4>
+			</div>
+			<table>
+			  <br>
+				<tr>
+					<td colspan="3">&nbsp;</td>
+				</tr>
+				<div wicket:id="incentiveOkuWmc">
+					<tr>
+						<td><wicket:message key="page.title.mybiz.renewalIncentiveLbl" />&nbsp;</td>
+						<!--  <td><label><span wicket:id="renewalIncentiveLabel" /></label>&nbsp;</td> -->
+						<td>:&nbsp;</td>
+						<td>
+						<wicket:enclosure child="renewalIncentive">
+							<select wicket:id="renewalIncentive"></select> 
+						</wicket:enclosure>
+						<wicket:enclosure child="renewalIncentiveDesc">
+			    			<input type="text" wicket:id="renewalIncentiveDesc"/>
+		    			</wicket:enclosure>
+						</td>
+					</tr>
+					<tr>
+					<td colspan="3">&nbsp;</td>
+					</tr>
+				</div>
+				<tr>
+					<td><wicket:message key="page.title.mybiz.processDate" />&nbsp;</td>
+					<td>:&nbsp;</td>
+					<td><span wicket:id="updateDt" style="font: bold;" /></td>
+				</tr>
+				<tr>
+					<td colspan="3">&nbsp;</td>
+				</tr>
+				<tr>
+					<td><wicket:message key="page.title.mybiz.expDate" />&nbsp;</td>
+					<td>:&nbsp;</td>
+					<td><span wicket:id="expDate" style="font: bold;" /></td>
+				</tr>
+				<tr>
+					<td colspan="3">&nbsp;</td>
+				</tr>
+				<tr>
+					<td><wicket:message key="page.title.mybiz.cmpAmt" />&nbsp;</td>
+					<td>:&nbsp;</td>
+					<td>RM <span wicket:id="cmpAmt" style="font: bold;" /> <input wicket:id="isPaidCmp" type="checkbox" /> <font style="font-size: 80%"><wicket:message
+								key="page.title.mybiz.tickCmpAmt" /></font></td>
+				</tr>
+				<tr>
+					<td colspan="3">&nbsp;</td>
+				</tr>
+				<tr>
+					<td><wicket:message key="page.title.mybiz.isBuyInfo" />&nbsp;</td>
+					<td>:&nbsp;</td>
+					<td><wicket:enclosure child="isBuyInfo">
+							<select wicket:id="isBuyInfo"></select>
+						</wicket:enclosure> <wicket:enclosure child="isBuyInfoDesc">
+							<input type="text" wicket:id="isBuyInfoDesc" />
+						</wicket:enclosure></td>
+				</tr>
+				<tr>
+					<td colspan="3">&nbsp;</td>
+				</tr>
+				<tr>
+					<td><wicket:message key="page.title.mybiz.yearRenew" />&nbsp;</td>
+					<td>:&nbsp;</td>
+					<td><span wicket:id="yearRenew" /></td>
+				</tr>
+				<wicket:enclosure child="incentiveAmt">
+				<tr>
+					<td colspan="3">&nbsp;</td>
+				</tr>
+				<tr>
+					<td><wicket:message key="page.title.mybiz.incentiveAmt" />&nbsp;</td>
+					<td>:&nbsp;</td>
+					<td><span wicket:id="incentiveAmt" /></td>
+				</tr>
+				</wicket:enclosure>
+				<tr>
+					<td colspan="3">&nbsp;</td>
+				</tr>
+				<tr>
+					<td><wicket:message key="page.title.mybiz.totalAmt" />&nbsp;</td>
+					<td>:&nbsp;</td>
+					<td><span wicket:id="totalAmt" /></td>
+				</tr>
+				<tr>
+					<td colspan="3">&nbsp;</td>
+				</tr>
+				<tr>
+					<td colspan="3"><wicket:enclosure child="declareChk">
+							<input wicket:id="declareChk" type="checkbox" />
+							<wicket:message key="page.title.mybiz.declareChk" />
+						</wicket:enclosure></td>
+				</tr>
+				<tr>
+					<td colspan="3">&nbsp;</td>
+				</tr>
+				<tr>
+					<td colspan="3">
+						<div class="inline field">
+							<input wicket:id="save" class="ui primary button" type="submit" wicket:message="value:page.title.mybiz.saveButton" /> <input
+								wicket:id="downloadA1FormButton" class="ui primary button" type="submit" wicket:message="value:page.title.mybiz.downloadA1FormButton" /> <input
+								wicket:id="downloadCertificateButton" class="ui primary button" type="submit"
+								wicket:message="value:page.title.mybiz.downloadCertificateButton" /> <input wicket:id="downloadBusinessInfoFormButton" class="ui primary button"
+								type="submit" wicket:message="value:page.title.mybiz.downloadBusinessInfoFormButton" /> <input wicket:id="downloadCmpButton"
+								class="ui primary button" type="submit" wicket:message="value:page.title.mybiz.downloadCmpButton" /> <input wicket:id="cancel"
+								class="ui primary button" type="submit" wicket:message="value:page.title.mybiz.cancelButton" />
+						</div>
+					</td>
+				</tr>
+				<tr>
+					<td colspan="3">&nbsp;</td>
+				</tr>
+				<tr>
+					<td colspan="3"><span wicket:id="downloadRule" /></td>
+				</tr>
+			</table>
+		</div>
+
+	</form>
+</wicket:extend>

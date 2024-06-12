@@ -1,0 +1,70 @@
+<wicket:extend>
+	<form wicket:id="form">
+	<div wicket:id="secondLevelApprovePopup"></div>
+		<div class="ui right aligned grid form">
+			<div class="left floated left aligned six wide column">
+				<div class="ui icon message">
+					<i class="info circle icon"></i>
+					<div class="content">
+						<div class="header">
+							<wicket:message key="page.lbl.ezbiz.resetPassword.loginId" />
+						</div>
+						<p>
+							<span wicket:id="loginId">[loginId]</span>
+						</p>
+						<div class="header">
+							<wicket:message key="page.lbl.ezbiz.resetPassword.icNo" />
+						</div>
+						<p>
+							<span wicket:id="icNo">[icNo]</span>
+						</p>
+						<div class="header">
+							<wicket:message key="page.lbl.ezbiz.resetPassword.hpNo" />
+						</div>
+						<p>
+							<span wicket:id="hpNo">[hpNo]</span>
+						</p>
+						<div class="header">
+							<wicket:message key="page.lbl.ezbiz.resetPassword.email" />
+						</div>
+						<p>
+							<span wicket:id="email">[email]</span>
+						</p>
+						<div class="header">
+							<wicket:message key="page.lbl.ezbiz.resetPassword.approveBy" />
+						</div>
+						<p>
+							<span wicket:id="approveBy">approveBy</span>
+						</p>
+					</div>
+				</div>
+			</div>
+			<div class="left floated ten wide column">
+				<div class="ui message">
+					<div class="content" style="text-align: center;">
+						<div class="sixteen wide field">
+							<div class="header"><wicket:message key="page.lbl.ezbiz.userApprovalPage.ezbizName" /></div>
+							<p style="font-size: 20px">
+								<span wicket:id="ezbizName"></span>
+								<span wicket:id="IdSuspended" style="color: red;font-style:inherit;"></span>
+							</p>
+						</div>
+						<div class="sixteen wide field">
+							<div class="header"><wicket:message key="page.lbl.ezbiz.userApprovalPage.remarks" /></div>
+							<p>
+								<textarea wicket:id="remarks" rows="3" cols="3"></textarea>
+							</p>
+						</div>
+						<div class="sixteen wide field">
+							<div class="header"><wicket:message key="user.page.userStatus" /></div>
+							<p style="font-size: 20px">
+								<span wicket:id="userStatus"></span>
+						</div>
+						<button class="ui button primary small" wicket:id="save">Save</button>
+						<button class="ui button negative small" wicket:id="back">Back</button>
+					</div>
+				</div>
+			</div>
+		</div>
+	</form>
+</wicket:extend>

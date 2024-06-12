@@ -1,0 +1,120 @@
+<wicket:extend>
+	<form wicket:id="eBranchform" id="eBranchform">
+		<div id="eBranchform" class="ui form segment">
+		<div class="ui top attached segment">
+			<div class="ui top attached label">
+				<h4 class="ui header">
+					<wicket:message key="page.lbl.ezbiz.robEBranchTransaction.main" />
+				</h4>
+			</div>
+			<table>
+				<tr>
+					<td>&nbsp;</td>
+				</tr>
+				<tr>
+					<td><wicket:message key="page.lbl.ezbiz.robEBranchTransaction.brNo" />&nbsp;</td>
+					<td>:&nbsp;</td>
+					<td><span wicket:id="brNo" style="font: bold;" /></td>
+				</tr>
+				<tr>
+					<td>&nbsp;</td>
+				</tr>
+				<tr>
+					<td><wicket:message key="page.lbl.ezbiz.robEBranchTransaction.brNo.bizName" />&nbsp;</td>
+					<td>:&nbsp;</td>
+					<td><span wicket:id="bizName" style="font: bold;" /></td>
+				</tr>
+				<tr>
+					<td>&nbsp;</td>
+				</tr>
+			</table>
+		</div>
+		<div class="ui top attached segment">
+			<div class="ui top attached label">
+				<h4 class="ui header">
+					<wicket:message key="page.lbl.ezbiz.robEBranchTransaction.detail" />
+				</h4>
+			</div>
+			<table>
+				<tr>
+					<td><div wicket:id="wmcEditBranches">
+						<table>
+							<tr>
+								<td>&nbsp;<input wicket:id="idx" type="hidden" />
+								</td>
+							</tr>
+							<tr>
+								<td>
+									<div class="field">
+										<label><span wicket:id="platformLabel" /></label> 
+										<select wicket:id="platform"/>
+									</div>
+								</td>
+							</tr>
+							<tr>
+								<td>
+									<div class="field">
+										<label><span wicket:id="urlLabel" /></label> 
+										<input wicket:id="url" type="text" />
+									</div>
+								</td>
+							</tr>
+							<tr>
+								<td>
+									<div class="field">
+										<label><span wicket:id="actionStatusLabel" /></label> 
+										<input wicket:id="actionStatus" type="text" />
+									</div>
+								</td>
+							</tr>
+							<tr>
+								<td>&nbsp;</td>
+							</tr>
+							<tr>
+								<td colspan="6" align="right"><input wicket:id="update" class="ui primary button" type="button"
+									wicket:message="value:page.lbl.ezbiz.robEBranchTransaction.insertUpdate" /></td>
+							</tr>
+	
+						</table>
+						</div>
+					</td>
+				</tr>
+			</table>
+		</div>
+		
+		<div wicket:id="wmcListBranches">
+						<table class="ui striped table">
+							<thead>
+								<tr>
+									<th width="10%"><wicket:message key="page.lbl.ezbiz.robEBranchTransaction.no" /></th>
+									<th width="10%"><wicket:message key="page.lbl.ezbiz.robEBranchTransaction.platform" /></th>
+									<th width="50%"><wicket:message key="page.lbl.ezbiz.robEBranchTransaction.url" /></th>
+									<th width="10%"><wicket:message key="page.lbl.ezbiz.robEBranchTransaction.actionStatus" /></th>
+									<th width="10%"><wicket:message key="page.lbl.ezbiz.robEBranchTransaction.action" /></th>
+								</tr>
+							</thead>
+							<tbody>
+								<tr wicket:id="sorting">
+									<td><span wicket:id="no">[no]</span></td>
+									<td><span wicket:id="platform">[platform]</span></td>
+									<td><span wicket:id="url">[url]</span></td>
+									<td><span wicket:id="actionStatus">[actionStatus]</span></td>
+									<td class="manage-link"><a wicket:id="edit" href="#" wicket:message="title:page.lbl.ezbiz.robEBranchTransaction.edit"><i
+											class="Edit icon" /></a> <a wicket:id="delete" href="#" wicket:message="title:page.lbl.ezbiz.robEBranchTransaction.delete"><i
+											class="Erase icon" /></a></td>
+								</tr>
+							</tbody>
+							<tfoot>
+								<tr>
+									<th colspan="5"><span wicket:id="navigatorLabel">[dataView navigatorLabel]</span> <span wicket:id="navigator">[dataView
+											navigator]</span></th>
+								</tr>
+							</tfoot>
+						</table>
+					</div>
+				
+	</div>
+	</form>
+
+
+</wicket:extend>

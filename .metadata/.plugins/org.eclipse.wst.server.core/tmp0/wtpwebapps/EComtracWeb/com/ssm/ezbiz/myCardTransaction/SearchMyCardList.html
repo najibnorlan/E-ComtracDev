@@ -1,0 +1,101 @@
+<wicket:extend>
+	<form wicket:id="form">
+		<div id="SearchMyCardList" class="ui form segment">
+			<table>
+				<tr>
+					<td>
+						<div class="ui top attached segment">
+							<div class="ui top attached label">
+								<h4 class="ui header">
+									<wicket:message key="page.ssm.ezbiz.searchMyCardList.search" />
+								</h4>
+							</div>
+							<table>
+								<tr>
+									<td>
+										<div class="field">
+											<label><span wicket:id="mykadNoLabel" /></label> <input wicket:id="mykadNo" style="width: 400;"></input>
+										</div>
+									</td>
+								</tr>
+								<tr>
+									<td>
+										<div class="field">
+											<label><span wicket:id="nameLabel" /></label> <input wicket:id="name" style="width: 400;"></input>
+										</div>
+									</td>
+								</tr>
+								<tr>
+									<td>
+										<div class="field">
+											<label><span wicket:id="createdByLabel" /></label> <input type="text" wicket:id="createdBy">
+										</div>
+									</td>
+								</tr>
+								<tr>
+									<td>
+										<div class="field">
+											<label><span wicket:id="createDtLabel" /></label> <input type="text" wicket:id="createDt" style="width: 200">
+										</div>
+									</td>
+								</tr>
+								<tr>
+									<td>&nbsp;</td>
+								</tr>
+								<tr>
+									<td><input wicket:id="search" type="button"
+										class="ui primary button" value="Search" /></td>
+								</tr>
+							</table>
+						</div>
+					</td>
+				</tr>
+			</table>
+		</div>
+	</form>
+	<div wicket:id="wmcSearchResult">
+		<table class="ui striped table">
+			<thead>
+				<tr>
+					<th></th>
+					<th width="30%"><wicket:message
+							key="page.ssm.ezbiz.searchMyCardList.name" /></th>
+					<th style="text-align: center;" width="25%"><wicket:message
+							key="page.ssm.ezbiz.searchMyCardList.createBy" /></th>
+					<th style="text-align: center;" width="25%"><wicket:message
+							key="page.ssm.ezbiz.searchMyCardList.adUserRequester" /></th>
+					<th style="text-align: center;" width="10%"><wicket:message
+							key="page.ssm.ezbiz.searchMyCardList.thumbPrintSuccess" /></th>
+					<th style="text-align: center;" width="10%"><wicket:message
+							key="page.ssm.ezbiz.searchMyCardList.action" /></th>
+				</tr>
+			</thead>
+			<tbody>
+				<tr wicket:id="sorting">
+					<td><span wicket:id="index">[name]</span></td>
+					<td><span wicket:id="name">[name]</span></td>
+					<td style="text-align: center;"><span wicket:id="createBy">[createBy]</span></td>
+					<td style="text-align: center;"><span
+						wicket:id="adUserRequester">[adUserRequester]</span> : <span
+						wicket:id="createDt">[createDt]</span></td>
+					<td style="text-align: center;"><span
+						wicket:id="thumbPrintSuccess">[thumbPrintSuccess]</span></td>
+					<td class="manage-link" style="text-align: center;">
+						<button class="ui icon button primary small"
+							wicket:id="viewUserDetails">
+							<i class="unhide icon"></i>
+						</button>
+					</td>
+				</tr>
+			</tbody>
+			<tfoot>
+				<tr>
+					<th colspan="100"><span wicket:id="navigatorLabel">[dataView
+							navigatorLabel]</span> <span wicket:id="navigator">[dataView
+							navigator]</span></th>
+				</tr>
+			</tfoot>
+		</table>
+	</div>
+
+</wicket:extend>

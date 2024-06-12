@@ -1,0 +1,345 @@
+<wicket:extend>
+<script>
+	function showHidePass(selImg,fieldName) {
+	    var x = document.getElementsByName(fieldName)[0];
+	    if (x.type === "password") {
+	        x.type = "text";
+	        selImg.className="fa fa-eye";
+	        selImg.title="Hide Password";
+	    } else {
+	        x.type = "password";
+	        selImg.className="fa fa-eye-slash";
+	        selImg.title="Show Password";
+	    }
+	}
+</script>
+
+<style type="text/css">
+
+
+.fa.fa-eye-slash {
+	font-size: 2em;
+}
+
+.fa.fa-eye {
+	font-size: 2em;
+}
+
+
+</style>
+	<form wicket:id="form" class="ui form">	
+		<div class="ui top attached segment">
+			<div class="ui top attached label">
+				<h4 class="ui header">
+					<wicket:message key=base.user.page.title />
+				</h4>
+			</div>
+				<table>
+					<tr>
+						<td>&nbsp;</td>
+					</tr>
+					<tr>
+						<td>&nbsp;</td>
+					</tr>
+					<tr>
+						<td>
+							<div class="field">
+								<label><span wicket:id="loginIdLabel" /></label> 
+								<input wicket:id="loginId" type="text" size="50" />(Please key in from 5 until 40 character.)
+							</div>
+						</td>
+					</tr>
+					<tr>
+						<td>&nbsp;</td>
+					</tr>
+					<wicket:enclosure child="userPwd">
+						<tr>
+							<td>
+								<div class="fields">
+									<div class="twelve wide field">
+										<label><span wicket:id="userPwdLabel" /> </label> 
+								        <input wicket:id="userPwd" type="password" size="52" />
+								        <wicket:message key="user.page.userPwdPattern" />	
+								     </div>
+								     <div class="four wide field">
+								      	<label>&nbsp;</label> 
+								        <span><i class="fa fa-eye-slash" onclick="showHidePass(this,'userPwd')" title="Show Password"/></span>
+								     </div>
+								</div>
+							</td>
+						</tr>
+						<tr>
+							<td>&nbsp;</td>
+						</tr>
+						<tr>
+							<td>
+								<div class="fields">
+									<div class="twelve wide field">
+										<label><span wicket:id="reconfirmPasswordLabel" /> </label> 
+								        <input wicket:id="reconfirmPassword" type="password" size="52" />
+								     </div>
+								     <div class="four wide field">
+								      	<label>&nbsp;</label> 
+								        <span><i class="fa fa-eye-slash" onclick="showHidePass(this,'reconfirmPassword')" title="Show Password"/></span>
+								     </div>
+								</div>
+							</td>
+						</tr>
+						<tr>
+							<td>&nbsp;</td>
+						</tr>
+					</wicket:enclosure>
+					<tr>
+						<td>
+							<div class="field">
+								<label><span wicket:id="emailLabel" /> </label> 
+								<input wicket:id="email" type="text" size="50" />
+							</div>
+						</td>
+					</tr>
+					<tr>
+						<td>&nbsp;</td>
+					</tr>
+					<wicket:enclosure child="reTypeEmail">
+						<tr>
+							<td>
+								<div class="field">
+									<label><span wicket:id="reTypeEmailLabel" /> </label> 
+									<input wicket:id="reTypeEmail" type="text" size="50" />
+								</div>
+							</td>
+						</tr>
+					</wicket:enclosure>
+					<tr>
+						<td>&nbsp;</td>
+					</tr>
+					<tr>
+						<td>								
+							<table>
+								<wicket:enclosure child="userRefNo">
+									<tr>
+										<td><wicket:message key="user.page.userRefNo" /></td>
+										<td>:</td>
+										<td><input wicket:id="userRefNo" type="text" size="50" />
+										</td>
+									</tr>
+								</wicket:enclosure>
+							</table>
+						</td>
+					</tr>
+				</table>										
+			</div> <br>	
+		
+			<div class="ui top attached segment">
+				<div class="ui top attached label">
+					<h4 class="ui header">
+						<wicket:message key=base.user.page.userInfo />
+					</h4>
+				</div>
+					<table>
+						<tr>
+							<td>
+								<div class="field">
+									<label><span wicket:id="nameLabel" /> </label> 
+									<input wicket:id="name" type="text" size="120" />
+								</div>
+							</td>
+						</tr>
+						<tr>
+							<td>&nbsp;</td>
+						</tr>
+						<tr>
+							<td>
+								<div class="three fields">
+									<div class="field">
+										<label><wicket:message key="user.page.userIdType" /></label> 
+										<input wicket:id="idType" type="text" />
+									</div>
+									<div class="field">
+										<label><span wicket:id="idNoLabel" /></label> 
+										<input wicket:id="idNo" type="text" size="20" readonly="readonly" />
+									</div>
+									<div class="field">
+									<label><span wicket:id="icColourLabel" /></label> 
+									<select wicket:id="icColour"></select>
+								</div>
+								</div>
+							</td>
+						</tr>
+						<tr>
+							<td>&nbsp;</td>
+						</tr>
+						<tr>
+							<td>
+								<div class="field">
+									<label><span wicket:id="nationalityLabel" /></label> 
+									<select wicket:id="nationality"></select>
+								</div>
+							</td>
+						</tr>
+					<tr>
+						<td>&nbsp;</td>
+					</tr>
+					<tr>
+						<td>
+							<div class="field inline">
+								<label><span wicket:id="genderLabel" /></label> 
+								<span wicket:id="gender"/>
+							</div>
+						</td>
+					</tr>
+					<tr>
+						<td>&nbsp;</td>
+					</tr>
+					<tr>
+						<td>
+							<div class="two fields">
+								<div class="field">
+									<label><span wicket:id="dobLabel" /></label> 
+									<input wicket:id="dob" type="text" max="100" />
+								</div>
+								<div class="field">
+									<label><span wicket:id="raceLabel" /></label> 
+									<select wicket:id="race"></select>
+									<input wicket:id="othersRace" type="text" max="50" />
+								</div>
+						</div>
+					</td>
+				</tr>
+				<tr>
+					<td>&nbsp;</td>
+				</tr>
+			</table>										
+		</div> <br>
+	
+		<div class="ui top attached segment">
+			<div class="ui top attached label">
+				<h4 class="ui header">
+					<wicket:message key=base.user.page.userAddress />
+				</h4>
+			</div>
+			<table>
+				<tr>
+					<td>
+					<div class="field">
+						<label><span wicket:id="add1Label" /></label> 
+						<input wicket:id="add1" type="text" size="120" />
+					</div>
+				</td>
+			</tr>
+			<tr>
+				<td>
+						<div class="field">
+							<input wicket:id="add2" type="text" size="120" />
+						</div>
+					</td>
+				</tr>
+				<tr>
+					<td>
+						<div class="field">
+							<input wicket:id="add3" type="text" size="120" />
+						</div>
+					</td>
+				</tr>
+				<tr>
+					<td>&nbsp;</td>
+				</tr>
+				<tr>
+					<td>
+						<div class="two fields">
+							<div class="field">
+								<label><span wicket:id="postcodeLabel" /></label> 
+								<input wicket:id="postcode" type="text" size="20" />
+							</div>
+							<div class="field">
+								<label><span wicket:id="cityLabel" /></label> 
+								<input wicket:id="city" type="text" size="35" />
+							</div>
+						</div>
+					</td>
+				</tr>
+				<tr>
+					<td>&nbsp;</td>
+				</tr>
+				<tr>
+					<td>
+						<div class="two fields">
+							<div class="field">
+								<label><span wicket:id="countryLabel" /></label> 
+								<input type="text" wicket:id="country"/>
+							</div>
+							<div class="field">
+								<label><span wicket:id="stateLabel" /></label> 
+								<select wicket:id="state"></select>
+							</div>
+						</div>
+					</td>
+				</tr>
+				<tr>
+					<td>&nbsp;</td>
+				</tr>
+				<tr>
+					<td>
+						<div class="field">
+							<label><span wicket:id="hpNoLabel" /></label> 
+							<input wicket:id="hpNo" type="text" size="20" />
+						</div>
+					</td>
+				</tr>
+				<tr>
+					<td>&nbsp;</td>
+				</tr>
+			</table>
+		</div> <br>
+		<br> 
+		<wicket:enclosure child="remarks">
+			<table>
+				<tr>
+					<td><span key="remarksLabel" /></td>
+					<td>:</td>
+					<td><textarea wicket:id="remarks" rows="3" cols="90"></textarea></td>
+				</tr>
+				<tr>
+					<td><span key="userStatusLabel" /></td>
+					<td>:</td>
+					<td><span wicket:id="userStatus "></span></td>
+				</tr>
+				<tr>
+					<td><span wicket:id="ipAddressLabel" /></td>
+					<td>:</td>
+					<td><input wicket:id="ipAddress" type="text" size="12" /></td>
+				</tr>
+			</table>									
+		</wicket:enclosure> <br>
+									
+		<table>
+			<tr>
+				<td colspan="2"><b><wicket:message key="declaration.tick.declare.text" /> </b></td>
+			</tr>
+			<tr>
+				<td><input wicket:id="declareChk" type="checkbox" /></td>
+				<td>
+					<wicket:message key="pal.declaration">
+						<a wicket:id="portalTermLink"><wicket:message key="pal.portalTermLink" /></a>
+						<a wicket:id="protocalElodgementLink"><wicket:message key="pal.protocalElodgementLink" /></a>
+					</wicket:message>
+				</td>
+			</tr>
+			<tr>
+				<td colspan="2">&nbsp;</td>
+			</tr>
+		</table> <br>
+
+		<table>
+			<tr>
+				<td>
+					<div class="inline field">
+						<input wicket:id="save" class="ui primary button" type="submit"/> 
+						<input wicket:id="cancel" class="ui primary button" type="submit" value="Cancel" />
+					</div>
+				</td>
+			</tr>		
+		</table>
+		
+	</form>							
+</wicket:extend>

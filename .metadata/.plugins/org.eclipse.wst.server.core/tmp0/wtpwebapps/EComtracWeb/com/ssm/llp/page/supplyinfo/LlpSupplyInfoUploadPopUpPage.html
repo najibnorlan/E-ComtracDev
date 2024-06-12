@@ -1,0 +1,31 @@
+<wicket:extend>
+    <form wicket:id="inputForm">
+    	<table>
+             <tr>
+				<td><wicket:message key="llpSupplyInfo.page.entityNo" /></td>
+				<td><span wicket:id="entityNo" /></td>
+			</tr>
+			<tr>
+				<td><wicket:message key="llpSupplyInfo.page.entityName" /></td>
+				<td><span wicket:id="entityName" /></td>
+			</tr>
+			<tr>
+				<td><wicket:message key="llpSupplyInfo.page.uploadType" /></td>
+				<td><span wicket:id="uploadType" /></td>
+			</tr>
+             <tr>
+                  <td>
+                  	<wicket:message key="llpSuplyInfo.page.selectFile" />
+                  </td>
+                  <td>
+					<input wicket:id="fileUpload" size="40" type="file"/>
+				  </td>
+             </tr>
+             <tr>
+             	  <td colspan="2">
+                       <input wicket:id="upload" type="submit" value="Upload"/>
+                  </td>
+             </tr>
+		</table>
+    </form>
+</wicket:extend>

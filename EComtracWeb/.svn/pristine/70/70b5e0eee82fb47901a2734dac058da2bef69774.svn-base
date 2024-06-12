@@ -1,0 +1,54 @@
+<wicket:extend>
+	<span wicket:id="jsScript"></span>
+	<script>
+	tinymce.init({
+	  selector: 'textarea',
+	  height: 200,
+	  menubar: false,
+	  plugins: [ 'advlist autolink lists link image charmap print preview anchor', 'searchreplace visualblocks code fullscreen', 'insertdatetime media table contextmenu paste code' ],
+	  toolbar: 'undo redo | insert | styleselect | bold italic | alignleft aligncenter alignright alignjustify | bullist numlist outdent indent | link image | code',
+	  content_css: '//www.tinymce.com/css/codepen.min.css'
+	});
+	</script>
+
+	<form class="ui form" wicket:id="form" name="form">
+		<div wicket:id="message" class="ui message"></div>	
+	
+		<!--div class="ui icon message">
+		  	<div class="ui toggle checkbox">
+	        	<input type="checkbox" wicket:id="blastAll" id="blastAll" name="blastAll" checked="checked" tabindex="0" class="hidden" readonly="readonly">
+	      	</div>
+		  	<div class="content">
+		    	<div class="header"><wicket:message key="ezbiz.mailBlaster.label.quest"/></div>
+		  	</div>
+		</div-->
+
+		<div class="field">
+			<label><wicket:message key="ezbiz.mailBlaster.label.specific"/></label>
+			<!--select class="ui dropdown" wicket:id="userDropdownList"></select-->
+			<input type="text" wicket:id="listUserEmail">
+		</div>
+		
+		<div class="field">
+	    	<label><wicket:message key="ezbiz.mailBlaster.label.subject"/></label>
+	    	<input type="text" name="composeMailTitle" id="composeMailTitle" wicket:id="composeMailTitle">
+	  	</div>
+	  	<div class="field">
+		    <label><wicket:message key="ezbiz.mailBlaster.label.msg"/></label>
+			<textarea name="composeMailBody" id="composeMailBody" wicket:id="composeMailBody" style="margin-top: 0px; margin-bottom: 0px; height: 183px;"></textarea>
+  		</div><br>
+  		
+  		<button class="ui primary button" type="submit" wicket:id="blastMail" onclick="tinyMCE.triggerSave();"><i class="send icon"></i> <wicket:message key="ezbiz.mailBlaster.btn.blast"/></button>
+	</form>
+
+	<script>
+	$(document).ready(function(){
+		$('.ui.checkbox').checkbox();
+		$('.ui.dropdown').dropdown();
+	});
+
+	$('#tinymce p').on("keydown", function(){
+		$('#composeMailBody').val($(this).html());
+	});
+	</script>
+</wicket:extend>

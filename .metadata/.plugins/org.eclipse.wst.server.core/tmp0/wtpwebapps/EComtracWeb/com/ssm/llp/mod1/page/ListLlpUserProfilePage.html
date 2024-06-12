@@ -1,0 +1,47 @@
+<wicket:extend>
+	<div wicket id="ListLlpUserProfile">
+		<table class="ui striped table">
+			<thead>
+				<tr>
+					<th width = "15%" ><wicket:message key="user.page.userList.userRefNo"/></th>
+					<th width="10%"><wicket:message key="user.page.userList.userLoginId" /></th>
+					<th width="15%"><wicket:message key="user.page.userList.userName" /></th>
+					<th width="15%"><wicket:message key="user.page.userList.userIdNo" /></th>
+					<th width="10%"><wicket:message key="user.page.userList.userStatus" /></th>
+					<th width="10%"><wicket:message key="user.page.userList.userEmail" /></th>
+					<th width="10%"><wicket:message key="user.page.userList.userApprovedBy" /></th>
+					<th width="30%"><wicket:message key="user.page.userList.userAction" /></th>
+				</tr>
+			</thead>
+			<tbody>
+			    <tr wicket:id="sorting">
+			    <td><span wicket:id="userRefNo">[userRefNo]</span></td>
+					<td><span wicket:id="loginId">[loginId]</span></td>
+					<td><span wicket:id="name">[name]</span></td>
+					<td><span wicket:id="idNo">[idNo]</span></td>
+					<td><span wicket:id="userStatus">[userStatus]</span></td>
+					<td><span wicket:id="email">[email]</span></td>						
+					<td>
+						<span wicket:id="approvedBy">[approvedBy]</span> 
+					<br> 
+						<span wicket:id="dateApproved">[dateApproved]</span>
+					</td>					
+					<td class="manage-contact-links">
+						<a wicket:id="edit" href="#"><i class="large edit icon" title="Edit"></i></a>
+						<a wicket:id="resetPassword" href="#"><i class="large unlock icon" title="Reset Password"></i></a>
+						<a wicket:id="syncName" href="#"><i class="large refresh icon" title="Sync Name with CBS"></i></a>
+						<a wicket:id="approveUser" href="#"><i class="large checkmark box icon" title="Approve User"></i></a>
+					</td>
+				</tr>
+			</tbody>
+			<tfoot>
+		    	<tr>
+			    	<th colspan="100">
+					    <span wicket:id="navigatorLabel">[dataView navigatorLabel]</span>
+					    <span wicket:id="navigator">[dataView navigator]</span>
+				    </th>
+				</tr>
+			</tfoot>			  
+					</table>
+	</div>
+</wicket:extend>

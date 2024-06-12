@@ -1,0 +1,69 @@
+<wicket:extend>
+	<form wicket:id="fileAttachmentForm" id="fileAttachmentForm">
+		<div class="ui top attached segment" style="width: 40%">
+		<div class="ui top attached label">
+			<h4 class="ui header">
+				<wicket:message key="page.lbl.ezbiz.searchAdd" />
+			</h4>
+		</div>
+		<div class="ui form">
+			<div class="field" style="width: 200">
+				<span wicket:id="fileCodeLabel" /> 
+				<input wicket:id="fileCode" type="text" size="50"/>
+			</div>
+			<div class="field" style="width: 300">
+				<span wicket:id="fileNameLabel" /> 
+				<input wicket:id="fileName" type="text" size="100"/>
+			</div>
+			<div align="left">
+				<button class="ui primary button" wicket:id="ajaxSubmitSearch">
+					<wicket:message key="page.lbl.ezbiz.file.submit" /></button>
+				<button class="ui primary button" wicket:id="addFileAttachment">
+					<wicket:message key="page.lbl.ezbiz.file.addFile" /></button>
+			</div>	
+		</div>
+		</div>
+		<br>
+			<div wicket:id="listDataView">
+				<table class="ui striped table" width="100%">
+					<tr>
+						<table class="ui striped table" width="100%">
+							<thead>
+								<tr>
+									<th width="15%"><wicket:message key="llpFileAttach.page.fileCode" /></th>
+									<th width="15%"><wicket:message key="llpFileAttach.page.fileName" /></th>
+									<th width="35%"><wicket:message	key="llpFileAttach.page.fileDesc" /></th>
+									<th width="10%"><wicket:message	key="llpFileAttach.page.fileStatus" /></th>
+									<th width="15%"><wicket:message	key="llpFileAttach.page.action" /></th>
+								</tr>
+							</thead>
+							<tbody>
+								<tr wicket:id="sorting">
+									<td><span wicket:id="fileCode">[fileCode]</span></td>
+									<td><span wicket:id="fileName">[fileName]</span></td>
+									<td><span wicket:id="fileDesc">[fileDesc]</span></td>
+									<td><span wicket:id="fileStatus">[fileStatus]</span></td>
+									<td class="action-links">
+										<a wicket:id="edit" href="#">
+											<i class="edit icon" title="Edit"></i>
+										</a> 
+										<a wicket:id="download"	href="#">
+											<i class="download icon" title="Download"></i>
+										</a>
+									</td>
+								</tr>
+							</tbody>
+							<tfoot>
+								<tr>
+									<th colspan="5">
+										<span wicket:id="navigatorLabel">[dataview navigatorLabel]</span>
+										<span wicket:id="navigator">[dataview navigator]</span>
+									</th>
+								</tr>
+							</tfoot>
+						</table>
+					</tr>
+				</table>
+			</div>
+	</form>
+</wicket:extend>

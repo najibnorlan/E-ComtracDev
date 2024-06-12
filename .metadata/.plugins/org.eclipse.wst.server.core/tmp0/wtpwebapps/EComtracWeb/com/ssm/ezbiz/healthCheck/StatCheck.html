@@ -1,0 +1,54 @@
+<wicket:extend>
+	<meta http-equiv="Refresh" content="300"/>
+	<label id="refreshcountdown"></label>
+	<table width="100%">
+		<tr>
+			<td>
+				<div class="ui four cards">
+					<div class="card" wicket:id="hostDatas">
+				    	<div class="content">
+				      		<div class="header">
+				      			<label wicket:id=svrhostname></label>
+			      			</div>
+					        <div class="meta">
+					        	<label wicket:id=svrhostaddr></label>
+					      	</div>
+					      	<div class="description">
+					      		<label wicket:id=svrstatus></label>
+					      	</div>
+				    	</div>
+				  	</div>
+				</div>
+			</td>
+		</tr>
+		<tr><td>&nbsp;</td></tr>
+		<tr>
+			<td>
+				<a href="#" wicket:id="refreshpage">
+					<div class="ui blue label"><i class="refresh icon"></i><wicket:message key="ezbiz.healthcheck.btn.refresh"/></div>
+				</a>
+			</td>
+		</tr>
+	</table>
+	
+	<script>
+		var downloadButton = document.getElementById("refreshcountdown");
+		var time = 300;
+		var newElement = document.createElement("p");
+		newElement.innerHTML = "Refreshing server health information in 300 seconds.";
+		var id;
+
+		downloadButton.parentNode.replaceChild(newElement, downloadButton);
+
+		id = setInterval(function() {
+		    time--;
+		    if(time < 0) {
+		        newElement.parentNode.replaceChild(downloadButton, newElement);
+		        clearInterval(id);
+		    } else {
+		        newElement.innerHTML = "Refreshing server health information in " + time.toString() + " seconds.";
+		    }
+		}, 1000);
+	</script>
+	
+</wicket:extend>

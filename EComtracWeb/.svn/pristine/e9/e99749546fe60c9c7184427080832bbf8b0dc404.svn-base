@@ -1,0 +1,101 @@
+<wicket:extend>
+	<form wicket:id="lodgerForm">
+		<div id="llp">
+			<div class="llp">
+				<table>
+
+					
+					
+					<table>
+				  	<tr>
+						<td>name</td>
+						<td colspan="4"><input wicket:id="name" type="text" size="101" /></td>
+					</tr>
+
+					<tr>
+						<td>idNo</td>
+						<td colspan = "4"><input wicket:id="idNo" type="text" size="35" /></td>
+						
+					</tr>
+
+  
+				
+			</table>
+			<hr  color="grey">
+			
+			
+			
+			<br>
+
+			<table >
+				<tr>
+					<td>add</td>
+					<td colspan="4"><input wicket:id="add1" type="text" size="101"/></td>
+				</tr>
+
+				<tr>
+					<td></td>
+					<td colspan="4"><input wicket:id="add2" type="text" size="101"/></td>
+				</tr>
+
+				<tr>
+					<td></td>
+					<td colspan="4"><input wicket:id="add3" type="text" size="101"/></td>
+				</tr>
+
+				<tr>
+					<td>postcode</td>
+					<td><input wicket:id="postcode" type="text" size="35"/></td>
+					<td></td>
+					<td>city</td>
+					<td><input wicket:id="city" type="text" size="49"/></td>
+				</tr>
+
+				<tr>
+					<td>state</td>
+					<td><select wicket:id="state" /></td>
+					<td></td>
+					<td>country</td>
+					<td><select wicket:id="country" /></td>
+				</tr>
+
+			
+			 
+				<tr>
+					<td>offNo</td>
+					<td><input wicket:id="offNo" type="text" size="35"/></td>
+					<td></td>
+					<td>hpNo</td>
+					<td><input wicket:id="hpNo" type="text" size="49"/></td>
+				</tr>
+			
+			
+				<tr>
+				 
+					<td>faxNo</td>
+					<td><input wicket:id="faxNo" type="text" size="35"/></td>
+					<td></td>
+						
+					<td>email</td>
+					<td><input wicket:id="email" type="text" size="49"/></td>
+				</tr>
+			</table>
+			<hr  color="grey">
+			
+
+
+			<table bgcolor = "grey">
+				<tr>
+					<td colspan="3" align="center">
+					<input wicket:id="save" type="submit" wicket:message="value:llpReg.page.saveButton"/> 
+					<input wicket:id="cancel" type="submit" wicket:message="value:llpReg.page.cancelButton"/>
+					</td>
+				</tr>
+			</table>
+			
+			
+			</table>
+		</div>
+		</div>
+	</form>
+</wicket:extend>

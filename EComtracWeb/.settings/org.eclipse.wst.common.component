@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?><project-modules id="moduleCoreId" project-version="1.5.0">
+        
+    <wb-module deploy-name="EComtracWeb">
+                
+        <wb-resource deploy-path="/" source-path="/WebContent" tag="defaultRootSource"/>
+                
+        <wb-resource deploy-path="/WEB-INF/classes" source-path="/src"/>
+                
+        <wb-resource deploy-path="/WEB-INF/classes" source-path="/resources"/>
+                
+        <wb-resource deploy-path="/WEB-INF/classes" source-path="/basesrc"/>
+                
+        <wb-resource deploy-path="/WEB-INF/classes" source-path="/model"/>
+                
+        <wb-resource deploy-path="/WEB-INF/classes" source-path="/controller"/>
+                
+        <wb-resource deploy-path="/WEB-INF/classes" source-path="/page"/>
+                
+        <property name="java-output-path" value="/EComtracWeb/build/classes"/>
+        <property name="context-root" value="EComtracWeb"/>
+            
+    </wb-module>
+    
+</project-modules>

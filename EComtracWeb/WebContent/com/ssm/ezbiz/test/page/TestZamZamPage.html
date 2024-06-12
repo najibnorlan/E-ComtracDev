@@ -1,0 +1,29 @@
+<wicket:extend>
+	this is test zam zam page
+	
+	<table class="ui striped table">
+		  <thead>
+		    	<tr>
+		    	<th width="15%"><wicket:message key="page.lbl.ezbiz.testZamZam.id" /></th>
+				<th width="30%"><wicket:message key="page.lbl.ezbiz.testZamZam.name" /></th>
+				<th width="30%"><wicket:message key="page.lbl.ezbiz.testZamZam.age" /></th>
+		  	</tr>
+		  </thead>
+		  <tbody>
+		    <tr wicket:id="sorting">
+				<td><span wicket:id="id">[id]</span></td>
+				<td><span wicket:id="name">[name]</span></td>
+				<td><span wicket:id="age">[age]</span></td>
+			</tr>
+		  </tbody>
+		  <tfoot>
+		    <tr>
+		    	<th colspan="100">
+		    		<span wicket:id="navigatorLabel">[dataView navigatorLabel]</span>
+			        <span wicket:id="navigator">[dataView navigator]</span>
+		    	</th>
+		  </tr></tfoot>
+</table>
+	
+	
+</wicket:extend>

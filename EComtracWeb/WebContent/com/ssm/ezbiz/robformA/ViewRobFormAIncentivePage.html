@@ -1,0 +1,507 @@
+<wicket:extend>
+	<form wicket:id="form">
+		<div id="EditFormAForm" class="ui form">
+			<table width="100%">
+				<tr>
+					<td>
+						<div class="ui top attached segment">
+							<div class="ui top attached label">
+								<h4 class="ui header">
+									<wicket:message key="page.lbl.ezbiz.robFormA.main" />
+								</h4>
+							</div>
+							<table width="100%">
+								<tr>
+									<td>
+										<div class="field">
+											<label><wicket:message key="page.lbl.ezbiz.robFormA.robFormACode" /></label><span wicket:id="robFormACode" />
+										</div>
+									</td>
+								</tr>
+								<tr>
+									<td>&nbsp;</td>
+								</tr>
+								<tr>
+									<td>
+										<div class="field">
+											<label><wicket:message key="page.lbl.ezbiz.robFormA.nameType" /></label><span wicket:id="nameType" />
+										</div>
+									</td>
+								</tr>
+								<tr>
+									<td>&nbsp;</td>
+								</tr>
+								<tr>
+									<td>
+										<div class="field">
+											<label><wicket:message key="page.lbl.ezbiz.robFormA.bizName" /></label><span wicket:id="bizName" />
+										</div>
+									</td>
+								</tr>
+								<tr>
+									<td>&nbsp;</td>
+								</tr>
+								<tr>
+									<td>
+										<div class="two fields">
+											<div class="field">
+												<label><wicket:message key="page.lbl.ezbiz.robFormA.bizStartDt" /></label><span wicket:id="bizStartDt" />
+											</div>
+											<div class="field">
+												<label><wicket:message key="page.lbl.ezbiz.robFormA.bizPartnershipAgreementDate" /></label><span wicket:id="bizPartnershipAgreementDate" />
+											</div>
+										</div>
+									</td>
+								</tr>
+								<tr>
+									<td>&nbsp;</td>
+								</tr>
+								<tr>
+									<td>
+										<div class="field">
+											<label><wicket:message key="page.lbl.ezbiz.robFormA.bizRegPeriod" /></label><span wicket:id="bizRegPeriod" />
+										</div>
+									</td>
+								</tr>
+								<tr>
+									<td>&nbsp;</td>
+								</tr>
+								<tr>
+									<td>
+										<div class="field">
+											<label><wicket:message key="page.lbl.ezbiz.robFormA.isBuyInfo" /></label><span wicket:id="isBuyInfo" />
+										</div>
+									</td>
+								</tr>
+								<tr>
+									<td>&nbsp;</td>
+								</tr>
+								<tr>
+									<td>
+										<div class="two fields">
+											<div class="field">
+												<label><wicket:message key="page.lbl.ezbiz.robFormA.status" /></label><span wicket:id="status" />
+											</div>
+											<div class="field">
+												<label><wicket:message key="page.lbl.ezbiz.robFormA.incentiveType" /></label><span wicket:id="incentiveType" />
+											</div>
+										</div>
+									</td>
+								</tr>
+								<tr>
+									<td>&nbsp;</td>
+								</tr>
+								<tr>
+									<td>
+										<div class="two fields">
+											<div class="field">
+												<wicket:enclosure child="notes">
+													<div class="field">
+														<label><wicket:message
+																key="page.lbl.ezbiz.robFormA.notes" /></label> <span
+															wicket:id="notes" />
+													</div>
+												</wicket:enclosure>
+											</div>
+											<div class="field">
+												<wicket:enclosure child="queryAns">
+													<div class="field">
+														<label><wicket:message
+																key="page.lbl.ezbiz.robFormA.queryAns" /></label> <span
+															wicket:id="queryAns" />
+													</div>
+												</wicket:enclosure>
+											</div>
+										</div>
+									</td>
+								</tr>
+								<tr>
+									<td>&nbsp;</td>
+								</tr>
+								<tr>
+									<td>
+										<div class="two fields">
+											<div class="field">
+												<label><wicket:message key="page.lbl.ezbiz.robFormA.incubator" /></label><span wicket:id="incubator" />
+											</div>
+											<div class="field">
+												<label><wicket:message key="page.lbl.ezbiz.robFormA.isOnlineSeller" /></label><span wicket:id="isOnlineSeller" />
+											</div>
+										</div>
+									</td>
+								</tr>
+							</table>
+						</div>
+					</td>
+				</tr>
+				<tr>
+					<td>
+						<div wicket:id="wmcAddress">
+							<table width="100%">
+								<tr>
+									<td valign="top">
+										<div class="ui top attached segment">
+											<div class="ui top attached label">
+												<h4 class="ui header">
+													<wicket:message key="page.lbl.ezbiz.robFormA.mainAddress" />
+												</h4>
+											</div>
+											<table width="100%">
+												<tr>
+													<td>
+														<div class="field">
+															<span wicket:id="bizMainAddr" />
+														</div>
+													</td>
+												</tr>
+												<tr>
+													<td>
+														<div class="two fields">
+															<div class="field">
+																<label><wicket:message key="page.lbl.ezbiz.robFormA.bizMainAddrTelNo" /></label> <span wicket:id="bizMainAddrTelNo" />
+															</div>
+															<div class="field">
+																<label><wicket:message key="page.lbl.ezbiz.robFormA.bizMainAddrMobileNo" /></label> <span wicket:id="bizMainAddrMobileNo" />
+															</div>
+														</div>
+													</td>
+												</tr>
+												<tr>
+													<td>
+														<div class="field">
+															<label><wicket:message key="page.lbl.ezbiz.robFormA.bizMainAddrEmail" /></label> <span wicket:id="bizMainAddrEmail" />
+														</div>
+													</td>
+												</tr>
+											</table>
+										</div>
+									</td>
+									<td>&nbsp;</td>
+									<td>
+										<div class="ui top attached segment">
+											<div class="ui top attached label">
+												<h4 class="ui header">
+													<wicket:message key="page.lbl.ezbiz.robFormA.postAddress" />
+												</h4>
+											</div>
+											<table width="100%">
+												<tr>
+													<td>
+														<div class="field">
+															<span wicket:id="bizPostAddr" />
+														</div>
+													</td>
+												</tr>
+												<tr>
+													<td>
+														<div class="two fields">
+															<div class="field">
+																<label><wicket:message key="page.lbl.ezbiz.robFormA.bizPostAddrTelNo" /></label> <span wicket:id="bizPostAddrTelNo"/>
+															</div>
+															<div class="field">
+																<label><wicket:message key="page.lbl.ezbiz.robFormA.bizPostAddrMobileNo" /></label> <span wicket:id="bizPostAddrMobileNo" />
+															</div>
+														</div>
+													</td>
+												</tr>
+												<tr>
+													<td>
+														<div class="field">
+															<label><wicket:message key="page.lbl.ezbiz.robFormA.bizPostAddrEmail" /></label> <span wicket:id="bizPostAddrEmail"/>
+														</div>
+													</td>
+												</tr>
+											</table>
+										</div>
+									</td>
+								</tr>
+							</table>
+						</div>
+					</td>
+				</tr>
+				<tr>
+					<td>
+						<div wicket:id="wmcBizCode"  class="ui top attached segment">
+							<div class="ui top attached label">
+								<h4 class="ui header">
+									<wicket:message key="page.lbl.ezbiz.robFormA.businessInfo" />
+								</h4>
+							</div>
+							<table width="100%">
+								<tr>
+									<td>
+										<div class="field">
+											<label><wicket:message key="page.lbl.ezbiz.robFormA.bizDesc" /></label>
+  											<span wicket:id="bizDesc" />
+										</div>
+									</td>
+								</tr>
+								<tr>
+									<td>&nbsp;</td>
+								</tr>
+								<tr>
+									<td>
+										<div id="listRobFormABizCode">
+											<table width="100%" class="ui striped table">
+											  <thead>
+											    	<tr>
+											    	<th width="3%"><wicket:message key="page.lbl.ezbiz.robFormA.robFormABizCode.bizCodeNo" /></th>
+													<th width="10%"><wicket:message key="page.lbl.ezbiz.robFormA.robFormABizCode.bizCode" /></th>
+													<th width="40%"><wicket:message key="page.lbl.ezbiz.robFormA.robFormABizCode.bizCodeDesc" /></th>
+											  	</tr>
+											  </thead>
+											  <tbody>
+											    <tr wicket:id="sortingRobFormABizCode">
+													<td><span wicket:id="bizCodeNo">[bizCodeNo]</span></td>
+													<td><span wicket:id="bizCode">[bizCode]</span></td>
+													<td><span wicket:id="bizCodeDesc">[bizCodeDesc]</span></td>
+												</tr>
+											  </tbody>
+											  <tfoot>
+											    <tr>
+											    	<th colspan="4">
+											    		<span wicket:id="navigatorLabelRobFormABizCode">[dataView navigatorLabelRobFormABizCode]</span>
+												        <span wicket:id="navigatorRobFormABizCode">[dataView navigatorRobFormABizCode]</span>
+											    	</th>
+											  </tr></tfoot>
+											</table>
+										</div>
+									</td>
+								</tr>
+							</table>
+						</div>
+					</td>
+				</tr>
+				<tr>
+					<td>
+						<div class="ui top attached segment">
+							<div class="ui top attached label">
+								<h4 class="ui header">
+									<wicket:message key="page.lbl.ezbiz.robFormA.branchInfo" />
+								</h4>
+							</div>
+							<div wicket:id="wmcBranches">
+								<table width="100%" class="ui striped table">
+								  <thead>
+								    	<tr>
+								    	<th width="10%"><wicket:message key="page.lbl.ezbiz.robFormA.robFormABranch.branchNo" /></th>
+										<th width="50%"><wicket:message key="page.lbl.ezbiz.robFormA.robFormABranch.address" /></th>
+								  	</tr>
+								  </thead>
+								  <tbody>
+								    <tr wicket:id="sortingRobFormABranch">
+										<td><span wicket:id="branchNo">[branchNo]</span></td>
+										<td><span wicket:id="branchAddress">[branchAddress]</span></td>
+									</tr>
+								  </tbody>
+								  <tfoot>
+								    <tr>
+								    	<th colspan="4">
+								    		<span wicket:id="navigatorLabelRobFormABranch">[dataView navigatorLabelRobFormABranch]</span>
+									        <span wicket:id="navigatorRobFormABranch">[dataView navigatorRobFormABranch]</span>
+								    	</th>
+								  </tr></tfoot>
+								</table>
+							</div>
+						</div>
+					</td>
+				</tr>
+				<tr>
+					<td>
+						<div class="ui top attached segment">
+							<div class="ui top attached label">
+								<h4 class="ui header">
+									<wicket:message key="page.lbl.ezbiz.robFormA.ownerInfo" />
+								</h4>
+							</div>
+							<div wicket:id="wmcOwners">
+								<table width="100%" class="ui striped table">
+								  <thead>
+								    	<tr>
+									    	<th width="10%"><wicket:message key="page.lbl.ezbiz.robFormA.robFormAOwner.ownerNo" /></th>
+											<th width="50%"><wicket:message key="page.lbl.ezbiz.robFormA.robFormAOwner.name" /></th>
+											<th width="20%"><wicket:message key="page.lbl.ezbiz.robFormA.robFormAOwner.icNo" /></th>
+											<th width="20%"><wicket:message key="page.lbl.ezbiz.robFormA.robFormAOwners.verificationStatus" /></th>
+											<th width="10%"><wicket:message key="page.lbl.ezbiz.robFormA.robFormAOwner.action" /></th>
+									  	</tr>
+								  </thead>
+								  <tbody>
+								    <tr wicket:id="sortingRobFormAOwner">
+										<td><span wicket:id="ownerNo">[ownerNo]</span></td>
+										<td><span wicket:id="name">[name]</span></td>
+										<td><span wicket:id="icNo">[icNo]</span></td>
+										<td><span wicket:id="verificationStatus">[verificationStatus]</span></td>
+										<td class="manage-link">
+											 <a wicket:id="viewOwner" href="#" wicket:message="title:page.lbl.ezbiz.robFormA.robFormAOwner.viewOwner"><i class="Edit icon"/></a>
+											 <a wicket:id="acceptOwners" href="#" wicket:message="title:page.lbl.ezbiz.robFormA.robFormAOwners.acceptOwners"><i class="Add User icon" /></a>
+											 <a wicket:id="rejectOwners" href="#" wicket:message="title:page.lbl.ezbiz.robFormA.robFormAOwners.rejectOwners"><i class="Remove User icon" /></a>
+										</td>
+									</tr>
+								  </tbody>
+								  <tfoot>
+								    <tr>
+								    	<th colspan="5">
+								    		<span wicket:id="navigatorLabelRobFormAOwner">[dataView navigatorLabelRobFormAOwner]</span>
+									        <span wicket:id="navigatorRobFormAOwner">[dataView navigatorRobFormAOwner]</span>
+								    	</th>
+								  </tr></tfoot>
+								</table>
+							</div>
+						</div>
+						<div wicket:id="editOwnerPopUp"></div>
+					</td>
+				</tr>
+				<tr>
+					<td>
+						<div class="ui top attached segment">	
+							<div class="ui top attached label">
+								<h4 class="ui header"><wicket:message key="page.lbl.ezbiz.robFormA.formAAttachment" /></h4>
+							</div>
+							<table width="100%">
+							  <tr>
+							      <td>
+							      	<input wicket:id="downloadSupportingDoc" type="button" class="ui primary button" wicket:message="value:page.lbl.ezbiz.robFormA.downloadSupportingDoc"/>
+							      </td>
+							  </tr>
+							</table>
+						</div>
+					</td>
+				</tr>
+				<tr>
+					<td>
+						<div wicket:id="wmcFeeSummary" class="ui top attached segment">
+							<div class="ui top attached label">
+								<h4 class="ui header">
+									<wicket:message key="page.lbl.ezbiz.robFormA.feeSummary" />
+								</h4>
+							</div>
+							<br>
+							<table width="100%" class="ui large table">
+							  <thead>
+							    <tr>
+							      <th><wicket:message key="page.lbl.ezbiz.robFormA.feeSummary.item" /></th>
+							      <th><wicket:message key="page.lbl.ezbiz.robFormA.feeSummary.amount" /></th>
+							      <th><wicket:message key="page.lbl.ezbiz.robFormA.feeSummary.unit" /></th>
+							      <th><wicket:message key="page.lbl.ezbiz.robFormA.feeSummary.total" /></th>
+		
+							    </tr>
+							  </thead>
+							  <tbody>
+							    <tr>
+							      <td><wicket:message key="page.lbl.ezbiz.robFormA.feeSummary.regOfBiz" /></td>
+							      <td><span wicket:id="regFeePerYear"></span></td>
+							      <td><span wicket:id="regFeeDuration"></span></td>
+							      <td><span wicket:id="totalRegFee"></span></td>
+							    </tr>
+							    <tr>
+							      <td><wicket:message key="page.lbl.ezbiz.robFormA.feeSummary.branch" /></td>
+							      <td><span wicket:id="branchFeePerYear"> </span> </td>
+							      <td><span wicket:id="branchFeeDuration"></span> </td>
+							      <td><span wicket:id="totalBranchFee"></span></td>
+							    </tr>
+							   	 <tr>
+							      <td><wicket:message key="page.lbl.ezbiz.robFormA.feeSummary.businessInfo" /></td>
+							      <td><span wicket:id="bisnessInfoFee"> </span> </td>
+							      <td><span wicket:id="bisnessInfoFeeQuantity"></span> </td>
+							      <td><span wicket:id="totalBisnessInfoFee"></span></td>
+							    </tr>
+							  </tbody>
+								<wicket:enclosure child="regFeeDiscount">
+									<thead>
+										<tr>
+											<th colspan="4" style="text-align: center;"><wicket:message
+													key="page.lbl.ezbiz.robFormA.feeSummary.discount" /> (<span
+												wicket:id="incentiveTypeLabel"></span>)</th>
+										</tr>
+									</thead>
+									<tbody>
+										<wicket:enclosure child="regFeeDiscount">
+											<tr>
+												<td><wicket:message
+														key="page.lbl.ezbiz.robFormA.feeSummary.regOfBiz" /></td>
+												<td><span wicket:id="regFeeDiscount"></span></td>
+												<td><span wicket:id="regFeeDurationDiscount"></span>&nbsp;<wicket:message
+														key="page.lbl.ezbiz.robFormA.feeSummary.years" /></td>
+												<td><span wicket:id="totalRegDiscount"></span></td>
+											</tr>
+										</wicket:enclosure>
+										<wicket:enclosure child="businessInfoDiscount">
+											<tr>
+												<td><wicket:message
+														key="page.lbl.ezbiz.robFormA.feeSummary.businessInfo" /></td>
+												<td><span wicket:id="businessInfoDiscount"></span></td>
+												<td><span wicket:id="businessInfoQuantityDiscount"></span></td>
+												<td><span wicket:id="totalBusinessInfoDiscount"></span></td>
+											</tr>
+										</wicket:enclosure>
+										<tr>
+											<td colspan="4"></td>
+										</tr>
+									</tbody>
+								</wicket:enclosure>
+								<tfoot>
+							    <tr>
+							    <th>&nbsp;</th>
+							    <th>&nbsp;</th>
+							    <th><wicket:message key="page.lbl.ezbiz.robFormA.feeSummary.totalAmt" /></th>
+							    <th><span wicket:id="totalFee"></span></th>
+							  </tr></tfoot>
+							</table>
+						</div>
+					</td>
+				</tr>
+				<tr>
+					<td>&nbsp;</td>
+				</tr>
+				<tr>
+					<td>
+					<input wicket:id="downloadBorangAForm" type="button" class="ui primary button" wicket:message="value:page.lbl.ezbiz.robFormA.downloadBorangAForm"/>
+					<input wicket:id="downloadCert" type="button" class="ui primary button" wicket:message="value:page.lbl.ezbiz.robFormA.downloadCert"/>
+					<input wicket:id="downloadCmpNotice" type="button" class="ui primary button" wicket:message="value:page.lbl.ezbiz.robFormA.downloadCmpNotice"/>
+					<input wicket:id="downloadBusinessInfo" type="button" class="ui primary button" wicket:message="value:page.lbl.ezbiz.robFormA.downloadBusinessInfo"/>
+					</td>
+				</tr>
+				<tr>
+					<td>&nbsp;</td>
+				</tr>
+				<tr>
+					<td colspan="3"><span wicket:id="downloadRule" /></td>
+				</tr>
+				<tr>
+					<td>
+						<table width="100%">
+							<tr>
+								<td width="10%">
+									<input wicket:id="editBack" type="button" class="ui primary button" wicket:message="value:page.lbl.ezbiz.robFormA.editBack" />
+								</td>
+								<td align="right"><wicket:enclosure child="reject">
+										<button class="ui button" wicket:id="cancel">Cancel</button>
+										<div class="ui buttons">
+											<button class="ui button negative" wicket:id="reject">Reject</button>
+											<button class="ui primary button" wicket:id="query">Query</button>
+											<button class="ui positive button" wicket:id="approve">Approve</button>
+										</div>
+										<br>
+										<div wicket:id="wmcRemarks">
+											<div style="text-align: left">
+												<label><b><span wicket:id="remarksType"></span> remarks</b></label>
+												<textarea wicket:id="remarks"></textarea>
+											</div>
+											<br>
+											<button wicket:id="resubmit" class="ui primary button">Submit</button>
+										</div>
+									</wicket:enclosure> <input wicket:id="submitPayment" type="button" class="ui primary button" value="Submit Payment" /> <input wicket:id="submitTransaction"
+									type="button" class="ui primary button" value="Submit Transaction" />
+								</td>
+							</tr>
+						</table>
+					</td>
+				</tr>
+			</table>
+			
+		</div>
+	</form>
+	<form>
+	
+	</form>
+</wicket:extend>

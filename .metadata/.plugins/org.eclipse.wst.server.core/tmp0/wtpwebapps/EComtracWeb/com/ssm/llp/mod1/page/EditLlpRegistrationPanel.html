@@ -1,0 +1,255 @@
+<wicket:extend>
+
+	<!-- populate data bizAdd from regAdd -->
+	<script>
+		function populateFromMain(){
+			document.getElementById("bussinessAdd1").value = document.getElementById("regAdd1").value;
+			document.getElementById("bussinessAdd2").value = document.getElementById("regAdd2").value;
+			document.getElementById("bussinessAdd3").value = document.getElementById("regAdd3").value;
+			document.getElementById("bussinessPostcode").value = document.getElementById("regPostcode").value;
+			document.getElementById("bussinessCity").value = document.getElementById("regCity").value;
+			document.getElementById("bussinessCountryCode").value = document.getElementById("regCountry").value;
+			document.getElementById("bussinessCountryCode").fireEvent("onchange");
+			setTimeout(continueExecution, 200) ;
+		}
+		
+
+		//for state to load after selection of country (after 200 miliseconds)
+		function continueExecution()
+		{
+			document.getElementById("bussinessStateCode").value = document.getElementById("regState").value;
+		}
+	</script>
+	
+	<form wicket:id="llpRegForm">
+		<div id="llpRegistration">
+			<div class="llpRegistration">
+				<table>
+
+					
+				
+					<table >
+					
+				<!--  	<tr>
+						<td><wicket:message key="llpReg.page.llpName"/></td>
+						<td colspan="4"><input wicket:id="llpName" type="text" size="114" readonly="readonly" style="background-color:yellow ;"/></td>
+					</tr> -->
+
+				<!--	<tr>
+						<td><wicket:message key="llpReg.page.llpNo"/></td>
+						<td><input wicket:id="llpNo" type="text" size="35" readonly="readonly" /></td>
+						
+					  	<td colspan="2"><wicket:message key="llpReg.page.llpStatus"/></td>
+						<td><select wicket:id="llpStatus"  style="background-color:yellow ;"/></td> 
+					</tr> -->
+
+		
+				  	<wicket:enclosure child="regDate">
+						<tr>
+							<td><wicket:message key="llpReg.page.regDate" /></td>
+							<td><span wicket:id="regDate" style="border-style: ridge;"></span></td> 
+						</tr>  
+					</wicket:enclosure>
+			<!--  	<tr>
+						<td><wicket:message key="llpReg.page.terminateDate"/></td>
+						<td><input wicket:id="terminationDate" size="35" readonly="readonly" style="background-color:yellow ;"/></td>
+						<td></td>
+					</tr> -->	
+
+					
+					
+					<wicket:enclosure child="profBodyCode">
+					<tr>
+						<td><span wicket:id="profBodyCodeLabel"/></td>
+						<td><select wicket:id="profBodyCode"/></td>
+					</tr>
+					</wicket:enclosure>
+					
+					<tr>	
+						<td><span wicket:id="agreementLlpLabel"/></td>
+						<td><span wicket:id="agreementLlp"/></td>
+					</tr>
+					<tr wicket:id="agreementMarkup">
+						<td colspan="2">
+							<table>
+								<tr>
+									<td><span wicket:id="agreementLlpDateLabel"/></td>
+									<td><input wicket:id=agreementLlpDate size="35"/></td>
+								</tr>
+								<tr>
+									<td><span wicket:id="noOfPartnerLabel"/></td>
+									<td><input wicket:id="noOfPartner" type="text" size="35"/></td>
+								</tr>	
+								<tr>
+									<td><span wicket:id="capitalContributionLabel"/></td>
+									<td><input wicket:id="capitalContribution" type="text" size="35"/></td>
+								</tr>
+							</table>
+						</td>
+					</tr>
+			</table>
+			
+			
+		<!--  	<hr  color="grey"> -->
+			<br>
+			
+			
+			<fieldset>
+                  <legend style="font-size: x-small;">Registered Address</legend>	
+			<table >
+				<tr>
+					<td><span wicket:id="regAdd1Label"/></td>
+					<td colspan="4"><input wicket:id="regAdd1" type="text" size="114"/></td>
+				</tr>
+
+				<tr>
+					<td></td>
+					<td colspan="4"><input wicket:id="regAdd2" type="text" size="114"/></td>
+				</tr>
+
+				<tr>
+					<td></td>
+					<td colspan="4"><input wicket:id="regAdd3" type="text" size="114"/></td>
+				</tr>
+
+				<tr>
+					<td><span wicket:id="regPostcodeLabel"/></td>
+					<td><input wicket:id="regPostcode" type="text" size="46"/></td>
+					<td></td>
+					<td><span wicket:id="regCityLabel"/></td>
+					<td><input wicket:id="regCity" type="text" size="34"/></td>
+				</tr>
+
+				<tr>
+					<td><span wicket:id="regCountryLabel"/></td>
+					<td><select wicket:id="regCountry"/></td>
+					<td></td>
+					<td><span wicket:id="regStateLabel"/></td>
+				<!--  	<td><wicket:message key="llpReg.page.regState"/></td> -->
+					<td><select wicket:id="regState"/></td>
+				</tr>
+
+				<tr>
+					<td><span wicket:id="offTelNoLabel"/></td>
+					<td><input wicket:id="offTelNo" type="text" size="46"/></td>
+					<td></td>
+					<td><span wicket:id="hpNoLabel"/></td>
+					<td><input wicket:id="hpNo" type="text" size="34"/></td>
+				</tr>
+
+				<tr>
+					<td><span wicket:id="faxNoLabel"/></td>
+					<td><input wicket:id="faxNo" type="text" size="46"/></td>
+					<td></td>
+					<td><span wicket:id="emailLabel"/></td>
+					<td><input wicket:id="email" type="text" size="34"/></td>
+				</tr>
+			</table>
+			</fieldset>
+			
+	<!--  	<hr  color="grey"> -->
+			<br>
+		
+			<fieldset>
+                  <legend style="font-size: x-small;">Business Address</legend>
+			<table >
+			<br>
+			<!-- button jsp -->
+			<tr>
+			<input name="populateBizAdd" type="button" value="Populate From Registered Address" onclick="populateFromMain()"/> 
+			</tr>
+			
+				<tr>
+					<td><span wicket:id="bussinessAdd1Label"/></td>
+					<td colspan="4"><input wicket:id="bussinessAdd1" type="text" size="114"/></td>
+				</tr>
+
+
+				<tr>
+					<td></td>
+					<td colspan="4"><input wicket:id="bussinessAdd2" type="text" size="114"/></td>
+				</tr>
+
+				<tr>
+					<td></td>
+					<td colspan="4"><input wicket:id="bussinessAdd3" type="text" size="114"/></td>
+				</tr>
+
+				<tr>
+					<td><span wicket:id="bussinessPostcodeLabel"/></td>
+					<td><input wicket:id="bussinessPostcode" type="text" size="46"/></td>
+					<td></td>
+					<td><span wicket:id="bussinessCityLabel"/></td>
+					<td><input wicket:id="bussinessCity" type="text" size="33"/></td>
+				</tr>
+
+
+				<tr>
+					<td><span wicket:id="bussinessCountryCodeLabel"/></td>
+					<td><select wicket:id="bussinessCountryCode"/></td>
+					<td></td>
+					<td><span wicket:id="bussinessStateCodeLabel"/></td>
+					<td><select wicket:id="bussinessStateCode"/></td>
+				</tr>
+
+				<tr>
+					<td><span wicket:id="natureOfBusinessDescLabel"/></td>
+					<td colspan="4"><textarea wicket:id="natureOfBusinessDesc" rows="4" cols="80"></textarea></td>
+				</tr>
+			</table>
+			</fieldset>
+			
+	<!--  	<hr  color="grey">-->	
+			<br>
+			
+			<wicket:enclosure child="profFirmName">
+			<fieldset>
+                  <legend style="font-size: x-small;">Particulars of Professional Indemnity Insurance</legend>
+			<table>
+				<tr>
+					<td><span wicket:id="profFirmNameLabel"/></td>
+					<td colspan="4"><input wicket:id="profFirmName" type="text" size="95"/></td>
+				</tr>
+				
+				<tr>
+					<td><span wicket:id="profFirmNoLabel"/></td>
+					<td colspan="4"><input wicket:id="profFirmNo" type="text" size="30"/></td>
+				</tr>
+				
+				<tr>
+					<td><span wicket:id="profInsuranceCompanyLabel"/></td>
+					<td colspan="4"><input wicket:id="profInsuranceCompany" type="text" size="95"/></td>
+				</tr>
+				
+				<tr>
+					<td><span wicket:id="profInsuranceTotalAmtLabel"/></td>
+					<td colspan="4"><input wicket:id="profInsuranceTotalAmt" type="text" size="30"/></td>
+				</tr>
+				
+				<tr>
+					<td><wicket:message key="llpReg.page.insuranceDuration"/></td>
+					<td colspan="4">From: <input wicket:id="profInsurancePolicyFrom" size="10"/> &nbsp; &nbsp; To: <input wicket:id="profInsurancePolicyTo" size="10"/></td>
+				</tr>
+			</table>
+			</fieldset>
+			</wicket:enclosure>
+			
+			<br>
+		<hr  color="grey">  
+			
+			<table>
+				<tr>
+					<td colspan="3" align="center">
+					<input wicket:id="save" type="submit" wicket:message="value:llpReg.page.saveButton"/>
+					<input wicket:id="cancel" type="submit" wicket:message="value:llpReg.page.cancelButton"/>
+					<input wicket:id="reset" type="submit" wicket:message="value:llpReg.page.resetButton"/>
+					</td>
+				</tr>
+			</table>
+			
+			
+			</table>
+		</div>
+		</div>
+	</form>
+</wicket:extend>

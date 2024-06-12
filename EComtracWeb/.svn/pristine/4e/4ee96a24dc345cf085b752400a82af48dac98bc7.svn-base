@@ -1,0 +1,103 @@
+<wicket:extend>
+	<form wicket:id="form" >
+		<div id="SearchFormA1" class="ui form segment">
+			<table>
+				<tr>
+					<td>
+						<div class="ui top attached segment">
+							<div class="ui top attached label">
+								<h4 class="ui header">
+									<wicket:message key="page.lbl.ezbiz.robFormA1Renewal" />
+								</h4>
+							</div>
+							<table>
+								<tr>
+									<td>
+										<div class="field">
+											<label><span wicket:id="formA1RefNoLabel" /></label> <input type="text" wicket:id="formA1RefNo">
+										</div>
+									</td>
+								</tr>
+								<tr>
+									<td>
+										<div class="field">
+											<label><span wicket:id="brNoLabel" /></label> <input type="text" wicket:id="brNo">
+										</div>
+									</td>
+								</tr>
+								<tr>
+									<td>
+										<div class="field">
+											<label><span wicket:id="createByLabel" /></label> <input type="text" wicket:id="createBy">
+										</div>
+									</td>
+								</tr>
+								<tr>
+									<td>
+										<div class="two fields">
+											<div class="field">
+												<label><span wicket:id="createDtFromLabel" /></label> <input wicket:id="createDtFrom" style="width: 150;" />
+											</div>
+											<div class="field">
+												<label><span wicket:id="createDtToLabel" /></label> <input wicket:id="createDtTo" style="width: 150;" />
+											</div>
+										</div>
+									</td>
+								</tr>
+								<tr>
+									<td>
+										<div class="field">
+											<label><span wicket:id="statusLabel" /></label> <select wicket:id="status">
+											</select>
+										</div>
+									</td>
+								</tr>
+								<tr><td>&nbsp;</td></tr>
+								<tr>
+									<td><input wicket:id="search" type="button" class="ui primary button" value="Search" /></td>
+								</tr>
+							</table>
+						</div>
+					</td>
+				</tr>
+			</table>
+		</div>
+		<div wicket:id="wmcSearchResult">
+			<table class="ui striped table">
+			  <thead>
+			    	<tr>
+			    	<th width="15%"><wicket:message key="page.lbl.ezbiz.robFormA1Renewal.robFormA1Code" /></th>
+			    	<th width="10%"><wicket:message key="page.lbl.ezbiz.robFormA1Renewal.brNo" /></th>
+					<th width="30%"><wicket:message key="page.lbl.ezbiz.robFormA1Renewal.bizName" /></th>
+					<th width="15%"><wicket:message key="page.lbl.ezbiz.robFormA1Renewal.status" /></th>
+					<th width="15%"><wicket:message key="page.lbl.ezbiz.robFormA1Renewal.createBy" /></th>
+					<th width="15%"><wicket:message key="page.lbl.ezbiz.robFormA1Renewal.createDt" /></th>
+					<th width="15%"><wicket:message key="page.lbl.ezbiz.robFormA1Renewal.updateDt" /></th>
+					<th width="5%"><wicket:message key="page.lbl.ezbiz.robFormA1Renewal.action" /></th>
+			  	</tr>
+			  </thead>
+			  <tbody>
+			    <tr wicket:id="sorting">
+					<td><span wicket:id="robFormA1Code">[robFormA1Code]</span></td>
+					<td><span wicket:id="brNo">[brNo]</span></td>
+					<td><span wicket:id="bizName">[bizName]</span></td>
+					<td><span wicket:id="status">[status]</span></td>
+					<td><span wicket:id="createBy">[createBy]</span></td>
+					<td><span wicket:id="createDt">[createDt]</span></td>
+					<td><span wicket:id="updateDt">[updateDt]</span></td>
+					<td class="manage-link">
+						 <a wicket:id="detail" href="#" wicket:message="title:page.lbl.ezbiz.robFormA1Renewal.detail"><i class="Edit icon" /></a>
+					</td>
+				</tr>
+			  </tbody>
+			  <tfoot>
+			    <tr>
+			    	<th colspan="100">
+			    		<span wicket:id="navigatorLabel">[dataView navigatorLabel]</span>
+				        <span wicket:id="navigator">[dataView navigator]</span>
+			    	</th>
+			  </tr></tfoot>
+			</table>
+		</div>
+	</form>
+</wicket:extend>

@@ -1,0 +1,140 @@
+<wicket:extend>
+	<form wicket:id="corporateParticipantForm" class="ui equal width form">
+	<script type="text/javascript" wicket:id="formValidation"></script>
+		<h3 class="ui dividing header">
+			<wicket:message key="lbl.page.participantForm.participantInfo" />
+		</h3>
+		<div class="eight wide field">
+			<label><span wicket:id="icNoLabel" /> </label> 
+			<input wicket:id="icNo" type="text" class="is-numeric">
+		</div>
+		
+		<div wicket:id="wmcParticipant">
+		<div class="three wide field">
+				<label><span wicket:id="dobLabel" /> </label> <input
+					wicket:id="dob" type="text">
+			</div>
+			<div class="field">
+				<div class="fields">
+					<div class="field">
+						<label><span wicket:id="nameLabel" /> </label> <input
+							wicket:id="name" type="text" />
+					</div>
+				</div>
+			</div>
+			<div class="three fields">
+				<div class="field">
+					<label><span wicket:id="telNoLabel" /></label> <input
+						wicket:id="telNo" type="text" />
+				</div>
+				<div class="field">
+					<label><span wicket:id="faxNoLabel" /></label> <input
+						wicket:id="faxNo" type="text"  />
+				</div>
+				<div class="field">
+						<label><span wicket:id="emailLabel" /> </label> <input
+							wicket:id="email" type="text" />
+					</div>
+			</div>
+			<div class="three fields">
+				
+				<div class="field">
+					<label><span wicket:id="occupation_codeLabel" /></label> <select
+						wicket:id="occupation_code"></select>
+				</div>
+				<div class=" field">
+				<label><span wicket:id="job_titleLabel" /> </label> <input
+					wicket:id="job_title" type="text">
+			   </div>
+				<div class="field">
+					<label><span wicket:id="companyLabel" /></label> <input
+						wicket:id="company" type="text" />
+				</div>
+			</div>
+<!-- 			<div class="fields">
+				<div class="field">
+					<label><wicket:message
+							key="lbl.page.participantForm.feeType" /></label> <span
+						wicket:id="feeType"></span>
+				</div>
+			</div> -->
+<!-- 			<div class="fields">
+				<div wicket:id="wmcLsNo">
+					<div class="field">
+						<label><span wicket:id="lsNoLabel"></span></label> <input
+							wicket:id="lsNo" type="text" size="60" />
+					</div>
+				</div>
+				<div wicket:id="wmsMemberNo">
+					<div class="field">
+						<label><span wicket:id="membershipNoLabel"></span><i class="circular info icon" style="cursor: help" title="Members of prescribed bodies under S235(2)(a) CA2016 are Malaysian Institute of Chartered Secretaries and Administrators (MAICSA), Malaysian Institute of Accountants (MIA), Malaysian Bar, Malaysian Association of Company Secretaries (MACS), Malaysian Institute of Certified Public Accountants (MICPA), Sabah Law Association and Advocates Association of Sarawak."></i></label>
+						<input wicket:id="membershipNo" type="text" size="60" />
+					</div>
+				</div>
+			</div> -->
+<!-- 			<div class="fields">
+				<div class="field">
+					<label><wicket:message key="lbl.page.participantForm.amount" /></label>
+					RM <span wicket:id="amount"></span>
+				</div>
+			</div> -->
+			<div class="two fields">
+				<div class="field">
+					<label><wicket:message
+							key="lbl.page.participantForm.gender" /></label> <span
+						wicket:id="gender"></span>
+				</div>
+			</div>
+			<div class="fields">
+				<div class="field">
+					<label><span wicket:id="address1Label" /></label> <input
+						wicket:id="address1" type="text" />
+				</div>
+			</div>
+			<div class="fields">
+				<div class="field">
+					<input wicket:id="address2" type="text" />
+				</div>
+			</div>
+			<div class="fields">
+				<div class="field">
+					<input wicket:id="address3" type="text" />
+				</div>
+			</div>
+			<div class="three fields">
+				<div class="field">
+					<label><span wicket:id="postcodeLabel" /></label> <input
+						wicket:id="postcode" type="text" />
+				</div>
+				<div class="field">
+					<label><span wicket:id="cityLabel" /></label> <input
+						wicket:id="city" type="text" />
+				</div>
+				<div class="field">
+					<label><span wicket:id="stateLabel" /></label>
+					<select wicket:id="state"></select>
+				</div>
+			</div>
+			<div class="field">
+				<div class="field">
+					<label><span wicket:id="dietLabel" /></label> <select
+						wicket:id="diet" style="width: 40%;"></select>
+				</div>
+			</div>
+			<div>
+				<table width="100%">
+					<tr>
+						<td>
+							<div class="field">
+								<input wicket:id="submitParticipantForm" type="button"
+									class="ui primary button" value="Submit" />
+								<input wicket:id="submitParticipantSummary" type="button"
+									class="ui primary button" value="Submit" />
+							</div>
+						</td>
+					</tr>
+				</table>
+			</div>
+		</div>
+	</form>
+</wicket:extend>

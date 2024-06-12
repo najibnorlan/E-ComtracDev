@@ -1,0 +1,35 @@
+<html>
+<head>
+<title></title>
+<link rel="stylesheet" type="text/css" href="css/styles.css" />
+<style type="text/css">
+      .dead_center {
+        position: absolute;
+        top: 0;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        margin: auto;
+      }
+    </style>
+</head>
+<body>
+	<table cellpadding="0" cellspacing="0" border="2" width="800px"  class="dead_center">
+		<tr>
+			<td align="center"><img src="images/MyLLPMenu.jpg"></td>
+			<td>&nbsp;</td>
+			<td  align="center"><img src="images/EzBizMenu.jpg"></td>
+		</tr>
+		<tr>
+			<td><wicket:message key="page.myssmonline.toMyLLPButton"/></td>
+			<td>&nbsp;</td>
+			<td><wicket:message key="page.myssmonline.toEzBizButton"/></td>
+		</tr>
+		<tr>
+			<td colspan="3"><br> &copy; Copyright 2012 Suruhanjaya
+				Syarikat Malaysia Best viewed using IE version 7.0 dan above and
+				Mozilla Firefox with the resolution of 1024 x 768</td>
+		</tr>
+	</table>
+</body>
+</html>

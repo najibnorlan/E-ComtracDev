@@ -1,0 +1,32 @@
+<wicket:extend>
+	<form wicket:id="searchPanel" class="ui form">
+		<div class="ui top attached segment">
+			<div class="ui top attached label"></div>
+			<table>
+				<tr>
+					<td><label><b><wicket:message key="page.title.mybiz.brNo" /></b></label></td>
+				</tr>
+				<tr>
+					<td>
+						<div class="fields">
+							<div class="ten wide field">
+								<input wicket:id="brNo" type="text" name="brNo" />
+							</div>
+							<div class="four wide field">
+								<input wicket:id="chkDigit" type="text" name="chkDigit" size="1" />
+							</div>
+						</div>
+					</td>
+				</tr>
+				<tr><td>&nbsp;</td></tr>
+				<tr>
+					<td>
+						<div class="inline field">
+							<input class="ui primary button" type="submit" wicket:message="value:page.title.mybiz.searchBizButton" />
+						</div>
+					</td>
+				</tr>
+			</table>
+		</div>
+	</form>
+</wicket:extend>

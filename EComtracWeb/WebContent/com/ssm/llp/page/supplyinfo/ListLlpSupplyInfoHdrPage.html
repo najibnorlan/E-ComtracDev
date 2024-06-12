@@ -1,0 +1,47 @@
+<wicket:extend>
+	<form wicket:id="llpSupplyInfoHdrForm" id="llpSupplyInfoHdrForm">
+		<table>
+			<tr>
+				<td><span wicket:id="hdrCodeLabel" /></td>
+				<td><input wicket:id="hdrCode" type="text" size="50"/></td>
+			</tr>
+			<tr>
+				<td><span wicket:id="hdrStatusLabel"/></td>
+				<td><select wicket:id="hdrStatus"/></td>
+			</tr>
+			<tr>
+				<td><input wicket:id="searchButton" type="submit" value="Search"/></td>
+				<td>&nbsp;</td>
+			</tr>
+		</table>
+		<div wicket:id="listDataView">
+		    <table class="blockdataview" cellspacing="0" width="100%" border="0">
+				<tr>
+					<td align="left"><span wicket:id="navigatorLabel">[dataview navigatorLabel]</span></td>
+					<td align="right"><span wicket:id="navigator">[dataview navigator]</span></td>
+				</tr>
+				<tr>
+				
+					<td colspan="2">
+						<table cellspacing="0" class="dataview" width="100%">
+						    <tr>
+						    	<th width="10%"><wicket:message key="llpSupplyInfoHdr.page.createDt"/></th>
+						        <th width="50%"><wicket:message key="llpSupplyInfoHdr.page.hdrCode"/></th>
+						        <th width="15%"><wicket:message key="llpSupplyInfoHdr.page.hdrStatus"/></th>
+						        <th width="20%"><wicket:message key="llpSupplyInfoHdr.page.action"/></th>
+						    </tr>
+						    <tr wicket:id="sorting">
+						    	<td><span wicket:id="createDt">[createDt]</span> </td>
+						        <td><span wicket:id="hdrCode">[hdrCode]</span> </td>
+						        <td><span wicket:id="hdrStatus">[hdrStatus]</span> </td>
+						        <td class="action-links">
+					                <a wicket:id="detailItem" href="#">[Detail]</a>
+					            </td>
+						    </tr>
+						</table>
+					</td>
+				</tr>
+			</table>
+		</div>
+	</form>
+</wicket:extend>

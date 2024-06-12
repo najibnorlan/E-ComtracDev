@@ -1,0 +1,44 @@
+<wicket:extend>
+	<div>
+		<table class="ui striped table">
+			<thead>
+				<tr>
+					<th width="15%"><wicket:message
+							key="page.lbl.ezbiz.comtracListStatus.transactionCode" /></th>
+					<th width="15%"><wicket:message
+							key="page.lbl.ezbiz.comtracListStatus.trainingCode" /></th>
+					<th width="25%"><wicket:message
+							key="page.lbl.ezbiz.comtracListStatus.trainingName" /></th>
+					<th width="10%"><wicket:message
+							key="page.lbl.ezbiz.comtracListStatus.status" /></th>
+					<th width="10%"><wicket:message
+							key="page.lbl.ezbiz.comtracListStatus.updateDt" /></th>
+					<th width="10%"><wicket:message
+							key="page.lbl.ezbiz.comtracListStatus.action" /></th>
+				</tr>
+			</thead>
+			<tbody>
+				<tr wicket:id="sorting">
+					<td><span wicket:id="transactionCode">[transactionCode]</span></td>
+					<td><span wicket:id="trainingCode">[trainingCode]</span></td>
+					<td><span wicket:id="trainingName">[trainingName]</span></td>
+					<td><span wicket:id="status">[status]</span></td>
+					<td><span wicket:id="updateDt">[updateDt]</span></td>
+					<td class="manage-link"><a wicket:id="detail" href="#"
+						wicket:message="title:page.lbl.ezbiz.robFormA.detail"><i
+							class="Edit icon" /></a> <a wicket:id="printConfirmation" href="#"
+						wicket:message="title:page.lbl.ezbiz.confirmation"><i
+							class="download icon" /></a></td>
+				</tr>
+			</tbody>
+			<tfoot>
+				<tr>
+					<th colspan="100"><span wicket:id="navigatorLabel">[dataView
+							navigatorLabel]</span> <span wicket:id="navigator">[dataView
+							navigator]</span></th>
+				</tr>
+			</tfoot>
+		</table>
+
+	</div>
+</wicket:extend>

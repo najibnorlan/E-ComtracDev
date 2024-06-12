@@ -1,0 +1,14 @@
+package com.ssm.llp.mod1.dao;
+
+import java.util.List;
+
+import com.ssm.llp.base.common.dao.BaseDao;
+import com.ssm.llp.mod1.model.LlpPartnerLink;
+
+
+public interface LlpPartnerLinkDao extends BaseDao<LlpPartnerLink, Long>{
+
+	List<LlpPartnerLink> findByLlpNo(String llpNo);
+
+}
+

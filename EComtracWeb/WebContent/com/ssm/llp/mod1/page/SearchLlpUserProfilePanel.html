@@ -1,0 +1,127 @@
+<wicket:extend>
+	<form wicket:id="searchLlpUserProfileForm" class="ui form">
+		<div>
+			<div class="ui top attached segment">
+				<div class="ui top attached label">
+					<h4 class="ui header">
+						<wicket:message key="page.ssm.ezbiz.report.search" />
+					</h4>
+				</div>
+				<table style="width: 100%">
+					<tr>
+						<td>
+							<div class="two fields">
+								<div class="six wide field">
+									<label><wicket:message
+											key="user.page.userList.userRefNo" /></label> <input
+										wicket:id="userRefNo" type="text">
+								</div>
+								<div class="six wide field">
+									<label><wicket:message
+										key="user.page.userList.approveChannel" /></label> <select
+									wicket:id="approveChannel"></select>
+								</div>
+							</div>
+						</td>
+					</tr>
+					<tr>
+						<td>
+							<div class="two fields">
+								<div class="six wide field">
+									<label><wicket:message
+											key="user.page.userList.userLoginType" /></label> <select
+										wicket:id="idType" type="text"></select>
+								</div>
+								<div class="field">
+									<div class="two fields">
+										<div class="six wide field">
+											<label><wicket:message
+											key="user.page.userList.createDtFrom" /></label> <input
+											wicket:id="dtFrom" style="width: 100%" />
+										</div>
+										<div class="six wide field">
+											<label><wicket:message
+											key="user.page.userList.createDtTo" /></label> <input
+											wicket:id="dtTo" style="width: 100%" />
+										</div>
+									</div>
+								</div>
+							</div>
+						</td>
+					</tr>
+					<tr>
+						<td>
+							<div class="two fields">
+								<div class="six wide field">
+									<label><wicket:message key="user.page.userList.userIdNo" /></label>
+									<input wicket:id="idNo" type="text">
+								</div>
+								<div class="field">
+									<div class="two fields">
+										<div class="six wide field">
+											<label><wicket:message
+											key="user.page.userList.appDtFrom" /></label> <input
+											wicket:id="dtApproveFrom" style="width: 100%" />
+										</div>
+										<div class="six wide field">
+											<label><wicket:message
+											key="user.page.userList.appDtTo" /></label> <input
+											wicket:id="dtApproveTo" style="width: 100%" />
+										</div>
+									</div>
+								</div>
+							</div>
+						</td>
+					</tr>
+					<tr>
+						<td>
+							<div class="two fields">
+								<div class="six wide field">
+									<label><wicket:message key="user.page.userList.userName" /></label>
+									<input wicket:id="name" type="text">
+								</div>
+								<div class="six wide field">
+									<label><wicket:message key="user.page.userList.approveBy" /></label>
+									<input wicket:id="approveBy" type="text">
+								</div>
+							</div>
+						</td>
+					</tr>
+					<tr>
+						<td>
+							<div class="two fields">
+								<div class="six wide field">
+									<label><wicket:message key="user.page.userList.email" /></label>
+									<input wicket:id="email" type="text">
+								</div>
+								<div class="six wide field">
+									&nbsp;
+								</div>
+							</div>
+						</td>
+					</tr>
+					<tr>
+						<td> 
+							<div class="field">
+								<label><wicket:message
+									key="user.page.userList.userStatus" /></label> <span
+									wicket:id="userStatus" type="text"></span>
+							</div>
+						</td>
+					</tr>
+					<tr>
+						<td>&nbsp;</td>
+					</tr>
+					<tr>
+						<td>
+							<button wicket:id="search" class="ui primary button" input
+								type="submit">
+								<wicket:message key="user.page.userList.buttonSearch" />
+							</button>
+						</td>
+					</tr>
+				</table>
+			</div>
+		</div>
+	</form>
+</wicket:extend>

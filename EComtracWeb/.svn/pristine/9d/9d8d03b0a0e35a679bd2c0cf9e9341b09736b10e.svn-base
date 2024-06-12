@@ -1,0 +1,336 @@
+<wicket:extend>
+	<form wicket:id="form">
+		<div id="ParticipantSummary" class="ui form">
+			<table width="100%">
+				<tr>
+					<td>
+						<div class="ui top attached segment">
+							<div class="ui top attached label">
+								<h4 class="ui header">
+									<wicket:message key="listParticipant.main" />
+								</h4>
+							</div>
+							<table width="100%">
+								<tr>
+									<td>
+										<div class="three fields">
+											<div class="field">
+												<label><wicket:message key="listParticipant.transactionCode" /></label>
+												<span wicket:id="transactionCode" />
+											</div>
+											<div class="field">
+												<label><wicket:message key="listParticipant.trainingCode" /></label>
+												<span wicket:id="trainingCode" />
+											</div>
+											<div class="field">
+												<label><wicket:message key="listParticipant.createDt" /></label><span
+													wicket:id="createDt" />
+											</div>
+										</div>
+									</td>
+								</tr>
+								<tr>
+									<td>&nbsp;</td>
+								</tr>
+								<tr>
+									<td>
+									<div class="three fields">
+										<div class="field">
+											<label><wicket:message key="listParticipant.trainingName" /></label> 
+											<span wicket:id="trainingName" />
+										</div>						
+										<div class="field">
+											<label><wicket:message key="listParticipant.trainingStartTime" /></label> 
+											<span wicket:id="trainingStartTime" />
+										</div>
+										<div class="field">
+											<label><wicket:message key="listParticipant.trainingEndTime" /></label> 
+											<span wicket:id="trainingEndTime" />
+										</div>
+									</div>
+									</td>
+								</tr>
+								<tr>
+									<td>&nbsp;</td>
+								</tr>
+								<tr>
+									<td>
+									<div class="three fields">
+										<div class="field">
+											<label><wicket:message key="listParticipant.cpePoint" /></label> 
+											<span wicket:id="cpePoint" />
+										</div>
+										<div class="field">
+											<label><wicket:message key="listParticipant.trainingVenue" /></label> 
+											<span wicket:id="trainingVenue" />
+										</div>
+										</div>
+									</td>
+								</tr>
+								<tr>
+									<td>&nbsp;</td>
+								</tr>
+								<tr>
+									<td>
+										<div class="three fields">
+											<div class="field">
+												<wicket:enclosure child="receiptNo">
+													<label><wicket:message key="listParticipant.receiptNo" /></label> 
+													<input wicket:id="receiptNo"/>
+												</wicket:enclosure>
+												<wicket:enclosure child="receiptLabel">
+													<label><wicket:message key="listParticipant.receiptNo" /></label> 
+													<span wicket:id="receiptLabel" />
+												</wicket:enclosure>
+											</div>
+											<div class="field">
+												<wicket:enclosure child="louLoaRefNo">
+													<label><wicket:message key="listParticipant.louLoaRefNo" /></label> 
+													<input wicket:id="louLoaRefNo" />
+												</wicket:enclosure>
+												<wicket:enclosure child="louLoaRefNoLabel">
+													<label><wicket:message key="listParticipant.louLoaRefNo" /></label>
+													<span wicket:id="louLoaRefNoLabel" />
+												</wicket:enclosure>
+											</div>
+											<div class="field" >
+												<wicket:enclosure child="invoiceNo">
+													<label><wicket:message key="listParticipant.invoiceNo" /></label>
+													<input wicket:id="invoiceNo" />
+												</wicket:enclosure child>
+												<wicket:enclosure child="invoiceLabel">
+													<label><wicket:message key="listParticipant.invoiceNo" /></label> 
+													<span wicket:id="invoiceLabel" />
+												</wicket:enclosure>
+											</div>
+										</div>
+									</td>
+								</tr>
+								<tr>
+									<td>&nbsp;</td>
+								</tr>
+								<tr>
+									<td>
+										<div class="three fields">
+										<!-- <div class="field">
+												<wicket:enclosure child="status">
+													<label><wicket:message key="listParticipant.status" /></label>
+													<select wicket:id="status" ></select>
+												</wicket:enclosure>
+											</div>
+											<div class="field">
+												<wicket:enclosure child="paymentChannel">
+													<label><wicket:message key="listParticipant.paymentChannel" /></label>
+													<select wicket:id="paymentChannel" ></select>
+												</wicket:enclosure>
+											</div>  -->
+											<div class="field">
+												<wicket:enclosure child="status">
+													<label><wicket:message key="listParticipant.status" /></label> 
+													<input type="text" wicket:id="status" name="status">
+												</wicket:enclosure>
+											</div>
+											<div class="field">
+												<wicket:enclosure child="paymentChannel">
+													<label><wicket:message key="listParticipant.paymentChannel" /></label> 
+													<input type="text" wicket:id="paymentChannel" name="paymentChannel">
+												</wicket:enclosure>
+											</div>
+										</div>
+									</td>
+								</tr>
+								<tr>
+									<td>&nbsp;</td>
+								</tr>
+								<tr>
+									<td>
+										<div class="two fields">
+											<div class="field">
+												<label><wicket:message key="listParticipant.lodgerName" /></label><span
+													wicket:id="lodgerName" />
+											</div>
+											<div class="field">
+												<label><wicket:message key="listParticipant.icNo" /></label>
+												<span wicket:id="icNo" />
+											</div>
+												<div class="field">
+												<label><wicket:message key="listParticipant.telNo" /></label>
+												<span wicket:id="lodgerHpNo" />
+											</div>
+										</div>
+									</td>
+								</tr>
+								<tr>
+									<td>&nbsp;</td>
+								</tr>
+								<tr>
+									<td>
+										<div class="two fields">
+											<div class="field">
+												<label><wicket:message key="listParticipant.totalPax" /></label>
+												<span wicket:id="totalPax" /> Pax
+											</div>
+											<div class="field">
+												<label><wicket:message key="listParticipant.amount" /></label>
+												RM <span wicket:id="amount" />
+											</div>
+											<div class="field">
+												<label><wicket:message key="listParticipant.email" /></label>
+												<span wicket:id="lodgerEmail" />
+											</div>
+										</div>
+
+									</td>
+								</tr>
+							</table>
+						</div>
+					</td>
+				</tr>
+				<tr>
+					<td>&nbsp;</td>
+				</tr>
+				<tr>
+					<td>
+						<div wicket:id="wmcListParticipant"
+							class="ui top attached segment">
+							<div class="ui top attached label">
+								<h4 class="ui header">
+									<wicket:message key="listParticipant.list" />
+								</h4>
+							</div>
+							<table width="100%">
+								<tr>
+									<td>
+										<button class="ui primary button primary mini right floated"
+											wicket:id="resendEmail">
+											<wicket:message key="page.lbl.ezbiz.comtracPage.resendEmailToAll" />
+										</button>
+										<br><br>
+										<div id="listParticipantCode">
+											<table width="100%" class="ui striped table">
+												<thead>
+													<tr>
+														<th width="3%"><wicket:message
+																key="listParticipant.index" /></th>
+														<th width=30%><wicket:message
+																key="listParticipant.Name" /></th>
+														<th width="15%"><wicket:message
+																key="listParticipant.icNo" /></th>
+														<th width="15%"><wicket:message
+																key="listParticipant.email" /></th>
+														<th width="15%"><wicket:message
+																key="listParticipant.telNo" /></th>
+														<th width="10%"><wicket:message
+																key="listParticipant.amount" /></th>
+														<th ><wicket:message
+																key="page.lbl.ezbiz.nameListAttandees.action" /></th>
+														<th ><wicket:message
+																key="page.lbl.ezbiz.nameListAttandees.downloadCert" /></th>
+																
+
+													</tr>
+												</thead>
+												<tbody>
+													<tr wicket:id="sortingRobParticipantTransaction">
+														<td><span wicket:id="index">[index]</span></td>
+														<td><span wicket:id="name">[name]</span></td>
+														<td><span wicket:id="icNo">[transactionCodeNo]</span></td>
+														<td><span wicket:id="email">[totalAmount]</span></td>
+														<td><span wicket:id="telNo">[totalPax]</span></td>
+														<td><span wicket:id="amount">[amount]</span></td>
+														<td class="manage-link">
+															<a class="ui icon" wicket:id="viewInfo">
+																<center><i class="Edit icon large"></i></center>
+															</a>
+															<a class="ui icon" wicket:id="delete" style="cursor: pointer;">
+																<center><i class="Remove icon large"></i></center>
+															</a>
+														</td>
+														<td class="manage-link">
+															<a class="ui icon" wicket:id="downloadCert">
+																<center><i class="Download icon large"></i></center>
+															</a>
+														</td>
+
+													</tr>
+												</tbody>
+												<tfoot>
+													<tr>
+														<th colspan="7"><span wicket:id="navigatorLabel">[dataViewLabel]</span>
+															<span wicket:id="navigator">[dataView]</span></th>
+													</tr>
+												</tfoot>
+											</table>
+										</div>
+									</td>
+								</tr>
+							</table>
+						</div>
+					</td>
+				</tr>
+				<tr>
+					<td>&nbsp;</td>
+				</tr>
+				<wicket:enclosure child="louLoaRefNo">
+					<tr>
+						<td>
+							<div class="field">
+								<label><wicket:message key="listParticipant.remarks" /></label>
+								<textarea wicket:id="remarks"></textarea>
+							</div>
+						</td>
+					</tr>
+					<tr>
+						<td>&nbsp;</td>
+					</tr>
+				</wicket:enclosure>
+				<wicket:enclosure child="remarkLabel">
+					<tr>
+						<td>
+							<div class="ui top attached segment">
+								<div class="ui top attached label">
+									<h4 class="ui header">
+										<wicket:message key="listParticipant.remarks" />
+									</h4>
+								</div>
+								<div class="field">
+									<span wicket:id="remarkLabel"></span>
+								</div>
+							</div>
+						</td>
+					</tr>
+					<tr>
+						<td>&nbsp;</td>
+					</tr>
+				</wicket:enclosure>
+				<tr>
+					<td>
+						<button class="ui primary button left floated"
+							wicket:id="save">
+							<wicket:message key="page.lbl.ezbiz.comtracPage.save" />
+						</button>
+						<button class="ui primary button left floated"
+							wicket:id="submitPayment">
+							<wicket:message key="page.lbl.ezbiz.comtracPage.submitPayment" />
+						</button>
+						<button class="ui primary button left floated" type="button"
+							wicket:id="printConfirmation">
+							<wicket:message
+								key="page.lbl.ezbiz.comtracPage.printConfirmation" />
+						</button>
+						<button class="ui primary button left floated" type="button"
+							wicket:id="downloadSupportingDoc">
+							<wicket:message
+								key="page.lbl.ezbiz.robFormA.downloadSupportingDoc" />
+						</button>
+						<button class="ui primary button left floated"
+							wicket:id="previous">
+							<wicket:message key="page.lbl.ezbiz.comtracPage.previous" />
+						</button>
+					</td>
+				</tr>
+			</table>
+		</div>
+		<div wicket:id="addParticipantPopup"></div>
+	</form>
+</wicket:extend>

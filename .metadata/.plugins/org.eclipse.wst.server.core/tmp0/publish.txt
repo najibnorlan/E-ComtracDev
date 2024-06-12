@@ -1,0 +1,4 @@
+#Tomcat publish data
+#Wed Apr 24 10:12:25 MYT 2024
+org.eclipse.jst.j2ee.server\:/binary\:D\:\\Workspace\\e-COMTRAC_20240424\\EComtracWeb\\WebContent\\WEB-INF\\lib\\spring-web-3.2.16.RELEASE.jar=WEB-INF/lib/spring-web-3.2.16.RELEASE.jar
+org.eclipse.jst.j2ee.server\:/binary\:D\:\\Workspace\\e-COMTRAC_20240424\\EComtracWeb\\WebContent\\WEB-INF\\lib\\javamelody-core-1.86.0.jar=WEB-INF/lib/javamelody-core-1.86.0.jar

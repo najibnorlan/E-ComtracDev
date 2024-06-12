@@ -1,0 +1,87 @@
+<wicket:extend>
+	<form wicket:id="form" class="ui form">
+		<div class="ui segments">
+			<div class="ui horizontal segments">
+				<div class="ui segment">
+					<div class="field">
+						<label><span wicket:id="formCRefNoLabel" /></label> <input type="text" wicket:id="formCRefNo">
+					</div>
+					<div class="field">
+						<label><span wicket:id="createByLabel" /></label> <input type="text" wicket:id="createBy">
+					</div>
+					<div class="two fields">
+						<div class="field">
+							<label><span wicket:id="createDtFromLabel" /></label> <input wicket:id="createDtFrom" style="width: 150;" />
+						</div>
+						<div class="field">
+							<label><span wicket:id="createDtToLabel" /></label> <input wicket:id="createDtTo" style="width: 150;" />
+						</div>
+					</div>
+				</div>
+				<div class="ui segment">
+					<div class="two fields">
+						<div class="field">
+							<label><span wicket:id="processByLabel" /></label> <input wicket:id="processBy" />
+						</div>
+						<div class="field">
+							<label><span wicket:id="prosessingBranchLabel" /></label> <select wicket:id="prosessingBranch"></select>
+						</div>
+					</div>
+					<div class="field">
+						<label><span wicket:id="brNoLabel" /></label> <input type="text" wicket:id="brNo">
+					</div>
+					<div class="field">
+						<label><span wicket:id="statusLabel" /></label> <select wicket:id="status"></select>
+					</div>
+				</div>
+			</div>
+			<div class="ui segment">
+					<input wicket:id="search" type="button" class="ui primary button"  />
+			</div>
+		</div>
+	
+		<div wicket:id="wmcSearchResult">
+			<table class="ui striped table">
+				<thead>
+			    	<tr>
+			    	<th width="15%"><wicket:message key="page.lbl.ezbiz.robFormC.robFormCCode" /></th>
+					<th width="30%"><wicket:message key="page.lbl.ezbiz.robFormC.bizName" /></th>
+					<th width="15%"><wicket:message key="page.lbl.ezbiz.robFormC.status" /></th>
+					<th width="15%"><wicket:message key="page.lbl.ezbiz.robFormC.createBy" /></th>
+					<th width="15%"><wicket:message key="page.lbl.ezbiz.robFormC.createDt" /></th>
+					<th width="15%"><wicket:message key="page.lbl.ezbiz.robFormC.updateDt" /></th>
+					<th width="15%"><wicket:message key="page.lbl.ezbiz.robFormC.approveRejectBranch" /></th>
+					<th width="15%"><wicket:message key="page.lbl.ezbiz.robFormC.approveRejectBy" /></th>
+					<th width="15%"><wicket:message key="page.lbl.ezbiz.robFormC.approveRejectDt" /></th>
+					<th width="10%"><wicket:message key="page.lbl.ezbiz.robFormC.action" /></th>
+			  	</tr>
+			  </thead>
+			  <tbody>
+			    <tr wicket:id="sorting">
+			    <td><span wicket:id="robFormCCode">[robFormCCode]</span></td>
+					<td><span wicket:id="bizName">[bizName]</span></td>
+					<td><span wicket:id="status">[status]</span></td>
+					<td><span wicket:id="createBy">[createBy]</span></td>
+					<td><span wicket:id="createDt">[createDt]</span></td>
+					<td><span wicket:id="updateDt">[updateDt]</span></td>	
+					<td><span wicket:id="approveRejectBranch">[approveRejectBranch]</span></td>
+					<td><span wicket:id="approveRejectBy">[approveRejectBy]</span></td>
+					<td><span wicket:id="approveRejectDt">[approveRejectDt]</span></td>
+					<td class="manage-link">
+						 <a wicket:id="detail" href="#" wicket:message="title:page.lbl.ezbiz.robFormB.detail"><i class="Edit icon" /></a>
+					</td>				
+				</tr>
+			  </tbody>
+			  <tfoot>
+			    <tr>
+			    	<th colspan="100">
+			    		<span wicket:id="navigatorLabel">[dataView navigatorLabel]</span>
+				        <span wicket:id="navigator">[dataView navigator]</span>
+			    	</th>
+			  	</tr>
+			  </tfoot>
+			</table>
+		</div>
+
+	</form>
+</wicket:extend>

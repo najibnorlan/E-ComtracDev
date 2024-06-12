@@ -1,0 +1,21 @@
+<html>
+<wicket:extend>
+	<form wicket:id="llpInfoForm">
+	<fieldset>
+	
+		<legend>
+		<wicket:message key="llpInfo.page.llpInfoEnq" />
+		</legend>
+		<table>
+			<tr><br></br></tr>
+			<tr>
+				<td>LLP Registration No.</td>
+				<td><input wicket:id="SearchByLlpNo" type="text" name="search"  size="25" class="textsearch" /></td>
+				<td><input type="submit" value="Search" class="button"></td>
+	
+			</tr>
+		</table>
+	</fieldset>
+	</form>
+</wicket:extend>
+</html>

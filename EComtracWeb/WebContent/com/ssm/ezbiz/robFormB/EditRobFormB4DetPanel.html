@@ -1,0 +1,136 @@
+<wicket:extend>
+	<form wicket:id="robFormB4DetForm" class="ui form"> 
+		<script type="text/javascript" wicket:id="addOwnersJS"></script>
+		<div class="ui top attached  segments">
+			<div class="ui top attached label">
+				<h4 class="ui header"><wicket:message key="page.lbl.ezbiz.robFormB4.ownerDetailInfo" /></h4>
+			</div>
+			<div class="ui horizontal segments">
+				<div class="ui segment">
+					<div class="field">
+						<label><wicket:message key="page.lbl.ezbiz.robFormB4.name" /></label> <span wicket:id="name" />
+					</div>
+					<div class="two fields">
+						<div class="field">
+							<label><wicket:message key="page.lbl.ezbiz.robFormB4.newicno" /></label>   <span wicket:id="newicno" />
+						</div>
+						<div class="field">
+							<label><wicket:message key="page.lbl.ezbiz.robFormB4.icColor" /></label> <wicket:message key="page.lbl.ezbiz.robFormB4.icColorBlue" />
+						</div>
+					</div>
+					<div class="two fields">
+						<div class="field">
+							<label><wicket:message key="page.lbl.ezbiz.robFormB4.dob" /></label><span wicket:id="dob" />
+						</div>
+						<div class="field">
+							<label><wicket:message key="page.lbl.ezbiz.robFormB4.gender" /></label><span wicket:id="gender " />
+						</div>
+					</div>
+					
+					<div class="two fields">
+						<div class="field">
+							<label><wicket:message key="page.lbl.ezbiz.robFormB4.race" /></label><span wicket:id="race" />
+						</div>
+						<div class="field">
+							<label><wicket:message key="page.lbl.ezbiz.robFormB4.otherrace" /></label><span wicket:id="otherrace" />
+						</div>
+					</div>
+					<div class="two fields">
+						<div class="field">
+							<label><wicket:message key="page.lbl.ezbiz.robFormB4.nationality" /></label><span wicket:id="nationality" />
+						</div>
+						<div class="field">
+							<label><wicket:message key="page.lbl.ezbiz.robFormB4.countryoforiginifpr" /></label><span wicket:id="countryoforiginifpr" />
+						</div>
+					</div>
+				</div>
+				<div class="ui segment">
+					<div class="field">
+						<label><span wicket:id="addrLabel" /></label>
+						<input wicket:id="addr" type="text"/><br><br>
+						<input wicket:id="addr2" type="text"/><br><br>
+						<input wicket:id="addr3" type="text"/>
+					</div>
+					<div class="two fields">
+						<div class="field">
+							<label><span wicket:id="addrPostcodeLabel" /></label> <input wicket:id="addrPostcode" />
+						</div>
+						<div class="field">
+							<label><span wicket:id="addrTownTmpLabel" /></label> <select wicket:id="addrTownTmp" />
+						</div>
+					</div>
+					<div class="field">
+						<label><span wicket:id="addrStateDescLabel"/></label>
+						<input type="text" wicket:id="addrStateDesc"/>
+					</div>
+					<div class="two fields">
+						<div class="field">
+							<label><span wicket:id="telNoLabel" /></label> <input wicket:id="telNo" type="text" />
+						</div>
+						<div class="field">
+							<label><span wicket:id="mobileNoLabel" /></label> <input wicket:id="mobileNo" />
+						</div>
+					</div>
+					<div class="three fields">
+						<wicket:enclosure child="ammendmentDate" >
+						<div class="field">
+							<label><span wicket:id="ammendmentDateLabel" /></label>
+							<input wicket:id="ammendmentDate" style="width: 150;"/>
+						</div>
+						</wicket:enclosure>
+						<div class="field">
+							<label>&nbsp;</label>
+						</div>
+						<wicket:enclosure child="ammendmentDateStr" >
+						<div class="field">
+							<label><wicket:message key="page.lbl.ezbiz.robFormB4.ammendmentDate" /></label>
+							<span wicket:id="ammendmentDateStr" />
+						</div>
+						</wicket:enclosure>
+						<wicket:enclosure child="ammendmentType" >
+							<div class="field">
+								<label><span wicket:id="ammendmentTypeLabel"/></label>
+								<select wicket:id="ammendmentType"></select>
+							</div>
+						</wicket:enclosure>
+						<wicket:enclosure child="ammendmentTypeStr" >
+							<div class="field">
+								<label><wicket:message key="page.lbl.ezbiz.robFormB4.ammendmentType" /></label>
+								<span wicket:id="ammendmentTypeStr" />
+							</div>
+						</wicket:enclosure>
+					</div>
+					<wicket:enclosure child="ammendmentType" >
+					<div class="field">
+						<label><span wicket:id="fileUploadTmpLabel"/></label>
+						<input wicket:id="fileUploadTmp" size="40" type="file"/>
+					</div>
+					</wicket:enclosure>
+					<div class="field">
+						<label>&nbsp;</label>
+					</div>
+					<div class="inline field">
+						<input wicket:id="updateOwners" class="ui primary button" type="button"  />
+						<button class="ui button negative" wicket:id="cancel" ><wicket:message key="page.lbl.ezbiz.robFormB4.cancel" /></button>
+					</div>
+					<div class="inline field">
+						<label><wicket:message key="page.lbl.ezbiz.robFormB4.b4DetNotes" /></label>
+					</div>
+					<div class="inline field">
+						 <div wicket:id="wmcListError">
+						 	<wicket:enclosure child="listError">
+								<div class="ui message" style="background-color: #fffaf3" >
+									<ul class="list">
+									<wicket:message key="page.lbl.ezbiz.robFormB4Summary.errorFix" />
+									<li wicket:id="listError"></li>
+									</ul>
+								</div> 
+							</wicket:enclosure>
+    					</div>
+					</div>
+				</div>
+			 </div>
+		</div>
+		<br>
+	</form>
+</wicket:extend>

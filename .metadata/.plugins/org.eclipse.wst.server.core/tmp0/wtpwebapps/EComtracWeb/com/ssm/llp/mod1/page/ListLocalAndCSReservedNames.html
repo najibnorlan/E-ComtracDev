@@ -1,0 +1,67 @@
+ <style type="text/css">
+     th.last-name *, td.last-name {
+         font-weight: bold;
+         color: #AA0000;
+     }
+     th.numeric, td.numeric {
+         text-align: right !important;
+     }
+ </style>
+<wicket:extend>
+<div id="llpReservedNames">
+	<table class="blockdataview" cellspacing="0" >
+		<tr>
+			<td align="left"><span wicket:id="navigatorLabel">[dataview navigatorLabel]</span></td>
+			<td align="right"><span wicket:id="navigator">[dataview navigator]</span></td>
+		</tr>
+		<tr>
+			<td colspan="2">
+				<table cellspacing="0" class="dataview" width="100%">
+				    <tr>
+				        <th>ID</th>
+				        <th wicket:id="orderByResultRef">Result Reference</th>
+				        <th>LLP Name</th>
+				        <th>LLP No</th>
+				        <th>Status</th>
+				        <th>Result Date</th>
+				        <th>Name Expired Date</th>
+				        <th>Action</th>
+				    </tr>
+				    <tr wicket:id="sorting">
+				        <td><span wicket:id="idReservedName">[idReservedName]</span> </td>
+				         <td><span wicket:id="refNo">[refNo]</span> </td>
+				        <td><span wicket:id="applyLlpName">[applyLlpName]</span></td>			        
+				        <td><span wicket:id="llpNo">[llpNo]</span></td>
+				        <td><span wicket:id="status">[status]</span></td>
+				        <td><span wicket:id="resultDate">[resultDate]</span></td>
+				        <td><span wicket:id="expNameDate">[expNameDate]</span></td>
+				        <td class="manage-llpReservedName-links">
+			                  <!-- <a wicket:id="edit" href="#">[edit]</a>
+			                   <a wicket:id="delete" href="#">[delete]</a>-->
+			            </td>
+				    </tr>				    
+				</table>					
+			</td>
+		</tr>
+	</table>
+	<form wicket:id="form">
+	<table>
+ 					 <table>
+ 					 <tr>
+                       <td><wicket:message key="reservedName.page.applyLlpName"/></td>
+                        <td><input wicket:id="applyLlpName" size="50"/></td>
+                    </tr>
+                                        
+                    </table>
+                    
+                    <wicket:enclosure child="llpRegistration">
+ 					<tr>
+                        <td>
+                            <input wicket:id="llpRegistration" type="submit" value="LLP Registration"/>
+                        </td>
+                    </tr>
+                    </wicket:enclosure>
+      </table>	
+	</form>
+</div>
+</wicket:extend>

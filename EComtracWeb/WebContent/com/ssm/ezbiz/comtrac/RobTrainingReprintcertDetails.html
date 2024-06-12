@@ -1,0 +1,203 @@
+<wicket:extend>
+<form wicket:id="formCert" >
+<script type="text/javascript" wicket:id="formValidation"></script>
+		<div id="SearchCertInfo" class="ui form ">
+			<table style="width:100%">
+				<tr>
+					<td>
+						<div class="ui top attached segment">
+							<div class="ui top attached label">
+								<h4 class="ui header">
+									<wicket:message key="page.lbl.ecomtrac.trainingInfo" />
+								</h4>
+							</div>
+				 <div class="three fields">
+					<div class="field">
+						<label><wicket:message
+								key="page.lbl.ecomtrac.transactionCode" /></label> <span
+							wicket:id="transactionCodes"> </span>
+					</div>
+					<div class="field">
+					<label><wicket:message
+							key="page.lbl.ecomtrac.trainingName" /></label> <span
+						wicket:id="trainingName"> </span>
+				</div>
+					<div class="field">
+						<label><wicket:message
+								key="page.lbl.ecomtrac.trainingCode" /></label> <span
+							wicket:id="trainingCode"> </span>
+					</div>
+				</div>
+				<br>
+				<div class="three group fields">
+					<div class=field>
+						<label><wicket:message
+								key="page.lbl.ecomtrac.startEndDate" /></label> <span
+							wicket:id="trainingStartDt"> </span>&nbsp;-&nbsp;<span
+							wicket:id="trainingEndDt"> </span>
+					</div>
+
+					<div class="field">
+						<label><wicket:message
+								key="page.lbl.ecomtrac.trainingStartEndTime" /></label> <span
+							wicket:id="trainingStartTime"> </span>&nbsp;-&nbsp;<span
+							wicket:id="trainingEndTime"> </span>
+					</div>
+					<div class="field">
+						<label><wicket:message
+								key="page.lbl.ecomtrac.trainingVenue" /></label> <span
+							wicket:id="trainingVenue"> </span>
+					</div>
+				</div>
+				<br>
+				<div class="three group fields">
+					<div class=field>
+						<label><wicket:message
+								key="page.lbl.ecomtrac.cpePoint" /></label> <span
+							wicket:id="cpePoint"> </span>
+					</div>
+				</div>
+					</div>	
+					</td>
+				</tr>
+			</table>
+			<table style="width:100%">
+				<tr>
+					<td>
+						<div class="ui top attached segment">
+							<div class="ui top attached label">
+								<h4 class="ui header">
+									<wicket:message key="page.lbl.ecomtrac.participantInfomation" />
+								</h4>
+							</div>
+				 <div class="four fields">
+					<div class="field">
+						<label><wicket:message
+								key="page.lbl.ecomtrac.icName" /></label> <span
+							wicket:id="name"> </span>
+					</div>
+					<div class="field">
+					<label><wicket:message
+							key="page.lbl.ecomtrac.icNo" /></label> <span
+						wicket:id="icNos"> </span>
+				</div>
+					<div class="field">
+						<label><wicket:message
+								key="page.lbl.ecomtrac.gender" /></label> <span
+							wicket:id="gender"> </span>
+					</div>
+					<div class="field">
+						<label><wicket:message
+								key="page.lbl.ecomtrac.dob" /></label> <span
+							wicket:id="dob"> </span>
+					</div>
+				</div>
+					
+				<br>
+				<div class="four group fields">
+				<div class=field>
+						<label><wicket:message
+								key="page.lbl.ecomtrac.address" /></label> 
+								<span wicket:id=address1> </span>
+								<span wicket:id="address2"> </span>
+								<span wicket:id="address3"> </span>
+								<span wicket:id="postcode"> </span>
+								<span wicket:id="city"> </span>
+								<span wicket:id="state"> </span>
+					</div>
+					<div class=field>
+						<label><wicket:message
+								key="page.lbl.ecomtrac.mobileNo" /></label> <span
+							wicket:id="telNo"> </span>
+					</div>
+
+					<div class="field">
+						<label><wicket:message
+								key="page.lbl.ecomtrac.phoneNo" /></label> <span
+							wicket:id="faxNo"> </span>
+					</div>
+					<div class="field">
+						<label><wicket:message
+								key="page.lbl.ecomtrac.email" /></label> <span
+							wicket:id="email"> </span>
+					</div>
+				</div>
+				<br>
+				<div class="four group fields">
+					<div class=field>
+						<label><wicket:message
+								key="page.lbl.ecomtrac.company" /></label> <span
+							wicket:id="company"> </span>
+					</div>
+
+					<div class="field">
+						<label><wicket:message
+								key="page.lbl.ecomtrac.occupation" /></label> <span
+							wicket:id="occupation"> </span>
+					</div>
+					<div class="field">
+						<label><wicket:message
+								key="page.lbl.ecomtrac.designation" /></label> 
+								<span wicket:id=designation> </span>
+					</div>
+				</div>
+				<div class="four group fields">
+					<div class=field>
+						<label><wicket:message
+								key="page.lbl.ecomtrac.lsNo" /></label> <span
+							wicket:id="lsNo"> </span>
+					</div>
+
+					<div class="field">
+						<label><wicket:message
+								key="page.lbl.ecomtrac.membershipNo" /></label> <span
+							wicket:id="membershipNo"> </span>
+					</div>
+					<div class="field">
+						<label><wicket:message
+								key="page.lbl.ecomtrac.tod" /></label> <span
+							wicket:id="diet"> </span>
+					</div>
+				</div>
+					</div>	
+					</td>
+				</tr>
+			</table>
+			<table style="width:100%">
+				<tr>
+					<td>
+						<div class="ui top attached segment">
+							<div class="ui top attached label">
+								<h4 class="ui header">
+									<wicket:message key="page.lbl.ecomtrac.paymentInfo" />
+								</h4>
+							</div>
+				<div class="four group fields">
+					<div class=field>
+						<label><wicket:message
+								key="page.lbl.ecomtrac.certFee" /></label>
+					</div>
+
+					<div class="field">
+						
+					</div>
+					<div class="field">
+						
+					</div>
+					<div class="field">
+						
+					</div>
+				</div>
+					</div>	
+					</td>
+				</tr>
+				<tr>
+					<td>
+					<button class="ui primary button right floated" wicket:id="submitPayment"><wicket:message key="page.lbl.ecomtrac.submitPayment" /></button>
+					<button class="ui primary button right floated" wicket:id="back"><wicket:message key="page.lbl.ecomtrac.back" /></button>
+					</td> 
+				</tr>
+			</table>
+		</div>
+	</form>
+</wicket:extend>

@@ -1,0 +1,16 @@
+<wicket:panel>
+	<div class="ui modal" wicket:id="wmcAlert" style="z-index: 999">
+		<div class="header" style="background-color: LightSteelBlue;">
+			<span wicket:id="title" />
+		</div>
+		<div class="content">
+			<span wicket:id="msg" /> 
+		</div>
+		<div class="actions">
+			<button class="ui button positive" wicket:id="lockAndEditButton"><wicket:message key="page.lbl.pcert.editSecretaryPcert.lockAndEditButton"/></button>
+			<button class="ui button negative" wicket:id="unlock"><wicket:message key="page.lbl.pcert.editSecretaryPcert.unlock"/></button>
+			<button class="ui primary button" wicket:id="viewOnly"><wicket:message key="page.lbl.pcert.editSecretaryPcert.viewOnly"/></button>
+			<div class="ui approve button">Back</div>
+		</div>
+	</div>
+</wicket:panel>

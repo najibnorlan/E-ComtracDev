@@ -1,0 +1,715 @@
+<html>
+<head>
+<title></title>
+
+<link rel="stylesheet" href="alertify/alertify.css">
+<link rel="stylesheet" href="alertify/semantic.css">
+<link rel="stylesheet" type="text/css" href="semantic/semantic.min.css">
+<link rel="stylesheet" type="text/css" href="semantic/components/form.min.css">
+<link rel="stylesheet" type="text/css" href="css/styles.css" />
+<link rel="stylesheet" type="text/css" href="css/animate.css" />
+<link rel="stylesheet" type="text/css" href="font-awesome/css/font-awesome.min.css" />
+<script type="text/javascript" src="js/ssmScript.js"></script>
+<link rel="stylesheet" href="jquery/jquery-ui.css">
+<link rel="shortcut icon" href="images/ezbizMobile.gif">
+
+<script src="jquery/jquery-1.9.1.js"></script>
+<script src="js/jquery.scrollTo.min.js"></script>
+<script src="jquery/jquery-ui.js"></script>
+<script src="semantic/semantic.min.js"></script>
+<script src="semantic/components/form.js"></script>
+<script type="text/javascript" src="alertify/alertify.min.js"></script>
+<script src="js/jquery.scrollTo.min.js"></script>
+<script src="noty-master/js/noty/packaged/jquery.noty.packaged.min.js"></script>
+<script type="text/javascript" src="js/d3.v3.min.js"></script>
+<script src="js/uvcharts.min.js"></script>
+
+<style type="text/css">
+body {
+  overflow-x: scroll;
+}
+
+.Edit.icon {
+	font-size: 2em;
+}
+
+.Erase.icon {
+	font-size: 2em;
+}
+
+.Add.User.icon {
+	font-size: 2em;
+}
+
+.Remove.User.icon {
+	font-size: 2em;
+}
+
+.External.Share.icon {
+	font-size: 2em;
+}
+
+.Undo.icon {
+	font-size: 2em;
+}
+
+.Download.icon {
+	font-size: 2em;
+}
+
+.blink_text {
+	animation: 2s blinker linear infinite;
+	-webkit-animation: 2s blinker linear infinite;
+	-moz-animation: 2s blinker linear infinite;
+	color: red;
+}
+
+@
+-moz-keyframes blinker { 0% {
+	opacity: 0.0;
+}
+
+50%
+{
+opacity
+:
+ 
+1
+.0
+;
+ 
+}
+100%
+{
+opacity
+:
+ 
+1
+.0
+;
+ 
+}
+}
+@
+-webkit-keyframes blinker { 0% {
+	opacity: 0.0;
+}
+
+50%
+{
+opacity
+:
+ 
+1
+.0
+;
+ 
+}
+100%
+{
+opacity
+:
+ 
+1
+.0
+;
+ 
+}
+}
+@
+keyframes blinker { 0% {
+	opacity: 0.0;
+}
+50%
+{
+opacity
+:
+ 
+1
+.0
+;
+ 
+}
+100%
+{
+opacity
+:
+ 
+1
+.0
+;
+ 
+}
+}
+</style>
+
+<!--script>  
+$(function() {    
+	$( document ).tooltip();  });  
+</script>  
+<style>  
+	label {    width: 5em;  }  
+</style-->
+
+<script type="text/javascript">        
+//override defaults
+alertify.defaults.transition = "zoom";
+alertify.defaults.theme.ok = "ui positive button";
+alertify.defaults.theme.cancel = "ui black button";
+</script>
+</head>
+<body class="body" onLoad="initClock();setupFunc();">
+	<div id="ajaxveil" style="display: block; position: absolute; left: 0; z-index =9999 !important; width: 100%; height: 100%;">
+				<div class="ui active inverted dimmer">
+					<div class="ui large text loader" style="position: fixed;top: 350px">Loading</div>
+				</div>
+			</div>
+	<div class="ui raised segment centered grid container">
+		<div class="column">
+			<div class="row" align="right">
+				<wicket:enclosure child="isLogin">
+					<div wicket:id="isLogin">
+						<img src="images/profile.gif" align="top" /> <span wicket:id="base.welcome"></span> <b>|</b> <b> <a href="#" wicket:id="signout">
+								<div class="ui red label">
+									<i class="lock icon"></i>Logout
+								</div>
+						</a>
+						</b>
+					</div>
+				</wicket:enclosure>
+			</div>
+			<div class="row">
+				<img wicket:id="banner" width="100%" align="bottom" />
+			</div>
+			<div class="row">
+				<div wicket:id="wmcMainMenu" class="ui blue inverted menu">
+					<a class="item" wicket:id="Home"><wicket:message key="basePage.msg.home" /></a>
+					<!--a class="item" href="#" wicket:id="Internal">Internal</a-->
+					<!--a class="item" href="#" wicket:id="selfservice">Selfservice</a-->
+					<wicket:enclosure child="editLlpUserProfilePasswordPage">
+						<a class="browse item"> <wicket:message key="menu.myBiz.services" /><i class="dropdown icon"></i>
+						</a>
+						<div class="ui flowing popup bottom left transition hidden">
+							<div class="ui four column relaxed divided grid">
+								<div class="column">
+									<h4 class="ui header">
+										<wicket:message key="menu.myBiz.renewalService" />
+									</h4>
+									<div class="ui link list">
+										<wicket:enclosure child="listRobRenewalPage">
+											<a wicket:id="listRobRenewalPage"><wicket:message key="menu.myBiz.ownBizRenewal" /></a>
+											<br>
+										</wicket:enclosure>
+										<wicket:enclosure child="searchBizForRenew">
+											<a wicket:id="searchBizForRenew"> <wicket:message key="menu.myBiz.selfBizRenewal" /></a>
+											<br>
+											<a wicket:id="listRobRenewalTransactionsPage"><wicket:message key="menu.myBiz.myRenewalTransaction" /></a>
+											<br>
+										</wicket:enclosure>
+										<wicket:enclosure child="activateAccRenew">
+											<span style="color: red" wicket:id="activateAccRenew" />
+											<br>
+										</wicket:enclosure>
+									</div>
+								</div>
+								<div class="column">
+									<h4 class="ui header">
+										<wicket:message key="menu.myBiz.newBizReg" />
+									</h4>
+									<div class="ui link list">
+										<wicket:enclosure child="editRobFormAPage">
+											<a wicket:id="editRobFormAPage"><wicket:message key="menu.myBiz.newRobFormAPage" /></a>
+											<br>
+										</wicket:enclosure>
+										<wicket:enclosure child="tabRobFormAPage">
+											<a wicket:id="tabRobFormAPage"><wicket:message key="menu.myBiz.listRobFormAPage" /></a>
+											<br>
+											<a wicket:id="ownersValidationListRobFormAPage"><wicket:message key="menu.myBiz.ownersValidationListRobFormAPage" /></a>
+											<br>
+										</wicket:enclosure>
+										<wicket:enclosure child="activateAccA">
+											<span style="color: red" wicket:id="activateAccA" />
+											<br>
+										</wicket:enclosure>
+									</div>
+								</div>
+								<div class="column">
+									<h4 class="ui header">
+										<wicket:message key="menu.myBiz.formB" />
+									</h4>
+									<div class="ui link list">
+										<wicket:enclosure child="selectBizRobFormBPage">
+											<a wicket:id="selectBizRobFormBPage"><wicket:message key="menu.myBiz.newRobFormBPage" /></a>
+											<br>
+										</wicket:enclosure>
+										<wicket:enclosure child="tabRobFormBPage">
+											<a wicket:id="tabRobFormBPage"><wicket:message key="menu.myBiz.listRobFormBPage" /></a>
+											<br>
+											<a wicket:id="ownersValidationListRobFormBPage"><wicket:message key="menu.myBiz.ownersValidationListRobFormBPage" /></a>
+											<br>
+										</wicket:enclosure>
+										<wicket:enclosure child="activateAccB">
+											<span style="color: red" wicket:id="activateAccB" />
+											<br>
+										</wicket:enclosure>
+									</div>
+								</div>
+								<div class="column">
+									<h4 class="ui header">
+										<wicket:message key="menu.myBiz.formC" />
+									</h4>
+									<div class="ui link list">
+										<wicket:enclosure child="listRobFormCPage">
+											<a wicket:id="listRobFormCPage"><wicket:message key="menu.myBiz.listRobFormCPage" /></a>
+											<br>
+										</wicket:enclosure>
+										<wicket:enclosure child="listRobFormCTransactionPage">
+											<a wicket:id="listRobFormCTransactionPage"><wicket:message key="menu.myBiz.ListRobFormCTransactionPage" /></a>
+											<br>
+											<a wicket:id="ownersValidationListRobFormCPage"><wicket:message key="menu.myBiz.ownersValidationListRobFormCPage" /></a>
+											<br>
+										</wicket:enclosure>
+										<wicket:enclosure child="activateAccC">
+											<span style="color: red" wicket:id="activateAccC" />
+											<br>
+										</wicket:enclosure>
+									</div>
+								</div>
+							</div>
+						</div>
+					</wicket:enclosure>
+					<wicket:enclosure child="editLlpUserProfilePasswordPage">
+						<a class="browse item"> <wicket:message key="menu.myCmp.services" /><i class="dropdown icon"></i>
+						</a>
+						<div class="ui flowing popup bottom left transition hidden">
+							<div class="ui one column relaxed divided grid">
+								<div class="column">
+									<div class="ui link list">
+										<wicket:enclosure child="listCmpPage">
+											<a wicket:id="listCmpPage"><wicket:message key="menu.myCmp.cmpPayment" /></a>
+											<br>
+											<a wicket:id="listCmpHistoryPage"> <wicket:message key="menu.myCmp.cmpHistory" /></a>
+											<br>
+										</wicket:enclosure>
+										<wicket:enclosure child="activateAccCmp">
+											<span style="color: red" wicket:id="activateAccCmp" />
+											<br>
+										</wicket:enclosure>
+									</div>
+								</div>
+							</div>
+						</div>
+					</wicket:enclosure>
+					<div wicket:id="wmcComtracPublic">
+						<a class="browse item"><wicket:message key="menu.myBiz.comtracServices" /><i class="dropdown icon"></i> </a>
+						<div class="ui flowing popup bottom left transition hidden">
+							<div class="ui one column relaxed divided grid">
+								<div class="column">
+									<div class="ui link list">
+										<a wicket:id="selectComtracTraining"><wicket:message key="menu.myBiz.selectComtracTraining" /></a> <br> <a wicket:id="tabComtracPage"><wicket:message
+												key="menu.myBiz.tabComtracPage" /></a> <br>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+					<wicket:enclosure child="editLlpUserProfilePasswordPage">
+						<a class="item" href="#" wicket:id="listPaymentTransactionPage">My Payment History</a>
+					</wicket:enclosure>
+					<wicket:enclosure child="editLlpUserProfilePasswordPage">
+						<a class="browse item">User Profile<i class="dropdown icon"></i>
+						</a>
+						<div class="ui flowing popup bottom left transition hidden">
+							<div class="ui one column relaxed divided grid">
+								<div class="column">
+									<div class="ui link list">
+										<a wicket:id="viewLlpUserProfilePage">View User Profile</a> <br> <a wicket:id="editLlpUserProfilePasswordPage">Change Password</a>
+									</div>
+								</div>
+							</div>
+						</div>
+					</wicket:enclosure>
+					<wicket:enclosure child="listLlpUserProfilePage">
+						<a class="item" wicket:id="listLlpUserProfilePage">User Registration</a>
+					</wicket:enclosure>
+					<wicket:enclosure child="listLlpUserProfilePage">
+						<a class="item" wicket:id="incentiveVerification">Incentive Verification</a>
+					</wicket:enclosure>
+					<wicket:enclosure child="listLlpUserProfilePage">
+						<a class="browse item">Payment Counter<i class="dropdown icon"></i>
+						</a>
+						<div class="ui flowing popup bottom left transition hidden">
+							<div class="ui one column relaxed divided grid">
+								<div class="column">
+									<div class="ui link list">
+										<wicket:enclosure child="userCheckinPage">
+											<a wicket:id="userCheckinPage"><wicket:message key="menu.myBiz.userCheckinPage" /></a>
+											<br>
+										</wicket:enclosure>
+										<a wicket:id="listCollectionVerification"><wicket:message key="menu.myBiz.collectionVerification" /></a><br> <a
+											wicket:id="listCounterBankinSlip"><wicket:message key="menu.myBiz.listCounterBankinSlip" /></a><br> <a wicket:id="searchBankinSlip"><wicket:message
+												key="menu.myBiz.searchBankinSlip" /></a><br>
+
+									</div>
+								</div>
+							</div>
+						</div>
+					</wicket:enclosure>
+					<div wicket:id="wmcComtracInternal">
+						<a class="browse item"><wicket:message key="menu.myBiz.comtrac" /><i class="dropdown icon"></i> </a>
+						<div class="ui flowing popup bottom left transition hidden">
+							<div class="ui one column relaxed divided grid">
+								<div class="column">
+									<div class="ui link list">
+										<a wicket:id="listComtracTraining"><wicket:message key="menu.myBiz.listComtracTraining" /></a> <br> <a
+											wicket:id="selectComtracTrainingInternal"><wicket:message key="menu.myBiz.selectComtracTraining" /></a> <br> <a
+											wicket:id="tabComtracPageInternal"><wicket:message key="menu.myBiz.tabComtracPage" /></a> <br>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+					<wicket:enclosure child="listLlpUserProfilePage">
+						<a class="browse item">Report<i class="dropdown icon"></i>
+						</a>
+						<div class="ui flowing popup bottom left transition hidden">
+							<div class="ui two column relaxed equal height divided grid">
+								<div class="column">
+									<h4 class="ui header">Payment Counter Report</h4>
+									<div class="ui link list">
+										<a wicket:id="listPaymentTransactionPage"><wicket:message key="menu.myBiz.paymentTransactonReport" /></a> <br> <a
+											wicket:id="searchPaymentReceipt"><wicket:message key="menu.myBiz.searchPaymentReceipt" /></a> <br> <a wicket:id="creditNoteReport"><wicket:message
+												key="menu.myBiz.creditNoteReport" /></a> <br> <a wicket:id="branchSummaryReport"><wicket:message
+												key="menu.myBiz.branchSummaryReport" /></a> <br> <a wicket:id="bankinSlipReport"><wicket:message key="menu.myBiz.bankinSlipReport" /></a>
+										<br> <a wicket:id="monthlyBankInSlipReport"><wicket:message key="menu.myBiz.monthlyBankinSlipReport" /></a>
+									</div>
+								</div>
+								<div class="column">
+									<h4 class="ui header">EzBiz Usage Statistic</h4>
+									<div class="ui link list">
+										<wicket:enclosure child="formTypeReport">
+											<a wicket:id="formTypeReport"><wicket:message key="menu.myBiz.formTypeReport" /></a>
+											<br>
+										</wicket:enclosure>
+										<wicket:enclosure child="nameTypeReport">
+											<a wicket:id="nameTypeReport"><wicket:message key="menu.myBiz.nameTypeReport" /></a>
+											<br>
+										</wicket:enclosure>
+										<wicket:enclosure child="robFormAStatistic">
+											<a wicket:id="robFormAStatistic"><wicket:message key="menu.myBiz.formAStatistic" /></a>
+											<br>
+										</wicket:enclosure>
+									</div>
+								</div>
+							</div>
+						</div>
+					</wicket:enclosure>
+					<wicket:enclosure child="listLlpUserProfilePage">
+						<a class="browse item">EzBiz Services<i class="dropdown icon"></i>
+						</a>
+						<div class="ui flowing popup bottom left transition hidden">
+							<div class="ui one column relaxed divided grid">
+								<div class="column">
+									<div class="ui link list">
+										<a wicket:id="searchRobFormA1Renewal">Renewal Transactions</a><br> <a wicket:id="searchRobFormA">Form A Transactions</a><br> <a
+											wicket:id="searchRobFormB">Form B Transactions</a><br> <a wicket:id="searchRobFormC">Form C Transactions</a><br> <a
+											wicket:id="SearchCmpDetails">Compound Transactions</a><br> <a wicket:id="searchComtrac"><wicket:message
+												key="page.title.ezbiz.comtracTransactions" /></a><br>
+										<wicket:enclosure child="myCardTransaction">
+											<a wicket:id="myCardTransaction"><wicket:message key="page.title.ezbiz.myCardTransaction" /></a>
+											<br>
+										</wicket:enclosure>
+									</div>
+								</div>
+							</div>
+						</div>
+					</wicket:enclosure>
+					<wicket:enclosure child="listLlpUserProfilePage">
+						<a class="browse item">Control Panel<i class="dropdown icon"></i>
+						</a>
+						<div class="ui flowing popup bottom left transition hidden">
+							<div class="ui one column relaxed divided grid">
+								<div class="column">
+									<div class="ui link list">
+										<wicket:enclosure child="llpLocaleMessagePage">
+											<a wicket:id="llpLocaleMessagePage">LocaleMessage</a>
+											<br>
+										</wicket:enclosure>
+										<wicket:enclosure child="llpPaymentFeePage">
+											<a wicket:id="llpPaymentFeePage">Payment Configuration</a>
+											<br>
+										</wicket:enclosure>
+										<wicket:enclosure child="listLlpEmailLogPage">
+											<a wicket:id="listLlpEmailLogPage">Email Log</a>
+											<br>
+										</wicket:enclosure>
+										<wicket:enclosure child="lLPFileAttachmentPage">
+											<a wicket:id="lLPFileAttachmentPage">File Attachment</a>
+											<br>
+										</wicket:enclosure>
+										<wicket:enclosure child="llpParameterPage">
+											<a wicket:id="llpParameterPage">Parameters</a>
+											<br>
+										</wicket:enclosure>
+										<wicket:enclosure child="gafConfigPage">
+											<a wicket:id="gafConfigPage"><wicket:message key="menu.myBiz.gafConfig" /></a>
+											<br>
+										</wicket:enclosure>
+										<wicket:enclosure child="healthCheckPage">
+											<a wicket:id="healthCheckPage">System Health Check</a>
+											<br>
+										</wicket:enclosure>
+										<wicket:enclosure child="emailBlast">
+											<a wicket:id="emailBlast">Email Blaster</a>
+											<br>
+										</wicket:enclosure>
+										<wicket:enclosure child="listCollectionCounter">
+											<a wicket:id="listCollectionCounter"><wicket:message key="menu.myBiz.listCollectionCounter" /></a>
+											<br>
+										</wicket:enclosure>
+										<wicket:enclosure child="listCheckInCounter">
+											<a wicket:id="listCheckInCounter"><wicket:message key="menu.myBiz.counterMaintenance" /></a>
+											<br>
+										</wicket:enclosure>
+										<wicket:enclosure child="paymentCheckWithEghl">
+											<a wicket:id="paymentCheckWithEghl"><wicket:message key="menu.myBiz.paymentWithEghl" /></a>
+											<br>
+										</wicket:enclosure>
+										<wicket:enclosure child="searchErrorLogCheckPage">
+											<a wicket:id="searchErrorLogCheckPage"><wicket:message key="menu.myBiz.searchErrorLogCheckPage" /></a>
+											<br>
+										</wicket:enclosure>
+										<wicket:enclosure child="searchSSMAuditLogPage">
+											<a wicket:id="searchSSMAuditLogPage"><wicket:message key="menu.myBiz.searchSSMAuditLogPage" /></a>
+											<br>
+										</wicket:enclosure>
+										
+									</div>
+								</div>
+							</div>
+						</div>
+					</wicket:enclosure>
+					<a class="item" wicket:id="guidelinePage"><wicket:message key="basePage.msg.guideline" /></a>
+				</div>
+			</div>
+			<div class="row">
+				<div align="right" style="font-size: 120%; color: #1F86D3;">
+					<b><span id="mon">January</span> <span id="d">1</span>, <span id="y">0</span> <span id="h">12</span> : <span id="m">00</span>: <span id="s">00</span></b>
+				</div>
+			</div>
+			<div class="row">
+				<wicket:message key="basePage.msg.annoucement" />
+			</div>
+			<div class="row">
+				<div id="body" class="ui raised segment">
+					<div class="ui blue top left attached label" style="font-size: 14px">
+						<i class="bookmark icon"></i> <span wicket:id="pageTitle"></span>
+					</div>
+					<br><br><span wicket:id="feedback" />
+					<wicket:child />
+				</div>
+			</div>
+			<div class="row" align="center">
+				|&nbsp;<a href="#" wicket:id="guidelinePage"><wicket:message key="basePage.msg.guideline" /></a>&nbsp; 
+				|&nbsp;<a href="#" wicket:id="privacyPolicy">Privacy Policy</a>&nbsp; 
+				|&nbsp;<a href="#" wicket:id="securityPolicy">Security Policy</a>&nbsp;| <br>
+				&copy;
+				<wicket:message key="basePage.msg.copyright" />
+				<br>
+				<wicket:message key="basePage.msg.bestView" />
+				<br>
+				<wicket:enclosure child="ipAdd">
+					IP Address : <span wicket:id="ipAdd"></span>
+					<br>
+				</wicket:enclosure>
+				Version {version}
+			</div>
+		</div>
+	</div>
+	<script type="text/javascript">
+$('.menu .browse')
+.popup({
+  inline   : true,
+  hoverable: true,
+  position : 'bottom left',
+  delay: {
+    show: 300,
+    hide: 800
+  }
+})
+;
+
+$('.ui.sticky')
+.sticky({
+  context: '#body'
+})
+;
+
+$('.is-numeric').keydown(function (e) {
+
+    var key = e.which || e.keyCode;
+
+    if (!e.shiftKey && !e.altKey && !e.ctrlKey &&
+            // numbers   
+            key >= 48 && key <= 57 ||
+            // Numeric keypad
+            key >= 96 && key <= 105 ||
+            // Backspace and Tab and Enter
+            key == 8 || key == 9 || key == 13 ||
+            // Home and End
+            key == 35 || key == 36 ||
+            // left and right arrows
+            key == 37 || key == 39 ||
+            // Del and Ins
+            key == 46 || key == 45)
+        return true;
+
+    return false;
+
+});
+
+$('.is-decimal').keydown(function (e) {
+
+    var key = e.which || e.keyCode;
+
+    if (!e.shiftKey && !e.altKey && !e.ctrlKey &&
+            // numbers   
+            key >= 48 && key <= 57 ||
+            // Numeric keypad
+            key >= 96 && key <= 105 ||
+            // comma, period and minus, . on keypad
+            key == 190 || key == 110 ||
+            // Backspace and Tab and Enter
+            key == 8 || key == 9 || key == 13 ||
+            // Home and End
+            key == 35 || key == 36 ||
+            // left and right arrows
+            key == 37 || key == 39 ||
+            // Del and Ins
+            key == 46 || key == 45)
+        return true;
+
+    return false;
+
+});
+	  Number.prototype.pad = function(n) {
+	  for (var r = this.toString(); r.length < n; r = 0 + r);
+	  return r;
+	};
+
+	function updateClock() {
+	  var now = new Date();
+	  var sec = now.getSeconds(),
+	    min = now.getMinutes(),
+	    hou = now.getHours(),
+	    mo = now.getMonth(),
+	    dy = now.getDate(),
+	    yr = now.getFullYear();
+	  var months = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"];
+	  var tags = ["mon", "d", "y", "h", "m", "s"],
+	    corr = [months[mo], dy, yr, hou.pad(2), min.pad(2), sec.pad(2)];
+	  for (var i = 0; i < tags.length; i++)
+	    document.getElementById(tags[i]).firstChild.nodeValue = corr[i];
+	}
+
+	function initClock() {
+	  updateClock();
+	  window.setInterval("updateClock()", 1);
+	  setupFunc();
+	}
+</script>
+	<script type="text/javascript">
+//alert('masuk');
+ //window.onload = setupFunc;
+ 
+/* function setupFunc() {
+   document.getElementsByTagName('body')[0].onclick = clickFunc;
+   hideBusysign();
+   Wicket.Event.subscribe('/ajax/call/beforeSend', function( attributes, jqXHR, settings ) {
+       showBusysign()
+        });
+   Wicket.Event.subscribe('/ajax/call/complete', function( attributes, jqXHR, textStatus) {
+       hideBusysign()
+        });
+ }
+ 
+ function hideBusysign() {
+   document.getElementById('ajaxveil').style.display ='none';
+ }
+ 
+ function showBusysign() {
+   document.getElementById('ajaxveil').style.display ='inline';
+   setTimeout(hideBusysign(), 10000);
+ }
+ 
+ function clickFunc(eventData) {
+   var clickedElement = (window.event) ? event.srcElement : eventData.target;
+   if ((clickedElement.tagName.toUpperCase() == 'BUTTON' || clickedElement.tagName.toUpperCase() == 'A' || clickedElement.parentNode.tagName.toUpperCase() == 'A'
+     || (clickedElement.tagName.toUpperCase() == 'INPUT' && (clickedElement.type.toUpperCase() == 'BUTTON' || clickedElement.type.toUpperCase() == 'SUBMIT')))
+     && clickedElement.parentNode.id.toUpperCase() != 'NOBUSY' ) {
+
+	 if(clickedElement.id){
+		if(clickedElement.id.toLowerCase().indexOf('download') !== -1){//mean download
+			return;
+		}
+     }else{
+     	if( (clickedElement.tagName.toUpperCase() !== 'WICKET:MESSAGE') && (clickedElement.tagName.toUpperCase() !== 'I') ){
+			return;
+		}
+     }
+     showBusysign();
+   }
+ }*/
+ 
+ function setupFunc() {
+	   document.getElementsByTagName('body')[0].onclick = clickFunc;
+	   //document.getElementsByTagName('body')[0].onsubmit = submitKo;
+	   hideBusysign();
+	   Wicket.Event.subscribe('/ajax/call/beforeSend', function( attributes, jqXHR, settings ) {
+	       showBusysign()
+	        });
+	   Wicket.Event.subscribe('/ajax/call/complete', function( attributes, jqXHR, textStatus) {
+	       hideBusysign()
+	        });
+	 }
+	 
+	 function hideBusysign() {
+	   	document.getElementById('ajaxveil').style.display ='none';
+	 }
+	 
+	 function showBusysign() {
+		 //document.getElementById("ajaxveil").style.zIndex='9999';
+		 //document.getElementById("ajaxveil").style.height=$(document).height();
+		 //document.getElementById('ajaxveil').style.display ='inline';
+	 }
+	 
+	 function clickFunc(eventData) {
+	   var clickedElement = (window.event) ? event.srcElement : eventData.target;
+	  
+	   if ((clickedElement.tagName.toUpperCase() == 'BUTTON' || clickedElement.tagName.toUpperCase() == 'A' || clickedElement.parentNode.tagName.toUpperCase() == 'A'
+	     || (clickedElement.tagName.toUpperCase() == 'INPUT' && (clickedElement.type.toUpperCase() == 'BUTTON' || clickedElement.type.toUpperCase() == 'SUBMIT')))
+	     && clickedElement.parentNode.id.toUpperCase() != 'NOBUSY' ) {
+		   
+		 if(clickedElement.id){
+			
+			if(clickedElement.id.toLowerCase().indexOf('download') !== -1){//mean download
+				return;
+			}
+			if(clickedElement.getAttribute("data-tab")){
+				return;
+			}
+	     }else{
+	     	if( (clickedElement.tagName.toUpperCase() !== 'WICKET:MESSAGE') || (clickedElement.tagName.toUpperCase() !== 'I') || (clickedElement.tagName.toUpperCase() !== 'A')   ){
+	     		return;
+			}else{
+				//alert(clickedElement.tagName);
+			}
+	     }   
+		   
+	     showBusysign();
+	   }
+	 }
+</script>
+
+</body>
+</html>

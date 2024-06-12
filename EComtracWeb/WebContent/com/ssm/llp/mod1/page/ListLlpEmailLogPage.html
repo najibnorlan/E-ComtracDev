@@ -1,0 +1,93 @@
+<wicket:extend>
+	<form wicket:id="llpEmailLogForm" id="llpEmailLogForm">
+		<div class="ui top attached segment" style="width: 40%">
+			<div class="ui top attached label">
+				<h4 class="ui header">
+					<wicket:message key="page.lbl.ezbiz.localeMessagePage.search" />
+				</h4>
+			</div>
+			<table class="ui form">
+				<tr>
+					<td>
+						<div class="two fields" style="width: 400">
+							<div class="field">
+								<span wicket:id="searchFromDtLabel" /> 
+								<input wicket:id="searchFromDt" type="text" />							
+							</div>
+							<div class="field">
+								<span wicket:id="searchToDtLabel" /> 
+								<input wicket:id="searchToDt" type="text" />
+							</div>
+						</div>
+					</td>
+				</tr>
+				<tr>
+					<td>
+						<div style="width: 300">
+							<span wicket:id="refNoLabel" />
+							<input wicket:id="refNo" type="text"/>
+						</div>
+					</td>
+				</tr>
+				<tr>
+					<td>
+						<div style="width: 150">
+							<span wicket:id="statusLabel" /> 
+							<select wicket:id="status" />
+						</div>
+					</td>
+				</tr>
+			</table>
+			<br>
+			<div align="left">
+				<button class="ui primary button" wicket:id="searchBtn">
+					<wicket:message key="listLlpEmailLog.page.searchButton" />
+				</button>
+			</div>
+		</div>
+		<br>
+		<div wicket:id="listDataView">
+			<table class="ui striped table" width="100%">
+				<tr>
+					<table class="ui striped table" width="100%">
+						<thead>
+							<tr>
+								<th><wicket:message key="listLlpEmailLog.page.sendDate" /></th>
+								<th><wicket:message key="listLlpEmailLog.page.refNo" /></th>
+								<th><wicket:message key="listLlpEmailLog.page.emailTo" /></th>
+								<th><wicket:message key="listLlpEmailLog.page.emailSubject" /></th>
+								<th><wicket:message key="listLlpEmailLog.page.status" /></th>
+								<th><wicket:message key="listLlpEmailLog.page.remark" /></th>
+								<th><wicket:message key="listLlpEmailLog.page.action" /></th>
+							</tr>
+						</thead>
+						<tbody>
+							<tr wicket:id="sorting">
+								<td><span wicket:id="sendDate">[sendDate]</span></td>
+								<td><span wicket:id="refNo">[refNo]</span></td>
+								<td><span wicket:id="emailTo">[emailTo]</span></td>
+								<td><span wicket:id="emailSubject">[emailSubject]</span></td>
+								<td><span wicket:id="status">[status]</span></td>
+								<td><span wicket:id="remark">[remark]</span></td>
+								<td align="center">
+									<div wicket:id="viewLlpEmailDiv"></div> 
+									<a wicket:id="viewEmail" wicket:message="title:listLlpEmailLog.page.viewEmail">
+										<i class="large unhide icon" title="View"></i>
+									</a>
+								</td>
+							</tr>
+						</tbody>
+						<tfoot>
+							<tr>
+								<th colspan="7"><span wicket:id="navigatorLabel">[dataview
+										navigatorLabel]</span> <span wicket:id="navigator">[dataview
+										navigator]</span></th>
+							</tr>
+						</tfoot>
+					</table>
+				</tr>
+			</table>
+		</div>
+	</form>
+
+</wicket:extend>

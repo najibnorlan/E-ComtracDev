@@ -1,0 +1,73 @@
+<wicket:extend>
+	<form wicket:id="form">
+		<div id="paymentdetailsdiv">
+			<fieldset>
+				<legend>
+					<wicket:message key="paymentdetails.page.title" />
+				</legend>
+				<table border="0">
+					<tr>
+						<td colspan="2">
+							<table class="dataview" >
+								<tr wicket:id="paymentItems">
+									<td colspan="3">
+										<table border="1">
+											<tr>
+												<td colspan="3">
+													<span wicket:id="itemDesc">itemDesc</span>&nbsp;(<span wicket:id="itemDet">itemDet</span>)
+												</td>
+											</tr>	
+											<tr>
+												<td><wicket:message key="paymentdetails.page.quantity" /></td>
+												<td>&nbsp;:</td>
+												<td>
+													<span wicket:id="itemQuantity">itemQuantity</span>
+												</td>
+											</tr>	
+											<tr>
+												<td><wicket:message key="paymentdetails.page.amount" /></td>
+												<td>&nbsp;:</td>	
+												<td>
+													<span wicket:id="itemAmount">itemAmount</span>
+												</td>
+											</tr>
+											<tr>
+												<td colspan="3">&nbsp;</td>
+											</tr>
+										</table>
+									</td>
+								</tr>
+							</table>
+							
+						</td>
+					</tr>
+					<tr>
+						<td><b>Total Amount</b></td>
+						<td><b>RM : <span wicket:id="amount" >itemTotal</span></b></td>
+					</tr>
+					<tr>
+						<td colspan="2"></td>
+					</tr>
+					<tr>
+						<td><span wicket:id="payerNameLabel" /></td>
+						<td><input wicket:id="payerName" type="text" /></td>						
+					</tr>
+					<tr>
+						<td><span wicket:id="payerIdLabel" /></td>
+						<td><input wicket:id="payerId" type="text" /></td>
+					</tr>
+					<tr>
+						<td colspan="2">&nbsp;</td>
+					</tr>
+					<tr>
+						<td colspan="2" align="left">
+							<input class="btn btn-primary btn-block" wicket:id="pay" type="submit"
+							wicket:message="value:paymentdetails.page.payButton" /> 
+							<input class="btn btn-primary btn-block" wicket:id="cancel" type="submit"
+							wicket:message="value:paymentdetails.page.cancelButton" /></td>
+					</tr>
+				</table>
+			</fieldset>
+		</div>
+	</form>
+</wicket:extend>

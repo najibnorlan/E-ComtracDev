@@ -1,0 +1,130 @@
+<wicket:extend>
+	<form wicket:id="form">
+		<div class="ui form">
+			<table>
+				<tr>
+					<td>
+						<div class="ui top attached segment">
+							<div class="ui top attached label">
+								<h4 class="ui header">
+									<wicket:message
+										key="page.lbl.ezbiz.collectionVerification.title" />
+								</h4>
+							</div>
+							<table>
+								<tr>
+									<td>
+										<div class="field">
+											<label><span wicket:id="branchLabel" /></label> <select
+												wicket:id="branch">
+											</select>
+										</div>
+									</td>
+								</tr>
+								<tr>
+									<td>
+										<div class="field">
+											<label><span wicket:id="floorLabel" /></label> <select
+												wicket:id="floor">
+											</select>
+										</div>
+									</td>
+								</tr>
+								<tr>
+									<td>
+										<div class="field">
+											<label><span wicket:id="statusLabel" /></label> <select
+												wicket:id="status">
+											</select>
+										</div>
+									</td>
+								</tr>
+								<tr>
+									<td>
+										<div class="field">
+											<label><span wicket:id="dateLabel" /></label> <input
+												wicket:id="date" style="width: 80%" />
+										</div>
+									</td>
+								</tr>
+								<tr>
+									<td>&nbsp;</td>
+								</tr>
+								<tr>
+									<td><input wicket:id="search" type="button"
+										class="ui primary button" value="Search" /></td>
+								</tr>
+							</table>
+						</div>
+					</td>
+				</tr>
+			</table>
+		</div>
+	</form>
+	<div wicket:id="wmcSearchResult">
+		<table class="ui striped table" width="100%">
+			<thead>
+				<tr>
+					<th><wicket:message
+							key="page.lbl.ezbiz.collectionVerification.counterName" /></th>
+					<th><wicket:message
+							key="page.lbl.ezbiz.collectionVerification.branch" /></th>
+					<th><wicket:message
+							key="page.lbl.ezbiz.collectionVerification.floorLevel" /></th>
+					<th><wicket:message
+							key="page.lbl.ezbiz.collectionVerification.userId" /></th>
+							<th><wicket:message
+							key="page.lbl.ezbiz.collectionVerification.amount" /></th>
+					<th><wicket:message
+							key="page.lbl.ezbiz.collectionVerification.checkinDt" /></th>
+					<th><wicket:message
+							key="page.lbl.ezbiz.collectionVerification.checkoutDt" /></th>
+					<th><wicket:message
+							key="page.lbl.ezbiz.collectionVerification.balancingStatus" /></th>
+					<th><wicket:message
+							key="page.lbl.ezbiz.collectionVerification.verifyBy" /></th>
+					<th><wicket:message
+							key="page.lbl.ezbiz.collectionVerification.approveBy" /></th>
+					<!--th><wicket:message
+							key="page.lbl.ezbiz.collectionVerification.bankslip" /></th-->
+				</tr>
+			</thead>
+			<tbody>
+				<tr wicket:id="sorting">
+					<td><span wicket:id="counterName">[counterName]</span></td>
+					<td><span wicket:id="branch">[branch]</span></td>
+					<td><span wicket:id="floor">[floor]</span></td>
+					<td><span wicket:id="userId">[userId]</span></td>
+					<td>RM<span wicket:id="sumTransactions">[sumTransactions]</span></td>
+					<td><span wicket:id="checkinDt">[checkinDt]</span></td>
+					<td><span wicket:id="checkoutDt">[checkoutDt]</span></td>
+					<td><span wicket:id="balancingStatus">[balancingStatus]</span></td>
+					<td><a wicket:id="verify">New</a><label wicket:id="verifyBy"></label><br>
+					<label wicket:id="verifyDt"></label></td>
+					<td><a wicket:id="approve">New</a><label wicket:id="approveBy"></label><br>
+					<label wicket:id="approveDt"></label></td>
+					<!--td><span wicket:id="bankslip">[bankslip]</span></td-->
+				</tr>
+			</tbody>
+			<tfoot>
+				<tr>
+					<th colspan="9" style="text-align: right;"><b>Total</b></th>
+					<th style="text-align: right;">RM <span wicket:id="grandTotal"></span></th>
+				</tr>
+				<tr>
+					<th colspan="100"><span wicket:id="navigatorLabel">[dataView
+							navigatorLabel]</span> <span wicket:id="navigator">[dataView
+							navigator]</span></th>
+				</tr>
+			</tfoot>
+		</table>
+	</div>
+	
+	<script>
+	$('.bankInModal').on('click', function(){
+		$('.ui.modal').modal({
+		    blurring: true
+		  }).modal('show');
+	});
+	</script>
+</wicket:extend>

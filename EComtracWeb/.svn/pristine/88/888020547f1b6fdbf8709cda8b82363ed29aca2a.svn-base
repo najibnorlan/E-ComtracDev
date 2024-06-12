@@ -1,0 +1,98 @@
+<wicket:extend>
+	<form wicket:id="form">
+		<div id="SearchPaymentReceipt" class="ui form segment">
+			<table>
+				<tr>
+					<td>
+						<div class="ui top attached segment">
+							<div class="ui top attached label">
+								<h4 class="ui header">
+									<wicket:message key="page.ssm.ezbiz.report.search" />
+								</h4>
+							</div>
+							<table>
+								<tr>
+									<td>
+										<div class="two fields">
+											<div class="field">
+												<label><span wicket:id="dtFromLabel" /></label>
+												<input wicket:id ="dtFrom" style="width: 150;" />
+											</div>
+											<div class="field">
+												<label><span wicket:id="dtToLabel" /></label>
+												<input wicket:id ="dtTo" style="width: 150;" />
+											</div>
+										</div>
+									</td>
+								</tr>
+								<tr>
+									<td>
+										<div class="field">
+											<label><span wicket:id="receiptNoLabel" /></label> 
+											<input wicket:id="receiptNo"></input>
+										</div>
+									</td>
+								</tr>
+								<tr>
+									<td>
+										<div class="field">
+											<label><span wicket:id="transactionIdLabel" /></label> 
+											<input wicket:id="transactionId"></input>
+										</div>
+									</td>
+								</tr>
+								<tr>
+									<td>&nbsp;</td>
+								</tr>
+								<tr>
+									<td><input wicket:id="search" type="button" class="ui primary button" value="Search" /></td>
+								</tr>
+							</table>
+						</div>
+					</td>
+				</tr>
+			</table>
+		</div>
+
+		<div wicket:id="wmcSearchResult">
+			<table class="ui striped table">
+				<thead>
+					<tr>
+						<th><wicket:message key="page.lbl.ezbiz.searchpaymentreceipt.date" /></th>
+						<th><wicket:message key="page.lbl.ezbiz.searchpaymentreceipt.receiptNo" /></th>
+						<th><wicket:message key="page.lbl.ezbiz.searchpaymentreceipt.transactionId" /></th>
+						<th><wicket:message key="page.lbl.ezbiz.searchpaymentreceipt.totalAmount" /></th>
+						<th><wicket:message key="page.lbl.ezbiz.searchpaymentreceipt.isCancel" /></th>
+						<th><wicket:message key="page.lbl.ezbiz.searchpaymentreceipt.taxInvoiceNo" /></th>
+						<th><wicket:message key="paymentTransaction.page.action" /></th>
+					</tr>
+				</thead>
+				<tbody>
+					<tr wicket:id="sorting">
+						<td><span wicket:id="receiptDate">[receiptDate]</span></td>
+						<td><span wicket:id="receiptNo">[receiptNo]</span></td>
+						<td><span wicket:id="transactionId">[transactionId]</span></td>
+						<td style="text-align: center;"><span wicket:id="totalAmount">[totalAmount]</span></td>
+						<td style="text-align: center;"><span wicket:id="isCancel">[isCancel]</span></td>
+						<td><span wicket:id="taxInvoiceNo">[taxInvoiceNo]</span></td>
+						<td align="center">		
+							<div wicket:id="viewReceiptDiv" align="center"></div>
+							<div class="ui icon buttons">
+							  <button class="ui button" wicket:id="viewReceipt">
+							    <i class="icon print" alt="View Receipt"></i>
+							  </button>
+							</div>         
+		           		</td>
+					</tr>
+				</tbody>
+				<tfoot>
+					<tr>
+						<th colspan="100"><span wicket:id="navigatorLabel">[dataView
+								navigatorLabel]</span> <span wicket:id="navigator">[dataView
+								navigator]</span></th>
+					</tr>
+				</tfoot>
+			</table>
+		</div>
+	</form>
+</wicket:extend>

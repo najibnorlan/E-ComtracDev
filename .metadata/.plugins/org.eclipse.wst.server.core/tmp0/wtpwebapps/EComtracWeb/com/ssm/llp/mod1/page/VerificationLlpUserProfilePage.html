@@ -1,0 +1,54 @@
+<wicket:extend>
+	<form wicket:id="verificationForm" class="ui form">
+		<div class="ui top attached segment">
+			<div class="ui top attached label">
+				<h4 class="ui header">
+					<wicket:message key=base.title.verification.verificationUser />
+				</h4>
+			</div>
+				<table>
+					<tr>
+						<td>
+							<div class="field">
+								<label><span wicket:id="idTypeLabel" /></label>
+									<select wicket:id="idType" />
+							</div>
+						</td>
+					</tr>
+					<tr>
+						<td>&nbsp;</td>
+					</tr>
+					<tr>
+						<td>
+							<div class="field">
+								<label><span wicket:id="idNoLabel" /></label>
+									<input wicket:id="idNo" type="text" size="20" />
+							</div>
+						</td>
+					</tr>
+					<tr>
+						<td>&nbsp;</td>
+					</tr>
+					<tr>
+						<td>
+							<div class="field">
+								<label><span wicket:id="nameLabel" /></label>
+									<input wicket:id="name" type="text" size="70" />
+							</div>
+						</td>
+					</tr>
+					<tr>
+						<td>&nbsp;</td>
+					</tr>
+					<tr>
+						<td>
+							<div class="inline field">
+								<input wicket:id="Find" class="ui primary button" type="submit" wicket:message="value:user.page.userRegister" /> 
+								<input wicket:id="cancel" class="ui primary button" type="submit" value="Cancel" />
+							</div>
+						</td>
+					</tr>
+			</table>
+		</div>
+	</form>
+</wicket:extend>

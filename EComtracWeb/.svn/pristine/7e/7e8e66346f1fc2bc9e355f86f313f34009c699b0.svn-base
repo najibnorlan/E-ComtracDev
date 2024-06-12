@@ -1,0 +1,254 @@
+<wicket:extend>
+
+	<script type="text/javascript">
+		var wsocket;
+		var cmdTxt;
+		var processingPanelId;
+		var counter = 0;
+		function connect(cmdTxtToSend, panelId) {
+
+			processingPanelId = panelId;
+
+			wsocket = new WebSocket("ws://localhost:8000");
+			cmdTxt = cmdTxtToSend;
+			wsocket.onerror = onerror;
+			wsocket.onopen = onopen;
+			wsocket.onmessage = onmessage;
+			wsocket.onclose = onclose;
+
+		}
+
+		function onerror() {
+			
+			//alert('Cannot connect to Terminal Program. Please ensure terminal program is running');
+			
+			var msj = '13:Cannot connect to Terminal Program. Please ensure terminal program is running';
+			var msjHex = ascii_to_hexa(msj)+'<END2>';
+			//alert(msjHex);
+			
+			$('#hiddenInput1').val(msjHex);
+			$('#hiddenInput1').change();
+			$('#' + processingPanelId).modal('hide');
+
+		}
+		
+		function ascii_to_hexa(str){
+			var arr1 = [];
+			for (var n = 0, l = str.length; n < l; n ++)  {
+				var hex = Number(str.charCodeAt(n)).toString(16);
+				arr1.push(hex);
+		 	}
+			return arr1.join('');
+	    }
+
+
+		function onopen() {
+			wsocket.send(cmdTxt);
+		}
+
+		function onmessage(event) {
+			var dataRecv = event.data;
+			//alert(  $('#' + processingPanelId).toggle());
+			
+			//alert(dataRecv);
+			$('#hiddenInput1').val(dataRecv);
+			$('#hiddenInput1').change();
+			
+			
+		}
+
+		function onclose(e) {
+			console.log("Connection closed.");
+		}
+	</script>
+	<div id="printdiv" style="width: 100%">
+	<form wicket:id="form" class="ui form segment">
+		<script type="text/javascript" wicket:id="ezbizRegValidation"></script>
+		<script type="text/javascript" wicket:id="readMyKadValidationJS"></script>
+		<div style="width: 100%">
+			<div class="ui grid equal width">
+				<div class="two column row">
+					<div class="column">
+						<div class="ui top attached segment" wicket:id="wmcBasic">
+							<div class="ui top attached label">
+								<h4 class="ui header">
+									<wicket:message key="page.ssm.ezbiz.myCardDetailPage.basicInfo" />
+								</h4>
+							</div>
+							<div class="ui grid">
+								<div class="ten wide column" style="width: 80%">
+									<div class="field">
+										<label style="font-weight: bold;"><wicket:message key="page.lbl.ezbiz.myCardDetailPage.name" /></label>
+										<div wicket:id="name" />
+									</div>
+									<div class="field">
+										<label style="font-weight: bold;"><wicket:message key="page.lbl.ezbiz.myCardDetailPage.originalName" /></label><span
+											wicket:id="originalName" />
+									</div>
+									<div class="field">
+										<label style="font-weight: bold;"><wicket:message key="page.lbl.ezbiz.myCardDetailPage.gmpcName" /></label><span wicket:id="gmpcName" />
+									</div>
+								</div>
+								<div class="column" style="width: 20%">
+									<img width="120px" wicket:id="wicketId">
+								</div>
+							</div>
+							<div class="field">
+								<label style="font-weight: bold;"><wicket:message key="page.lbl.ezbiz.myCardDetailPage.mykadNo" /></label><span wicket:id="mykadNo" />
+							</div>
+							<div class="two fields">
+								<div class="field">
+									<label style="font-weight: bold;"><wicket:message key="page.lbl.ezbiz.myCardDetailPage.dob" /></label><span wicket:id="dob" />
+								</div>
+								<div class="field">
+									<label style="font-weight: bold;"><wicket:message key="page.lbl.ezbiz.myCardDetailPage.birthPlace" /></label> <span wicket:id="birthPlace" />
+								</div>
+							</div>
+							<div class="two fields">
+								<div class="field">
+									<label style="font-weight: bold;"><wicket:message key="page.lbl.ezbiz.myCardDetailPage.citizenship" /></label><span wicket:id="citizenship" />
+								</div>
+								<div class="field">
+									<label style="font-weight: bold;"><wicket:message key="page.lbl.ezbiz.myCardDetailPage.race" /></label><span wicket:id="race" />
+								</div>
+							</div>
+							<div class="two fields">
+								<div class="field">
+									<label style="font-weight: bold;"><wicket:message key="page.lbl.ezbiz.myCardDetailPage.religion" /></label><span wicket:id="religion" />
+								</div>
+								<div class="field">
+									<label style="font-weight: bold;"><wicket:message key="page.lbl.ezbiz.myCardDetailPage.gender" /></label> <span wicket:id="gender" />
+								</div>
+							</div>
+						</div>
+
+					</div>
+					<div class="column">
+						<div class="ui top attached segment" wicket:id="wmcContact">
+							<div class="ui top attached label">
+								<h4 class="ui header">
+									<wicket:message key="page.ssm.ezbiz.myCardDetailPage.contactInfo" />
+								</h4>
+							</div>
+							<div class="field">
+								<label style="font-weight: bold;"><wicket:message key="page.lbl.ezbiz.myCardDetailPage.address" /></label> <span wicket:id="address" />
+							</div>
+							<div class="two fields">
+								<div class="field">
+									<label style="font-weight: bold;"><wicket:message key="page.lbl.ezbiz.myCardDetailPage.postcode" /></label> <span wicket:id="postcode"></span>
+								</div>
+								<div class="field">
+									<label style="font-weight: bold;"><wicket:message key="page.lbl.ezbiz.myCardDetailPage.city" /></label> <span wicket:id="city" />
+								</div>
+							</div>
+							<div class="field">
+								<label style="font-weight: bold;"><wicket:message key="page.lbl.ezbiz.myCardDetailPage.state" /></label><span wicket:id="state" />
+							</div>
+							<div class="field">
+								<label style="font-weight: bold;"><wicket:message key="page.lbl.ezbiz.myCardDetailPage.thumbPrintSuccess" /></label> 
+									<span wicket:id="thumbPrintSuccess" />
+							</div>
+						</div>
+						<div wicket:id="wmcNotification" class="ui message">
+							<div class="header">Information</div>
+							<ul class="list">
+								<li wicket:id="listNotification"></li>
+							</ul>
+						</div>
+					</div>
+				</div>
+				<div class="column">
+					<div class="ui top attached segment" wicket:id="wmcEzBizRegInfo">
+						<div class="ui top attached label">
+							<h4 class="ui header">
+								<wicket:message key="page.ssm.ezbiz.myCardDetailPage.ezbizRegInfo" />
+							</h4>
+						</div>
+						<div class="ui grid equal width">
+							<div class="two column row" wicket:id="wmcEzBizRegInfoNew">
+								<div class="column">
+									<div class="field">
+										<label><wicket:message key="page.ssm.ezbiz.myCardDetailPage.ezBizLoginId" /></label> <input wicket:id="ezBizLoginId" />
+									</div>
+									<div class="two fields">
+										<div class="field">
+											<label><wicket:message key="page.ssm.ezbiz.myCardDetailPage.ezBizPassword" /></label> <input type="password"  wicket:id="ezBizPassword" />
+										</div>
+										<div class="field">
+											<label><wicket:message key="page.ssm.ezbiz.myCardDetailPage.ezBizPasswordTmp" /></label> <input type="password" wicket:id="ezBizPasswordTmp" />
+										</div>
+									</div>
+									<div class="two fields">
+										<div class="field">
+											<label><wicket:message key="page.ssm.ezbiz.myCardDetailPage.ezBizEmail" /></label> <input wicket:id="ezBizEmail" />
+										</div>
+										<div class="field">
+											<label><wicket:message key="page.ssm.ezbiz.myCardDetailPage.ezBizPhoneNo" /></label> <input wicket:id="ezBizPhoneNo" />
+										</div>
+									</div>
+								</div>
+								<div class="column" wicket:id="wmcEzBizRegInfoNewAddr">
+									<div class="field">
+										<label><wicket:message key="page.ssm.ezbiz.myCardDetailPage.ezBizAddress1Label" /></label> <input wicket:id="ezBizAddress1" /> <input
+											wicket:id="ezBizAddress2" /> <input wicket:id="ezBizAddress3" />
+									</div>
+									<div class="two fields">
+										<div class="field">
+											<label><wicket:message key="page.ssm.ezbiz.myCardDetailPage.ezBizPostcode" /></label> <input wicket:id="ezBizPostcode" />
+										</div>
+										<div class="field">
+											<label><wicket:message key="page.ssm.ezbiz.myCardDetailPage.ezBizCityTmp" /></label> <select wicket:id="ezBizCityTmp">
+											</select>
+										</div>
+									</div>
+									<div class="field">
+										<label><wicket:message key="page.ssm.ezbiz.myCardDetailPage.ezBizStateDesc" /></label> <input wicket:id="ezBizStateDesc" />
+									</div>
+								</div>
+							</div>
+							<div wicket:id="wmcEzBizRegInfoExisting"></div>
+						</div>
+					</div>
+
+				</div>
+			</div>
+		</div>
+		<div wicket:id="wmcError">
+			<div class="ui message" style="background-color: #fffaf3" >
+				<ul class="list">
+				<wicket:message key="page.ssm.ezbiz.myCardDetailPage.ezBizStateDesc.errorFix" />
+				<li wicket:id="listError"></li>
+				</ul>
+			</div> 
+			<br>			
+		</div>
+		<span id='timeStamp' style="font-size: 10"></span>
+		<div id='dontPrint'>
+			<button wicket:id="resetEzBiz"  id="resetEzBiz"  class="ui negative button">
+				<wicket:message key="page.lbl.ezbiz.myCardDetailPage.resetEzBiz" />
+			</button>
+			
+			<button wicket:id="readMyKad" class="ui positive button">
+				<wicket:message key="page.lbl.ezbiz.myCardDetailPage.readMyKad" />
+			</button>
+			
+			<button wicket:id="verifyThumprint" id="verifyThumprint" class="ui positive button">
+				<wicket:message key="page.lbl.ezbiz.myCardDetailPage.verifyThumprint" />
+			</button>
+			<button wicket:id="registerEzBiz" class="ui positive button">
+				<wicket:message key="page.lbl.ezbiz.myCardDetailPage.registerEzBiz" />
+			</button>
+			&nbsp;&nbsp;&nbsp;&nbsp;
+			<button wicket:id="printDetail" class="ui positive button">
+				<wicket:message key="page.lbl.ezbiz.myCardDetailPage.printDetail" />
+			</button>
+			<input type="hidden" wicket:id="hiddenInput" id="hiddenInput1" />
+			<div wicket:id="processingPanel"></div>
+			
+			<span wicket:id="wmcDownload">
+				<a  href="/download/SSMClient.zip" download>DownloadProgram</a>
+			</span>
+		</div>
+	</form>
+	</div>
+</wicket:extend>

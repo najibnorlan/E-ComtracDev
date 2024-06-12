@@ -1,0 +1,32 @@
+<wicket:extend>
+<br>
+	<h2 class="ui primary image header">
+				<div class="content">Collection Summary</div>
+	</h2>
+	<div class="right floated left aligned seven wide column">
+		<div class="ui top attached segment">
+			<div class="ui top attached label">
+				<h4 class="ui header">
+					<wicket:message key="page.lbl.ezbiz.otcPayment.counterInfo" />
+				</h4>
+			</div>
+			<div class="ui equal width grid">
+				<div class="column center aligned">
+						<label><wicket:message
+								key="page.lbl.ezbiz.otcPayment.totalTransaction" /></label><br> <span
+							style="font-size: 20px" wicket:id="countTransactions"></span>
+					</div>
+					<div class="column center aligned">
+						<label><wicket:message
+								key="page.lbl.ezbiz.otcPayment.countCreditNote" /></label><br> <span
+							style="font-size: 20px" wicket:id="countCreditNote"></span>
+					</div>
+					<div class="column center aligned">
+						<label><wicket:message
+								key="page.lbl.ezbiz.otcPayment.totalAmount" /></label><br>RM <span
+							style="font-size: 20px" wicket:id="sumTransactions"></span>
+					</div>
+			</div>
+		</div>
+	</div>
+</wicket:extend>

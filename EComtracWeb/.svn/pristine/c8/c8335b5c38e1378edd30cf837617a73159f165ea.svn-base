@@ -1,0 +1,77 @@
+<wicket:extend style="text-align: center;">
+	<form wicket:id="form" class="ui form">
+		<div class="ui text container" style="z-index: 999;">
+			<h2>&nbsp;</h2>
+			<h2>&nbsp;sssss</h2>
+			<h1>Imagine-a-Company</h1>
+			<h2>Do whatever you want when you want to.</h2>
+			<div class="ui big icon input fluid">
+				<input type="text" wicket:id="idNo" placeholder="Search MyKad number here...."> <i class="search icon"></i>
+			</div>
+		</div>
+		 <span>&nbsp; </span>
+		<div class="ui form container" wicket:id="wmcProduct">
+			<!--div class="ui label" style="padding-bottom: 5px;">
+				<div class="field" >
+					<h2><span wicket:id="entityNo" /></h2>
+				</div>
+				<div class="field" >
+					<h2><span wicket:id="entityName" /></h2>
+				</div>
+			</div-->
+			<div class="ui three stackable cards" >
+				<div class="raised card" wicket:id="listProductCart">
+					<div class="content">
+						<div class="header"> <span wicket:id="prodDesc"></span></div>
+						<div class="description">RM <span wicket:id="price"></span></div>
+					</div>
+					<div class="extra content" >
+						<div class="two fields">
+							<div class="field">
+								<!--select>
+									<option value="EN">English</option>
+									<option value="BM">Malay</option>
+									<option value="BOTH">Both</option>
+								</select-->
+								 <select wicket:id="prodLocale"></select>
+							</div>
+							<div class="field">
+								<button wicket:id="addButton" class="ui bottom attached primary button" >
+									<i class="shop icon"></i> Add to Cart
+								</button>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</form>
+	<!--div class="ui text container">
+		<h2>&nbsp;</h2>
+		<div class="ui tablet stackable steps">
+			<div class="step">
+				<i class="plane icon"></i>
+				<div class="content">
+					<div class="title">Shipping</div>
+					<div class="description">Choose your shipping options</div>
+				</div>
+			</div>
+			<div class="active step">
+				<i class="dollar icon"></i>
+				<div class="content">
+					<div class="title">Billing</div>
+					<div class="description">Enter billing information</div>
+				</div>
+			</div>
+			<div class="disabled step">
+				<i class="info circle icon"></i>
+				<div class="content">
+					<div class="title">Confirm Order</div>
+					<div class="description">Verify order details</div>
+				</div>
+			</div>
+		</div>
+	</div-->
+
+
+</wicket:extend>

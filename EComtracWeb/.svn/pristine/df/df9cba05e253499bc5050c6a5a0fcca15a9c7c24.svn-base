@@ -1,0 +1,71 @@
+<wicket:extend>
+	<div id="llpPaymentTransaction">
+		<table class="ui striped table">
+			<thead>
+	    		<tr>
+	    			<th wicket:id="orderByRequestDt"><wicket:message key="paymentTransaction.page.requestDt"/></th>
+					<th wicket:id="orderByTransactionId"><wicket:message key="paymentTransaction.page.transactionId" /></th>
+					<th><wicket:message key="paymentTransaction.page.approvalCode"/></th>
+					<th><wicket:message key="paymentTransaction.page.receiptNo" /></th>
+					<th wicket:id="orderByPaymentMode"><wicket:message key="paymentTransaction.page.paymentMode" /></th>
+				    <th><wicket:message key="paymentTransaction.page.paymentDetail" /></th>
+				    <th><wicket:message key="paymentTransaction.page.amount" /></th>
+				    <th><wicket:message key="paymentTransaction.page.payerName" /></th>
+				    <th><wicket:message key="paymentTransaction.page.payerId" /></th>
+				    <th wicket:id="orderByStatus"><wicket:message key="paymentTransaction.page.status" /></th>
+				    <th><wicket:message key="paymentTransaction.page.action" /></th>
+	  			</tr>
+	  		</thead>
+	  		<tbody>
+	   			<tr wicket:id="sorting">
+				   <td><span wicket:id="requestDt">[requestDt]</span> </td>
+				   <td><span wicket:id="transactionId">[transactionId]</span> </td>
+				   <td><span wicket:id="approvalCode">[approvalCode]</span> </td>
+				   <td><span wicket:id="receiptNo">[receiptNo]</span> </td>
+				   <td><span wicket:id="paymentMode">[paymentMode]</span></td>
+				   <td><span wicket:id="paymentDetail">[paymentDetail]</span></td>
+				   <td align="right"><span wicket:id="amount">[amount]</span></td>
+				   <td><span wicket:id="payerName">[payerName]</span></td>
+				   <td><span wicket:id="payerId">[payerId]</span></td>
+				   <td><span wicket:id="status">[status]</span></td>
+				   <td align="center">		
+				        	<div wicket:id="viewDetailsDiv"></div>
+							<div wicket:id="viewReceiptDiv" align="center"></div>
+							<div wicket:id="viewCreditNoteDiv" align="center"></div>
+							<div class="ui icon buttons">
+							  <button class="ui button" wicket:id="viewDetails" title="View Details">
+							    <i class="icon unhide"></i>
+							  </button>
+							  <button class="ui button" wicket:id="viewReceipt" title="View Receipt">
+							    <i class="icon print" alt="View Receipt"></i>
+							  </button>
+							  <button class="ui button" wicket:id="viewCreditNote" title="View Credit Note">
+							    <i class="icon print" alt="View Credit Note"></i>
+							  </button>
+							<button class="ui button yellow" wicket:id="regenerateReceipt" title="Regenerate Receipt">
+									<i style="color: black;" class="loading refresh icon"></i>
+							</button>
+						</div>         
+		           </td>
+				</tr>			
+	  		</tbody>
+	  		<tfoot>
+	  			<tr>
+	    			<th colspan="100">
+	    			<span wicket:id="navigatorLabel">[dataView navigatorLabel]</span>
+		        	<span wicket:id="navigator">[dataView navigator]</span>
+	    			</th>
+	  			</tr>
+	  			<tr>
+					<td colspan="10">
+						<wicket:enclosure child="downloadExcel">
+						<img src="images/excelIcon.png" align="middle" />
+						[<a wicket:id="downloadExcel" href="#"><wicket:message key="paymentTransaction.page.downloadExcel" /></a>]
+						[<a wicket:id="linkGafDownload" href="#"><wicket:message key="paymentTransaction.page.linkGafDownload" /></a>]
+						</wicket:enclosure>
+					</td>
+				</tr>
+	  		</tfoot>
+		</table>	
+	</div>
+</wicket:extend>

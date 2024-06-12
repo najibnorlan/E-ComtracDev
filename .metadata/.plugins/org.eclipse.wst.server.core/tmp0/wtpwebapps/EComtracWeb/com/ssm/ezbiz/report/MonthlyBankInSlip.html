@@ -1,0 +1,95 @@
+<wicket:extend>
+	<form wicket:id="form">
+		<div id="MonthlyBankInSlip" class="ui form segment">
+			<table>
+				<tr>
+					<td>
+						<div class="ui top attached segment">
+							<div class="ui top attached label">
+								<h4 class="ui header">
+									<wicket:message key="page.ssm.ezbiz.report.search" />
+								</h4>
+							</div>
+							<table>
+								<tr>
+									<td>
+										<div class="field">
+											<label><span wicket:id="branchLabel" /></label> <select
+												wicket:id="branch"></select>
+										</div>
+									</td>
+								</tr>
+								<tr>
+									<td>
+										<div class="two fields">
+											<div class="field">
+												<label><span wicket:id="dtFromLabel" /></label> <input wicket:id="dtFrom" style="width: 150;" />
+											</div>
+											<div class="field">
+												<label><span wicket:id="dtToLabel" /></label> <input wicket:id="dtTo" style="width: 150;" />
+											</div>
+										</div>
+									</td>
+								</tr>
+								<tr>
+									<td>&nbsp;</td>
+								</tr>
+								<tr>
+								<td><input wicket:id="search" type="button" class="ui primary button" value="Search" /></td>
+									<!-- <td><input wicket:id="generate" type="submit" class="ui primary button" value="Generate" /></td> -->
+								</tr>
+							</table>
+						</div>
+					</td>
+				</tr>
+			</table>
+		</div>
+		
+		<div wicket:id="wmcSearchResult">
+			<table class="ui striped table">
+				<thead>
+			    	<tr>
+			    	<th width="15%"><wicket:message key="page.lbl.ezbiz.counterbankinslip.date" /></th>
+					<th width="15%"><wicket:message key="page.lbl.ezbiz.counterbankinslip.floor" /></th>
+					<th width="15%"><wicket:message key="page.lbl.ezbiz.counterbankinslip.branch" /></th>
+					<th width="15%"><wicket:message key="page.lbl.ezbiz.counterbankinslip.slipNo" /></th>
+					<th width="15%"><wicket:message key="page.lbl.ezbiz.counterbankinslip.payment" /></th>
+					<th width="10%"><wicket:message key="page.lbl.ezbiz.counterbankinslip.amount" /></th>
+					<th width="30%"><wicket:message key="page.lbl.ezbiz.counterbankinslip.createdBy" /></th>
+			  	</tr>
+			  </thead>
+			  <tbody>
+			    <tr wicket:id="sorting">
+			    <td><span wicket:id="transactionDate">[transactionDate]</span></td>
+					<td><span wicket:id="floorLevel">[floorLevel]</span></td>
+					<td><span wicket:id="branch">[branch]</span></td>
+					<td><span wicket:id="bankInSlipNo">[bankInSlipNo]</span></td>
+					<td><wicket:message key="page.lbl.ezbiz.counterbankinslip.cash" /></td>
+					<td style ="text-align: right;"><span wicket:id="amount">[amount]</span></td>		
+					<td><span wicket:id="createdBy">[createdBy]</span></td>	
+				</tr>
+			  </tbody>
+			  <tfoot>
+			    <tr>
+			    	<th colspan="100">
+			    		<span wicket:id="navigatorLabel">[dataView navigatorLabel]</span>
+				        <span wicket:id="navigator">[dataView navigator]</span>
+			    	</th>
+			  	</tr>
+			  	
+			  	<tr>
+					<td colspan="10">
+					<wicket:enclosure child="linkGafDownload">
+					<i class="download icon"></i>
+						<!--  <img src="images/template.png" align="middle" />  -->
+						<a wicket:id="linkGafDownload" href="#"><wicket:message key="page.lbl.ezbiz.downLoadTextFile" /></a>
+					</wicket:enclosure>
+					</td>
+				</tr>
+				
+			  </tfoot>
+			</table>
+		</div>
+		
+	</form>
+</wicket:extend>

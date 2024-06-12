@@ -1,0 +1,24 @@
+<wicket:extend>
+
+	<form wicket:id="form" class="ui form">
+		
+			<div class="two fields">
+				<div class="field">
+					<label><wicket:message key="EditHealthCheckPage.code.label" /></label>
+					<input wicket:id="code">
+				</div>
+				<div class="field">
+					<label><wicket:message key="EditHealthCheckPage.time.label" /></label>
+					<div class="ui right labeled input">
+						<input type="number" wicket:id="time">
+						<div class="ui basic label">in minutes</div>
+					</div>				
+				</div>
+			</div>
+			
+			<button class="ui primary button" type="submit" wicket:id="btnSave"><wicket:message key="EditHealthCheckPage.btnSave.label"/></button>
+			<button class="ui button" type="submit" wicket:id="btnCancel"><wicket:message key="EditHealthCheckPage.btnCancel.label"/></button>
+	
+	</form>
+
+</wicket:extend>

@@ -1,0 +1,33 @@
+<wicket:panel>
+	<script>
+		function ValidateSize(file) {
+        var FileSize = file.files[0].size / 1024 / 1024; // in MiB
+        if (FileSize > 3) {
+            alert('File size exceeds 3 MiB');
+            $(file).val(''); //for clearing with Jquery
+        } else {
+
+        }
+    }
+	
+	</script>
+	
+	<form wicket:id="fileUploadPanelForm" class="ui form"> 
+		<div class="field">
+			<label><span wicket:id="fileUploadLabel"/></label>
+			<input wicket:id="fileUpload" size="40" type="file" onchange="ValidateSize(this)"/>
+			<button class="ui button negative" wicket:id="fileUploadRemoveLink"><wicket:message key="page.lbl.fileUpload.removeLink"/></button>
+			<span wicket:id="fileNameLabel"/>
+			<div wicket:id="wmcError">
+			 	<wicket:enclosure child="listError">
+					<div class="ui message" style="background-color: #fffaf3" >
+						<ul class="list">
+						<wicket:message key="page.lbl.fileUpload.errorFix" />
+						<li wicket:id="listError"></li>
+						</ul>
+					</div> 
+				</wicket:enclosure>
+			</div>
+		</div>
+	</form>
+</wicket:panel>

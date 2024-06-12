@@ -1,0 +1,140 @@
+<wicket:extend>
+    
+<script type="text/javascript">
+		function CallPrint(strid) {
+
+			var prtContent = document.getElementById(strid);
+			var WinPrint = window
+					.open('', '',
+							'left=0,top=0,width=800,height=600,toolbar=0,scrollbars=0,status=0');
+			WinPrint.document.write('<style>@font-face { font-family: "BarcodeC39"; src:url("../../css/BarcodeC39.otf") format("TrueType");}</style>');
+			WinPrint.document.write(prtContent.innerHTML);
+			WinPrint.document.close();
+			WinPrint.focus();
+			WinPrint.print();
+			WinPrint.close();
+		}
+	</script>
+
+	<div id="receiptdiv">
+		<div align="center">
+			<table style="width: 50%">
+				<tr>
+					<td colspan="3" align="center"><span style="font-size: 20px"><wicket:message key="otcpayment.page.otcslip.title" /></span></td>
+				</tr>
+				<tr>
+					<td>&nbsp;</td>
+				</tr>
+				<tr>
+					<td colspan="3" align="center"><img src="./images/logo_ssm.gif" /></td>
+				</tr>
+				<tr align="center" height="100%">
+					<td colspan="3">
+						<table>
+						
+							<tr>
+								<td colspan="3">&nbsp;</td>
+							</tr>
+							<tr>
+								<td colspan="3">
+								<span style="font-family: BarcodeC39;font-size: 13px" wicket:id="barcodeText">[barcodeText]</span>
+								</td>
+							</tr>
+							<tr>
+								<td colspan="3">&nbsp;</td>
+							</tr>
+							<tr>
+								<td colspan="3"><b><wicket:message key="paymentReceipt.panel.ssmGstNo" /></b></td>
+							</tr>
+							<tr>
+								<td colspan="3"><wicket:message key="paymentReceipt.panel.ssmGstAddr" /></td>
+							</tr>
+							<tr>
+								<td colspan="3">&nbsp;</td>
+							</tr>
+							<tr>
+								<td><wicket:message key="otcpayment.page.otcslip.transactioId" /></td>
+								<td width="5%">&nbsp;:&nbsp;</td>
+								<td><span wicket:id="transId">[transId]</span></td>
+							</tr>
+							<tr>
+								<td><wicket:message key="otcpayment.page.otcslip.appRefNo" /></td>
+								<td width="5%">&nbsp;:&nbsp;</td>
+								<td><span wicket:id="appRefNo">[appRefNo]</span></td>
+							</tr>
+							<tr>
+								<td><wicket:message key="otcpayment.page.otcslip.payerName" /></td>
+								<td width="5%">&nbsp;:&nbsp;</td>
+								<td><span wicket:id="payerName">[payerName]</span></td>
+							</tr>
+							<tr>
+								<td valign="top"><wicket:message key="otcpayment.page.otcslip.payerAddr" /></td>
+								<td valign="top" width="5%">&nbsp;:&nbsp;</td>
+								<td><span wicket:id="payerAddr">[payerAddr]</span></td>
+							</tr>
+						</table>
+					</td>
+				</tr>
+				<tr align="center">
+				<td colspan="3">
+				<table  border="1"  frame="hsides" rules="rows"  >
+					<tr>
+						<td width="70%"><b><wicket:message key="otcpayment.page.otcslip.paymentItems" /></b></td>
+						<td width="10%"><b><wicket:message key="paymentReceipt.page.itemAmountWoutGst" /></b></td>
+						<td width="10%"><b><wicket:message key="paymentReceipt.page.itemGstAmt" /></b></td>
+						<td width="10%"><b><wicket:message key="paymentReceipt.page.amountIncludeGst"/></b></td>
+					</tr>
+					<tr wicket:id="paymentItems" style="border-bottom: thick;">
+						<td><span wicket:id="itemDesc">itemDesc</span>&nbsp;<wicket:enclosure child="itemDet">(<span wicket:id="itemDet">itemDet</span>)</wicket:enclosure></td>
+						<td><span wicket:id="itemAmountWoutGst">itemAmountWoutGst</span></td>
+						<td><span wicket:id="itemGstAmt">itemGstAmt</span></td>
+						<td><span wicket:id="itemAmount">itemAmount</span></td>
+					</tr>
+					<tr>
+						<td align="right"><b>Total (RM):</b></td>
+						<td><b><span wicket:id="totalWithoutGst">totalWithoutGst</span></b></td>
+						<td><b><span wicket:id="totalGst">totalGst</span></b></td>
+						<td><b><span wicket:id="amount">amount</span></b></td>
+					</tr>
+					<tr>
+						<td>&nbsp;</td>
+					</tr>
+					<tr>
+						<td colspan="1" align="right" ><b><wicket:message key="otcpayment.page.otcslip.paymentTotal" /></b></td>
+						<td colspan="3"
+							style="border-bottom: 10px double #000; border-top: 5px double #000;" align="right"><b><span
+								wicket:id="totalAmount">[totalAmount]</span></b></td>
+					</tr>
+					<tr>
+						<td colspan="4" align="center">
+							<b><span wicket:id="payBefore">[totalAmount]</span></b>
+						</td>
+					</tr>
+					<tr>
+						<td colspan="4" >
+							&nbsp;
+						</td>
+					</tr>
+				</table>
+				</td>
+				</tr>			
+			</table>
+		</div>
+	</div>
+	<div align="center">
+		<table>
+			<tr align="center">
+				<td><input id="Button2" type="button" name="btnBack"
+					wicket:id="goToRespectiveIndex" value="Back"/>
+					
+					<input id="Button1" type="button" name="btnPrint"
+					wicket:message="value:otcpayment.page.otcslip.printButton"
+					onclick="javascript:CallPrint('receiptdiv');" />
+					
+					<input
+					wicket:id="goToTransactionPage" type="button"
+					value="Proceed to Transaction Detail" /></td>
+			</tr>
+		</table>
+	</div>
+</wicket:extend>

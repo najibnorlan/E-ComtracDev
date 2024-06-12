@@ -1,0 +1,63 @@
+<wicket:extend>
+	<form wicket:id="robFormB3DetForm">
+		<script type="text/javascript" wicket:id="branchesAddBranch"></script>
+		<table>
+			<tr>
+				<td>
+					<table>						
+						<tr><td>&nbsp;</td> </tr>
+						<tr>
+							<td>
+								<div class="field">
+									<label><span wicket:id="addrLabel" /></label>
+									<input wicket:id="addr" type="text"/><br><br>
+									<input wicket:id="addr2" type="text"/><br><br>
+									<input wicket:id="addr3" type="text"/>
+								</div>
+							</td>
+						</tr>
+						<tr>
+							<td>
+								<div class="two fields">
+									<div class="field">
+										<label><span wicket:id="addrPostcodeLabel" /></label> 
+										<input wicket:id="addrPostcode" type="text" />
+									</div>
+									<div class="field">
+										<label><span wicket:id="addrTownTmpLabel" /></label> 
+										<select wicket:id="addrTownTmp" />
+									</div>
+								</div>
+							</td>
+						</tr>
+						<tr>
+							<td>
+								<div class="field">
+									<label><span wicket:id="addrStateDescLabel" /></label> 
+									<input wicket:id="addrStateDesc"/>
+								</div>
+							</td>
+						</tr>
+						
+						<tr>
+							<td>
+							<div class="field">
+								<label><span wicket:id="addrUrlLabel" /></label>
+								<input type="text" wicket:id="addrUrl"/>
+							</div>
+							</td>
+						</tr>
+						<tr><td>&nbsp;</td> </tr>
+						<tr>
+							<td colspan="6" align="right">
+								<input wicket:id="updateBranch" class="ui primary button" type="button"
+								wicket:message="value:page.lbl.ezbiz.robFormB3.updateBranch" /></td>
+						</tr>
+						<tr><td>&nbsp;</td> </tr>
+					</table>
+				</td>
+			</tr>
+		</table>
+
+	</form>
+</wicket:extend>

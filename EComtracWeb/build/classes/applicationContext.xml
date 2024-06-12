@@ -1,0 +1,395 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:context="http://www.springframework.org/schema/context"
+	xmlns:aop="http://www.springframework.org/schema/aop"
+	xmlns:tx="http://www.springframework.org/schema/tx"
+	xmlns:task="http://www.springframework.org/schema/task"
+	xmlns:ws="http://jax-ws.dev.java.net/spring/core"
+	xmlns:wss="http://jax-ws.dev.java.net/spring/servlet"
+	default-autowire="byName"
+	xmlns:util="http://www.springframework.org/schema/util"
+	xmlns:security="http://www.springframework.org/schema/security"
+	xsi:schemaLocation="http://www.springframework.org/schema/aop http://www.springframework.org/schema/aop/spring-aop.xsd
+		http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
+		http://www.springframework.org/schema/util http://www.springframework.org/schema/util/spring-util.xsd
+		http://www.springframework.org/schema/tx http://www.springframework.org/schema/tx/spring-tx.xsd
+		http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context.xsd
+		http://www.springframework.org/schema/task http://www.springframework.org/schema/task/spring-task-3.2.xsd
+		http://jax-ws.dev.java.net/spring/core http://jax-ws.java.net/spring/core.xsd
+		http://jax-ws.dev.java.net/spring/servlet http://jax-ws.java.net/spring/servlet.xsd
+		http://www.springframework.org/schema/data/jpa http://www.springframework.org/schema/data/jpa/spring-jpa.xsd">
+
+
+
+    <!--bean id="dataSource" class="org.springframework.jdbc.datasource.DriverManagerDataSource">
+        <property name="driverClassName" value="org.hsqldb.jdbcDriver"/>
+        <property name="url" value="jdbc:hsqldb:hsql://localhost/llpdb"/>
+        <property name="username" value="sa"/>
+        <property name="password" value=""/>
+    </bean-->
+    <!--bean id="jdbcContactDao" class="com.systemmobile.wicket.dao.JdbcContactDao">
+        <property name="dataSource" ref="dataSource"/>
+    </bean-->
+    <bean id="dataSourceLlp" class="org.springframework.jndi.JndiObjectFactoryBean">
+		<property name="jndiName">
+			<value>java:comp/env/jdbc/ssm_llp</value>
+		</property>
+		
+	</bean>
+	
+    <!--bean id="dataSourceUam" class="org.springframework.jndi.JndiObjectFactoryBean">
+		<property name="jndiName">
+			<value>java:comp/env/jdbc/ssm_uam</value>
+		</property>
+	</bean-->
+	
+    <!--bean id="dataSourceRoc" class="org.springframework.jndi.JndiObjectFactoryBean">
+		<property name="jndiName">
+			<value>java:comp/env/jdbc/ssm_roc</value>
+		</property>
+	</bean-->
+	
+    <!--bean id="dataSourceRob" class="org.springframework.jndi.JndiObjectFactoryBean">
+		<property name="jndiName">
+			<value>java:comp/env/jdbc/ssm_rob</value>
+		</property>
+	</bean-->
+    
+    <!--bean id="sessionFactoryRob" class="org.springframework.orm.hibernate3.annotation.AnnotationSessionFactoryBean">
+		<property name="dataSource" ref="dataSourceRob" />
+
+		<property name="hibernateProperties">
+			<props>
+				<prop key="hibernate.dialect">org.hibernate.dialect.InformixDialect</prop>
+				<prop key="hibernate.show_sql">true</prop>
+				<prop key="hibernate.format_sql">false</prop>
+			</props>
+		</property>
+		<property name="annotatedClasses">
+			<list>
+			    	<value>com.ssm.llp.base.common.model.RobBusiness</value>
+			</list>
+		</property>
+	</bean-->
+    
+    <!--bean id="sessionFactoryRoc" class="org.springframework.orm.hibernate3.annotation.AnnotationSessionFactoryBean">
+		<property name="dataSource" ref="dataSourceRoc" />
+
+		<property name="hibernateProperties">
+			<props>
+				<prop key="hibernate.dialect">org.hibernate.dialect.InformixDialect</prop>
+				<prop key="hibernate.show_sql">true</prop>
+				<prop key="hibernate.format_sql">false</prop>
+			</props>
+		</property>
+		<property name="annotatedClasses">
+			<list>
+			    	<value>com.ssm.llp.base.common.model.RocBusinessObjectCode</value>
+			    	<value>com.ssm.llp.base.common.model.RocBlacklist</value>
+			    	<value>com.ssm.llp.base.common.model.RocIncorporation</value>
+			</list>
+		</property>
+	</bean-->
+    
+	<!--bean id="sessionFactoryUam" class="org.springframework.orm.hibernate3.annotation.AnnotationSessionFactoryBean">
+		<property name="dataSource" ref="dataSourceUam" />
+
+		<property name="hibernateProperties">
+			<props>
+				<prop key="hibernate.dialect">org.hibernate.dialect.InformixDialect</prop>
+				<prop key="hibernate.show_sql">true</prop>
+				<prop key="hibernate.format_sql">false</prop>
+			</props>
+		</property>
+		<property name="annotatedClasses">
+			<list>
+			    	<value>com.ssm.llp.base.common.model.UamUserProfile</value>
+			    	<value>com.ssm.llp.base.common.model.UamFunction</value>
+			    	<value>com.ssm.llp.base.common.model.UamMenuPermission</value>
+			    	<value>com.ssm.llp.base.common.model.Uamworkflowpermission</value>
+			</list>
+		</property>
+	</bean-->
+    
+    <bean id="sessionFactory" class="org.springframework.orm.hibernate3.annotation.AnnotationSessionFactoryBean">
+		<property name="dataSource" ref="dataSourceLlp" />
+
+		<property name="hibernateProperties">
+			<props>
+				<prop key="hibernate.dialect">org.hibernate.dialect.InformixDialect</prop>
+				<!--prop key="hibernate.dialect">org.hibernate.dialect.MySQLDialect</prop-->
+				<prop key="hibernate.show_sql">false</prop>
+				<prop key="hibernate.format_sql">false</prop>
+				<!--prop key="hibernate.hbm2ddl.auto">update</prop--><!-- On for Audit  -->
+				<prop key="hibernate.cache.provider_class">org.hibernate.cache.EhCacheProvider</prop>
+				<prop key="hibernate.cache.use_structured_entries ">true</prop>
+				<prop key="hibernate.cache.use_second_level_cache">true</prop>
+				<prop key="hibernate.cache.use_query_cache">true</prop>
+			</props>
+		</property>
+		<property name="annotatedClasses">
+			<list>
+			    	<value>com.ssm.llp.base.common.model.LlpLocaleMessage</value>
+			    	<value>com.ssm.llp.base.common.model.LlpAppsvrNode</value>
+			    	<value>com.ssm.llp.base.common.model.LlpSpecialKeyword</value>
+			    	<value>com.ssm.llp.base.common.model.RevEntity</value>
+			    	<value>com.ssm.llp.base.common.model.LlpFileUpload</value>
+			    	<value>com.ssm.llp.base.common.model.LlpRunningNo</value>
+			    	<value>com.ssm.llp.base.common.model.LlpParameters</value>
+			    	<value>com.ssm.llp.base.common.model.LlpUserLog</value>
+			    	<value>com.ssm.llp.base.common.model.LlpPaymentTransaction</value>
+			    	<value>com.ssm.llp.base.common.model.LlpPaymentTransactionDetail</value>
+			    	<value>com.ssm.llp.base.common.model.LlpPaymentReceipt</value>
+			    	<value>com.ssm.llp.base.common.model.LlpPaymentFee</value>
+			    	<value>com.ssm.llp.base.common.model.LlpEmailLog</value>
+			    	<value>com.ssm.llp.base.common.model.LlpRegTransaction</value>
+			    	<value>com.ssm.llp.mod1.model.Contact</value>
+			    	<value>com.ssm.llp.mod1.model.LlpReservedName</value>
+			    	<value>com.ssm.llp.mod1.model.LlpRegistration</value>
+			    	<value>com.ssm.llp.mod1.model.LlpUserProfile</value>
+			     	<value>com.ssm.llp.mod1.model.RobUserOku</value> 
+			     	<value>com.ssm.llp.mod1.model.RobIncentive</value> 
+			    	<value>com.ssm.llp.mod1.model.LlpPartnerLink</value>
+			    	<value>com.ssm.llp.mod1.model.LlpBusinessCodeLink</value>
+			    	<value>com.ssm.llp.base.common.model.LlpSupplyInfoHdr</value>
+			    	<value>com.ssm.llp.base.common.model.LlpSupplyInfoDtl</value>
+			    	<value>com.ssm.llp.base.common.model.LlpFileData</value>
+			    	<value>com.ssm.llp.ezbiz.model.RobRenewal</value> 
+			    	<value>com.ssm.llp.ezbiz.model.RobFormA</value>
+					<value>com.ssm.llp.ezbiz.model.RobFormABranches</value>
+					<value>com.ssm.llp.ezbiz.model.RobFormABizCode</value>
+					<value>com.ssm.llp.ezbiz.model.RobFormAOwner</value>
+					<value>com.ssm.llp.ezbiz.model.RobFormNotes</value>
+					<value>com.ssm.llp.ezbiz.model.SSMMyKadModel</value>
+					<value>com.ssm.llp.ezbiz.model.RobEBranchTransaction</value>
+					<value>com.ssm.llp.ezbiz.model.RobEBranchTransactionDetail</value>
+					<value>com.ssm.llp.ezbiz.model.RobEBranch</value>
+					<value>com.ssm.llp.ezbiz.model.RobFormC</value> 
+					<value>com.ssm.llp.ezbiz.model.RobFormB</value>
+					<value>com.ssm.llp.ezbiz.model.RobFormB1</value>
+					<value>com.ssm.llp.ezbiz.model.RobFormB2</value>
+					<value>com.ssm.llp.ezbiz.model.RobFormB2Det</value>
+					<value>com.ssm.llp.ezbiz.model.RobFormB3</value>
+					<value>com.ssm.llp.ezbiz.model.CmpDetail</value>
+					<value>com.ssm.llp.ezbiz.model.CmpMaster</value>
+					<value>com.ssm.llp.ezbiz.model.CmpTransaction</value>
+					<value>com.ssm.llp.ezbiz.model.RobFormOwnerVerification</value>
+					<value>com.ssm.llp.ezbiz.model.RobCmpConfig</value>
+					<value>com.ssm.llp.ezbiz.model.RobCounterCollection</value>
+					<value>com.ssm.llp.ezbiz.model.RobCounterSession</value>
+					<value>com.ssm.llp.ezbiz.model.RobCounterBalancing</value>
+					<value>com.ssm.llp.ezbiz.model.RobCounterBankinSlip</value>
+					<value>com.ssm.llp.ezbiz.model.RobPaymentCreditNote</value>
+					<value>com.ssm.llp.ezbiz.model.RobFormAStatReport</value>
+					<value>com.ssm.llp.ezbiz.model.RobHealthCheck</value>
+					<value>com.ssm.llp.ezbiz.model.RobFormTypeStatReport</value>
+					<value>com.ssm.llp.ezbiz.model.RobNameTypeStatReport</value>
+					<value>com.ssm.llp.ezbiz.model.RobTrainingConfig</value>
+					<value>com.ssm.llp.ezbiz.model.RobTrainingTransaction</value>
+					<value>com.ssm.llp.ezbiz.model.RobTrainingParticipant</value>
+					<value>com.ssm.llp.ezbiz.model.RobTrainingReprintcert</value>
+					<value>com.ssm.llp.ezbiz.model.RobSyncProfileAudit</value>
+					<value>com.ssm.llp.ezbiz.model.RobPosTerminalTransaction</value>
+					<value>com.ssm.llp.ezbiz.model.RobPaymentCardInfo</value>
+					<value>com.ssm.supplyinfo.model.SupplyInfoTransHdr</value>
+					<value>com.ssm.supplyinfo.model.SupplyInfoTransDtl</value>
+					<value>com.ssm.supplyinfo.model.SupplyInfoFileData</value>
+					<value>com.ssm.llp.ezbiz.model.ExtUserPairingInfo</value>
+					<value>com.ssm.llp.ezbiz.model.RobFormB4</value>
+					<value>com.ssm.llp.ezbiz.model.RobUserActivationTray</value>
+					<value>com.ssm.llp.mod1.model.RobUserTnc</value>
+					<value>com.ssm.llp.ezbiz.model.RobTrainingFinalListing</value>
+					<value>com.ssm.llp.ezbiz.model.RobTrainingFinalListingRemark</value>
+					<value>com.ssm.llp.ezbiz.model.RobTrainingDashboard</value>
+			</list>
+		</property>
+		<property name="entityInterceptor" ref="ssmHibernateInterceptor" />
+		
+		<property name="eventListeners">  
+			<map key-type="java.lang.String" value-type="org.hibernate.event.EventListeners">
+					<entry key="post-insert"><ref local="enversListener" /></entry>  
+					<entry key="post-update"><ref local="enversListener" /></entry>  
+					<entry key="post-delete"><ref local="enversListener" /></entry>  
+					<entry key="pre-collection-update"><ref local="enversListener" /></entry>  
+					<entry key="pre-collection-remove"><ref local="enversListener" /></entry>  
+					<entry key="post-collection-recreate"><ref local="enversListener" /></entry>  
+			</map>  
+		</property>
+		<!--property name="jtaTransactionManager">
+			<ref local="txManager"/>
+		</property-->
+		
+	</bean>
+    <!--bean id="enversListener" class="org.hibernate.envers.event.AuditEventListener" /-->
+    <bean id="enversListener" class="com.ssm.hibernate.SSMEnverListener" />
+    <!--bean id="revListener" class=" com.ssm.llp.base.envers.RevListener"/-->
+    
+    <bean id="ssmHibernateInterceptor" class="com.ssm.hibernate.SSMHibernateInterceptor" />
+    
+ 	<context:component-scan base-package="com.ssm.llp.base.common.dao.impl">
+		<context:include-filter type="annotation" expression="org.springframework.stereotype.Repository" />
+	</context:component-scan>
+    
+ 	<context:component-scan base-package="com.ssm.llp.base.common.service.impl" name-generator="com.ssm.llp.base.spring.SsmNameGenerator">
+		<context:include-filter type="annotation" expression="org.springframework.stereotype.Service" />
+	</context:component-scan>
+ 	
+ 	<context:component-scan base-package="com.ssm.llp.mod1.dao.impl">
+		<context:include-filter type="annotation" expression="org.springframework.stereotype.Repository" />
+	</context:component-scan>
+	
+	<context:component-scan base-package="com.ssm.ezbiz.dao.impl">
+		<context:include-filter type="annotation" expression="org.springframework.stereotype.Repository" />
+	</context:component-scan>
+	
+	
+	<context:component-scan base-package="com.ssm.supplyinfo.dao.impl">
+		<context:include-filter type="annotation" expression="org.springframework.stereotype.Repository" />
+	</context:component-scan>
+	
+	
+ 	<context:component-scan base-package="com.ssm.llp.mod1.service.impl" name-generator="com.ssm.llp.base.spring.SsmNameGenerator">
+		<context:include-filter type="annotation" expression="org.springframework.stereotype.Service" />
+	</context:component-scan>
+	
+	
+ 	<context:component-scan base-package="com.ssm.ezbiz.service.impl" name-generator="com.ssm.llp.base.spring.SsmNameGenerator">
+		<context:include-filter type="annotation" expression="org.springframework.stereotype.Service" />
+	</context:component-scan>
+ 	
+ 	<context:component-scan base-package="com.ssm.supplyinfo.service.impl" name-generator="com.ssm.llp.base.spring.SsmNameGenerator">
+		<context:include-filter type="annotation" expression="org.springframework.stereotype.Service" />
+	</context:component-scan>
+ 	
+ 	
+ 	<!--bean id="jotm" class="org.springframework.transaction.jta.JotmFactoryBean"/-->
+ 		
+ 	<!--bean id="transactionManager" class="org.springframework.orm.hibernate3.HibernateTransactionManager">
+		<property name="sessionFactory">
+			<ref local="sessionFactory" />
+		</property>
+	</bean-->
+	
+ 	<!--tx:annotation-driven/-->
+ 	 <!--bean id="txManager" class="org.springframework.orm.hibernate3.HibernateTransactionManager">
+	 	<property name="sessionFactory" ref="sessionFactory" />
+	 </bean>
+	 <tx:annotation-driven transaction-manager="txManager" /-->
+	 
+	 
+ 	<bean id="txManager" 
+	  class="org.springframework.orm.hibernate3.HibernateTransactionManager">
+	    <property name="sessionFactory" ref="sessionFactory" />
+	</bean>
+	<tx:annotation-driven transaction-manager="txManager" />
+	
+	
+ 	<!--bean id="transactionManagerUam" class="org.springframework.orm.hibernate3.HibernateTransactionManager" >
+	    <property name="sessionFactory" ref="sessionFactoryUam"/>
+	</bean>
+	<tx:annotation-driven transaction-manager="transactionManagerUam" /-->
+	
+	 
+	 <!-- Mail -->
+    <bean id="mailSender" class="org.springframework.mail.javamail.JavaMailSenderImpl">
+    <property name="session" ref="mailSession"/>
+	</bean>	
+	
+	<bean id="mailSession" class="org.springframework.jndi.JndiObjectFactoryBean">
+	  <property name="jndiName" value="java:comp/env/mail/Session"/>
+	</bean>	
+	
+	<!-- Mail service -->
+	<bean id="mailService" class="com.ssm.llp.base.common.service.impl.MailServiceImpl">	
+       <property name="mailSender" ref="mailSender"/>	
+       <property name="simpleMailMessage" ref="simpleMailMessage"/>	
+	</bean>
+	
+	
+	<!-- Mail message -->
+	<bean id="simpleMailMessage" class="org.springframework.mail.SimpleMailMessage">
+	    <property name="from">
+	        <value><![CDATA[e-Comtrac Administrator <ecomtrac@ssm.com.my>]]></value>
+	    </property>
+	    <property name="to">
+	        <value><![CDATA[e-Comtrac Administrator <ecomtrac@ssm.com.my>]]></value>
+	    </property>
+	    <property name="subject" value="e-Comtrac Administrator"/>
+	</bean>    
+	
+	<!-- Payment Gateway -->
+	<bean id="initialContext" class="javax.naming.InitialContext">
+	</bean>
+	
+	<bean id="SSMResourceLoader" class="com.ssm.llp.wicket.SSMResourceLoader"/>
+	
+	<bean id="isRunScheduler" class="java.lang.String">
+		<constructor-arg>
+			<ref local="isRunSchedulerBean" />
+		</constructor-arg>
+	</bean>
+	
+	
+	<bean id="isRunSchedulerBean" class="org.springframework.beans.factory.config.MethodInvokingFactoryBean">
+		<property name="targetObject">
+			<ref local="initialContext"/>
+		</property>
+		<property name="targetMethod">
+			<value>lookup</value>
+		</property>
+		<property name="arguments">
+			<list>
+				<value>java:comp/env/isRunScheduler</value>
+			</list>
+		</property>
+	</bean>
+	
+	
+	
+	<bean id="applicationType" class="java.lang.String">
+		<constructor-arg>
+			<ref local="applicationTypeBean" />
+		</constructor-arg>
+	</bean>
+	
+	<bean id="applicationTypeBean" class="org.springframework.beans.factory.config.MethodInvokingFactoryBean">
+		<property name="targetObject">
+			<ref local="initialContext"/>
+		</property>
+		<property name="targetMethod">
+			<value>lookup</value>
+		</property>
+		<property name="arguments">
+			<list>
+				<value>java:comp/env/applicationType</value>
+			</list>
+		</property>
+	</bean>
+	
+	<task:scheduler id="notification.scheduler" pool-size="50" />
+	
+	
+	<task:scheduled-tasks  scheduler="notification.scheduler">
+	
+		<task:scheduled ref="ComtracSchedulerService" method="processComtracPendingPayment" fixed-delay="1200000" />
+		<task:scheduled ref="ComtracSchedulerService" method="processComtracPrintCertificatePendingPayment" fixed-delay="1200000" />
+     	<!--task:scheduled ref="ComtracSchedulerService" method="cancelComtracDataEntry" cron="0 0 0 * * ?" />
+		<task:scheduled ref="ComtracSchedulerService" method="cancelComtracPendingPayment" cron="0 0 0 * * ?" /> -->
+		<task:scheduled ref="ComtracSchedulerService" method="cancelComtracDataEntry" fixed-delay="900000" />
+		<task:scheduled ref="ComtracSchedulerService" method="cancelComtracPendingPayment" fixed-delay="600000" />
+		<task:scheduled ref="ComtracSchedulerService" method="generateCertificate" fixed-delay="600000" />
+		<task:scheduled ref="ComtracSchedulerService" method="generateReprintCertificate" fixed-delay="600000" />
+		<task:scheduled ref="ComtracSchedulerService" method="cancelReprintCertificateDataEntry" fixed-delay="600000" />
+		<task:scheduled ref="ComtracSchedulerService" method="cancelReprintCertificateDataEntryPendingPayment" fixed-delay="600000" />
+		<task:scheduled ref="ComtracSchedulerService" method="insertUpdateDashboardData" cron="0 50 23 * * ?"/>
+
+  </task:scheduled-tasks>
+  
+  
+  <bean id="freemarkerConfig" class="org.springframework.ui.freemarker.FreeMarkerConfigurationFactoryBean">
+    <property name="templateLoaderPath" value="classpath:/templates"/>
+    <property name="preferFileSystemAccess" value="false"/>
+  </bean>
+
+</beans>

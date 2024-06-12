@@ -1,0 +1,46 @@
+<wicket:extend>
+	<div class="ui top attached segment" style="width: 50%">
+		<div class="ui top attached label">
+			<h4 class="ui header">
+				<wicket:message
+					key="page.lbl.ezbiz.localeMessagePage.addPaymentCode" />
+			</h4>
+		</div>
+		<form wicket:id="form" class="ui form">
+			<div id="AddCodePayment">
+				<div class="ui form">
+					<div class="form">
+						<wicket:message key="edit.paymentCode" />
+						<input wicket:id="paymentCode" type="text" size="50" />
+					</div>
+
+					<div class="form">
+						<wicket:message key="edit.paymentDesc" />
+						<input wicket:id="paymentDesc" type="text" size="50" />
+					</div>
+					<div class="form">
+						<wicket:message key="edit.paymentFee" />
+						<input wicket:id="paymentFee" type="text" size="50" />
+					</div>
+					<div class="form">
+						<wicket:message key="edit.gstCode" />
+						<input wicket:id="gstCode" type="text" size="50" />
+					</div>
+					<div class="form">
+						<wicket:message key="edit.status" />
+						<select wicket:id="status" />
+					</div>
+				</div>
+				<br>
+				<div align="left">
+					<button class="ui primary button" wicket:id="save">
+						<wicket:message key="page.lbl.ezbiz.localeMessagePage.save" />
+					</button>
+					<button class="ui primary button" wicket:id="cancel">
+						<wicket:message key="page.lbl.ezbiz.localeMessagePage.cancel" />
+					</button>
+				</div>
+			</div>
+		</form>
+	</div>
+</wicket:extend>

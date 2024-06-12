@@ -1,0 +1,103 @@
+<wicket:extend>
+	<form wicket:id="form">
+		<div id="EditRenewalForm">
+			<fieldset>
+				<legend><wicket:message key="page.title.mybiz.bizInfo"/></legend>
+				<table>
+					<tr>
+						<td><wicket:message key="page.title.mybiz.brNo"/></td>
+						<td>:&nbsp;</td>
+						<td><span wicket:id="brNo" style="font: bold;" /></td>
+					</tr>
+					<tr>
+						<td><wicket:message key="page.title.mybiz.bizName"/></td>
+						<td>:&nbsp;</td>
+						<td><span wicket:id="bizName" style="font: bold;" /></td>
+					</tr>
+					<tr>
+						<td><wicket:message key="page.title.mybiz.bizType"/></td>
+						<td>:&nbsp;</td>
+						<td><span wicket:id="bizType" style="font: bold;" /></td>
+					</tr>
+					<tr>
+						<td><wicket:message key="page.title.mybiz.branchCount"/></td>
+						<td>:&nbsp;</td>
+						<td><span wicket:id="branchCount" style="font: bold;" /></td>
+					</tr>
+					<tr>
+						<td><wicket:message key="page.title.mybiz.newExpDate"/></td>
+						<td>:&nbsp;</td>
+						<td><span wicket:id="newExpDate" style="font: bold;" /></td>
+					</tr>
+					<tr>
+						<td colspan="2">&nbsp;</td>
+					</tr>
+				</table>
+			</fieldset>
+			<fieldset>
+				<legend><wicket:message key="page.title.mybiz.renewalForm"/></legend>
+				<table>
+					<tr>
+						<td><wicket:message key="page.title.mybiz.processDate"/></td>
+						<td>:&nbsp;</td>
+						<td><span wicket:id="updateDt" style="font: bold;" /></td>
+					</tr>
+					<tr>
+						<td><wicket:message key="page.title.mybiz.expDate"/></td>
+						<td>:&nbsp;</td>
+						<td><span wicket:id="expDate" style="font: bold;" /></td>
+					</tr>
+					<tr>
+						<td valign="top"><wicket:message key="page.title.mybiz.cmpAmt"/></td>
+						<td valign="top">:&nbsp;</td>
+						<td valign="top"><span wicket:id="cmpAmt" style="font: bold;" /> <input
+							wicket:id="isPaidCmp" type="checkbox" /><br> <font
+							style="font-size: 80%"><wicket:message key="page.title.mybiz.tickCmpAmt"/></font></td>
+					</tr>
+					<tr>
+						<td><wicket:message key="page.title.mybiz.yearRenew"/>&nbsp;</td>
+						<td>:&nbsp;</td>
+						<td><select wicket:id="yearRenew" class="form-control"/></td>
+					</tr>
+					<tr>
+						<td><wicket:message key="page.title.mybiz.totalAmt"/></td>
+						<td>:&nbsp;</td>
+						<td><span wicket:id="totalAmt" /></td>
+					</tr>
+					<tr>
+						<td colspan="3">&nbsp;</td>
+					</tr>
+					<wicket:enclosure child="declareChk" >
+						<tr>
+							<td colspan="3">
+								<input wicket:id="declareChk" type="checkbox" />
+								<wicket:message key="page.title.mybiz.declareChk" />
+							</td>
+						</tr>
+					</wicket:enclosure>
+					<tr>
+						<td colspan="3" align="left">
+							<input class="btn btn-primary btn-block" wicket:id="save" type="submit" wicket:message="value:page.title.mybiz.saveButton"/> 
+							<!--input class="btn btn-primary btn-block" wicket:id="downloadA1FormButton" type="submit" wicket:message="value:page.title.mybiz.downloadA1FormButton" /--> 
+							<button class="btn btn-primary btn-block" wicket:id="downloadA1FormButton" >
+									<wicket:message key="page.title.mybiz.downloadA1FormButton"/>
+							</button>
+							<button class="btn btn-primary btn-block" wicket:id="downloadCertificateButton" >
+									<wicket:message key="page.title.mybiz.downloadCertificateButton"/>
+							</button>
+							<button class="btn btn-primary btn-block" wicket:id="downloadCmpButton" >
+									<wicket:message key="page.title.mybiz.downloadCmpButton"/>
+							</button>
+							
+							<input class="btn btn-primary btn-block" wicket:id="cancel" type="submit" wicket:message="value:page.title.mybiz.cancelButton" /></td>
+					</tr>
+					<tr>
+						<td colspan="3">
+								<span wicket:id="downloadRule" />
+						</td>
+					</tr>
+				</table>
+			</fieldset>
+		</div>
+	</form>
+</wicket:extend>

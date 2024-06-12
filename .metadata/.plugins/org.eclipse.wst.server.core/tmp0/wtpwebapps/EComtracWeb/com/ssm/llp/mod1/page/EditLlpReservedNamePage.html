@@ -1,0 +1,287 @@
+<wicket:extend>
+
+
+	<form wicket:id="form">
+		<table cellpadding="0" cellspacing="0" width="100%" height="100%">
+			<tr>
+				<td valign="top">
+
+					<table>
+						<tr>
+							<td>
+
+								<fieldset>
+									<legend>
+										<wicket:message key="reservedName.page.reservedNameLabel" />
+									</legend>
+
+									<table>
+										<br>
+										<wicket:enclosure child="refNo">
+
+											<tr>
+												<td><span wicket:id="refNoLabel" />
+												</td>
+												<td><input wicket:id="refNo" type="text" /></td>
+											</tr>
+
+
+										</wicket:enclosure>
+
+										<tr>
+											<td><span wicket:id="applyLlpNameLabel" />
+											</td>
+											<td><input wicket:id="applyLlpName" type="text"
+												size="100" /></td>
+										</tr>
+										<wicket:enclosure child="llpNo">
+
+											<tr>
+												<td><span wicket:id="llpNoLabel" />
+												</td>
+												<td><input wicket:id="llpNo" type="text" />&nbsp;&nbsp;
+													<input wicket:id="generateLlpNo" type="submit"
+													wicket:message="value:reservedName.page.buttonGenLlpNo" />
+												</td>
+											</tr>
+										</wicket:enclosure>
+										<wicket:enclosure child="resultDate">
+											<tr>
+												<td><span wicket:id="resultDateLabel" />
+												</td>
+												<td><input wicket:id="resultDate" type="text" /></td>
+											</tr>
+										</wicket:enclosure>
+										<wicket:enclosure child="expNameDate">
+											<tr>
+												<td><span wicket:id="expNameDateLabel" />
+												</td>
+												<td><input wicket:id="expNameDate" type="text" /></td>
+											</tr>
+										</wicket:enclosure>
+										<tr>
+											<td><wicket:message key="reservedName.page.regType" />
+											</td>
+											<td><span wicket:id="regTypeDesc"></span> <input
+												wicket:id="regType" type="hidden" />
+											</td>
+										</tr>
+										<wicket:enclosure child="conversionType">
+											<tr>
+												<td><span wicket:id="conversionTypeLabel" />
+												</td>
+												<td><input wicket:id="conversionType" type="text" /></td>
+											</tr>
+										</wicket:enclosure>
+										<wicket:enclosure child="conversionNo">
+
+											<tr>
+												<td><span wicket:id="conversionNoLabel" />
+												</td>
+												<td><input wicket:id="conversionNo" type="text" />
+												</td>
+											</tr>
+											<tr>		
+												<td><span wicket:id="conversionNameLabel" />
+												</td>
+												<td><input wicket:id="conversionName" type="text"  size="50"/></td>	
+											</tr>
+										</wicket:enclosure>
+
+									</table>
+								</fieldset> <br> <wicket:enclosure child="clarifySingleLetter">
+									<fieldset>
+										<legend>
+											<wicket:message key="reservedName.page.clarification" />
+										</legend>
+										<table>
+
+											<tr>
+												<td><span wicket:id="clarifySingleLetterLabel" />
+												</td>
+												<td><textarea wicket:id="clarifySingleLetter" rows="6"
+													cols="75" /></td>
+												
+											</tr>
+
+											<tr>
+												<td><span wicket:id="clarifyMeaningLabel" />
+												</td>
+												<td><textarea wicket:id="clarifyMeaning" rows="6"
+													cols="75" /></td>
+											</tr>
+
+										</table>
+									</fieldset>
+									<br>
+									<wicket:enclosure child="authorizationChk">
+										<fieldset>
+											<legend>
+												<wicket:message key="reservedName.page.authorizationLetter" />
+											</legend>
+											<table>
+												<br>
+												<tr>
+													<td><input wicket:id="authorizationChk"
+														type="checkbox" /></td>
+													<td colspan="2"><wicket:message
+															key="authorization.tick.declare" /></td>
+
+												</tr>
+											</table>
+
+											<wicket:enclosure child="profBodyTypeDesc">
+												<br>
+												<fieldset>
+													<legend>
+														<wicket:message
+															key="reservedName.page.reservedNameProfAuth" />
+													</legend>
+													<table>
+														<br>
+
+														<wicket:enclosure child="profBodyType">
+															<tr>
+																<td><wicket:message
+																		key="reservedName.page.profBodyType" /></td>
+																<td><span wicket:id="profBodyTypeDesc"></span> <input
+																	wicket:id="profBodyType" type="hidden" />
+																</td>
+															</tr>
+														</wicket:enclosure>
+
+														<!-- <tr>
+													<td><wicket:message
+															key="reservedName.page.profBodyType" />
+													</td>
+													<td><span wicket:id="profBodyTypeDesc"></span> <input
+														wicket:id="profBodyType" type="hidden" /></td>
+												</tr>		-->
+
+
+
+														<tr>
+															<td><span wicket:id="profAuthOrgLabel" />
+															</td>
+															<td><input wicket:id="profAuthOrg" type="text"
+																size="40" /></td>
+
+															<td><span wicket:id="profAuthLetterRefNoLabel" /></td>
+															<td><input wicket:id="profAuthLetterRefNo"
+																type="text" size="40" /></td>
+														</tr>
+
+
+														<tr>
+															<td><span wicket:id="profAuthLetterDateLabel" /></td>
+															<td><input wicket:id="profAuthLetterDate"
+																type="text" /></td>
+															<td><span wicket:id="profLetterPurposeLabel" /></td>
+															<td><input wicket:id="profLetterPurpose" type="text"
+																size="40" /></td>
+														</tr>
+														<tr>
+															<td><span wicket:id="profLetterSignLabel" /></td>
+															<td><input wicket:id="profLetterSign" type="text"
+																size="40" /></td>
+															<td><span wicket:id="profRemarkLabel" /></td>
+															<td><textarea wicket:id="profRemark" rows="6"
+																	cols="40" />
+															</td>
+														</tr>
+
+													</table>
+
+												</fieldset>
+											</wicket:enclosure>
+										</fieldset>
+									</wicket:enclosure>
+									<br>
+								</wicket:enclosure> <wicket:enclosure child="officerRemark">
+									<fieldset>
+										<legend>
+											<wicket:message key="reservedName.page.reservedNameOfficeUse" />
+										</legend>
+										<table>
+											<wicket:enclosure child="officerRemark">
+												<tr>
+													<td><span wicket:id="officerRemarkLabel" /></td>
+													<td><textarea wicket:id="officerRemark" rows="6"
+															cols="75"></textarea></td>
+												</tr>
+											</wicket:enclosure>
+										</table>
+									</fieldset>
+									<br>
+								</wicket:enclosure> <wicket:enclosure child="lodgeBy">
+									<fieldset>
+										<legend>
+											<wicket:message key="reservedName.page.reservedNameLodger" />
+										</legend>
+										<table>
+											<tr>
+												<td><span wicket:id="lodgeByLabel" /></td>
+												<td><input wicket:id="lodgeBy" /></td>
+											</tr>
+										</table>
+									</fieldset>
+									<br>
+
+								</wicket:enclosure> <wicket:enclosure child="declareChk">
+									<table>
+										<tr>
+											<td colspan="2"><b><wicket:message
+														key="declaration.tick.declare.text" /> </b></td>
+										</tr>
+										<tr>
+											<td><input wicket:id="declareChk" type="checkbox" /></td>
+											<td><wicket:message key="declaration.tick.declare" /></td>
+										</tr>
+										<tr>
+											<td colspan="2">&nbsp;</td>
+										</tr>
+										<tr>
+											<td colspan="2"><b><wicket:message
+														key="declaration.tick.warning.text" /> </b></td>
+										</tr>
+										<tr>
+											<td colspan="2"><wicket:message
+													key="declaration.tick.warning" /></td>
+										</tr>
+									</table>
+									<br>
+									<br>
+								</wicket:enclosure>
+
+
+								<table>
+									<tr>
+										<td colspan="3" align="center"><input wicket:id="pay"
+											type="submit"
+											wicket:message="value:reservedName.page.buttonProceddToPayment" />
+
+											<input wicket:id="proceedToLlp" type="submit"
+											wicket:message="value:reservedName.page.buttonProceddToLLP" />
+											
+											<input wicket:id="paymentRecheck" type="submit"
+											wicket:message="value:reservedName.page.buttonResubmit" />
+
+											<input wicket:id="save" type="submit"
+											wicket:message="value:reservedName.page.buttonSave" /> <input
+											wicket:id="update" type="submit"
+											wicket:message="value:reservedName.page.buttonUpdate" /> <input
+											wicket:id="cancel" type="submit"
+											wicket:message="value:reservedName.page.buttonCancel" /> <input
+											wicket:id="back" type="submit"
+											wicket:message="value:reservedName.page.buttonBack" />
+										</td>
+									</tr>
+								</table>
+							</td>
+						</tr>
+					</table>
+				</td>
+			</tr>
+		</table>
+	</form>
+</wicket:extend>

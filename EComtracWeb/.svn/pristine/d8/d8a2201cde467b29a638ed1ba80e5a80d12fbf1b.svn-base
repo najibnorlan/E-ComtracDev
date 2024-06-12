@@ -1,0 +1,466 @@
+
+CREATE TABLE entity_reg ( 
+    entity_reg_id   	SERIAL8 NOT NULL,
+    entity_type     	VARCHAR(10) NOT NULL,
+    entity_no       	VARCHAR(30),
+    entity_name     	VARCHAR(255),
+    entity_status   	VARCHAR(20),
+    entity_address  	VARCHAR(255),
+    entity_address2 	VARCHAR(255),
+    entity_address3 	VARCHAR(255),
+    entity_postcode 	VARCHAR(10),
+    entity_city     	VARCHAR(20),
+    entity_state    	VARCHAR(20),
+    entity_create_dt	DATETIME YEAR to SECOND NOT NULL,
+    entity_update_dt	DATETIME YEAR to SECOND NOT NULL,
+    create_dt       	DATETIME YEAR to SECOND NOT NULL,
+    create_by       	VARCHAR(50) NOT NULL,
+    update_dt       	DATETIME YEAR to SECOND NOT NULL,
+    update_by       	VARCHAR(50) NOT NULL,
+    PRIMARY KEY(entity_reg_id)
+)
+GO
+
+ALTER TABLE cmp_master 
+	MODIFY (entity_name_reg LVARCHAR(200))
+GO
+
+
+ALTER TABLE cmp_master_aud 
+	MODIFY (entity_name_reg LVARCHAR(200))
+GO
+
+CREATE TABLE rob_counter_balancing ( 
+    balancing_id      	SERIAL8 NOT NULL,
+    bank_note         	MONEY DEFAULT 0.00 NOT NULL,
+    quantity          	INTEGER NOT NULL,
+    amount            	MONEY DEFAULT 0.00 NOT NULL,
+    counter_session_id	INTEGER NOT NULL,
+    create_dt         	DATETIME YEAR to SECOND NOT NULL,
+    create_by         	VARCHAR(50) NOT NULL,
+    update_dt         	DATETIME YEAR to SECOND NOT NULL,
+    update_by         	VARCHAR(50),
+    PRIMARY KEY(balancing_id)
+)
+GO
+
+CREATE TABLE rob_counter_balancing_aud ( 
+    balancing_id      	INTEGER NOT NULL,
+    rev               	INTEGER NOT NULL,
+    revtype           	SMALLINT,
+    amount            	FLOAT,
+    bank_note         	FLOAT,
+    create_by         	VARCHAR(50),
+    create_dt         	DATETIME YEAR to SECOND,
+    quantity          	INTEGER,
+    update_by         	VARCHAR(50),
+    update_dt         	DATETIME YEAR to SECOND,
+    counter_session_id	INTEGER,
+    PRIMARY KEY(balancing_id,rev)	
+)
+GO
+
+CREATE INDEX rob_counter_balancing_aud_idx1
+    ON rob_counter_balancing_aud(rev)
+GO
+
+CREATE TABLE rob_counter_bankin_slip ( 
+    bankin_slip_no	VARCHAR(50) NOT NULL,
+    branch        	VARCHAR(10),
+    amount        	MONEY DEFAULT 0.00 NOT NULL,
+    create_dt     	DATETIME YEAR to SECOND NOT NULL,
+    create_by     	VARCHAR(50) NOT NULL,
+    update_dt     	DATETIME YEAR to SECOND NOT NULL,
+    update_by     	VARCHAR(50),
+    year_created  	VARCHAR(10),
+    floor_level   	VARCHAR(50),
+    PRIMARY KEY(bankin_slip_no)	
+)
+GO
+CREATE TABLE rob_counter_bankin_slip_aud ( 
+    bankin_slip_no	VARCHAR(255) NOT NULL,
+    rev           	INTEGER NOT NULL,
+    revtype       	SMALLINT,
+    amount        	FLOAT,
+    branch        	VARCHAR(255),
+    create_by     	VARCHAR(50),
+    create_dt     	DATETIME YEAR to SECOND,
+    update_by     	VARCHAR(50),
+    update_dt     	DATETIME YEAR to SECOND,
+    year_created  	VARCHAR(255),
+    floor_level   	VARCHAR(50),
+    PRIMARY KEY(bankin_slip_no,rev)
+)
+GO
+CREATE INDEX rob_counter_bankin_slip_aud_idx1
+    ON rob_counter_bankin_slip_aud(rev)
+GO
+
+CREATE TABLE rob_counter_collection ( 
+    ip_address  	VARCHAR(50) NOT NULL,
+    floor_level 	VARCHAR(50),
+    counter_type	VARCHAR(50),
+    branch      	VARCHAR(10),
+    create_dt   	DATETIME YEAR to SECOND NOT NULL,
+    create_by   	VARCHAR(50) NOT NULL,
+    update_dt   	DATETIME YEAR to SECOND NOT NULL,
+    update_by   	VARCHAR(50),
+    counter_name	VARCHAR(50),
+    soft_delete 	CHAR(1) DEFAULT 'N',
+    is_active   	CHAR(1) DEFAULT 'Y',
+    PRIMARY KEY(ip_address)
+)
+GO
+CREATE TABLE rob_counter_collection_aud ( 
+    ip_address  	VARCHAR(255) NOT NULL,
+    rev         	INTEGER NOT NULL,
+    revtype     	SMALLINT,
+    branch      	VARCHAR(50),
+    counter_name	VARCHAR(50),
+    counter_type	VARCHAR(50),
+    create_by   	VARCHAR(50),
+    create_dt   	DATETIME YEAR to SECOND,
+    floor_level 	VARCHAR(50),
+    update_by   	VARCHAR(50),
+    update_dt   	DATETIME YEAR to SECOND,
+    soft_delete 	CHAR(1) DEFAULT 'N',
+    is_active   	CHAR(1) DEFAULT 'Y',
+    PRIMARY KEY(ip_address,rev)	
+)
+GO
+
+CREATE INDEX rob_counter_collection_aud_idx1
+    ON rob_counter_collection_aud(rev)
+GO
+
+CREATE TABLE rob_counter_session ( 
+    session_id            	SERIAL8 NOT NULL,
+    counter_ip_address    	VARCHAR(50) NOT NULL,
+    user_id               	VARCHAR(50) NOT NULL,
+    checkin_date          	DATETIME YEAR to SECOND NOT NULL,
+    checkout_date         	DATETIME YEAR to SECOND,
+    checkout_by           	VARCHAR(50),
+    is_open               	INTEGER DEFAULT 0 NOT NULL,
+    floor_level           	VARCHAR(50),
+    balancing_status      	VARCHAR(5),
+    approve_by            	VARCHAR(50),
+    approve_dt            	DATETIME YEAR to SECOND,
+    create_dt             	DATETIME YEAR to SECOND NOT NULL,
+    create_by             	VARCHAR(50) NOT NULL,
+    verify_by             	VARCHAR(50),
+    verify_dt             	DATETIME YEAR to SECOND,
+    balancing_by          	VARCHAR(50),
+    balancing_dt          	DATETIME YEAR to SECOND,
+    counter_bankin_slip_no	VARCHAR(50),
+    PRIMARY KEY(session_id)
+)
+GO
+ALTER TABLE rob_counter_session
+    ADD CONSTRAINT ( FOREIGN KEY(counter_bankin_slip_no)
+	REFERENCES rob_counter_bankin_slip(bankin_slip_no) CONSTRAINT fkrobcountersession1
+	ENABLED )
+GO
+ALTER TABLE rob_counter_session
+    ADD CONSTRAINT ( FOREIGN KEY(counter_ip_address)
+	REFERENCES rob_counter_collection(ip_address) CONSTRAINT fkrobcountersession2
+	ENABLED )
+GO
+CREATE INDEX rob_counter_session_idx3
+    ON rob_counter_session(counter_bankin_slip_no)
+GO
+CREATE INDEX rob_counter_session_idx2
+    ON rob_counter_session(counter_ip_address)
+GO
+
+CREATE TABLE rob_counter_session_aud ( 
+    session_id            	INTEGER NOT NULL,
+    rev                   	INTEGER NOT NULL,
+    revtype               	SMALLINT,
+    approve_by            	VARCHAR(50),
+    approve_dt            	DATETIME YEAR to SECOND,
+    balancing_by          	VARCHAR(255),
+    balancing_dt          	DATETIME YEAR to SECOND,
+    balancing_status      	VARCHAR(255),
+    checkin_date          	DATETIME YEAR to SECOND,
+    checkout_by           	VARCHAR(255),
+    checkout_date         	DATETIME YEAR to SECOND,
+    create_by             	VARCHAR(50),
+    create_dt             	DATETIME YEAR to SECOND,
+    floor_level           	VARCHAR(255),
+    is_open               	INTEGER,
+    user_id               	VARCHAR(255),
+    verify_by             	VARCHAR(255),
+    verify_dt             	DATETIME YEAR to SECOND,
+    counter_bankin_slip_no	VARCHAR(255),
+    counter_ip_address    	VARCHAR(255),
+    PRIMARY KEY(rev,session_id)	
+)
+GO
+ALTER TABLE rob_counter_session_aud
+    ADD CONSTRAINT ( FOREIGN KEY(rev)
+	REFERENCES revinfo(rev) CONSTRAINT fkrobcountersessionaud1
+	ENABLED )
+GO
+CREATE INDEX rob_counter_session_aud_idx1
+    ON rob_counter_session_aud(rev)
+GO
+
+ALTER TABLE rob_form_a
+	ADD is_online_seller CHAR(1), 
+	ADD incentive VARCHAR(50)
+GO
+
+
+
+ALTER TABLE rob_form_a_aud
+	ADD is_online_seller CHAR(1), 
+	ADD incentive VARCHAR(50)
+GO
+
+
+CREATE TABLE rob_form_a_stat_report ( 
+    stat_id      	SERIAL8 NOT NULL,
+    stat_month   	VARCHAR(50) NOT NULL,
+    stat_year    	VARCHAR(50) NOT NULL,
+    online_seller	INTEGER DEFAULT 0 NOT NULL,
+    student      	INTEGER DEFAULT 0 NOT NULL,
+    oku          	INTEGER DEFAULT 0 NOT NULL,
+    incubator    	INTEGER DEFAULT 0 NOT NULL,
+    stat_total   	INTEGER DEFAULT 0 NOT NULL,
+    create_dt    	DATETIME YEAR to SECOND NOT NULL,
+    create_by    	VARCHAR(50) NOT NULL,
+    update_dt    	DATETIME YEAR to SECOND NOT NULL,
+    update_by    	VARCHAR(50) NOT NULL,
+    PRIMARY KEY(stat_id)
+)
+GO
+
+CREATE TABLE rob_form_a_stat_report_aud ( 
+    stat_id      	INTEGER NOT NULL,
+    rev          	INTEGER NOT NULL,
+    revtype      	SMALLINT,
+    create_by    	VARCHAR(50),
+    create_dt    	DATETIME YEAR to SECOND,
+    incubator    	INTEGER,
+    oku          	INTEGER,
+    online_seller	INTEGER,
+    stat_month   	VARCHAR(255),
+    stat_total   	INTEGER,
+    stat_year    	VARCHAR(255),
+    student      	INTEGER,
+    update_by    	VARCHAR(50),
+    update_dt    	DATETIME YEAR to SECOND,
+    PRIMARY KEY(rev,stat_id)
+)
+GO
+ALTER TABLE rob_form_a_stat_report_aud
+    ADD CONSTRAINT ( FOREIGN KEY(rev)
+	REFERENCES revinfo(rev) CONSTRAINT fkrobformastatreportaud1
+	ENABLED )
+GO
+CREATE INDEX rob_form_a_stat_report_aud_idx1
+    ON rob_form_a_stat_report_aud(rev)
+GO
+
+CREATE TABLE rob_health_check ( 
+    id       	SERIAL8 NOT NULL,
+    code     	VARCHAR(100) NOT NULL,
+    time     	INTEGER DEFAULT 0 NOT NULL,
+    update_dt	DATETIME YEAR to SECOND NOT NULL,
+    status   	VARCHAR(4) NOT NULL,
+    PRIMARY KEY(id)
+)
+GO
+
+ALTER TABLE rob_form_b1_aud MODIFY (b1_ammendmend_dt DATETIME YEAR to DAY)
+GO
+
+ALTER TABLE rob_form_b2_aud MODIFY (b2_ammendmend_dt DATETIME YEAR to DAY)
+GO
+
+ALTER TABLE rob_form_b_aud MODIFY (b3_ammendmend_dt DATETIME YEAR to DAY)
+GO
+
+ALTER TABLE rob_form_b_aud
+	ADD branches_amt MONEY
+GO
+
+CREATE TABLE rob_payment_credit_note ( 
+    credit_note_no    	VARCHAR(50) NOT NULL,
+    payment_receipt_no	VARCHAR(50) NOT NULL,
+    cn_transaction_no 	VARCHAR(50) NOT NULL,
+    amount            	MONEY DEFAULT 0.00 NOT NULL,
+    counter_session_id	INTEGER NOT NULL,
+    create_dt         	DATETIME YEAR to SECOND NOT NULL,
+    create_by         	VARCHAR(50) NOT NULL,
+    update_dt         	DATETIME YEAR to SECOND NOT NULL,
+    update_by         	VARCHAR(50) NOT NULL,
+    reason            	VARCHAR(255),
+    approve_by        	VARCHAR(50),
+    approve_dt        	DATETIME YEAR to SECOND,
+    PRIMARY KEY(credit_note_no)
+)
+GO
+ALTER TABLE rob_payment_credit_note
+    ADD CONSTRAINT ( FOREIGN KEY(payment_receipt_no)
+	REFERENCES rob_payment_receipt(receipt_no) CONSTRAINT fkrobpaymentcreditnote1
+	ENABLED )
+GO
+CREATE INDEX rob_payment_credit_note_idx1
+    ON rob_payment_credit_note(payment_receipt_no)
+GO
+CREATE TABLE rob_payment_credit_note_aud ( 
+    credit_note_no    	VARCHAR(255) NOT NULL,
+    rev               	INTEGER NOT NULL,
+    revtype           	SMALLINT,
+    amount            	FLOAT,
+    create_by         	VARCHAR(50),
+    create_dt         	DATETIME YEAR to SECOND,
+    update_by         	VARCHAR(50),
+    update_dt         	DATETIME YEAR to SECOND,
+    counter_session_id	INTEGER,
+    payment_receipt_no	VARCHAR(50),
+    cn_transaction_no 	VARCHAR(255),
+    reason            	VARCHAR(255),
+    approve_by        	VARCHAR(50),
+    approve_dt        	DATETIME YEAR to SECOND,
+    PRIMARY KEY(credit_note_no,rev)
+)
+GO
+ALTER TABLE rob_payment_credit_note_aud
+    ADD CONSTRAINT ( FOREIGN KEY(rev)
+	REFERENCES revinfo(rev) CONSTRAINT fkrobpaymentcreditnoteaud1
+	ENABLED )
+GO
+CREATE INDEX rob_payment_credit_note_aud_idx1
+    ON rob_payment_credit_note_aud(rev)
+GO
+
+ALTER TABLE rob_payment_receipt
+	ADD cash_received MONEY DEFAULT 0.00 NOT NULL,
+	ADD balance MONEY DEFAULT 0.00 NOT NULL,
+    ADD total_amount         	MONEY DEFAULT 0.00 NOT NULL,
+    ADD counter_session_id   	INT8,
+    ADD is_cancel            	INTEGER DEFAULT 0,
+    ADD tax_invoice_no       	VARCHAR(50)
+GO
+
+ALTER TABLE rob_payment_receipt_aud
+	ADD cash_received MONEY DEFAULT 0.00 NOT NULL,
+	ADD balance MONEY DEFAULT 0.00 NOT NULL,
+    ADD total_amount         	MONEY DEFAULT 0.00 NOT NULL,
+    ADD counter_session_id   	INT8,
+    ADD is_cancel            	INTEGER DEFAULT 0,
+    ADD tax_invoice_no       	VARCHAR(50)
+GO
+
+ALTER TABLE rob_payment_transaction_detail_aud MODIFY (payment_item VARCHAR(20))
+GO
+
+ALTER TABLE rob_supply_info_dtl
+	DROP llp_name, 
+	DROP llp_no
+GO
+
+ALTER TABLE rob_supply_info_dtl
+	ADD entity_name VARCHAR(255), 
+	ADD entity_no VARCHAR(25),
+    ADD entity_type VARCHAR(10)
+GO
+
+CREATE TABLE rob_survey_ans ( 
+    ans_id   	SERIAL8 NOT NULL,
+    survey_id	INTEGER NOT NULL,
+    answer   	VARCHAR(100),
+    user_id  	VARCHAR(50),
+    create_dt	DATETIME YEAR to SECOND NOT NULL,
+    create_by	VARCHAR(50) NOT NULL,
+    update_dt	DATETIME YEAR to SECOND NOT NULL,
+    update_by	VARCHAR(50) NOT NULL,
+    PRIMARY KEY(survey_id)
+)
+GO
+
+
+CREATE TABLE rob_survey_config ( 
+    survey_id   	SERIAL8 NOT NULL,
+    value       	VARCHAR(250) NOT NULL,
+    parent_id   	INTEGER,
+    value_type  	VARCHAR(50),
+    is_ans_score	CHAR(1),
+    is_active   	CHAR(1) DEFAULT 'Y',
+    create_dt   	DATETIME YEAR to SECOND NOT NULL,
+    create_by   	VARCHAR(50) NOT NULL,
+    update_dt   	DATETIME YEAR to SECOND NOT NULL,
+    update_by   	VARCHAR(50) NOT NULL,
+    PRIMARY KEY(survey_id)
+)
+GO
+
+
+ALTER TABLE rob_user_profile
+	ADD is_ans_survey CHAR(1)
+GO
+
+
+ALTER TABLE rob_user_profile_aud
+	ADD is_ans_survey CHAR(1)
+GO
+
+//15 mac 2017
+ALTER TABLE rob_renewal
+	ADD renewal_incentive VARCHAR(50)
+GO
+
+ALTER TABLE rob_renewal_aud
+	ADD renewal_incentive VARCHAR(50)
+GO
+
+CREATE TABLE rob_form_a_stat_report ( 
+    stat_id      	SERIAL8 NOT NULL,
+    stat_month   	VARCHAR(50) NOT NULL,
+    stat_year    	VARCHAR(50) NOT NULL,
+    online_seller	INTEGER DEFAULT 0 NOT NULL,
+    student      	INTEGER DEFAULT 0 NOT NULL,
+    oku          	INTEGER DEFAULT 0 NOT NULL,
+    incubator    	INTEGER DEFAULT 0 NOT NULL,
+    stat_total   	INTEGER DEFAULT 0 NOT NULL,
+    create_dt    	DATETIME YEAR to SECOND NOT NULL,
+    create_by    	VARCHAR(50) NOT NULL,
+    update_dt    	DATETIME YEAR to SECOND NOT NULL,
+    update_by    	VARCHAR(50) NOT NULL,
+    form_a_status	VARCHAR(50) NOT NULL,
+    PRIMARY KEY(stat_id)
+	
+)
+go
+
+CREATE TABLE rob_form_a_stat_report_aud ( 
+    stat_id      	INTEGER NOT NULL,
+    rev          	INTEGER NOT NULL,
+    revtype      	SMALLINT,
+    create_by    	VARCHAR(50),
+    create_dt    	DATETIME YEAR to FRACTION(5),
+    incubator    	INTEGER,
+    oku          	INTEGER,
+    online_seller	INTEGER,
+    stat_month   	VARCHAR(255),
+    stat_total   	INTEGER,
+    stat_year    	VARCHAR(255),
+    student      	INTEGER,
+    update_by    	VARCHAR(50),
+    update_dt    	DATETIME YEAR to FRACTION(5),
+    PRIMARY KEY(rev,stat_id)
+)
+GO
+ALTER TABLE rob_form_a_stat_report_aud
+    ADD CONSTRAINT ( FOREIGN KEY(rev)
+	REFERENCES revinfo(rev) CONSTRAINT fkrob_form_a_stat_report_aud1
+	ENABLED )
+GO
+CREATE INDEX rob_form_a_stat_report_aud_idx1
+    ON rob_form_a_stat_report_aud(rev)
+GO
+
+
+//VERSION DEPLOY EzBizWeb-2017-03-30a.war PRODUCTION FROM HERE

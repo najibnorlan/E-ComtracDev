@@ -1,0 +1,123 @@
+<wicket:extend>
+<form wicket:id="form" >
+		<div class="ui form ">
+			<table style="width: 60%">
+				<tr>
+					<td>
+						<div class="ui top attached segment">
+							<div class="ui top attached label">
+								<h4 class="ui header">
+									<wicket:message key="page.lbl.ezbiz.searchComtracList.search" />
+								</h4>
+							</div>
+							<table style="width: 100%">
+								<tr>
+									<td>
+										<div class="two fields">
+											<div class="field">
+												<label><span wicket:id="transactionNoLabel" /></label> <input wicket:id="transactionNo" />
+											</div>
+											<div class="field">
+												<label><span wicket:id="lodgerIdLabel" /></label> <input wicket:id="lodgerId" />
+											</div>
+										</div>
+									</td>
+								</tr>
+								<tr>
+									<td>
+										<div class="two fields">
+											<div class="field">
+												<label><span wicket:id="receiptNoLabel" /></label> <input wicket:id="receiptNo" />
+											</div>
+											<div class="field">
+												<label><span wicket:id="invoiceNoLabel" /></label> <input wicket:id="invoiceNo" />
+											</div>
+										</div>
+									</td>
+								</tr>
+								<tr>
+									<td>
+										<div class="two fields">
+											<div class="field">
+												<label><span wicket:id="louloaNoLabel" /></label> <input wicket:id="louloaNo"  />
+											</div>
+											<div class="field">
+												<label><span wicket:id="statusLabel" /></label> <select wicket:id="status"></select>
+											</div>
+										</div>
+									</td>
+								</tr>
+								<tr>
+									<td>
+										<div class="two fields">
+											<div class="field">
+												<label><span wicket:id="dtFromLabel" /></label> <input wicket:id="dtFrom" />
+											</div>
+											<div class="field">
+												<label><span wicket:id="dtToLabel" /></label> <input wicket:id="dtTo" />
+											</div>
+										</div>
+									</td>
+								</tr>
+								<tr>
+									<td>
+										<div class="two fields">
+											<div class="field">
+												<label><span wicket:id="createdByLabel" /></label> <input type="text" wicket:id="createdBy">
+											</div>
+											<div class="field">
+												<label><span wicket:id="participantIcLabel" /></label> <input type="text" wicket:id="participantIc">
+											</div>
+										</div>
+									</td>
+								</tr>
+								<tr><td>&nbsp;</td></tr>
+								<tr>
+									<td>
+										<input wicket:id="search" type="button" class="ui primary button" value="Search" />
+									</td>
+								</tr>
+							</table>
+						</div>
+					</td>
+				</tr>
+			</table>
+		</div>
+	</form>
+	<div wicket:id="dataDiv">
+		<table class="ui striped table">
+			 <thead>
+			    	<tr>
+			    	<th width="15%"><wicket:message key="page.lbl.ezbiz.comtracListStatus.transactionCode" /></th>
+					<th width="15%"><wicket:message key="page.lbl.ezbiz.comtracListStatus.trainingCode" /></th>
+					<th width="30%"><wicket:message key="page.lbl.ezbiz.comtracListStatus.trainingName" /></th>
+					<th width="15%"><wicket:message key="page.lbl.ezbiz.comtracListStatus.status" /></th>
+					<th width="15%"><wicket:message key="page.lbl.ezbiz.comtracListStatus.createBy" /></th>
+					<th width="15%"><wicket:message key="page.lbl.ezbiz.comtracListStatus.createDt" /></th>
+					<th width="10%"><wicket:message key="page.lbl.ezbiz.comtracListStatus.action" /></th>
+			  	</tr>
+			  </thead>
+			  <tbody>
+			    <tr wicket:id="sorting">
+					<td><span wicket:id="transactionCode">[transactionCode]</span></td>
+					<td><span wicket:id="trainingCode">[trainingCode]</span></td>
+					<td><span wicket:id="trainingName">[trainingName]</span></td>
+					<td><span wicket:id="status">[status]</span></td>
+					<td><span wicket:id="createBy">[createBy]</span></td>
+					<td><span wicket:id="createDt">[createDt]</span></td>
+					<td class="manage-link">
+						 <a wicket:id="detail" href="#" wicket:message="title:page.lbl.ezbiz.robFormA.detail"><i class="Edit icon" /></a>
+					</td>
+				</tr>
+			  </tbody>
+			  <tfoot>
+			    <tr>
+			    	<th colspan="100">
+			    		<span wicket:id="navigatorLabel">[dataView navigatorLabel]</span>
+				        <span wicket:id="navigator">[dataView navigator]</span>
+			    	</th>
+			 	</tr>
+			  </tfoot>
+		</table>
+	</div>
+</wicket:extend>

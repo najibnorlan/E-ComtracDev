@@ -1,0 +1,53 @@
+<wicket:extend>
+	<form wicket:id="searchPanel" class="ui form">
+	<script type="text/javascript" wicket:id="formValidation"></script>
+	<div class="ui top attached segment">
+							<div class="ui top attached label">
+								<h4 class="ui header">
+									<wicket:message key="page.lbl.ecomtrac.printCertSearch" />
+								</h4>
+							</div>
+		<div wicket:id="errorSearch" style="text-align: center;">
+					<div class="ui red message big">
+						<div class="header" style="font-size: 20px">
+							<i class="warning circle icon"></i> <wicket:message key="page.lbl.ecomtrac.notFound" />
+						</div>
+					</div>
+				</div>
+				<br>
+			<table>
+				<tr>
+					<td class="field"><label><span wicket:id="transactionCodeLabel" /> </label></td>
+				</tr>
+				<tr>
+					<td>
+						<div class="fields">							
+								<input wicket:id="transactionCode" type="text" size="40"/>
+						</div>
+					</td>
+				</tr>
+				<tr>
+					<td class="field"><label><span wicket:id="icNoLabel" /> </label></td>
+				</tr>
+				<tr>
+					<td>
+							<div class="field">
+								<input wicket:id="icNo" type="text" />
+							</div>
+							
+					</td></tr>
+					<tr>
+					<td>&nbsp;</td>
+				</tr>
+				<tr>
+					<td>
+						<div class="two fields">
+						<button class="ui primary button right floated" wicket:id="search"><wicket:message key="page.lbl.ecomtrac.searchButton" /></button>
+						</div>
+					</td>
+					</tr>
+					
+			</table>
+		</div>
+	</form>
+</wicket:extend>

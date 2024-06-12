@@ -1,0 +1,11 @@
+<wicket:extend>
+<form wicket:id="searchLocalAndCSNameForm">
+	<table>
+		<tr>
+			<td>LLP Name</td>
+			<td><input wicket:id="searchString" type="text" name="search" size="50"/></td>
+			<td><input type="submit" value="Search" class="button"></td>		
+		</tr>
+	</table>	
+</form>
+</wicket:extend>

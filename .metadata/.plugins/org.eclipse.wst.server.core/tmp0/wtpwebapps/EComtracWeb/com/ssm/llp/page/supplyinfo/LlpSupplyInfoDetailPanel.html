@@ -1,0 +1,65 @@
+<wicket:extend>
+	<form wicket:id="inputFormInfoItemPanel" id="inputFormInfoItemPanel">
+		<div wicket:id="listDataView">
+			<table class="blockdataview" cellspacing="0" >
+				<tr>
+					<td align="left"><span wicket:id="navigatorLabel">[dataview navigatorLabel]</span></td>
+					<td align="right"><span wicket:id="navigator">[dataview navigator]</span></td>
+				</tr>
+				<tr>
+					<td colspan="2">
+						<table cellspacing="0" class="dataview" width="100%" >
+						    <tr>
+						        <th width="18%"><wicket:message key="llpSupplyInfo.page.entityNo"/></th>
+						        <th width="20%"><wicket:message key="llpSupplyInfo.page.entityName"/></th>
+						        <th width="25%"><wicket:message key="llpSupplyInfo.page.buyProfile"/></th>
+								<th width="25%"><wicket:message key="llpSupplyInfo.page.buyCert"/></th>
+						        <th width="10%"><wicket:message key="llpSupplyInfo.page.action"/></th>
+						    </tr>
+						    <tr wicket:id="sorting">
+						        <td><span wicket:id="entityNo">[entityNo]</span> </td>
+						        <td><span wicket:id="entityName">[entityName]</span> </td>
+						        <td>
+						        	<table>
+						        		<tr>
+						        			<td>
+						        				<span wicket:id="profileStatus">[profileStatus]</span> </td>
+						        			<td>
+						        				<wicket:enclosure child="uploadProfile">
+						        					<a wicket:id="uploadProfile" href="#"><span wicket:id="uploadProfileLabel"/></a>
+						        				</wicket:enclosure>
+						        			</td>
+						        		</tr>
+						        	</table>
+						        </td>
+						        <td>
+						        	<table>
+						        		<tr>
+						        			<td>
+						        				<span wicket:id="certStatus">[certStatus]</span> </td>
+						        			<td>
+						        				<wicket:enclosure child="uploadCert">
+									        		<a wicket:id="uploadCert" href="#"><span wicket:id="uploadCertLabel"/></a>
+									        	</wicket:enclosure>
+						        			</td>
+						        		</tr>
+						        	</table>
+						        </td>
+						        <td class="manage-contact-links">
+						        	<wicket:enclosure child="downloadPerLLP">
+					                   <a wicket:id="downloadPerLLP" href="#">[Download]</a>
+					                </wicket:enclosure>
+					                <wicket:enclosure child="expiredDtLbl">
+					                	<wicket:message key="llpSupplyInfo.page.alreadyExpired"/>
+					                </wicket:enclosure>
+					            </td>
+						    </tr>
+						</table>
+					</td>
+				</tr>
+			</table>	
+		</div>
+		<div wicket:id="uploadProfileOrCertPopUp"></div>
+	</form>
+</wicket:extend>
+

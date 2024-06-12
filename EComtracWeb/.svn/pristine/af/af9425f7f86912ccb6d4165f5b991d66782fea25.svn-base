@@ -1,0 +1,162 @@
+<wicket:extend>
+	<form wicket:id="form">
+		<div id="EditFormAForm" class="ui form">
+			<table width="100%">
+				<tr>
+					<td>
+						<div class="ui top attached segment">
+							<div class="ui top attached label">
+								<h4 class="ui header">
+									<wicket:message key="page.lbl.ezbiz.comtrac.lpoAttachment" />
+								</h4>
+							</div>
+							<table width="100%">
+								<tr>
+									<td><input wicket:id="downloadSupportingDoc" type="button"
+										class="ui primary button"
+										wicket:message="value:page.lbl.ezbiz.robFormA.downloadSupportingDoc" />
+									</td>
+								</tr>
+							</table>
+						</div>
+					</td>
+				</tr>
+				<tr>
+					<td>
+						<div id="paymentdetailsdiv">
+							<table class="ui large table">
+								<thead>
+									<tr>
+										<th><b><wicket:message
+													key="viewListLpo.page.itemDesc" /></b></th>
+										<th><b><wicket:message
+													key="viewListLpo.page.totalPax" /></b></th>
+										<th><b><wicket:message
+													key="viewListLpo.page.amountWithoutGst" /></b></th>
+										<th><b><wicket:message
+													key="viewListLpo.page.gstAmount" /></b></th>
+										<th><b><wicket:message
+													key="viewListLpo.page.amountIncludeGst" /></b></th>
+									</tr>
+								</thead>
+								<tbody>
+									<tr>
+										<td><span wicket:id="transactionCode">transactionCode
+										</span><br>(<span wicket:id="trainingCode">"trainingCode"</span>)</td>
+										<td align="right"><span wicket:id="totalPax">totalPax</span></td>
+										<td align="right"><span wicket:id="amountWithoutGst">amountWithoutGst</span></td>
+										<td align="right"><span wicket:id="gstAmount">gstAmount</span></td>
+										<td align="right"><span wicket:id="amountIncludeGst">amountIncludeGst</span></td>
+									</tr>
+									<tr>
+										<td colspan="5"></td>
+									</tr>
+								</tbody>
+								<tfoot>
+									<tr>
+										<td colspan="5"></td>
+									</tr>
+									<tr>
+										<td>&nbsp;</td>
+										<td>&nbsp;</td>
+										<td>&nbsp;</td>
+										<td align="right"><b>Total Amount (RM):</b></td>
+										<td><b><span wicket:id="totalAll">totalAll</span></b></td>
+									</tr>
+								</tfoot>
+							</table>
+						</div>
+					</td>
+				</tr>
+				<tr>
+					<td>&nbsp;</td>
+				</tr>
+				<tr>
+					<td>
+						<div wicket:id="wmcListParticipant"
+							class="ui top attached segment">
+							<div class="ui top attached label">
+								<h4 class="ui header">
+									<wicket:message key="listParticipant.comtrac.list" />
+								</h4>
+							</div>
+							<table width="100%">
+								<!-- <tr>
+									<td>&nbsp;</td>
+								</tr> -->
+								<tr>
+									<td>
+										<div>
+											<table width="100%" class="ui striped table">
+												<thead>
+													<tr>
+														<th width="3%"><wicket:message
+																key="listParticipant.comtrac.index" /></th>
+														<th width=30%><wicket:message
+																key="listParticipant.comtrac.name" /></th>
+														<th width="15%"><wicket:message
+																key="listParticipant.comtrac.icNo" /></th>
+														<th width="15%"><wicket:message
+																key="listParticipant.comtrac.email" /></th>
+														<th width="15%"><wicket:message
+																key="listParticipant.comtrac.telNo" /></th>
+														<th width="10%"><wicket:message
+																key="listParticipant.comtrac.amount" /></th>
+														<!-- <th><wicket:message
+																key="page.lbl.ezbiz.nameListAttandees.action" /></th>
+														<th><wicket:message
+																key="page.lbl.ezbiz.nameListAttandees.downloadCert" /></th> -->
+
+
+													</tr>
+												</thead>
+												<tbody>
+													<tr wicket:id="sortingRobParticipantTransaction">
+														<td><span wicket:id="index">[index]</span></td>
+														<td><span wicket:id="name">[name]</span></td>
+														<td><span wicket:id="icNo">[transactionCodeNo]</span></td>
+														<td><span wicket:id="email">[totalAmount]</span></td>
+														<td><span wicket:id="telNo">[totalPax]</span></td>
+														<td><span wicket:id="amount">[amount]</span></td>
+													</tr>
+												</tbody>
+												<tfoot>
+													<tr>
+														<th colspan="7"><span wicket:id="navigatorLabel">[dataViewLabel]</span>
+															<span wicket:id="navigator">[dataView]</span></th>
+													</tr>
+												</tfoot>
+											</table>
+										</div>
+									</td>
+								</tr>
+								
+							</table>
+						</div>
+					</td>
+				</tr>
+				<tr>
+									<td>&nbsp;</td>
+								</tr>
+								<tr>
+									<td align="right">
+										<button class="ui button" wicket:id="cancel">Cancel</button>
+										<div class="ui buttons">
+											<button class="ui button negative" wicket:id="reject">Reject</button>
+											<!-- <button class="ui primary button" wicket:id="query">Query</button> -->
+											<button class="ui positive button" wicket:id="approve">Approve</button>
+										</div> <br> <!-- <div wicket:id="wmcRemarks">
+											<div style="text-align: left">
+												<label><b><span wicket:id="remarksType"></span> remarks</b></label>
+												<textarea wicket:id="remarks"></textarea>
+											</div>
+											<br>
+											<button wicket:id="resubmit" class="ui primary button">Submit</button>
+										</div> -->
+									</td>
+								</tr>
+			</table>
+		</div>
+	</form>
+	<form></form>
+</wicket:extend>

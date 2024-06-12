@@ -1,0 +1,34 @@
+<wicket:extend>
+	<form wicket:id="form">
+		<div class="ui centered equal width grid">
+			<div class="six wide column">
+				<div class="ui attached large message">
+					<div class="header">
+						<i class="cloud upload icon big"></i> Upload GAF Template
+					</div>
+				</div>
+				<div class="ui form attached fluid segment">
+					
+					<input wicket:id="fileUploadTmp" size="50" type="file" />
+					<br>
+					<button class="ui blue submit button" wicket:id="save">Upload</button>
+					<div wicket:id="progress"></div>
+					<div wicket:id="feedbackPanel"></div>
+				</div>
+				
+			</div>
+			<div class="six wide column">
+				<div class="ui attached large message">
+					<div class="header">
+						<i class="cloud download icon big"></i> Download GAF Template
+					</div>
+				</div>
+				<div class="ui form attached fluid segment"
+					style="text-align: center;">
+					<button class="ui blue submit button" wicket:id="download">Download</button>
+				</div>
+			</div>
+		</div>
+	</form>
+	<br>
+</wicket:extend>

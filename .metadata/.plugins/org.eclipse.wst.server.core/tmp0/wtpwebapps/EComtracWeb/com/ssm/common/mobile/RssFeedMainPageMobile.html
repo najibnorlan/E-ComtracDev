@@ -1,0 +1,100 @@
+ <style type="text/css">
+     th.last-name *, td.last-name {
+         font-weight: bold;
+         color: #AA0000;
+     }
+     th.numeric, td.numeric {
+         text-align: right !important;
+     }
+ </style>
+<wicket:extend>
+	<script type="text/javascript">
+var maximumRssLength;	
+jQuery(function() {
+    jQuery.getFeed({
+        url: cPath+'/rss.xml',
+        success: function(feed) {
+            var html = '';
+            maximumRssLength = feed.items.length;
+			for(var i = 0; i < feed.items.length ; i++) {
+            
+                var item = feed.items[i];
+
+                /*html += '<div class="panel-heading">';
+                html += '<h3 class="panel-title">'+item.title+'</h3>';
+                html += '</div>';
+                html += '<div class="panel-body">';
+                html += item.description;
+                html += '</div>';
+                */
+                html += '<a href="javascript:showSlide('+i+');" class="list-group-item">';
+                var title = item.title;
+                if(title.length>90){
+                	title = title.substring(0, 90)+".....";
+                }
+                html += title+'<i class="fa fa-chevron-right pull-right"></i>';
+                html += '</a>';
+                html += '<div id="det'+i+'" style="display: none;">';
+                html += '<b style="font-size: medium;">'+item.title+'</b><br><br>';
+                html += item.description;
+                html += '</div>';
+            }
+            html += '</div>';
+            
+            jQuery('#result').append(html);
+        }    
+    });
+});
+var rssCurrentId ;
+function showPre(){
+	var prevId = parseInt(rssCurrentId)-1;
+	showSlide(prevId.toString());
+}
+function showNext(){
+	var nextId = parseInt(rssCurrentId)+1;
+	showSlide(nextId.toString());
+}
+function showSlide(rssId){
+	rssCurrentId = rssId;
+	$("#rssDetail").html($("#det"+rssId).html())   ;
+	$("#result").slideUp();
+	$("#rssDetail").slideDown();
+	$("#backButton1").show();
+	if(rssId>0){
+		$("#preButton").show();
+	}else{
+		$("#preButton").hide();
+	}
+	if(rssId<maximumRssLength-1){
+		$("#nextButton").show();
+	}else{
+		$("#nextButton").hide();
+	}
+}
+function showMain(){
+	$("#result").slideDown();
+	$("#rssDetail").slideUp();
+	$("#backButton1").hide();
+	$("#preButton").hide();
+	$("#nextButton").hide();
+}
+</script>
+	
+	<div id="rssDetail" style="display: none;">
+	</div>
+    <div id="result" class="list-group">
+    </div>
+    <table style="width: 100%">
+    	<tr>
+    		<td>
+    			<button style="display: none;" id="preButton" class="btn btn-primary btn-block" onclick="showPre()">Previous</button>
+    		</td>
+    		<td>&nbsp;</td>
+    		<td>
+    			<button style="display: none;" id="nextButton" class="btn btn-primary btn-block" onclick="showNext()">Next</button>
+    		</td>
+    	</tr>
+    </table>
+    <br>
+	<button style="display: none;" id="backButton1" class="btn btn-primary btn-block" onclick="showMain()">Back</button>
+</wicket:extend>

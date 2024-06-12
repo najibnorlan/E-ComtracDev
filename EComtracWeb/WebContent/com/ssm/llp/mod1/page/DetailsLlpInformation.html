@@ -1,0 +1,193 @@
+<html>
+<wicket:extend>
+	<script type="text/javascript">
+		function CallPrint(strid) {
+			var prtContent = document.getElementById(strid);
+			var WinPrint = window
+					.open('', '',
+							'left=0,top=0,width=800,height=960,toolbar=0,scrollbars=0,status=0');
+			WinPrint.document.write(prtContent.innerHTML);
+			WinPrint.document.close();
+			WinPrint.focus();
+			WinPrint.print();
+			WinPrint.close();
+		}
+	</script>
+	<form wicket:id="form">
+	<fieldset>
+	<div id="llpProfile">
+	<div class="llpProfile">
+	<legend>
+	<wicket:message key="llpInfo.page.title" />
+	</legend>
+	<div id="llpInfoDiv">
+	
+	<table>
+		<tr>
+			<td>
+				<!-- Basic Information -->
+				<table>
+					<tr>
+						<td>&nbsp;</td>
+					</tr>
+					<tr>
+						<td><wicket:message key="llpInfo.page.llpName" /></td>
+						<td>:</td>
+						<td><span wicket:id="llpName"></span></td>
+					</tr>
+					<tr>
+						<td><wicket:message key="llpInfo.page.llpNo" /></td>
+						<td>:</td>
+						<td><span wicket:id="llpNo"></span></td>
+					</tr>
+					<tr>
+						<td><wicket:message key="llpInfo.page.regDate" /></td>
+						<td>:</td>
+						<td><span wicket:id="regDate" ></span></td>
+					</tr>
+					<tr>
+						<td><wicket:message key="llpInfo.page.oldName" /></td>
+						<td>:</td>
+						<td><wicket:message key="llpInfo.page.NA" /></td>
+					</tr>
+					<tr>
+						<td><wicket:message key="llpInfo.page.dateOfChange" /></td>
+						<td>:</td>
+						<td><span wicket:id="dateOfChange"></span></td>
+					</tr>
+					<tr>
+						<td><wicket:message key="llpInfo.page.conversion" /></td>
+						<td>:</td>
+						<td><span wicket:id="conversionName"></span></td>
+					</tr>
+					<tr>
+						<td><wicket:message key="llpInfo.page.llpStatus" /></td>
+						<td>:</td>
+						<td><span wicket:id="llpStatus"></span></td>
+					</tr>
+					<tr>
+						<td><wicket:message key="llpInfo.page.natureOfBiz" /></td>
+						<td>:</td>
+						<td><span wicket:id="natureOfBusinessDesc"></span></td>
+					</tr>
+					<tr>
+						<td><wicket:message key="llpInfo.page.regAddress" /></td>
+						<td>:</td>
+						<td><span wicket:id="regAdd1"></span>&nbsp;<span wicket:id="regAdd2"></span>&nbsp;<span wicket:id="regAdd3"></span></td>
+					</tr>
+					<tr>
+						<td colspan="2"></td>
+						<td><span wicket:id="regPostcode"></span>&nbsp;<span wicket:id="regCity" ></span></td>
+					</tr>
+					<tr>
+						<td colspan="2"></td>
+						<td><span wicket:id="regState"></span>&nbsp;<span wicket:id="regCountry"></span></td>
+					</tr>
+					<tr>
+						<td><wicket:message key="llpInfo.page.bizAddress" /></td>
+						<td>:</td>
+						<td><span wicket:id="bussinessAdd1"></span>&nbsp;<span wicket:id="bussinessAdd2"></span>&nbsp;<span wicket:id="bussinessAdd3"></span></td>
+					</tr>
+					<tr>
+						<td colspan="2"></td>
+						<td><span wicket:id="bussinessPostcode"></span>&nbsp;<span wicket:id="bussinessCity"></span></td>
+					</tr>
+					<tr>
+						<td colspan="2"></td>
+						<td><span wicket:id="bussinessStateCode"></span>&nbsp;<span wicket:id="bussinessCountryCode"></span></td>
+					</tr>
+				</table>
+			</td>
+		</tr>
+		<tr>
+			<td>&nbsp;</td>
+		</tr>
+		<tr>
+			<td><wicket:message key="llpInfo.page.partners" /></td>
+		</tr>
+		<tr>
+			<td>
+			<!-- Partners Information -->
+				<table border="1">
+					<tr>
+						<td><wicket:message key="llpInfo.page.name" /></td>
+						<td><wicket:message key="llpInfo.page.identification" /></td>
+						<td><wicket:message key="llpInfo.page.nationality" /></td>
+						<td><wicket:message key="llpInfo.page.placeOfResidence" /></td>
+						<td><wicket:message key="llpInfo.page.dateOfAppointment" /></td>
+						<td><wicket:message key="llpInfo.page.dateOfResignation" /></td>
+					</tr>
+					<tr wicket:id="partnerList">
+						<td><span wicket:id="partnerName">[partnerName]</span></td>
+						<td><span wicket:id="partnerIdNo">[partnerIdNo]</span></td>
+						<td><span wicket:id="partnerNationality">[partnerNationality]</span></td>
+						<td><span wicket:id="partnerFullAdd">[partnerFullAdd]</span></td>
+						<td><span wicket:id="partnerApptDt">[partnerApptDt]</span></td>
+						<td><span wicket:id="partnerResDt">[partnerResDt]</span></td>
+					</tr>
+				</table>
+			</td>
+		</tr>
+		<tr>
+			<td>&nbsp;</td>
+		</tr>
+		<tr>
+			<td><wicket:message key="llpInfo.page.complianceOfficers" /></td>
+		</tr>
+		<tr>
+			<td>
+			<!-- CO Information -->
+				<table border="1">
+					<tr>
+						<td><wicket:message key="llpInfo.page.nameCO" /></td>
+						<td><wicket:message key="llpInfo.page.identificationCO" /></td>
+						<td><wicket:message key="llpInfo.page.nationalityCO" /></td>
+						<td><wicket:message key="llpInfo.page.placeOfResidenceCO" /></td>
+						<td><wicket:message key="llpInfo.page.dateOfAppointmentCO" /></td>
+						<td><wicket:message key="llpInfo.page.dateOfResignationCO" /></td>
+					</tr>
+					<tr wicket:id="coList">
+						<td><span wicket:id="coName">[coName]</span></td>
+						<td><span wicket:id="coIdNo">[coIdNo]</span></td>
+						<td><span wicket:id="coNationality">[coNationality]</span></td>
+						<td><span wicket:id="coFullAdd">[coFullAdd]</span></td>
+						<td><span wicket:id="coApptDt">[coApptDt]</span></td>
+						<td><span wicket:id="coResDt">[coResDt]</span></td>
+					</tr>
+				</table>
+			</td>
+		</tr>
+		<tr>
+			<td>&nbsp;</td>
+		</tr>
+		<tr>
+			<td>
+				<table>
+					<tr>
+						<td><wicket:message key="llpInfo.page.totalCapitalContribution" />:<wicket:message key="llpInfo.page.RM" /> <span wicket:id="capitalContribution"></span></td>
+					</tr>
+				</table>
+			</td>
+		</tr>
+		<tr>
+			<td>
+			
+			</td>
+		</tr>
+	</table>
+	</div>
+	</div>
+	</div>
+	<table>
+	<tr>
+		<td><input wicket:id="downloadPdf" type="button" value="Certificate" /></td>
+		<td><input wicket:id="downloadInfo" type="button" value="Profile" /></td>
+		<!-- <td><input id="Button1" type="button" name="btnPrint" value="Print Info"
+		onclick="javascript:CallPrint('llpInfoDiv');" /></td> -->
+	</tr>
+	
+	</table>
+	</fieldset>
+	</form>
+</wicket:extend>
+</html>

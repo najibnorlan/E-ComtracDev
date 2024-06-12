@@ -1,0 +1,229 @@
+execute procedure ifx_allow_newline('t')
+
+
+GO
+
+--03/04/2017
+
+
+INSERT INTO rob_parameters( code,code_desc,code_type,parent_code_type,parent_code,status,create_dt,create_by,update_dt,update_by )
+VALUES ('IQ','Incentive Query','ROB_FORM_A_STATUS',null,null,'A',current,'admin',current,'admin')
+
+GO
+
+insert into rob_parameters (code, code_desc, code_type, status, create_dt, create_by, update_dt, update_by)
+values ("B", "BLUE", "NRIC_COLOUR", "A", current, "RIZAL", current, "RIZAL");
+
+GO
+
+insert into rob_parameters (code, code_desc, code_type, status, create_dt, create_by, update_dt, update_by)
+values ("R", "RED", "NRIC_COLOUR", "A", current, "RIZAL", current, "RIZAL");
+
+GO 
+
+insert into rob_parameters (code, code_desc, code_type, status, create_dt, create_by, update_dt, update_by)
+values ("O", "OTHERS", "NRIC_COLOUR", "A", current, "RIZAL", current, "RIZAL");
+
+GO 
+
+insert into rob_parameters (code, code_desc, code_type, status, create_dt, create_by, update_dt, update_by)
+values ("N", "NONE", "NRIC_COLOUR", "A", current, "RIZAL", current, "RIZAL");
+
+GO 
+
+
+
+--07/04/2017
+
+
+INSERT INTO rob_parameters( code,code_desc,code_type,parent_code_type,parent_code,status,create_dt,create_by,update_dt,update_by )
+VALUES ('CN','CREDIT NOTE','PAYMENT_MODE',null,null,'A',current,'admin',current,'admin')
+
+GO
+
+INSERT INTO rob_parameters( code,code_desc,code_type,parent_code_type,parent_code,status,create_dt,create_by,update_dt,update_by )
+VALUES ('fpx','FPX','PAYMENT_MODE',null,null,'A',current,'admin',current,'admin')
+
+GO
+
+
+
+--10/4/2017
+
+
+update rob_payment_fee 
+set payment_code =
+case 
+	when payment_code = "INCNTV_PERSONAL_STUDENT" then "INCNTV_PERSONAL_STUD"
+	when payment_code =  "INCNTV_TRADE_STUDENT" then "INCNTV_TRADE_STUD"
+	when payment_code =  "INCNTV_BINFO_STUDENT" then "INCNTV_BINFO_STUD"
+end
+where payment_code in ("INCNTV_PERSONAL_STUDENT", "INCNTV_TRADE_STUDENT", "INCNTV_BINFO_STUDENT")
+
+GO
+
+
+update rob_parameters 
+set code =
+case 
+	when code = "INCNTV_PERSONAL_STUDENT" then "INCNTV_PERSONAL_STUD"
+	when code =  "INCNTV_TRADE_STUDENT" then "INCNTV_TRADE_STUD"
+	when code =  "INCNTV_BINFO_STUDENT" then "INCNTV_BINFO_STUD"
+end
+where code in ("INCNTV_PERSONAL_STUDENT", "INCNTV_TRADE_STUDENT", "INCNTV_BINFO_STUDENT")
+
+GO
+
+
+
+-- 12/04/2017
+
+
+INSERT INTO rob_parameters (code,code_desc,code_type,parent_code_type,parent_code,status,create_dt,create_by,update_dt,update_by,seq) VALUES (
+'DE','Data Entry','CMP_TRANSACTION_STATUS',NULL,NULL,'A',current,'admin',current,'admin',0);
+
+GO
+
+INSERT INTO rob_parameters (code,code_desc,code_type,parent_code_type,parent_code,status,create_dt,create_by,update_dt,update_by,seq) VALUES (
+'PP','Pending Payment','CMP_TRANSACTION_STATUS',NULL,NULL,'A',current,'admin',current,'admin',0);
+
+GO
+
+INSERT INTO rob_parameters (code,code_desc,code_type,parent_code_type,parent_code,status,create_dt,create_by,update_dt,update_by,seq) VALUES (
+'PS','Payment Success','CMP_TRANSACTION_STATUS',NULL,NULL,'A',current,'admin',current,'admin',0);
+
+GO
+
+INSERT INTO rob_parameters (code,code_desc,code_type,parent_code_type,parent_code,status,create_dt,create_by,update_dt,update_by,seq) VALUES (
+'S','Renewal Success','CMP_TRANSACTION_STATUS',NULL,NULL,'A',current,'admin',current,'admin',0);
+
+GO
+
+INSERT INTO rob_parameters (code,code_desc,code_type,parent_code_type,parent_code,status,create_dt,create_by,update_dt,update_by,seq) VALUES (
+'OTC','Pending Payment OTC','CMP_TRANSACTION_STATUS',NULL,NULL,'A',current,'admin',current,'admin',0);
+
+GO
+
+INSERT INTO rob_parameters (code,code_desc,code_type,parent_code_type,parent_code,status,create_dt,create_by,update_dt,update_by,seq) VALUES (
+'C','Cancel','CMP_TRANSACTION_STATUS',NULL,NULL,'A',current,'admin',current,'admin',0);
+
+GO
+
+
+
+-- 4/5/2017
+
+
+INSERT INTO rob_parameters (code,code_desc,code_type,parent_code_type,parent_code,status,create_dt,create_by,update_dt,update_by,seq) VALUES (
+'ccs','CCS','COMTRAC_PAYMENT_CHANNEL',NULL,NULL,'A',current,'admin',current,'admin',0);
+
+GO
+
+
+INSERT INTO rob_parameters (code,code_desc,code_type,parent_code_type,parent_code,status,create_dt,create_by,update_dt,update_by,seq) VALUES (
+'bt','Bank Transfer','COMTRAC_PAYMENT_CHANNEL',NULL,NULL,'A',current,'admin',current,'admin',0);
+
+GO
+
+
+INSERT INTO rob_parameters (code,code_desc,code_type,parent_code_type,parent_code,status,create_dt,create_by,update_dt,update_by,seq) VALUES (
+'post','Post','COMTRAC_PAYMENT_CHANNEL',NULL,NULL,'A',current,'admin',current,'admin',0);
+
+GO
+
+
+INSERT INTO rob_parameters (code,code_desc,code_type,parent_code_type,parent_code,status,create_dt,create_by,update_dt,update_by,seq) VALUES (
+'ezbiz','EzBiz','COMTRAC_PAYMENT_CHANNEL',NULL,NULL,'A',current,'admin',current,'admin',0);
+
+GO
+
+
+INSERT INTO rob_parameters (code,code_desc,code_type,parent_code_type,parent_code,status,create_dt,create_by,update_dt,update_by,seq) VALUES (
+'email','Email','COMTRAC_REGISTRATION_CHANNEL',NULL,NULL,'A',current,'admin',current,'admin',0);
+
+GO
+
+
+INSERT INTO rob_parameters (code,code_desc,code_type,parent_code_type,parent_code,status,create_dt,create_by,update_dt,update_by,seq) VALUES (
+'fax','Fax','COMTRAC_REGISTRATION_CHANNEL',NULL,NULL,'A',current,'admin',current,'admin',0);
+
+GO
+
+
+INSERT INTO rob_parameters (code,code_desc,code_type,parent_code_type,parent_code,status,create_dt,create_by,update_dt,update_by,seq) VALUES (
+'ezbiz','EzBiz','COMTRAC_REGISTRATION_CHANNEL',NULL,NULL,'A',current,'admin',current,'admin',0);
+
+GO
+
+
+INSERT INTO rob_parameters (code,code_desc,code_type,parent_code_type,parent_code,status,create_dt,create_by,update_dt,update_by,seq) VALUES (
+'st','Standard','COMTRAC_FEE_TYPE',NULL,NULL,'A',current,'admin',current,'admin',1);
+
+GO
+
+
+INSERT INTO rob_parameters (code,code_desc,code_type,parent_code_type,parent_code,status,create_dt,create_by,update_dt,update_by,seq) VALUES (
+'ls','License Secretary','COMTRAC_FEE_TYPE',NULL,NULL,'A',current,'admin',current,'admin',2);
+
+GO
+
+
+INSERT INTO rob_parameters (code,code_desc,code_type,parent_code_type,parent_code,status,create_dt,create_by,update_dt,update_by,seq) VALUES (
+'member','Member of Prescribed Body','COMTRAC_FEE_TYPE',NULL,NULL,'A',current,'admin',current,'admin',3);
+
+GO
+
+
+
+-- 5/5/2017
+
+
+INSERT INTO rob_parameters (code,code_desc,code_type,parent_code_type,parent_code,status,create_dt,create_by,update_dt,update_by,seq) VALUES (
+'DE','Data Entry','COMTRAC_TRANSACTION_STATUS',NULL,NULL,'A',current,'admin',current,'admin',0);
+
+
+GO
+INSERT INTO rob_parameters (code,code_desc,code_type,parent_code_type,parent_code,status,create_dt,create_by,update_dt,update_by,seq) VALUES (
+'PP','Pending Payment','COMTRAC_TRANSACTION_STATUS',NULL,NULL,'A',current,'admin',current,'admin',0);
+GO
+
+
+INSERT INTO rob_parameters (code,code_desc,code_type,parent_code_type,parent_code,status,create_dt,create_by,update_dt,update_by,seq) VALUES (
+'PS','Payment Success','COMTRAC_TRANSACTION_STATUS',NULL,NULL,'A',current,'admin',current,'admin',0);
+
+
+
+-- 18/5/2017
+
+
+INSERT INTO rob_parameters( code,code_desc,code_type,parent_code_type,parent_code,status,create_dt,create_by,update_dt,update_by )
+VALUES ('FILTER_USER_LIST_COMTRAC','SSM:nhasrizal,SSM:mhaziq,SSM:trafidah','LLP_CONFIG',null,null,'A',current,'admin',current,'admin');
+
+
+GO
+INSERT INTO rob_parameters( code,code_desc,code_type,parent_code_type,parent_code,status,create_dt,create_by,update_dt,update_by )
+VALUES ('IS_FILTER_USER_LIST_COMTRAC','Y','LLP_CONFIG',null,null,'A',current,'admin',current,'admin');
+
+
+
+--24/5/2017
+
+
+INSERT INTO rob_parameters (code,code_desc,code_type,parent_code_type,parent_code,status,create_dt,create_by,update_dt,update_by,seq) VALUES (
+'COUNTER','SSM Counter','USER_APPROVED_CHANNEL',NULL,NULL,'A',current,'admin',current,'admin',0);
+GO
+
+
+INSERT INTO rob_parameters (code,code_desc,code_type,parent_code_type,parent_code,status,create_dt,create_by,update_dt,update_by,seq) VALUES (
+'SSMMYKAD','SSM MyKad','USER_APPROVED_CHANNEL',NULL,NULL,'A',current,'admin',current,'admin',0);
+
+
+INSERT INTO rob_parameters (code,code_desc,code_type,parent_code_type,parent_code,status,create_dt,create_by,update_dt,update_by,seq) VALUES (
+'SSMKIOSK','SSM Kiosk','USER_APPROVED_CHANNEL',NULL,NULL,'A',current,'admin',current,'admin',0);
+GO
+
+-- 13/07/2017
+
+INSERT INTO rob_parameters( code,code_desc,code_type,parent_code_type,parent_code,status,create_dt,create_by,update_dt,update_by ) VALUES ('D-Vege','VEGETARIAN_MEAL','DIETARY_TYPE',null,null,'A',current,'SSM:mhaziq',current,'SSM:mhaziq');
+GO 
+INSERT INTO rob_parameters( code,code_desc,code_type,parent_code_type,parent_code,status,create_dt,create_by,update_dt,update_by ) VALUES ('D-Other','OTHER_DIET','DIETARY_TYPE',null,null,'A',current,'SSM:mhaziq',current,'SSM:mhaziq');

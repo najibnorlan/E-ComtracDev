@@ -1,0 +1,69 @@
+<wicket:extend>
+	<form wicket:id="form" class="ui form">
+		<div class="ui top attached segment">
+			<div class="ui top attached label">
+				<h4 class="ui header">
+					<wicket:message key="page.lbl.ezbiz.cmp.cmpDetail" />
+				</h4>
+			</div>
+			<div class="ui horizontal segments">
+				<div class="ui segment">
+					<div class="field">
+						<label><span wicket:id="cmpNoLabel" /></label> <input type="text" wicket:id="cmpNo">
+					</div>
+					<div class="field">
+						<label><span wicket:id="cmpStatusLabel" /></label> <input type="text" wicket:id="cmpStatus">
+					</div>
+					<div class="field">
+						<label><span wicket:id="regNoLabel" /></label> <input type="text" wicket:id="regNo">
+					</div>
+					<div class="field">
+						<label><span wicket:id="regNameLabel" /></label> <input type="text" wicket:id="regName">
+					</div>
+				</div>
+				<div class="ui segment">
+					<div class="field">
+						<label><span wicket:id="cmpEntityTypeLabel" /></label> <input type="text" wicket:id="cmpEntityType">
+					</div>
+					<div class="field">
+						<label><span wicket:id="cmpEntityNoLabel" /></label> <input type="text" wicket:id="cmpEntityNo">
+					</div>
+					<wicket:enclosure child="cmpAmt">
+						<div class="field">
+							<label><span wicket:id="cmpAmtLabel" /></label> <input type="text" wicket:id="cmpAmt"><input type="text" wicket:id="type">
+						</div>
+					</wicket:enclosure>
+				</div>
+			</div>
+			<div class="ui segment">
+				<wicket:message key="page.lbl.ezbiz.cmpDetailNote" />
+			</div>
+		</div>
+
+		<div wicket:id="wmcSearchResult">
+			<table class="ui striped table">
+				<thead>
+					<tr>
+						<th width="30%"><wicket:message key="page.lbl.ezbiz.cmp.cmpSectionCode" /></th>
+						<th width="60%"><wicket:message key="page.lbl.ezbiz.cmp.cmpSectionOffence" /></th>
+						<th width="10%"><wicket:message key="page.lbl.ezbiz.cmp.cmpSectionAmt" /></th>
+					</tr>
+				</thead>
+				<tbody>
+					<tr wicket:id="sorting">
+						<td><span wicket:id="cmpSectionCode">[cmpSectionCode]</span></td>
+						<td><span wicket:id="cmpSectionOffence">[cmpSectionOffence]</span></td>
+						<td><span wicket:id="cmpSectionAmt">[cmpSectionAmt]</span></td>
+					</tr>
+				</tbody>
+				<tfoot>
+					<tr>
+						<th colspan="100"><span wicket:id="navigatorLabel">[dataView navigatorLabel]</span> <span wicket:id="navigator">[dataView navigator]</span>
+						</th>
+					</tr>
+				</tfoot>
+			</table>
+		</div>
+		&nbsp;&nbsp; <input wicket:id="back" type="button" class="ui primary button" value="Back" />
+	</form>
+</wicket:extend>

@@ -1,0 +1,13 @@
+<wicket:panel>
+	<div class="ui modal" wicket:id="wmcAlert" style="z-index:999">
+		  <div class="header" style="background-color: LightSteelBlue ;"><span wicket:id="title"/></div>
+		  <div class="content">
+			<span wicket:id="msg"/>
+			<br>
+			<span wicket:id="additionalMsg"/>
+		  </div>
+		  <div class="actions">
+		    <div class="ui approve button">Ok</div>
+		  </div>
+	</div>
+</wicket:panel>

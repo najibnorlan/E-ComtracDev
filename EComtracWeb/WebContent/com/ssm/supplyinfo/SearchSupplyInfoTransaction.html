@@ -1,0 +1,79 @@
+<wicket:extend>
+	<form wicket:id="form" class="ui form">
+		<div class="ui segments">
+				<div class="ui horizontal segments">
+					<div class="ui segment">
+						<div class="field">
+							<label><span wicket:id="transCodeLabel" /></label> <input type="text" wicket:id="transCode">
+						</div>
+						<div class="field">
+							<label><span wicket:id="ownerByLabel" /></label> <input type="text" wicket:id="ownerBy">
+						</div>
+						<div class="field">
+							<label><span wicket:id="statusLabel" /></label> <select wicket:id="status"></select>
+						</div>
+					</div>
+					<div class="ui segment">
+						<div class="two fields">
+							<div class="field">
+								<label><span wicket:id="createDtFromLabel" /></label> <input wicket:id="createDtFrom" style="width: 150;" />
+							</div>
+							<div class="field">
+								<label><span wicket:id="createDtToLabel" /></label> <input wicket:id="createDtTo" style="width: 150;" />
+							</div>
+						</div>
+						<div class="two fields">
+							<div class="field">
+								<label><span wicket:id="paymentDtFromLabel" /></label> <input wicket:id="paymentDtFrom" style="width: 150;" />
+							</div>
+							<div class="field">
+								<label><span wicket:id="paymentDtToLabel" /></label> <input wicket:id="paymentDtTo" style="width: 150;" />
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="ui segment">
+						<input wicket:id="search" type="button" class="ui primary button"  />
+				</div>
+			</div>
+		
+		<div wicket:id="wmcSearchResult">
+			<table class="ui striped table">
+			  <thead>
+			    	<tr>
+			    	<th><wicket:message key="page.lbl.supplyInfo.supplyInfoTransTransSearch.bil" /></th>
+			    	<th><wicket:message key="page.lbl.supplyInfo.supplyInfoTransTransSearch.transCode" /></th>
+					<th><wicket:message key="page.lbl.supplyInfo.supplyInfoTransTransSearch.status" /></th>
+					<th><wicket:message key="page.lbl.supplyInfo.supplyInfoTransTransSearch.ownerBy" /></th>
+					<th><wicket:message key="page.lbl.supplyInfo.supplyInfoTransTransSearch.createDt" /></th>
+					<th><wicket:message key="page.lbl.supplyInfo.supplyInfoTransTransSearch.updateDt" /></th>
+					<th><wicket:message key="page.lbl.supplyInfo.supplyInfoTransTransSearch.poymentDt" /></th>
+					<th><wicket:message key="page.lbl.supplyInfo.supplyInfoTransTransSearch.action" /></th>
+			  	</tr>
+			  </thead>
+			  <tbody>
+			  
+			    <tr wicket:id="sorting">
+			    	<td><span wicket:id="bil">[bil]</span></td>
+					<td><span wicket:id="transCode">[transCode]</span></td>
+					<td><span wicket:id="status">[status]</span></td>
+					<td><span wicket:id="ownerBy">[ownerBy]</span></td>
+					<td><span wicket:id="createDt">[createDt]</span></td>
+					<td><span wicket:id="updateDt">[updateDt]</span></td>
+					<td><span wicket:id="paymentDt">[paymentDt]</span></td>
+					<td class="manage-link">
+						 <a wicket:id="detail" href="#" ><i class="large red edit link icon" /></a>
+					</td>
+				</tr>
+			  </tbody>
+			  <tfoot>
+			    <tr>
+			    	<th colspan="100">
+			    		<span wicket:id="navigatorLabel">[dataView navigatorLabel]</span>
+				        <span wicket:id="navigator">[dataView navigator]</span>
+			    	</th>
+			  </tr></tfoot>
+			</table>
+		</div>
+	</form>
+</wicket:extend>

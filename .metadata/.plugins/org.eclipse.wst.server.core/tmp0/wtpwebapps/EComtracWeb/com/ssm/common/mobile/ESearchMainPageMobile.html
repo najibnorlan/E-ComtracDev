@@ -1,0 +1,52 @@
+ <style type="text/css">
+     th.last-name *, td.last-name {
+         font-weight: bold;
+         color: #AA0000;
+     }
+     th.numeric, td.numeric {
+         text-align: right !important;
+     }
+ </style>
+<wicket:extend>
+	<table class="blockdataview" cellspacing="0">
+		<tr>
+			<td align="left"><span wicket:id="navigatorLabel">[dataView navigatorLabel]</span></td>
+			<td align="right"><span wicket:id="navigator">[dataView navigator]</span></td>
+		</tr>
+		<tr>
+			<td colspan="2">
+				<table cellspacing="0" class="dataView" width="100%" border="">
+							<tr wicket:id="sorting">
+						        <td>
+			    					<div class="list-group-item">
+			    						<table>
+											<tr>
+												<td><wicket:message key="page.esearch.entityNo"/></td>
+									        	<td>&nbsp;:&nbsp;</td>
+									        	<td><span wicket:id="entityNo">[entityNo]</span></td>
+									        </tr>
+									        <tr>
+												<td><wicket:message key="page.esearch.entityName"/></td>
+									        	<td>&nbsp;:&nbsp;</td>
+									        	<td><span wicket:id="entityName">[entityName]</span></td>
+									        </tr>
+									        <tr>
+												<td><wicket:message key="page.esearch.entityStatus"/></td>
+									        	<td>&nbsp;:&nbsp;</td>
+									        	<td><span wicket:id="entityStatus">[entityStatus]</span></td>
+									        </tr>
+									        
+									        <tr>
+												<td valign="top"><wicket:message key="page.esearch.gstNo"/></td>
+									        	<td valign="top">&nbsp;:&nbsp;</td>
+									        	<td><span wicket:id="gstNo">[gstNo]</span></td>
+									        </tr>
+									    </table>
+  									</div>  
+  								 </td>
+						    </tr>
+				</table>
+			</td>
+		</tr>
+	</table>
+</wicket:extend>

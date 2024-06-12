@@ -1,0 +1,58 @@
+<wicket:extend>
+<form wicket:id="searchLlpNameForm">
+<table>
+	<tr>
+		<td>
+			<wicket:enclosure child="guidelinesLink">
+				<wicket:message key="search.panel.guideline">
+				    <a wicket:id="guidelinesLink"><wicket:message key="reservedName.page.guidelinesLinkLabel"/></a>
+				</wicket:message>	
+			</wicket:enclosure>
+		</td>
+	</tr>
+</table>
+<table class="blockWithBorder">
+	<tr>
+		<td>
+		<table>
+			<tr>
+				<td>Registration Type</td>
+				<td>:</td>
+				<td><span wicket:id=regTypeLbl></span></td>
+			</tr>
+			<wicket:enclosure child="profBodyTypeLbl">
+				<tr>
+					<td>Professional Practice Type</td>
+					<td>:</td>
+					<td colspan="2"><span wicket:id="profBodyTypeLbl"></span></td>
+				</tr>
+			</wicket:enclosure>
+			<wicket:enclosure child="conversionTypeLbl">
+				<tr>
+					<td>Conversion Type</td>
+					<td>:</td>
+					<td colspan="2"><span wicket:id="conversionTypeLbl"></span></td>
+				</tr>
+			</wicket:enclosure>
+			<tr>
+				<td>Proposed Name</td>
+				<td>:</td>
+				<td><input wicket:id="searchString" type="text" name="search" size="100" /></td>
+				<td><input type="submit" value="Search" class="button"></td>
+			</tr>
+			<tr>	
+				<td colspan="4">
+					<font color="red"><wicket:message key="search.panel.plt.word"/></font>
+				</td>
+			</tr>
+		</table>	
+	</td>
+</tr>
+</table>	
+	
+	<input wicket:id="regType" type="hidden" />
+	<input wicket:id="profBodyType" type="hidden" />
+	<input wicket:id="isProceedToLLP" type="hidden" />
+	<input wicket:id="conversionType" type="hidden" />
+</form>
+</wicket:extend>

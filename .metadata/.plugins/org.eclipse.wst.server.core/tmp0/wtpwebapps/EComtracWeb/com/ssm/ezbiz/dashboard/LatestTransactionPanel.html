@@ -1,0 +1,44 @@
+
+<wicket:panel>
+	<table class="ui striped table">
+	  <thead>
+	    <tr>
+	      <th><wicket:message key="page.title.dashboard.latestTransaction.appRefNo" /></th>
+	      <th><wicket:message key="page.title.dashboard.latestTransaction.brNoNBizName" /></th>
+	      <th><wicket:message key="page.title.dashboard.latestTransaction.status" /></th>
+	      <th><wicket:message key="page.title.dashboard.latestTransaction.updateDt" /></th>
+	      <th class="right aligned"><wicket:message key="page.title.dashboard.latestTransaction.action" /></th>
+	    </tr>
+	  </thead>
+	  <tbody>
+	    <tr wicket:id="sorting">
+	      <td> <span wicket:id="formType">[formType]</span> <br>
+	      		<span wicket:id="appRefNo">[appRefNo]</span> 
+	      </td>
+	      <td><span wicket:id="brNoNBizName">[brNoNBizName]</span> </td>
+	      <td><span wicket:id="status">[status]</span> </td>
+	      <td><span wicket:id="updateDt">[updateDt]</span> </td>
+	      <td class="right aligned">
+	      	<button class="ui primary button" wicket:id="downloadCert" wicket:message="title:page.title.dashboard.latestTransaction.dowloadCert">
+	      		<i class="Download icon" style="font-size: 1em;"></i>Certificate
+			</button>
+			<button class="ui primary button" wicket:id="downloadBusinessInfo"  wicket:message="title:page.title.dashboard.latestTransaction.downloadBusinessInfo">
+			  	<i class="Download icon" style="font-size: 1em;"></i>Info
+			</button>
+	      	<button class="ui primary button" wicket:id="viewAction">
+			  <wicket:message key="page.title.dashboard.latestTransaction.viewAction" />
+			</button>
+			
+		  </td>
+	    </tr>
+	  </tbody>
+	  <tfoot>
+  			<tr>
+    			<th colspan="100">
+    			<span wicket:id="navigatorLabel">[dataView navigatorLabel]</span>
+	        	<span wicket:id="navigator">[dataView navigator]</span>
+    			</th>
+  			</tr>
+  		</tfoot>
+	</table>
+</wicket:panel>

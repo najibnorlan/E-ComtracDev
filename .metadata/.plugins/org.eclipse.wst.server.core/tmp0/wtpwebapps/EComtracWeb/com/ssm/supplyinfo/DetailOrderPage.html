@@ -1,0 +1,65 @@
+<wicket:extend>
+			<table class="ui large striped  table" >
+				<thead class="ui computer only">
+					<tr>
+						<th>Bil</th>
+						<th>ID</th>
+						<th>Product</th>
+						<th>Type</th>
+						<th>Price</th>
+						<th>Action</th>
+					</tr>
+				</thead> 
+				<tbody>
+					<tr wicket:id="sorting">
+						<td><span class="mobile only">Bil : </span><span wicket:id="bil">[bil]</span></td>
+						<td><span class="mobile only">ID : </span><span wicket:id="entityNo">[entityNo]</span></td>
+						<td><span class="mobile only">Product : </span><span wicket:id="prodDesc">[prodDesc]</span></td>
+						<td><span class="mobile only">Type : </span><span wicket:id="prodLocale">[prodLocale]</span> </td>
+						<td><span class="mobile only"> Price : </span>RM <span wicket:id="amt">[amt]</span></td>
+						<td class="center aligned" style="width: 10%"> <span class="mobile only"> </span>
+						<a wicket:id="download" href="#" wicket:message="title:page.lbl.supplyInfoOrderDetail.download"><i class="large red download icon" /></a>
+						</td>
+					</tr>
+				</tbody>
+				<tfoot>
+					<tr>
+						<th colspan="4">
+							&nbsp;
+						</th>
+						<th colspan="2">
+							<div class="ui message">
+								<table style="padding: 0px">
+									<thead>
+									<tr >
+										<td>Tax Amt</td>
+										<td>:</td>
+										<td>RM <span wicket:id="taxLabel" /></td>
+									</tr>
+									<tr style="font-weight:bolder;">
+										<td>Total Amt</td>
+										<td>:</td>
+										<td>RM <span wicket:id="totalLabel" /></td>
+									</tr>
+									</thead>
+								</table>
+							</div>
+						</th>
+					</tr>
+				</tfoot>
+			</table>
+			<div class="center aligned">
+				<button wicket:id="proceedPayment" class="ui positive button" >
+					<i class="shop icon"></i> Proceed to pay
+				</button>
+			</div>
+			<wicket:enclosure child="recieptPanel">
+				<div class="center aligned">
+					<button class="ui positive button" onclick="javascript:$('#recieptPanelModal').modal('show');">
+						<i class="shop icon"></i> Show Reciept
+					</button>
+				</div>
+				<div id="recieptPanelModal"  wicket:id="recieptPanel" class="ui modal" style="z-index: 999;padding-right: 15px;padding-left: 30px">
+				</div>
+			</wicket:enclosure>
+</wicket:extend>

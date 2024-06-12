@@ -1,0 +1,116 @@
+<wicket:extend>
+	<form wicket:id="robFormB4SummaryForm">
+		<script type="text/javascript" wicket:id="b4Validation"></script>
+		<script type="text/javascript" wicket:id="showOwnerValidation"></script>
+		<table width="100%">
+			<tr>
+				<td>
+					<div class="ui top attached segment">
+						<div class="ui top attached label">
+							<h4 class="ui header"><wicket:message key="page.lbl.ezbiz.robFormB4.b4Title" /></h4>
+						</div>
+						<table width="100%">
+							<tr>
+								<td><wicket:message key="page.lbl.ezbiz.robFormB4.b4Notes" /></td>
+							</tr>
+							<tr>
+								<td>&nbsp;</td>
+							</tr>
+							<tr>
+								<td>
+									<div class="ui checkbox field">
+										<input wicket:id="isB4" type="checkbox" />
+										<label><span wicket:id="isB4Label" /></label>
+									</div>
+								</td>
+							</tr>
+							<tr>
+								<td>
+									<div class="field inline">
+										<label><wicket:message key="page.lbl.ezbiz.robFormB4.b4AmmendmendDt" /></label>
+										<span wicket:id="b4AmmendmendDt" />
+									</div>
+								</td>
+							</tr>
+							<tr>
+								<td>&nbsp;</td>
+							</tr>
+							<tr>
+								<td></td>
+							</tr>
+							<tr wicket:id="wmcNewOwnerB4">
+								<td>
+									<wicket:message key="page.lbl.ezbiz.robFormB4.b4AddNewPartnerInstruction" />
+									<div class="field inline" >
+										<label><span wicket:id="newIcNoForOwnersLabel" /></label>
+										<input wicket:id="newIcNoForOwners" type="text" />
+										<input wicket:id="showOwnersPanel" type="button" class="ui primary button" value="Add News Owners" />
+										<div wicket:id="newIcNoForOwnersError" class="ui basic red pointing prompt label transition visible"></div>
+									</div>
+									<br>
+								</td>
+							</tr>
+							<tr>
+								<td>
+									<div wicket:id="editRobFormB4WithdrawPanel" > </div>
+									<div wicket:id="editRobFormB4DetPanel"></div>
+								</td>
+							</tr>							
+						</table>
+						<div wicket:id="wmcOwners">
+							<table class="ui striped table">
+							  <thead>
+							    <tr>
+							    	<th width="10%"><wicket:message key="page.lbl.ezbiz.robFormB4.ownersNo" /></th>
+									<th width="50%"><wicket:message key="page.lbl.ezbiz.robFormB4.ownersDetail" /></th>
+									<th width="10%"><wicket:message key="page.lbl.ezbiz.robFormB4.ammendmendType" /></th>
+									<th width="10%"><wicket:message key="page.lbl.ezbiz.robFormB4.ammendmendDate" /></th>
+									<th width="20%"><wicket:message key="page.lbl.ezbiz.robFormB4.action" /></th>
+							  	</tr>
+							  </thead>
+							  <tbody>
+							    <tr wicket:id="sortingRobFormB4Owners">
+									<td><span wicket:id="ownersNo">[ownersNo]</span></td>
+									<td>
+										<span wicket:id="name">[name]</span><br>
+										<span wicket:id="idNo">[idNo]</span><br>
+										<span wicket:id="ownersAddress">[ownersAddress]</span>
+									</td>
+									<td><span wicket:id="ammendmentType">[ammendmentType]</span></td>
+									<td><span wicket:id="ammendmentDate">[ammendmentDate]</span></td>
+									<td class="manage-link">
+										 <a wicket:id="editOwners" href="#" wicket:message="title:page.lbl.ezbiz.robFormB4.editOwners"><i class="Edit icon" />
+										 </a> 
+										 <a wicket:id="deleteOwners" href="#" wicket:message="title:page.lbl.ezbiz.robFormB4.deleteOwners"><i class="Erase icon" /></a>
+										 <a wicket:id="undoOwners" href="#" wicket:message="title:page.lbl.ezbiz.robFormB4.undoOwners"><i class="Undo icon" /></a>
+										 <wicket:enclosure child="ammendmentType">
+										 	<a wicket:id="downloadSupportingDoc" href="#" wicket:message="title:page.lbl.ezbiz.robFormB4.downloadSupportingDoc"><i class="File alternate outline icon" /></a>
+										 </wicket:enclosure>
+									</td>
+								</tr>
+							  </tbody>
+							  <tfoot>
+							    <tr>
+							    	<th colspan="5">
+							    		<span wicket:id="navigatorLabelRobFormB4">[dataView navigatorLabelRobFormB4]</span>
+								        <span wicket:id="navigatorRobFormB4">[dataView navigatorRobFormB4]</span>
+							    	</th>
+							  </tr></tfoot>
+							</table>
+						</div>
+					</div>
+				</td>
+			</tr>
+			<tr>
+				<td align="right">&nbsp;</td>
+			</tr>
+			<tr>
+				<td align="right">
+					<button class="ui button negative" wicket:id="discard" ><wicket:message key="page.lbl.ezbiz.robFormB.discard" /></button>
+					<input wicket:id="b4Prev" type="button" class="ui primary button" value="Previous" /> 
+					<input wicket:id="b4Next" type="button" class="ui primary button" value="Next" /></td>
+			</tr>
+		</table>
+		
+	</form>
+</wicket:extend>

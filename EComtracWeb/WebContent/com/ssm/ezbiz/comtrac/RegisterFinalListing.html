@@ -1,0 +1,209 @@
+<wicket:extend>
+	<form wicket:id="form">
+		<div id="FormRemarkList" class="ui form ">
+			<table style="width: 50%">
+				<tr>
+					<td>
+						<div class="ui top attached segment">
+							<div class="ui top attached label">
+								<h4 class="ui header">
+									<wicket:message
+										key="page.lbl.ezbiz.nameListAttendees.headerLbl" />
+								</h4>
+							</div>
+							<div class="content">
+								<div class="ui grid">
+									<div class="seven wide column">
+										<div class="header" style="font-weight: bold;">
+											<wicket:message
+												key="page.lbl.ezbiz.nameListAttendees.trainingCode" />
+										</div>
+										<p>
+											<span wicket:id="trainingCode">[transId]</span>
+										</p>
+										<div class="header" style="font-weight: bold;">
+											<wicket:message
+												key="page.lbl.ezbiz.nameListAttendees.trainingName" />
+										</div>
+										<p>
+											<span wicket:id="trainingName">[transId]</span>
+										</p>
+
+										<div class="header" style="font-weight: bold;">
+											<wicket:message
+												key="page.lbl.ezbiz.nameListAttendees.trainingStrtDate" />
+										</div>
+										<p>
+											<span wicket:id="trainingDate">[transId]</span>
+										</p>
+									</div>
+									<div class="five wide column">
+										<div class="header" style="font-weight: bold;">
+											<wicket:message
+												key="page.lbl.ezbiz.nameListAttendees.participantPay" />
+										</div>
+										<p>
+											<span wicket:id="participantPayed">[participantPayed]</span>
+											pax
+										</p>
+										<div class="header" style="font-weight: bold;">
+											<wicket:message
+												key="page.lbl.ezbiz.nameListAttendees.participantNotPay" />
+										</div>
+										<p>
+											<span wicket:id="participantNotPay">[participantNotPay]</span>
+											pax
+										</p>
+
+										<div class="header" style="font-weight: bold;">
+											<wicket:message
+												key="page.lbl.ezbiz.nameListAttendees.maxParticipant" />
+										</div>
+										<p>
+											<span wicket:id="maxParticipant">[maxParticipant]</span> pax
+										</p>
+										<div class="header" style="font-weight: bold;">
+											<wicket:message
+												key="page.lbl.ecomtrac.nameListAttendees.trainingType" />
+										</div>
+										<p>
+											<span wicket:id="trainingType">[trainingType]</span>
+										</p>
+									</div>
+								</div>
+							</div>
+						</div>
+					</td>
+				</tr>
+
+			</table>
+		</div>
+		<br>
+		<div wicket:id="listAttendees">
+			<table width="100%" class="ui striped table">
+				<thead>
+					<tr>
+						<th colspan="11">
+							<div class="ui grid">
+								<div class="eight wide column">
+									<div class="ui form icon">
+										<div class="inline field fluid">
+											<label>IC Number</label> <input wicket:id="ic" type="text"
+												size="35" /> <i wicket:id="search"
+												class="inverted circular search link icon"></i>
+										</div>
+									</div>
+								</div>
+								<div class="eight wide column">
+
+									<button class="ui labeled icon button red small right floated"
+										wicket:id="downloadPdf">
+										<i class="file pdf outline icon"></i>
+										<wicket:message
+											key="page.lbl.ezbiz.nameListAttandees.downloadPdf" />
+									</button>
+									<button class="ui labeled icon button teal small right floated"
+										wicket:id="downloadExcel">
+										<i class="file excel outline icon"></i>
+										<wicket:message
+											key="page.lbl.ezbiz.nameListAttandees.downloadExcel" />
+									</button>
+								</div>
+							</div>
+
+						</th>
+					</tr>
+					<tr>
+						<th><wicket:message
+								key="page.lbl.ezbiz.nameListAttandees.bilNoLbl" /></th>
+						<th><wicket:message
+								key="page.lbl.ezbiz.nameListAttandees.transactionCode" /></th>
+						<th><wicket:message
+								key="page.lbl.ezbiz.nameListAttandees.trainerNameLbl" /></th>
+						<th><wicket:message
+								key="page.lbl.ezbiz.nameListAttandees.trainerIcLbl" /></th>
+						<th><wicket:message
+								key="page.lbl.ezbiz.nameListAttandees.trainerCmpnyLbl" /></th>
+						<th><wicket:message
+								key="page.lbl.ezbiz.nameListAttandees.trainerNoTelLbl " /></th>
+						<th><wicket:message
+								key="page.lbl.ezbiz.nameListAttandees.trainerEmailLbl" /></th>
+						<th><wicket:message
+								key="page.lbl.ezbiz.nameListAttandees.lodgerName" /></th>
+						<th><wicket:message
+								key="page.lbl.ecomtrac.nameListAttandees.remark" /></th>
+					</tr>
+				</thead>
+
+				<tbody>
+					<tr wicket:id="sortingAttendees">
+						<td><span wicket:id="bil">[bil]</span></td>
+						<td><span wicket:id="transactionCode">[transactionCode]</span></td>
+						<td><span wicket:id="trainerName">[trainerName]</span></td>
+						<td><span wicket:id="trainerIc">[trainerIc]</span></td>
+						<td><span wicket:id="companyName">[companyName]</span></td>
+						<td><span wicket:id="trainerNoTel">[trainerNoTel]</span></td>
+						<td><span wicket:id="trainerEmail">[trainerEmail]</span></td>
+						<td><span wicket:id="createBy">[createBy]</span></td>
+						<td><span wicket:id="remark">[remark]</span></td>
+					</tr>
+				</tbody>
+				<tfoot>
+					<tr>
+						<th colspan="100"><span wicket:id="navigatorLabel">[dataView
+								navigatorLabel]</span> <span wicket:id="navigator">[dataView
+								navigator]</span></th>
+					</tr>
+				</tfoot>
+			</table>
+		</div>
+
+		<br> <br>
+
+		<tr>
+			<div class="ui styled fluid accordion">
+				<div class="container" style="text-align: right;">
+					<span wicket:id="summaryParticipant"> <span
+						class="label-container"
+						style="display: inline-block; text-align: left; margin-right: 20px; vertical-align: top;">
+							<br> <label wicket:id="countYesAttend"></label><br> <label
+							wicket:id="countNoAttend"></label><br> <label
+							wicket:id="countYesRefund"></label><br> <label
+							wicket:id="countLpo"></label><br> <label
+							wicket:id="countYesEligible"></label>
+					</span>
+					</span>
+					<div class="label-container"
+						style="display: inline-block; text-align: left; margin-right: 20px; vertical-align: top;">
+
+						<textarea wicket:id="remark" class="text-area" id="textarea2"
+							name="textarea2" rows="4" cols="50"
+							placeholder="Enter your remark... (if any)"
+							style="width: 300px; height: 150px; margin-bottom: 10px;">
+            </textarea>
+					</div>
+				</div>
+			</div>
+		</tr>
+
+		<br>
+
+
+		<div>
+			<input wicket:id="submit" type="button"
+				class="ui primary right floated button" value="Submit Application" />
+			<input wicket:id="back" type="button"
+				class="ui red right floated button" value="Back" />
+		</div>
+
+		<div wicket:id="editAttendeesInfoPopUp"></div>
+		<br> <br>
+	</form>
+
+	<script>
+		$('.dropdown').dropdown({
+			action : 'hide'
+		});
+	</script>
+</wicket:extend>
+

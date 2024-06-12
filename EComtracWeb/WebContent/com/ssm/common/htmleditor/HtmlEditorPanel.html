@@ -1,0 +1,38 @@
+<wicket:panel>
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+	<script src="lineEditor/editor.js"></script>
+	<script>
+		var editor,returnId;
+		$(document).ready(function() {
+			editor = $("#txtEditor").Editor();
+			//$("#txtEditor").Editor("setText", htmlStr);
+		});
+		function setTextBack(){
+			$('.ui.modal').modal('hide');
+			var htmlText = $("#txtEditor").Editor("getText");
+			$("#"+returnId).text(htmlText);
+		}
+		
+		function setHtmlText(){
+			var htmlText = $('#'+returnId).text();
+			$('#txtEditor').Editor('setText', htmlText);
+			
+		}
+	</script>
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
+	<link href="lineEditor/editor.css" type="text/css" rel="stylesheet" />
+
+	<div class="ui modal" wicket:id="wmcEditor" style="z-index: 999999">
+		<div class="header" style="background-color: LightSteelBlue;"></div>
+		<div class="content">
+			<textarea id="txtEditor"></textarea>
+		</div>
+		<div class="actions">
+			<div class="ui approve button" onclick="setTextBack();">Ok</div>
+			<div class="ui button" onclick="$('.ui.modal').modal('hide');">Cancel</div>
+		</div>
+	</div>
+	
+	<script wicket:id="jsScriptParam"></script>
+</wicket:panel>

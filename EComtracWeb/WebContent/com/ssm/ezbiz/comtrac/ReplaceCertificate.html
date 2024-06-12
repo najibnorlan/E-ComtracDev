@@ -1,0 +1,99 @@
+<wicket:extend>
+
+	<div class="ui attached message">
+		<div class="header">
+			<wicket:message key="page.lbl.ezbiz.selectComtracTraining.lblName" />
+		</div>
+	</div>
+	<form wicket:id="replaceCertificateForm"
+		class="ui form attached fluid segment">
+		<div>
+			<!-- wicket:id="listAttendees" -->
+			<table class="ui striped table">
+				<thead>
+					<tr>
+						<th colspan="12">
+							<div class="ui grid">
+								<div class="eight wide column">
+									<div class="ui form icon">
+										<div class="inline field fluid">
+											<label>CP Number/IC Number</label> <input type="text"
+												size="25" /> &nbsp;<i
+												class="inverted circular search link icon"></i>
+											<!-- wicket:id="search" -->
+										</div>
+									</div>
+								</div>
+								<!-- <div class="eight wide column">
+									<button class="ui labeled icon button teal small right floated">
+										wicket:id="downloadPdf"
+										<i class="file pdf outline icon"></i>
+										<wicket:message
+											key="page.lbl.ezbiz.nameListAttandees.downloadPdf" />
+									</button>
+									<button class="ui labeled icon button teal small right floated">
+										wicket:id="downloadExcel"
+										<i class="file excel outline icon"></i>
+										<wicket:message
+											key="page.lbl.ezbiz.nameListAttandees.downloadExcel" />
+									</button>
+									<button class="ui primary button primary small right floated">
+										wicket:id="resendEmail"
+										<wicket:message key="page.lbl.ezbiz.comtracPage.resendEmail" />
+									</button>
+								</div> -->
+							</div>
+
+
+						</th>
+					</tr>
+					<tr>
+						<th><wicket:message
+								key="page.lbl.comtrac.replaceCertificate.noLbl" /></th>
+						<th><wicket:message
+								key="page.lbl.comtrac.replaceCertificate.nameLbl" /></th>
+						<th><wicket:message
+								key="page.lbl.comtrac.replaceCertificate.icNoLbl" /></th>
+						<th><wicket:message
+								key="page.lbl.comtrac.replaceCertificate.trainingNameLbl" /></th>
+						<th><wicket:message
+								key="page.lbl.comtrac.replaceCertificate.trainingCodeLbl" /></th>
+						<th><wicket:message
+								key="page.lbl.comtrac.replaceCertificate.action" /></th>
+					</tr>
+				</thead>
+
+				<tbody>
+					<tr>
+						<!-- wicket:id="sortingAttendees" -->
+						<td><span wicket:id="no">[no]</span></td>
+						<td><span wicket:id="name">[name]</span></td>
+						<td><span wicket:id="icNo">[icNo]</span></td>
+						<td><span wicket:id="trainingName">[trainingName]</span></td>
+						<td><span wicket:id="trainingCode">[trainingCode]</span></td>
+						<td class="manage-link"><a class="ui icon"> <!-- wicket:id="viewAttendeesInfo" -->
+								<i class="unhide icon large"></i>
+						</a> <a class="ui icon" style="cursor: pointer;"
+							title="Go to transaction"> <!-- wicket:id="goToTransaction" -->
+								<i class="mail forward icon large"></i>
+						</a></td>
+					</tr>
+				</tbody>
+				<tfoot>
+					<tr>
+						<th colspan="100"><span wicket:id="navigatorLabel">[dataView
+								navigatorLabel]</span> <span wicket:id="navigator">[dataView
+								navigator]</span></th>
+					</tr>
+				</tfoot>
+			</table>
+		</div>
+	</form>
+	<div>
+		<!-- wicket:id="wmcTimer" -->
+		<div class="ui bottom attached error message large">
+			<i class="icon warning circle"></i> <span> <!-- wicket:id="warningNote" -->
+			</span>
+		</div>
+	</div>
+</wicket:extend>

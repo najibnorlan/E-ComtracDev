@@ -1,0 +1,160 @@
+<wicket:extend>
+	<script type="text/javascript">
+		function CallPrint(strid) {
+			var prtContent = document.getElementById(strid);
+			var WinPrint = window
+					.open('', '',
+							'left=0,top=0,width=800,height=600,toolbar=0,scrollbars=0,status=0');
+			WinPrint.document.write(prtContent.innerHTML);
+			WinPrint.document.close();
+			WinPrint.focus();
+			WinPrint.print();
+			WinPrint.close();
+		}
+	</script>
+
+	<div id="receiptdiv">
+		<div align="center">
+			<table style="width: 60%">
+				<tr>
+					<td colspan="3" align="center"><label wicket:id="labelReceipt"></label></td>
+				</tr>
+				<tr>
+					<td colspan="3" align="center"><img src="./images/logo_ssm.gif" /></td>
+				</tr>
+				<tr align="center" height="100%">
+					<td colspan="3">
+						<table>
+							<tr>
+								<td colspan="3">&nbsp;</td>
+							</tr>
+							<tr>
+								<td colspan="3"><b><wicket:message key="paymentReceipt.panel.ssmGstNo" /></b></td>
+							</tr>
+							<tr>
+								<td colspan="3"><wicket:message key="paymentReceipt.panel.ssmGstAddr" /></td>
+							</tr>
+							<tr>
+								<td colspan="3">&nbsp;</td>
+							</tr>
+							<wicket:enclosure child="taxInvoiceNo">
+								<tr>
+									<td><wicket:message key="paymentReceipt.panel.taxInvoice" /></td>
+									<td width="5%">&nbsp;:&nbsp;</td>
+									<td><span wicket:id="taxInvoiceNo">[taxInvoiceNo]</span></td>
+								</tr>
+							</wicket:enclosure>
+							<tr>
+								<td><wicket:message key="paymentReceipt.panel.receiptNo" /></td>
+								<td width="5%">&nbsp;:&nbsp;</td>
+								<td><span wicket:id="receiptNo">[receiptNo]</span></td>
+							</tr>
+							<tr>
+								<td><wicket:message key="paymentReceipt.panel.transactioId" /></td>
+								<td width="5%">&nbsp;:&nbsp;</td>
+								<td><span wicket:id="transId">[transId]</span></td>
+							</tr>
+							<tr>
+								<td><wicket:message key="paymentReceipt.panel.appRefNo" /></td>
+								<td width="5%">&nbsp;:&nbsp;</td>
+								<td><span wicket:id="appRefNo">[appRefNo]</span></td>
+							</tr>
+							<wicket:enclosure child="approvalCode">
+								<tr>
+									<td><wicket:message key="paymentReceipt.panel.approvalCode" /></td>
+									<td width="5%">&nbsp;:&nbsp;</td>
+									<td><span wicket:id="approvalCode">[approvalCode]</span></td>
+								</tr>
+							</wicket:enclosure>
+							<tr>
+								<td><wicket:message key="paymentReceipt.panel.payerName" /></td>
+								<td width="5%">&nbsp;:&nbsp;</td>
+								<td><span wicket:id="payerName">[payerName]</span></td>
+							</tr>
+							<tr>
+								<td valign="top"><wicket:message key="paymentReceipt.panel.payerAddr" /></td>
+								<td valign="top" width="5%">&nbsp;:&nbsp;</td>
+								<td><span wicket:id="payerAddr">[payerAddr]</span></td>
+							</tr>
+							<tr>
+								<td><wicket:message key="paymentReceipt.panel.paymentMode" /></td>
+								<td width="5%">&nbsp;:&nbsp;</td>
+								<td><span wicket:id="paymentMode">[paymentMode]</span></td>
+							</tr>
+							<wicket:enclosure child="creditCardNo">
+								<tr>
+									<td><wicket:message key="paymentReceipt.panel.creditCardNo" /></td>
+									<td width="5%">&nbsp;:&nbsp;</td>
+									<td><span wicket:id="creditCardNo">[creditCardNo]</span></td>
+								</tr>
+							</wicket:enclosure>
+							<tr>
+								<td><wicket:message key="paymentReceipt.panel.paymentDateTime" /></td>
+								<td width="5%">&nbsp;:&nbsp;</td>
+								<td><span wicket:id="requestDate">[requesDate]</span></td>
+							</tr>
+						</table>
+					</td>
+				</tr>
+				<tr align="center">
+				<td colspan="3">
+				<table  border="1"  frame="hsides" rules="rows"  >
+					<tr>
+						<td width="70%"><b><wicket:message key="paymentReceipt.panel.paymentItems" /></b></td>
+						<td width="10%"><b><wicket:message key="paymentReceipt.page.itemAmountWoutGst" /></b></td>
+						<td width="10%"><b><wicket:message key="paymentReceipt.page.itemGstAmt" /></b></td>
+						<td width="10%"><b><wicket:message key="paymentReceipt.page.amountIncludeGst"/></b></td>
+					</tr>
+					<tr wicket:id="paymentItems" style="border-bottom: thick;">
+						<td><span wicket:id="itemDesc">itemDesc</span>&nbsp;<wicket:enclosure child="itemDet">(<span wicket:id="itemDet">itemDet</span>)</wicket:enclosure></td>
+						<td><span wicket:id="itemAmountWoutGst">itemAmountWoutGst</span></td>
+						<td><span wicket:id="itemGstAmt">itemGstAmt</span></td>
+						<td><span wicket:id="itemAmount">itemAmount</span></td>
+					</tr>
+					<tr>
+						<td align="right"><b>Total (RM):</b></td>
+						<td><b><span wicket:id="totalWithoutGst">totalWithoutGst</span></b></td>
+						<td><b><span wicket:id="totalGst">totalGst</span></b></td>
+						<td><b><span wicket:id="amount">amount</span></b></td>
+					</tr>
+					<tr>
+						<td>&nbsp;</td>
+					</tr>
+					<tr>
+						<td colspan="1" align="right" ><b><wicket:message key="paymentReceipt.panel.paymentTotal" /></b></td>
+						<td colspan="3"
+							style="border-bottom: 10px double #000; border-top: 5px double #000;" align="right"><b><span
+								wicket:id="totalAmount">[totalAmount]</span></b></td>
+					</tr>
+					<tr>
+						<td>&nbsp;</td>
+					</tr>
+					<tr>
+						<td colspan="1" align="right" ><b><wicket:message key="paymentReceipt.panel.cashReceived" /></b></td>
+						<td colspan="3" align="right"><b><span wicket:id="cashReceived">[cashReceived]</span></b></td>
+					</tr>
+					<tr>
+						<td colspan="1" align="right" ><b><wicket:message key="paymentReceipt.panel.change" /></b></td>
+						<td colspan="3" align="right"><b><span wicket:id="change">[change]</span></b></td>
+					</tr>
+				</table>
+				</td>
+				</tr>			
+			</table>
+			<br>
+			<label style="font-size: 9px" wicket:id="initialNote"></label>
+		</div>
+	</div>
+	<table>
+		<tr align="center">
+			<td><input
+				wicket:id="backToListPaymentOTC" type="button"
+				value="BACK" /><input id="Button1" type="button" name="btnPrint"
+				wicket:message="value:paymentReceipt.panel.printButton"
+				onclick="javascript:CallPrint('receiptdiv');" />
+				</td>
+		</tr>
+	</table>
+	
+
+</wicket:extend>

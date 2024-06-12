@@ -1,0 +1,84 @@
+<wicket:extend>
+	<br>
+	<wicket:enclosure child="searchBusinessCodeBtn">
+	<br>
+	<input wicket:id="searchBusinessCodeBtn" type="button" value="Add Business Code"/>
+	<br>
+	<br>
+	</wicket:enclosure>
+	<table class="blockdataview" cellspacing="0" width="70%">
+		<tr>
+			<td align="left"><span wicket:id="navigatorLabel">[dataview navigatorLabel]</span></td>
+			<td align="right"><span wicket:id="navigator">[dataview navigator]</span></td>
+		</tr>
+		<tr>
+		
+			<td colspan="2">
+				<table cellspacing="0" class="dataview" width="100%">
+				    <tr>
+				        <th><wicket:message key="llpReg.page.bizcode.code"/></th>
+				        <th><wicket:message key="llpReg.page.bizcode.desc"/></th>
+				        <th><wicket:message key="llpReg.page.bizcode.status"/></th>
+				        <th><wicket:message key="llpReg.page.bizcode.createDt"/></th>
+				        <th><wicket:message key="llpReg.page.bizcode.action"/></th>
+				    </tr>
+				    <tr wicket:id="sorting">
+				        <td><span wicket:id="businessCode">[businessCode]</span> </td>
+				        <td><span wicket:id="businessCodeDesc">[businessCodeDesc]</span> </td>
+				        <td><span wicket:id="status">[status]</span> </td>
+				        <td><span wicket:id="createDt">[createDt]</span></td>
+				        <td class="manage-contact-links">
+			                 <!--   <a wicket:id="delete" href="#">[delete]</a> --> 
+			                   <a wicket:id="delete" href="#"><span wicket:id="deleteLabel"></span></a>
+			            </td>
+				    </tr>
+				</table>
+			</td>
+		</tr>
+	</table>
+	<hr  color="grey">
+	
+	<wicket:enclosure child="declareChk">
+	<table>
+		<tr>
+			<td colspan="2"><b><wicket:message key="declaration.tick.declare.text" /></b></td>
+		</tr>
+		<tr>
+			<td><input wicket:id="declareChk" type="checkbox" /></td>
+			<td><wicket:message key="declaration.tick.declare" /></td>
+		</tr>
+		<tr>
+			<td colspan="2">&nbsp;</td>
+		</tr>
+		<tr>
+			<td colspan="2"><b><wicket:message key="declaration.tick.warning.text" /></b></td>
+		</tr>
+		<tr>
+			<td colspan="2"><wicket:message key="declaration.tick.warning" /></td>
+		</tr>
+	</table><br><br>
+	</wicket:enclosure>
+	
+	<table>
+		<tr>
+			<td colspan="3" align="center">
+			
+			<wicket:enclosure child="updateInfo">
+				<input wicket:id="updateInfo" type="button" wicket:message="value:llpReg.page.updateInfoButton"/> 
+			</wicket:enclosure>
+			
+			<wicket:enclosure child="lodgeDoc">
+				<input wicket:id="lodgeDoc" type="button" wicket:message="value:llpReg.page.lodgeButton"/> 
+			</wicket:enclosure>	
+			
+				<input wicket:id="cancel" type="button" wicket:message="value:llpReg.page.cancelButton"/>
+				
+			</td>
+		</tr>
+	</table>
+	
+	<br>    
+    <div wicket:id="searchBusinessCodePopUp"></div>
+	
+</wicket:extend>
+

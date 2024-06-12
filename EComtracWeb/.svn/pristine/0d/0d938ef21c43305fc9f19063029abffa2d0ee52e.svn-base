@@ -1,0 +1,94 @@
+<wicket:extend>
+	<form wicket:id="form" class="ui form">
+		<div class="ui top attached segment">
+			<div class="ui top attached label">
+				<h4 class="ui header">
+					<wicket:message key=paymentdetails.page.title />
+				</h4>
+			</div>
+
+			<div id="paymentdetailsdiv">
+				<table class="ui large table">
+					<thead>
+						<tr>
+							<th><b><wicket:message key="paymentdetails.page.item" /></b></th>
+							<th><b><wicket:message key="paymentdetails.page.quantity" /></b></th>
+							<th><b><wicket:message key="paymentdetails.page.itemAmountWoutGst" /></b></th>
+							<th><b><wicket:message key="paymentdetails.page.itemGstAmt" /></b></th>
+							<th><b><wicket:message key="paymentdetails.page.amountIncludeGst"/></b></th>
+						</tr>
+					</thead>
+					<tbody>
+						<tr wicket:id="paymentItems">
+							<td><span wicket:id="itemDesc">itemDesc</span>&nbsp;<wicket:enclosure child="itemDet">(<span wicket:id="itemDet">itemDet</span>)</wicket:enclosure></td>
+							<td align="right"><span wicket:id="itemQuantity">itemQuantity</span></td>
+							<td align="right"><span wicket:id="itemAmountWoutGst">itemAmountWoutGst</span></td>
+							<td align="right"><span wicket:id="itemGstAmt">itemGstAmt</span></td>
+							<td align="right"><span wicket:id="itemAmount">itemAmount</span></td>
+						</tr>
+						<tr>
+							<td colspan="5">&nbsp;</td>
+						</tr>
+						<tr>
+							<td>&nbsp;</td>
+							<td align="right"><b>Total (RM):</b></td>
+							<td align="right"><b><span wicket:id="totalWithoutGst">totalWithoutGst</span></b></td>
+							<td align="right"><b><span wicket:id="totalGst">totalGst</span></b></td>
+							<td align="right"><b><span wicket:id="amount">amount</span></b></td>
+						</tr>
+					</tbody>
+					<tfoot>
+						<tr>
+							<td colspan="5">&nbsp;</td>
+						</tr>
+						<tr>
+							<td>&nbsp;</td>
+							<td>&nbsp;</td>
+							<td>&nbsp;</td>
+							<td align="right"><b>Total Amount (RM):</b></td>
+							<td ><b><span wicket:id="totalAll">totalAll</span></b></td>
+						</tr>
+					</tfoot>
+				</table>
+				<table>
+					<tr>
+						<td>
+							<div class="field">
+								<label><span wicket:id="payerNameLabel"/></label>
+								<input type="text" wicket:id="payerName" name="payerName" size="50">
+							</div>
+						</td>
+					</tr>
+					<tr>
+						<td>&nbsp;</td>
+					</tr>
+					<tr>
+						<td>
+							<div class="field">
+								<label><span wicket:id="payerIdLabel"/></label>
+								<input type="text" wicket:id="payerId" name="payerId">
+							</div>
+						</td>
+					</tr>
+					<tr>
+						<td>
+							<div class="field">
+								<label><span wicket:id="payerAddrLabel"/></label>
+								<textarea wicket:id="payerAddr" rows="7" cols="80" />
+							</div>
+						</td>
+					</tr>
+					<tr>
+						<td>&nbsp;</td>
+					</tr>
+					<tr>
+						<td align="left"><input wicket:id="pay" class="ui primary button" type="submit"
+							wicket:message="value:paymentdetails.page.payButton" /> <input wicket:id="cancel" class="ui primary button" type="submit"
+							wicket:message="value:paymentdetails.page.cancelButton" /></td>
+					</tr>
+				</table>
+			</div>
+		</div>
+
+	</form>
+</wicket:extend>

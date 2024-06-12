@@ -1,0 +1,153 @@
+<wicket:extend>
+	<div class="ui top attached segment" >
+		<div class="ui top attached label">
+			<h4 class="ui header"><wicket:message key="page.lbl.ezbiz.robUserActivationTray.info" /></h4>
+		</div>
+		<div class="two fields">
+			<div class="field">
+				<label><wicket:message key="page.lbl.ezbiz.robUserActivationTray.appRefNo" /></label>
+				<span wicket:id="appRefNo"/>
+			</div>
+			<div class="field">
+				<label><wicket:message key="page.lbl.ezbiz.robUserActivationTray.status" /></label>
+				<span wicket:id="status"/>
+			</div>
+		</div>
+		<div class="field">
+			<label><wicket:message key="page.lbl.ezbiz.robUserActivationTray.processNote" /> </label>
+			 <span wicket:id="processNote" />
+		</div>
+	</div>
+	
+	<div class="ui top attached segment" >
+		<div class="ui top attached label">
+			<h4 class="ui header"><wicket:message key="page.lbl.ezbiz.robUserActivationTray.info" /></h4>
+		</div>
+		<div class="three fields">
+			<div class="field">
+				<label><wicket:message key="page.lbl.ezbiz.robUserActivationTray.userRefNo" /></label>
+				<span wicket:id="userRefNo"/>
+			</div>
+			<div class="field">
+				<label><wicket:message key="page.lbl.ezbiz.robUserActivationTray.loginId" /></label>
+				<span wicket:id="loginId"/>
+			</div>
+		</div>
+		<div class="field">
+			<label><wicket:message key="page.lbl.ezbiz.robUserActivationTray.name"/></label>
+			<span wicket:id="name"/>
+		</div>
+		<div class="field">
+			<label><wicket:message key="page.lbl.ezbiz.robUserActivationTray.email"/></label>
+			<span wicket:id="email"/>
+		</div>
+		<div class="two fields">
+			<div class="field">
+				<label><wicket:message key="page.lbl.ezbiz.robUserActivationTray.idNo" /></label>
+				<span wicket:id="idNo"/>
+			</div>
+			<div class="field">
+				<label><wicket:message key="page.lbl.ezbiz.robUserActivationTray.idType" /></label>
+				<span wicket:id="idType"/>&nbsp;-&nbsp;
+				<span wicket:id="icColour"/>
+			</div>
+		</div>
+		<div class="two fields">
+			<div class="field">
+					<label><wicket:message key="page.lbl.ezbiz.robUserActivationTray.nationality" /></label>
+					<span wicket:id="nationality"/>
+			</div>
+			<div class="field">
+					<label><wicket:message key="page.lbl.ezbiz.robUserActivationTray.race" /></label>
+					<span wicket:id="race"/>
+					<span wicket:id="othersRace"/>
+			</div>
+		</div>
+		<div class="field">
+			<label><wicket:message key="page.lbl.ezbiz.robUserActivationTray.address"/></label>
+			<span wicket:id="ownersAddress"/>
+		</div>
+	</div>
+	<div class="ui top attached segment" >
+		<div class="ui top attached label">
+			<h4 class="ui header"><wicket:message key="page.lbl.ezbiz.robUserActivationTray.document" /></h4>
+		</div>
+		<div class="three fields">
+			<div class="field"> 
+				<button class="ui primary button" wicket:id="downlodMykadDoc"><wicket:message key="page.lbl.ezbiz.robUserActivationTray.downlodMykadDoc" /></button>
+			</div>
+			<div class="field">
+				<button class="ui primary button" wicket:id="downlodSelfieDoc"><wicket:message key="page.lbl.ezbiz.robUserActivationTray.downlodSelfieDoc" /></button>
+			</div>
+			<div class="field">
+				<button class="ui primary button" wicket:id="downlodSupportingDoc"><wicket:message key="page.lbl.ezbiz.robUserActivationTray.downlodSupportingDoc" /></button>
+			</div>
+		</div>
+	</div>
+	
+	<div class="ui top attached segment" wicket:id="wmcQuery">
+		<div class="ui top attached label">
+			<h4 class="ui header"><wicket:message key="page.lbl.ezbiz.robUserActivationTray.QueryList" /></h4>
+		</div>
+		<div class="two fields">
+			<div class="field">
+				<label><wicket:message key="page.lbl.ezbiz.robUserActivationTray.queryText" /> </label> <span wicket:id="queryText" />
+			</div>
+			<div class="field">
+				<label><wicket:message key="page.lbl.ezbiz.robUserActivationTray.queryAnswer" /> </label> <span wicket:id="queryAnswer" />
+			</div>
+		</div>
+		<wicket:enclosure child="listQueryView">
+			<div class="ui styled fluid accordion" >
+			  <div class="title" id="#app">
+				<i class="dropdown icon"></i> <wicket:message key="page.lbl.ezbiz.robUserActivationTray.QueryListDetail" />
+			 </div>
+			  <div class="content">
+					<table class="ui striped table">
+						<thead>
+							<tr>
+								<th width="10%"><wicket:message key="page.lbl.ezbiz.robUserActivationTray.queryBy" /></th>
+								<th width="10%"><wicket:message key="page.lbl.ezbiz.robUserActivationTray.createDt" /></th>
+								<th width="45%"><wicket:message key="page.lbl.ezbiz.robUserActivationTray.notes" /></th>
+								<th width="10%"><wicket:message key="page.lbl.ezbiz.robUserActivationTray.updateDt" /></th>
+								<th width="45%"><wicket:message key="page.lbl.ezbiz.robUserActivationTray.notesAnswer" /></th>
+							</tr>
+						</thead>
+						<tbody>
+							<tr wicket:id="listQueryView">
+								<td><span wicket:id="queryBy">[queryBy]</span></td>
+								<td><span wicket:id="createDt">[createDt]</span></td>
+								<td><span wicket:id="notes">[notes]</span></td>
+								<td><span wicket:id="updateDt">[updateDt]</span></td>
+								<td><span wicket:id="notesAnswer">[notesAnswer]</span></td>
+							</tr>
+						</tbody>
+					</table>
+			  </div>
+			</div>
+		</wicket:enclosure>
+	</div>
+	<wicket:enclosure child="wmcOfficeUser">
+		<div class="ui top attached segment" wicket:id="wmcOfficeUser">
+			<div class="ui top attached label">
+				<h4 class="ui header"><wicket:message key="page.lbl.ezbiz.robUserActivationTray.officeUse" /></h4>
+			</div>
+			<div class="three fields">
+				<div class="field">
+					<label><wicket:message key="page.lbl.ezbiz.robUserActivationTray.processBy" /> </label> <span wicket:id="processBy" />
+				</div>
+				<div class="field">
+					<label><wicket:message key="page.lbl.ezbiz.robUserActivationTray.processBranch" /> </label> <span wicket:id="processBranch" />
+				</div>
+				<div class="field">
+					<label><wicket:message key="page.lbl.ezbiz.robUserActivationTray.processDt" /> </label> <span wicket:id="processDt" />
+				</div>
+			</div>
+		</div>
+	</wicket:enclosure>
+		<script>
+	$('.ui.accordion')
+	  .accordion()
+	;
+	</script>
+</wicket:extend>

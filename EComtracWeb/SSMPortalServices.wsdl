@@ -1,0 +1,569 @@
+<wsdl:definitions xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:wsaw="http://www.w3.org/2006/05/addressing/wsdl" xmlns:http="http://schemas.xmlsoap.org/wsdl/http/" xmlns:ns0="http://ws.wso2.org/dataservice" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" targetNamespace="http://ws.wso2.org/dataservice">
+    <wsdl:documentation></wsdl:documentation>
+    <wsdl:types>
+        <xs:schema attributeFormDefault="unqualified" elementFormDefault="qualified" targetNamespace="http://ws.wso2.org/dataservice">
+            <xs:element name="DataServiceFault">
+                <xs:complexType>
+                    <xs:sequence>
+                        <xs:element name="current_params" type="xs:string"></xs:element>
+                        <xs:element name="current_request_name" type="xs:string"></xs:element>
+                        <xs:element name="nested_exception" type="xs:string"></xs:element>
+                        <xs:element name="source_data_service">
+                            <xs:complexType>
+                                <xs:sequence>
+                                    <xs:element name="location" type="xs:string"></xs:element>
+                                    <xs:element name="default_namespace" type="xs:string"></xs:element>
+                                    <xs:element name="description" type="xs:string"></xs:element>
+                                    <xs:element name="data_service_name" type="xs:string"></xs:element>
+                                </xs:sequence>
+                            </xs:complexType>
+                        </xs:element>
+                        <xs:element name="ds_code" type="xs:string"></xs:element>
+                    </xs:sequence>
+                </xs:complexType>
+            </xs:element>
+            <xs:element name="REQUEST_STATUS" type="xs:string"></xs:element>
+            <xs:element name="DATA_SERVICE_RESPONSE">
+                <xs:complexType>
+                    <xs:sequence>
+                        <xs:any minOccurs="0"></xs:any>
+                    </xs:sequence>
+                </xs:complexType>
+            </xs:element>
+            <xs:element name="findRoc">
+                <xs:complexType>
+                    <xs:sequence>
+                        <xs:element name="companyNo" nillable="true" type="xs:string"></xs:element>
+                    </xs:sequence>
+                </xs:complexType>
+            </xs:element>
+            <xs:element name="findCompanyReturnList" type="ns0:findCompanyReturnList"></xs:element>
+            <xs:complexType name="findCompanyReturnList">
+                <xs:sequence>
+                    <xs:element maxOccurs="unbounded" minOccurs="0" name="companyEntry" type="ns0:companyEntry"></xs:element>
+                </xs:sequence>
+            </xs:complexType>
+            <xs:complexType name="companyEntry">
+                <xs:sequence>
+                    <xs:element name="companyNo" nillable="true" type="xs:string"></xs:element>
+                    <xs:element name="chkDigit" nillable="true" type="xs:string"></xs:element>
+                    <xs:element name="companyName" nillable="true" type="xs:string"></xs:element>
+                    <xs:element name="comStatus" nillable="true" type="xs:string"></xs:element>
+                    <xs:element ref="ns0:findGSTRegNoList"></xs:element>
+                </xs:sequence>
+            </xs:complexType>
+            <xs:element name="findGSTRegNoList" type="ns0:findGSTRegNoList"></xs:element>
+            <xs:complexType name="findGSTRegNoList">
+                <xs:sequence>
+                    <xs:element maxOccurs="unbounded" minOccurs="0" name="GSTRegNo" type="ns0:GSTRegNo"></xs:element>
+                </xs:sequence>
+            </xs:complexType>
+            <xs:complexType name="GSTRegNo">
+                <xs:sequence>
+                    <xs:element name="vchregistrationnumber" nillable="true" type="xs:string"></xs:element>
+                    <xs:element name="vchgstnumber" nillable="true" type="xs:string"></xs:element>
+                    <xs:element name="dtasofdate" nillable="true" type="xs:date"></xs:element>
+                </xs:sequence>
+            </xs:complexType>
+            <xs:element name="findCompoundRob">
+                <xs:complexType>
+                    <xs:sequence>
+                        <xs:element name="entityType" nillable="true" type="xs:string"></xs:element>
+                        <xs:element name="entityNo" nillable="true" type="xs:string"></xs:element>
+                    </xs:sequence>
+                </xs:complexType>
+            </xs:element>
+            <xs:element name="findCompoundReturnList" type="ns0:findCompoundReturnList"></xs:element>
+            <xs:complexType name="findCompoundReturnList">
+                <xs:sequence>
+                    <xs:element maxOccurs="unbounded" minOccurs="0" name="compoundEntry" type="ns0:compoundEntry"></xs:element>
+                </xs:sequence>
+            </xs:complexType>
+            <xs:complexType name="compoundEntry">
+                <xs:sequence>
+                    <xs:element name="entityType" nillable="true" type="xs:string"></xs:element>
+                    <xs:element name="entityNo" nillable="true" type="xs:string"></xs:element>
+                    <xs:element name="checkDigit" nillable="true" type="xs:string"></xs:element>
+                    <xs:element name="compoundNo" nillable="true" type="xs:string"></xs:element>
+                    <xs:element name="compoundStatus" nillable="true" type="xs:string"></xs:element>
+                    <xs:element name="amount" nillable="true" type="xs:double"></xs:element>
+                </xs:sequence>
+            </xs:complexType>
+            <xs:element name="findRob">
+                <xs:complexType>
+                    <xs:sequence>
+                        <xs:element name="bizRegNo" nillable="true" type="xs:string"></xs:element>
+                    </xs:sequence>
+                </xs:complexType>
+            </xs:element>
+            <xs:element name="findBusinessReturnList" type="ns0:findBusinessReturnList"></xs:element>
+            <xs:complexType name="findBusinessReturnList">
+                <xs:sequence>
+                    <xs:element maxOccurs="unbounded" minOccurs="0" name="businessEntry" type="ns0:businessEntry"></xs:element>
+                </xs:sequence>
+            </xs:complexType>
+            <xs:complexType name="businessEntry">
+                <xs:sequence>
+                    <xs:element name="bizRegNo" nillable="true" type="xs:string"></xs:element>
+                    <xs:element name="chkDigit" nillable="true" type="xs:string"></xs:element>
+                    <xs:element name="bizName" nillable="true" type="xs:string"></xs:element>
+                    <xs:element name="bizStatus" nillable="true" type="xs:string"></xs:element>
+                    <xs:element ref="ns0:findGSTRegNoList"></xs:element>
+                </xs:sequence>
+            </xs:complexType>
+            <xs:element name="findCompoundRoc">
+                <xs:complexType>
+                    <xs:sequence>
+                        <xs:element name="entityType" nillable="true" type="xs:string"></xs:element>
+                        <xs:element name="entityNo" nillable="true" type="xs:string"></xs:element>
+                    </xs:sequence>
+                </xs:complexType>
+            </xs:element>
+            <xs:element name="findDocumentQuery">
+                <xs:complexType>
+                    <xs:sequence>
+                        <xs:element name="companyNo" nillable="true" type="xs:string"></xs:element>
+                    </xs:sequence>
+                </xs:complexType>
+            </xs:element>
+            <xs:element name="findDocumentQueryList" type="ns0:findDocumentQueryList"></xs:element>
+            <xs:complexType name="findDocumentQueryList">
+                <xs:sequence>
+                    <xs:element maxOccurs="unbounded" minOccurs="0" name="documentQuery" type="ns0:documentQuery"></xs:element>
+                </xs:sequence>
+            </xs:complexType>
+            <xs:complexType name="documentQuery">
+                <xs:sequence>
+                    <xs:element name="companyNo" nillable="true" type="xs:string"></xs:element>
+                    <xs:element name="checkDigit" nillable="true" type="xs:string"></xs:element>
+                    <xs:element name="companyName" nillable="true" type="xs:string"></xs:element>
+                    <xs:element name="formCode" nillable="true" type="xs:string"></xs:element>
+                    <xs:element name="documentStatus" nillable="true" type="xs:string"></xs:element>
+                    <xs:element name="documentDate" nillable="true" type="xs:datetime"></xs:element>
+                    <xs:element name="updateDate" nillable="true" type="xs:datetime"></xs:element>
+                </xs:sequence>
+            </xs:complexType>
+            <xs:element name="findGSTRegNo">
+                <xs:complexType>
+                    <xs:sequence>
+                        <xs:element name="coBizNo" nillable="true" type="xs:string"></xs:element>
+                        <xs:element name="chkDigit" nillable="true" type="xs:string"></xs:element>
+                    </xs:sequence>
+                </xs:complexType>
+            </xs:element>
+            <xs:element name="findLlp">
+                <xs:complexType>
+                    <xs:sequence>
+                        <xs:element name="llpNo" nillable="true" type="xs:string"></xs:element>
+                    </xs:sequence>
+                </xs:complexType>
+            </xs:element>
+            <xs:element name="findLlpReturnList" type="ns0:findLlpReturnList"></xs:element>
+            <xs:complexType name="findLlpReturnList">
+                <xs:sequence>
+                    <xs:element maxOccurs="unbounded" minOccurs="0" name="llpEntry" type="ns0:llpEntry"></xs:element>
+                </xs:sequence>
+            </xs:complexType>
+            <xs:complexType name="llpEntry">
+                <xs:sequence>
+                    <xs:element name="llpNo" nillable="true" type="xs:string"></xs:element>
+                    <xs:element name="llpName" nillable="true" type="xs:string"></xs:element>
+                    <xs:element name="llpStatus" nillable="true" type="xs:string"></xs:element>
+                    <xs:element ref="ns0:findGSTRegNoList"></xs:element>
+                </xs:sequence>
+            </xs:complexType>
+            <xs:element name="findGSTRegNoWithChkDigit">
+                <xs:complexType>
+                    <xs:sequence>
+                        <xs:element name="coBizNo" nillable="true" type="xs:string"></xs:element>
+                    </xs:sequence>
+                </xs:complexType>
+            </xs:element>
+        </xs:schema>
+    </wsdl:types>
+    <wsdl:message name="findRobRequest">
+        <wsdl:part name="parameters" element="ns0:findRob"></wsdl:part>
+    </wsdl:message>
+    <wsdl:message name="findRobResponse">
+        <wsdl:part name="parameters" element="ns0:findBusinessReturnList"></wsdl:part>
+    </wsdl:message>
+    <wsdl:message name="DataServiceFault">
+        <wsdl:part name="parameters" element="ns0:DataServiceFault"></wsdl:part>
+    </wsdl:message>
+    <wsdl:message name="findDocumentQueryRequest">
+        <wsdl:part name="parameters" element="ns0:findDocumentQuery"></wsdl:part>
+    </wsdl:message>
+    <wsdl:message name="findDocumentQueryResponse">
+        <wsdl:part name="parameters" element="ns0:findDocumentQueryList"></wsdl:part>
+    </wsdl:message>
+    <wsdl:message name="findLlpRequest">
+        <wsdl:part name="parameters" element="ns0:findLlp"></wsdl:part>
+    </wsdl:message>
+    <wsdl:message name="findLlpResponse">
+        <wsdl:part name="parameters" element="ns0:findLlpReturnList"></wsdl:part>
+    </wsdl:message>
+    <wsdl:message name="findRocRequest">
+        <wsdl:part name="parameters" element="ns0:findRoc"></wsdl:part>
+    </wsdl:message>
+    <wsdl:message name="findRocResponse">
+        <wsdl:part name="parameters" element="ns0:findCompanyReturnList"></wsdl:part>
+    </wsdl:message>
+    <wsdl:message name="findCompoundRocRequest">
+        <wsdl:part name="parameters" element="ns0:findCompoundRoc"></wsdl:part>
+    </wsdl:message>
+    <wsdl:message name="findCompoundRocResponse">
+        <wsdl:part name="parameters" element="ns0:findCompoundReturnList"></wsdl:part>
+    </wsdl:message>
+    <wsdl:message name="findGSTRegNoWithChkDigitRequest">
+        <wsdl:part name="parameters" element="ns0:findGSTRegNoWithChkDigit"></wsdl:part>
+    </wsdl:message>
+    <wsdl:message name="findGSTRegNoWithChkDigitResponse">
+        <wsdl:part name="parameters" element="ns0:findGSTRegNoList"></wsdl:part>
+    </wsdl:message>
+    <wsdl:message name="findGSTRegNoRequest">
+        <wsdl:part name="parameters" element="ns0:findGSTRegNo"></wsdl:part>
+    </wsdl:message>
+    <wsdl:message name="findGSTRegNoResponse">
+        <wsdl:part name="parameters" element="ns0:findGSTRegNoList"></wsdl:part>
+    </wsdl:message>
+    <wsdl:message name="findCompoundRobRequest">
+        <wsdl:part name="parameters" element="ns0:findCompoundRob"></wsdl:part>
+    </wsdl:message>
+    <wsdl:message name="findCompoundRobResponse">
+        <wsdl:part name="parameters" element="ns0:findCompoundReturnList"></wsdl:part>
+    </wsdl:message>
+    <wsdl:portType name="SSMPortalServicesPortType">
+        <wsdl:operation name="findRob">
+            <wsdl:documentation></wsdl:documentation>
+            <wsdl:input message="ns0:findRobRequest" wsaw:Action="urn:findRob"></wsdl:input>
+            <wsdl:output message="ns0:findRobResponse" wsaw:Action="urn:findRobResponse"></wsdl:output>
+            <wsdl:fault message="ns0:DataServiceFault" name="DataServiceFault" wsaw:Action="urn:findRobDataServiceFault"></wsdl:fault>
+        </wsdl:operation>
+        <wsdl:operation name="findDocumentQuery">
+            <wsdl:documentation></wsdl:documentation>
+            <wsdl:input message="ns0:findDocumentQueryRequest" wsaw:Action="urn:findDocumentQuery"></wsdl:input>
+            <wsdl:output message="ns0:findDocumentQueryResponse" wsaw:Action="urn:findDocumentQueryResponse"></wsdl:output>
+            <wsdl:fault message="ns0:DataServiceFault" name="DataServiceFault" wsaw:Action="urn:findDocumentQueryDataServiceFault"></wsdl:fault>
+        </wsdl:operation>
+        <wsdl:operation name="findLlp">
+            <wsdl:documentation></wsdl:documentation>
+            <wsdl:input message="ns0:findLlpRequest" wsaw:Action="urn:findLlp"></wsdl:input>
+            <wsdl:output message="ns0:findLlpResponse" wsaw:Action="urn:findLlpResponse"></wsdl:output>
+            <wsdl:fault message="ns0:DataServiceFault" name="DataServiceFault" wsaw:Action="urn:findLlpDataServiceFault"></wsdl:fault>
+        </wsdl:operation>
+        <wsdl:operation name="findRoc">
+            <wsdl:documentation></wsdl:documentation>
+            <wsdl:input message="ns0:findRocRequest" wsaw:Action="urn:findRoc"></wsdl:input>
+            <wsdl:output message="ns0:findRocResponse" wsaw:Action="urn:findRocResponse"></wsdl:output>
+            <wsdl:fault message="ns0:DataServiceFault" name="DataServiceFault" wsaw:Action="urn:findRocDataServiceFault"></wsdl:fault>
+        </wsdl:operation>
+        <wsdl:operation name="findCompoundRoc">
+            <wsdl:documentation>findCompoundRoc                                    </wsdl:documentation>
+            <wsdl:input message="ns0:findCompoundRocRequest" wsaw:Action="urn:findCompoundRoc"></wsdl:input>
+            <wsdl:output message="ns0:findCompoundRocResponse" wsaw:Action="urn:findCompoundRocResponse"></wsdl:output>
+            <wsdl:fault message="ns0:DataServiceFault" name="DataServiceFault" wsaw:Action="urn:findCompoundRocDataServiceFault"></wsdl:fault>
+        </wsdl:operation>
+        <wsdl:operation name="findGSTRegNoWithChkDigit">
+            <wsdl:documentation></wsdl:documentation>
+            <wsdl:input message="ns0:findGSTRegNoWithChkDigitRequest" wsaw:Action="urn:findGSTRegNoWithChkDigit"></wsdl:input>
+            <wsdl:output message="ns0:findGSTRegNoWithChkDigitResponse" wsaw:Action="urn:findGSTRegNoWithChkDigitResponse"></wsdl:output>
+            <wsdl:fault message="ns0:DataServiceFault" name="DataServiceFault" wsaw:Action="urn:findGSTRegNoWithChkDigitDataServiceFault"></wsdl:fault>
+        </wsdl:operation>
+        <wsdl:operation name="findGSTRegNo">
+            <wsdl:documentation></wsdl:documentation>
+            <wsdl:input message="ns0:findGSTRegNoRequest" wsaw:Action="urn:findGSTRegNo"></wsdl:input>
+            <wsdl:output message="ns0:findGSTRegNoResponse" wsaw:Action="urn:findGSTRegNoResponse"></wsdl:output>
+            <wsdl:fault message="ns0:DataServiceFault" name="DataServiceFault" wsaw:Action="urn:findGSTRegNoDataServiceFault"></wsdl:fault>
+        </wsdl:operation>
+        <wsdl:operation name="findCompoundRob">
+            <wsdl:documentation>findCompoundRob                                    </wsdl:documentation>
+            <wsdl:input message="ns0:findCompoundRobRequest" wsaw:Action="urn:findCompoundRob"></wsdl:input>
+            <wsdl:output message="ns0:findCompoundRobResponse" wsaw:Action="urn:findCompoundRobResponse"></wsdl:output>
+            <wsdl:fault message="ns0:DataServiceFault" name="DataServiceFault" wsaw:Action="urn:findCompoundRobDataServiceFault"></wsdl:fault>
+        </wsdl:operation>
+    </wsdl:portType>
+    <wsdl:binding name="SSMPortalServicesSOAP11Binding" type="ns0:SSMPortalServicesPortType">
+        <soap:binding transport="http://schemas.xmlsoap.org/soap/http" style="document"></soap:binding>
+        <wsdl:operation name="findRob">
+            <soap:operation soapAction="urn:findRob" style="document"></soap:operation>
+            <wsdl:input>
+                <soap:body use="literal"></soap:body>
+            </wsdl:input>
+            <wsdl:output>
+                <soap:body use="literal"></soap:body>
+            </wsdl:output>
+            <wsdl:fault name="DataServiceFault">
+                <soap:fault use="literal" name="DataServiceFault"></soap:fault>
+            </wsdl:fault>
+        </wsdl:operation>
+        <wsdl:operation name="findDocumentQuery">
+            <soap:operation soapAction="urn:findDocumentQuery" style="document"></soap:operation>
+            <wsdl:input>
+                <soap:body use="literal"></soap:body>
+            </wsdl:input>
+            <wsdl:output>
+                <soap:body use="literal"></soap:body>
+            </wsdl:output>
+            <wsdl:fault name="DataServiceFault">
+                <soap:fault use="literal" name="DataServiceFault"></soap:fault>
+            </wsdl:fault>
+        </wsdl:operation>
+        <wsdl:operation name="findLlp">
+            <soap:operation soapAction="urn:findLlp" style="document"></soap:operation>
+            <wsdl:input>
+                <soap:body use="literal"></soap:body>
+            </wsdl:input>
+            <wsdl:output>
+                <soap:body use="literal"></soap:body>
+            </wsdl:output>
+            <wsdl:fault name="DataServiceFault">
+                <soap:fault use="literal" name="DataServiceFault"></soap:fault>
+            </wsdl:fault>
+        </wsdl:operation>
+        <wsdl:operation name="findRoc">
+            <soap:operation soapAction="urn:findRoc" style="document"></soap:operation>
+            <wsdl:input>
+                <soap:body use="literal"></soap:body>
+            </wsdl:input>
+            <wsdl:output>
+                <soap:body use="literal"></soap:body>
+            </wsdl:output>
+            <wsdl:fault name="DataServiceFault">
+                <soap:fault use="literal" name="DataServiceFault"></soap:fault>
+            </wsdl:fault>
+        </wsdl:operation>
+        <wsdl:operation name="findCompoundRoc">
+            <soap:operation soapAction="urn:findCompoundRoc" style="document"></soap:operation>
+            <wsdl:input>
+                <soap:body use="literal"></soap:body>
+            </wsdl:input>
+            <wsdl:output>
+                <soap:body use="literal"></soap:body>
+            </wsdl:output>
+            <wsdl:fault name="DataServiceFault">
+                <soap:fault use="literal" name="DataServiceFault"></soap:fault>
+            </wsdl:fault>
+        </wsdl:operation>
+        <wsdl:operation name="findGSTRegNoWithChkDigit">
+            <soap:operation soapAction="urn:findGSTRegNoWithChkDigit" style="document"></soap:operation>
+            <wsdl:input>
+                <soap:body use="literal"></soap:body>
+            </wsdl:input>
+            <wsdl:output>
+                <soap:body use="literal"></soap:body>
+            </wsdl:output>
+            <wsdl:fault name="DataServiceFault">
+                <soap:fault use="literal" name="DataServiceFault"></soap:fault>
+            </wsdl:fault>
+        </wsdl:operation>
+        <wsdl:operation name="findGSTRegNo">
+            <soap:operation soapAction="urn:findGSTRegNo" style="document"></soap:operation>
+            <wsdl:input>
+                <soap:body use="literal"></soap:body>
+            </wsdl:input>
+            <wsdl:output>
+                <soap:body use="literal"></soap:body>
+            </wsdl:output>
+            <wsdl:fault name="DataServiceFault">
+                <soap:fault use="literal" name="DataServiceFault"></soap:fault>
+            </wsdl:fault>
+        </wsdl:operation>
+        <wsdl:operation name="findCompoundRob">
+            <soap:operation soapAction="urn:findCompoundRob" style="document"></soap:operation>
+            <wsdl:input>
+                <soap:body use="literal"></soap:body>
+            </wsdl:input>
+            <wsdl:output>
+                <soap:body use="literal"></soap:body>
+            </wsdl:output>
+            <wsdl:fault name="DataServiceFault">
+                <soap:fault use="literal" name="DataServiceFault"></soap:fault>
+            </wsdl:fault>
+        </wsdl:operation>
+    </wsdl:binding>
+    <wsdl:binding name="SSMPortalServicesSOAP12Binding" type="ns0:SSMPortalServicesPortType">
+        <soap12:binding transport="http://schemas.xmlsoap.org/soap/http" style="document"></soap12:binding>
+        <wsdl:operation name="findRob">
+            <soap12:operation soapAction="urn:findRob" style="document"></soap12:operation>
+            <wsdl:input>
+                <soap12:body use="literal"></soap12:body>
+            </wsdl:input>
+            <wsdl:output>
+                <soap12:body use="literal"></soap12:body>
+            </wsdl:output>
+            <wsdl:fault name="DataServiceFault">
+                <soap12:fault use="literal" name="DataServiceFault"></soap12:fault>
+            </wsdl:fault>
+        </wsdl:operation>
+        <wsdl:operation name="findDocumentQuery">
+            <soap12:operation soapAction="urn:findDocumentQuery" style="document"></soap12:operation>
+            <wsdl:input>
+                <soap12:body use="literal"></soap12:body>
+            </wsdl:input>
+            <wsdl:output>
+                <soap12:body use="literal"></soap12:body>
+            </wsdl:output>
+            <wsdl:fault name="DataServiceFault">
+                <soap12:fault use="literal" name="DataServiceFault"></soap12:fault>
+            </wsdl:fault>
+        </wsdl:operation>
+        <wsdl:operation name="findLlp">
+            <soap12:operation soapAction="urn:findLlp" style="document"></soap12:operation>
+            <wsdl:input>
+                <soap12:body use="literal"></soap12:body>
+            </wsdl:input>
+            <wsdl:output>
+                <soap12:body use="literal"></soap12:body>
+            </wsdl:output>
+            <wsdl:fault name="DataServiceFault">
+                <soap12:fault use="literal" name="DataServiceFault"></soap12:fault>
+            </wsdl:fault>
+        </wsdl:operation>
+        <wsdl:operation name="findRoc">
+            <soap12:operation soapAction="urn:findRoc" style="document"></soap12:operation>
+            <wsdl:input>
+                <soap12:body use="literal"></soap12:body>
+            </wsdl:input>
+            <wsdl:output>
+                <soap12:body use="literal"></soap12:body>
+            </wsdl:output>
+            <wsdl:fault name="DataServiceFault">
+                <soap12:fault use="literal" name="DataServiceFault"></soap12:fault>
+            </wsdl:fault>
+        </wsdl:operation>
+        <wsdl:operation name="findCompoundRoc">
+            <soap12:operation soapAction="urn:findCompoundRoc" style="document"></soap12:operation>
+            <wsdl:input>
+                <soap12:body use="literal"></soap12:body>
+            </wsdl:input>
+            <wsdl:output>
+                <soap12:body use="literal"></soap12:body>
+            </wsdl:output>
+            <wsdl:fault name="DataServiceFault">
+                <soap12:fault use="literal" name="DataServiceFault"></soap12:fault>
+            </wsdl:fault>
+        </wsdl:operation>
+        <wsdl:operation name="findGSTRegNoWithChkDigit">
+            <soap12:operation soapAction="urn:findGSTRegNoWithChkDigit" style="document"></soap12:operation>
+            <wsdl:input>
+                <soap12:body use="literal"></soap12:body>
+            </wsdl:input>
+            <wsdl:output>
+                <soap12:body use="literal"></soap12:body>
+            </wsdl:output>
+            <wsdl:fault name="DataServiceFault">
+                <soap12:fault use="literal" name="DataServiceFault"></soap12:fault>
+            </wsdl:fault>
+        </wsdl:operation>
+        <wsdl:operation name="findGSTRegNo">
+            <soap12:operation soapAction="urn:findGSTRegNo" style="document"></soap12:operation>
+            <wsdl:input>
+                <soap12:body use="literal"></soap12:body>
+            </wsdl:input>
+            <wsdl:output>
+                <soap12:body use="literal"></soap12:body>
+            </wsdl:output>
+            <wsdl:fault name="DataServiceFault">
+                <soap12:fault use="literal" name="DataServiceFault"></soap12:fault>
+            </wsdl:fault>
+        </wsdl:operation>
+        <wsdl:operation name="findCompoundRob">
+            <soap12:operation soapAction="urn:findCompoundRob" style="document"></soap12:operation>
+            <wsdl:input>
+                <soap12:body use="literal"></soap12:body>
+            </wsdl:input>
+            <wsdl:output>
+                <soap12:body use="literal"></soap12:body>
+            </wsdl:output>
+            <wsdl:fault name="DataServiceFault">
+                <soap12:fault use="literal" name="DataServiceFault"></soap12:fault>
+            </wsdl:fault>
+        </wsdl:operation>
+    </wsdl:binding>
+    <wsdl:binding name="SSMPortalServicesHttpBinding" type="ns0:SSMPortalServicesPortType">
+        <http:binding verb="POST"></http:binding>
+        <wsdl:operation name="findRob">
+            <http:operation location="findRob"></http:operation>
+            <wsdl:input>
+                <mime:content type="text/xml" part="parameters"></mime:content>
+            </wsdl:input>
+            <wsdl:output>
+                <mime:content type="text/xml" part="parameters"></mime:content>
+            </wsdl:output>
+        </wsdl:operation>
+        <wsdl:operation name="findDocumentQuery">
+            <http:operation location="findDocumentQuery"></http:operation>
+            <wsdl:input>
+                <mime:content type="text/xml" part="parameters"></mime:content>
+            </wsdl:input>
+            <wsdl:output>
+                <mime:content type="text/xml" part="parameters"></mime:content>
+            </wsdl:output>
+        </wsdl:operation>
+        <wsdl:operation name="findLlp">
+            <http:operation location="findLlp"></http:operation>
+            <wsdl:input>
+                <mime:content type="text/xml" part="parameters"></mime:content>
+            </wsdl:input>
+            <wsdl:output>
+                <mime:content type="text/xml" part="parameters"></mime:content>
+            </wsdl:output>
+        </wsdl:operation>
+        <wsdl:operation name="findRoc">
+            <http:operation location="findRoc"></http:operation>
+            <wsdl:input>
+                <mime:content type="text/xml" part="parameters"></mime:content>
+            </wsdl:input>
+            <wsdl:output>
+                <mime:content type="text/xml" part="parameters"></mime:content>
+            </wsdl:output>
+        </wsdl:operation>
+        <wsdl:operation name="findCompoundRoc">
+            <http:operation location="findCompoundRoc"></http:operation>
+            <wsdl:input>
+                <mime:content type="text/xml" part="parameters"></mime:content>
+            </wsdl:input>
+            <wsdl:output>
+                <mime:content type="text/xml" part="parameters"></mime:content>
+            </wsdl:output>
+        </wsdl:operation>
+        <wsdl:operation name="findGSTRegNoWithChkDigit">
+            <http:operation location="findGSTRegNoWithChkDigit"></http:operation>
+            <wsdl:input>
+                <mime:content type="text/xml" part="parameters"></mime:content>
+            </wsdl:input>
+            <wsdl:output>
+                <mime:content type="text/xml" part="parameters"></mime:content>
+            </wsdl:output>
+        </wsdl:operation>
+        <wsdl:operation name="findGSTRegNo">
+            <http:operation location="findGSTRegNo"></http:operation>
+            <wsdl:input>
+                <mime:content type="text/xml" part="parameters"></mime:content>
+            </wsdl:input>
+            <wsdl:output>
+                <mime:content type="text/xml" part="parameters"></mime:content>
+            </wsdl:output>
+        </wsdl:operation>
+        <wsdl:operation name="findCompoundRob">
+            <http:operation location="findCompoundRob"></http:operation>
+            <wsdl:input>
+                <mime:content type="text/xml" part="parameters"></mime:content>
+            </wsdl:input>
+            <wsdl:output>
+                <mime:content type="text/xml" part="parameters"></mime:content>
+            </wsdl:output>
+        </wsdl:operation>
+    </wsdl:binding>
+    <wsdl:service name="SSMPortalServices">
+        <wsdl:port name="SOAP11Endpoint" binding="ns0:SSMPortalServicesSOAP11Binding">
+            <soap:address location="http://10.7.31.38:9763/services/SSMPortalServices.SOAP11Endpoint/"></soap:address>
+        </wsdl:port>
+        <wsdl:port name="SOAP12Endpoint" binding="ns0:SSMPortalServicesSOAP12Binding">
+            <soap12:address location="http://10.7.31.38:9763/services/SSMPortalServices.SOAP12Endpoint/"></soap12:address>
+        </wsdl:port>
+        <wsdl:port name="HTTPEndpoint" binding="ns0:SSMPortalServicesHttpBinding">
+            <http:address location="http://10.7.31.38:9763/services/SSMPortalServices.HTTPEndpoint/"></http:address>
+        </wsdl:port>
+    </wsdl:service>
+</wsdl:definitions>

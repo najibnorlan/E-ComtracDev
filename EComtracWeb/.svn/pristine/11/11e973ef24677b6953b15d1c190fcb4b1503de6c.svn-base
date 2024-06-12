@@ -1,0 +1,197 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app id="WebApp" version="2.4" xmlns="http://Java.sun.com/xml/ns/j2ee" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://java.sun.com/xml/ns/j2ee http://java.sun.com/xml/ns/j2ee/web-app_2_4.xsd">
+
+	<display-name>EComtracWeb</display-name>
+	<welcome-file-list>
+		<welcome-file>index.html</welcome-file>
+		<welcome-file>index.htm</welcome-file>
+		<welcome-file>index.jsp</welcome-file>
+		<welcome-file>default.html</welcome-file>
+		<welcome-file>default.htm</welcome-file>
+		<welcome-file>default.jsp</welcome-file>
+	</welcome-file-list>
+
+	<!--HTTP FOR SERVER COMMENT FOR DEV 
+		
+            classpath:net/bull/javamelody/monitoring-spring-aspectj.xml
+	-->
+	<!--Edit by Azri End  	
+	
+
+	<security-constraint>
+		<web-resource-collection>
+			<web-resource-name>Protected Context</web-resource-name>
+			<url-pattern>/*</url-pattern>
+		</web-resource-collection>
+		<user-data-constraint>
+			<transport-guarantee>CONFIDENTIAL</transport-guarantee>
+		</user-data-constraint>
+	</security-constraint>
+
+		  -->
+  <context-param>
+        <param-name>contextConfigLocation</param-name>
+        <param-value>
+            classpath:applicationContext.xml
+        </param-value>
+   </context-param>
+    
+   <context-param>
+		<param-name>configuration</param-name>
+		<!--
+				For development : development
+				For production   : deployment
+		-->
+		<param-value>development</param-value>
+	</context-param>
+
+    <filter>
+        <filter-name>ssm</filter-name>
+        <filter-class>org.apache.wicket.protocol.http.WicketFilter</filter-class>
+        <init-param>
+            <param-name>applicationClassName</param-name>
+            <param-value>com.ssm.llp.base.page.WicketApplication</param-value>
+        </init-param>
+        <init-param>
+	        <param-name>ignorePaths</param-name>
+	        <param-value>/video,/jquery,/css,/js,/images,/icons</param-value>
+	    </init-param>
+    </filter>
+    
+	<filter>
+		<filter-name>javamelody</filter-name>
+		<filter-class>net.bull.javamelody.MonitoringFilter</filter-class>
+		<async-supported>true</async-supported>
+		<init-param>
+			<param-name>authorized-users</param-name>
+			<param-value>admin:P@ssw0rd123</param-value>
+		</init-param>
+	</filter>
+	
+    <filter-mapping>
+        <filter-name>ssm</filter-name>
+        <url-pattern>/*</url-pattern>
+    </filter-mapping>
+
+	<filter-mapping>
+		<filter-name>javamelody</filter-name>
+		<url-pattern>/*</url-pattern>
+		<dispatcher>REQUEST</dispatcher>
+		<dispatcher>ASYNC</dispatcher>
+	</filter-mapping>
+	<listener>
+		<listener-class>net.bull.javamelody.SessionListener</listener-class>
+	</listener>
+	
+    <listener>
+        <listener-class>org.springframework.web.context.ContextLoaderListener</listener-class>
+    </listener>
+    
+    <listener>
+		<listener-class>
+			com.sun.xml.ws.transport.http.servlet.WSServletContextListener
+        </listener-class>
+	</listener>
+	
+
+	
+	<servlet>
+		<servlet-name>ws</servlet-name>
+		<servlet-class>
+			com.sun.xml.ws.transport.http.servlet.WSServlet
+        </servlet-class>
+		<load-on-startup>1</load-on-startup>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>ws</servlet-name>
+		<url-pattern>*.ws</url-pattern>
+	</servlet-mapping>
+	
+	<!--servlet>
+		<servlet-name>mykadWs</servlet-name>
+		<servlet-class>
+			com.sun.xml.ws.transport.http.servlet.WSServlet
+        </servlet-class>
+		<load-on-startup>1</load-on-startup>
+	</servlet>
+	
+	<servlet-mapping>
+		<servlet-name>mykadWs</servlet-name>
+		<url-pattern>*.ws</url-pattern>
+	</servlet-mapping-->
+    
+    <resource-ref>
+		<description>LLP DB</description>
+		<res-ref-name>jdbc/ssm_llp</res-ref-name>
+		<res-type>javax.sql.DataSource</res-type>
+		<res-auth>Container</res-auth>
+		<res-sharing-scope>Shareable</res-sharing-scope>
+	</resource-ref>
+	<!--resource-ref>
+		<description>UAM DB</description>
+		<res-ref-name>jdbc/ssm_uam</res-ref-name>
+		<res-type>javax.sql.DataSource</res-type>
+		<res-auth>Container</res-auth>
+		<res-sharing-scope>Shareable</res-sharing-scope>
+	</resource-ref-->
+	<!--resource-ref>
+		<description>ROC DB</description>
+		<res-ref-name>jdbc/ssm_roc</res-ref-name>
+		<res-type>javax.sql.DataSource</res-type>
+		<res-auth>Container</res-auth>
+		<res-sharing-scope>Shareable</res-sharing-scope>
+	</resource-ref-->
+	<!--resource-ref>
+		<description>ROB DB</description>
+		<res-ref-name>jdbc/ssm_rob</res-ref-name>
+		<res-type>javax.sql.DataSource</res-type>
+		<res-auth>Container</res-auth>
+		<res-sharing-scope>Shareable</res-sharing-scope>
+	</resource-ref-->
+	
+    <resource-ref>
+    	<description>Mail Session</description>
+    	<res-ref-name>mail/Session</res-ref-name>
+    	<res-type>javax.mail.Session</res-type>
+    	<res-auth>Container</res-auth>
+    </resource-ref>
+    
+    <env-entry>
+		<description>SSM Payment Gateway WS</description>
+		<env-entry-name>SSMPGWebservice</env-entry-name>
+		<env-entry-type>java.lang.String</env-entry-type>
+	<!-- DEVELOPMENT -->	
+		<env-entry-value>http://192.168.3.84/axis2/services/SsmPgWS.SsmPgWSHttpSoap12Endpoint</env-entry-value>
+	<!-- STAGING -->	
+		<!--env-entry-value>http://test.ssm-mycoid.com.my/ssmpg/payment?id=</env-entry-value-->
+	<!-- PRODUCTION -->  
+		<!--env-entry-value>http://192.168.3.84/axis2/services/SsmPgServices?wsdl</env-entry-value-->
+	</env-entry>
+    
+    <env-entry>
+		<description>SSM Payment Gateway Landing Page</description>
+		<env-entry-name>SSMPGLandingPage</env-entry-name>
+		<env-entry-type>java.lang.String</env-entry-type>
+	<!-- DEVELOPMENT -->	
+		<!--env-entry-value>http://192.168.3.13/ssmpg/payment?id=</env-entry-value-->
+	<!-- STAGING -->	
+		<env-entry-value>http://test.ssm-mycoid.com.my/ssmpg/payment?id=</env-entry-value>
+	<!-- PRODUCTION -->  
+		<!--env-entry-value>http://www.ssm-mycoid.com.my/ssmpg/payment?id=</env-entry-value-->
+	</env-entry>
+	
+	 <env-entry>
+		<description>IsRun Scheduler</description>
+		<env-entry-name>isRunScheduler</env-entry-name>
+		<env-entry-type>java.lang.String</env-entry-type>
+		<env-entry-value>Y</env-entry-value>
+	</env-entry>
+	
+	<env-entry>
+		<description>Application Type</description>
+		<env-entry-name>applicationType</env-entry-name>
+		<env-entry-type>java.lang.String</env-entry-type>
+		<env-entry-value>ECOMTRAC</env-entry-value>
+	</env-entry>
+  
+</web-app>

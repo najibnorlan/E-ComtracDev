@@ -1,0 +1,134 @@
+<wicket:extend>
+	<span wicket:id="jsScript"></span>
+	<script>
+	tinymce.init({
+		  selector: 'textarea',
+		  height: 300,
+		  theme: 'modern',
+		  skin: 'light',
+		  plugins: [
+		    'advlist autolink lists link image charmap print preview hr anchor pagebreak',
+		    'searchreplace wordcount visualblocks visualchars code fullscreen',
+		    'insertdatetime media nonbreaking save table contextmenu directionality',
+		    'emoticons template paste textcolor colorpicker textpattern imagetools codesample toc help'
+		  ],
+		  toolbar1: 'undo redo | insert | styleselect | bold italic | alignleft aligncenter alignright alignjustify | bullist numlist outdent indent | link image preview media | forecolor backcolor emoticons | codesample help',
+		  image_advtab: true,
+		  templates: [
+		    { title: 'Test template 1', content: 'Test 1' },
+		    { title: 'Test template 2', content: 'Test 2' }
+		  ],
+		  content_css: [
+		    '//fonts.googleapis.com/css?family=Lato:300,300i,400,400i',
+		    '//www.tinymce.com/css/codepen.min.css'
+		  ]
+		 });
+	</script>
+	
+	<form wicket:id="form" class="ui equal width form">
+		<h3 class="ui dividing header"><wicket:message key="lbl.page.editcomtrac.traininginfo"/></h3><br>
+		<div class="field">
+			<div class="three fields">
+				<div class="six wide field">
+					<label wicket:id="trainingCodeLabel"></label>
+					<div class="ui labeled input">
+						<div class="ui label">CP-</div>
+						<input type="text" wicket:id="trainingCode" placeholder="Training Code">
+					</div>
+				</div>
+				<div class="fifteen wide field">
+					<label wicket:id="trainingNameLabel"></label>
+					<input type="text" wicket:id="trainingName" placeholder="Training Name">
+				</div>
+				<div class="five wide field">
+					<label wicket:id="trainingTypeLabel"></label>
+					<select type="text" wicket:id="trainingType" placeholder="Training Type"/>
+				</div>
+			</div>
+		</div>
+		<div class="three fields">
+			<div class="field">
+				<label wicket:id="trainingStartDtLabel"></label>
+				<input type="text" wicket:id="trainingStartDt" placeholder="TRAINING START DATE">
+			</div>
+			<div class="field">
+				<label wicket:id="trainingEndDtLabel"></label>
+				<input type="text" wicket:id="trainingEndDt" placeholder="TRAINING END DATE">
+			</div>
+			<div class="field">
+				<label wicket:id="regClosingDtLabel"></label>
+				<input type="text" wicket:id="regClosingDt" placeholder="REGISTRATION CLOSING DATE">
+			</div>
+		</div>
+		<div class="four fields">
+			<div class="field">
+				<label wicket:id="trainingStartTimeLabel"></label>
+				<input type="text" wicket:id="trainingStartTime" placeholder="Training Start Time">
+			</div>
+			<div class="field">
+				<label wicket:id="trainingEndTimeLabel"></label>
+				<input type="text" wicket:id="trainingEndTime" placeholder="Training End Time">
+			</div>
+			<div class="field">
+				<label wicket:id="cpePointLabel"></label>
+				<input type="text" wicket:id="cpePoint" placeholder="CPE Point">
+			</div>
+			<div class="field">
+				<label wicket:id="trainingVenueLabel"></label>
+				<input type="text" wicket:id="trainingVenue" placeholder="Venue">
+			</div>
+		</div>
+		
+		<h3 class="ui dividing header"><wicket:message key="lbl.page.editcomtrac.feeinfo"/></h3><br>
+		<div class="three fields">
+			<div class="field">
+				<label wicket:id="gstCodeLabel"></label>
+				<select type="text" wicket:id="gstCode" />
+			</div>
+			<div class="field">
+				<label wicket:id="trainingListSeqLabel"></label>
+				<input class="is-numeric" type="text" wicket:id="trainingListSeq" placeholder="9999">
+			</div>
+			<div class="field">
+			</div>
+		</div>	
+		<div class="three fields">
+			<div class="field">
+				<label wicket:id="standardFeeLabel"></label>
+				<input class="is-decimal" type="text" wicket:id="standardFee" placeholder="Standard Fee">
+			</div>
+			<div class="field">
+				<label wicket:id="specialFeeLabel"></label>
+				<input class="is-decimal" type="text" wicket:id="specialFee" placeholder="Special Fee">
+			</div>
+			<div class="field">
+				<label wicket:id="maxPaxLabel"></label>
+				<input class="is-numeric" type="text" wicket:id="maxPax" placeholder="Max Participant">
+			</div>
+		</div>
+		
+		<h3 class="ui dividing header"><wicket:message key="lbl.page.editcomtrac.trainingdesc"/></h3>
+		<textarea name="trainingDesc" id="trainingDesc" wicket:id="trainingDesc" style="margin-top: 0px; margin-bottom: 0px; height: 183px;"></textarea>
+		
+		<div class="ui segment">
+			<div class="field inline">
+				<input wicket:id="status" type="checkbox" name="status" class="chckbxpure" checked>
+				<label>Advertising status : <span wicket:id="statusLabel"></span></label>
+			</div>
+		</div>
+		<input class="ui button positive" wicket:id="submit" value="Submit" type="submit">
+		<input class="ui button negative" wicket:id="cancel" value="Cancel" type="button">
+	</form>
+	
+	<script>
+	$('.ui.checkbox').checkbox();
+
+	/* $('#chckbxdummy').on('change',function(){
+		$('.chckbxpure').click();
+	}); */
+	 
+	$('#tinymce p').on("keydown", function(){
+		$('#trainingDesc').val($(this).html());
+	});
+	</script>
+</wicket:extend>

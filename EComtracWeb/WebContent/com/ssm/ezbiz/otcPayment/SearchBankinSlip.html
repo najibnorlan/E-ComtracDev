@@ -1,0 +1,114 @@
+<wicket:extend>
+	<form wicket:id="form">
+		<div class="ui form">
+			<table>
+				<tr>
+					<td>
+						<div class="ui top attached segment">
+							<div class="ui top attached label">
+								<h4 class="ui header">
+									<wicket:message
+										key="page.lbl.ezbiz.listcounterbankin.title" />
+								</h4>
+							</div>
+							<table>
+							<tr>
+									<td>
+										<div class="field">
+											<label><span wicket:id="slipNoLabel" /></label> <input
+												wicket:id="slipNo"/>
+										</div>
+									</td>
+								</tr>
+								<tr>
+									<td>
+										<div class="field">
+											<label><span wicket:id="branchLabel" /></label> <select
+												wicket:id="branch">
+											</select>
+										</div>
+									</td>
+								</tr>
+								<tr>
+									<td>
+										<div class="field">
+											<label><span wicket:id="floorLabel" /></label> <select
+												wicket:id="floor">
+											</select>
+										</div>
+									</td>
+								</tr>
+								<tr>
+									<td>
+										<div class="two fields">
+											<div class="two field">
+												<label><span wicket:id="dateFromLabel" /></label> <input
+												wicket:id="dateFrom" style="width: 100%" />
+											</div>
+											<div class="field">
+												<label><span wicket:id="dateToLabel" /></label> <input
+												wicket:id="dateTo" style="width: 100%" />
+											</div>
+										</div>
+									</td>
+								</tr>
+								<tr>
+									<td>&nbsp;</td>
+								</tr>
+								<tr>
+									<td><input wicket:id="search" type="button"
+										class="ui primary button" value="Search" /></td>
+								</tr>
+							</table>
+						</div>
+					</td>
+				</tr>
+			</table>
+		</div>
+	</form>
+	<div wicket:id="dataDiv">
+		<table class="ui striped table" width="100%">
+			<thead>
+				<tr>
+				<th><wicket:message
+							key="page.lbl.ezbiz.listcounterbankin.index" /></th>
+					<th><wicket:message
+							key="page.lbl.ezbiz.listcounterbankin.bankSlipNo" /></th>
+					<th><wicket:message
+							key="page.lbl.ezbiz.listcounterbankin.branch" /></th>
+					<th><wicket:message
+							key="page.lbl.ezbiz.listcounterbankin.floor" /></th>
+					<th><wicket:message
+							key="page.lbl.ezbiz.listcounterbankin.total" /></th>
+							<th><wicket:message
+							key="page.lbl.ezbiz.listcounterbankin.createBy" /></th>
+					<th><wicket:message
+							key="page.lbl.ezbiz.listcounterbankin.action" /></th>
+				</tr>
+			</thead>
+			<tbody>
+				<tr wicket:id="sorting">
+					<td><span wicket:id="index"></span></td>
+					<td><span wicket:id=bankSlipNo>[bankSlipNo]</span></td>
+					<td><span wicket:id="branch">[branch]</span></td>
+					<td><span wicket:id="floor">[floor]</span></td>
+					<td>RM <span wicket:id="total">[total]</span></td>
+					<td><span wicket:id="createBy">[createBy]</span> <br> <span wicket:id="createDt">[createDt]</span></td>
+					<td>
+						<div class="mini ui buttons">
+						  <button class="ui button primary" wicket:id="detail">Detail</button>
+						</div>
+					</td>
+				</tr>
+			</tbody>
+			<tfoot>
+			    <tr>
+			    	<th colspan="100">
+			    		<span wicket:id="navigatorLabel">[dataView navigatorLabel]</span>
+				        <span wicket:id="navigator">[dataView navigator]</span>
+			    	</th>
+			  </tr>
+			</tfoot>
+		</table>
+	</div>
+</wicket:extend>

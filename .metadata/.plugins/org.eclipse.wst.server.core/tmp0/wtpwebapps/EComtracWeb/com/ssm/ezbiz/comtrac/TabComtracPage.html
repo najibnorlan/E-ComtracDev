@@ -1,0 +1,40 @@
+<wicket:extend>
+<!--div id="content" class="ui middle aligned center aligned grid"-->   
+    <table width="100%">
+	<tr>
+		<td >		 
+			<div class="ui top attached tabular menu">
+			  <a wicket:id="draftLink" class="item active" data-tab="draftPanel"><wicket:message key="page.lbl.ezbiz.tabComtracPage.draftPanel" /></a>
+			  <a wicket:id="pendingPaymentLink" class="item" data-tab="pendingPaymentPanel"><wicket:message key="page.lbl.ezbiz.tabComtracPage.pendingPaymentPanel" /></a>
+			  <a wicket:id="inProcessLink" class="item" data-tab="inProcessPanel"><wicket:message key="page.lbl.ezbiz.tabComtracPage.inProcessPanel" /></a>
+			  <a wicket:id="paymentSuccessLink" class="item" data-tab="paymentSuccessPanel"><wicket:message key="page.lbl.ezbiz.tabComtracPage.paymentSuccessPanel" /></a>
+			  <a wicket:id="cancelLink" class="item" data-tab="cancelPanel"><wicket:message key="page.lbl.ezbiz.tabComtracPage.cancelLink" /></a>
+			  <a wicket:id="rejectLink" class="item" data-tab="rejectPanel"><wicket:message key="page.lbl.ezbiz.tabComtracPage.rejectLink" /></a>
+			</div>
+			<div class="ui bottom attached tab segment active" data-tab="draftPanel">
+			  	<span wicket:id="draftPanel"></span>
+			</div>
+			<div class="ui bottom attached tab segment" data-tab="pendingPaymentPanel">
+				<span wicket:id="pendingPaymentPanel"></span>
+			</div>
+			<div class="ui bottom attached tab segment" data-tab="inProcessPanel">
+				<span wicket:id="inProcessPanel"></span>
+			</div>
+			<div class="ui bottom attached tab segment" data-tab="paymentSuccessPanel">
+				<span wicket:id="paymentSuccessPanel"></span>
+			</div>
+			<div class="ui bottom attached tab segment" data-tab="cancelPanel">
+				<span wicket:id="cancelPanel"></span>
+			</div>
+			<div class="ui bottom attached tab segment" data-tab="rejectPanel">
+				<span wicket:id="rejectPanel"></span>
+			</div>
+		</td>
+	</tr>    
+    </table>
+    <!--/div--> 
+    <script type="text/javascript" wicket:id="notyJs"></script>
+<script>
+$('.menu .item').tab();
+</script>
+</wicket:extend>

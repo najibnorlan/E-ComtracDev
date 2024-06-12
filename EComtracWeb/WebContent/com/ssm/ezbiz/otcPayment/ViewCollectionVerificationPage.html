@@ -1,0 +1,126 @@
+<wicket:extend>
+	<style>
+label {
+	font-weight: bold;
+	font-size: 12px
+}
+</style>
+	<div class="ui right aligned grid form">
+		<div class="left floated left aligned eight wide column">
+			<div class="ui top attached segment">
+				<div class="ui top attached label">
+					<h4 class="ui header">
+						<wicket:message key="page.lbl.ezbiz.otcPayment.counterInfo" />
+					</h4>
+				</div>
+				<div class="ui equal width grid">
+					<div class="column center aligned">
+						<label><wicket:message
+								key="page.lbl.ezbiz.otcPayment.userId" /></label><br> <span
+							style="font-size: 14px" wicket:id="userId"></span>
+					</div>
+					<div class="column center aligned">
+						<label><wicket:message
+								key="page.lbl.ezbiz.otcPayment.counterName" /></label><br> <span
+							style="font-size: 14px" wicket:id="counterName"></span>
+					</div>
+					<div class="column center aligned">
+						<label><wicket:message
+								key="page.lbl.ezbiz.otcPayment.branch" /></label><br> <span
+							style="font-size: 14px" wicket:id="branch"></span>
+					</div>
+					<div class="column center aligned">
+						<label><wicket:message
+								key="page.lbl.ezbiz.otcPayment.floorLevel" /></label><br> <span
+							style="font-size: 14px" wicket:id="floorLevel"></span>
+					</div>
+					<div class="equal width row">
+						<div class="column center aligned">
+							<label><wicket:message
+									key="page.lbl.ezbiz.otcPayment.checkinDate" /></label><br> <span
+								style="font-size: 14px" wicket:id="checkinDate"></span>
+						</div>
+						<div class="column center aligned">
+							<label><wicket:message
+									key="page.lbl.ezbiz.otcPayment.checkoutDate" /></label><br> <span
+								style="font-size: 14px" wicket:id="checkoutDate"></span>
+						</div>
+						<div class="column center aligned">
+							<label><wicket:message
+									key="page.lbl.ezbiz.otcPayment.counterStatus" /></label><br> <span
+								style="font-size: 14px">Closed</span>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="right floated left aligned seven wide column">
+			<div class="ui top attached segment">
+				<div class="ui top attached label">
+					<h4 class="ui header">
+						<wicket:message key="page.lbl.ezbiz.otcPayment.counterInfo" />
+					</h4>
+				</div>
+				<div class="ui equal width grid">
+					<div class="column center aligned">
+						<label><wicket:message
+								key="page.lbl.ezbiz.otcPayment.totalTransaction" /></label><br> <span
+							style="font-size: 20px" wicket:id="countTransactions"></span>
+					</div>
+					<div class="column center aligned">
+						<label><wicket:message
+								key="page.lbl.ezbiz.otcPayment.totalAmount" /></label><br>RM <span
+							style="font-size: 20px" wicket:id="sumTransactions"></span>
+					</div>
+					<div class="column center aligned">
+						<label><wicket:message
+								key="page.lbl.ezbiz.otcPayment.balancingStatus" /></label><br> <span
+							style="font-size: 20px">Data Entry</span>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="right floated left aligned sixteen wide column">
+				<table style="width: 100%; text-align: center;" class="ui striped table">
+					<thead>
+						<tr>
+							<th><wicket:message
+									key="page.lbl.ezbiz.otcPaymentPage.banknotes" /></th>
+							<th><wicket:message
+									key="page.lbl.ezbiz.otcPaymentPage.quantity" /></th>
+							<th><wicket:message
+									key="page.lbl.ezbiz.otcPaymentPage.total" /></th>
+						</tr>
+					</thead>
+					<tbody>
+						<tr wicket:id="balancings">
+							<td>RM <span wicket:id="bankNotes">[bankNotes]</span></td>
+							<td> <span wicket:id="quantity">[quantity]</span></td>
+							<td>RM <span wicket:id="amount">[amount]</span></td>
+						</tr>
+						<tr>
+						<td colspan="2"
+								style="text-align: right; font-size: 14px; font-weight: bold;"><wicket:message
+									key="page.lbl.ezbiz.otcPaymentPage.totalBalancing" /></td>
+							<td style="font-size: 14px; font-weight: bold;">RM <span
+								wicket:id="totalAmount">[totalAmount]</span></td>
+						</tr>
+					</tbody>
+				</table>
+			
+			<div class="ui positive right labeled icon button right floated"
+				wicket:id="approve">
+				Approve Collection Balancing <i class="checkmark icon"></i>
+			</div>
+			<div class="ui positive right labeled icon button right floated"
+				wicket:id="verify">
+				Verify Collection Balancing <i class="checkmark icon"></i>
+			</div>
+			<div class="ui red right labeled icon button right floated"
+				wicket:id="cancel">
+				Cancel <i class="remove icon"></i>
+			</div>
+		</div>
+	</div>
+
+</wicket:extend>

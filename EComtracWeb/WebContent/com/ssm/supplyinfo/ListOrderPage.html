@@ -1,0 +1,29 @@
+<wicket:extend>
+			<table class="ui large striped  table" >
+				<thead class="ui computer only">
+					<tr>
+						<th>Bil</th>
+						<th>Transaction Code</th>
+						<th>Date</th>
+						<th>Status</th>
+						<th>Action</th>
+					</tr>
+				</thead> 
+				
+				<tbody>
+					<tr wicket:id="sorting">
+						<td><span class="mobile only">Bil : </span><span wicket:id="bil">[bil]</span></td>
+						<td><span class="mobile only">Transaction Code : </span><span wicket:id="transCode">[transCode]</span></td>
+						<td><span class="mobile only">Date : </span><span wicket:id="updateDt">[updateDt]</span></td>
+						<td><span class="mobile only">status : </span><span wicket:id="status">[status]</span></td>
+						<td class="center aligned" style="width: 10%"> 
+							<span class="mobile only"> </span>
+							<a wicket:id="detail" href="#" wicket:message="title:page.lbl.listOrder.detail">
+								<i class="large red edit link icon" />
+							</a>
+						</td>
+					</tr>
+				</tbody>
+				
+			</table>
+</wicket:extend>

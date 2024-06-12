@@ -1,0 +1,114 @@
+
+<html>
+<head>
+<title></title>
+<link rel="stylesheet" type="text/css" href="semantic/semantic.min.css">
+<link rel="stylesheet" type="text/css" href="semantic/components/form.min.css">
+<link rel="stylesheet" type="text/css" href="css/styles.css" />
+<script type="text/javascript" src="js/ssmScript.js"></script>
+<link rel="stylesheet" href="jquery/jquery-ui.css">
+
+
+<script src="jquery/jquery-1.9.1.js"></script>
+<script src="js/jquery.scrollTo.min.js"></script>
+<script src="jquery/jquery-ui.js"></script>
+<script src="semantic/semantic.min.js"></script>
+<script src="semantic/components/form.js"></script>
+
+
+<style type="text/css">
+/*<![CDATA[*/
+.Edit.icon {
+	font-size: 2em;
+}
+
+.Erase.icon {
+	font-size: 2em;
+}
+
+.Add.User.icon {
+	font-size: 2em;
+}
+
+.Remove.User.icon {
+	font-size: 2em;
+}
+
+/*]]>*/
+</style>
+
+</head>
+<body id="example">
+	<table class="ui celled sortable basic table segment">
+		<tbody>
+			<tr>
+				<td class="four wide"><b>{name}</b></td>
+				<td>The current text of a field's label, or if no label available its placeholder text</td>
+			</tr>
+			<tr>
+				<td class="four wide"><b>{identifier}</b></td>
+				<td>The identifier used to match the field</td>
+			</tr>
+			<tr>
+				<td class="four wide"><b>{value}</b></td>
+				<td>The current field value</td>
+			</tr>
+			<tr>
+				<td class="four wide"><b>{ruleValue}</b></td>
+				<td>The value passed to a rule, for example <code>minLength[100]</code> would set this value to 100
+				</td>
+			</tr>
+		</tbody>
+	</table>
+	<form class="ui form segment">
+		<div class="two fields">
+			<div class="field">
+				<label>Field 1</label> <input type="text" name="field1">
+			</div>
+			<div class="field">
+				<label>Field 2</label> <input type="text" name="field2">
+			</div>
+		</div>
+		<div class="ui blue submit button" onclick="mainValidation()">Submit</div>
+		<div class="ui error message"></div>
+	</form>
+	<script type="text/javascript" >
+	
+	function mainValidationSetRule(){
+
+	
+	$('.ui.form')
+	.form({
+	fields: {
+		field1: {
+			identifier  : 'field1',
+			rules: [
+		          {
+		            type   : 'isNotReqMinLengthNumber[5]',
+		            prompt : 'Your password must be at least {ruleValue} characters'
+		          }
+			]
+			}
+			},
+				inline : true,
+				on     : 'blur'
+			})
+			;
+			}
+
+			function mainValidation(){
+			mainValidationSetRule();
+			if ( $('.ui.form').form('is valid') ) {
+				alert('true');
+				return true;
+			}else{
+				alert('false');
+				return false;
+			}
+			}
+			</script>
+
+
+
+</body>
+</html>

@@ -1,0 +1,46 @@
+<wicket:extend>
+    <div id="contacts">
+        <div class="contact">
+            <table>
+            	<tr>
+                    <td>
+                        RefNo
+                    </td>
+                    <td wicket:id="refNo"></td>
+                </tr>
+                <tr>
+                    <td>
+                        <b>
+                            <span wicket:id="firstName"></span>
+                            <span wicket:id="lastName"></span>
+                        </b>
+                    </td>
+                    <td align="right">
+                        <b>
+                            <a wicket:id="edit" href="#">Edit</a>
+                            <a wicket:id="delete" href="#">Delete</a>
+                        </b>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        Email
+                    </td>
+                    <td wicket:id="email"></td>
+                </tr>
+                <tr>
+                    <td>
+                        Notes
+                    </td>
+                    <td wicket:id="notes"></td>
+                </tr>
+                <tr>
+                    <td>
+                        Group
+                    </td>
+                    <td wicket:id="group"></td>
+                </tr>
+            </table>
+        </div>
+    </div>
+</wicket:extend>

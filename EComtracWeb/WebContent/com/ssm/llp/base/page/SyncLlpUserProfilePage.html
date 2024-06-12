@@ -1,0 +1,73 @@
+<wicket:extend>
+	<form wicket:id="form">
+		<div wicket:id="secondLevelApprovePopup"></div>
+		<div class="ui right aligned grid form">
+			<div class="left floated left aligned six wide column">
+				<div class="ui icon message">
+					<i class="info circle icon"></i>
+					<div class="content">
+						<div class="header">
+							<wicket:message key="page.lbl.ezbiz.resetPassword.loginId" />
+						</div>
+						<p>
+							<span wicket:id="loginId">[loginId]</span>
+						</p>
+						<div class="header">
+							<wicket:message key="page.lbl.ezbiz.resetPassword.icNo" />
+						</div>
+						<p>
+							<span wicket:id="icNo">[icNo]</span>
+						</p>
+						<div class="header">
+							<wicket:message key="page.lbl.ezbiz.resetPassword.hpNo" />
+						</div>
+						<p>
+							<span wicket:id="hpNo">[hpNo]</span>
+						</p>
+						<div class="header">
+							<wicket:message key="page.lbl.ezbiz.resetPassword.email" />
+						</div>
+						<p>
+							<span wicket:id="email">[email]</span>
+						</p>
+						<div class="header">
+							<wicket:message key="page.lbl.ezbiz.resetPassword.approveBy" />
+						</div>
+						<p>
+							<span wicket:id="approveBy">approveBy</span>
+						</p>
+					</div>
+				</div>
+			</div>
+			<div class="left floated ten wide column">
+				<div class="ui message">
+					<div class="content" style="text-align: center;">
+						<div class="sixteen wide field">
+							<div class="header"><wicket:message key="page.lbl.ezbiz.syncProfile.ezbizName" /></div>
+							<p style="font-size: 20px">
+								<span wicket:id="ezbizName"></span>
+							</p>
+						</div>
+						<div class="sixteen wide field">
+							<i class="arrow down icon large"></i>
+						</div>
+						<div class="sixteen wide field">
+							<div class="header"><wicket:message key="page.lbl.ezbiz.syncProfile.cbsName" /></div>
+							<p style="font-size: 20px">
+								<span wicket:id="cbsName"></span>
+							</p>
+						</div>
+						<div class="sixteen wide field">
+							<div class="header"><label><span wicket:id="remarksLabel"></span></label></div>
+							<p>
+								<textarea wicket:id="remarks" rows="3" cols="3"></textarea>
+							</p>
+						</div>
+						<button class="ui button primary small" wicket:id="sync">Sync!</button>
+						<button class="ui button negative small" wicket:id="back">Back</button>
+					</div>
+				</div>
+			</div>
+		</div>
+	</form>
+</wicket:extend>

@@ -1,0 +1,175 @@
+<wicket:extend>
+	<form wicket:id="form">
+		<div class="ui form">
+			<table>
+				<tr>
+					<td>
+						<div class="ui top attached segment">
+							<div class="ui top attached label">
+								<h4 class="ui header">
+									<wicket:message
+										key="page.lbl.ezbiz.collectionVerification.title" />
+								</h4>
+							</div>
+							<table>
+								<tr>
+									<td>
+										<div class="field">
+											<label><span wicket:id="ipAddressLabel" /></label> <input
+												wicket:id="ipAddress" style="width: 80%" />
+										</div>
+									</td>
+								</tr>
+								<tr>
+									<td>
+										<div class="field">
+											<label><span wicket:id="branchLabel" /></label> <select
+												wicket:id="branch">
+											</select>
+										</div>
+									</td>
+								</tr>
+								<tr>
+									<td>
+										<div class="field">
+											<label><span wicket:id="floorLabel" /></label> <select
+												wicket:id="floor">
+											</select>
+										</div>
+									</td>
+								</tr>
+								<tr>
+									<td>
+										<div class="field">
+											<label><span wicket:id="isActiveLabel" /></label> <select
+												wicket:id="isActive">
+											</select>
+										</div>
+									</td>
+								</tr>
+								<tr>
+									<td>&nbsp;</td>
+								</tr>
+								<tr>
+									<td>
+										<input wicket:id="search" type="button" class="ui primary button" value="Search" />
+										<div class="ui primary right labeled icon button add" wicket:id="add">
+											<wicket:message
+												key="page.lbl.ezbiz.counteCollectionList.addCounter" />
+											<i class="plus icon"></i>
+										</div>
+									</td>
+								</tr>
+							</table>
+						</div>
+					</td>
+				</tr>
+			</table>
+		</div>
+	</form>
+	
+	<div class="ui modal small">
+		
+			<i class="close icon"></i>
+			<div class="header">
+				<wicket:message key="page.lbl.ezbiz.counteCollectionList.addCounter" />
+			</div>
+			<form wicket:id="formAdd">
+			<br>
+			<div class="content" style="padding-left: 15px; padding-right: 15px">
+					<div class="ui equal width form">
+					  <div class="fields">
+					    <div class="field">
+					      <label><span wicket:id="ipAddressAddLabel"></span> </label>
+					      <input type="text" placeholder="IP Address" wicket:id="ipAddressAdd">
+					    </div>
+					    <div class="field">
+					      <label><span wicket:id="counterNameAddLabel"></span> </label>
+					      <input type="text" placeholder="Counter Name" wicket:id="counterNameAdd">
+					    </div>
+					  </div>
+					  <div class="fields">
+					    <div class="field">
+					      <label><span wicket:id="branchAddLabel"></span> </label>
+					      <select wicket:id="branchAdd"></select>
+					    </div>
+					    <div class="field">
+					      <label><span wicket:id="floorAddLabel"></span> </label>
+					      <select wicket:id="floorAdd"></select>
+					    </div>
+					    <div class="field">
+					      <label><span wicket:id="counterTypeAddLabel"></span> </label>
+					      <select wicket:id="counterTypeAdd"></select>
+					    </div>
+					  </div>
+					</div>
+			</div>
+			<br>
+			<div class="actions">
+				<div class="ui red deny right labeled icon button small" >
+					Cancel <i class="remove icon"></i>
+				</div>
+				<div class="ui positive right labeled icon button small" wicket:id="submit">
+					Submit <i class="checkmark icon"></i>
+				</div>
+			</div>
+			</form>
+		</div>
+		
+	<div wicket:id="counterList">
+		<table class="ui striped table" width="100%">
+			<thead>
+				<tr>
+					<th><wicket:message
+							key="page.lbl.ezbiz.counteCollectionList.bil" /></th>
+					<th><wicket:message
+							key="page.lbl.ezbiz.counteCollectionList.ipAddress" /></th>
+					<th><wicket:message
+							key="page.lbl.ezbiz.counteCollectionList.counterName" /></th>
+							<th><wicket:message
+							key="page.lbl.ezbiz.counteCollectionList.counterType" /></th>
+					<th><wicket:message
+							key="page.lbl.ezbiz.counteCollectionList.branch" /></th>
+					<th><wicket:message
+							key="page.lbl.ezbiz.counteCollectionList.floor" /></th>
+					<th><wicket:message
+							key="page.lbl.ezbiz.counteCollectionList.createBy" /></th>
+					<th><wicket:message
+							key="page.lbl.ezbiz.counteCollectionList.isActive" /></th>
+					<th><wicket:message
+							key="page.lbl.ezbiz.counteCollectionList.action" /></th>
+				</tr>
+			</thead>
+			<tbody>
+				<tr wicket:id="sorting">
+					<td><span wicket:id="index">[index]</span></td>
+					<td><span wicket:id="ipAddress">[ipAddress]</span></td>
+					<td><span wicket:id="counterName">[counterName]</span></td>
+					<td><span wicket:id="counterType">[counterType]</span></td>
+					<td><span wicket:id="branch">[branch]</span></td>
+					<td><span wicket:id="floor">[floor]</span></td>
+					<td><span wicket:id="createBy">[createBy]</span> <br> <span wicket:id="createDt">[createDt]</span> </td>
+					<td>
+						<div wicket:id="wmcDeact">
+							<button wicket:id="deactivated" class="ui button negative mini">No</button>
+						</div>
+						<div wicket:id="wmcAct">
+							<button wicket:id="activated" class="ui button positive mini">Yes</button>
+						</div>
+					</td>
+					<td>
+						<button wicket:id="edit" class="ui button mini">Edit</button>
+					</td>
+				</tr>
+			</tbody>
+			<tfoot>
+				<tr>
+					<th colspan="100"><span wicket:id="navigatorLabel">[dataView
+							navigatorLabel]</span> <span wicket:id="navigator">[dataView
+							navigator]</span></th>
+				</tr>
+			</tfoot>
+		</table>
+	</div>
+	
+</wicket:extend>

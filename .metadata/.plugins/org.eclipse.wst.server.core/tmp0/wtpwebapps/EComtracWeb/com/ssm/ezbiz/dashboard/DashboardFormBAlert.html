@@ -1,0 +1,35 @@
+<wicket:panel>
+	<table class="ui striped table">
+	  <thead>
+	    <tr>
+	      <th><wicket:message key="page.title.dashboard.formB.refNo" /></th>
+	      <th><wicket:message key="page.title.dashboard.formB.brNo" /></th>
+	      <th><wicket:message key="page.title.dashboard.formB.bizName" /></th>
+	      <th><wicket:message key="page.title.dashboard.formB.status" /></th>
+	      <th class="right aligned"><wicket:message key="page.title.dashboard.formB.action" /></th>
+	    </tr>
+	  </thead>
+	  <tbody>
+	    <tr wicket:id="sorting">
+	      <td><span wicket:id="refNo">[refNo]</span> </td>
+	      <td><span wicket:id="brNo">[brNo]</span> </td>
+	      <td><span wicket:id="bizName">[bizName]</span> </td>
+	      <td><span wicket:id="status">[status]</span> </td>
+	      <td class="right aligned">
+	      	<button class="ui primary button" wicket:id="viewAction">
+			  <i class="Edit icon"></i>
+			  <wicket:message key="page.title.dashboard.formB.viewAction" />
+			</button>
+		  </td>
+	    </tr>
+	  </tbody>
+	  <tfoot>
+  			<tr>
+    			<th colspan="100">
+    			<span wicket:id="navigatorLabel">[dataView navigatorLabel]</span>
+	        	<span wicket:id="navigator">[dataView navigator]</span>
+    			</th>
+  			</tr>
+  		</tfoot>
+	</table>
+</wicket:panel>

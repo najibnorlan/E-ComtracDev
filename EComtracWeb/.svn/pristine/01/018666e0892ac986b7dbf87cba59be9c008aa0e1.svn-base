@@ -1,0 +1,13 @@
+-- 5/6/2017
+
+INSERT INTO rob_health_check
+(code, status, create_by, create_dt, update_by, update_dt, method_name, item_type)
+VALUES('CANCEL_COMTRAC_DATA_ENTRY', 'OK', 'admin', current, 'system', current, 'cancelComtracDataEntry', 'scheduler');
+
+INSERT INTO rob_health_check
+(code, status, create_by, create_dt, update_by, update_dt, method_name, item_type)
+VALUES('PROCESS_COMTRAC_PENDING_PAYMENT', 'OK', 'admin', current, 'system', current, 'processComtracPendingPayment', 'scheduler');
+
+INSERT INTO rob_health_check
+(code, status, create_by, create_dt, update_by, update_dt, method_name, item_type)
+VALUES('CANCEL_COMTRAC_PENDING_PAYMENT', 'OK', 'admin', current, 'system', current, 'cancelComtracPendingPayment', 'scheduler');

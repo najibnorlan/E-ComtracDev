@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<endpoints
+	xmlns="http://java.sun.com/xml/ns/jax-ws/ri/runtime"
+	version="2.0">
+	<endpoint
+		name="LlpCluster"
+		implementation="com.ssm.llp.jaxws.LlpClusterServiceImpl"
+		url-pattern="/ws/llpCluster.ws" />
+		
+	<endpoint
+		name="MyKadWs"
+		implementation="com.ssm.llp.jaxws.WSMykadReaderServiceImpl"
+		url-pattern="/ws/mykad.ws" />
+
+	<endpoint
+		name="QRValidation"
+		implementation="com.ssm.llp.jaxws.WSQRValidationServiceImpl"
+		url-pattern="/ws/qrValidation.ws" />
+
+</endpoints>

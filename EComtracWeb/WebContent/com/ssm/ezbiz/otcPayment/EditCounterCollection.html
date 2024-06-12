@@ -1,0 +1,49 @@
+<wicket:extend>
+	<form wicket:id="form" class="ui form big">
+	<div class="ui top attached segment">
+		<wicket:enclosure child="counterIp">
+			<span style="font-size: 1.42857143rem">
+				<wicket:message key="page.lbl.editCounterCollection.ipAddress" />
+				: <span wicket:id="counterIp"></span>
+			</span>
+		</wicket:enclosure>
+		<wicket:enclosure child="ipAddress">
+			<div class="inline field">
+				<label>
+					<span wicket:id="ipAddressLabel"></span> 
+				</label> 
+				<input type="text" placeholder="IP Address" wicket:id="ipAddress">
+			</div>
+		</wicket:enclosure>
+		<h4 class="ui dividing header">Counter Information</h4>
+		<div class="ui form">
+			<div class="fields">
+				<div class="field six wide">
+					<label><span wicket:id="counterNameLabel"></span> </label> <input
+						type="text" placeholder="Counter Name" wicket:id="counterName">
+				</div>
+			</div>
+			<div class="fields">
+				<div class="field">
+					<label><span wicket:id="branchLabel"></span> </label> <select
+						wicket:id="branch"></select>
+				</div>
+				<div class="field">
+					<label><span wicket:id="floorLevelLabel"></span> </label> <select
+						wicket:id="floorLevel"></select>
+				</div>
+				<div class="field">
+					<label><span wicket:id="counterTypeLabel"></span> </label> <select
+						wicket:id="counterType"></select>
+				</div>
+			</div>
+			<div class="actions">
+				<input wicket:id="submit" type="submit" class="ui positive button" value="Submit" />
+				<div class="ui red deny right labeled icon button small" wicket:id="cancel">
+					Cancel <i class="remove icon"></i>
+				</div>
+			</div>
+		</div>
+		</div>
+	</form>
+</wicket:extend>

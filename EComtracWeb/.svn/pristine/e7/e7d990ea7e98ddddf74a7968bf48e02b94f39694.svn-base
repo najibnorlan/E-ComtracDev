@@ -1,0 +1,141 @@
+<wicket:extend>
+	<style>
+label {
+	font-weight: bold;
+	font-size: 12px
+}
+</style>
+	<div class="ui right aligned grid form">
+		<div class="left floated left aligned eight wide column">
+			<div class="ui top attached segment">
+				<div class="ui top attached label">
+					<h4 class="ui header">
+						<wicket:message key="page.lbl.ezbiz.otcPayment.counterInfo" />
+					</h4>
+				</div>
+				<div class="ui equal width grid">
+					<div class="column center aligned">
+						<label><wicket:message
+								key="page.lbl.ezbiz.otcPayment.userId" /></label><br> <span
+							style="font-size: 14px" wicket:id="userId"></span>
+					</div>
+					<div class="column center aligned">
+						<label><wicket:message
+								key="page.lbl.ezbiz.otcPayment.counterName" /></label><br> <span
+							style="font-size: 14px" wicket:id="counterName"></span>
+					</div>
+					<div class="column center aligned">
+						<label><wicket:message
+								key="page.lbl.ezbiz.otcPayment.branch" /></label><br> <span
+							style="font-size: 14px" wicket:id="branch"></span>
+					</div>
+					<div class="column center aligned">
+						<label><wicket:message
+								key="page.lbl.ezbiz.otcPayment.floorLevel" /></label><br> <span
+							style="font-size: 14px" wicket:id="floorLevel"></span>
+					</div>
+					<div class="equal width row">
+						<div class="column center aligned">
+							<label><wicket:message
+									key="page.lbl.ezbiz.otcPayment.checkinDate" /></label><br> <span
+								style="font-size: 14px" wicket:id="checkinDate"></span>
+						</div>
+						<div class="column center aligned">
+							<label><wicket:message
+									key="page.lbl.ezbiz.otcPayment.checkoutDate" /></label><br> <span
+								style="font-size: 14px" wicket:id="checkoutDate"></span>
+						</div>
+						<div class="column center aligned">
+						<label><wicket:message
+								key="page.lbl.ezbiz.otcPayment.balancingStatus" /></label><br><span
+							style="font-size: 14px" wicket:id="balancingStatus"></span>
+					</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="right floated left aligned seven wide column">
+			<div class="ui top attached segment">
+				<div class="ui top attached label">
+					<h4 class="ui header">
+						<wicket:message key="page.lbl.ezbiz.otcPayment.counterInfo" />
+					</h4>
+				</div>
+				<div class="ui equal width grid">
+					<div class="column center aligned">
+						<label><wicket:message
+								key="page.lbl.ezbiz.otcPayment.totalTransaction" /></label><br> <span
+							style="font-size: 20px" wicket:id="countTransactions"></span>
+					</div>
+					<div class="column center aligned">
+						<label><wicket:message
+								key="page.lbl.ezbiz.otcPayment.countCreditNote" /></label><br> <span
+							style="font-size: 20px" wicket:id="countCreditNote"></span>
+					</div>
+					<!--div class="column center aligned">
+						<label><wicket:message
+								key="page.lbl.ezbiz.otcPayment.totalAmount" /></label><br>RM <span
+							style="font-size: 20px" wicket:id="sumTransactions"></span>
+					</div-->
+					
+					<div class="equal width row">
+						<div class="column right aligned">
+							<div class="ui primary right labeled icon button small"
+								wicket:id="balancingButton">
+								<wicket:message key="page.lbl.ezbiz.otcPayment.balancingButton" /> <i class="calculator  icon"></i>
+							</div>
+							<div class="ui primary right labeled icon button small"
+								wicket:id="back">
+								<wicket:message key="page.lbl.ezbiz.otcPayment.back" /> <i class="arrow left  icon"></i>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<br>
+	<div wicket:id="wmcSummary">
+		<table class="ui striped table">
+			<thead>
+				<tr>
+					<th><wicket:message key="page.lbl.ezbiz.otcPaymentPage.bil" /></th>
+					<th><wicket:message
+							key="page.lbl.ezbiz.otcPaymentPage.receiptNo" /></th>
+					<th><wicket:message
+							key="page.lbl.ezbiz.otcPaymentPage.transactionId" /></th>
+					<th><wicket:message
+							key="page.lbl.ezbiz.otcPaymentPage.appRefNo" /></th>
+					<th><wicket:message
+							key="page.lbl.ezbiz.otcPaymentPage.payerName" /></th>
+					<th><wicket:message key="page.lbl.ezbiz.otcPaymentPage.isCancel" /></th>
+					<th><wicket:message key="paymentTransaction.page.action" /></th>
+				</tr>
+			</thead>
+			<tbody>
+				<tr wicket:id="sorting">
+					<td><span wicket:id="bil">[bil]</span></td>
+					<td><span wicket:id="receiptNo">[receiptNo]</span></td>
+					<td><span wicket:id="transId">[transId]</span></td>
+					<td><span wicket:id="appRefNo">[appRefNo]</span></td>
+					<td><span wicket:id="payerName">[payerName]</span></td>
+					<td><span wicket:id="isCancel">[isCancel]</span></td>
+					<td>
+						<div wicket:id="viewReceiptDiv" align="center"></div>
+						<button class="ui icon button" wicket:id="viewReceipt">
+							<i class="print icon"></i>
+						</button>
+					</td>
+				</tr>
+			</tbody>
+			<tfoot>
+				<tr>
+					<th colspan="100"><span wicket:id="navigatorLabel">[dataView
+							navigatorLabel]</span> <span wicket:id="navigator">[dataView
+							navigator]</span></th>
+				</tr>
+			</tfoot>
+		</table>
+	</div>
+</wicket:extend>

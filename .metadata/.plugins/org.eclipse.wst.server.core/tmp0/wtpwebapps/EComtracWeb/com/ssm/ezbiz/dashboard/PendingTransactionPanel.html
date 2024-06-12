@@ -1,0 +1,37 @@
+<wicket:panel>
+	<table class="ui striped table">
+	  <thead>
+	    <tr>
+	      <th><wicket:message key="page.title.dashboard.latestTransaction.formType" /></th>
+	      <th><wicket:message key="page.title.dashboard.latestTransaction.appRefNo" /></th>
+	      <th><wicket:message key="page.title.dashboard.latestTransaction.brNoNBizName" /></th>
+	      <th><wicket:message key="page.title.dashboard.latestTransaction.status" /></th>
+	      <th><wicket:message key="page.title.dashboard.latestTransaction.updateDt" /></th>
+	      <th class="right aligned"><wicket:message key="page.title.dashboard.latestTransaction.action" /></th>
+	    </tr>
+	  </thead>
+	  <tbody>
+	    <tr wicket:id="sorting">
+	      <td><span wicket:id="formType">[formType]</span> </td>
+	      <td><span wicket:id="appRefNo">[appRefNo]</span> </td>
+	      <td><span wicket:id="brNoNBizName">[brNoNBizName]</span> </td>
+	      <td><span wicket:id="status">[status]</span> </td>
+	      <td><span wicket:id="updateDt">[updateDt]</span> </td>
+	      <td class="right aligned">
+	      	<button class="ui primary button" wicket:id="viewAction">
+			  <wicket:message key="page.title.dashboard.latestTransaction.viewAction" />
+			</button>
+			
+		  </td>
+	    </tr>
+	  </tbody>
+	  <tfoot>
+  			<tr>
+    			<th colspan="100">
+    			<span wicket:id="navigatorLabel">[dataView navigatorLabel]</span>
+	        	<span wicket:id="navigator">[dataView navigator]</span>
+    			</th>
+  			</tr>
+  		</tfoot>
+	</table>
+</wicket:panel>

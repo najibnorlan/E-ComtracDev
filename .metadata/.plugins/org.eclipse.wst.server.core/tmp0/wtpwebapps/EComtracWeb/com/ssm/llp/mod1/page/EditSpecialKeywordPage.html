@@ -1,0 +1,47 @@
+<wicket:extend>
+
+
+	<form wicket:id="editSpecialKeywordForm">
+		<table cellpadding="0" cellspacing="0" width="100%" height="100%">
+			<tr>
+				<td valign="top">
+
+					<table>
+						<tr>
+							<td>
+								<fieldset>
+									<legend>
+										<wicket:message key="specialKeyword.page.keyInfo" />
+									</legend>
+									<table>
+										<tr>
+											<td colspan="2">&nbsp;</td>
+										</tr>
+										<tr>
+											<td><wicket:message key="specialKeyword.page.keyword" />
+											</td>
+											<td><input wicket:id=vchkeywords type="text" /></td>
+										</tr>
+										<tr>
+											<td><wicket:message
+													key="specialKeyword.page.keywordType" /></td>
+											<td><select wicket:id="chrkeywordtype" /></td>
+										</tr>
+										<tr>
+											<td colspan="2">&nbsp;</td>
+										</tr>
+										<tr>
+											<td colspan="2"><input wicket:id="save" type="submit"
+												wicket:message="value:specialKeyword.page.save" /> <input
+												wicket:id="cancel" type="submit"
+												wicket:message="value:specialKeyword.page.cancle" /></td>
+										</tr>
+									</table>
+								</fieldset>
+							</td>
+						</tr>
+					</table></td>
+			</tr>
+		</table>
+	</form>
+</wicket:extend>

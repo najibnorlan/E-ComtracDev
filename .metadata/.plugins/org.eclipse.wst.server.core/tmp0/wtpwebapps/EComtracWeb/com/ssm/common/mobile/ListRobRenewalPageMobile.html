@@ -1,0 +1,57 @@
+ <style type="text/css">
+     th.last-name *, td.last-name {
+         font-weight: bold;
+         color: #AA0000;
+     }
+     th.numeric, td.numeric {
+         text-align: right !important;
+     }
+ </style>
+<wicket:extend>
+<div id="listRobRenewalPage">
+	
+	<table class="blockdataview" cellspacing="0">
+		<tr>
+			<td align="left"><span wicket:id="navigatorLabel">[dataView navigatorLabel]</span></td>
+			<td align="right"><span wicket:id="navigator">[dataView navigator]</span></td>
+		</tr>
+		<tr>
+			<td colspan="2">
+				<table cellspacing="0" class="dataView" width="100%" border="">
+							<tr wicket:id="sorting">
+						        <td>
+			    					<div class="list-group-item">
+			    						<table>
+											<tr>
+												<td><wicket:message key="page.title.mybiz.brNo"/></td>
+									        	<td>:&nbsp;</td>
+									        	<td><span wicket:id="brNo">[brNo]</span></td>
+									        </tr>
+									        <tr>
+												<td><wicket:message key="page.title.mybiz.bizName"/></td>
+									        	<td>:&nbsp;</td>
+									        	<td><span wicket:id="brName">[brName]</span></td>
+									        </tr>
+									        <tr>
+												<td><wicket:message key="page.title.mybiz.expDate"/></td>
+									        	<td>:&nbsp;</td>
+									        	<td><span wicket:id="expDate">[expDate]</span></td>
+									        </tr>
+									        <tr>
+												<td colspan="3">
+													 <button class="btn btn-primary btn-block" wicket:id="editRenew" >
+													 	<wicket:message key="page.title.mybiz.renewLink"/>
+													 </button>
+												</td>
+									        </tr>
+									    </table>
+  									</div>  
+  								 </td>
+						    </tr>
+				</table>
+			</td>
+		</tr>
+	</table>
+</div>
+</wicket:extend>
+

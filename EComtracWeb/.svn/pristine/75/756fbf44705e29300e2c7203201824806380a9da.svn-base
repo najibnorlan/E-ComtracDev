@@ -1,0 +1,6 @@
+
+
+<wicket:extend>
+     <span wicket:id="LlpSupplyInfoLlpSearchPanel"></span>
+     <span wicket:id="LlpSupplyInfoItemPanel"></span>
+</wicket:extend>

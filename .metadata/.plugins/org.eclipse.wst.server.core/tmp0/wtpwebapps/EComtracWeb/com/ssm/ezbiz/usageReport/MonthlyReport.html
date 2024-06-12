@@ -1,0 +1,56 @@
+<wicket:extend>
+	<form wicket:id="form">
+		<div class="ui form">
+			<table>
+				<tr>
+					<td>
+						<div class="ui top attached segment">
+							<div class="ui top attached label">
+								<h4 class="ui header">
+									<wicket:message
+										key="page.lbl.ezbiz.monthlyReport.title" />
+								</h4>
+							</div>
+							<table>
+								<tr>
+									<td>
+										<div class="field">
+											<label><span wicket:id="statusLabel" /></label> <select wicket:id="status"></select>
+										</div>
+									</td>
+									<td>&nbsp;</td>
+									<td>
+										<div class="field">
+											<label><span wicket:id="yearLabel" /></label> <select wicket:id="year"></select>
+										</div>
+									</td>
+								</tr>
+								<tr>
+									<td>&nbsp;</td>
+								</tr>
+								<tr>
+									<td><input wicket:id="search" type="button"
+										class="ui primary button" value="Search" /></td>
+								</tr>
+							</table>
+						</div>
+					</td>
+				</tr>
+			</table>
+		</div>
+	</form>
+	<div wicket:id="divStacked">
+		<div class="ui top attached tabular menu">
+			<div class="active item" data-tab="first">By Name Type</div>
+			<div class="item" data-tab="second">By Form Type</div>
+		</div>
+		<div class="ui bottom attached active tab segment center aligned" data-tab="first">
+			<div id="uv-div"></div>
+		</div>
+		<div class="ui bottom attached tab segment center aligned" data-tab="second">
+			<div id="uv-byForm"></div>
+		</div>
+	</div>
+
+	<script wicket:id="jsScript"></script>
+</wicket:extend>

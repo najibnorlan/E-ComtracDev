@@ -1,0 +1,70 @@
+<wicket:extend>
+	<form wicket:id="robFormB2DetForm"  class="ui form">
+		<table>
+			<!--tr>
+				<td>
+					<div class="field">
+						<label><wicket:message key="page.lbl.ezbiz.robFormB2.bizCode" /></label>
+						<input wicket:id="bizCode"  />
+					</div>
+				</td>
+			</tr-->
+			<tr>
+				<td>
+					<div class="field">
+						<label><wicket:message key="page.lbl.ezbiz.robFormB2.keyword" /></label>
+						<input wicket:id="bizCodeDesc"  />
+					</div>
+				</td>
+			</tr>
+			<tr>
+				<td>&nbsp;</td>
+			</tr>
+			<tr>
+				<td>
+					<input wicket:id="searchBizCode" class="ui primary button" type="button"
+					wicket:message="value:page.lbl.ezbiz.robFormB2.searchBizCode" />
+					
+					<input wicket:id="updateBizCode" class="ui primary button" type="button"
+					wicket:message="value:page.lbl.ezbiz.robFormB2.updateBizCode" />
+				</td>
+			</tr>
+			<tr>
+				<td>&nbsp;</td>
+			</tr>
+		</table>
+		
+		
+		<div wicket:id="wmcListBizCode">
+			<table class="ui striped table">
+			  <thead>
+			    <tr>
+								<th width="10%"><wicket:message key="page.lbl.ezbiz.robFormB2.bizCode" /></th>
+								<th width="40%"><wicket:message key="page.lbl.ezbiz.robFormB2.bizCodeDesc" /></th>
+								<th width="5%"><wicket:message key="page.lbl.ezbiz.robFormB2.action" /></th>
+			  </tr></thead>
+			  <tbody>
+			    <tr wicket:id="sorting">
+					<td><span wicket:id="code">[code]</span></td>
+					<td><span wicket:id="desc">[desc]</span></td>
+
+					<td>
+						<input wicket:id="check" type="checkbox" /> 
+					</td>
+				</tr>
+			  </tbody>
+			  <tfoot>
+			    <tr>
+			    <th colspan="1">
+			        <span wicket:id="navigatorLabel">[dataView navigatorLabel]</span>
+			    </th>
+			    <th colspan="2">
+			      <div class="ui right floated pagination menu">
+			        <span wicket:id="navigator">[dataView navigator]</span>
+			      </div>
+			    </th>
+			  </tr></tfoot>
+			</table>
+		</div>
+	</form>
+</wicket:extend>

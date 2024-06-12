@@ -1,0 +1,13 @@
+<html>
+<head>
+<title>Suruhanjaya Syarikat Malaysia - Limited Liabilities Partnership</title>
+</head>
+
+<body>
+
+<wicket:extend>
+
+<wicket:child/>
+</wicket:extend>
+</body>
+</html>

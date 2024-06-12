@@ -1,0 +1,42 @@
+<wicket:extend>
+<div wicket:id="wmcOwnerVerification">
+	<table class="ui striped table">
+	  <thead>
+	    	<tr>
+	    	<th width="15%"><wicket:message key="page.lbl.ezbiz.robFormB.robFormBCode" /></th>
+	    	<th width="15%"><wicket:message key="page.lbl.ezbiz.robFormB.brNo" /></th>
+			<th width="25%"><wicket:message key="page.lbl.ezbiz.robFormB.bizName" /></th>
+			<th width="5%"><wicket:message key="page.lbl.ezbiz.robFormB.status" /></th>
+			<th width="10%"><wicket:message key="page.lbl.ezbiz.robFormB.updateDt" /></th>
+			<th width="10%"><wicket:message key="page.lbl.ezbiz.robFormB.ownersVerificationStatus" /></th>
+			<th width="20%"><wicket:message key="page.lbl.ezbiz.robFormB.action" /></th>
+	  	</tr>
+	  </thead>
+	  <tbody>
+	   <tr wicket:id="sorting">
+			 <td><span wicket:id="robFormBCode">[robFormBCode]</span></td>
+			 <td><span wicket:id="brNo">[name]</span></td>
+			 <td><span wicket:id="name">[name]</span></td>
+			 <td><span wicket:id="status">[status]</span></td>
+			 <td><span wicket:id="updateDt">[updateDt]</span></td>
+			 <td><span wicket:id="verificationStatus">[verificationStatus]</span></td>
+			  <td class="manage-link">
+				 <a wicket:id="detail" href="#" wicket:message="title:page.lbl.ezbiz.robFormB.detail"><i class="Edit icon" /></a>
+				 <a wicket:id="acceptOwners" href="#" wicket:message="title:page.lbl.ezbiz.robFormB.robFormBOwners.acceptOwners"><i class="Add User icon" /></a>
+				 <a wicket:id="rejectOwners" href="#" wicket:message="title:page.lbl.ezbiz.robFormB.robFormBOwners.rejectOwners"><i class="Remove User icon" /></a>
+			</td>
+		</tr>
+	  </tbody>
+	  <tfoot>
+	      <tr>
+	    	<th colspan="100">
+	    		<span wicket:id="navigatorLabel">[dataView navigatorLabel]</span>
+		        <span wicket:id="navigator">[dataView navigator]</span>
+	    	</th>
+	  </tr>
+	  </tfoot>
+	</table>
+
+</div>
+</wicket:extend>
+

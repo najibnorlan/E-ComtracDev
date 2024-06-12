@@ -1,0 +1,42 @@
+ <style type="text/css">
+     th.last-name *, td.last-name {
+         font-weight: bold;
+         color: #AA0000;
+     }
+     th.numeric, td.numeric {
+         text-align: right !important;
+     }
+ </style>
+<wicket:extend>
+<div id="llpDaftar">
+	<table class="blockdataview" cellspacing="0" >
+		<tr>
+			<td align="left"><span wicket:id="navigatorLabel">[dataview navigatorLabel]</span></td>
+			<td align="right"><span wicket:id="navigator">[dataview navigator]</span></td>
+		</tr>
+		<tr>
+			<td colspan="2">
+				<table cellspacing="0" class="dataview" width="100%">
+				    <tr>
+				        <th>ID</th>
+				        <th>LLP No</th>
+				        <th wicket:id="orderByLlpName">LLP Name</th>
+				        <th wicket:id="orderByLlpStatus">Status</th>
+				        <th>Action</th>
+				    </tr>
+				    <tr wicket:id="sorting">
+				    	<td><span wicket:id="idLlp">[idLlp]</span> </td>
+				        <td><span wicket:id="llpNo">[llpNo]</span> </td>
+				        <td><span wicket:id="llpName">[llpName]</span></td>
+				      	<td><span wicket:id="llpStatus">[llpStatus]</span></td> 
+				        <td class="manage-contact-links">
+			                   <a wicket:id="edit" href="#"><span wicket:id="editLabel"></span></a>
+			                <!--   <a wicket:id="delete" href="#">[delete]</a> -->  
+			            </td>
+				    </tr>
+				</table>
+			</td>
+		</tr>
+	</table>
+</div>
+</wicket:extend>

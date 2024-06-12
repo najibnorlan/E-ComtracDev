@@ -1,0 +1,114 @@
+
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>jQuery Confirm Plugin Examples</title>
+    <!-- 
+    <link rel="stylesheet" type="text/css" href="jquery/jquery-ui.css">
+    <link rel="stylesheet" type="text/css" href="semantic/semantic.min.css">
+    <link rel="stylesheet" type="text/css" href="alertify/alertify.min.css" />
+    
+    
+    <script src="jquery/jquery-ui.js"></script>  
+    <script type="text/javascript" src="alertify/alertify.min.js"></script>
+    <link rel="stylesheet" type="text/css" href="jquery/jquery-ui.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/jquery-confirm/3.3.0/jquery-confirm.min.css">
+    
+    <script src="jquery/jquery-1.9.1.js"></script> 
+    <script src="jquery/jquery-ui.js"></script>  
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-confirm/3.3.0/jquery-confirm.min.js"></script>
+	 -->
+	 
+	 <!-- ALERTIFY -->
+	 <link rel="stylesheet" href="alertify/alertify.css">
+	 <link rel="stylesheet" href="alertify/semantic.css">
+	<link rel="stylesheet" type="text/css" href="semantic/semantic.min.css">
+	<link rel="stylesheet" type="text/css" href="semantic/components/form.min.css">
+	<link rel="stylesheet" type="text/css" href="css/styles.css" />
+	<link rel="stylesheet" type="text/css" href="css/animate.css" />
+	<link rel="stylesheet" type="text/css" href="font-awesome/css/font-awesome.min.css" />
+	<script type="text/javascript" src="js/ssmScript.js"></script>
+	<link rel="stylesheet" href="jquery/jquery-ui.css">
+	<link rel="shortcut icon" href="images/ezbizMobile.gif">
+	<link rel="stylesheet" href="http://fonts.googleapis.com/css?family=Droid+Sans:400,700">
+	
+	
+    <script src="jquery/jquery-1.9.1.js"></script> 
+	<script src="jquery/jquery-ui-1.9.2.custom.min.js"></script>
+	<script src="alertify/alertify.min.js"></script>
+	
+	
+	
+	<!-- JCONFIRM
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/jquery-confirm/3.3.0/jquery-confirm.min.css">
+	<script src="jquery/jquery-ui.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-confirm/3.3.0/jquery-confirm.min.js"></script>
+	-->
+	
+	<script type="text/javascript">        
+	//override defaults
+	alertify.defaults.transition = "zoom";
+	alertify.defaults.theme.ok = "ui positive button";
+	alertify.defaults.theme.cancel = "ui black button";
+	</script>    
+</head>
+<body>
+    <script>
+    
+    
+    function tryCLick(){
+    	/*$.confirm({
+    	    title: 'Confirm!',
+    	    content: 'Simple confirm!',
+    	    buttons: {
+    	        confirm: function () {
+    	            $.alert('Confirmed!');
+    	            $('#ayam').trigger('click', 'OK'); 
+    	        },
+    	        cancel: function () {
+    	            $.alert('Canceled!');
+    	        }
+    	    }
+    	});
+    	*/
+    	
+    	alertify.confirm('Confirm Title', 'Confirm Message', 
+    			function(){ 
+    				//alert('Ok'+$('#ayam')) ;
+    				$('#ayam').trigger('click', { text: 'first button' }, handleClick); 
+    				alert('sas');
+    			},
+        		function(){ 
+    				alertify.error('Cancel')
+    			}
+    			);
+    }
+    
+    function handleClick(event) {
+    	  alert('Clicked on the ' + event.data.text);
+    	}
+    /*
+    if (attrs.event.extraData != 'OK')  { 
+    	jConfirm(function(r) { 
+    			if (r) { 
+    				$('#" + component.getMarkupId() + "').trigger('click', 'OK'); 
+    			} 
+    	}); 
+    	return false;"; 
+    } 
+
+    */
+    
+    </script>
+    
+    <button value="HOHOH" onclick="tryCLick()">DSDSD</button>
+    <form wicket:id="testForm">
+    	<input wicket:id="addr" type="checkbox" />
+    	
+    	<input type="text" id="ayam" name="ayam"/>
+    	
+    	<span wicket:id="lbl" />
+    </form>
+</body>
+</html>

@@ -1,0 +1,90 @@
+<wicket:extend>
+	<form wicket:id="form">
+	<div id="checkindiv" class="ui form">
+			<table style="width: 50%">
+				<tr>
+					<td>
+						<div class="ui top attached segment">
+							<div class="ui top attached label">
+								<h4 class="ui header">
+									<wicket:message key="page.lbl.ezbiz.otcPayment.counterInfo" />
+								</h4>
+							</div>
+							<table style="width: 100%">
+								<tr>
+									<td style="width: 25%">
+										<div class="field">
+											<label><wicket:message key="page.lbl.ezbiz.otcPayment.userId" /></label> <span wicket:id="userId"></span>
+										</div>
+									</td>
+									<td style="width: 25%">
+										<div class="field">
+											<label><wicket:message key="page.lbl.ezbiz.otcPayment.counterName" /></label> <span wicket:id="counterName"></span>
+										</div>
+									</td>
+									<td style="width: 25%">
+										<div class="field">
+											<label><wicket:message key="page.lbl.ezbiz.otcPayment.branch" /></label> <span wicket:id="branch"></span>
+										</div>
+									</td>
+									<td style="width: 25%">
+										<div class="field">
+											<label><wicket:message key="page.lbl.ezbiz.otcPayment.floorLevel" /></label> <span wicket:id="floorLevel"></span>
+										</div>
+									</td>
+								</tr>
+								<tr>
+									<td>&nbsp;</td>
+								</tr>
+								<tr>
+									
+									<td colspan="2" style="color: red"><label wicket:id="error"></label> <input wicket:id="checkin" type="button" class="ui primary button" value="Check In" /></td>
+								</tr>
+							</table>
+						</div>
+					</td>
+				</tr>
+			</table>
+		</div>
+		</form>
+		<div wicket:id="paymentList">
+			<table class="ui striped table">
+			  <thead>
+			  <tr>
+			  <th colspan="6" style="text-align: center"><wicket:message key="page.lbl.ezbiz.otcPayment.historyTitle"/></th>
+			  </tr>
+			    	<tr>
+			    	<th><wicket:message key="page.lbl.ezbiz.otcPaymentPage.bil"/></th>
+			    	<th><wicket:message key="page.lbl.ezbiz.otcPayment.checkinDate"/></th>
+			    	<th><wicket:message key="page.lbl.ezbiz.otcPayment.checkoutDate"/></th>
+			    	<th><wicket:message key="page.lbl.ezbiz.otcPayment.userId"/></th>
+			    	<th><wicket:message key="page.lbl.ezbiz.otcPayment.balancingStatus"/></th>
+			    	<th><wicket:message key="page.lbl.ezbiz.otcPayment.balancingSlip"/></th>
+			  	</tr>
+			  </thead>
+			  <tbody>
+			    <tr wicket:id="sorting">
+			   		<td><span wicket:id="index"></span></td>
+					<td><span wicket:id="checkinDate"></span></td>
+					<td><span wicket:id="checkoutDate"></span></td>
+					<td><span wicket:id="userId"></span></td>
+					<td><span wicket:id="balancingStatus"></span></td>
+					<td>
+						<a class="ui labeled icon button mini primary" target="_blank" wicket:id="reprint">
+						  <i class="print icon"></i>
+						  Reprint
+						</a>
+					</td>
+				</tr>
+			  </tbody>
+			  <tfoot>
+			    <tr>
+			    	<th colspan="100">
+			    		<span wicket:id="navigatorLabel">[dataView navigatorLabel]</span>
+				        <span wicket:id="navigator">[dataView navigator]</span>
+			    	</th>
+			  </tr></tfoot>
+			</table>
+		</div>
+	
+</wicket:extend>

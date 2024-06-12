@@ -1,0 +1,42 @@
+<wicket:extend>
+	<form wicket:id="searchPaymentTransactionForm" class="ui form">
+		<div class="ui segments">
+			<div class="ui horizontal segments">
+				<div class="ui segment">
+					<wicket:enclosure child="paymentGroup">
+						<div class="field">
+							<label><span wicket:id="paymentGroupLabel" /></label> <select wicket:id="paymentGroup" />
+						</div>
+					</wicket:enclosure>
+					<div class="field">
+						<label><span wicket:id="transactionIdLabel" /></label> <input type="text" wicket:id="transactionId">
+					</div>
+					<div class="field">
+						<label><span wicket:id="refNoLabel" /></label> <input type="text" wicket:id="refNo">
+					</div>
+				</div>
+				<div class="ui segment">
+					<div class="two fields">
+						<div class="field">
+							<label><span wicket:id="searchFromDtLabel" /></label> <input wicket:id="searchFromDt" style="width: 150;" />
+						</div>
+						<div class="field">
+							<label><span wicket:id="searchToDtLabel" /></label> <input wicket:id="searchToDt" style="width: 200;" />
+						</div>
+					</div>
+					<wicket:enclosure child="paymentMode">
+						<div class="field">
+							<label><span wicket:id="paymentModeLabel" /></label> <select wicket:id="paymentMode" />
+						</div>
+					</wicket:enclosure>
+					<div class="field">
+						<label><span wicket:id="statusLabel" /></label> <select wicket:id="status" />
+					</div>
+				</div>
+			</div>
+			<div class="ui segment">
+					<input wicket:id="search" type="button" class="ui primary button"  />
+			</div>
+		</div>	
+	</form>
+</wicket:extend>

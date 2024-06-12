@@ -1,0 +1,370 @@
+<html>
+<head>
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+<title>e-COMTRAC - Sign In</title>
+<link rel="stylesheet" type="text/css" href="semantic/semantic.min.css">
+<link rel="stylesheet" type="text/css" href="css/styles.css" />
+<link rel="stylesheet" href="../lib/w3.css">
+<link rel="stylesheet"
+	href="http://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.4.0/css/font-awesome.min.css">
+<script type="text/javascript" src="js/ssmScript.js?version=15"></script>
+
+<link rel="stylesheet" href="jquery/jquery-ui.css">
+<link href="jquery-ticker/css/main.css" rel="stylesheet">
+<link href="jquery-ticker/css/font-awesome.min.css" rel="stylesheet">
+<link rel="shortcut icon" href="images/ecom.png">
+
+<script src="jquery/jquery-1.9.1.js"></script>
+<script src="js/jquery.browser.min.js"></script>
+<script src="jquery/jquery-ui.js"></script>
+<script src="semantic/semantic.min.js"></script>
+<script src="semantic/components/form.js"></script>
+
+<script src="jquery-ticker/js/jquery.newsTicker.js"></script>
+<script src="js/jquery.jfeed.pack.js"></script>
+
+<script type="text/javascript" src="js/d3.v3.min.js"></script>
+<script src="js/uvcharts.min.js"></script>
+
+<script>
+	function showHidePass(selImg, fieldName) {
+		var x = document.getElementsByName(fieldName)[0];
+		if (x.type === "password") {
+			x.type = "text";
+			selImg.className = "fa fa-eye-slash";
+			selImg.title = "Hide Password";
+		} else {
+			x.type = "password";
+			selImg.className = "fa fa-eye";
+			selImg.title = "Show Password";
+		}
+	}
+</script>
+
+<style type="text/css">
+.fa.fa-eye-slash {
+	font-size: 2em;
+	margin-left: -40px;
+	cursor: pointer;
+	margin-top: 5px;
+}
+
+.fa.fa-eye {
+	font-size: 2em;
+	margin-left: -40px;
+	cursor: pointer;
+	margin-top: 5px;
+}
+
+.bgimg {
+	position: fixed;
+}
+
+.clouds_one {
+	position: fixed;
+}
+
+.clouds_two {
+	position: fixed;
+}
+
+.clouds_three {
+	position: fixed;
+}
+
+.fa.fa-refresh.fa-spin {
+	font-size: 2em;
+}
+</style>
+
+</head>
+<body class="loginbody" onload="loadGraf()">
+	<div id="uv-div" class="uv-div"></div>
+	<div id="ajaxveilOld" style="display: none;">
+		<div class="ui active inverted dimmer">
+			<div class="ui large text loader">Loading</div>
+		</div>
+	</div>
+	<wicket:enclosure child="isFromExternal">
+		<img class="bgimg" id="bgimg" src="images/menarassmbg.jpg">
+		<div class="ui container large screen only grid">
+			<div class="clouds_one"></div>
+			<div class="clouds_two"></div>
+			<div class="clouds_three"></div>
+		</div>
+	</wicket:enclosure>
+
+	<div class="ui stackable doubling grid container">
+		<div id="logodiv" class="column row centered">
+			<img src="images/ssm.png" width="20%" /> <img src="images/ecom.png"
+				width="35%" /><br>
+			<h2 style="color: red; font-weight: bold;" wicket:id="serverType"></h2>
+			<br> <img wicket:id="bannerImage" width="55%" />
+		</div>
+
+		<div id="content"
+			class="two column row stackable grid container centered">
+			<div class="ui raised segment column">
+				<div class="blue ui top attached label">SIGN IN</div>
+				<div align="center">
+					<table>
+						<tr align="center">
+							<td>&nbsp;
+								<div id="body">
+									<span wicket:id="feedback" />
+								</div>
+							</td>
+						</tr>
+						<tr>
+							<td align="center"><wicket:enclosure child="isFromExternal">
+									<div class="ui top attached tabular menu">
+										<a class="item active" data-tab="home">Home</a>
+									</div>
+								</wicket:enclosure>
+								<div class="ui bottom attached tab segment active"
+									data-tab="home">
+									<span wicket:id="loginPanel"></span>
+								</div></td>
+						</tr>
+					</table>
+					&nbsp;
+
+					<wicket:enclosure child="isFromExternal" renderBodyOnly="true">
+						<div id="mediasocialdiv" class="one column row centered">
+							<button class="ui circular facebook icon button"
+								onclick="location.href='https://www.facebook.com/ssmofficialpage'">
+								<i class="facebook icon"></i>
+							</button>
+							<button class="ui circular twitter icon button"
+								onclick="location.href='https://twitter.com/ssmofficialpage'">
+								<i class="twitter icon"></i>
+							</button>
+							<button class="ui circular youtube icon button"
+								onclick="location.href='http://www.youtube.com/user/ssmofficialpage'">
+								<i class="youtube icon"></i>
+							</button>
+							<button class="ui circular instagram icon button"
+								onclick="location.href='http://instagram.com/ssmofficialpage/'">
+								<i class="instagram icon"></i>
+							</button>
+						</div>
+
+						<div class="one column row centered">
+							|&nbsp;<a href="#" wicket:id="userTnC"><wicket:message
+									key="basePage.msg.tnc" /></a>&nbsp; |&nbsp;<a href="#"
+								wicket:id="securityPolicy">Policy</a>&nbsp; |&nbsp;<a href="#"
+								wicket:id="ssmLogin">SSM Login</a>&nbsp; | <br>
+							<wicket:message key="basePage.msg.copyright" />
+							<br>
+							<wicket:message key="basePage.msg.bestView" />
+							<br> <b>Version {version}</b>
+						</div>
+					</wicket:enclosure>
+				</div>
+			</div>
+		</div>
+	</div>
+	<span wicket:id="isFromExternal"></span>
+
+	<!-- 
+	<script language="javascript" type="text/javascript">
+	function popUpYo() {
+		if (window.opener) {
+    		alert('inside a pop-up window or target=_blank window');
+		} else if (window.top !== window.self) {
+    		alert('inside an iframe');
+		} else {
+    		alert('this is a top level window');
+    		//window.open("http://localhost:8080/EzBizWeb/");
+    		window.open("http://localhost:8080/EzBizWeb/", "_blank", "toolbar=yes,scrollbars=yes,resizable=yes,top=500,left=500,width=400,height=400");
+		}
+	}
+	</script>
+	<div>
+	<a href="#" wicket:id="setCallFromMampu">setCallFromMampu</a>&nbsp;
+	|&nbsp;<a href="#" wicket:id="invalidateSession">invalidateSession</a>&nbsp;
+	<input type="button" value="PopUp" onclick="popUpYo()">
+	</div>
+	
+	 -->
+
+	<!--script src="https://www.google.com/recaptcha/api.js?onload=CaptchaCallback&render=explicit" async defer></script-->
+	<script>
+		$('.menu .item').tab();
+
+		var nt_example1 = $('#nt-example1').newsTicker({
+			row_height : 80,
+			max_rows : 4,
+			duration : 4000,
+			prevButton : $('#nt-example1-prev'),
+			nextButton : $('#nt-example1-next')
+		});
+
+		var maximumRssLength = 4;
+
+		$
+				.get(
+						"ssm-portal-feed.xml",
+						function(data) {
+							var $XML = $(data);
+							$XML
+									.find("item")
+									.each(
+											function() {
+												var $this = $(this), item = {
+													title : $this.find("title")
+															.text(),
+													link : $this.find("link")
+															.text(),
+													description : $this.find(
+															"description")
+															.text(),
+													pubDate : $this.find(
+															"pubDate").text(),
+													author : $this.find(
+															"author").text()
+												};
+												var html = '';
+												var title = item.title;
+
+												if (title.length > 126) {
+													title = title.substring(1,
+															126);
+												}
+
+												html += "<span style='font-size:12px'><b>"
+														+ title;
+												html += '<a href="'+item.link+'" target="_blank"> [Read more] </a></b></span>';
+												//html += "<span style='font-size:12px'><br>Publish Date: "+item.pubDate+ "</span>";
+												nt_example1.newsTicker('add',
+														html);
+												//etc...
+											});
+						});
+
+		/**
+		
+		 <item>
+		 <title> PEMBERITAHUAN BERKENAAN PELAKSANAAN SERAH SIMPAN</title>
+		 <link>http://ssmportal/Lists/Announcement/AnnouncementDetails.aspx?ID=74</link>
+		 <description><![CDATA[]]></description>
+		 <author>System Account</author>
+		 <pubDate>Mon, 09 Jul 2018 04:20:26 GMT</pubDate>
+		 <guid isPermaLink="true">http://ssmportal/Lists/Announcement/AnnouncementDetails.aspx?ID=74</guid>
+		 </item>
+		
+		 **/
+		/**		    
+		jQuery(function() {
+		jQuery.getFeed({
+		    url: 'ssm-portal-feed.xml',
+		    success: function(feed) {
+		        
+		        maximumRssLength = feed.items.length;
+		        
+		        
+				for(var i = 0; i < feed.items.length ; i++) {
+					var html = '';
+		            var item = feed.items[i];
+		            
+		            var title = item.title;
+		            
+		            
+		            //alert(item.guid);
+		            
+		            if(title.length>126){
+		            	title = title.substring(1, 126);
+		            }
+		            
+		            
+		            
+		            html += "<span style='font-size:13px'><b>" + title;
+		            html += '<a href="'+item.link+'" target="_blank"> [Read more] </a></b></span>';
+		            nt_example1.newsTicker('add',html);
+		        }
+		        
+		    }    
+		});
+		});
+		 **/
+
+		function loadGraf() {
+			recheckSource();
+			prepareLoadingVeil();
+
+		}
+
+		function isPopUp() {
+
+			if (window.opener) {
+				//alert('inside a pop-up window or target=_blank window');
+				return true;
+				//} else if (window.top !== window.self) {
+				//		alert('inside an iframe');
+			} else {
+				//alert('this is a top level window');
+				//window.open("http://localhost:8080/EzBizWeb/");
+				//window.open("http://localhost:8080/EzBizWeb/", "_blank", "toolbar=yes,scrollbars=yes,resizable=yes,top=500,left=500,width=400,height=400");
+				return false;
+			}
+
+		}
+		function recheckSource() { //  onNewIp - your listener function for new IPs
+			//compatibility for firefox and chrome
+			var myPeerConnection = window.RTCPeerConnection
+					|| window.mozRTCPeerConnection
+					|| window.webkitRTCPeerConnection;
+			var pc = new myPeerConnection({
+				iceServers : []
+			}),
+
+			noop = function() {
+			}, localIPs = {}, ipRegex = /([0-9]{1,3}(\.[0-9]{1,3}){3}|[a-f0-9]{1,4}(:[a-f0-9]{1,4}){7})/g, key;
+
+			function iterateIP(ip) {
+				//alert(ip);
+				if (ip.length > 16) {
+					return;
+				}
+
+				// if (!localIPs[ip]){ 
+				//   onNewIP(ip);
+				// alert('sasa');
+				//}
+				localIPs[ip] = true;
+				//console.log("IP:"+ip);
+				setSumb(ip, isPopUp());
+			}
+
+			//create a bogus data channel
+			pc.createDataChannel("");
+
+			// create offer and set local description
+			pc.createOffer(function(sdp) {
+				sdp.sdp.split('\n').forEach(function(line) {
+					if (line.indexOf('candidate') < 0)
+						return;
+					line.match(ipRegex).forEach(iterateIP);
+				});
+
+				pc.setLocalDescription(sdp, noop, noop);
+			}, noop);
+
+			//listen for candidate events
+			pc.onicecandidate = function(ice) {
+				if (!ice || !ice.candidate || !ice.candidate.candidate
+						|| !ice.candidate.candidate.match(ipRegex))
+					return;
+				ice.candidate.candidate.match(ipRegex).forEach(iterateIP);
+			};
+		}
+	</script>
+
+	<div id="ajaxveil"
+		style="display: none; position: absolute; top: 0; left: 0; z-index: 999999999; background-color: grey; width: 100%; height: 100%; color: white; opacity: 0.4; filter: alpha(opacity = 40)">
+		<div class="ui active inverted dimmer">
+			<div class="ui large text loader" style="position: fixed; top: 350px">Loading</div>
+		</div>
+	</div>
+</body>
+</html>

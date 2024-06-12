@@ -1,0 +1,108 @@
+<wicket:extend>
+	<form wicket:id="form">
+		<div id="SearchFormA" class="ui form ">
+			<table style="width: 40%">
+				<tr>
+					<td>
+						<div class="ui top attached segment">
+							<div class="ui top attached label">
+								<h4 class="ui header">
+									<wicket:message
+										key="page.lbl.ezbiz.comtracList.searchFinalListing" />
+								</h4>
+							</div>
+							<table>
+								<tr>
+									<td>
+										<div class="field">
+											<label><span wicket:id="finalListingRefNoInputLabel" /></label>
+											<input type="text" wicket:id="finalListingRefNoInput">
+										</div>
+									</td>
+								</tr>
+								<tr>
+									<td>
+										<div class="two fields">
+											<div class="field">
+												<label><span wicket:id="dtFromLabel" /></label> <input
+													wicket:id="dtFrom" style="width: 80%;" />
+											</div>
+											<div class="field">
+												<label><span wicket:id="dtToLabel" /></label> <input
+													wicket:id="dtTo" style="width: 80%;" />
+											</div>
+										</div>
+									</td>
+								</tr>
+								<tr>
+									<div class="field">
+										<label><span wicket:id="statusLabel" /></label> <select
+											type="text" wicket:id="status" style="width: 45%;" />
+									</div>
+								</tr>
+								<tr>
+									<td><input wicket:id="search" type="button"
+										class="ui primary button" value="Search" /></td>
+								</tr>
+							</table>
+						</div>
+					</td>
+				</tr>
+			</table>
+		</div>
+	</form>
+	<div wicket:id="trainingDiv">
+		<table class="ui striped table" width="100%">
+			<thead>
+				<tr>
+					<th><wicket:message
+							key="page.lbl.comtrac.listTraining.finalListingRefNo" /></th>
+					<th><wicket:message
+							key="page.lbl.ezbiz.listTraining.trainingCode" /></th>
+					<th><wicket:message
+							key="page.lbl.ezbiz.listTraining.trainingName" /></th>
+					<th style="text-align: center;"><wicket:message
+							key="page.lbl.ezbiz.listTraining.status" /></th>
+					<th><wicket:message
+							key="page.lbl.ezbiz.listTraining.trainingDt" /></th>
+					<th><wicket:message key="page.lbl.ezbiz.listTraining.fee" />
+						(RM)</th>
+					<th><wicket:message key="page.lbl.ezbiz.listTraining.maxPax" /></th>
+					<th style="text-align: center;"><wicket:message
+							key="page.lbl.ezbiz.listTraining.action" /></th>
+				</tr>
+			</thead>
+			<tbody>
+				<tr wicket:id="sorting">
+					<td><span wicket:id=finalListingRefNo>[finalListingRefNo]</span></td>
+					<td><span wicket:id=trainingCode>[trainingCode]</span></td>
+					<td><span wicket:id="trainingName">[trainingName]</span></td>
+					<td style="text-align: center;"><label
+						class="ui horizontal label small" wicket:id="status"></label></td>
+					<td><span wicket:id="trainingDt">[trainingDt]</span></td>
+					<td><b><wicket:message
+								key="page.lbl.ezbiz.listTraining.standardFee" />: </b> <br> <span
+						wicket:id="standardFee">[standardFee]</span> <br> <b><wicket:message
+								key="page.lbl.ezbiz.listTraining.specialFee" />: </b><br> <span
+						wicket:id="specialFee">[specialFee]</span></td>
+					<td><span wicket:id="currPax">[currPax]</span> / <span
+						wicket:id="maxPax">[maxPax]</span></td>
+					<td class="manage-link"><a wicket:id="finalListing" href="#"
+						wicket:message="title:page.lbl.ecomtrac.listTraining.finalListing"><i
+							class="edit icon" /></a></td>
+				</tr>
+			</tbody>
+			<tfoot>
+				<tr>
+					<th colspan="100"><span wicket:id="navigatorLabel">[dataView
+							navigatorLabel]</span> <span wicket:id="navigator">[dataView
+							navigator]</span></th>
+				</tr>
+			</tfoot>
+		</table>
+	</div>
+	<br>
+	<span style="font-size: 11px"><wicket:message
+			key="page.lbl.ezbiz.listTraining.describeSpecialFee" /></span>
+
+</wicket:extend>

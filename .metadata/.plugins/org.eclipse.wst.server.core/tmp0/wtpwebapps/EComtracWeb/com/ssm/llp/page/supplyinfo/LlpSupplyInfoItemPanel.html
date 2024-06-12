@@ -1,0 +1,57 @@
+<wicket:extend>
+	<form wicket:id="inputFormInfoItemPanel" id="inputFormInfoItemPanel">
+		<div wicket:id="listDataView">
+			<table class="blockdataview" cellspacing="0" >
+				<tr>
+					<td align="left"><span wicket:id="navigatorLabel">[dataview navigatorLabel]</span></td>
+					<td align="right"><span wicket:id="navigator">[dataview navigator]</span></td>
+				</tr>
+				<tr>
+				
+					<td colspan="2">
+						<table cellspacing="0" class="dataview" width="100%">
+						    <tr>
+						        <th width="20%"><wicket:message key="llpSupplyInfo.page.entityNo"/></th>
+						        <th width="60%"><wicket:message key="llpSupplyInfo.page.entityName"/></th>
+						        <th width="10%"><wicket:message key="llpSupplyInfo.page.buyProfile"/></th>
+								<th width="10%"><wicket:message key="llpSupplyInfo.page.buyCert"/></th>
+						        <th width="10%"><wicket:message key="llpSupplyInfo.page.action"/></th>
+						        
+						    </tr>
+						    <tr wicket:id="sorting">
+						        <td><span wicket:id="entityNo">[entityNo]</span> </td>
+						        <td><span wicket:id="entityName">[entityName]</span> </td>
+						        <td> <input wicket:id="isProfileSelected" type="checkbox" /> </td>
+						        <td> <input wicket:id="isCertChkbox" type="checkbox" /> </td>
+						        <td class="manage-contact-links">
+					                   <a wicket:id="delete" href="#">[DELETE]</a>
+					            </td>
+						    </tr>
+						</table>
+					</td>
+				</tr>
+			</table>	
+			<table>
+				<tr>
+					<td><wicket:message key="llpSupplyInfo.page.totalProfileAmt"/></td>
+					<td>
+						RM&nbsp;<span wicket:id="totalProfileAmt"/>
+					</td>
+				</tr>
+				<tr>
+					<td><wicket:message key="llpSupplyInfo.page.totalCertAmt"/></td>
+					<td>
+						RM&nbsp;<span wicket:id="totalCertAmt"/>
+					</td>
+				</tr>
+				<tr>
+					<td><wicket:message key="llpSupplyInfo.page.totalAmt"/></td>
+					<td>
+						RM&nbsp;<span wicket:id="totalAmt"/>&nbsp;&nbsp;<input wicket:id="pay" type="button" value="pay"/>
+					</td>
+				</tr>
+			</table>
+		</div>
+	</form>
+</wicket:extend>
+

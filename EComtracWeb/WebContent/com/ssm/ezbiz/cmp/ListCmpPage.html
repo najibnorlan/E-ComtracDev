@@ -1,0 +1,103 @@
+<wicket:extend>
+<form wicket:id="form" >
+	<div id="SearchCompound" class="ui form segment">
+		<table>
+				<tr>
+					<td>
+						<div class="ui top attached segment">
+							<div class="ui top attached label">
+								<h4 class="ui header">
+									<wicket:message key="page.lbl.ezbiz.searchCompound" />
+								</h4>
+							</div>
+							<table>
+								<tr>
+									<td>
+										<div class="field">
+											<label><span wicket:id="cmpIcNoLabel" /></label> <input type="text" wicket:id="cmpIcNo">
+										</div>
+									</td>
+								</tr>
+								<tr>
+									<td>
+										<div class="field">
+											<label><span wicket:id="cmpEntityTypeLabel" /></label> <select wicket:id="cmpEntityType">
+											</select>
+										</div>
+									</td>
+								</tr>
+								<tr>
+									<td>
+										<div class="field">
+											<label><span wicket:id="cmpEntityNoLabel" /></label> <input type="text" wicket:id="cmpEntityNo">
+										</div>
+									</td>
+								</tr>
+								<tr><td>&nbsp;</td></tr>
+								<tr>
+									<td><input wicket:id="search" type="button" class="ui primary button" value="Search" /></td>
+								</tr>
+							</table>
+						</div>
+					</td>
+					<td>
+					&nbsp;
+					</td>
+					<td valign="top" >
+							<div class="ui compact message">
+							<h4 class="ui red header">
+									<wicket:message key="page.lbl.ezbiz.cmp.attention" />
+								</h4>
+							<table>
+								<tr>
+									<td colspan="2">&nbsp;</td>
+								</tr>
+								<tr>
+									<td colspan="2">&nbsp;</td>
+								</tr>
+								<wicket:message key="page.lbl.ezbiz.cmp.attention.detail" />
+							</table>
+						</div>	
+					</td>
+				</tr>
+			</table>
+	</div>
+	<div wicket:id="wmcSearchResult">
+			<table class="ui striped table">
+			  <thead>
+			    	<tr>
+			    	<th width="10%"><wicket:message key="page.lbl.ezbiz.cmp.cmpNo" /></th>
+			    	<th width="15%"><wicket:message key="page.lbl.ezbiz.cmp.cmpStatus" /></th>
+					<th width="15%"><wicket:message key="page.lbl.ezbiz.cmp.entityType" /></th>
+					<th width="15%"><wicket:message key="page.lbl.ezbiz.cmp.entityNo" /></th>
+					<th width="15%"><wicket:message key="page.lbl.ezbiz.cmp.entityName" /></th>
+					<th width="10%"><wicket:message key="page.lbl.ezbiz.cmp.action" /></th>
+			  	</tr>
+			  </thead>
+			  <tbody>
+			    <tr wicket:id="sorting">
+					<td><span wicket:id="cmpNo">[cmpNo]</span></td>
+					<td><span wicket:id="cmpStatus">[cmpStatus]</span></td>
+					<td><span wicket:id="cmpEntityType">[entityType]</span></td>
+					<td><span wicket:id="cmpEntityNo">[entityNo]</span></td>
+					<td><span wicket:id="cmpEntityName">[entityName]</span></td>
+					<td class="manage-link">
+						<a wicket:id="detail" href="#" wicket:message="title:page.lbl.ezbiz.cmp.detail"><i class="Edit icon" /></a>&nbsp;
+						<a wicket:id="payCompound" href="#" wicket:message="title:page.lbl.ezbiz.cmp.pay"><i class="External Share icon" /></a>
+					</td>
+				</tr>
+			  </tbody>
+			  <tfoot>
+			    <tr>
+			    	<th colspan="100">
+			    		<span wicket:id="navigatorLabel">[dataView navigatorLabel]</span>
+				        <span wicket:id="navigator">[dataView navigator]</span>
+			    	</th>
+			  </tr></tfoot>
+			</table>
+		</div>
+</form>
+<script>
+
+</script>
+</wicket:extend>

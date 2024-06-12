@@ -1,0 +1,300 @@
+<wicket:extend>
+
+	<div class="ui attached message">
+		<div class="header">
+			<wicket:message key="page.lbl.ezbiz.selectLPOPayment.lblName" />
+		</div>
+	</div>
+	<form wicket:id="selectLPOPaymentForm"
+		class="ui form attached fluid segment">
+
+		<div class="field">
+			<label><span wicket:id="robTrainingsLabel" /></label> <select
+				wicket:id="robTrainings" />
+		</div>
+
+		<div class="field" wicket:id="trainingInfo">
+			<div wicket:id="errorWmcSeat" style="text-align: center;">
+				<div class="ui red message big">
+					<div class="header" style="font-size: 20px">
+						<i class="warning circle icon"></i>
+						<wicket:message
+							key="page.lbl.ezbiz.selectComtracTraining.noSeatError" />
+					</div>
+					<p>
+						<wicket:message
+							key="page.lbl.ezbiz.selectComtracTraining.noSeatErrorDesc" />
+					</p>
+				</div>
+				<br>
+			</div>
+			<div wicket:id="errorWmcDate" style="text-align: center;">
+				<div class="ui red message big">
+					<div class="header" style="font-size: 20px">
+						<i class="warning circle icon"></i>
+						<wicket:message
+							key="page.lbl.ezbiz.selectComtracTraining.noRegCloseError" />
+					</div>
+					<p>
+						<wicket:message
+							key="page.lbl.ezbiz.selectComtracTraining.noSeatErrorDesc" />
+					</p>
+				</div>
+				<br>
+			</div>
+			<div class="fields">
+				<div class="twelve wide field">
+					<label><wicket:message
+							key="comtrac.registration.lbl.trainingCode" /></label> <span
+						wicket:id="trainingCode"> </span>
+				</div>
+				<div class="two wide field" wicket:id="seatWmc">
+					<label><wicket:message
+							key="comtrac.registration.lbl.availableSeat" /></label><span
+						style="font-size: 28px" wicket:id="availableSeat"> </span> Seat(s)
+				</div>
+			</div>
+			<div class="field">
+				<label><wicket:message
+						key="comtrac.registration.lbl.trainingName" /></label> <span
+					wicket:id="trainingName"> </span>
+			</div>
+			<br>
+			<div class="two group fields">
+				<div class=field>
+					<label><wicket:message
+							key="comtrac.registration.lbl.trainingDt" /></label> <span
+						wicket:id="trainingDt"> </span>
+				</div>
+
+				<div class="field">
+					<label><wicket:message
+							key="comtrac.registration.lbl.trainingStartTime" /></label> <span
+						wicket:id="trainingStartTime"> </span>
+				</div>
+			</div>
+			<div class="two fields">
+				<div class=field>
+					<label><wicket:message
+							key="comtrac.registration.lbl.regClosingDt" /></label> <span
+						wicket:id="regClosingDt"> </span>
+				</div>
+
+				<div class="field">
+					<label><wicket:message
+							key="comtrac.registration.lbl.trainingEndTime" /></label> <span
+						wicket:id="trainingEndTime"> </span>
+				</div>
+			</div>
+			<br>
+			<div class="two fields">
+				<div class=field>
+					<label><wicket:message
+							key="comtrac.registration.lbl.cpePoint" /></label> <span
+						wicket:id="cpePoint"> </span>
+				</div>
+
+				<div class="field">
+					<label><wicket:message
+							key="comtrac.registration.lbl.trainingVenue" /></label> <span
+						wicket:id="trainingVenue"> </span>
+				</div>
+			</div>
+
+			<div class="field">
+				<label><wicket:message
+						key="comtrac.registration.lbl.standardFee" /></label> RM <span
+					wicket:id="standardFee"> </span>
+			</div>
+			<br>
+			<div class="field">
+				<label><wicket:message
+						key="comtrac.registration.lbl.specialFee" /></label> RM <span
+					wicket:id="specialFee"> </span>
+			</div>
+			<br>
+			<div class="field">
+				<label><wicket:message
+						key="comtrac.registration.lbl.trainingDesc" /></label> <span
+					wicket:id="trainingDesc"> </span>
+			</div>
+
+			<hr>
+			<!-- <div wicket:id="lpoPayment"> -->
+			<!-- <h4 class="ui horizontal divider header">
+						<i class="user icon"></i> For Internal Use
+					</h4> -->
+			<!-- <div class="ui form equal width"> -->
+			<!-- <div class="three fields">
+							<div class="field">
+								<label><span wicket:id="receiptNoLabel" /></label> <input
+									wicket:id="receiptNo" />
+							</div>
+							<div class="field">
+								<label><span wicket:id="invoiceNoLabel" /></label> <input
+									wicket:id="invoiceNo" />
+							</div>
+							<div class="field">
+								<label><span wicket:id="louLoaRefNoLabel" /></label> <input
+									wicket:id="louLoaRefNo" />
+							</div>
+						</div> -->
+			<!-- <div class="fields">
+							<div class="field">
+								<label><span wicket:id="paymentChannelLabel" /><span style="color:red"> *</span></label> <select
+									wicket:id="paymentChannel"></select>
+							</div>
+							<div class="field">
+								<label><span wicket:id="registrationChannelLabel" /><span style="color:red"> *</span></label><select
+									wicket:id="registrationChannel"></select>
+							</div>
+						</div> -->
+			<!-- <div class="field">
+							<label><span wicket:id="remarksLabel" /></label>
+							<textarea rows="3" wicket:id="remarks"></textarea>
+						</div> -->
+			<!-- </div> -->
+			<!-- </div> -->
+			<div wicket:id="addParticipantPopup"></div>
+			<br>
+			<div wicket:id="wmcParticipant">
+				<table width="100%">
+					<tr>
+						<td>
+							<div class="ui">
+								<table width="100%">
+									<tr>
+										<td style="float: right">
+											<div class="field">
+												<button class="ui labeled icon button small primary"
+													wicket:id="showParticipantFormPanel">
+													<i class="plus icon"></i> Add Participant
+												</button>
+											</div>
+										</td>
+									</tr>
+									<tr>
+										<td>&nbsp;</td>
+									</tr>
+								</table>
+
+								<div id=listParticipant>
+									<table width="100%" class="ui striped table">
+										<thead>
+											<tr>
+												<th width="5%"><wicket:message
+														key="page.lbl.ezbiz.comtracPage.participantNo" /></th>
+												<th><wicket:message
+														key="page.lbl.ezbiz.comtracPage.name" /></th>
+												<th><wicket:message
+														key="page.lbl.ezbiz.comtracPage.icNo" /></th>
+												<th><wicket:message
+														key="page.lbl.ezbiz.comtracPage.amount" /></th>
+												<th><wicket:message
+														key="page.lbl.ezbiz.comtracPage.action" /></th>
+											</tr>
+										</thead>
+										<tbody>
+											<tr wicket:id="sortingParticipant">
+												<td><span wicket:id="participantNo">[participantNo]</span></td>
+												<td><span wicket:id="name">[name]</span></td>
+												<td><span wicket:id="icNo">[icNo]</span></td>
+												<td><span wicket:id="amount">[amount]</span></td>
+												<td class="manage-link"><a
+													wicket:id="deleteParticipant" href="#"><i
+														class="Erase icon" /></a> <a wicket:id="edit" href="#"><i
+														class="Edit icon" /></a></td>
+											</tr>
+										</tbody>
+										<tfoot>
+											<tr>
+												<th colspan="5"><span wicket:id="navigatorParticipant">[dataView
+														navigatorParticipant]</span> <span
+													wicket:id="navigatorLabelParticipant">[dataView
+														navigatorLabelParticipant]</span></th>
+											</tr>
+										</tfoot>
+									</table>
+								</div>
+							</div>
+						</td>
+					</tr>
+					<tr>
+						<td>&nbsp;</td>
+					</tr>
+
+					<tr>
+						<td>
+							<div class="ui top attached segment">
+								<div class="ui top attached label">
+									<h4 class="ui header">
+										<wicket:message key="page.lbl.ezbiz.comtrac.lpoAttachment" />
+									</h4>
+								</div>
+								<table width="100%" class="ui large table">
+									<tr>
+										<td>
+											<div class="field">
+												<label><span wicket:id="lpoFileUploadLabel" /></label> <input
+													wicket:id="lpoFileUpload" size="20" type="file" /> <br>
+												<br> <input wicket:id="uploadSuppDoc" type="button"
+													class="ui primary button"
+													wicket:message="value:page.lbl.ezbiz.robFormA.uploadSuppDoc" />
+												<!-- <input wicket:id="downloadSupportingDoc" type="button"
+													class="ui primary button"
+													wicket:message="value:page.lbl.ezbiz.robFormA.downloadSupportingDoc" />
+												<input wicket:id="removeSupportingDoc" type="button"
+													class="ui primary button"
+													wicket:message="value:page.lbl.ezbiz.robFormA.removeSupportingDoc" /> -->
+												<!-- <input type="button"
+													class="ui primary button"
+													wicket:message="value:page.lbl.ezbiz.robFormA.downloadSupportingDoc" /> -->
+												<!-- <input removeSupportingDoc type="button" wicket:id="removeSupportingDoc"
+													class="ui primary button"
+													wicket:message="value:page.lbl.ezbiz.robFormA.removeSupportingDoc" /> -->
+												<br> <span style="color: red"
+													wicket:id="uploadErrorLabel"></span>
+												<div class="field">
+													<span style="color: green" wicket:id="uploadSuccessLabel"></span>
+												</div>
+											</div>
+										</td>
+									</tr>
+								</table>
+							</div> <br>
+							<div wicket:id="buttonMarkup">
+								<button class="ui primary button right floated"
+									wicket:id="submit">
+									<wicket:message key="page.lbl.ezbiz.comtracPage.submit" />
+								</button>
+								<button class="ui primary button right floated"
+									wicket:id="submitPayment">
+									<wicket:message key="page.lbl.ezbiz.comtracPage.submitPayment" />
+								</button>
+								<button class="ui yellow button right floated"
+									wicket:id="saveAsDraft">
+									<wicket:message key="page.lbl.ezbiz.comtracPage.saveAsDraft" />
+								</button>
+								<button class="ui primary button right floated"
+									wicket:id="submitVerification">
+									<wicket:message
+										key="page.lbl.ezbiz.comtracPage.submitVerification" />
+								</button>
+							</div>
+						</td>
+					</tr>
+				</table>
+
+
+
+			</div>
+		</div>
+	</form>
+	<div wicket:id="wmcTimer">
+		<div class="ui bottom attached error message large">
+			<i class="icon warning circle"></i> <span wicket:id="warningNote"></span>
+		</div>
+	</div>
+
+
+</wicket:extend>

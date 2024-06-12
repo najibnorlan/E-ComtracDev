@@ -1,0 +1,129 @@
+<wicket:extend>
+	<form wicket:id="RobFormAOwnerForm"  class="ui form">
+		<script type="text/javascript" wicket:id="ownersValidation"></script>
+		<table>
+			<tr>
+				<td><div class="ui message">
+					<table>
+						
+						<tr>
+							<td><wicket:message key="page.lbl.ezbiz.robFormA.robFormAOwner.name" /></td>
+							<td>&nbsp;:&nbsp;</td>
+							<td colspan="4"><span wicket:id="name" /></td>
+						</tr>
+						<tr>
+							<td>&nbsp;</td>
+						</tr>
+						<tr>
+							<td><wicket:message key="page.lbl.ezbiz.robFormA.robFormAOwner.newicno" /></td>
+							<td>&nbsp;:&nbsp;</td>
+							<td><span wicket:id="newicno" /></td>
+							<td><wicket:message key="page.lbl.ezbiz.robFormA.robFormAOwner.icColor" /></td>
+							<td>&nbsp;:&nbsp;</td>
+							<td><wicket:message key="page.lbl.ezbiz.robFormA.robFormAOwner.icColorBlue" /></td>
+						</tr>
+						<tr>
+							<td>&nbsp;</td>
+						</tr>
+						<tr>
+							<td><wicket:message key="page.lbl.ezbiz.robFormA.robFormAOwner.dob" /></td>
+							<td>&nbsp;:&nbsp;</td>
+							<td><span wicket:id="dob" /></td>
+							<td><wicket:message key="page.lbl.ezbiz.robFormA.robFormAOwner.gender" /></td>
+							<td>&nbsp;:&nbsp;</td>
+							<td><span wicket:id="gender " /></td>
+						</tr>
+						<tr>
+							<td>&nbsp;</td>
+						</tr>
+						<tr>
+							<td><wicket:message key="page.lbl.ezbiz.robFormA.robFormAOwner.race" /></td>
+							<td>&nbsp;:&nbsp;</td>
+							<td><span wicket:id="race" /></td>
+							<td><wicket:message key="page.lbl.ezbiz.robFormA.robFormAOwner.otherrace" /></td>
+							<td>&nbsp;:&nbsp;</td>
+							<td><span wicket:id="otherrace" /></td>
+						</tr>
+						<tr>
+							<td>&nbsp;</td>
+						</tr>
+						<tr>
+							<td><wicket:message key="page.lbl.ezbiz.robFormA.robFormAOwner.nationality" /></td>
+							<td>&nbsp;:&nbsp;</td>
+							<td><span wicket:id="nationality" /></td>
+							<td><wicket:message key="page.lbl.ezbiz.robFormA.robFormAOwner.countryoforiginifpr" /></td>
+							<td>&nbsp;:&nbsp;</td>
+							<td><span wicket:id="countryoforiginifpr" /></td>
+						</tr>
+						<tr>
+							<td>&nbsp;</td>
+						</tr>
+						<tr>
+							<td colspan="6">
+								<div class="field">
+									<label><span wicket:id="addrLabel" /></label>
+									<input wicket:id="addr" type="text"/><br><br>
+									<input wicket:id="addr2" type="text"/><br><br>
+									<input wicket:id="addr3" type="text"/>
+								</div>
+							</td>
+						</tr>
+						<tr>
+							<td colspan="6">
+								<div class="two fields">
+									<div class="field">
+										<label><span wicket:id="addrPostcodeLabel" /></label> <input wicket:id="addrPostcode" />
+									</div>
+									<div class="field">
+										<label><span wicket:id="addrTownTmpLabel" /></label> <select wicket:id="addrTownTmp" />
+									</div>
+								</div>
+							</td>
+						</tr>
+						<tr>
+							<td colspan="6">
+								<div class="field">
+									<label><span wicket:id="addrStateDescLabel"/></label>
+									<input type="text" wicket:id="addrStateDesc"/>
+								</div>
+							</td>
+						</tr>
+						<tr>
+							<td colspan="6">
+								<div class="two fields">
+									<div class="field">
+										<label><span wicket:id="telNoLabel" /></label> <input wicket:id="telNo" type="text" />
+									</div>
+									<div class="field">
+										<label><span wicket:id="mobileNoLabel" /></label> <input wicket:id="mobileNo" />
+									</div>
+								</div>
+							</td>
+						</tr>
+						<tr>
+							<td colspan="6">
+								<div class="field">
+									<label><wicket:message key="page.lbl.ezbiz.robFormA.robFormAOwner.verificationStatus" /></label> 
+									<span wicket:id="verificationStatus " />
+								</div>
+							</td>
+						</tr>
+						<tr>
+							<td>&nbsp;</td>
+						</tr>
+						<tr>
+							<td colspan="6">
+								<div class="inline field">
+									<input wicket:id="updateOwners" class="ui primary button" type="button"  />
+									<input wicket:id="close" class="ui primary button" type="button" />
+								</div>
+							</td>
+						</tr>
+					</table>
+					 </div> 
+				</td>
+			</tr>
+		</table>
+
+	</form>
+</wicket:extend>

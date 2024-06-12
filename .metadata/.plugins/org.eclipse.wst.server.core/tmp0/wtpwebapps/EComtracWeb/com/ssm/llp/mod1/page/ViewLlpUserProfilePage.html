@@ -1,0 +1,227 @@
+<wicket:extend>
+	<form wicket:id="form" class="ui form">
+		<div class="ui top attached segment">
+			<div class="ui top attached label">
+				<h4 class="ui header">
+					<wicket:message key=base.user.page.title />
+				</h4>
+			</div>
+			<table>
+				<tr>
+					<td>&nbsp;</td>
+				</tr>
+				<tr>
+					<td>
+						<div class="field">
+							<label><wicket:message key="user.page.userRefNo" /></label> 
+							<span wicket:id="userRefNo" />
+						</div>
+					</td>
+				</tr>
+				<tr>
+					<td>&nbsp;</td>
+				</tr>
+				<tr>
+					<td>
+						<div class="field">
+							<label><wicket:message key="user.page.loginId" /> </label> 
+							<span wicket:id="loginId" />
+						</div>
+					</td>
+				</tr>
+				<tr>
+					<td>&nbsp;</td>
+				</tr>
+				<tr>
+					<td>
+						<div class="field">
+							<label><wicket:message key="user.page.userEmail" /></label> 
+							<span wicket:id="email" />
+						</div>
+					</td>
+				</tr>
+				<tr>
+					<td>&nbsp;</td>
+				</tr>
+			</table>
+		</div>
+		<br>
+
+		<div class="ui top attached segment">
+			<div class="ui top attached label">
+				<h4 class="ui header">
+					<wicket:message key=base.user.page.userInfo />
+				</h4>
+			</div>
+			<table>
+				<tr>
+					<td>
+						<div class="field">
+							<label><wicket:message key="user.page.userName" /> </label> 
+							<span wicket:id="name" />
+						</div>
+					</td>
+				</tr>
+				<tr>
+					<td>&nbsp;</td>
+				</tr>
+				<tr>
+					<td>
+						<div class="group fields">
+							<div class="field">
+								<label><wicket:message key="user.page.userIdType" /></label> 
+								<span wicket:id="idType" />
+							</div>
+							<div class="field">
+								<label><wicket:message key="user.page.userIdNo" /></label> 
+								<span wicket:id="idNo" />
+							</div>
+							<div class="field">
+								<label><wicket:message key="user.page.userIdColour" /></label>
+								<span wicket:id="icColour" />
+							</div>
+						</div>
+					</td>
+				</tr>
+				<tr>
+					<td>&nbsp;</td>
+				</tr>
+				<tr>
+					<td>
+						<div class="field">
+							<label><wicket:message key="user.page.userNationality" /></label>
+							<span wicket:id="nationality" />
+						</div>
+					</td>
+				</tr>
+				<tr>
+					<td>&nbsp;</td>
+				</tr>
+				<tr>
+					<td>
+						<div class="field inline">
+							<label><wicket:message key="user.page.userGender" /></label> 
+							<span wicket:id="gender" />
+						</div>
+					</td>
+				</tr>
+				<tr>
+					<td>&nbsp;</td>
+				</tr>
+				<tr>
+					<td>
+						<div class="two fields">
+							<div class="field">
+								<label><wicket:message key="user.page.userDateOfBirth" /></label> 
+								<span wicket:id="dob" />
+							</div>
+							<div class="field">
+								<label><wicket:message key="user.page.userRace" /></label> 
+								<span wicket:id="race" />
+							</div>
+						</div>
+					</td>
+				</tr>
+				<tr>
+					<td>&nbsp;</td>
+				</tr>
+			</table>
+		</div>
+		<br>
+
+		<div class="ui top attached segment">
+			<div class="ui top attached label">
+				<h4 class="ui header">
+					<wicket:message key=base.user.page.userAddress />
+				</h4>
+			</div>
+			<table>
+				<tr>
+					<td>
+						<div class="field">
+							<label><wicket:message key="user.page.userAddress" /></label> 
+							<input wicket:id="add1" type="text" size="120" />
+						</div>
+					</td>
+				</tr>
+				<tr>
+					<td>&nbsp;</td>
+				</tr>
+				<tr>
+					<td>
+						<div class="field">
+							<input wicket:id="add2" type="text" size="120" />
+						</div>
+					</td>
+				</tr>
+				<tr>
+					<td>&nbsp;</td>
+				</tr>
+				<tr>
+					<td>
+						<div class="field">
+							<input wicket:id="add3" type="text" size="120" />
+						</div>
+					</td>
+				</tr>
+				<tr>
+					<td>&nbsp;</td>
+				</tr>
+				<tr>
+					<td>
+						<div class="two fields">
+							<div class="field">
+								<label><wicket:message key="user.page.userPostcode" /></label>
+								<input wicket:id="postcode" type="text" size="20" />
+							</div>
+							<div class="field">
+								<label><wicket:message key="user.page.userCity" /></label> 
+								<input wicket:id="city" type="text" size="35" />
+							</div>
+						</div>
+					</td>
+				</tr>
+				<tr>
+					<td>&nbsp;</td>
+				</tr>
+				<tr>
+					<td>
+						<div class="two fields">
+							<div class="field">
+								<label><wicket:message key="user.page.userCountry" /></label> 
+								<select wicket:id="country"></select>
+							</div>
+							<div class="field">
+								<label><wicket:message key="user.page.userState" /></label> 
+								<select wicket:id="state"></select>
+							</div>
+						</div>
+					</td>
+				</tr>
+				<tr>
+					<td>&nbsp;</td>
+				</tr>
+				<tr>
+					<td>
+						<div class="field">
+							<label><wicket:message key="user.page.hpNo" /></label> 
+							<input wicket:id="hpNo" type="text" size="20" />
+						</div>
+					</td>
+				</tr>
+				<tr>
+					<td>&nbsp;</td>
+				</tr>
+			</table>
+		</div>
+				<tr>
+					<td>&nbsp;</td>
+				</tr>
+					<tr>
+						<div class="field">
+							<input wicket:id="save" class="ui primary button" type="submit" value="Save" /> 
+						</div>
+					</tr>
+		<br>
+	</form>
+</wicket:extend>

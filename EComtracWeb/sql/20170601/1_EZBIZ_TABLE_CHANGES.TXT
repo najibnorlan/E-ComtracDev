@@ -1,0 +1,213 @@
+-- 19/04/2017
+
+CREATE TABLE rob_training_config ( 
+    training_id     SERIAL8 NOT NULL,
+    training_code   VARCHAR(100) NOT NULL,
+    training_name   VARCHAR(255) NOT NULL,
+    training_desc   LVARCHAR,
+    training_start_dt    DATETIME YEAR to SECOND NOT NULL,
+    training_end_dt    DATETIME YEAR to SECOND NOT NULL,
+    reg_closing_dt  DATETIME YEAR to SECOND NOT NULL,
+    standard_fee    MONEY DEFAULT 0.00 NOT NULL,
+    special_fee    MONEY DEFAULT 0.00 NOT NULL,
+    max_pax         INTEGER DEFAULT 0 NOT NULL,
+    is_active          BOOLEAN NOT NULL,
+    create_dt       DATETIME YEAR to SECOND NOT NULL,
+    create_by       VARCHAR(50) NOT NULL,
+    update_dt       DATETIME YEAR to SECOND NOT NULL,
+    update_by       VARCHAR(50) NOT NULL,
+    PRIMARY KEY(training_id)
+);
+GO
+
+CREATE TABLE rob_training_config_aud ( 
+    training_id     SERIAL8 NOT NULL,
+    rev             INTEGER NOT NULL,
+    revtype         SMALLINT,
+    training_code   VARCHAR(100) NOT NULL,
+    training_name   VARCHAR(255) NOT NULL,
+    training_desc   LVARCHAR,
+    training_start_dt    DATETIME YEAR to SECOND NOT NULL,
+    training_end_dt    DATETIME YEAR to SECOND NOT NULL,
+    reg_closing_dt  DATETIME YEAR to SECOND NOT NULL,
+    standard_fee    MONEY DEFAULT 0.00 NOT NULL,
+    special_fee    MONEY DEFAULT 0.00 NOT NULL,
+    max_pax         INTEGER DEFAULT 0 NOT NULL,
+    is_active          BOOLEAN default true NOT NULL,
+    create_dt       DATETIME YEAR to SECOND NOT NULL,
+    create_by       VARCHAR(50) NOT NULL,
+    update_dt       DATETIME YEAR to SECOND NOT NULL,
+    update_by       VARCHAR(50) NOT NULL,
+    PRIMARY KEY(training_id, rev)
+)
+GO
+
+CREATE TABLE rob_training_transaction ( 
+    transaction_code   VARCHAR(50) NOT NULL,
+    training_id   INTEGER NOT NULL,
+    status   VARCHAR(50) NOT NULL,
+    amount    MONEY DEFAULT 0.00 NOT NULL,
+    gst_amount    MONEY DEFAULT 0.00 NOT NULL,
+    total_pax         INTEGER DEFAULT 0 NOT NULL,
+    lodger_id   VARCHAR(50) NOT NULL,
+    lodger_name   VARCHAR(50) NOT NULL,
+    payment_channel VARCHAR(50) NOT NULL,
+    registration_channel VARCHAR(50) NOT NULL,
+    receipt_no VARCHAR(50),
+    invoice_no VARCHAR(50),
+    lou_loa_ref_no VARCHAR(100),
+    remarks VARCHAR(255),
+    create_dt       DATETIME YEAR to SECOND NOT NULL,
+    create_by       VARCHAR(50) NOT NULL,
+    update_dt       DATETIME YEAR to SECOND NOT NULL,
+    update_by       VARCHAR(50) NOT NULL,
+    PRIMARY KEY(transaction_code)
+);
+GO
+
+CREATE TABLE rob_training_transaction_aud ( 
+    transaction_code   VARCHAR(50) NOT NULL,
+    rev             INTEGER NOT NULL,
+    revtype         SMALLINT,
+    training_id   INTEGER NOT NULL,
+    status   VARCHAR(50) NOT NULL,
+    amount    MONEY DEFAULT 0.00 NOT NULL,
+    gst_amount    MONEY DEFAULT 0.00 NOT NULL,
+    total_pax         INTEGER DEFAULT 0 NOT NULL,
+    lodger_id   VARCHAR(50) NOT NULL,
+    lodger_name   VARCHAR(50) NOT NULL,
+    payment_channel VARCHAR(50) NOT NULL,
+    registration_channel VARCHAR(50) NOT NULL,
+    receipt_no VARCHAR(50),
+    invoice_no VARCHAR(50),
+    lou_loa_ref_no VARCHAR(100),
+    remarks VARCHAR(255),
+    create_dt       DATETIME YEAR to SECOND NOT NULL,
+    create_by       VARCHAR(50) NOT NULL,
+    update_dt       DATETIME YEAR to SECOND NOT NULL,
+    update_by       VARCHAR(50) NOT NULL,
+    PRIMARY KEY(transaction_code, rev)
+);
+GO
+
+CREATE TABLE rob_training_participant ( 
+    participant_id SERIAL8 NOT NULL,
+    transaction_code   VARCHAR(50) NOT NULL,
+    name VARCHAR(100) NOT NULL,
+    ic_no VARCHAR(50) NOT NULL,
+    ls_no VARCHAR(50),
+    membership_no VARCHAR(50),
+    designation VARCHAR(50),
+    company VARCHAR(50),
+    address_1 VARCHAR(50) NOT NULL,
+    address_2 VARCHAR(50),
+    address_3 VARCHAR(50),
+    tel_no VARCHAR(50) NOT NULL,
+    fax_no VARCHAR(50),
+    email VARCHAR(50) NOT NULL,
+    amount MONEY DEFAULT 0.00 NOT NULL,
+    create_dt DATETIME YEAR to SECOND NOT NULL,
+    create_by VARCHAR(50) NOT NULL,
+    update_dt DATETIME YEAR to SECOND NOT NULL,
+    update_by VARCHAR(50) NOT NULL,
+    PRIMARY KEY(participant_id)
+);
+GO
+
+CREATE TABLE rob_training_participant_aud ( 
+    participant_id SERIAL8 NOT NULL,
+    rev             INTEGER NOT NULL,
+    revtype         SMALLINT,
+    transaction_code   VARCHAR(50) NOT NULL,
+    name VARCHAR(100) NOT NULL,
+    ic_no VARCHAR(50) NOT NULL,
+    ls_no VARCHAR(50),
+    membership_no VARCHAR(50),
+    designation VARCHAR(50),
+    company VARCHAR(50),
+    address_1 VARCHAR(50) NOT NULL,
+    address_2 VARCHAR(50),
+    address_3 VARCHAR(50),
+    tel_no VARCHAR(50) NOT NULL,
+    fax_no VARCHAR(50),
+    email VARCHAR(50) NOT NULL,
+    amount MONEY DEFAULT 0.00 NOT NULL,
+    create_dt DATETIME YEAR to SECOND NOT NULL,
+    create_by VARCHAR(50) NOT NULL,
+    update_dt DATETIME YEAR to SECOND NOT NULL,
+    update_by VARCHAR(50) NOT NULL,
+    PRIMARY KEY(participant_id, rev)
+);
+GO
+
+-- 2/5/2017
+
+ALTER TABLE rob_payment_receipt
+    ADD remarks VARCHAR(255)
+GO 
+
+ALTER TABLE rob_payment_receipt_aud
+    ADD remarks VARCHAR(255)
+GO
+-- 3/5/2017
+
+ALTER TABLE rob_email_log
+    ADD bcc_list LVARCHAR(2000)
+GO
+
+-- 4/5/2017
+ALTER TABLE rob_user_profile
+    ADD is_temp_password CHAR(1) DEFAULT 'N' NOT NULL
+GO
+
+ALTER TABLE rob_user_profile_aud
+    ADD is_temp_password CHAR(1) DEFAULT 'N' NOT NULL
+GO
+
+ALTER TABLE rob_training_participant
+    ADD fee_type VARCHAR(50) NOT NULL
+
+-- 5/5/2017
+ALTER TABLE rob_health_check
+    ADD method_name VARCHAR(100),
+    ADD item_type VARCHAR(50)
+
+-- 12/5/2017
+ALTER TABLE rob_training_config
+    ADD current_pax INTEGER NOT NULL;
+    
+--31/5/2017
+ALTER TABLE rob_training_config
+    ADD standard_fee_gst MONEY DEFAULT 0.00 NOT NULL,
+    ADD special_fee_gst MONEY DEFAULT 0.00 NOT NULL
+    
+
+ALTER TABLE rob_training_config_aud
+    ADD standard_fee_gst MONEY DEFAULT 0.00 NOT NULL,
+    ADD special_fee_gst MONEY DEFAULT 0.00 NOT NULL
+    
+
+--01/06/2017
+ALTER TABLE ssm_my_kad
+	ADD ip_address VARCHAR(25)
+GO
+
+ALTER TABLE rob_training_participant
+    ADD gst_amount MONEY DEFAULT 0.00 NOT NULL
+
+ALTER TABLE rob_training_participant_aud
+    ADD gst_amount MONEY DEFAULT 0.00 NOT NULL
+
+-- 16/06/2017
+
+ALTER TABLE rob_training_participant
+    ADD is_attend VARCHAR(10) DEFAULT "N" NOT NULL
+
+ALTER TABLE rob_training_participant_aud
+    ADD is_attend VARCHAR(10) DEFAULT "N" NOT NULL
+
+ALTER TABLE rob_training_transaction 
+    MODIFY (remarks LVARCHAR(2048));
+
+ALTER TABLE rob_training_transaction_aud
+    MODIFY (remarks LVARCHAR(2048));

@@ -1,0 +1,904 @@
+execute procedure ifx_allow_newline('t')
+GO
+
+---none----
+INSERT INTO rob_locale_message( key,msg,create_dt,create_by,update_dt,update_by )
+VALUES ('page.ssm.ezbiz.searchPaymentReceipt.dtFrom','Receipt Date From',current,'admin',current,'admin')
+GO 
+INSERT INTO rob_locale_message( key,msg,create_dt,create_by,update_dt,update_by )
+VALUES ('page.ssm.ezbiz.searchPaymentReceipt.dtTo','Receipt Date To',current,'admin',current,'admin')
+GO 
+INSERT INTO rob_locale_message( key,msg,create_dt,create_by,update_dt,update_by )
+VALUES ('page.ssm.ezbiz.searchPaymentReceipt.transactionId','Transaction Id',current,'admin',current,'admin')
+GO 
+INSERT INTO rob_locale_message( key,msg,create_dt,create_by,update_dt,update_by )
+VALUES ('page.ssm.ezbiz.searchPaymentReceipt.receiptNo','Receipt No',current,'admin',current,'admin')
+GO 
+INSERT INTO rob_locale_message( key,msg,create_dt,create_by,update_dt,update_by )
+VALUES ('page.lbl.ezbiz.otcPayment.viewReceipt','View/Reprint Receipt',current,'admin',current,'admin')
+GO 
+INSERT INTO rob_locale_message( key,msg,create_dt,create_by,update_dt,update_by )
+VALUES ('page.lbl.ezbiz.otcPayment.back','Back',current,'admin',current,'admin')
+GO 
+INSERT INTO rob_locale_message( key,msg,create_dt,create_by,update_dt,update_by )
+VALUES ('page.lbl.ezbiz.searchpaymentreceipt.date','Request Date',current,'admin',current,'admin')
+GO 
+INSERT INTO rob_locale_message( key,msg,create_dt,create_by,update_dt,update_by )
+VALUES ('page.lbl.ezbiz.searchpaymentreceipt.receiptNo','Receipt No',current,'admin',current,'admin')
+GO 
+INSERT INTO rob_locale_message( key,msg,create_dt,create_by,update_dt,update_by )
+VALUES ('page.lbl.ezbiz.searchpaymentreceipt.transactionId','Transaction Id',current,'admin',current,'admin')
+GO 
+INSERT INTO rob_locale_message( key,msg,create_dt,create_by,update_dt,update_by )
+VALUES ('page.lbl.ezbiz.searchpaymentreceipt.totalAmount','Total Amount',current,'admin',current,'admin')
+GO 
+INSERT INTO rob_locale_message( key,msg,create_dt,create_by,update_dt,update_by )
+VALUES ('page.lbl.ezbiz.searchpaymentreceipt.isCancel','Receipt Cancellation',current,'admin',current,'admin')
+GO 
+INSERT INTO rob_locale_message( key,msg,create_dt,create_by,update_dt,update_by )
+VALUES ('page.lbl.ezbiz.searchpaymentreceipt.taxInvoiceNo','Tax Invoice No',current,'admin',current,'admin')
+GO 
+INSERT INTO rob_locale_message( key,msg,create_dt,create_by,update_dt,update_by )
+VALUES ('user.page.userList.edit','Edit',current,'admin',current,'admin')
+GO 
+INSERT INTO rob_locale_message( key,msg,create_dt,create_by,update_dt,update_by )
+VALUES ('page.lbl.ezbiz.status','Status',current,'admin',current,'admin')
+GO 
+INSERT INTO rob_locale_message( key,msg,create_dt,create_by,update_dt,update_by )
+VALUES ('page.lbl.ezbiz.robFormA.bizOwnerName','Owner Name',current,'admin',current,'admin')
+GO 
+INSERT INTO rob_locale_message( key,msg,create_dt,create_by,update_dt,update_by )
+VALUES ('menu.myBiz.listComtracTraining','Training Configuration',current,'admin',current,'admin')
+GO 
+INSERT INTO rob_locale_message( key,msg,create_dt,create_by,update_dt,update_by )
+VALUES ('page.lbl.ezbiz.comtracList.trainingCode','Training Code',current,'admin',current,'admin')
+GO 
+INSERT INTO rob_locale_message( key,msg,create_dt,create_by,update_dt,update_by )
+VALUES ('page.lbl.ezbiz.comtracList.dtFrom','Date From',current,'admin',current,'admin')
+GO 
+INSERT INTO rob_locale_message( key,msg,create_dt,create_by,update_dt,update_by )
+VALUES ('page.lbl.ezbiz.comtracList.dtTo','Date To',current,'admin',current,'admin')
+GO 
+INSERT INTO rob_locale_message( key,msg,create_dt,create_by,update_dt,update_by )
+VALUES ('page.lbl.ezbiz.comtracList.searchTraining','Search Training',current,'admin',current,'admin')
+GO 
+INSERT INTO rob_locale_message( key,msg,create_dt,create_by,update_dt,update_by )
+VALUES ('page.lbl.ezbiz.listTraining.action','Action',current,'admin',current,'admin')
+GO 
+INSERT INTO rob_locale_message( key,msg,create_dt,create_by,update_dt,update_by )
+VALUES ('page.lbl.ezbiz.listTraining.maxPax','Pax',current,'admin',current,'admin')
+GO 
+INSERT INTO rob_locale_message( key,msg,create_dt,create_by,update_dt,update_by )
+VALUES ('page.lbl.ezbiz.listTraining.standardFee','Standard',current,'admin',current,'admin')
+GO 
+INSERT INTO rob_locale_message( key,msg,create_dt,create_by,update_dt,update_by )
+VALUES ('page.lbl.ezbiz.listTraining.trainingStartDt','Start Date',current,'admin',current,'admin')
+GO 
+INSERT INTO rob_locale_message( key,msg,create_dt,create_by,update_dt,update_by )
+VALUES ('page.lbl.ezbiz.listTraining.trainingEndDt','End Date',current,'admin',current,'admin')
+GO 
+INSERT INTO rob_locale_message( key,msg,create_dt,create_by,update_dt,update_by )
+VALUES ('page.lbl.ezbiz.listTraining.trainingName','Training Name',current,'admin',current,'admin')
+GO 
+INSERT INTO rob_locale_message( key,msg,create_dt,create_by,update_dt,update_by )
+VALUES ('page.lbl.ezbiz.listTraining.specialFee','Special*',current,'admin',current,'admin')
+GO 
+INSERT INTO rob_locale_message( key,msg,create_dt,create_by,update_dt,update_by )
+VALUES ('page.lbl.ezbiz.listTraining.trainingCode','Training Code',current,'admin',current,'admin')
+GO 
+INSERT INTO rob_locale_message( key,msg,create_dt,create_by,update_dt,update_by )
+VALUES ('page.lbl.ezbiz.listTraining.regClosingDt','Closing Date',current,'admin',current,'admin')
+GO 
+INSERT INTO rob_locale_message( key,msg,create_dt,create_by,update_dt,update_by )
+VALUES ('page.lbl.ezbiz.listTraining.index','Index',current,'admin',current,'admin')
+GO 
+INSERT INTO rob_locale_message( key,msg,create_dt,create_by,update_dt,update_by )
+VALUES ('page.lbl.ezbiz.listTraining.describeSpecialFee','With effect 1 January 2017, the fee for licensed secretary and member of prescribed bodies will be the same. Members of prescribed bodies under S235(2)(a) CA2016 are Malaysian Institute of Chartered Secretaries and Administrators (MAICSA), Malaysian Institute of Accountants (MIA), Malaysian Bar, Malaysian Association of Company Secretaries (MACS), Malaysian Institute of Certified Public Accountants (MICPA), Sabah Law Association and Advocates Association of Sarawak.',current,'admin',current,'admin')
+GO 
+INSERT INTO rob_locale_message( key,msg,create_dt,create_by,update_dt,update_by )
+VALUES ('page.lbl.ezbiz.listTraining.addTraining','Add Training',current,'admin',current,'admin')
+GO 
+INSERT INTO rob_locale_message( key,msg,create_dt,create_by,update_dt,update_by )
+VALUES ('page.lbl.ezbiz.editTraining.trainingCode','Training Code',current,'admin',current,'admin')
+GO 
+INSERT INTO rob_locale_message( key,msg,create_dt,create_by,update_dt,update_by )
+VALUES ('page.lbl.ezbiz.editTraining.trainingName','Training Name',current,'admin',current,'admin')
+GO 
+INSERT INTO rob_locale_message( key,msg,create_dt,create_by,update_dt,update_by )
+VALUES ('page.lbl.ezbiz.editTraining.trainingEndDt','Training End Date',current,'admin',current,'admin')
+GO 
+INSERT INTO rob_locale_message( key,msg,create_dt,create_by,update_dt,update_by )
+VALUES ('page.lbl.ezbiz.editTraining.regClosingDt','Registration Closing Date',current,'admin',current,'admin')
+GO 
+INSERT INTO rob_locale_message( key,msg,create_dt,create_by,update_dt,update_by )
+VALUES ('page.lbl.ezbiz.editTraining.trainingStartDt','Training Start Date',current,'admin',current,'admin')
+GO 
+INSERT INTO rob_locale_message( key,msg,create_dt,create_by,update_dt,update_by )
+VALUES ('page.lbl.ezbiz.editTraining.specialFee','Special Fee',current,'admin',current,'admin')
+GO 
+INSERT INTO rob_locale_message( key,msg,create_dt,create_by,update_dt,update_by )
+VALUES ('page.lbl.ezbiz.editTraining.editAddTraining','Add/Edit Training',current,'admin',current,'admin')
+GO 
+INSERT INTO rob_locale_message( key,msg,create_dt,create_by,update_dt,update_by )
+VALUES ('page.lbl.ezbiz.editTraining.maxPax','Maximum Participant',current,'admin',current,'admin')
+GO 
+INSERT INTO rob_locale_message( key,msg,create_dt,create_by,update_dt,update_by )
+VALUES ('page.lbl.ezbiz.editTraining.standardFee','Standard Fee',current,'admin',current,'admin')
+GO 
+INSERT INTO rob_locale_message( key,msg,create_dt,create_by,update_dt,update_by )
+VALUES ('page.lbl.ezbiz.selectComtracTraining.comtracLbl','Registration of Comtrac Training',current,'admin',current,'admin')
+GO 
+INSERT INTO rob_locale_message( key,msg,create_dt,create_by,update_dt,update_by )
+VALUES ('selectComtracTraining.page.trainingId','Training Choice',current,'admin',current,'admin')
+GO 
+INSERT INTO rob_locale_message( key,msg,create_dt,create_by,update_dt,update_by )
+VALUES ('selectComtracTraining.page.robTrainings','Select Training',current,'admin',current,'admin')
+GO 
+INSERT INTO rob_locale_message( key,msg,create_dt,create_by,update_dt,update_by )
+VALUES ('page.title.addparticipant','Add Participant',current,'admin',current,'admin')
+GO 
+INSERT INTO rob_locale_message( key,msg,create_dt,create_by,update_dt,update_by )
+VALUES ('comtrac.registration.lbl.trainingCode','Training Code',current,'admin',current,'admin')
+GO 
+INSERT INTO rob_locale_message( key,msg,create_dt,create_by,update_dt,update_by )
+VALUES ('page.lbl.ezbiz.listPaymentTransaction.confirmRegenerateReceipt','Confirm to generate receipt?',current,'admin',current,'admin')
+GO 
+INSERT INTO rob_locale_message( key,msg,create_dt,create_by,update_dt,update_by )
+VALUES ('page.lbl.ezbiz.selectComtracTraining.lblName','Training Information',current,'admin',current,'admin')
+GO 
+INSERT INTO rob_locale_message( key,msg,create_dt,create_by,update_dt,update_by )
+VALUES ('comtrac.registration.lbl.trainingName','Training Name',current,'admin',current,'admin')
+GO 
+INSERT INTO rob_locale_message( key,msg,create_dt,create_by,update_dt,update_by )
+VALUES ('robTrainingParticipant.addParticipant','Add Participant',current,'admin',current,'admin')
+GO 
+INSERT INTO rob_locale_message( key,msg,create_dt,create_by,update_dt,update_by )
+VALUES ('comtrac.registration.lbl.trainingDesc','Training Description',current,'admin',current,'admin')
+GO 
+INSERT INTO rob_locale_message( key,msg,create_dt,create_by,update_dt,update_by )
+VALUES ('comtrac.registration.lbl.trainingStartDt','Start Date',current,'admin',current,'admin')
+GO 
+INSERT INTO rob_locale_message( key,msg,create_dt,create_by,update_dt,update_by )
+VALUES ('comtrac.registration.lbl.trainingEndDt','End Date',current,'admin',current,'admin')
+GO 
+INSERT INTO rob_locale_message( key,msg,create_dt,create_by,update_dt,update_by )
+VALUES ('comtrac.registration.lbl.regClosingDt','Registration Closing Date',current,'admin',current,'admin')
+GO 
+INSERT INTO rob_locale_message( key,msg,create_dt,create_by,update_dt,update_by )
+VALUES ('comtrac.registration.lbl.standardFee','Course Fee - Standard',current,'admin',current,'admin')
+GO 
+INSERT INTO rob_locale_message( key,msg,create_dt,create_by,update_dt,update_by )
+VALUES ('comtrac.registration.lbl.specialFee','Course Fee - Licensed Secretary and Members of Prescribed Bodies*',current,'admin',current,'admin')
+GO 
+INSERT INTO rob_locale_message( key,msg,create_dt,create_by,update_dt,update_by )
+VALUES ('page.lbl.ezbiz.selectComtracTraining.moreInfo','*Note : With effect 1 January 2017, the fee for licensed secretary and member of prescribed bodies will be the same. Members of prescribed bodies under S235(2)(a) CA2016 are Malaysian Institute of Chartered Secretaries and Administrators (MAICSA), Malaysian Institute of Accountants (MIA), Malaysian Bar, Malaysian Association of Company Secretaries (MACS), Malaysian Institute of Certified Public Accountants (MICPA), Sabah Law Association and Advocates Association of Sarawak.',current,'admin',current,'admin')
+GO 
+INSERT INTO rob_locale_message( key,msg,create_dt,create_by,update_dt,update_by )
+VALUES ('page.lbl.ezbiz.listTraining.attendance','List of Attendees',current,'admin',current,'admin')
+GO 
+INSERT INTO rob_locale_message( key,msg,create_dt,create_by,update_dt,update_by )
+VALUES ('HealthCheckPage.runScheduler.label','Run All Scheduler',current,'admin',current,'admin')
+GO 
+INSERT INTO rob_locale_message( key,msg,create_dt,create_by,update_dt,update_by )
+VALUES ('user.page.designation','Designation',current,'admin',current,'admin')
+GO 
+INSERT INTO rob_locale_message( key,msg,create_dt,create_by,update_dt,update_by )
+VALUES ('user.page.company','Company',current,'admin',current,'admin')
+GO 
+INSERT INTO rob_locale_message( key,msg,create_dt,create_by,update_dt,update_by )
+VALUES ('user.page.amount','Amount',current,'admin',current,'admin')
+GO 
+INSERT INTO rob_locale_message( key,msg,create_dt,create_by,update_dt,update_by )
+VALUES ('menu.myBiz.comtracServices','COMTRAC Services',current,'admin',current,'admin')
+GO 
+INSERT INTO rob_locale_message( key,msg,create_dt,create_by,update_dt,update_by )
+VALUES ('menu.myBiz.selectComtracTraining','Apply New Training',current,'admin',current,'admin')
+GO 
+INSERT INTO rob_locale_message( key,msg,create_dt,create_by,update_dt,update_by )
+VALUES ('comtrac.registration.lbl.internalUse','For Internal Use',current,'admin',current,'admin')
+GO 
+INSERT INTO rob_locale_message( key,msg,create_dt,create_by,update_dt,update_by )
+VALUES ('menu.myBiz.comtrac','COMTRAC',current,'admin',current,'admin')
+GO 
+INSERT INTO rob_locale_message( key,msg,create_dt,create_by,update_dt,update_by )
+VALUES ('selectComtracTraining.page.paymentChannel','Payment Channel',current,'admin',current,'admin')
+GO 
+INSERT INTO rob_locale_message( key,msg,create_dt,create_by,update_dt,update_by )
+VALUES ('selectComtracTraining.page.registrationChannel','Registration Channel',current,'admin',current,'admin')
+GO 
+INSERT INTO rob_locale_message( key,msg,create_dt,create_by,update_dt,update_by )
+VALUES ('selectComtracTraining.page.louLoaRefNo','LOU/LOA Reference No',current,'admin',current,'admin')
+GO 
+INSERT INTO rob_locale_message( key,msg,create_dt,create_by,update_dt,update_by )
+VALUES ('selectComtracTraining.page.remarks','Remarks',current,'admin',current,'admin')
+GO 
+INSERT INTO rob_locale_message( key,msg,create_dt,create_by,update_dt,update_by )
+VALUES ('selectComtracTraining.page.receiptNo','Receipt No',current,'admin',current,'admin')
+GO 
+INSERT INTO rob_locale_message( key,msg,create_dt,create_by,update_dt,update_by )
+VALUES ('selectComtracTraining.page.invoiceNo','Invoice No',current,'admin',current,'admin')
+GO 
+INSERT INTO rob_locale_message( key,msg,create_dt,create_by,update_dt,update_by )
+VALUES ('page.lbl.ezbiz.resetPassword.email','Email',current,'admin',current,'admin')
+GO 
+INSERT INTO rob_locale_message( key,msg,create_dt,create_by,update_dt,update_by )
+VALUES ('page.lbl.ezbiz.resetPassword.hpNo','Phone No',current,'admin',current,'admin')
+GO 
+INSERT INTO rob_locale_message( key,msg,create_dt,create_by,update_dt,update_by )
+VALUES ('page.title.resetpassword','Reset Password',current,'admin',current,'admin')
+GO 
+INSERT INTO rob_locale_message( key,msg,create_dt,create_by,update_dt,update_by )
+VALUES ('page.lbl.ezbiz.resetPassword.name','Name',current,'admin',current,'admin')
+GO 
+INSERT INTO rob_locale_message( key,msg,create_dt,create_by,update_dt,update_by )
+VALUES ('page.lbl.ezbiz.resetPassword.icNo','IC No',current,'admin',current,'admin')
+GO 
+INSERT INTO rob_locale_message( key,msg,create_dt,create_by,update_dt,update_by )
+VALUES ('page.lbl.ezbiz.resetPassword.newPassword','New Password',current,'admin',current,'admin')
+GO 
+INSERT INTO rob_locale_message( key,msg,create_dt,create_by,update_dt,update_by )
+VALUES ('page.lbl.ezbiz.resetPassword.passwordInfo','Note : You can use the generated password or key in your own password.',current,'admin',current,'admin')
+GO 
+INSERT INTO rob_locale_message( key,msg,create_dt,create_by,update_dt,update_by )
+VALUES ('page.info.changePassword.detect','We detected you login with our temporary password. Please change your password to secure your account.',current,'admin',current,'admin')
+GO 
+INSERT INTO rob_locale_message( key,msg,create_dt,create_by,update_dt,update_by )
+VALUES ('page.info.changePassword','Please change your password!',current,'admin',current,'admin')
+GO 
+INSERT INTO rob_locale_message( key,msg,create_dt,create_by,update_dt,update_by )
+VALUES ('add.participant.participantId','Participant Id',current,'admin',current,'admin')
+GO 
+INSERT INTO rob_locale_message( key,msg,create_dt,create_by,update_dt,update_by )
+VALUES ('add.participant.name','Name',current,'admin',current,'admin')
+GO 
+INSERT INTO rob_locale_message( key,msg,create_dt,create_by,update_dt,update_by )
+VALUES ('add.participant.email','Email',current,'admin',current,'admin')
+GO 
+INSERT INTO rob_locale_message( key,msg,create_dt,create_by,update_dt,update_by )
+VALUES ('add.participant.telNo','Telephone Number',current,'admin',current,'admin')
+GO 
+INSERT INTO rob_locale_message( key,msg,create_dt,create_by,update_dt,update_by )
+VALUES ('add.participant.action','Action',current,'admin',current,'admin')
+GO 
+INSERT INTO rob_locale_message( key,msg,create_dt,create_by,update_dt,update_by )
+VALUES ('add.participant.delete','Delete',current,'admin',current,'admin')
+GO 
+INSERT INTO rob_locale_message( key,msg,create_dt,create_by,update_dt,update_by )
+VALUES ('page.lbl.ezbiz.nameListAttendees.headerLbl','Training Information',current,'admin',current,'admin')
+GO 
+INSERT INTO rob_locale_message( key,msg,create_dt,create_by,update_dt,update_by )
+VALUES ('page.lbl.ezbiz.nameListAttendees.tittle','Comtract Details',current,'admin',current,'admin')
+GO 
+INSERT INTO rob_locale_message( key,msg,create_dt,create_by,update_dt,update_by )
+VALUES ('page.lbl.ezbiz.comtracPage.addParticipant','Add Participant',current,'admin',current,'admin')
+GO 
+INSERT INTO rob_locale_message( key,msg,create_dt,create_by,update_dt,update_by )
+VALUES ('page.lbl.ezbiz.comtracPage.participantNo','Participant No',current,'admin',current,'admin')
+GO 
+INSERT INTO rob_locale_message( key,msg,create_dt,create_by,update_dt,update_by )
+VALUES ('page.lbl.ezbiz.comtracPage.name','Name',current,'admin',current,'admin')
+GO 
+INSERT INTO rob_locale_message( key,msg,create_dt,create_by,update_dt,update_by )
+VALUES ('page.lbl.ezbiz.comtracPage.icNo','IC No',current,'admin',current,'admin')
+GO 
+INSERT INTO rob_locale_message( key,msg,create_dt,create_by,update_dt,update_by )
+VALUES ('page.lbl.ezbiz.comtracPage.amount','Amount',current,'admin',current,'admin')
+GO 
+INSERT INTO rob_locale_message( key,msg,create_dt,create_by,update_dt,update_by )
+VALUES ('lbl.page.participantForm.feeType','Fee Type',current,'admin',current,'admin')
+GO 
+INSERT INTO rob_locale_message( key,msg,create_dt,create_by,update_dt,update_by )
+VALUES ('page.addParticipant.form.lbl.telNo','Phone No',current,'admin',current,'admin')
+GO 
+INSERT INTO rob_locale_message( key,msg,create_dt,create_by,update_dt,update_by )
+VALUES ('lbl.page.participantForm.amount','Fee',current,'admin',current,'admin')
+GO 
+INSERT INTO rob_locale_message( key,msg,create_dt,create_by,update_dt,update_by )
+VALUES ('lbl.page.participantForm.participantInfo','Participant Information',current,'admin',current,'admin')
+GO 
+INSERT INTO rob_locale_message( key,msg,create_dt,create_by,update_dt,update_by )
+VALUES ('page.addParticipant.form.lbl.address1','Address',current,'admin',current,'admin')
+GO 
+INSERT INTO rob_locale_message( key,msg,create_dt,create_by,update_dt,update_by )
+VALUES ('page.addParticipant.form.lbl.designation','Designation',current,'admin',current,'admin')
+GO 
+INSERT INTO rob_locale_message( key,msg,create_dt,create_by,update_dt,update_by )
+VALUES ('page.addParticipant.form.lbl.email','Email',current,'admin',current,'admin')
+GO 
+INSERT INTO rob_locale_message( key,msg,create_dt,create_by,update_dt,update_by )
+VALUES ('page.addParticipant.form.lbl.name','Name',current,'admin',current,'admin')
+GO 
+INSERT INTO rob_locale_message( key,msg,create_dt,create_by,update_dt,update_by )
+VALUES ('page.addParticipant.form.lbl.company','Company',current,'admin',current,'admin')
+GO 
+INSERT INTO rob_locale_message( key,msg,create_dt,create_by,update_dt,update_by )
+VALUES ('page.addParticipant.form.lbl.icNo','IC No',current,'admin',current,'admin')
+GO 
+INSERT INTO rob_locale_message( key,msg,create_dt,create_by,update_dt,update_by )
+VALUES ('page.addParticipant.form.lbl.faxNo','Fax No',current,'admin',current,'admin')
+GO 
+INSERT INTO rob_locale_message( key,msg,create_dt,create_by,update_dt,update_by )
+VALUES ('page.addParticipant.form.lbl.membershipNo','Membership No',current,'admin',current,'admin')
+GO 
+INSERT INTO rob_locale_message( key,msg,create_dt,create_by,update_dt,update_by )
+VALUES ('page.addParticipant.form.lbl.lsNo','Licensed Secretary No',current,'admin',current,'admin')
+GO 
+INSERT INTO rob_locale_message( key,msg,create_dt,create_by,update_dt,update_by )
+VALUES ('listRobTrainingParticipant','Submit',current,'admin',current,'admin')
+GO 
+INSERT INTO rob_locale_message( key,msg,create_dt,create_by,update_dt,update_by )
+VALUES ('page.lbl.ezbiz.submit','Submit',current,'admin',current,'admin')
+GO 
+INSERT INTO rob_locale_message( key,msg,create_dt,create_by,update_dt,update_by )
+VALUES ('page.lbl.ezbiz.nameListAttendees.trainingCode','Training Code',current,'admin',current,'admin')
+GO 
+INSERT INTO rob_locale_message( key,msg,create_dt,create_by,update_dt,update_by )
+VALUES ('page.lbl.ezbiz.nameListAttendees.trainingName','Training Name',current,'admin',current,'admin')
+GO 
+INSERT INTO rob_locale_message( key,msg,create_dt,create_by,update_dt,update_by )
+VALUES ('page.lbl.ezbiz.nameListAttendees.trainingStrtDate','Training Start Date',current,'admin',current,'admin')
+GO 
+INSERT INTO rob_locale_message( key,msg,create_dt,create_by,update_dt,update_by )
+VALUES ('page.lbl.ezbiz.nameListAttandees.bilNoLbl','Bil',current,'admin',current,'admin')
+GO 
+INSERT INTO rob_locale_message( key,msg,create_dt,create_by,update_dt,update_by )
+VALUES ('page.lbl.ezbiz.nameListAttandees.trainingNameLbl','Name',current,'admin',current,'admin')
+GO 
+INSERT INTO rob_locale_message( key,msg,create_dt,create_by,update_dt,update_by )
+VALUES ('page.lbl.ezbiz.nameListAttandees.trainerIcLbl','Ic Number',current,'admin',current,'admin')
+GO 
+INSERT INTO rob_locale_message( key,msg,create_dt,create_by,update_dt,update_by )
+VALUES ('page.lbl.ezbiz.nameListAttandees.trainerCmpnyLbl','Company Name',current,'admin',current,'admin')
+GO 
+INSERT INTO rob_locale_message( key,msg,create_dt,create_by,update_dt,update_by )
+VALUES ('page.lbl.ezbiz.nameListAttandees.trainerNoTelLbl','Tel No',current,'admin',current,'admin')
+GO 
+INSERT INTO rob_locale_message( key,msg,create_dt,create_by,update_dt,update_by )
+VALUES ('page.lbl.ezbiz.nameListAttandees.trainerEmailLbl','Email',current,'admin',current,'admin')
+GO 
+INSERT INTO rob_locale_message( key,msg,create_dt,create_by,update_dt,update_by )
+VALUES ('page.lbl.ezbiz.comtrac.nameListAttendees.viewAttendeesInfo','View Info',current,'admin',current,'admin')
+GO 
+INSERT INTO rob_locale_message( key,msg,create_dt,create_by,update_dt,update_by )
+VALUES ('page.lbl.ezbiz.nameListAttandees.action','Action',current,'admin',current,'admin')
+GO 
+INSERT INTO rob_locale_message( key,msg,create_dt,create_by,update_dt,update_by )
+VALUES ('page.lbl.ezbiz.comtracPage.action','Action',current,'admin',current,'admin')
+GO 
+INSERT INTO rob_locale_message( key,msg,create_dt,create_by,update_dt,update_by )
+VALUES ('page.lbl.ezbiz.comtrac.nameListAttendees.generateAttendancePdf','Generate PDF',current,'admin',current,'admin')
+GO 
+INSERT INTO rob_locale_message( key,msg,create_dt,create_by,update_dt,update_by )
+VALUES ('page.lbl.ezbiz.nameListAttandees.trainerNameLbl','Name',current,'admin',current,'admin')
+GO 
+INSERT INTO rob_locale_message( key,msg,create_dt,create_by,update_dt,update_by )
+VALUES ('page.lbl.ezbiz.viewAttendeesInfo.attendeesInfo','Participant Infomation',current,'admin',current,'admin')
+GO 
+INSERT INTO rob_locale_message( key,msg,create_dt,create_by,update_dt,update_by )
+VALUES ('page.lbl.ezbiz.viewAttendeesInfo.attendeesName','Name',current,'admin',current,'admin')
+GO 
+INSERT INTO rob_locale_message( key,msg,create_dt,create_by,update_dt,update_by )
+VALUES ('page.lbl.ezbiz.viewAttendeesInfo.attendeesIcNo','Ic Number',current,'admin',current,'admin')
+GO 
+INSERT INTO rob_locale_message( key,msg,create_dt,create_by,update_dt,update_by )
+VALUES ('page.lbl.ezbiz.viewAttendeesInfo.attendeesLsNo','Licensed Secretary No',current,'admin',current,'admin')
+GO 
+INSERT INTO rob_locale_message( key,msg,create_dt,create_by,update_dt,update_by )
+VALUES ('page.lbl.ezbiz.viewAttendeesInfo.attendeesMmbrShipNo','Prescribed Body Name & Membership No',current,'admin',current,'admin')
+GO 
+INSERT INTO rob_locale_message( key,msg,create_dt,create_by,update_dt,update_by )
+VALUES ('page.lbl.ezbiz.viewAttendeesInfo.attendeesAddress','Address',current,'admin',current,'admin')
+GO 
+INSERT INTO rob_locale_message( key,msg,create_dt,create_by,update_dt,update_by )
+VALUES ('page.lbl.ezbiz.viewAttendeesInfo.attendeesTelNo','Tel. No',current,'admin',current,'admin')
+GO 
+INSERT INTO rob_locale_message( key,msg,create_dt,create_by,update_dt,update_by )
+VALUES ('page.lbl.ezbiz.viewAttendeesInfo.attendeesFaxNo','Fax No',current,'admin',current,'admin')
+GO 
+INSERT INTO rob_locale_message( key,msg,create_dt,create_by,update_dt,update_by )
+VALUES ('page.lbl.ezbiz.viewAttendeesInfo.attendeesEmail','Email',current,'admin',current,'admin')
+GO 
+INSERT INTO rob_locale_message( key,msg,create_dt,create_by,update_dt,update_by )
+VALUES ('page.lbl.ezbiz.comtracPage.saveAsDraft','Save as Draft',current,'admin',current,'admin')
+GO 
+INSERT INTO rob_locale_message( key,msg,create_dt,create_by,update_dt,update_by )
+VALUES ('page.lbl.ezbiz.comtracPage.submit','Submit',current,'admin',current,'admin')
+GO 
+INSERT INTO rob_locale_message( key,msg,create_dt,create_by,update_dt,update_by )
+VALUES ('listParticipant.main','Main Information',current,'admin',current,'admin')
+GO 
+INSERT INTO rob_locale_message( key,msg,create_dt,create_by,update_dt,update_by )
+VALUES ('listParticipant.list','Participant List',current,'admin',current,'admin')
+GO 
+INSERT INTO rob_locale_message( key,msg,create_dt,create_by,update_dt,update_by )
+VALUES ('page.lbl.ezbiz.comtracPage.submitPayment','Submit Payment',current,'admin',current,'admin')
+GO 
+INSERT INTO rob_locale_message( key,msg,create_dt,create_by,update_dt,update_by )
+VALUES ('menu.myBiz.tabComtracPage','My Training List',current,'admin',current,'admin')
+GO 
+INSERT INTO rob_locale_message( key,msg,create_dt,create_by,update_dt,update_by )
+VALUES ('page.lbl.ezbiz.tabComtracPage.draftPanel','Draft',current,'admin',current,'admin')
+GO 
+INSERT INTO rob_locale_message( key,msg,create_dt,create_by,update_dt,update_by )
+VALUES ('page.lbl.ezbiz.tabComtracPage.pendingPaymentPanel','Pending Payment',current,'admin',current,'admin')
+GO 
+INSERT INTO rob_locale_message( key,msg,create_dt,create_by,update_dt,update_by )
+VALUES ('page.lbl.ezbiz.tabComtracPage.paymentSuccessPanel','Payment Success',current,'admin',current,'admin')
+GO 
+INSERT INTO rob_locale_message( key,msg,create_dt,create_by,update_dt,update_by )
+VALUES ('page.lbl.ezbiz.comtracListStatus.transactionCode','Transaction Code',current,'admin',current,'admin')
+GO 
+INSERT INTO rob_locale_message( key,msg,create_dt,create_by,update_dt,update_by )
+VALUES ('page.lbl.ezbiz.comtracListStatus.trainingCode','Training Code',current,'admin',current,'admin')
+GO 
+INSERT INTO rob_locale_message( key,msg,create_dt,create_by,update_dt,update_by )
+VALUES ('page.lbl.ezbiz.comtracListStatus.trainingName','Training Name',current,'admin',current,'admin')
+GO 
+INSERT INTO rob_locale_message( key,msg,create_dt,create_by,update_dt,update_by )
+VALUES ('page.lbl.ezbiz.comtracListStatus.updateDt','Update Date',current,'admin',current,'admin')
+GO 
+INSERT INTO rob_locale_message( key,msg,create_dt,create_by,update_dt,update_by )
+VALUES ('page.lbl.ezbiz.comtracListStatus.action','Action',current,'admin',current,'admin')
+GO 
+INSERT INTO rob_locale_message( key,msg,create_dt,create_by,update_dt,update_by )
+VALUES ('listParticipant.Name','Name',current,'admin',current,'admin')
+GO 
+INSERT INTO rob_locale_message( key,msg,create_dt,create_by,update_dt,update_by )
+VALUES ('listParticipant.trainingName','Training Name',current,'admin',current,'admin')
+GO 
+INSERT INTO rob_locale_message( key,msg,create_dt,create_by,update_dt,update_by )
+VALUES ('listParticipant.transactionCode','Transaction Code',current,'admin',current,'admin')
+GO 
+INSERT INTO rob_locale_message( key,msg,create_dt,create_by,update_dt,update_by )
+VALUES ('listParticipant.icNo','Ic Number',current,'admin',current,'admin')
+GO 
+INSERT INTO rob_locale_message( key,msg,create_dt,create_by,update_dt,update_by )
+VALUES ('listParticipant.amount','Amount',current,'admin',current,'admin')
+GO 
+INSERT INTO rob_locale_message( key,msg,create_dt,create_by,update_dt,update_by )
+VALUES ('listParticipant.receiptNo','Receipt Number',current,'admin',current,'admin')
+GO 
+INSERT INTO rob_locale_message( key,msg,create_dt,create_by,update_dt,update_by )
+VALUES ('listParticipant.invoiceNo','Invoice Number',current,'admin',current,'admin')
+GO 
+INSERT INTO rob_locale_message( key,msg,create_dt,create_by,update_dt,update_by )
+VALUES ('listParticipant.louLoaRefNo','Lou/Loa Reference Number',current,'admin',current,'admin')
+GO 
+INSERT INTO rob_locale_message( key,msg,create_dt,create_by,update_dt,update_by )
+VALUES ('listParticipant.no','No.',current,'admin',current,'admin')
+GO 
+INSERT INTO rob_locale_message( key,msg,create_dt,create_by,update_dt,update_by )
+VALUES ('listParticipant.totalPax','Total Pax',current,'admin',current,'admin')
+GO 
+INSERT INTO rob_locale_message( key,msg,create_dt,create_by,update_dt,update_by )
+VALUES ('listParticipant.totalAmount','Total Amount',current,'admin',current,'admin')
+GO 
+INSERT INTO rob_locale_message( key,msg,create_dt,create_by,update_dt,update_by )
+VALUES ('listParticipant.index','No.	',current,'admin',current,'admin')
+GO 
+INSERT INTO rob_locale_message( key,msg,create_dt,create_by,update_dt,update_by )
+VALUES ('listParticipant.email','Email	',current,'admin',current,'admin')
+GO 
+INSERT INTO rob_locale_message( key,msg,create_dt,create_by,update_dt,update_by )
+VALUES ('listParticipant.telNo','Telephone No.',current,'admin',current,'admin')
+GO 
+INSERT INTO rob_locale_message( key,msg,create_dt,create_by,update_dt,update_by )
+VALUES ('listParticipant.trainingCode','Training Code',current,'admin',current,'admin')
+GO 
+INSERT INTO rob_locale_message( key,msg,create_dt,create_by,update_dt,update_by )
+VALUES ('listParticipant.lodgerName','Lodger Name',current,'admin',current,'admin')
+GO 
+INSERT INTO rob_locale_message( key,msg,create_dt,create_by,update_dt,update_by )
+VALUES ('page.lbl.ezbiz.viewAttendeesInfo.attendeesFeeType','Fee Type',current,'admin',current,'admin')
+GO 
+INSERT INTO rob_locale_message( key,msg,create_dt,create_by,update_dt,update_by )
+VALUES ('page.lbl.ezbiz.viewAttendeesInfo.attendeesAmount','Amount',current,'admin',current,'admin')
+GO 
+INSERT INTO rob_locale_message( key,msg,create_dt,create_by,update_dt,update_by )
+VALUES ('page.confirm.deleteParticipant','Confirm to delete participant?',current,'admin',current,'admin')
+GO 
+INSERT INTO rob_locale_message( key,msg,create_dt,create_by,update_dt,update_by )
+VALUES ('page.lbl.ezbiz.comtrac.successSaveDraft','${param0} successfully saved as draft!',current,'admin',current,'admin')
+GO 
+INSERT INTO rob_locale_message( key,msg,create_dt,create_by,update_dt,update_by )
+VALUES ('comtrac.registration.lbl.availableSeat','Available Seat',current,'admin',current,'admin')
+GO 
+INSERT INTO rob_locale_message( key,msg,create_dt,create_by,update_dt,update_by )
+VALUES ('page.lbl.ezbiz.localeMessagePage.search','Search',current,'admin',current,'admin')
+GO 
+INSERT INTO rob_locale_message( key,msg,create_dt,create_by,update_dt,update_by )
+VALUES ('page.lbl.ezbiz.localeMessagePage.import','Import New Message Properties',current,'admin',current,'admin')
+GO 
+INSERT INTO rob_locale_message( key,msg,create_dt,create_by,update_dt,update_by )
+VALUES ('page.lbl.ezbiz.localeMessagePage.refresh','Refresh To All Node',current,'admin',current,'admin')
+GO 
+INSERT INTO rob_locale_message( key,msg,create_dt,create_by,update_dt,update_by )
+VALUES ('page.lbl.ezbiz.localeMessagePage.submit','Submit',current,'admin',current,'admin')
+GO 
+INSERT INTO rob_locale_message( key,msg,create_dt,create_by,update_dt,update_by )
+VALUES ('page.lbl.ezbiz.localeMessagePage.importNew','Import',current,'admin',current,'admin')
+GO 
+INSERT INTO rob_locale_message( key,msg,create_dt,create_by,update_dt,update_by )
+VALUES ('page.lbl.ezbiz.nameListAttandees.downloadPdf','PDF',current,'admin',current,'admin')
+GO 
+INSERT INTO rob_locale_message( key,msg,create_dt,create_by,update_dt,update_by )
+VALUES ('page.lbl.ezbiz.nameListAttandees.downloadExcel','Excel',current,'admin',current,'admin')
+GO 
+INSERT INTO rob_locale_message( key,msg,create_dt,create_by,update_dt,update_by )
+VALUES ('page.lbl.ezbiz.nameListAttandees.downloadAttendance','Download Attendance',current,'admin',current,'admin')
+GO 
+INSERT INTO rob_locale_message( key,msg,create_dt,create_by,update_dt,update_by )
+VALUES ('llpLocale.page.gstAmount','GST Amount',current,'admin',current,'admin')
+GO 
+INSERT INTO rob_locale_message( key,msg,create_dt,create_by,update_dt,update_by )
+VALUES ('llpLocale.page.status','Status',current,'admin',current,'admin')
+GO 
+INSERT INTO rob_locale_message( key,msg,create_dt,create_by,update_dt,update_by )
+VALUES ('llpLocale.page.paymentCode','Payment Code',current,'admin',current,'admin')
+GO 
+INSERT INTO rob_locale_message( key,msg,create_dt,create_by,update_dt,update_by )
+VALUES ('llpLocale.page.paymentFee','Payment Fee',current,'admin',current,'admin')
+GO 
+INSERT INTO rob_locale_message( key,msg,create_dt,create_by,update_dt,update_by )
+VALUES ('llpLocale.page.paymentDesc','Payment Description',current,'admin',current,'admin')
+GO 
+INSERT INTO rob_locale_message( key,msg,create_dt,create_by,update_dt,update_by )
+VALUES ('llpLocale.page.action','Action',current,'admin',current,'admin')
+GO 
+INSERT INTO rob_locale_message( key,msg,create_dt,create_by,update_dt,update_by )
+VALUES ('page.lbl.ezbiz.localeMessagePage.addPaymentCode','Add Payment Code',current,'admin',current,'admin')
+GO 
+INSERT INTO rob_locale_message( key,msg,create_dt,create_by,update_dt,update_by )
+VALUES ('page.lbl.ezbiz.localeMessagePage.cancel','Cancel',current,'admin',current,'admin')
+GO 
+INSERT INTO rob_locale_message( key,msg,create_dt,create_by,update_dt,update_by )
+VALUES ('page.lbl.ezbiz.localeMessagePage.save','Save',current,'admin',current,'admin')
+GO 
+INSERT INTO rob_locale_message( key,msg,create_dt,create_by,update_dt,update_by )
+VALUES ('edit.paymentDesc','Payment Description',current,'admin',current,'admin')
+GO 
+INSERT INTO rob_locale_message( key,msg,create_dt,create_by,update_dt,update_by )
+VALUES ('edit.status','Status',current,'admin',current,'admin')
+GO 
+INSERT INTO rob_locale_message( key,msg,create_dt,create_by,update_dt,update_by )
+VALUES ('edit.paymentFee','Payment Fee',current,'admin',current,'admin')
+GO 
+INSERT INTO rob_locale_message( key,msg,create_dt,create_by,update_dt,update_by )
+VALUES ('edit.gstCode','GST Code',current,'admin',current,'admin')
+GO 
+INSERT INTO rob_locale_message( key,msg,create_dt,create_by,update_dt,update_by )
+VALUES ('edit.paymentCode','Payment Code',current,'admin',current,'admin')
+GO 
+INSERT INTO rob_locale_message( key,msg,create_dt,create_by,update_dt,update_by )
+VALUES ('user.page.userList.approveChannel','Approve Channel',current,'admin',current,'admin')
+GO 
+INSERT INTO rob_locale_message( key,msg,create_dt,create_by,update_dt,update_by )
+VALUES ('user.page.userList.dtTo','Date To',current,'admin',current,'admin')
+GO 
+INSERT INTO rob_locale_message( key,msg,create_dt,create_by,update_dt,update_by )
+VALUES ('user.page.userList.dtFrom','Date From',current,'admin',current,'admin')
+GO 
+INSERT INTO rob_locale_message( key,msg,create_dt,create_by,update_dt,update_by )
+VALUES ('page.lbl.ezbiz.file.addFile','Add File',current,'admin',current,'admin')
+GO 
+INSERT INTO rob_locale_message( key,msg,create_dt,create_by,update_dt,update_by )
+VALUES ('page.lbl.ezbiz.file.submit','Submit',current,'admin',current,'admin')
+GO 
+INSERT INTO rob_locale_message( key,msg,create_dt,create_by,update_dt,update_by )
+VALUES ('page.lbl.ezbiz.searchAdd','Search/Add File',current,'admin',current,'admin')
+GO 
+INSERT INTO rob_locale_message( key,msg,create_dt,create_by,update_dt,update_by )
+VALUES ('page.lbl.ezbiz.addFile.edit','Edit',current,'admin',current,'admin')
+GO 
+INSERT INTO rob_locale_message( key,msg,create_dt,create_by,update_dt,update_by )
+VALUES ('page.lbl.ezbiz.button.cancel','Cancel',current,'admin',current,'admin')
+GO 
+INSERT INTO rob_locale_message( key,msg,create_dt,create_by,update_dt,update_by )
+VALUES ('page.lbl.ezbiz.button.save','Save',current,'admin',current,'admin')
+GO 
+INSERT INTO rob_locale_message( key,msg,create_dt,create_by,update_dt,update_by )
+VALUES ('page.lbl.ezbiz.parameter.add','Add',current,'admin',current,'admin')
+GO 
+INSERT INTO rob_locale_message( key,msg,create_dt,create_by,update_dt,update_by )
+VALUES ('page.lbl.ezbiz.addParameter','Add Parameter',current,'admin',current,'admin')
+GO 
+INSERT INTO rob_locale_message( key,msg,create_dt,create_by,update_dt,update_by )
+VALUES ('page.lbl.ezbiz.parameter.edit','Edit',current,'admin',current,'admin')
+GO 
+INSERT INTO rob_locale_message( key,msg,create_dt,create_by,update_dt,update_by )
+VALUES ('page.lbl.ezbiz.comtracPage.previous','Back',current,'admin',current,'admin')
+GO 
+INSERT INTO rob_locale_message( key,msg,create_dt,create_by,update_dt,update_by )
+VALUES ('page.lbl.ezbiz.listTraining.attendees','Attendees',current,'admin',current,'admin')
+GO 
+INSERT INTO rob_locale_message( key,msg,create_dt,create_by,update_dt,update_by )
+VALUES ('page.lbl.ezbiz.listTraining.edit','Edit',current,'admin',current,'admin')
+GO 
+INSERT INTO rob_locale_message( key,msg,create_dt,create_by,update_dt,update_by )
+VALUES ('page.lbl.ezbiz.listTraining.fee','Fee',current,'admin',current,'admin')
+GO 
+INSERT INTO rob_locale_message( key,msg,create_dt,create_by,update_dt,update_by )
+VALUES ('page.lbl.ezbiz.listTraining.trainingDt','Training Date',current,'admin',current,'admin')
+GO 
+INSERT INTO rob_locale_message( key,msg,create_dt,create_by,update_dt,update_by )
+VALUES ('page.lbl.ezbiz.listTraining.status','Status',current,'admin',current,'admin')
+GO 
+INSERT INTO rob_locale_message( key,msg,create_dt,create_by,update_dt,update_by )
+VALUES ('comtrac.registration.lbl.trainingDt','Training Date',current,'admin',current,'admin')
+GO 
+INSERT INTO rob_locale_message( key,msg,create_dt,create_by,update_dt,update_by )
+VALUES ('page.lbl.ezbiz.searchComtracList.receiptNo','Receipt No',current,'admin',current,'admin')
+GO 
+INSERT INTO rob_locale_message( key,msg,create_dt,create_by,update_dt,update_by )
+VALUES ('page.lbl.ezbiz.searchComtracList.search','Search',current,'admin',current,'admin')
+GO 
+INSERT INTO rob_locale_message( key,msg,create_dt,create_by,update_dt,update_by )
+VALUES ('page.lbl.ezbiz.searchComtracList.lodgerId','Lodger IC',current,'admin',current,'admin')
+GO 
+INSERT INTO rob_locale_message( key,msg,create_dt,create_by,update_dt,update_by )
+VALUES ('page.lbl.ezbiz.searchComtracList.invoiceNo','Invoice No',current,'admin',current,'admin')
+GO 
+INSERT INTO rob_locale_message( key,msg,create_dt,create_by,update_dt,update_by )
+VALUES ('page.lbl.ezbiz.searchComtracList.transactionNo','Transaction No',current,'admin',current,'admin')
+GO 
+INSERT INTO rob_locale_message( key,msg,create_dt,create_by,update_dt,update_by )
+VALUES ('page.lbl.ezbiz.searchComtracList.dtFrom','Date From',current,'admin',current,'admin')
+GO 
+INSERT INTO rob_locale_message( key,msg,create_dt,create_by,update_dt,update_by )
+VALUES ('page.lbl.ezbiz.searchComtracList.louloaNo','Lou/Loa No',current,'admin',current,'admin')
+GO 
+INSERT INTO rob_locale_message( key,msg,create_dt,create_by,update_dt,update_by )
+VALUES ('page.lbl.ezbiz.searchComtracList.status','Status',current,'admin',current,'admin')
+GO 
+INSERT INTO rob_locale_message( key,msg,create_dt,create_by,update_dt,update_by )
+VALUES ('page.title.ezbiz.comtracTransactions','Comtrac Transactions',current,'admin',current,'admin')
+GO 
+INSERT INTO rob_locale_message( key,msg,create_dt,create_by,update_dt,update_by )
+VALUES ('page.lbl.ezbiz.comtracListStatus.status','Status',current,'admin',current,'admin')
+GO 
+INSERT INTO rob_locale_message( key,msg,create_dt,create_by,update_dt,update_by )
+VALUES ('page.lbl.ezbiz.comtracListStatus.createDt','Create Date',current,'admin',current,'admin')
+GO 
+INSERT INTO rob_locale_message( key,msg,create_dt,create_by,update_dt,update_by )
+VALUES ('page.lbl.ezbiz.comtracListStatus.createBy','Create By',current,'admin',current,'admin')
+GO 
+INSERT INTO rob_locale_message( key,msg,create_dt,create_by,update_dt,update_by )
+VALUES ('page.error.datanotvalid','Ops! Something wrong',current,'admin',current,'admin')
+GO 
+INSERT INTO rob_locale_message( key,msg,create_dt,create_by,update_dt,update_by )
+VALUES ('error.renewal.datanotvalid','Your data no longer valid. We automatically cancel your transaction. Please make new transaction.',current,'admin',current,'admin')
+GO 
+INSERT INTO rob_locale_message( key,msg,create_dt,create_by,update_dt,update_by )
+VALUES ('page.error.somethingwrong','Ops! Something wrong',current,'admin',current,'admin')
+GO 
+INSERT INTO rob_locale_message( key,msg,create_dt,create_by,update_dt,update_by )
+VALUES ('page.title.ezbiz.myCardTransaction','My Card Transaction',current,'admin',current,'admin')
+GO 
+INSERT INTO rob_locale_message( key,msg,create_dt,create_by,update_dt,update_by )
+VALUES ('page.ssm.ezbiz.searchMyCardList.search','Search',current,'admin',current,'admin')
+GO 
+INSERT INTO rob_locale_message( key,msg,create_dt,create_by,update_dt,update_by )
+VALUES ('user.page.userList.createDtFrom','Create Date From',current,'admin',current,'admin')
+GO 
+INSERT INTO rob_locale_message( key,msg,create_dt,create_by,update_dt,update_by )
+VALUES ('user.page.userList.createDtTo','Create Date To',current,'admin',current,'admin')
+GO 
+INSERT INTO rob_locale_message( key,msg,create_dt,create_by,update_dt,update_by )
+VALUES ('lbl.page.editcomtrac.feeinfo','Fee Information (Inclusive GST)',current,'admin',current,'admin')
+GO 
+INSERT INTO rob_locale_message( key,msg,create_dt,create_by,update_dt,update_by )
+VALUES ('lbl.page.editcomtrac.traininginfo','Training Information',current,'admin',current,'admin')
+GO 
+INSERT INTO rob_locale_message( key,msg,create_dt,create_by,update_dt,update_by )
+VALUES ('lbl.page.editcomtrac.trainingdesc','Training Description',current,'admin',current,'admin')
+GO 
+INSERT INTO rob_locale_message( key,msg,create_dt,create_by,update_dt,update_by )
+VALUES ('page.ssm.ezbiz.searchMyCardList.name','Name',current,'admin',current,'admin')
+GO 
+INSERT INTO rob_locale_message( key,msg,create_dt,create_by,update_dt,update_by )
+VALUES ('page.ssm.ezbiz.searchMyCardList.myKadNo','Ic Number',current,'admin',current,'admin')
+GO 
+INSERT INTO rob_locale_message( key,msg,create_dt,create_by,update_dt,update_by )
+VALUES ('user.page.userList.userApprovedBy','Approved By',current,'admin',current,'admin')
+GO 
+INSERT INTO rob_locale_message( key,msg,create_dt,create_by,update_dt,update_by )
+VALUES ('user.page.userList.appDtTo','Approve Date To',current,'admin',current,'admin')
+GO 
+INSERT INTO rob_locale_message( key,msg,create_dt,create_by,update_dt,update_by )
+VALUES ('user.page.userList.appDtFrom','Approve Date From',current,'admin',current,'admin')
+GO 
+INSERT INTO rob_locale_message( key,msg,create_dt,create_by,update_dt,update_by )
+VALUES ('page.ssm.ezbiz.searchMyCardList.adUserRequester','Approve By',current,'admin',current,'admin')
+GO 
+INSERT INTO rob_locale_message( key,msg,create_dt,create_by,update_dt,update_by )
+VALUES ('page.ssm.ezbiz.searchMyCardList.thumbPrintSuccess','Thumb Print',current,'admin',current,'admin')
+GO 
+INSERT INTO rob_locale_message( key,msg,create_dt,create_by,update_dt,update_by )
+VALUES ('page.ssm.ezbiz.searchMyCardList.action','Action',current,'admin',current,'admin')
+GO 
+INSERT INTO rob_locale_message( key,msg,create_dt,create_by,update_dt,update_by )
+VALUES ('page.lbl.ezbiz.selectComtracTraining.noSeatError','No available seat for booking. Please try again later.',current,'admin',current,'admin')
+GO 
+INSERT INTO rob_locale_message( key,msg,create_dt,create_by,update_dt,update_by )
+VALUES ('page.lbl.ezbiz.selectComtracTraining.noSeatErrorDesc','If you already booked your seat(s), please proceed to make payment.',current,'admin',current,'admin')
+GO 
+INSERT INTO rob_locale_message( key,msg,create_dt,create_by,update_dt,update_by )
+VALUES ('page.lbl.ezbiz.selectComtracTraining.noRegCloseError','Sorry, training registration already closed.',current,'admin',current,'admin')
+GO 
+INSERT INTO rob_locale_message( key,msg,create_dt,create_by,update_dt,update_by )
+VALUES ('page.title.ezbiz.myCardDetailPage','User Information',current,'admin',current,'admin')
+GO 
+INSERT INTO rob_locale_message( key,msg,create_dt,create_by,update_dt,update_by )
+VALUES ('menu.myBiz.gafConfig','GAF Configuration',current,'admin',current,'admin')
+GO 
+INSERT INTO rob_locale_message( key,msg,create_dt,create_by,update_dt,update_by )
+VALUES ('page.ssm.ezbiz.myCardDetailPage.basicInfo','Basic Information',current,'admin',current,'admin')
+GO 
+INSERT INTO rob_locale_message( key,msg,create_dt,create_by,update_dt,update_by )
+VALUES ('page.lbl.ezbiz.myCardDetailPage.name','Name',current,'admin',current,'admin')
+GO 
+INSERT INTO rob_locale_message( key,msg,create_dt,create_by,update_dt,update_by )
+VALUES ('page.lbl.ezbiz.myCardDetailPage.mykadNo','IC Number',current,'admin',current,'admin')
+GO 
+INSERT INTO rob_locale_message( key,msg,create_dt,create_by,update_dt,update_by )
+VALUES ('page.lbl.ezbiz.myCardDetailPage.dob','Date Of Birth',current,'admin',current,'admin')
+GO 
+INSERT INTO rob_locale_message( key,msg,create_dt,create_by,update_dt,update_by )
+VALUES ('page.lbl.ezbiz.myCardDetailPage.birthPlace','Place of Birth',current,'admin',current,'admin')
+GO 
+INSERT INTO rob_locale_message( key,msg,create_dt,create_by,update_dt,update_by )
+VALUES ('page.lbl.ezbiz.myCardDetailPage.citizenship','Citizenship',current,'admin',current,'admin')
+GO 
+INSERT INTO rob_locale_message( key,msg,create_dt,create_by,update_dt,update_by )
+VALUES ('page.lbl.ezbiz.myCardDetailPage.race','Race',current,'admin',current,'admin')
+GO 
+INSERT INTO rob_locale_message( key,msg,create_dt,create_by,update_dt,update_by )
+VALUES ('page.lbl.ezbiz.myCardDetailPage.religion','Religion',current,'admin',current,'admin')
+GO 
+INSERT INTO rob_locale_message( key,msg,create_dt,create_by,update_dt,update_by )
+VALUES ('page.lbl.ezbiz.myCardDetailPage.gender','Gender',current,'admin',current,'admin')
+GO 
+INSERT INTO rob_locale_message( key,msg,create_dt,create_by,update_dt,update_by )
+VALUES ('page.ssm.ezbiz.myCardDetailPage.contactInfo','Contact Information',current,'admin',current,'admin')
+GO 
+INSERT INTO rob_locale_message( key,msg,create_dt,create_by,update_dt,update_by )
+VALUES ('page.lbl.ezbiz.myCardDetailPage.state','State',current,'admin',current,'admin')
+GO 
+INSERT INTO rob_locale_message( key,msg,create_dt,create_by,update_dt,update_by )
+VALUES ('page.lbl.ezbiz.myCardDetailPage.city','City',current,'admin',current,'admin')
+GO 
+INSERT INTO rob_locale_message( key,msg,create_dt,create_by,update_dt,update_by )
+VALUES ('page.lbl.ezbiz.myCardDetailPage.address','Address',current,'admin',current,'admin')
+GO 
+INSERT INTO rob_locale_message( key,msg,create_dt,create_by,update_dt,update_by )
+VALUES ('page.lbl.ezbiz.myCardDetailPage.postcode','Postcode',current,'admin',current,'admin')
+GO 
+INSERT INTO rob_locale_message( key,msg,create_dt,create_by,update_dt,update_by )
+VALUES ('myCardDetailPage.panel.printButton','Print',current,'admin',current,'admin')
+GO 
+INSERT INTO rob_locale_message( key,msg,create_dt,create_by,update_dt,update_by )
+VALUES ('istParticipant.createDt','Create Date',current,'admin',current,'admin')
+GO 
+INSERT INTO rob_locale_message( key,msg,create_dt,create_by,update_dt,update_by )
+VALUES ('listParticipant.createDt','Create Date',current,'admin',current,'admin')
+GO 
+INSERT INTO rob_locale_message( key,msg,create_dt,create_by,update_dt,update_by )
+VALUES ('page.lbl.ezbiz.comtracPage.printConfirmation','Download Confirmation Slip',current,'admin',current,'admin')
+GO 
+INSERT INTO rob_locale_message( key,msg,create_dt,create_by,update_dt,update_by )
+VALUES ('page.lbl.ezbiz.myCardDetailPage.thumbPrintSuccess','Thumb Print',current,'admin',current,'admin')
+GO 
+INSERT INTO rob_locale_message( key,msg,create_dt,create_by,update_dt,update_by )
+VALUES ('page.ssm.ezbiz.myCardDetailPage.internalInfo','Internal Information',current,'admin',current,'admin')
+GO 
+INSERT INTO rob_locale_message( key,msg,create_dt,create_by,update_dt,update_by )
+VALUES ('page.lbl.ezbiz.myCardDetailPage.ipAddress','Ip Address',current,'admin',current,'admin')
+GO 
+INSERT INTO rob_locale_message( key,msg,create_dt,create_by,update_dt,update_by )
+VALUES ('page.lbl.ezbiz.myCardDetailPage.adUserRequester','Approve By',current,'admin',current,'admin')
+GO 
+INSERT INTO rob_locale_message( key,msg,create_dt,create_by,update_dt,update_by )
+VALUES ('page.lbl.ezbiz.myCardDetailPage.createDt','Create Date',current,'admin',current,'admin')
+GO 
+INSERT INTO rob_locale_message( key,msg,create_dt,create_by,update_dt,update_by )
+VALUES ('page.lbl.ezbiz.myCardDetailPage.createBy','Create By',current,'admin',current,'admin')
+GO 
+INSERT INTO rob_locale_message( key,msg,create_dt,create_by,update_dt,update_by )
+VALUES ('page.lbl.ezbiz.tabComtracPage.cancelLink','Cancel',current,'admin',current,'admin')
+GO 
+INSERT INTO rob_locale_message( key,msg,create_dt,create_by,update_dt,update_by )
+VALUES ('page.lbl.ezbiz.robFormASearch.createBy','Create By',current,'admin',current,'admin')
+GO 
+INSERT INTO rob_locale_message( key,msg,create_dt,create_by,update_dt,update_by )
+VALUES ('page.ssm.ezbiz.searchMyCardList.createBy','Create By',current,'admin',current,'admin')
+GO 
+INSERT INTO rob_locale_message( key,msg,create_dt,create_by,update_dt,update_by )
+VALUES ('email.notification.comtrac.confirmation.subject','EZBIZ ONLINE | TRAINING CONFIRMATION FOR APPLICATION',current,'admin',current,'admin')
+GO 
+INSERT INTO rob_locale_message( key,msg,create_dt,create_by,update_dt,update_by )
+VALUES ('email.notification.comtrac.confirmation.body','Dear Sir/Madam,<br>
+<br>
+This is to inform that you will be attend a training organised by Companies Commission of Malaysia Training Academy (COMTRAC) <br>
+<br>
+Training Name: ${param0} (${param1})<br> 
+Training Date: ${param2}<br>
+Training Description: <br>
+${param3}<br>
+<br>
+Should you have any queries or require any further information please contact ${param4} at ${param5}<br> 
+<br>
+Thank you for using our services.<br> 
+<br>
+Your sincerely,<br>
+Admin',current,'admin',current,'admin')
+GO 
+INSERT INTO rob_locale_message( key,msg,create_dt,create_by,update_dt,update_by )
+VALUES ('email.notification.comtrac.lodgerConfirm.body','Dear Sir/Madam,<br>
+<br>
+This is to inform that your training application (Ref No : ${param0}) has been SUCCESSFULLY COMPLETED. <br>
+<br>
+Training Name: ${param1} (${param2})<br> 
+Training Date: ${param3}<br>
+Training Description: <br>
+${param4}<br><br>
+Total Pax: ${param5}<br>
+Amount: RM ${param6}<br>
+<br>
+You may download your Training Confirmation Slip at <a href="http://www.ezbiz.ssm.com.my">www.ezbiz.ssm.com.my</a> under menu <b>My Training List </b> > <b>Payment Success</b><br>
+<br>
+Should you have any queries or require any further information please contact us at 603-7721 4000.<br> 
+<br>
+Thank you for using our services.<br> 
+<br>
+Your sincerely,<br>
+Admin',current,'admin',current,'admin')
+GO 
+INSERT INTO rob_locale_message( key,msg,create_dt,create_by,update_dt,update_by )
+VALUES ('email.notification.comtrac.lodgerConfirm.subject','EZBIZ ONLINE | TRAINING CONFIRMATION FOR APPLICATION',current,'admin',current,'admin')
+GO 
+INSERT INTO rob_locale_message( key,msg,create_dt,create_by,update_dt,update_by )
+VALUES ('page.lbl.ezbiz.comtrac.confirmToSubmit','Confirm to submit application?',current,'admin',current,'admin')
+GO 
+INSERT INTO rob_locale_message( key,msg,create_dt,create_by,update_dt,update_by )
+VALUES ('page.lbl.ezbiz.confirmation','Download Confirmation Slip',current,'admin',current,'admin')
+GO 
+INSERT INTO rob_locale_message( key,msg,create_dt,create_by,update_dt,update_by )
+VALUES ('error.renewal.dataAlreadyExist','Previous transaction still pending. Please wait before submit new transaction.',current,'admin',current,'admin')
+GO 
+
+
+
+
+
+UPDATE rob_locale_message
+SET msg='My Business Services',update_dt=current,update_by='admin' 
+WHERE key='menu.myBiz.services'
+GO 
+UPDATE rob_locale_message
+SET msg='Address	',update_dt=current,update_by='admin' 
+WHERE key='page.lbl.ezbiz.robFormA.robFormABranch.addr'
+GO 
+UPDATE rob_locale_message
+SET msg='listParticipant.backButton=Back',update_dt=current,update_by='admin' 
+WHERE key='value'
+GO 
+UPDATE rob_locale_message
+SET msg='Status	',update_dt=current,update_by='admin' 
+WHERE key='page.lbl.ezbiz.robFormA.status'
+GO 
+UPDATE rob_locale_message
+SET msg='Create Date	',update_dt=current,update_by='admin' 
+WHERE key='page.lbl.ezbiz.robFormA.createDt'
+GO 
+UPDATE rob_locale_message
+SET msg='PAY OVER THE COUNTER',update_dt=current,update_by='admin' 
+WHERE key='paymentdetails.page.payOtc'
+GO 
+UPDATE rob_locale_message
+SET msg='Recheck All',update_dt=current,update_by='admin' 
+WHERE key='HealthCheckPage.btnCheck.label'
+GO 
+UPDATE rob_locale_message
+SET msg='Payment Receipt Report',update_dt=current,update_by='admin' 
+WHERE key='menu.myBiz.searchPaymentReceipt'
+GO 

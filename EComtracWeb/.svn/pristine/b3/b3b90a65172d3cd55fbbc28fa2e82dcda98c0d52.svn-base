@@ -1,0 +1,232 @@
+<wicket:extend>
+	<form wicket:id="robFormB1Form">
+		<script type="text/javascript" wicket:id="b1Validation"></script>
+		<table width="100%">
+			<tr>
+				<td>
+					<div class="ui checkbox field">
+						<input wicket:id="isB1" type="checkbox" />
+						<label><span wicket:id="isB1Label" /></label>
+					</div>
+				</td>
+			</tr>
+			<tr>
+				<td valign="top">
+					<div class="ui top attached segment">
+						<div class="ui top attached label">
+							<h4 class="ui header"><wicket:message key="page.lbl.ezbiz.robFormB1.currentMainAddress" /></h4>
+						</div>
+						<table>
+							<tr>
+								<td><span wicket:id="currentMainAddress" /></td>
+							</tr>
+						</table>
+					</div>
+				</td>
+				<td>&nbsp;</td>
+				<td valign="top">
+					<div class="ui top attached segment">
+						<div class="ui top attached label">
+							<h4 class="ui header"><wicket:message key="page.lbl.ezbiz.robFormB1.currentPostAddress" /></h4>
+						</div>
+						<table>
+							<tr>
+								<td><span wicket:id="currentPostAddress" /></td>
+							</tr>
+						</table>
+					</div>
+				</td>
+			</tr>
+			<tr>
+				<td>&nbsp;</td>
+			</tr>
+			<tr>
+				<td colspan="3">
+					<div wicket:id="wmcB1">
+					<table width="100%">
+						<tr>
+							<td>
+								<div class="field inline">
+									<label><span wicket:id="b1AmmendmendDtLabel" /></label>
+									<input wicket:id="b1AmmendmendDt" style="width: 150;"/>
+									<!--br>
+									<span wicket:id="b1AmmendmendDtWarning" style="color: red;" class="blink_text"></span-->
+								</div>
+							</td>
+						</tr>
+						<tr>
+							<td>&nbsp;</td>
+						</tr>
+						<tr>
+							<td valign="top">
+								<div class="ui top attached segment">
+									<div class="ui top attached label">
+										<h4 class="ui header"><wicket:message key="page.lbl.ezbiz.robFormB1.mainAddress" /></h4>
+									</div>
+									<table>
+										<tr>
+											<td>&nbsp;</td>
+										</tr>
+										<tr>
+											<td>&nbsp;</td>
+										</tr>
+										<tr>
+											<td>
+											<div class="field">
+												<label><span wicket:id="bizMainAddrLabel" /></label>
+															<input wicket:id="bizMainAddr" type="text" /><br><br>
+												<input wicket:id="bizMainAddr2" type="text"/><br><br>
+												<input wicket:id="bizMainAddr3" type="text"/>
+											</div>
+											</td>
+										</tr>
+										<tr><td>
+											<div class="two fields">
+												<div class="field">
+													<label><span wicket:id="bizMainAddrPostcodeLabel" /></label>
+																<input wicket:id="bizMainAddrPostcode" />
+															</div>
+												<div class="field">
+													<label><span wicket:id="bizMainAddrTownTmpLabel" /></label>
+													<select wicket:id="bizMainAddrTownTmp"> </select>
+															</div>
+											</div>
+											</td>
+										</tr>
+										<tr>
+											<td>
+											<div class="field">
+												<label><span wicket:id="bizMainAddrStateDescLabel"/></label>
+												<input wicket:id="bizMainAddrStateDesc" />
+											</div>
+											</td>
+										</tr>
+										<tr>
+											<td>
+											<div class="two fields">
+												<div class="field">
+													<label><span wicket:id="bizMainAddrTelNoLabel" /></label>
+													<input wicket:id="bizMainAddrTelNo" type="text" />
+															</div>
+															<div class="field">
+													<label><span wicket:id="bizMainAddrMobileNoLabel" /></label>
+																<input wicket:id="bizMainAddrMobileNo" />
+															</div>
+											</div>
+											</td>
+										</tr>
+										<tr>
+											<td>
+											<div class="field">
+												<label><span wicket:id="bizMainAddrEmailLabel" /></label>
+															<input type="text" wicket:id="bizMainAddrEmail"/>
+											</div>
+											</td>
+										</tr>
+										
+										<tr>
+											<td>
+											<div class="field">
+												<label><span wicket:id="bizMainAddrUrlLabel" /></label>
+   												<input type="text" wicket:id="bizMainAddrUrl"/>
+											</div>
+											</td>
+										</tr>
+										
+									</table>
+								</div>
+							</td>
+							<td>&nbsp;</td>
+							<td>
+								<div class="ui top attached segment">
+									<div class="ui top attached label">
+										<h4 class="ui header"><wicket:message key="page.lbl.ezbiz.robFormB1.postAddress" /></h4>
+									</div>
+									<table>
+										<tr>
+											<td>
+												<input wicket:id="copyFromMainAddr" type="button" class="ui primary button" />
+														</td>
+										</tr>
+										<tr>
+											<td>
+											<div class="field">
+												<label><span wicket:id="bizPostAddrLabel" /></label>
+															<input wicket:id="bizPostAddr" type="text"/><br><br>
+												<input wicket:id="bizPostAddr2" type="text"/><br><br>
+												<input wicket:id="bizPostAddr3" type="text"/>
+											</div>
+											</td>
+										</tr>
+										<tr>
+											<td>
+											<div class="two fields">
+												<div class="field">
+													<label><span wicket:id="bizPostAddrPostcodeLabel" /></label>
+																<input wicket:id="bizPostAddrPostcode" />
+															</div>
+												<div class="field">
+													<label><span wicket:id="bizPostAddrTownTmpLabel" /></label>
+													<select wicket:id="bizPostAddrTownTmp" > </select>
+															</div>
+															
+											</div>
+											</td>
+										</tr>
+										<tr>
+											<td>
+											<div class="field">
+												<label><span wicket:id="bizPostAddrStateDescLabel" /></label>
+															<input wicket:id="bizPostAddrStateDesc" />
+											</div>
+											</td>
+										</tr>
+										<tr>
+											<td>
+											<div class="two fields">
+												<div class="field">
+													<label><span wicket:id="bizPostAddrTelNoLabel" /></label>
+													<input wicket:id="bizPostAddrTelNo" type="text" />
+															</div>
+															<div class="field">
+													<label><span wicket:id="bizPostAddrMobileNoLabel" /></label>
+																<input wicket:id="bizPostAddrMobileNo" />
+															</div>
+											</div>
+											</td>
+										</tr>
+										<tr>
+											<td>
+											<div class="field">
+												<label><span wicket:id="bizPostAddrEmailLabel" /></label>
+															<input type="text" wicket:id="bizPostAddrEmail">
+											</div>
+											</td>
+										</tr>
+										<tr>
+											<td>
+											<div class="field">
+												<label>&nbsp;</label>
+												<input type="text" style="visibility: hidden;" />
+											</div>
+											</td>
+										</tr>
+									</table>
+								</div>
+							</td>
+						</tr>
+					</table>
+					</div>
+				</td>
+			</tr>
+			<tr>
+				<td>&nbsp;</td>
+			</tr>
+			<tr>
+				<td align="right" colspan="3">
+				<button class="ui button negative" wicket:id="discard" ><wicket:message key="page.lbl.ezbiz.robFormB.discard" /></button>
+				<input wicket:id="b1Next" type="button" class="ui primary button" /></td>
+			</tr>
+		</table>
+	</form>
+</wicket:extend>

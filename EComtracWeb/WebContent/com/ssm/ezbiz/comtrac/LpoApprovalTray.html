@@ -1,0 +1,97 @@
+<wicket:extend>
+	<form wicket:id="form" >
+		<div id="SearchFormA" class="ui form">
+			<table>
+				<tr>
+					<td>
+						<div class="ui top attached segment">
+							<div class="ui top attached label">
+								<h4 class="ui header">
+									<wicket:message key="page.lbl.ecomtrac.lpoSearch" />
+								</h4>
+							</div>
+							<table>
+								<tr>
+									<td>
+										<div class="field">
+											<label><span wicket:id="transactionCodeLabel" /></label> <input type="text" wicket:id="transactionCode">
+										</div>
+									</td>
+								</tr>
+								<!-- <tr>
+									<td>
+										<div class="field">
+											<label><span wicket:id="icNoLabel" /></label> <input type="text" wicket:id="icNo">
+										</div>
+									</td>
+								</tr> -->
+								<tr>
+									<td>
+										<div class="two fields">
+											<div class="field">
+												<label><span wicket:id="createDtFromLabel" /></label> <input wicket:id="createDtFrom" style="width: 150;" />
+											</div>
+											<div class="field">
+												<label><span wicket:id="createDtToLabel" /></label> <input wicket:id="createDtTo" style="width: 150;" />
+											</div>
+										</div>
+									</td>
+								</tr>
+								<tr>
+									<td>
+										<div class="field">
+											<label><span wicket:id="statusLabel" /></label> <select style="width: 180px;" wicket:id="status" /> 
+										</div>
+									</td>
+								</tr>
+								<!-- <tr><td>&nbsp;</td></tr> -->
+								<tr>
+									<td><input wicket:id="search" type="button" class="ui primary button" value="Search" /></td>
+								</tr>
+							</table>
+						</div>
+					</td>
+				</tr>
+			</table>
+		</div>
+		<br>
+		<div wicket:id="wmcSearchResult">
+			<table class="ui striped table">
+			  <thead>
+			    	<tr>
+			    	<th width="10%"><wicket:message key="page.lbl.comtrac.lpo.transactionCode" /></th>
+					<th width="10%"><wicket:message key="page.lbl.comtrac.lpo.trainingCode" /></th>
+					<th width="26%"><wicket:message key="page.lbl.comtrac.lpo.trainingName" /></th>
+					<th width="8%"><wicket:message key="page.lbl.comtrac.lpo.status" /></th>
+					<th width="8%"><wicket:message key="page.lbl.comtrac.lpo.createDt" /></th>
+					<!-- <th width="10%"><wicket:message key="page.lbl.comtrac.lpo.updateDt" /></th> -->
+					<th width="8%"><wicket:message key="page.lbl.comtrac.lpo.action" /></th>
+			  	</tr>
+			  </thead>
+			  <tbody>
+			    <tr wicket:id="sorting">
+					<td><span wicket:id="transactionCode">[transactionCode]</span></td>
+					<td><span wicket:id="trainingCode">[trainingCode]</span></td>
+					<td><span wicket:id="trainingName">[trainingName]</span></td>
+					<td><span wicket:id="status">[status]</span></td>
+					<td><span wicket:id="createDt">[createDt]</span></td>
+					<!-- <td><span wicket:id="updateDt">[updateDt]</span></td> -->
+					<td class="manage-link">
+					<button class="ui icon labeled button mini primary" wicket:id="detail">
+					  <i class="unhide icon" /> View
+					</button>
+						 
+					</td>
+				</tr>
+			  </tbody>
+			  <tfoot>
+			    <tr>
+			    	<th colspan="100">
+			    		<span wicket:id="navigatorLabel">[dataView navigatorLabel]</span>
+				        <span wicket:id="navigator">[dataView navigator]</span>
+			    	</th>
+			  </tr></tfoot>
+			</table>
+		</div>
+	</form>
+</wicket:extend>

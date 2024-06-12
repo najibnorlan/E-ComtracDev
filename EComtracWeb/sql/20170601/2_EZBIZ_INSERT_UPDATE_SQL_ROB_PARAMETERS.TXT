@@ -1,0 +1,102 @@
+execute procedure ifx_allow_newline('t')
+GO
+
+---COMTRAC_FEE_TYPE----
+INSERT INTO rob_parameters( code,code_desc,code_type,parent_code_type,parent_code,status,create_dt,create_by,update_dt,update_by )
+VALUES ('LS','License Secretary','COMTRAC_FEE_TYPE',null,null,'A',current,'admin',current,'admin')
+GO 
+INSERT INTO rob_parameters( code,code_desc,code_type,parent_code_type,parent_code,status,create_dt,create_by,update_dt,update_by )
+VALUES ('MEMBER','Member of Prescribed Body','COMTRAC_FEE_TYPE',null,null,'A',current,'admin',current,'admin')
+GO 
+INSERT INTO rob_parameters( code,code_desc,code_type,parent_code_type,parent_code,status,create_dt,create_by,update_dt,update_by )
+VALUES ('ST','Standard','COMTRAC_FEE_TYPE',null,null,'A',current,'admin',current,'admin')
+GO 
+
+
+---COMTRAC_PAYMENT_CHANNEL----
+INSERT INTO rob_parameters( code,code_desc,code_type,parent_code_type,parent_code,status,create_dt,create_by,update_dt,update_by )
+VALUES ('bt','Bank Transfer','COMTRAC_PAYMENT_CHANNEL',null,null,'A',current,'admin',current,'admin')
+GO 
+INSERT INTO rob_parameters( code,code_desc,code_type,parent_code_type,parent_code,status,create_dt,create_by,update_dt,update_by )
+VALUES ('ccs','CCS','COMTRAC_PAYMENT_CHANNEL',null,null,'A',current,'admin',current,'admin')
+GO 
+INSERT INTO rob_parameters( code,code_desc,code_type,parent_code_type,parent_code,status,create_dt,create_by,update_dt,update_by )
+VALUES ('post','Post','COMTRAC_PAYMENT_CHANNEL',null,null,'A',current,'admin',current,'admin')
+GO 
+INSERT INTO rob_parameters( code,code_desc,code_type,parent_code_type,parent_code,status,create_dt,create_by,update_dt,update_by )
+VALUES ('ezbiz','EzBiz','COMTRAC_PAYMENT_CHANNEL',null,null,'A',current,'admin',current,'admin')
+GO 
+
+
+---COMTRAC_REGISTRATION_CHANNEL----
+INSERT INTO rob_parameters( code,code_desc,code_type,parent_code_type,parent_code,status,create_dt,create_by,update_dt,update_by )
+VALUES ('fax','Fax','COMTRAC_REGISTRATION_CHANNEL',null,null,'A',current,'admin',current,'admin')
+GO 
+INSERT INTO rob_parameters( code,code_desc,code_type,parent_code_type,parent_code,status,create_dt,create_by,update_dt,update_by )
+VALUES ('ezbiz','EzBiz','COMTRAC_REGISTRATION_CHANNEL',null,null,'A',current,'admin',current,'admin')
+GO 
+INSERT INTO rob_parameters( code,code_desc,code_type,parent_code_type,parent_code,status,create_dt,create_by,update_dt,update_by )
+VALUES ('email','Email','COMTRAC_REGISTRATION_CHANNEL',null,null,'A',current,'admin',current,'admin')
+GO 
+
+
+---COMTRAC_TRANSACTION_STATUS----
+INSERT INTO rob_parameters( code,code_desc,code_type,parent_code_type,parent_code,status,create_dt,create_by,update_dt,update_by )
+VALUES ('PS','Payment Success','COMTRAC_TRANSACTION_STATUS',null,null,'A',current,'admin',current,'admin')
+GO 
+INSERT INTO rob_parameters( code,code_desc,code_type,parent_code_type,parent_code,status,create_dt,create_by,update_dt,update_by )
+VALUES ('PP','Pending Payment','COMTRAC_TRANSACTION_STATUS',null,null,'A',current,'admin',current,'admin')
+GO 
+INSERT INTO rob_parameters( code,code_desc,code_type,parent_code_type,parent_code,status,create_dt,create_by,update_dt,update_by )
+VALUES ('DE','Data Entry','COMTRAC_TRANSACTION_STATUS',null,null,'A',current,'admin',current,'admin')
+GO 
+INSERT INTO rob_parameters( code,code_desc,code_type,parent_code_type,parent_code,status,create_dt,create_by,update_dt,update_by )
+VALUES ('C','Cancel','COMTRAC_TRANSACTION_STATUS',null,null,'A',current,'admin',current,'admin')
+GO 
+
+
+---GAF_CONFIG----
+INSERT INTO rob_parameters( code,code_desc,code_type,parent_code_type,parent_code,status,create_dt,create_by,update_dt,update_by )
+VALUES ('CASH_MOVE_ACCOUNT_CODE_DB','S-H01-000-000-A11129','GAF_CONFIG',null,null,'A',current,'admin',current,'admin')
+GO 
+INSERT INTO rob_parameters( code,code_desc,code_type,parent_code_type,parent_code,status,create_dt,create_by,update_dt,update_by )
+VALUES ('CASH_MOVE_ACCOUNT_CODE_CR','S-H01-000-000-A16003','GAF_CONFIG',null,null,'A',current,'admin',current,'admin')
+GO 
+INSERT INTO rob_parameters( code,code_desc,code_type,parent_code_type,parent_code,status,create_dt,create_by,update_dt,update_by )
+VALUES ('GAF_COMTRAC_ACC_CODE','NOT_CONFIG_YET','GAF_CONFIG',null,null,'A',current,'admin',current,'admin')
+GO 
+
+
+---LLP_CONFIG----
+INSERT INTO rob_parameters( code,code_desc,code_type,parent_code_type,parent_code,status,create_dt,create_by,update_dt,update_by )
+VALUES ('IS_FILTER_USER_LIST_COMTRAC','N','LLP_CONFIG',null,null,'A',current,'admin',current,'admin')
+GO 
+INSERT INTO rob_parameters( code,code_desc,code_type,parent_code_type,parent_code,status,create_dt,create_by,update_dt,update_by )
+VALUES ('FILTER_USER_LIST_COMTRAC','SSM:mhaziq,SSM:trafidah','LLP_CONFIG',null,null,'A',current,'admin',current,'admin')
+GO 
+INSERT INTO rob_parameters( code,code_desc,code_type,parent_code_type,parent_code,status,create_dt,create_by,update_dt,update_by )
+VALUES ('IS_FILTER_MYKAD_IP','N','LLP_CONFIG',null,null,'A',current,'admin',current,'admin')
+GO 
+
+
+---MYKAD_CONFIG_IP----
+INSERT INTO rob_parameters( code,code_desc,code_type,parent_code_type,parent_code,status,create_dt,create_by,update_dt,update_by )
+VALUES ('192.168.9.10','ZAM3','MYKAD_CONFIG_IP',null,null,'A',current,'admin',current,'admin')
+GO 
+
+
+
+
+---USER_APPROVED_CHANNEL----
+INSERT INTO rob_parameters( code,code_desc,code_type,parent_code_type,parent_code,status,create_dt,create_by,update_dt,update_by )
+VALUES ('COUNTER','SSM Counter','USER_APPROVED_CHANNEL',null,null,'A',current,'admin',current,'admin')
+GO 
+INSERT INTO rob_parameters( code,code_desc,code_type,parent_code_type,parent_code,status,create_dt,create_by,update_dt,update_by )
+VALUES ('SSMMYKAD','SSM MyKad','USER_APPROVED_CHANNEL',null,null,'A',current,'admin',current,'admin')
+GO 
+INSERT INTO rob_parameters( code,code_desc,code_type,parent_code_type,parent_code,status,create_dt,create_by,update_dt,update_by )
+VALUES ('SSMKIOSK','SSM Kiosk','USER_APPROVED_CHANNEL',null,null,'A',current,'admin',current,'admin')
+GO 
+
+
+

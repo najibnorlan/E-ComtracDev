@@ -1,0 +1,127 @@
+<wicket:extend>
+
+	 <wicket:enclosure child="searchPartnerCriteriaPanel">
+	 <span wicket:id="searchPartnerCriteriaPanel"></span> 
+	 </wicket:enclosure>
+	 
+	 <wicket:enclosure child="inputForm">
+	<form wicket:id="inputForm" id="inputForm">
+		<table >
+				<tr>
+					<td><span wicket:id="llpUserProfile.nameLabel"/></td>
+					<td colspan="4"><input wicket:id="llpUserProfile.name" type="text" size="115" /></td>
+				</tr>
+				<tr>
+						<td><span wicket:id="llpUserProfile.idTypeLabel"/></td>
+						<td colspan = "4"><select wicket:id="llpUserProfile.idType" /></td>
+						
+					</tr>
+
+					<tr>
+						<td><span wicket:id="llpUserProfile.idNoLabel"/></td>
+						<td colspan = "4"><input wicket:id="llpUserProfile.idNo" type="text" size="19" /></td>
+						
+					</tr>
+
+  
+					<tr>
+						<td><span wicket:id="llpUserProfile.dobLabel"/></td>
+						<td colspan="4"><input wicket:id="llpUserProfile.dob" size="19" /></td>
+						
+					</tr>
+
+					<tr>
+						<td><span wicket:id="llpUserProfile.nationalityLabel"/></td>
+						<td colspan="4"><select wicket:id="llpUserProfile.nationality" /></td>
+						
+					</tr>
+					
+					
+					<tr>
+						<td><span wicket:id="llpUserProfile.raceLabel"/></td>
+						<td colspan="4"><select wicket:id="llpUserProfile.race"/></td>
+						
+					</tr>
+					
+					<tr>
+						<td><span wicket:id="llpUserProfile.genderLabel"/></td>
+						<td colspan="4"><span wicket:id="llpUserProfile.gender"/></td>
+						
+					</tr>
+					<wicket:enclosure child="appointmentDate">
+					<tr>
+						<td><span wicket:id="appointmentDateLabel"/></td>
+						<td colspan="4"><input wicket:id="appointmentDate" size="19" /></td>
+					</tr>
+					</wicket:enclosure>
+		</table>
+		
+		<hr  color="grey">
+		
+		<table >
+				<tr>
+					<td><span wicket:id="add1Label"/></td>
+					<td colspan="4"><input wicket:id="add1" type="text" size="115"/></td>
+				</tr>
+
+				<tr>
+					<td></td>
+					<td colspan="4"><input wicket:id="add2" type="text" size="115"/></td>
+				</tr>
+
+				<tr>
+					<td></td>
+					<td colspan="4"><input wicket:id="add3" type="text" size="115"/></td>
+				</tr>
+
+				<tr>
+					<td><span wicket:id="postcodeLabel"/></td>
+					<td><input wicket:id="postcode" type="text" size="45"/></td>
+					<td></td>
+					<td><span wicket:id="cityLabel"/></td>
+					<td><input wicket:id="city" type="text" size="34"/></td>
+				</tr>
+
+				<tr>
+					<td><span wicket:id="countryLabel"/></td>
+					<td><select wicket:id="country"/></td>
+					<td></td>
+					<td><span wicket:id="stateLabel"/></td>
+					<td><select wicket:id="state"/></td>
+				</tr>
+
+				<tr>
+					<td><span wicket:id="offNoLabel"/></td>
+					<td><input wicket:id="offNo" type="text" size="45"/></td>
+					<td></td>
+					<td><span wicket:id="hpNoLabel"/></td>
+					<td><input wicket:id="hpNo" type="text" size="34"/></td>
+				</tr>
+
+				<tr>
+					<td><span wicket:id="faxNoLabel"/></td>
+					<td><input wicket:id="faxNo" type="text" size="45"/></td>
+					<td></td>
+					<td><span wicket:id="emailLabel"/></td>
+					<td><input wicket:id="email" type="text" size="34"/></td>
+				</tr>
+			</table>
+			<hr  color="grey">
+			
+		<table>
+				<tr>
+					<td colspan="3" align="center">
+					<input wicket:id="idPartnerLink" type="hidden"/>
+					<!--  <input wicket:id="save" type="submit" wicket:message="value:llpReg.page.saveButton"/> -->
+					<wicket:enclosure child="addNew">
+						<input wicket:id="addNew" type="button" value="Add Partner"/>
+						<input wicket:id="cancel" type="submit" value="Cancel"/>
+					</wicket:enclosure>
+					<input wicket:id="updatePartner" type="button" value="Update Partner"/>
+					</td>
+				</tr>
+			</table>
+
+	</form>	 
+	</wicket:enclosure>  
+</wicket:extend>

@@ -1,0 +1,28 @@
+<wicket:extend>
+	<form wicket:id="eSearchMobilePanelForm" role="form">
+		<table>
+			<tr>
+				<td><label><wicket:message key="page.esearch.entityType" /></label></td>
+			</tr>
+			<tr>
+				<td><select wicket:id="entityType" class="form-control"/></td>
+			</tr>
+			<tr>
+				<td><label><wicket:message key="page.esearch.entityNo" /></label></td>
+			</tr>
+			<tr>
+				<td><input wicket:id="entityNo" type="text" size="20" class="form-control"
+                 placeholder="Enter Registration No"/></td>
+			</tr>
+			<tr>
+				<td>&nbsp;</td>
+			</tr>
+			<tr>
+				<td><input type="submit" wicket:message="value:user.page.userList.buttonSearch" class="btn btn-primary btn-block"></td>
+			</tr>
+			<tr>
+				<td>&nbsp;</td>
+			</tr>
+		</table>
+	</form>
+</wicket:extend>

@@ -1,0 +1,418 @@
+execute procedure ifx_allow_newline('t')
+GO
+
+INSERT INTO rob_parameters( code,code_desc,code_type,parent_code_type,parent_code,status,create_dt,create_by,update_dt,update_by )
+VALUES ('N','Allow incentive','ALLOW_INCENTIVE',null,null,'A',current,'admin',current,'admin')
+GO 
+INSERT INTO rob_parameters( code,code_desc,code_type,parent_code_type,parent_code,status,create_dt,create_by,update_dt,update_by )
+VALUES ('Y','Allow otc payment','ALLOW_OTC_PAYMENT',null,null,'A',current,'admin',current,'admin')
+GO 
+INSERT INTO rob_parameters( code,code_desc,code_type,parent_code_type,parent_code,status,create_dt,create_by,update_dt,update_by )
+VALUES ('V','Verified','BALANCING_STATUS',null,null,'A',current,'admin',current,'admin')
+GO 
+INSERT INTO rob_parameters( code,code_desc,code_type,parent_code_type,parent_code,status,create_dt,create_by,update_dt,update_by )
+VALUES ('R','Rejected','BALANCING_STATUS',null,null,'A',current,'admin',current,'admin')
+GO 
+INSERT INTO rob_parameters( code,code_desc,code_type,parent_code_type,parent_code,status,create_dt,create_by,update_dt,update_by )
+VALUES ('A','Approved','BALANCING_STATUS',null,null,'A',current,'admin',current,'admin')
+GO 
+INSERT INTO rob_parameters( code,code_desc,code_type,parent_code_type,parent_code,status,create_dt,create_by,update_dt,update_by )
+VALUES ('No','No','BALANCING_STATUS',null,null,'A',current,'admin',current,'admin')
+GO 
+INSERT INTO rob_parameters( code,code_desc,code_type,parent_code_type,parent_code,status,create_dt,create_by,update_dt,update_by )
+VALUES ('DE','Data Entry','BALANCING_STATUS',null,null,'A',current,'admin',current,'admin')
+GO 
+INSERT INTO rob_parameters( code,code_desc,code_type,parent_code_type,parent_code,status,create_dt,create_by,update_dt,update_by )
+VALUES ('N','New','BALANCING_STATUS',null,null,'A',current,'admin',current,'admin')
+GO 
+INSERT INTO rob_parameters( code,code_desc,code_type,parent_code_type,parent_code,status,create_dt,create_by,update_dt,update_by )
+VALUES ('JM','JOHOR BAHRU','BRANCH_CODE',null,null,'A',current,'admin',current,'admin')
+GO 
+INSERT INTO rob_parameters( code,code_desc,code_type,parent_code_type,parent_code,status,create_dt,create_by,update_dt,update_by )
+VALUES ('UK','UTC PAHANG','BRANCH_CODE',null,null,'A',current,'admin',current,'admin')
+GO 
+INSERT INTO rob_parameters( code,code_desc,code_type,parent_code_type,parent_code,status,create_dt,create_by,update_dt,update_by )
+VALUES ('KT','KOTA BHARU','BRANCH_CODE',null,null,'A',current,'admin',current,'admin')
+GO 
+INSERT INTO rob_parameters( code,code_desc,code_type,parent_code_type,parent_code,status,create_dt,create_by,update_dt,update_by )
+VALUES ('UA','UTC ALOR SETAR','BRANCH_CODE',null,null,'A',current,'admin',current,'admin')
+GO 
+INSERT INTO rob_parameters( code,code_desc,code_type,parent_code_type,parent_code,status,create_dt,create_by,update_dt,update_by )
+VALUES ('EL','KUALA LUMPUR','BRANCH_CODE',null,null,'A',current,'admin',current,'admin')
+GO 
+INSERT INTO rob_parameters( code,code_desc,code_type,parent_code_type,parent_code,status,create_dt,create_by,update_dt,update_by )
+VALUES ('JR','MUAR','BRANCH_CODE',null,null,'A',current,'admin',current,'admin')
+GO 
+INSERT INTO rob_parameters( code,code_desc,code_type,parent_code_type,parent_code,status,create_dt,create_by,update_dt,update_by )
+VALUES ('TR','KUALA TERENGGANU','BRANCH_CODE',null,null,'A',current,'admin',current,'admin')
+GO 
+INSERT INTO rob_parameters( code,code_desc,code_type,parent_code_type,parent_code,status,create_dt,create_by,update_dt,update_by )
+VALUES ('CA','KUANTAN','BRANCH_CODE',null,null,'A',current,'admin',current,'admin')
+GO 
+INSERT INTO rob_parameters( code,code_desc,code_type,parent_code_type,parent_code,status,create_dt,create_by,update_dt,update_by )
+VALUES ('KL','KUALA LUMPUR','BRANCH_CODE',null,null,'A',current,'admin',current,'admin')
+GO 
+INSERT INTO rob_parameters( code,code_desc,code_type,parent_code_type,parent_code,status,create_dt,create_by,update_dt,update_by )
+VALUES ('LA','W.P. LABUAN','BRANCH_CODE',null,null,'A',current,'admin',current,'admin')
+GO 
+INSERT INTO rob_parameters( code,code_desc,code_type,parent_code_type,parent_code,status,create_dt,create_by,update_dt,update_by )
+VALUES ('RA','KANGAR','BRANCH_CODE',null,null,'A',current,'admin',current,'admin')
+GO 
+INSERT INTO rob_parameters( code,code_desc,code_type,parent_code_type,parent_code,status,create_dt,create_by,update_dt,update_by )
+VALUES ('NS','SEREMBAN','BRANCH_CODE',null,null,'A',current,'admin',current,'admin')
+GO 
+INSERT INTO rob_parameters( code,code_desc,code_type,parent_code_type,parent_code,status,create_dt,create_by,update_dt,update_by )
+VALUES ('RC','PERLIS','BRANCH_CODE',null,null,'A',current,'admin',current,'admin')
+GO 
+INSERT INTO rob_parameters( code,code_desc,code_type,parent_code_type,parent_code,status,create_dt,create_by,update_dt,update_by )
+VALUES ('KC','KEDAH','BRANCH_CODE',null,null,'A',current,'admin',current,'admin')
+GO 
+INSERT INTO rob_parameters( code,code_desc,code_type,parent_code_type,parent_code,status,create_dt,create_by,update_dt,update_by )
+VALUES ('PC','PULAU PINANG','BRANCH_CODE',null,null,'A',current,'admin',current,'admin')
+GO 
+INSERT INTO rob_parameters( code,code_desc,code_type,parent_code_type,parent_code,status,create_dt,create_by,update_dt,update_by )
+VALUES ('AC','PERAK','BRANCH_CODE',null,null,'A',current,'admin',current,'admin')
+GO 
+INSERT INTO rob_parameters( code,code_desc,code_type,parent_code_type,parent_code,status,create_dt,create_by,update_dt,update_by )
+VALUES ('BC','SELANGOR','BRANCH_CODE',null,null,'A',current,'admin',current,'admin')
+GO 
+INSERT INTO rob_parameters( code,code_desc,code_type,parent_code_type,parent_code,status,create_dt,create_by,update_dt,update_by )
+VALUES ('SW','KUCHING','BRANCH_CODE',null,null,'A',current,'admin',current,'admin')
+GO 
+INSERT INTO rob_parameters( code,code_desc,code_type,parent_code_type,parent_code,status,create_dt,create_by,update_dt,update_by )
+VALUES ('SB','KOTA KINABALU','BRANCH_CODE',null,null,'A',current,'admin',current,'admin')
+GO 
+INSERT INTO rob_parameters( code,code_desc,code_type,parent_code_type,parent_code,status,create_dt,create_by,update_dt,update_by )
+VALUES ('TW','TAWAU','BRANCH_CODE',null,null,'A',current,'admin',current,'admin')
+GO 
+INSERT INTO rob_parameters( code,code_desc,code_type,parent_code_type,parent_code,status,create_dt,create_by,update_dt,update_by )
+VALUES ('MR','MIRI','BRANCH_CODE',null,null,'A',current,'admin',current,'admin')
+GO 
+INSERT INTO rob_parameters( code,code_desc,code_type,parent_code_type,parent_code,status,create_dt,create_by,update_dt,update_by )
+VALUES ('IT','K. LUMPUR','BRANCH_CODE',null,null,'A',current,'admin',current,'admin')
+GO 
+INSERT INTO rob_parameters( code,code_desc,code_type,parent_code_type,parent_code,status,create_dt,create_by,update_dt,update_by )
+VALUES ('NC','NEGERI SEMBILAN','BRANCH_CODE',null,null,'A',current,'admin',current,'admin')
+GO 
+INSERT INTO rob_parameters( code,code_desc,code_type,parent_code_type,parent_code,status,create_dt,create_by,update_dt,update_by )
+VALUES ('MC','MELAKA','BRANCH_CODE',null,null,'A',current,'admin',current,'admin')
+GO 
+INSERT INTO rob_parameters( code,code_desc,code_type,parent_code_type,parent_code,status,create_dt,create_by,update_dt,update_by )
+VALUES ('CC','PAHANG','BRANCH_CODE',null,null,'A',current,'admin',current,'admin')
+GO 
+INSERT INTO rob_parameters( code,code_desc,code_type,parent_code_type,parent_code,status,create_dt,create_by,update_dt,update_by )
+VALUES ('TC','TERENGGANU','BRANCH_CODE',null,null,'A',current,'admin',current,'admin')
+GO 
+INSERT INTO rob_parameters( code,code_desc,code_type,parent_code_type,parent_code,status,create_dt,create_by,update_dt,update_by )
+VALUES ('DC','KELANTAN','BRANCH_CODE',null,null,'A',current,'admin',current,'admin')
+GO 
+INSERT INTO rob_parameters( code,code_desc,code_type,parent_code_type,parent_code,status,create_dt,create_by,update_dt,update_by )
+VALUES ('JC','JOHOR','BRANCH_CODE',null,null,'A',current,'admin',current,'admin')
+GO 
+INSERT INTO rob_parameters( code,code_desc,code_type,parent_code_type,parent_code,status,create_dt,create_by,update_dt,update_by )
+VALUES ('CT','TEMERLOH','BRANCH_CODE',null,null,'A',current,'admin',current,'admin')
+GO 
+INSERT INTO rob_parameters( code,code_desc,code_type,parent_code_type,parent_code,status,create_dt,create_by,update_dt,update_by )
+VALUES ('MP','MAJLIS PERBANDARAN SELAYANG','BRANCH_CODE',null,null,'A',current,'admin',current,'admin')
+GO 
+INSERT INTO rob_parameters( code,code_desc,code_type,parent_code_type,parent_code,status,create_dt,create_by,update_dt,update_by )
+VALUES ('MY','MYCOID','BRANCH_CODE',null,null,'A',current,'admin',current,'admin')
+GO 
+INSERT INTO rob_parameters( code,code_desc,code_type,parent_code_type,parent_code,status,create_dt,create_by,update_dt,update_by )
+VALUES ('KD','KPDNKK PUTRAJAYA  ','BRANCH_CODE',null,null,'A',current,'admin',current,'admin')
+GO 
+INSERT INTO rob_parameters( code,code_desc,code_type,parent_code_type,parent_code,status,create_dt,create_by,update_dt,update_by )
+VALUES ('DB','DEWAN BANDARAYA KUALA LUMPUR','BRANCH_CODE',null,null,'A',current,'admin',current,'admin')
+GO 
+INSERT INTO rob_parameters( code,code_desc,code_type,parent_code_type,parent_code,status,create_dt,create_by,update_dt,update_by )
+VALUES ('KP','KL PUTRA','BRANCH_CODE',null,null,'A',current,'admin',current,'admin')
+GO 
+INSERT INTO rob_parameters( code,code_desc,code_type,parent_code_type,parent_code,status,create_dt,create_by,update_dt,update_by )
+VALUES ('UT','UTC MELAKA','BRANCH_CODE',null,null,'A',current,'admin',current,'admin')
+GO 
+INSERT INTO rob_parameters( code,code_desc,code_type,parent_code_type,parent_code,status,create_dt,create_by,update_dt,update_by )
+VALUES ('UP','UTC PUDU SENTRAL','BRANCH_CODE',null,null,'A',current,'admin',current,'admin')
+GO 
+INSERT INTO rob_parameters( code,code_desc,code_type,parent_code_type,parent_code,status,create_dt,create_by,update_dt,update_by )
+VALUES ('KV','LANGKAWI','BRANCH_CODE',null,null,'A',current,'admin',current,'admin')
+GO 
+INSERT INTO rob_parameters( code,code_desc,code_type,parent_code_type,parent_code,status,create_dt,create_by,update_dt,update_by )
+VALUES ('AS','ALOR SETAR','BRANCH_CODE',null,null,'A',current,'admin',current,'admin')
+GO 
+INSERT INTO rob_parameters( code,code_desc,code_type,parent_code_type,parent_code,status,create_dt,create_by,update_dt,update_by )
+VALUES ('PG','SEBERANG JAYA, PULAU PINANG','BRANCH_CODE',null,null,'A',current,'admin',current,'admin')
+GO 
+INSERT INTO rob_parameters( code,code_desc,code_type,parent_code_type,parent_code,status,create_dt,create_by,update_dt,update_by )
+VALUES ('IP','IPOH','BRANCH_CODE',null,null,'A',current,'admin',current,'admin')
+GO 
+INSERT INTO rob_parameters( code,code_desc,code_type,parent_code_type,parent_code,status,create_dt,create_by,update_dt,update_by )
+VALUES ('SA','SHAH ALAM','BRANCH_CODE',null,null,'A',current,'admin',current,'admin')
+GO 
+INSERT INTO rob_parameters( code,code_desc,code_type,parent_code_type,parent_code,status,create_dt,create_by,update_dt,update_by )
+VALUES ('MA','MELAKA BANDARAYA BERSEJARAH','BRANCH_CODE',null,null,'A',current,'admin',current,'admin')
+GO 
+INSERT INTO rob_parameters( code,code_desc,code_type,parent_code_type,parent_code,status,create_dt,create_by,update_dt,update_by )
+VALUES ('100','100.00','COLLECTION_BALANCING_NOTE',null,null,'A',current,'admin',current,'admin')
+GO 
+INSERT INTO rob_parameters( code,code_desc,code_type,parent_code_type,parent_code,status,create_dt,create_by,update_dt,update_by )
+VALUES ('50','50.00','COLLECTION_BALANCING_NOTE',null,null,'A',current,'admin',current,'admin')
+GO 
+INSERT INTO rob_parameters( code,code_desc,code_type,parent_code_type,parent_code,status,create_dt,create_by,update_dt,update_by )
+VALUES ('20','20.00','COLLECTION_BALANCING_NOTE',null,null,'A',current,'admin',current,'admin')
+GO 
+INSERT INTO rob_parameters( code,code_desc,code_type,parent_code_type,parent_code,status,create_dt,create_by,update_dt,update_by )
+VALUES ('1','1.00','COLLECTION_BALANCING_NOTE',null,null,'A',current,'admin',current,'admin')
+GO 
+INSERT INTO rob_parameters( code,code_desc,code_type,parent_code_type,parent_code,status,create_dt,create_by,update_dt,update_by )
+VALUES ('10','10.00','COLLECTION_BALANCING_NOTE',null,null,'A',current,'admin',current,'admin')
+GO 
+INSERT INTO rob_parameters( code,code_desc,code_type,parent_code_type,parent_code,status,create_dt,create_by,update_dt,update_by )
+VALUES ('5','5.00','COLLECTION_BALANCING_NOTE',null,null,'A',current,'admin',current,'admin')
+GO 
+INSERT INTO rob_parameters( code,code_desc,code_type,parent_code_type,parent_code,status,create_dt,create_by,update_dt,update_by )
+VALUES ('0.2','0.20','COLLECTION_BALANCING_NOTE',null,null,'A',current,'admin',current,'admin')
+GO 
+INSERT INTO rob_parameters( code,code_desc,code_type,parent_code_type,parent_code,status,create_dt,create_by,update_dt,update_by )
+VALUES ('0.5','0.50','COLLECTION_BALANCING_NOTE',null,null,'A',current,'admin',current,'admin')
+GO 
+INSERT INTO rob_parameters( code,code_desc,code_type,parent_code_type,parent_code,status,create_dt,create_by,update_dt,update_by )
+VALUES ('0.1','0.10','COLLECTION_BALANCING_NOTE',null,null,'A',current,'admin',current,'admin')
+GO 
+INSERT INTO rob_parameters( code,code_desc,code_type,parent_code_type,parent_code,status,create_dt,create_by,update_dt,update_by )
+VALUES ('2','2.00','COLLECTION_BALANCING_NOTE',null,null,'A',current,'admin',current,'admin')
+GO 
+INSERT INTO rob_parameters( code,code_desc,code_type,parent_code_type,parent_code,status,create_dt,create_by,update_dt,update_by )
+VALUES ('0.05','0.05','COLLECTION_BALANCING_NOTE',null,null,'A',current,'admin',current,'admin')
+GO 
+INSERT INTO rob_parameters( code,code_desc,code_type,parent_code_type,parent_code,status,create_dt,create_by,update_dt,update_by )
+VALUES ('0.01','0.01','COLLECTION_BALANCING_NOTE',null,null,'A',current,'admin',current,'admin')
+GO 
+INSERT INTO rob_parameters( code,code_desc,code_type,parent_code_type,parent_code,status,create_dt,create_by,update_dt,update_by )
+VALUES ('F8','ARAS 8','FLOOR_LVL',null,null,'A',current,'admin',current,'admin')
+GO 
+INSERT INTO rob_parameters( code,code_desc,code_type,parent_code_type,parent_code,status,create_dt,create_by,update_dt,update_by )
+VALUES ('F7','ARAS 7','FLOOR_LVL',null,null,'A',current,'admin',current,'admin')
+GO 
+INSERT INTO rob_parameters( code,code_desc,code_type,parent_code_type,parent_code,status,create_dt,create_by,update_dt,update_by )
+VALUES ('F6','ARAS 6','FLOOR_LVL',null,null,'A',current,'admin',current,'admin')
+GO 
+INSERT INTO rob_parameters( code,code_desc,code_type,parent_code_type,parent_code,status,create_dt,create_by,update_dt,update_by )
+VALUES ('F5','ARAS 5','FLOOR_LVL',null,null,'A',current,'admin',current,'admin')
+GO 
+INSERT INTO rob_parameters( code,code_desc,code_type,parent_code_type,parent_code,status,create_dt,create_by,update_dt,update_by )
+VALUES ('F4','ARAS 4','FLOOR_LVL',null,null,'A',current,'admin',current,'admin')
+GO 
+INSERT INTO rob_parameters( code,code_desc,code_type,parent_code_type,parent_code,status,create_dt,create_by,update_dt,update_by )
+VALUES ('F2','ARAS 2','FLOOR_LVL',null,null,'A',current,'admin',current,'admin')
+GO 
+INSERT INTO rob_parameters( code,code_desc,code_type,parent_code_type,parent_code,status,create_dt,create_by,update_dt,update_by )
+VALUES ('F1','ARAS 1','FLOOR_LVL',null,null,'A',current,'admin',current,'admin')
+GO 
+INSERT INTO rob_parameters( code,code_desc,code_type,parent_code_type,parent_code,status,create_dt,create_by,update_dt,update_by )
+VALUES ('F3','ARAS 3','FLOOR_LVL',null,null,'A',current,'admin',current,'admin')
+GO 
+INSERT INTO rob_parameters( code,code_desc,code_type,parent_code_type,parent_code,status,create_dt,create_by,update_dt,update_by )
+VALUES ('F10','ARAS 10','FLOOR_LVL',null,null,'A',current,'admin',current,'admin')
+GO 
+INSERT INTO rob_parameters( code,code_desc,code_type,parent_code_type,parent_code,status,create_dt,create_by,update_dt,update_by )
+VALUES ('F9','ARAS 9','FLOOR_LVL',null,null,'A',current,'admin',current,'admin')
+GO 
+INSERT INTO rob_parameters( code,code_desc,code_type,parent_code_type,parent_code,status,create_dt,create_by,update_dt,update_by )
+VALUES ('CASH','EZBIZ004','GAF_CONFIG_ACC_PAY_MODE',null,null,'A',current,'admin',current,'admin')
+GO 
+INSERT INTO rob_parameters( code,code_desc,code_type,parent_code_type,parent_code,status,create_dt,create_by,update_dt,update_by )
+VALUES ('Y','Y/N','IS_CHECKING_STATUS_CN',null,null,'A',current,'admin',current,'admin')
+GO 
+INSERT INTO rob_parameters( code,code_desc,code_type,parent_code_type,parent_code,status,create_dt,create_by,update_dt,update_by )
+VALUES ('RSS_URL','http://www.ssm.com.my/en/2ssm-portal-feed','LLP_CONFIG',null,null,'A',current,'admin',current,'admin')
+GO 
+INSERT INTO rob_parameters( code,code_desc,code_type,parent_code_type,parent_code,status,create_dt,create_by,update_dt,update_by )
+VALUES ('01','January','MONTH_LIST',null,null,'A',current,'admin',current,'admin')
+GO 
+INSERT INTO rob_parameters( code,code_desc,code_type,parent_code_type,parent_code,status,create_dt,create_by,update_dt,update_by )
+VALUES ('02','February','MONTH_LIST',null,null,'A',current,'admin',current,'admin')
+GO 
+INSERT INTO rob_parameters( code,code_desc,code_type,parent_code_type,parent_code,status,create_dt,create_by,update_dt,update_by )
+VALUES ('07','July','MONTH_LIST',null,null,'A',current,'admin',current,'admin')
+GO 
+INSERT INTO rob_parameters( code,code_desc,code_type,parent_code_type,parent_code,status,create_dt,create_by,update_dt,update_by )
+VALUES ('08','August','MONTH_LIST',null,null,'A',current,'admin',current,'admin')
+GO 
+INSERT INTO rob_parameters( code,code_desc,code_type,parent_code_type,parent_code,status,create_dt,create_by,update_dt,update_by )
+VALUES ('10','October','MONTH_LIST',null,null,'A',current,'admin',current,'admin')
+GO 
+INSERT INTO rob_parameters( code,code_desc,code_type,parent_code_type,parent_code,status,create_dt,create_by,update_dt,update_by )
+VALUES ('04','April','MONTH_LIST',null,null,'A',current,'admin',current,'admin')
+GO 
+INSERT INTO rob_parameters( code,code_desc,code_type,parent_code_type,parent_code,status,create_dt,create_by,update_dt,update_by )
+VALUES ('05','May','MONTH_LIST',null,null,'A',current,'admin',current,'admin')
+GO 
+INSERT INTO rob_parameters( code,code_desc,code_type,parent_code_type,parent_code,status,create_dt,create_by,update_dt,update_by )
+VALUES ('03','March','MONTH_LIST',null,null,'A',current,'admin',current,'admin')
+GO 
+INSERT INTO rob_parameters( code,code_desc,code_type,parent_code_type,parent_code,status,create_dt,create_by,update_dt,update_by )
+VALUES ('12','December','MONTH_LIST',null,null,'A',current,'admin',current,'admin')
+GO 
+INSERT INTO rob_parameters( code,code_desc,code_type,parent_code_type,parent_code,status,create_dt,create_by,update_dt,update_by )
+VALUES ('11','November','MONTH_LIST',null,null,'A',current,'admin',current,'admin')
+GO 
+INSERT INTO rob_parameters( code,code_desc,code_type,parent_code_type,parent_code,status,create_dt,create_by,update_dt,update_by )
+VALUES ('06','June','MONTH_LIST',null,null,'A',current,'admin',current,'admin')
+GO 
+INSERT INTO rob_parameters( code,code_desc,code_type,parent_code_type,parent_code,status,create_dt,create_by,update_dt,update_by )
+VALUES ('09','September','MONTH_LIST',null,null,'A',current,'admin',current,'admin')
+GO 
+INSERT INTO rob_parameters( code,code_desc,code_type,parent_code_type,parent_code,status,create_dt,create_by,update_dt,update_by )
+VALUES ('INT','Internal','PAYMENT_COUNTER_TYPE',null,null,'A',current,'admin',current,'admin')
+GO 
+INSERT INTO rob_parameters( code,code_desc,code_type,parent_code_type,parent_code,status,create_dt,create_by,update_dt,update_by )
+VALUES ('MOB','Mobile Counter','PAYMENT_COUNTER_TYPE',null,null,'A',current,'admin',current,'admin')
+GO 
+INSERT INTO rob_parameters( code,code_desc,code_type,parent_code_type,parent_code,status,create_dt,create_by,update_dt,update_by )
+VALUES ('CREDIT CARD','CREDIT CARD','PAYMENT_MODE',null,null,'A',current,'admin',current,'admin')
+GO 
+INSERT INTO rob_parameters( code,code_desc,code_type,parent_code_type,parent_code,status,create_dt,create_by,update_dt,update_by )
+VALUES ('CASH','CASH','PAYMENT_MODE',null,null,'A',current,'admin',current,'admin')
+GO 
+INSERT INTO rob_parameters( code,code_desc,code_type,parent_code_type,parent_code,status,create_dt,create_by,update_dt,update_by )
+VALUES ('1','Yes','PAYMENT_RECEIPT_ISCANCEL',null,null,'A',current,'admin',current,'admin')
+GO 
+INSERT INTO rob_parameters( code,code_desc,code_type,parent_code_type,parent_code,status,create_dt,create_by,update_dt,update_by )
+VALUES ('0','No','PAYMENT_RECEIPT_ISCANCEL',null,null,'A',current,'admin',current,'admin')
+GO 
+INSERT INTO rob_parameters( code,code_desc,code_type,parent_code_type,parent_code,status,create_dt,create_by,update_dt,update_by )
+VALUES ('P4','P4','PAYMENT_TYPE',null,null,'A',current,'admin',current,'admin')
+GO 
+INSERT INTO rob_parameters( code,code_desc,code_type,parent_code_type,parent_code,status,create_dt,create_by,update_dt,update_by )
+VALUES ('INCNTV_PERSONAL_STUDENT','INCENTIVE FOR STUDENT','PAYMENT_TYPE',null,null,'A',current,'admin',current,'admin')
+GO 
+INSERT INTO rob_parameters( code,code_desc,code_type,parent_code_type,parent_code,status,create_dt,create_by,update_dt,update_by )
+VALUES ('INCNTV_TRADE_OKU','INCENTIVE FOR OKU','PAYMENT_TYPE',null,null,'A',current,'admin',current,'admin')
+GO 
+INSERT INTO rob_parameters( code,code_desc,code_type,parent_code_type,parent_code,status,create_dt,create_by,update_dt,update_by )
+VALUES ('INCNTV_PERSONAL_OKU','INCENTIVE FOR OKU','PAYMENT_TYPE',null,null,'A',current,'admin',current,'admin')
+GO 
+INSERT INTO rob_parameters( code,code_desc,code_type,parent_code_type,parent_code,status,create_dt,create_by,update_dt,update_by )
+VALUES ('INCNTV_BINFO_STUDENT','INCENTIVE FOR STUDENT','PAYMENT_TYPE',null,null,'A',current,'admin',current,'admin')
+GO 
+INSERT INTO rob_parameters( code,code_desc,code_type,parent_code_type,parent_code,status,create_dt,create_by,update_dt,update_by )
+VALUES ('INCNTV_BINFO_OKU','INCENTIVE FOR OKU','PAYMENT_TYPE',null,null,'A',current,'admin',current,'admin')
+GO 
+INSERT INTO rob_parameters( code,code_desc,code_type,parent_code_type,parent_code,status,create_dt,create_by,update_dt,update_by )
+VALUES ('INCNTV_TRADE_STUDENT','INCENTIVE FOR STUDENT','PAYMENT_TYPE',null,null,'A',current,'admin',current,'admin')
+GO 
+INSERT INTO rob_parameters( code,code_desc,code_type,parent_code_type,parent_code,status,create_dt,create_by,update_dt,update_by )
+VALUES ('STU','Student','ROB_FORM_A_INCENTIVE',null,null,'A',current,'admin',current,'admin')
+GO 
+INSERT INTO rob_parameters( code,code_desc,code_type,parent_code_type,parent_code,status,create_dt,create_by,update_dt,update_by )
+VALUES ('N','Not Applicable','ROB_FORM_A_INCENTIVE',null,null,'A',current,'admin',current,'admin')
+GO 
+INSERT INTO rob_parameters( code,code_desc,code_type,parent_code_type,parent_code,status,create_dt,create_by,update_dt,update_by )
+VALUES ('OKU','OKU','ROB_FORM_A_INCENTIVE',null,null,'A',current,'admin',current,'admin')
+GO 
+INSERT INTO rob_parameters( code,code_desc,code_type,parent_code_type,parent_code,status,create_dt,create_by,update_dt,update_by )
+VALUES ('C','Cancel','ROB_FORM_A_STATUS',null,null,'A',current,'admin',current,'admin')
+GO 
+INSERT INTO rob_parameters( code,code_desc,code_type,parent_code_type,parent_code,status,create_dt,create_by,update_dt,update_by )
+VALUES ('OTC','Pending Payment OTC','ROB_FORM_A_STATUS',null,null,'A',current,'admin',current,'admin')
+GO 
+INSERT INTO rob_parameters( code,code_desc,code_type,parent_code_type,parent_code,status,create_dt,create_by,update_dt,update_by )
+VALUES ('V','Verified','ROB_FORM_A_STATUS',null,null,'A',current,'admin',current,'admin')
+GO 
+INSERT INTO rob_parameters( code,code_desc,code_type,parent_code_type,parent_code,status,create_dt,create_by,update_dt,update_by )
+VALUES ('PV','Pending Verification','ROB_FORM_A_STATUS',null,null,'A',current,'admin',current,'admin')
+GO 
+INSERT INTO rob_parameters( code,code_desc,code_type,parent_code_type,parent_code,status,create_dt,create_by,update_dt,update_by )
+VALUES ('OTC','Pending Payment OTC','ROB_FORM_B_STATUS',null,null,'A',current,'admin',current,'admin')
+GO 
+INSERT INTO rob_parameters( code,code_desc,code_type,parent_code_type,parent_code,status,create_dt,create_by,update_dt,update_by )
+VALUES ('C','Cancel','ROB_FORM_B_STATUS',null,null,'A',current,'admin',current,'admin')
+GO 
+INSERT INTO rob_parameters( code,code_desc,code_type,parent_code_type,parent_code,status,create_dt,create_by,update_dt,update_by )
+VALUES ('C','Cancel','ROB_FORM_C_STATUS',null,null,'A',current,'admin',current,'admin')
+GO 
+INSERT INTO rob_parameters( code,code_desc,code_type,parent_code_type,parent_code,status,create_dt,create_by,update_dt,update_by )
+VALUES ('OTC','Pending Payment OTC','ROB_FORM_C_STATUS',null,null,'A',current,'admin',current,'admin')
+GO 
+INSERT INTO rob_parameters( code,code_desc,code_type,parent_code_type,parent_code,status,create_dt,create_by,update_dt,update_by )
+VALUES ('A1','RENEWAL','ROB_FORM_TYPE',null,null,'A',current,'admin',current,'admin')
+GO 
+INSERT INTO rob_parameters( code,code_desc,code_type,parent_code_type,parent_code,status,create_dt,create_by,update_dt,update_by )
+VALUES ('A','FORM A','ROB_FORM_TYPE',null,null,'A',current,'admin',current,'admin')
+GO 
+INSERT INTO rob_parameters( code,code_desc,code_type,parent_code_type,parent_code,status,create_dt,create_by,update_dt,update_by )
+VALUES ('OTC','Pending Payment OTC','ROB_RENEWAL_STATUS',null,null,'A',current,'admin',current,'admin')
+GO 
+INSERT INTO rob_parameters( code,code_desc,code_type,parent_code_type,parent_code,status,create_dt,create_by,update_dt,update_by )
+VALUES ('C','Cancel','ROB_RENEWAL_STATUS',null,null,'A',current,'admin',current,'admin')
+GO 
+INSERT INTO rob_parameters( code,code_desc,code_type,parent_code_type,parent_code,status,create_dt,create_by,update_dt,update_by )
+VALUES ('5','5','SURVEY_SCORE',null,null,'A',current,'admin',current,'admin')
+GO 
+INSERT INTO rob_parameters( code,code_desc,code_type,parent_code_type,parent_code,status,create_dt,create_by,update_dt,update_by )
+VALUES ('3','3','SURVEY_SCORE',null,null,'A',current,'admin',current,'admin')
+GO 
+INSERT INTO rob_parameters( code,code_desc,code_type,parent_code_type,parent_code,status,create_dt,create_by,update_dt,update_by )
+VALUES ('1','1','SURVEY_SCORE',null,null,'A',current,'admin',current,'admin')
+GO 
+INSERT INTO rob_parameters( code,code_desc,code_type,parent_code_type,parent_code,status,create_dt,create_by,update_dt,update_by )
+VALUES ('2','2','SURVEY_SCORE',null,null,'A',current,'admin',current,'admin')
+GO 
+INSERT INTO rob_parameters( code,code_desc,code_type,parent_code_type,parent_code,status,create_dt,create_by,update_dt,update_by )
+VALUES ('4','4','SURVEY_SCORE',null,null,'A',current,'admin',current,'admin')
+GO 
+INSERT INTO rob_parameters( code,code_desc,code_type,parent_code_type,parent_code,status,create_dt,create_by,update_dt,update_by )
+VALUES ('Email','Email','SURVEY_SCORE2',null,null,'A',current,'admin',current,'admin')
+GO 
+INSERT INTO rob_parameters( code,code_desc,code_type,parent_code_type,parent_code,status,create_dt,create_by,update_dt,update_by )
+VALUES ('Evnt/Car','Event/Carnival','SURVEY_SCORE2',null,null,'A',current,'admin',current,'admin')
+GO 
+INSERT INTO rob_parameters( code,code_desc,code_type,parent_code_type,parent_code,status,create_dt,create_by,update_dt,update_by )
+VALUES ('Media','Media (radio/tv)','SURVEY_SCORE2',null,null,'A',current,'admin',current,'admin')
+GO 
+INSERT INTO rob_parameters( code,code_desc,code_type,parent_code_type,parent_code,status,create_dt,create_by,update_dt,update_by )
+VALUES ('SSM Count','SSM Counter','SURVEY_SCORE2',null,null,'A',current,'admin',current,'admin')
+GO 
+INSERT INTO rob_parameters( code,code_desc,code_type,parent_code_type,parent_code,status,create_dt,create_by,update_dt,update_by )
+VALUES ('Others','Others','SURVEY_SCORE2',null,null,'A',current,'admin',current,'admin')
+GO 
+INSERT INTO rob_parameters( code,code_desc,code_type,parent_code_type,parent_code,status,create_dt,create_by,update_dt,update_by )
+VALUES ('Frnd/Fmly','Friend/ Family','SURVEY_SCORE2',null,null,'A',current,'admin',current,'admin')
+GO 
+
+-- 20/03/2017
+
+INSERT INTO rob_parameters( code,code_desc,code_type,parent_code_type,parent_code,status,create_dt,create_by,update_dt,update_by )
+VALUES ('C','CANCEL','PAYMENT_STATUS',null,null,'A',current,'admin',current,'admin')
+GO 
+INSERT INTO rob_parameters( code,code_desc,code_type,parent_code_type,parent_code,status,create_dt,create_by,update_dt,update_by )
+VALUES ('DOWNLOAD_VALIDITY_PERIOD','14','LLP_CONFIG',null,null,'A',current,'admin',current,'admin')
+GO
+INSERT INTO rob_parameters( code,code_desc,code_type,parent_code_type,parent_code,status,create_dt,create_by,update_dt,update_by )
+VALUES ('SEARCH_BY_DATE_PAYMENT','Y','PAYMENT_CONFIG',null,null,'A',current,'admin',current,'admin')
+GO 
+UPDATE rob_parameters SET code = "ALLOW_INCENTIVE", code_desc = "N", code_type = "PAYMENT_CONFIG" WHERE code_type = "ALLOW_INCENTIVE";
+GO 
+UPDATE rob_parameters SET code = "IS_CHECKING_STATUS_CN", code_desc = "Y", code_type = "PAYMENT_CONFIG" WHERE code_type = "IS_CHECKING_STATUS_CN";
+GO 
+UPDATE rob_parameters SET code = "ALLOW_OTC_PAYMENT", code_desc = "Y", code_type = "PAYMENT_CONFIG" WHERE code_type = "ALLOW_OTC_PAYMENT";
+GO 
+
+--21/03/2017
+
+INSERT INTO rob_parameters( code,code_desc,code_type,parent_code_type,parent_code,status,create_dt,create_by,update_dt,update_by )
+VALUES ('FILTER_USER_LIST_NOT_OTC','SSM:nhasrizal,SSM:mhaziq,SSM:trafidah','LLP_CONFIG',null,null,'A',current,'admin',current,'admin');
+GO
+INSERT INTO rob_parameters( code,code_desc,code_type,parent_code_type,parent_code,status,create_dt,create_by,update_dt,update_by )
+VALUES ('IS_FILTER_USER_LIST_NOT_OTC','Y','LLP_CONFIG',null,null,'A',current,'admin',current,'admin');
+GO
+
+--22/03/2017
+UPDATE rob_parameters
+SET code_desc = "Pending Balancing"
+WHERE code = "No" and code_type = "BALANCING_STATUS"
+GO
+UPDATE rob_locale_message 
+SET msg = "Receipt Cancellation"
+WHERE key = "page.lbl.ezbiz.otcPaymentPage.isCancel"
+GO

@@ -1,0 +1,89 @@
+<wicket:extend>
+	<form wicket:id="form">
+		<div class="ui form">
+			<table>
+				<tr>
+					<td>
+						<div class="ui top attached segment">
+							<div class="ui top attached label">
+								<h4 class="ui header">
+									<wicket:message
+										key="page.lbl.ezbiz.listcounterbankin.title" />
+								</h4>
+							</div>
+							<table>
+								<tr>
+									<td>
+										<div class="field">
+											<label><span wicket:id="branchLabel" /></label> <select
+												wicket:id="branch">
+											</select>
+										</div>
+									</td>
+								</tr>
+								<tr>
+									<td>
+										<div class="field">
+											<label><span wicket:id="floorLabel" /></label> <select
+												wicket:id="floor">
+											</select>
+										</div>
+									</td>
+								</tr>
+								<tr>
+									<td>
+										<div class="field">
+											<label><span wicket:id="dateLabel" /></label> <input
+												wicket:id="date" style="width: 80%" />
+										</div>
+									</td>
+								</tr>
+								<tr>
+									<td>&nbsp;</td>
+								</tr>
+								<tr>
+									<td><input wicket:id="search" type="button"
+										class="ui primary button" value="Search" /></td>
+								</tr>
+							</table>
+						</div>
+					</td>
+				</tr>
+			</table>
+		</div>
+	</form>
+	<div wicket:id="wmcSearchResult">
+		<table class="ui striped table" width="100%">
+			<thead>
+				<tr>
+				<th><wicket:message
+							key="page.lbl.ezbiz.listcounterbankin.index" /></th>
+					<th><wicket:message
+							key="page.lbl.ezbiz.listcounterbankin.branch" /></th>
+					<th><wicket:message
+							key="page.lbl.ezbiz.listcounterbankin.floor" /></th>
+					<th><wicket:message
+							key="page.lbl.ezbiz.listcounterbankin.bil" /></th>
+					<th><wicket:message
+							key="page.lbl.ezbiz.listcounterbankin.total" /></th>
+					<th><wicket:message
+							key="page.lbl.ezbiz.listcounterbankin.action" /></th>
+				</tr>
+			</thead>
+			<tbody>
+				<tr wicket:id="listView">
+					<td><span wicket:id="index"></span></td>
+					<td><span wicket:id="branch">[branch]</span></td>
+					<td><span wicket:id="floor">[floor]</span></td>
+					<td><span wicket:id="bil">[bil]</span></td>
+					<td>RM <span wicket:id="total">[total]</span></td>
+					<td>
+						<div class="mini ui buttons">
+						  <button class="ui button positive" wicket:id="generate">Generate</button>
+						</div>
+					</td>
+				</tr>
+			</tbody>
+		</table>
+	</div>
+</wicket:extend>

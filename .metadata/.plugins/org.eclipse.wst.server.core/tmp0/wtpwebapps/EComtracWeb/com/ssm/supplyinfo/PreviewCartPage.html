@@ -1,0 +1,76 @@
+<wicket:extend  style="text-align: center;">
+	<form wicket:id="form" class="ui form">
+			<table class="ui large striped  table" >
+				<thead class="ui computer only">
+					<tr>
+						<th>Bil</th>
+						<th>ID</th>
+						<th>Product</th>
+						<th>Type</th>
+						<th>Price</th>
+						<th>Action</th>
+					</tr>
+				</thead> 
+				<tbody>
+					<tr wicket:id="sorting">
+						<td><span class="mobile only">Bil : </span><span wicket:id="bil">[bil]</span></td>
+						<td><span class="mobile only">ID : </span><span wicket:id="entityNo">[entityNo]</span><br><span wicket:id="entityName">[entityName]</span></td>
+						<td><span class="mobile only">Product : </span><span wicket:id="prodDesc">[prodDesc]</span></td>
+						<td><span class="mobile only">Type : </span> <select wicket:id="prodLocale"></select></td>
+						<td><span class="mobile only"> Price : </span>RM <span wicket:id="amt">[amt]</span></td>
+						<td class="center aligned" style="width: 10%"> <span class="mobile only"> </span>
+						<a wicket:id="remove" href="#" wicket:message="title:page.lbl.supplyInfoCart.remove"><i class="large red remove link icon" /></a>
+						</td>
+					</tr>
+				</tbody>
+				<tfoot wicket:id="wmcSummaryPrice" >
+					<tr>
+						<th colspan="4">
+							&nbsp;
+						</th>
+						<th colspan="2">
+							<div class="ui message">
+								<table style="padding: 0px">
+									<thead>
+									<tr >
+										<td>Tax Amt</td>
+										<td>:</td>
+										<td>RM <span wicket:id="taxLabel" /></td>
+									</tr>
+									<tr style="font-weight:bolder;">
+										<td>Total Amt</td>
+										<td>:</td>
+										<td>RM <span wicket:id="totalLabel" /></td>
+									</tr>
+									</thead>
+								</table>
+							</div>
+						</th>
+					</tr>
+				</tfoot>
+			</table>
+			<div wicket:id="wmcProceedToPay" >
+				<div class="ui checkbox field">
+					<input wicket:id="declarationChkBox" type="checkbox" />
+					<label><wicket:message key="supplyInfo.previewCart.supplyInfoDeclaration" /></label>
+				</div>
+				<div class="right aligned">
+					<button wicket:id="emptyCart" class="ui negative button" >
+						Empty Cart
+					</button>
+					<button wicket:id="checkoutButton" class="ui positive button" >
+						<i class="shop icon"></i> Proceed to checkout
+					</button>
+				</div>
+			</div>
+				<div class="center aligned">
+					<span wicket:id="ifNotLogIn" />
+				</div>
+				<div class="center aligned">
+					<span wicket:id="ifNotActivate" />
+				</div>
+	</form>
+
+
+
+</wicket:extend>
